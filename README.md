@@ -22,7 +22,7 @@ pod 'FlexLib'
 
 ## Author
 
-zhenglibao, zhenglibao@haizhi.com
+zhenglibao, 798393829@qq.com
 
 ## License
 
