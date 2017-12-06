@@ -14,3 +14,6 @@
     @import UIKit;
     @import Foundation;
 #endif
+
+#import <FlexLib/Flex.h>
+

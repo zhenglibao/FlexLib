@@ -24,6 +24,16 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBA1FD7EB0900554A0C /* return@2x.png */; };
+		D2CF9CC21FD7EB0900554A0C /* addnewtype@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */; };
+		D2CF9CC31FD7EB0900554A0C /* TestTableCell.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */; };
+		D2CF9CC41FD7EB0900554A0C /* batchcheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBD1FD7EB0900554A0C /* batchcheck@2x.png */; };
+		D2CF9CC51FD7EB0900554A0C /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBE1FD7EB0900554A0C /* test.xml */; };
+		D2CF9CC61FD7EB0900554A0C /* TestTableVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBF1FD7EB0900554A0C /* TestTableVC.xml */; };
+		D2CF9CC71FD7EB0900554A0C /* system.style in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CC01FD7EB0900554A0C /* system.style */; };
+		D2CF9CCE1FD7EB1A00554A0C /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF9CCA1FD7EB1900554A0C /* TestVC.m */; };
+		D2CF9CCF1FD7EB1A00554A0C /* TestTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF9CCB1FD7EB1900554A0C /* TestTableCell.m */; };
+		D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF9CCD1FD7EB1A00554A0C /* TestTableVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A51394BE4DAFCF85348261A /* FlexLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = FlexLib.podspec; path = ../FlexLib.podspec; sourceTree = "<group>"; };
-		2D3FCC96F52EF608017FEEF8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0A51394BE4DAFCF85348261A /* FlexLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FlexLib.podspec; path = ../FlexLib.podspec; sourceTree = "<group>"; };
+		2D3FCC96F52EF608017FEEF8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* FlexLib_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexLib_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,10 +71,23 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B47CA40CE36ADABF2EC0262 /* Pods-FlexLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		885B2948ED10418285C4C976 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		885B2948ED10418285C4C976 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BF0A9AA5EEC0E1A3212D55AE /* Pods-FlexLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3F399040DE88BBD2F2E407B /* Pods_FlexLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20EA7438FB7413D8C580238 /* Pods-FlexLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D2CF9CBA1FD7EB0900554A0C /* return@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "return@2x.png"; path = "res/return@2x.png"; sourceTree = "<group>"; };
+		D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addnewtype@2x.png"; path = "res/addnewtype@2x.png"; sourceTree = "<group>"; };
+		D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestTableCell.xml; path = res/TestTableCell.xml; sourceTree = "<group>"; };
+		D2CF9CBD1FD7EB0900554A0C /* batchcheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "batchcheck@2x.png"; path = "res/batchcheck@2x.png"; sourceTree = "<group>"; };
+		D2CF9CBE1FD7EB0900554A0C /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = test.xml; path = res/test.xml; sourceTree = "<group>"; };
+		D2CF9CBF1FD7EB0900554A0C /* TestTableVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestTableVC.xml; path = res/TestTableVC.xml; sourceTree = "<group>"; };
+		D2CF9CC01FD7EB0900554A0C /* system.style */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = system.style; path = res/system.style; sourceTree = "<group>"; };
+		D2CF9CC81FD7EB1900554A0C /* TestTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableCell.h; sourceTree = "<group>"; };
+		D2CF9CC91FD7EB1900554A0C /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		D2CF9CCA1FD7EB1900554A0C /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
+		D2CF9CCB1FD7EB1900554A0C /* TestTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableCell.m; sourceTree = "<group>"; };
+		D2CF9CCC1FD7EB1900554A0C /* TestTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableVC.h; sourceTree = "<group>"; };
+		D2CF9CCD1FD7EB1A00554A0C /* TestTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableVC.m; sourceTree = "<group>"; };
 		EAF5D4D82057BA2F2195E3B3 /* Pods_FlexLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EA3C4A77DCE70224422A8A /* Pods-FlexLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +166,13 @@
 		6003F593195388D20070C39A /* Example for FlexLib */ = {
 			isa = PBXGroup;
 			children = (
+				D2CF9CC81FD7EB1900554A0C /* TestTableCell.h */,
+				D2CF9CCB1FD7EB1900554A0C /* TestTableCell.m */,
+				D2CF9CCC1FD7EB1900554A0C /* TestTableVC.h */,
+				D2CF9CCD1FD7EB1A00554A0C /* TestTableVC.m */,
+				D2CF9CC91FD7EB1900554A0C /* TestVC.h */,
+				D2CF9CCA1FD7EB1900554A0C /* TestVC.m */,
+				D2CF9CB91FD7EAFA00554A0C /* res */,
 				6003F59C195388D20070C39A /* FlexAppDelegate.h */,
 				6003F59D195388D20070C39A /* FlexAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -194,6 +224,20 @@
 				2D3FCC96F52EF608017FEEF8 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		D2CF9CB91FD7EAFA00554A0C /* res */ = {
+			isa = PBXGroup;
+			children = (
+				D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */,
+				D2CF9CBD1FD7EB0900554A0C /* batchcheck@2x.png */,
+				D2CF9CBA1FD7EB0900554A0C /* return@2x.png */,
+				D2CF9CC01FD7EB0900554A0C /* system.style */,
+				D2CF9CBE1FD7EB0900554A0C /* test.xml */,
+				D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */,
+				D2CF9CBF1FD7EB0900554A0C /* TestTableVC.xml */,
+			);
+			name = res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,10 +323,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2CF9CC71FD7EB0900554A0C /* system.style in Resources */,
+				D2CF9CC31FD7EB0900554A0C /* TestTableCell.xml in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				D2CF9CC51FD7EB0900554A0C /* test.xml in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */,
+				D2CF9CC41FD7EB0900554A0C /* batchcheck@2x.png in Resources */,
+				D2CF9CC21FD7EB0900554A0C /* addnewtype@2x.png in Resources */,
+				D2CF9CC61FD7EB0900554A0C /* TestTableVC.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +445,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2CF9CCF1FD7EB1A00554A0C /* TestTableCell.m in Sources */,
+				D2CF9CCE1FD7EB1A00554A0C /* TestVC.m in Sources */,
 				6003F59E195388D20070C39A /* FlexAppDelegate.m in Sources */,
+				D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */,
 				6003F5A7195388D20070C39A /* FlexViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

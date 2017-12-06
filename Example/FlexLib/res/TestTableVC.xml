@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="top:20,
+    flex:1,
+    alignItems:center"
+    attr="bgColor:white">
+    <UITableView name="_table" layout="flex:1"/>
+    
+    <UIView name="close" onPress="tapCloseAction" layout="position:absolute,width:100%,height:50,bottom:0,alignItems:center">
+        <UIView layout="height:1,width:100%" attr="bgColor:#f0f0f0"/>
+        <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:关闭"/>
+    </UIView>
+</UIView> 

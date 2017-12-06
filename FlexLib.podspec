@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'FlexLib'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of FlexLib.'
+  s.summary          = 'An obj-c flex layout framework for IOS'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,13 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+It's a layout framework based on yoga engine. The main purpose is to provide easy and fast usage.
                        DESC
 
   s.homepage         = 'https://github.com/zhenglibao/FlexLib'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'zhenglibao' => 'zhenglibao@haizhi.com' }
+  s.author           = { '798393829@qq.com' => '798393829@qq.com' }
   s.source           = { :git => 'https://github.com/zhenglibao/FlexLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
@@ -36,7 +36,20 @@ TODO: Add long description of the pod here.
   #   'FlexLib' => ['FlexLib/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Yoga', '1.6.0'
+
+  s.library = 'xml2'
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
+  #s.private_header_files = 'FlexLib/Classes/private/*.h'
+  #s.public_header_files = 'FlexLib/Classes/*.h'
+
+  non_arc_files   = 'FlexLib/Classes/GDataXMLNode.{h,m}'
+  s.exclude_files = non_arc_files
+  s.subspec 'no-arc' do |sna|
+    sna.requires_arc = false
+    sna.source_files = non_arc_files
+  end
+
 end
+

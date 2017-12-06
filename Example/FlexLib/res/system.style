@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<styles>
+    <style name="s1">
+        <attr name="bgColor">#333333</attr>
+    </style>
+    <style name="s2">
+        <attr name="bgColor">#666666</attr>
+    </style>
+    <style name="s3">
+        <attr name="bgColor">white</attr>
+        <attr name="fontSize">16</attr>
+        <attr name="color">#333333</attr>
+    </style>
+</styles>

@@ -7,6 +7,8 @@
 //
 
 #import "FlexViewController.h"
+#import "TestVC.h"
+#import "TestTableVC.h"
 
 @interface FlexViewController ()
 
@@ -25,5 +27,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (IBAction)onTest:(id)sender {
+    
+    TestVC* vc=[[TestVC alloc]init];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+}
+- (IBAction)onTestTable:(id)sender {
+    TestTableVC* vc=[[TestTableVC alloc]init];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+}
 @end
