@@ -9,8 +9,6 @@
 #import "FlexRootView.h"
 #import "YogaKit/UIView+Yoga.h"
 
-static void* gObserverFrame    = (void*)100;
-
 @interface FlexBaseVC ()
 {
     NSString* _flexName ;

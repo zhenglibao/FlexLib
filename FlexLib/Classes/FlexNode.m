@@ -455,6 +455,6 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
 
 +(void)Test{
     NSString* path= [[NSBundle mainBundle]pathForResource:@"test" ofType:@"xml"];
-    FlexNode* node = [FlexNode loadNodeFile:path];
+    [FlexNode loadNodeFile:path];
 }
 @end
