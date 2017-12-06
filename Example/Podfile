@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'FlexLib_Example' do
+  pod 'FlexLib', :path => '../'
+
+  target 'FlexLib_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  end
+end
