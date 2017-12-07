@@ -24,6 +24,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		D272A8C21FD933710075DB1D /* TestScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D272A8C11FD933710075DB1D /* TestScrollVC.m */; };
+		D272A8C41FD933990075DB1D /* TestScrollVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8C31FD933990075DB1D /* TestScrollVC.xml */; };
 		D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBA1FD7EB0900554A0C /* return@2x.png */; };
 		D2CF9CC21FD7EB0900554A0C /* addnewtype@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */; };
 		D2CF9CC31FD7EB0900554A0C /* TestTableCell.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */; };
@@ -75,6 +77,9 @@
 		BF0A9AA5EEC0E1A3212D55AE /* Pods-FlexLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3F399040DE88BBD2F2E407B /* Pods_FlexLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20EA7438FB7413D8C580238 /* Pods-FlexLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D272A8C01FD933710075DB1D /* TestScrollVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestScrollVC.h; sourceTree = "<group>"; };
+		D272A8C11FD933710075DB1D /* TestScrollVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestScrollVC.m; sourceTree = "<group>"; };
+		D272A8C31FD933990075DB1D /* TestScrollVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestScrollVC.xml; path = res/TestScrollVC.xml; sourceTree = "<group>"; };
 		D2CF9CBA1FD7EB0900554A0C /* return@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "return@2x.png"; path = "res/return@2x.png"; sourceTree = "<group>"; };
 		D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addnewtype@2x.png"; path = "res/addnewtype@2x.png"; sourceTree = "<group>"; };
 		D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestTableCell.xml; path = res/TestTableCell.xml; sourceTree = "<group>"; };
@@ -170,6 +175,8 @@
 				D2CF9CCB1FD7EB1900554A0C /* TestTableCell.m */,
 				D2CF9CCC1FD7EB1900554A0C /* TestTableVC.h */,
 				D2CF9CCD1FD7EB1A00554A0C /* TestTableVC.m */,
+				D272A8C01FD933710075DB1D /* TestScrollVC.h */,
+				D272A8C11FD933710075DB1D /* TestScrollVC.m */,
 				D2CF9CC91FD7EB1900554A0C /* TestVC.h */,
 				D2CF9CCA1FD7EB1900554A0C /* TestVC.m */,
 				D2CF9CB91FD7EAFA00554A0C /* res */,
@@ -236,6 +243,7 @@
 				D2CF9CBE1FD7EB0900554A0C /* test.xml */,
 				D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */,
 				D2CF9CBF1FD7EB0900554A0C /* TestTableVC.xml */,
+				D272A8C31FD933990075DB1D /* TestScrollVC.xml */,
 			);
 			name = res;
 			sourceTree = "<group>";
@@ -326,6 +334,7 @@
 				D2CF9CC71FD7EB0900554A0C /* system.style in Resources */,
 				D2CF9CC31FD7EB0900554A0C /* TestTableCell.xml in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				D272A8C41FD933990075DB1D /* TestScrollVC.xml in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				D2CF9CC51FD7EB0900554A0C /* test.xml in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -354,9 +363,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FlexLib/FlexLib.framework",
+				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlexLib.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -384,13 +398,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlexLib_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9DC9C70542D19C8B78023FD7 /* [CP] Copy Pods Resources */ = {
@@ -414,9 +431,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Expecta/Expecta.framework",
+				"${BUILT_PRODUCTS_DIR}/Specta/Specta.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expecta.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Specta.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -429,13 +451,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlexLib_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -448,6 +473,7 @@
 				D2CF9CCF1FD7EB1A00554A0C /* TestTableCell.m in Sources */,
 				D2CF9CCE1FD7EB1A00554A0C /* TestVC.m in Sources */,
 				6003F59E195388D20070C39A /* FlexAppDelegate.m in Sources */,
+				D272A8C21FD933710075DB1D /* TestScrollVC.m in Sources */,
 				D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */,
 				6003F5A7195388D20070C39A /* FlexViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

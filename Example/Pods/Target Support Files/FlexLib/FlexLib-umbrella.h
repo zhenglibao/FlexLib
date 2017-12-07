@@ -15,6 +15,7 @@
 #import "FlexBaseVC.h"
 #import "FlexNode.h"
 #import "FlexRootView.h"
+#import "FlexScrollView.h"
 #import "FlexStyleMgr.h"
 #import "FlexUtils.h"
 #import "UIButton+Flex.h"
