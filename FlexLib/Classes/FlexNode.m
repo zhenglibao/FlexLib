@@ -13,6 +13,7 @@
 #import "FlexStyleMgr.h"
 #import "FlexUtils.h"
 #import "FlexRootView.h"
+#import "FlexModalView.h"
 #import "ViewExt/UIView+Flex.h"
 
 #define VIEWCLSNAME     @"viewClsName"
@@ -345,7 +346,8 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
         NSArray* children = self.children ;
         for(FlexNode* node in children){
             UIView* child = [node buildViewTree:owner RootView:rootView] ;
-            if(child!=nil){
+            if(child!=nil && ![child isKindOfClass:[FlexModalView class]])
+            {
                 [view addSubview:child];
             }
         }

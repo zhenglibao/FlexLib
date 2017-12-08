@@ -12,4 +12,26 @@
         <attr name="fontSize">16</attr>
         <attr name="color">#333333</attr>
     </style>
+    <style name="lineSep">
+        <attr name="height">1</attr>
+        <attr name="bgColor">#e6e6e6</attr>
+    </style>
+    <style name="filterLeftLabel">
+        <attr name="fontSize">14</attr>
+        <attr name="color">#333333</attr>
+    </style>
+    <style name="rightContent">
+        <attr name="fontSize">14</attr>
+        <attr name="color">#333333</attr>
+        <attr name="textAlign">right</attr>
+    </style>
+    <style name="filterRow">
+        <attr name="height">44</attr>
+        <attr name="flexDirection">row</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="paddingLeft">14</attr>
+        <attr name="paddingRight">8</attr>
+        <attr name="justifyContent">space-between</attr>
+        <attr name="bgColor">#fafafa</attr>
+    </style>
 </styles>

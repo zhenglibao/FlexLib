@@ -8,6 +8,7 @@
 #import "FlexRootView.h"
 #import "YogaKit/UIView+Yoga.h"
 #import "FlexNode.h"
+#import "FlexModalView.h"
 #import "ViewExt/UIView+Flex.h"
 
 static void* gObserverHidden    = (void*)1;
@@ -28,6 +29,7 @@ static void* gObserverAttrText  = (void*)3;
     if (self) {
         _bInLayouting = NO ;
         _observedViews = [NSMutableSet set];
+        self.yoga.isEnabled = YES;
     }
     return self;
 }
@@ -57,9 +59,11 @@ static void* gObserverAttrText  = (void*)3;
     FlexRootView* root = [[FlexRootView alloc]init];
     FlexNode* node = [FlexNode loadNodeFile:path];
     if(node != nil){
-        UIView* sub = [node buildViewTree:owner RootView:root];
+        UIView* sub = [node buildViewTree:owner
+                                 RootView:root];
         
-        if(sub != nil){
+        if(sub != nil && ![sub isKindOfClass:[FlexModalView class]])
+        {
             [root addSubview:sub];
         }
     }
@@ -81,18 +85,18 @@ static void* gObserverAttrText  = (void*)3;
     
     [_observedViews addObject:subView];
     
-    [subView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:gObserverHidden];
-    [subView addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:gObserverText];
-    [subView addObserver:self forKeyPath:@"attributedText" options:NSKeyValueObservingOptionNew context:gObserverAttrText];
+//    [subView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:gObserverHidden];
+//    [subView addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:gObserverText];
+//    [subView addObserver:self forKeyPath:@"attributedText" options:NSKeyValueObservingOptionNew context:gObserverAttrText];
 }
 -(void)removeWatchView:(UIView*)view
 {
     if(view==nil)
         return;
     
-    [view removeObserver:self forKeyPath:@"hidden"];
-    [view removeObserver:self forKeyPath:@"text"];
-    [view removeObserver:self forKeyPath:@"attributedText"];
+//    [view removeObserver:self forKeyPath:@"hidden"];
+//    [view removeObserver:self forKeyPath:@"text"];
+//    [view removeObserver:self forKeyPath:@"attributedText"];
 }
 
 #pragma mark - KVO
@@ -119,13 +123,8 @@ static void* gObserverAttrText  = (void*)3;
 {
     if(_bInLayouting)
         return;
-    
-    YGLayout* yoga = self.yoga;
-    BOOL oldIncludeLayout = yoga.isIncludedInLayout;
-    
+
     [self configureLayoutWithBlock:^(YGLayout* layout){
-        
-        layout.isIncludedInLayout = YES;
         
         CGRect rc = self.superview.frame ;
         
@@ -148,8 +147,7 @@ static void* gObserverAttrText  = (void*)3;
     
     CGRect rcOld = self.frame;
     _bInLayouting = YES;
-    [yoga applyLayoutPreservingOrigin:NO dimensionFlexibility:option];
-    yoga.isIncludedInLayout = oldIncludeLayout;
+    [self.yoga applyLayoutPreservingOrigin:NO dimensionFlexibility:option];
     _bInLayouting = NO ;
     
     if(!CGRectEqualToRect(rcOld, self.frame)){

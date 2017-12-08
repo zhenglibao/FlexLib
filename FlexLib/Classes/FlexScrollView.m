@@ -7,12 +7,15 @@
 
 #import "FlexScrollView.h"
 #import "FlexRootView.h"
+#import "FlexParentView.h"
 #import "ViewExt/UIView+Flex.h"
 #import "YogaKit/UIView+Yoga.h"
 
 @interface FlexScrollView()
 {
+    FlexParentView* _subview;
     FlexRootView* _contentView;
+    UIView* _holder;
 }
 @end
 
@@ -23,15 +26,23 @@
 {
     self = [super init];
     if (self) {
-        _contentView = [[FlexRootView alloc]init];
-        [_contentView configureLayoutWithBlock:^(YGLayout* layout)
-         {
-             layout.isEnabled = YES;
-             layout.isIncludedInLayout = NO ;
-         }];
-        [super addSubview:_contentView];
+        // 占位的view
+        _holder = [[UIView alloc]init];
+        _holder.yoga.isEnabled = YES;
+        [super addSubview:_holder];
         
-        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+        // 构造view tree
+        __weak FlexScrollView* weakSelf = self;
+        _subview = [[FlexParentView alloc]init];
+        _subview.onFrameChange = ^(CGRect rc){
+            weakSelf.contentSize = rc.size ;
+        };
+        
+        _contentView = [[FlexRootView alloc]init];
+        [_subview addSubview:_contentView];
+        [super addSubview:_subview];
+        
+        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
 }
@@ -45,18 +56,10 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
 {
-    CGRect rcOld = [[change objectForKey:@"old"]CGRectValue];
     CGRect rcNew = [[change objectForKey:@"new"]CGRectValue];
     
-    if(!CGSizeEqualToSize(rcOld.size, rcNew.size)){
-        [_contentView setNeedsLayout];
-    }
-}
-
--(void)subFrameChanged:(UIView*)subView
-                  Rect:(CGRect)newFrame
-{
-    self.contentSize = newFrame.size ;
+    rcNew.origin = _subview.frame.origin;
+    _subview.frame = rcNew;
 }
 
 -(void)postCreate

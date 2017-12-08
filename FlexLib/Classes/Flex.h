@@ -10,6 +10,8 @@
 #import "FlexRootView.h"
 #import "FlexBaseVC.h"
 #import "FlexBaseTableCell.h"
+#import "FlexParentView.h"
+#import "FlexModalView.h"
 #import "FlexStyleMgr.h"
 #import "FlexScrollView.h"
 
