@@ -13,6 +13,18 @@ FlexLib is an obj-c layout framework for iOS. It's based on [yoga](https://faceb
 [CSS-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 [Yoga-flexbox](https://facebook.github.io/yoga/docs/flex-direction/)
 
+## Feature
+* layout based on xml format
+* auto variable binding
+* onPress event binding
+* support layout attribute (padding/margin/width/...)
+* support view attribute (eg: bgColor/fontSize/...)
+* view attributes extensible
+
+## Example
+
+To run the example project, clone the repo, and open `Example/FlexLib.xcworkspace` with XCode to run.
+
 ## Usage
 
 ### Write layout with xml file. The following is a demo file:
@@ -27,9 +39,6 @@ The following is the effect for the last layout file.
 ![effect for vertical](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/effect-vert.png)
 ![effect for horzantal](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/effect-horz.png)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
 
@@ -41,6 +50,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'FlexLib'
 ```
+
+## Todo
+* More view attributes
+* Hot update layout
 
 ## Author
 
