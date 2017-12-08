@@ -24,6 +24,8 @@
 #import "UIImageView+Flex.h"
 #import "UILabel+Flex.h"
 #import "UIScrollView+Flex.h"
+#import "UITextField+Flex.h"
+#import "UITextView+Flex.h"
 #import "UIView+Flex.h"
 #import "UIView+Yoga.h"
 #import "YGLayout+Private.h"
