@@ -1,10 +1,13 @@
-//
-//  FlexAppDelegate.h
-//  FlexLib
-//
-//  Created by zhenglibao on 12/06/2017.
-//  Copyright (c) 2017 zhenglibao. All rights reserved.
-//
+/**
+ * Copyright (c) 2017-present, zhenglibao, Inc.
+ * email: 798393829@qq.com
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
 
 @import UIKit;
 
