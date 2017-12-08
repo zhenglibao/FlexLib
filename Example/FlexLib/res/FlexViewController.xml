@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flex:1,
+    justifyContent:center,
+    alignItems:center"
+    attr="bgColor:white">
+    <UIView>
+        <UIView onPress="onTest:" layout="@:system/button" attr="bgColor:#e5e5e5">
+            <UILabel
+			   attr="@:system/buttonText,text:Test ViewController"/>
+        </UIView>
+        
+        <UIView onPress="onTestTable:" layout="@:system/button" attr="bgColor:#e5e5e5">
+            <UILabel
+            attr="@:system/buttonText,text:Test TableView"/>
+        </UIView>
+        
+        <UIView onPress="onTestScrollView:" layout="@:system/button" attr="bgColor:#e5e5e5">
+            <UILabel
+            attr="@:system/buttonText,text:Test ScrollView"/>
+        </UIView>
+        
+        <UIView onPress="onTestModalView:" layout="@:system/button" attr="bgColor:#e5e5e5">
+            <UILabel
+            attr="@:system/buttonText,text:Test ModalView"/>
+        </UIView>
+    </UIView>
+</UIView> 

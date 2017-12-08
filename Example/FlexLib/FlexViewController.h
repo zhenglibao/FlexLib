@@ -11,6 +11,6 @@
 
 @import UIKit;
 
-@interface FlexViewController : UIViewController
+@interface FlexViewController : FlexBaseVC
 
 @end
