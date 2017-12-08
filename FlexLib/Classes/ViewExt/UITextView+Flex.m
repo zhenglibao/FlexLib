@@ -22,16 +22,6 @@ static NameValue _align[] =
     {"justified", NSTextAlignmentJustified},
     {"natural", NSTextAlignmentNatural},
 };
-static NameValue _breakMode[] =
-{
-    {"wordWrapping", NSLineBreakByWordWrapping},
-    {"charWrapping", NSLineBreakByCharWrapping},
-    {"clipping", NSLineBreakByClipping},
-    {"truncatingHead", NSLineBreakByTruncatingHead},
-    {"truncatingTail", NSLineBreakByTruncatingTail},
-    {"truncatingMiddle", NSLineBreakByTruncatingMiddle},
-};
-
 
 @implementation UITextView (Flex)
 
