@@ -23,6 +23,10 @@ This file is self-explained.
 Declare any variable in this class which will be binded by those controls with "name" attribute. "onPress" event will also be binded.
 Then you can use your class.
 
+The following is the effect for the last layout file.
+![effect for horzantal](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/effect-horz.png)
+![effect for vertical](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/effect-vert.png)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
