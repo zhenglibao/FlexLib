@@ -11,30 +11,44 @@
 
 #import "FlexUtils.h"
 
-static NSString* _gclrs[]=
+UIColor* systemColor(NSString* clr)
 {
-    @"black",   @"#0",
-    @"white",   @"#ffffff",
-    @"red",     @"#ff0000",
-    @"green",   @"#00ff00",
-    @"blue",    @"#0000ff",
-};
-
+    NSString* methodDesc = [NSString stringWithFormat:@"%@Color",clr];
+    
+    SEL sel = NSSelectorFromString(methodDesc) ;
+    if(sel == nil)
+    {
+        NSLog(@"Flexbox: UIColor no method %@",methodDesc);
+        return nil;
+    }
+    
+    NSMethodSignature* sig = [UIColor methodSignatureForSelector:sel];
+    if(sig == nil)
+    {
+        NSLog(@"Flexbox: UIColor no method %@",methodDesc);
+        return nil;
+    }
+    
+    @try{
+        
+        NSInvocation* inv = [NSInvocation invocationWithMethodSignature:sig] ;
+        [inv setTarget:[UIColor class]];
+        [inv setSelector:sel];
+        [inv invoke];
+        
+        UIColor* result;
+        [inv getReturnValue:&result];
+        return result;
+    }@catch(NSException* e){
+        NSLog(@"Flexbox: %@ called failed.",methodDesc);
+    }
+    return nil;
+}
 UIColor* colorFromString(NSString* clr)
 {
     if(![clr hasPrefix:@"#"]){
-        int total = sizeof(_gclrs)/sizeof(NSString*) ;
-        for(int i=0;i<total;i+=2){
-            if([clr compare:_gclrs[i] options:NSCaseInsensitiveSearch]==0)
-            {
-                clr = _gclrs[i+1];
-                break;
-            }
-        }
-    }
-    if(![clr hasPrefix:@"#"]){
-        NSLog(@"Flexbox: unrecognized color format");
-        return nil;
+        UIColor* c = systemColor(clr);
+        return c;
     }
     
     NSString *typeColor = [clr stringByReplacingOccurrencesOfString:@"#" withString:@"0x"];
