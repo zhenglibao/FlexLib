@@ -7,7 +7,11 @@
 
 ## FlexLib
 
-FlexLib is an obj-c layout framework for iOS. It's based on yoga layout engine which implement  mostly compatible flexbox model.
+FlexLib is an obj-c layout framework for iOS. It's based on [yoga](https://facebook.github.io/yoga/) layout engine which implement  mostly compatible flexbox model.
+
+### Reference
+[CSS-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+[Yoga-flexbox](https://facebook.github.io/yoga/docs/flex-direction/)
 
 ## Usage
 
