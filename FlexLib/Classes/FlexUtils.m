@@ -69,3 +69,8 @@ int NSString2Int(NSString* s,
     const char* c = [s cStringUsingEncoding:NSASCIIStringEncoding];
     return String2Int(c, table, total);
 }
+
+BOOL String2BOOL(NSString* s)
+{
+    return [s compare:@"true" options:NSDiacriticInsensitiveSearch]==NSOrderedSame;
+}

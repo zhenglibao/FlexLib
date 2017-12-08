@@ -32,6 +32,5 @@
         <attr name="paddingLeft">14</attr>
         <attr name="paddingRight">8</attr>
         <attr name="justifyContent">space-between</attr>
-        <attr name="bgColor">#fafafa</attr>
     </style>
 </styles>

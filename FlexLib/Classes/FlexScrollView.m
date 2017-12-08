@@ -10,6 +10,7 @@
 #import "FlexParentView.h"
 #import "ViewExt/UIView+Flex.h"
 #import "YogaKit/UIView+Yoga.h"
+#import "FlexUtils.h"
 
 @interface FlexScrollView()
 {
@@ -104,14 +105,14 @@ if(from.prop.unit==YGUnitPoint||    \
 
 FLEXSET(horzScroll)
 {
-    BOOL b = [sValue compare:@"true" options:NSDiacriticInsensitiveSearch]==NSOrderedSame;
+    BOOL b = String2BOOL(sValue) ;
     self.horizontal = b ;
     
     _contentView.flexibleWidth = b;
 }
 FLEXSET(vertScroll)
 {
-    BOOL b = [sValue compare:@"true" options:NSDiacriticInsensitiveSearch]==NSOrderedSame;
+    BOOL b = String2BOOL(sValue) ;
     self.vertical = b ;
     
     _contentView.flexibleHeight = b;

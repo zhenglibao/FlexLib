@@ -12,6 +12,15 @@ static NameValue _align[] =
     {"justified", NSTextAlignmentJustified},
     {"natural", NSTextAlignmentNatural},
 };
+static NameValue _breakMode[] =
+{
+    {"wordWrapping", NSLineBreakByWordWrapping},
+    {"charWrapping", NSLineBreakByCharWrapping},
+    {"clipping", NSLineBreakByClipping},
+    {"truncatingHead", NSLineBreakByTruncatingHead},
+    {"truncatingTail", NSLineBreakByTruncatingTail},
+    {"truncatingMiddle", NSLineBreakByTruncatingMiddle},
+};
 
 
 @implementation UILabel (Flex)
@@ -28,6 +37,11 @@ FLEXSET(fontSize)
         self.font = font;
     }
 }
+FLEXSET(lineBreakMode)
+{
+    NSLineBreakMode mode = (NSLineBreakMode) NSString2Int(sValue,_breakMode,sizeof(_breakMode)/sizeof(NameValue));
+    self.lineBreakMode = mode;
+}
 FLEXSET(linesNum)
 {
     int n = (int)[sValue integerValue];
@@ -42,9 +56,35 @@ FLEXSET(color)
         self.textColor = clr ;
     }
 }
+FLEXSET(shadowColor)
+{
+    UIColor* clr = colorFromString(sValue);
+    if(clr!=nil){
+        self.shadowColor = clr ;
+    }
+}
+FLEXSET(highlightTextColor)
+{
+    UIColor* clr = colorFromString(sValue);
+    if(clr!=nil){
+        self.highlightedTextColor = clr ;
+    }
+}
 FLEXSET(textAlign)
 {
     const char* c =  [sValue cStringUsingEncoding:NSASCIIStringEncoding];
     self.textAlignment = (NSTextAlignment)String2Int(c, _align, sizeof(_align)/sizeof(NameValue));
+}
+FLEXSET(interactEnable)
+{
+    self.userInteractionEnabled = String2BOOL(sValue);
+}
+FLEXSET(enabled)
+{
+    self.enabled = String2BOOL(sValue);
+}
+FLEXSET(adjustFontSize)
+{
+    self.adjustsFontSizeToFitWidth = String2BOOL(sValue);
 }
 @end
