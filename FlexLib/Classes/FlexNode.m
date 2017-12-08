@@ -274,6 +274,11 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
         return nil;
     }
     Class cls = NSClassFromString(self.viewClassName) ;
+    if(cls == nil){
+        NSLog(@"Flexbox: class %@ not found.", self.viewClassName);
+        return nil;
+    }
+    
     UIView* view = [[cls alloc]init];
     if(![view isKindOfClass:[UIView class]]){
         NSLog(@"Flexbox: %@ is not child class of UIView.", self.viewClassName);
@@ -284,7 +289,7 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
         @try{
             [owner setValue:view forKey:self.name];
         }@catch(NSException* exception){
-            NSLog(@"Flexbox: name %@ not found in owner",self.name);
+            NSLog(@"Flexbox: name %@ not found in owner %@",self.name,[owner class]);
         }@finally
         {
         }
