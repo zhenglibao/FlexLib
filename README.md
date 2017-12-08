@@ -46,7 +46,7 @@ The following is the effect for the last layout file.
 
 ## Reference
  ![layout attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/layoutattr.htm)
- ![view attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/viewtattr.htm)
+ ![view attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/viewattr.htm)
 
 ## Installation
 
