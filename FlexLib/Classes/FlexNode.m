@@ -365,6 +365,10 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
     
     [view postCreate];
     
+    if(view.isHidden){
+        view.yoga.isIncludedInLayout = NO ;
+    }
+    
     return view;
 }
 

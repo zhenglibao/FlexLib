@@ -5,6 +5,20 @@
 [![License](https://img.shields.io/cocoapods/l/FlexLib.svg?style=flat)](http://cocoapods.org/pods/FlexLib)
 [![Platform](https://img.shields.io/cocoapods/p/FlexLib.svg?style=flat)](http://cocoapods.org/pods/FlexLib)
 
+## FlexLib
+
+FlexLib is an obj-c layout framework for iOS. It's based on yoga layout engine which implement  mostly compatible flexbox model.
+
+## Usage
+
+### Write layout with xml file. The following is a demo file:
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/xmldemo.png)
+This file is self-explained.
+
+### Derive your view controller class from FlexBaseVC or table cell from FlexBaseTableCell.
+Declare any variable in this class which will be binded by those controls with "name" attribute. "onPress" event will also be binded.
+Then you can use your class.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
