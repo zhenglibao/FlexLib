@@ -13,6 +13,7 @@
 #import "FlexStyleMgr.h"
 #import "FlexUtils.h"
 #import "FlexRootView.h"
+#import "ViewExt/UIView+Flex.h"
 
 #define VIEWCLSNAME     @"viewClsName"
 #define NAME            @"name"
@@ -91,17 +92,12 @@ static void SetViewAttr(UIView* view,
                         NSString* attrName,
                         NSString* attrValue)
 {
-    unichar c = [attrName characterAtIndex:0];
-    if( c>='a' && c<='z'){
-        c = c+('A'-'a');
-    }
-    
-    NSString* methodDesc = [NSString stringWithFormat:@"set%C%@:", c, [attrName substringFromIndex:1]];
+    NSString* methodDesc = [NSString stringWithFormat:@"setFlex%@:",attrName];
     
     SEL sel = NSSelectorFromString(methodDesc) ;
     if(sel == nil)
     {
-        NSLog(@"Flexbox: no method %@",methodDesc);
+        NSLog(@"Flexbox: %@ no method %@",[view class],methodDesc);
         return ;
     }
     
@@ -110,7 +106,7 @@ static void SetViewAttr(UIView* view,
     NSMethodSignature* sig = [[view class] instanceMethodSignatureForSelector:sel];
     if(sig == nil)
     {
-        NSLog(@"Flexbox: no method %@",methodDesc);
+        NSLog(@"Flexbox: %@ no method %@",[view class],methodDesc);
         return ;
     }
     
@@ -356,6 +352,7 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
     }
     
     [rootView registSubView:view];
+    [view postCreate];
     
     return view;
 }

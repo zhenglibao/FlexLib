@@ -8,6 +8,7 @@
 #import "FlexRootView.h"
 #import "YogaKit/UIView+Yoga.h"
 #import "FlexNode.h"
+#import "ViewExt/UIView+Flex.h"
 
 static void* gObserverHidden    = (void*)1;
 static void* gObserverText      = (void*)2;
@@ -26,7 +27,6 @@ static void* gObserverAttrText  = (void*)3;
     self = [super init];
     if (self) {
         _bInLayouting = NO ;
-        _flexOption = 0 ;
         _observedViews = [NSMutableSet set];
     }
     return self;
@@ -120,41 +120,70 @@ static void* gObserverAttrText  = (void*)3;
     if(_bInLayouting)
         return;
     
+    YGLayout* yoga = self.yoga;
+    BOOL oldIncludeLayout = yoga.isIncludedInLayout;
     
     [self configureLayoutWithBlock:^(YGLayout* layout){
+        
+        layout.isIncludedInLayout = YES;
+        
         CGRect rc = self.superview.frame ;
         
-        layout.width = YGPointValue(rc.size.width) ;
-        layout.height = YGPointValue(rc.size.height) ;
+        if(self.flexibleWidth)
+            layout.width = YGPointValue(NAN);
+        else
+            layout.width = YGPointValue(rc.size.width) ;
+        
+        if(self.flexibleHeight)
+            layout.height = YGPointValue(NAN);
+        else
+            layout.height = YGPointValue(rc.size.height) ;
     }];
     
     YGDimensionFlexibility option = 0 ;
-    if((self.flexOption & FlexibleWidth)!=0)
+    if(self.flexibleWidth)
         option |= YGDimensionFlexibilityFlexibleWidth ;
-    if((self.flexOption & FlexibleHeight)!=0)
+    if(self.flexibleHeight)
         option |= YGDimensionFlexibilityFlexibleHeigth ;
     
+    CGRect rcOld = self.frame;
     _bInLayouting = YES;
-    [self.yoga applyLayoutPreservingOrigin:NO dimensionFlexibility:option];
+    [yoga applyLayoutPreservingOrigin:NO dimensionFlexibility:option];
+    yoga.isIncludedInLayout = oldIncludeLayout;
     _bInLayouting = NO ;
+    
+    if(!CGRectEqualToRect(rcOld, self.frame)){
+        [self.superview subFrameChanged:self Rect:self.frame];
+    }
 }
 
 -(CGSize)calculateSize:(CGSize)szLimit
 {
+    YGLayout* yoga = self.yoga;
+    BOOL oldInclude = yoga.isIncludedInLayout ;
     [self configureLayoutWithBlock:^(YGLayout* layout){
         
-        if((self.flexOption & FlexibleWidth)==0)
+        layout.isIncludedInLayout =  YES;
+        
+        if(self.flexibleWidth)
+            layout.width = YGPointValue(NAN);
+        else
             layout.width = YGPointValue(szLimit.width) ;
-        if((self.flexOption & FlexibleHeight)==0)
+
+        if(self.flexibleHeight)
+            layout.height = YGPointValue(NAN);
+        else
             layout.height = YGPointValue(szLimit.height) ;
     }];
     
-    if((self.flexOption & FlexibleWidth)!=0)
+    if(self.flexibleWidth)
         szLimit.width = NAN ;
-    if((self.flexOption & FlexibleHeight)!=0)
+    if(self.flexibleHeight)
         szLimit.height = NAN ;
     
-    return [self.yoga calculateLayoutWithSize:szLimit];
+    CGSize sz=[self.yoga calculateLayoutWithSize:szLimit];
+    yoga.isIncludedInLayout = oldInclude ;
+    return sz;
 }
 -(CGSize)calculateSize
 {

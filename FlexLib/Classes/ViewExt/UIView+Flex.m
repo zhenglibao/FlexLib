@@ -5,17 +5,31 @@
 
 @implementation UIView (Flex)
 
--(void)setBgColor:(NSString*)clrStr
+-(void)subFrameChanged:(UIView*)subView
+                  Rect:(CGRect)newFrame
 {
-    UIColor* clr = colorFromString(clrStr) ;
+    
+}
+
+-(void)superFrameChanged
+{
+    
+}
+
+FLEXSET(bgColor)
+{
+    UIColor* clr = colorFromString(sValue) ;
     if(clr!=nil){
         self.backgroundColor = clr ;
     }
 }
--(void)setBorderRadius:(NSString*)radius
+FLEXSET(borderRadius)
 {
-    CGFloat f = [radius floatValue] ;
+    CGFloat f = [sValue floatValue] ;
     self.layer.cornerRadius = f ;
 }
-
+-(void)postCreate
+{
+    
+}
 @end

@@ -16,31 +16,35 @@ static NameValue _align[] =
 
 @implementation UILabel (Flex)
 
--(void)setFontSize:(NSString*)fontSize
+FLEXSET(text)
 {
-    float nSize = [fontSize floatValue];
+    self.text = sValue ;
+}
+FLEXSET(fontSize)
+{
+    float nSize = [sValue floatValue];
     if(nSize > 0){
         UIFont* font = [UIFont systemFontOfSize:nSize];
         self.font = font;
     }
 }
--(void)setLinesNum:(NSString*)s
+FLEXSET(linesNum)
 {
-    int n = (int)[s integerValue];
+    int n = (int)[sValue integerValue];
     if(n>=0){
         self.numberOfLines = n;
     }
 }
--(void)setColor:(NSString*)s
+FLEXSET(color)
 {
-    UIColor* clr = colorFromString(s);
+    UIColor* clr = colorFromString(sValue);
     if(clr!=nil){
         self.textColor = clr ;
     }
 }
--(void)setTextAlign:(NSString*)s
+FLEXSET(textAlign)
 {
-    const char* c =  [s cStringUsingEncoding:NSASCIIStringEncoding];
+    const char* c =  [sValue cStringUsingEncoding:NSASCIIStringEncoding];
     self.textAlignment = (NSTextAlignment)String2Int(c, _align, sizeof(_align)/sizeof(NameValue));
 }
 @end

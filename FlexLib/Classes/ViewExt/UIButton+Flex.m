@@ -7,13 +7,13 @@
 
 @implementation UIButton (Flex)
 
--(void)setTitle:(NSString*)title
+FLEXSET(title)
 {
-    [self setTitle:title forState:UIControlStateNormal];
+    [self setTitle:sValue forState:UIControlStateNormal];
 }
--(void)setColor:(NSString*)s
+FLEXSET(color)
 {
-    UIColor* clr = colorFromString(s);
+    UIColor* clr = colorFromString(sValue);
     if(clr!=nil){
         [self setTitleColor:clr forState:UIControlStateNormal];
     }

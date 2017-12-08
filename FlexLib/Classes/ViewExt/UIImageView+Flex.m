@@ -6,9 +6,9 @@
 
 @implementation UIImageView (Flex)
 
--(void)setSource:(NSString*)src
+FLEXSET(source)
 {
-    UIImage* img = [UIImage imageNamed:src];
+    UIImage* img = [UIImage imageNamed:sValue];
     self.image = img ;
 }
 @end

@@ -6,11 +6,13 @@
 //
 
 #import "FlexScrollView.h"
+#import "FlexRootView.h"
+#import "ViewExt/UIView+Flex.h"
 #import "YogaKit/UIView+Yoga.h"
 
 @interface FlexScrollView()
 {
-    UIView* _contentView;
+    FlexRootView* _contentView;
 }
 @end
 
@@ -21,7 +23,7 @@
 {
     self = [super init];
     if (self) {
-        _contentView = [[UIView alloc]init];
+        _contentView = [[FlexRootView alloc]init];
         [_contentView configureLayoutWithBlock:^(YGLayout* layout)
          {
              layout.isEnabled = YES;
@@ -47,49 +49,68 @@
     CGRect rcNew = [[change objectForKey:@"new"]CGRectValue];
     
     if(!CGSizeEqualToSize(rcOld.size, rcNew.size)){
-        [self setNeedsLayout];
+        [_contentView setNeedsLayout];
     }
 }
--(void)layoutSubviews
+
+-(void)subFrameChanged:(UIView*)subView
+                  Rect:(CGRect)newFrame
 {
-    CGRect rc = self.frame ;
-    [_contentView configureLayoutWithBlock:^(YGLayout* layout){
-        if(!self.horizontal)
-            layout.width = YGPointValue(rc.size.width) ;
-        else
-            layout.width = YGPointValue(NAN);
-        if(!self.vertical)
-            layout.height = YGPointValue(rc.size.height) ;
-        else
-            layout.height = YGPointValue(NAN);
-    }];
-    
-    YGDimensionFlexibility flex = 0 ;
-    if(self.horizontal)
-        flex |= YGDimensionFlexibilityFlexibleWidth ;
-    if(self.vertical)
-        flex |= YGDimensionFlexibilityFlexibleHeigth ;
-    
-    YGLayout* layout = _contentView.yoga;
-    layout.isIncludedInLayout = YES;
-    [layout applyLayoutPreservingOrigin:NO dimensionFlexibility:flex];
-    layout.isIncludedInLayout = NO;
-    self.contentSize = _contentView.frame.size ;
+    self.contentSize = newFrame.size ;
 }
 
+-(void)postCreate
+{
+#define COPYYGVALUE(prop)           \
+if(from.prop.unit==YGUnitPoint||    \
+    from.prop.unit==YGUnitPercent)  \
+{                                   \
+    to.prop = from.prop;            \
+}                                   \
+    
+    //同步yoga属性
+    YGLayout* from = self.yoga ;
+    YGLayout* to = _contentView.yoga ;
+    
+    to.direction = from.direction ;
+    to.flexDirection = from.flexDirection;
+    to.justifyContent = from.justifyContent;
+    to.alignItems = from.alignItems;
+    to.alignSelf = from.alignSelf;
+    to.flexWrap = from.flexWrap;
+    to.overflow = from.overflow;
+    to.display = from.display;
+    
+    COPYYGVALUE(paddingLeft)
+    COPYYGVALUE(paddingTop)
+    COPYYGVALUE(paddingRight)
+    COPYYGVALUE(paddingBottom)
+    COPYYGVALUE(paddingStart)
+    COPYYGVALUE(paddingEnd)
+    COPYYGVALUE(paddingHorizontal)
+    COPYYGVALUE(paddingVertical)
+    COPYYGVALUE(padding)
+    
+    to.aspectRatio = from.aspectRatio;
+}
 -(void)addSubview:(UIView *)view
 {
     [_contentView addSubview:view];
+    [_contentView registSubView:view];
 }
 
--(void)setHorzScroll:(NSString*)s
+FLEXSET(horzScroll)
 {
-    BOOL b = [s compare:@"true" options:NSDiacriticInsensitiveSearch]==NSOrderedSame;
+    BOOL b = [sValue compare:@"true" options:NSDiacriticInsensitiveSearch]==NSOrderedSame;
     self.horizontal = b ;
+    
+    _contentView.flexibleWidth = b;
 }
--(void)setVertScroll:(NSString*)s
+FLEXSET(vertScroll)
 {
-    BOOL b = [s compare:@"true" options:NSDiacriticInsensitiveSearch]==NSOrderedSame;
+    BOOL b = [sValue compare:@"true" options:NSDiacriticInsensitiveSearch]==NSOrderedSame;
     self.vertical = b ;
+    
+    _contentView.flexibleHeight = b;
 }
 @end

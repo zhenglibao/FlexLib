@@ -23,7 +23,7 @@
     
     if( self != nil){
         _flexRootView = [FlexRootView loadWithNodeFile:flexName Owner:self];
-        _flexRootView.flexOption = FlexibleHeight ;
+        _flexRootView.flexibleHeight = YES ;
         [self.contentView addSubview:_flexRootView];
     }
     return self ;
