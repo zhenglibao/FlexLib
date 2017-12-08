@@ -19,6 +19,7 @@ FlexLib is an obj-c layout framework for iOS. It's based on [yoga](https://faceb
 * onPress event binding
 * support layout attribute (padding/margin/width/...)
 * support view attribute (eg: bgColor/fontSize/...)
+* support reference predefined style
 * view attributes extensible
 
 ## Example
@@ -39,8 +40,9 @@ The following is the effect for the last layout file.
 ![effect for vertical](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/effect-vert.png)
 ![effect for horzantal](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/effect-horz.png)
 
-
-## Requirements
+## Reference
+ ![layout attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/layoutattr.htm)
+ ![view attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/viewtattr.htm)
 
 ## Installation
 
