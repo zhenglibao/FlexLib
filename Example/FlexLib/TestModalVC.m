@@ -33,7 +33,10 @@
 }
 -(void)tapModal
 {
-    
+    [modal showModalInView:self.view];
 }
-
+-(void)closeModal
+{
+    [modal hideModal];
+}
 @end

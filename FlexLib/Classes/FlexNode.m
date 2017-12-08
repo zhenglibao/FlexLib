@@ -350,10 +350,14 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
             {
                 [view addSubview:child];
             }
+            
         }
     }
     
-    [rootView registSubView:view];
+    if(![view isKindOfClass:[FlexModalView class]]){
+        [rootView registSubView:view];
+    }
+    
     [view postCreate];
     
     return view;

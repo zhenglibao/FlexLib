@@ -85,18 +85,18 @@ static void* gObserverAttrText  = (void*)3;
     
     [_observedViews addObject:subView];
     
-//    [subView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:gObserverHidden];
-//    [subView addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:gObserverText];
-//    [subView addObserver:self forKeyPath:@"attributedText" options:NSKeyValueObservingOptionNew context:gObserverAttrText];
+    [subView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:gObserverHidden];
+    [subView addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:gObserverText];
+    [subView addObserver:self forKeyPath:@"attributedText" options:NSKeyValueObservingOptionNew context:gObserverAttrText];
 }
 -(void)removeWatchView:(UIView*)view
 {
     if(view==nil)
         return;
     
-//    [view removeObserver:self forKeyPath:@"hidden"];
-//    [view removeObserver:self forKeyPath:@"text"];
-//    [view removeObserver:self forKeyPath:@"attributedText"];
+    [view removeObserver:self forKeyPath:@"hidden"];
+    [view removeObserver:self forKeyPath:@"text"];
+    [view removeObserver:self forKeyPath:@"attributedText"];
 }
 
 #pragma mark - KVO
@@ -157,11 +157,7 @@ static void* gObserverAttrText  = (void*)3;
 
 -(CGSize)calculateSize:(CGSize)szLimit
 {
-    YGLayout* yoga = self.yoga;
-    BOOL oldInclude = yoga.isIncludedInLayout ;
     [self configureLayoutWithBlock:^(YGLayout* layout){
-        
-        layout.isIncludedInLayout =  YES;
         
         if(self.flexibleWidth)
             layout.width = YGPointValue(NAN);
@@ -180,7 +176,6 @@ static void* gObserverAttrText  = (void*)3;
         szLimit.height = NAN ;
     
     CGSize sz=[self.yoga calculateLayoutWithSize:szLimit];
-    yoga.isIncludedInLayout = oldInclude ;
     return sz;
 }
 -(CGSize)calculateSize

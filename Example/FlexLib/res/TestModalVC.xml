@@ -45,7 +45,7 @@
             <UIView layout="width:50%,height:100%,justifyContent:center," attr="bgColor:white">
                 <UILabel attr="fontSize:14,textAlign:center,text:重置"/>
             </UIView>
-            <UIView layout="width:50%,height:100%,justifyContent:center," attr="bgColor:#289bf0">
+            <UIView layout="width:50%,height:100%,justifyContent:center," attr="bgColor:#289bf0" onPress="closeModal">
                 <UILabel attr="fontSize:14,textAlign:center,text:确定"/>
             </UIView>
         </UIView>
