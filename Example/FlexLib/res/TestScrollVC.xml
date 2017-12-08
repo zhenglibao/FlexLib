@@ -4,7 +4,7 @@
     flex:1,
     alignItems:center"
     attr="bgColor:white">
-    <FlexScrollView name="scroll"  layout="padding:50,flex:1,width:100%" attr="bgColor:#999999,vertScroll:true">
+    <FlexScrollView name="scroll"  layout="padding:50,flex:1,width:100%" attr="bgColor:white,vertScroll:true,horzIndicator:true,vertIndicator:true">
         <UIView layout="height:300,width:100%" attr="bgColor:red"/>
         <UIView layout="height:300,width:100%" attr="bgColor:green"/>
         <UIView layout="height:300,width:100%" attr="bgColor:blue"/>

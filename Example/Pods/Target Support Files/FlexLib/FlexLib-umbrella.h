@@ -23,6 +23,7 @@
 #import "UIButton+Flex.h"
 #import "UIImageView+Flex.h"
 #import "UILabel+Flex.h"
+#import "UIScrollView+Flex.h"
 #import "UIView+Flex.h"
 #import "UIView+Yoga.h"
 #import "YGLayout+Private.h"
