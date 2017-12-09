@@ -32,6 +32,10 @@
 @property(nonatomic,assign) UIEdgeInsets landscapeSafeArea;
 @property(nonatomic,readonly) UIView* topSubView;
 
+@property(nonatomic,copy) void (^beginLayout)(void);
+@property(nonatomic,copy) void (^endLayout)(void);
+
+
 -(void)markChildDirty:(UIView*)child;
 
 +(FlexRootView*)loadWithNodeFile:(NSString*)resName
@@ -42,5 +46,7 @@
 -(CGSize)calculateSize:(CGSize)szLimit;
 
 -(void)registSubView:(UIView*)subView;
+
+-(void)layoutAnimation:(NSTimeInterval)duration;
 
 @end

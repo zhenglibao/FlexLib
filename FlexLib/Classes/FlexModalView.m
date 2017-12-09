@@ -51,6 +51,9 @@ static NameValue _gModalPosition[] =
         [_root addGestureRecognizer:tap];
         [_root addSubview:self];
         
+        tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTapInside)];
+        [self addGestureRecognizer:tap];
+        
         _position = modalBottom;
         _cancelable = YES;
     }
@@ -85,6 +88,9 @@ static NameValue _gModalPosition[] =
 -(void)postCreate
 {
     [self resetLayout];
+}
+-(void)onTapInside
+{
 }
 -(void)onTapOutside
 {

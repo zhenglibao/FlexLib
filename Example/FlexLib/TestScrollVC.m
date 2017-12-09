@@ -15,6 +15,8 @@
 {
     UIScrollView* scroll;
     UIView* close;
+    
+    UILabel* multilabel;
 }
 
 @end
@@ -47,7 +49,9 @@
 }
 -(void)tapShow
 {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    multilabel.hidden = !multilabel.isHidden;
+    
+    [self.rootView layoutAnimation:0.8];
 }
 
 @end

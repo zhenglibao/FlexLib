@@ -40,12 +40,12 @@
             <UILabel layout="height:50" attr="@:system/bigFont,bgColor:orange,text:Beijing"/>
         </UIView>
         <UIView layout="height:20"/>
-        <UILabel layout="width:100%" attr="@:system/bigFont,text:This is demo text you can UILabel to show multilines text and can wrap content hello haha nihao ma,linesNum:0"/>
+        <UILabel name="multilabel" layout="width:100%" attr="@:system/bigFont,text:This is demo text you can UILabel to show multilines text and can wrap content hello haha nihao ma,linesNum:0"/>
         <UIView layout="height:40"/>
         <UIView onPress="tapShow" layout="flexDirection:row,justifyContent:center,padding:10,alignItems:center" attr="@:system/border">
             <UILabel layout="height:30" attr="@:system/bigFont,color:red,text:Click to show / hide text"/>
         </UIView>
-        <UIView layout="height:20" attr="bgColor:green"/>
+        <UIView layout="height:50" attr="bgColor:clear"/>
     </FlexScrollView>
     
     <UIView name="close" onPress="tapCloseAction" layout="position:absolute,width:100%,height:50,bottom:0,alignItems:center" attr="bgColor:lightGray">

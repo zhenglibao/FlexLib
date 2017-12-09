@@ -21,6 +21,7 @@ static void* gObserverText      = (void*)2;
 static void* gObserverAttrText  = (void*)3;
 
 @implementation UIView(FlexPublic)
+
 -(void)markDirty
 {
     UIView* parent = self.superview;
@@ -32,10 +33,12 @@ static void* gObserverAttrText  = (void*)3;
         parent = parent.superview;
     }
 }
+
 -(void)enableFlexLayout:(BOOL)enable
 {
     self.yoga.isIncludedInLayout = enable;
 }
+
 -(BOOL)isFlexLayoutEnable{
     return self.yoga.isIncludedInLayout;
 }
@@ -225,6 +228,11 @@ static void* gObserverAttrText  = (void*)3;
         option |= YGDimensionFlexibilityFlexibleHeigth ;
     
     CGRect rcOld = self.frame;
+    
+    if(self.beginLayout != nil)
+        self.beginLayout();
+    self.beginLayout = nil;
+    
     _bInLayouting = YES;
     [self.yoga applyLayoutPreservingOrigin:NO dimensionFlexibility:option];
     _bInLayouting = NO ;
@@ -233,6 +241,10 @@ static void* gObserverAttrText  = (void*)3;
     if(!CGRectEqualToRect(rcOld, self.frame)){
         [self.superview subFrameChanged:self Rect:self.frame];
     }
+    
+    if(self.endLayout !=nil)
+        self.endLayout();
+    self.endLayout = nil;
 }
 
 -(CGSize)calculateSize:(CGSize)szLimit
@@ -254,6 +266,19 @@ static void* gObserverAttrText  = (void*)3;
 {
     CGRect rc = self.superview.frame ;
     return [self calculateSize:rc.size];
+}
+
+
+-(void)layoutAnimation:(NSTimeInterval)duration
+{
+    self.beginLayout = ^{
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:duration];
+    };
+    
+    self.endLayout = ^{
+        [UIView commitAnimations];
+    };
 }
 
 

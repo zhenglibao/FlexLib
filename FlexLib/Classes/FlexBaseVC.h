@@ -11,6 +11,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class FlexRootView;
+
 @interface FlexBaseVC : UIViewController
 
 // call this to provide flex res name
@@ -23,7 +25,7 @@
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait;
 
 // get root flex view
--(UIView*)rootView;
+-(FlexRootView*)rootView;
 
 -(void)layoutFlexRootViews;
 

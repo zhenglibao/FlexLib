@@ -36,7 +36,7 @@
 {
     return nil;
 }
--(UIView*)rootView
+-(FlexRootView*)rootView
 {
     return _flexRootView;
 }
