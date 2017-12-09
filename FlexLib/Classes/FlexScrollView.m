@@ -47,7 +47,7 @@
         [_subview addSubview:_contentView];
         [super addSubview:_subview];
         
-        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
+        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     }
     return self;
 }
@@ -65,6 +65,7 @@
     
     rcNew.origin = _subview.frame.origin;
     _subview.frame = rcNew;
+    [_contentView setNeedsLayout];
 }
 
 -(void)postCreate

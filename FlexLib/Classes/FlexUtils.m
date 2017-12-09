@@ -115,11 +115,6 @@ BOOL IsIphoneX(void)
 }
 BOOL IsPortrait(void)
 {
-    UIDeviceOrientation oriention = [[UIDevice currentDevice] orientation] ;
-    if(oriention == UIDeviceOrientationPortrait ||
-       oriention == UIDeviceOrientationPortraitUpsideDown)
-    {
-        return YES;
-    }
-    return NO;
+    CGRect rcScreen = [[UIScreen mainScreen]bounds];
+    return rcScreen.size.height > rcScreen.size.width ;
 }

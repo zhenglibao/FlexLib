@@ -48,6 +48,13 @@ static void* gObserverAttrText  = (void*)3;
     return self;
 }
 
+-(UIView*)topSubView
+{
+    if(self.subviews.count>0){
+        return self.subviews[0];
+    }
+    return nil;
+}
 
 +(FlexRootView*)loadWithNodeFile:(NSString*)resName
                            Owner:(NSObject*)owner

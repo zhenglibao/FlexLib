@@ -54,7 +54,7 @@
     _flexRootView.landscapeSafeArea = [self getSafeArea:NO];
     
     self.view = [[UIView alloc]initWithFrame:CGRectZero];
-    self.view.backgroundColor=[UIColor whiteColor];
+    self.view.backgroundColor=_flexRootView.topSubView.backgroundColor;
     [self.view addSubview:contentView];
 }
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait
@@ -79,9 +79,9 @@
         return UIEdgeInsetsMake(0, 44, 21, 44);
     }
     if(portrait){
-        return UIEdgeInsetsMake(88, 0, 34, 0);
+        return UIEdgeInsetsMake(44, 0, 34, 0);
     }
-    return UIEdgeInsetsMake(21, 44, 21, 44);
+    return UIEdgeInsetsMake(0, 44, 21, 44);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -92,15 +92,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
