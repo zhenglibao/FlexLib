@@ -83,6 +83,14 @@
     }
     return UIEdgeInsetsMake(0, 44, 21, 44);
 }
+
+-(void)layoutFlexRootViews{
+    for(UIView* subview in self.view.subviews){
+        if([subview isKindOfClass:[FlexRootView class]]){
+            [subview setNeedsLayout];
+        }
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -93,7 +101,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (BOOL)shouldAutorotate{
-    [_flexRootView setNeedsLayout];
+    [self layoutFlexRootViews];
     return YES;
 }
 @end

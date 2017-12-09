@@ -16,6 +16,7 @@
 @interface FlexModalView()
 {
     FlexRootView* _root;
+    FlexRootView* _ownerRootView;
 }
 @end
 
@@ -27,12 +28,17 @@
     }
     return self;
 }
+-(void)setOwnerRootView:(FlexRootView*)rootView
+{
+    _ownerRootView = rootView;
+}
 -(void)showModalInView:(UIView*)view
 {
     if(_root==nil){
         _root = [[FlexRootView alloc]init];
         _root.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
-        _root.yoga.marginTop=YGPointValue(20);
+        _root.portraitSafeArea = _ownerRootView.portraitSafeArea;
+        _root.landscapeSafeArea = _ownerRootView.landscapeSafeArea;
         [_root addSubview:self];
     }
     

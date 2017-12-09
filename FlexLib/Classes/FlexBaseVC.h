@@ -25,4 +25,6 @@
 // get root flex view
 -(UIView*)rootView;
 
+-(void)layoutFlexRootViews;
+
 @end

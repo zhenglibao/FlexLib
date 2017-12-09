@@ -364,6 +364,8 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
     
     if(![view isKindOfClass:[FlexModalView class]]){
         [rootView registSubView:view];
+    }else{
+        [(FlexModalView*)view setOwnerRootView:rootView];
     }
     
     [view postCreate];

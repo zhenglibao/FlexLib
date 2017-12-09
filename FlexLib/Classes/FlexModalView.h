@@ -11,7 +11,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class FlexRootView;
+
 @interface FlexModalView : UIView
+
+-(void)setOwnerRootView:(FlexRootView*)rootView;
 
 -(void)showModalInView:(UIView*)view;
 -(void)hideModal;
