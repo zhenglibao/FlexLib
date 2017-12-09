@@ -27,6 +27,14 @@
 					fontSize: 14, color: #666666,text:批量出库"/>
             </UIView>
         </UIView>
+        <UILabel name="testLabel" layout="width:100%,marginBottom:50"
+        attr="fontSize:16,color:#999999,
+        textAlign:center,text:012345,linesNum:3"/>
+        
+        <UIView onPress="onTestLabel"
+            layout="height:50,alignItems:center">
+            <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:TestLabel"/>
+        </UIView>
     </UIView>
     
     <UIView name="close" onPress="tapCloseAction" 

@@ -11,6 +11,12 @@
 
 #import <UIKit/UIKit.h>
 
+@interface UIView(FlexPublic)
+
+// 外部可以主动调用此函数让布局得到刷新
+-(void)markDirty;
+
+@end
 
 @interface FlexRootView : UIView
 
@@ -19,6 +25,8 @@
 @property(nonatomic,assign) UIEdgeInsets portraitSafeArea;
 @property(nonatomic,assign) UIEdgeInsets landscapeSafeArea;
 @property(nonatomic,readonly) UIView* topSubView;
+
+-(void)markChildDirty:(UIView*)child;
 
 +(FlexRootView*)loadWithNodeFile:(NSString*)resName
                            Owner:(NSObject*)owner;

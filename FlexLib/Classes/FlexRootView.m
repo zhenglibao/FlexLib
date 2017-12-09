@@ -20,6 +20,20 @@ static void* gObserverHidden    = (void*)1;
 static void* gObserverText      = (void*)2;
 static void* gObserverAttrText  = (void*)3;
 
+@implementation UIView(FlexPublic)
+-(void)markDirty
+{
+    UIView* parent = self.superview;
+    while(parent!=nil){
+        if([parent isKindOfClass:[FlexRootView class]]){
+            [(FlexRootView*)parent markChildDirty:self];
+            break;
+        }
+        parent = parent.superview;
+    }
+}
+@end
+
 @interface FlexRootView()
 {
     BOOL _bInLayouting;
@@ -134,11 +148,16 @@ static void* gObserverAttrText  = (void*)3;
             object.yoga.isIncludedInLayout = !n;
         }
         
-        [object.yoga markDirty];
-        _bChildDirty = YES;
-        [self setNeedsLayout];
+        [self markChildDirty:object];
     }
 }
+-(void)markChildDirty:(UIView*)child
+{
+    [child.yoga markDirty];
+    _bChildDirty = YES;
+    [self setNeedsLayout];
+}
+
 #pragma mark - layout methods
 
 -(void)configureLayout:(CGRect)safeArea
@@ -176,6 +195,7 @@ static void* gObserverAttrText  = (void*)3;
 {
     return memcmp(&_thisConfigFrame, &_lastConfigFrame, sizeof(CGRect))==0;
 }
+
 -(void)layoutSubviews
 {
     if(_bInLayouting)

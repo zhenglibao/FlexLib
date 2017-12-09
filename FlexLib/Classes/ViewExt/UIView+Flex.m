@@ -12,6 +12,8 @@
 #import "UIView+Flex.h"
 #import <objc/runtime.h>
 #import "../FlexUtils.h"
+#import "../YogaKit/UIView+Yoga.h"
+#import "../FlexRootView.h"
 
 static NameValue _gcontentModes[] =
 {
