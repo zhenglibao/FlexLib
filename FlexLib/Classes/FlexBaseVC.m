@@ -92,5 +92,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (BOOL)shouldAutorotate{
+    [_flexRootView setNeedsLayout];
+    return YES;
+}
 @end
