@@ -13,5 +13,4 @@
 
 @interface TestVC : FlexBaseVC
 
-+(void)Test;
 @end

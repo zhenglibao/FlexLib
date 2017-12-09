@@ -27,6 +27,4 @@ void FlexSetViewAttr(UIView* view,
 -(UIView*)buildViewTree:(NSObject*)owner
                RootView:(FlexRootView*)rootView;
 
-+(void)Test;
-
 @end

@@ -53,8 +53,4 @@
    testLabel.text = [testLabel.text stringByAppendingString:testLabel.text];
 }
 
-
-+(void)Test{
-    
-}
 @end
