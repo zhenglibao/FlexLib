@@ -44,4 +44,18 @@
         <attr name="fontSize">16</attr>
         <attr name="color">#333333</attr>
     </style>
+    <style name="bigFont">
+        <attr name="fontSize">30</attr>
+        <attr name="color">#333333</attr>
+    </style>
+    <style name="border">
+        <attr name="borderRadius">4</attr>
+        <attr name="borderWidth">1</attr>
+        <attr name="borderColor">lightGray</attr>
+    </style>
+    <style name="redBorder">
+        <attr name="borderRadius">8</attr>
+        <attr name="borderWidth">1</attr>
+        <attr name="borderColor">red</attr>
+    </style>
 </styles>

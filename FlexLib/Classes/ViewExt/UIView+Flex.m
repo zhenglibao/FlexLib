@@ -56,10 +56,38 @@ FLEXSET(bgColor)
         self.backgroundColor = clr ;
     }
 }
+
+FLEXSET(borderWidth)
+{
+    CGFloat f = [sValue floatValue] ;
+    self.layer.borderWidth = f ;
+}
+FLEXSET(borderColor)
+{
+    self.layer.borderColor = colorFromString(sValue).CGColor ;
+}
 FLEXSET(borderRadius)
 {
     CGFloat f = [sValue floatValue] ;
     self.layer.cornerRadius = f ;
+}
+FLEXSET(shadowOffset)
+{
+    NSArray* ary = [sValue componentsSeparatedByString:@"/"];
+    if(ary.count==2){
+        CGFloat f1 = [ary[0] floatValue] ;
+        CGFloat f2 = [ary[1] floatValue] ;
+        self.layer.shadowOffset = CGSizeMake(f1, f2) ;
+    }
+}
+FLEXSET(shadowRadius)
+{
+    CGFloat f = [sValue floatValue] ;
+    self.layer.shadowRadius = f ;
+}
+FLEXSET(shadowColor)
+{
+    self.layer.shadowColor = colorFromString(sValue).CGColor ;
 }
 FLEXSET(contentMode)
 {

@@ -4,13 +4,51 @@
     flex:1,
     alignItems:center"
     attr="bgColor:white">
-    <FlexScrollView name="scroll"  layout="padding:50,flex:1,width:100%" attr="bgColor:white,vertScroll:true,horzIndicator:true,vertIndicator:true">
-        <UIView layout="height:300,width:100%" attr="bgColor:red"/>
-        <UIView layout="height:300,width:100%" attr="bgColor:green"/>
-        <UIView layout="height:300,width:100%" attr="bgColor:blue"/>
+    <FlexScrollView name="scroll"  layout="padding:10,flex:1,width:100%" attr="bgColor:#f5f5f5,vertScroll:true,horzIndicator:false,vertIndicator:true">
+        <UILabel attr="fontSize:14,color:#666666,text:Serial No."/>
+        <UIView layout="height:20"/>
+        <UITextField layout="height:50" attr="@:system/filterLeftLabel,text:,placeHolder:Input the sn here,@:system/border"/>
+        <UIView layout="height:20"/>
+        <UIView layout="flexDirection:row,padding:10,alignItems:center" attr="@:system/border">
+            <UIImageView layout="width:40,height:40" attr="source:addnewtype.png"/>
+            <UIView>
+                <UILabel attr="fontSize:14,color:#666666,text:Name - zhenglibao"/>
+                <UIView layout="height:10"/>
+                <UILabel attr="fontSize:12,color:#999999,text:Your favorite."/>
+            </UIView>
+        </UIView>
+        <UIView layout="height:20"/>
+        <UIView layout="padding:10" attr="@:system/border">
+            <UILabel layout="marginLeft:5" attr="@:system/filterLeftLabel,text:Sex"/>
+            <UIView layout="flexDirection:row,justifyContent:space-around">
+                <UILabel layout="width:30%," attr="@:system/filterLeftLabel,text:200,@:system/redBorder,textAlign:center"/>
+                <UILabel layout="width:30%," attr="@:system/filterLeftLabel,text:300,@:system/redBorder,textAlign:center"/>
+                <UILabel layout="width:30%," attr="@:system/filterLeftLabel,text:400,@:system/redBorder,textAlign:center"/>
+            </UIView>
+        </UIView>
+        <UIView layout="height:20"/>
+        <UIView layout="flexDirection:row,padding:10" attr="@:system/border">
+            <UILabel attr="@:system/bigFont,text:Address"/>
+            <UIView layout="width:5"/>
+            <UIView layout="flex:1">
+                <UILabel layout="width:100%" attr="@:system/bigFont,text:aslkdfjs ldfjlsafjksdjlfksdlfksjkdfjslkdfjlksjdklfjslkdfjlksjdfklsjkldfjslkdjflksjdlfkjslkdfjsljdfsjlkfjskldflsdjfssdfklsdfj,linesNum:4,lineBreakMode:charWrapping"/>
+            </UIView>
+        </UIView>
+        <UIView layout="height:20"/>
+        <UIView layout="flexDirection:row,justifyContent:center,padding:10,alignItems:center" attr="@:system/border">
+            <UILabel layout="height:30" attr="@:system/bigFont,bgColor:#55ff55,text:Address"/>
+            <UILabel layout="height:50" attr="@:system/bigFont,bgColor:orange,text:Beijing"/>
+        </UIView>
+        <UIView layout="height:20"/>
+        <UILabel layout="width:100%" attr="@:system/bigFont,text:This is demo text you can UILabel to show multilines text and can wrap content hello haha nihao ma,linesNum:0"/>
+        <UIView layout="height:40"/>
+        <UIView onPress="tapShow" layout="flexDirection:row,justifyContent:center,padding:10,alignItems:center" attr="@:system/border">
+            <UILabel layout="height:30" attr="@:system/bigFont,color:red,text:Click to show / hide text"/>
+        </UIView>
+        <UIView layout="height:20" attr="bgColor:green"/>
     </FlexScrollView>
     
-    <UIView name="close" onPress="tapCloseAction" layout="position:absolute,width:100%,height:50,bottom:0,alignItems:center">
+    <UIView name="close" onPress="tapCloseAction" layout="position:absolute,width:100%,height:50,bottom:0,alignItems:center" attr="bgColor:lightGray">
         <UIView layout="height:1,width:100%" attr="bgColor:#f0f0f0"/>
         <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Close"/>
     </UIView>

@@ -13,6 +13,7 @@
 #import "TestTableVC.h"
 #import "TestScrollVC.h"
 #import "TestModalVC.h"
+#import "TestLoginVC.h"
 
 @interface FlexViewController ()
 
@@ -50,6 +51,11 @@
 }
 - (IBAction)onTestModalView:(id)sender {
     TestModalVC* vc=[[TestModalVC alloc]init];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+}
+- (IBAction)onTestLoginView:(id)sender {
+    TestLoginVC* vc=[[TestLoginVC alloc]init];
     
     [self presentViewController:vc animated:YES completion:nil];
 }

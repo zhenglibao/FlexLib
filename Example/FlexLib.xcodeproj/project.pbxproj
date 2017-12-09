@@ -29,6 +29,8 @@
 		D272A8D11FDA631F0075DB1D /* TestModalVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8D01FDA631F0075DB1D /* TestModalVC.xml */; };
 		D272A8D31FDA66220075DB1D /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D272A8D21FDA66220075DB1D /* arrow_right@2x.png */; };
 		D272A8D51FDADA370075DB1D /* FlexViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8D41FDADA370075DB1D /* FlexViewController.xml */; };
+		D272A8E01FDC0DD90075DB1D /* TestLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D272A8DE1FDC0DD90075DB1D /* TestLoginVC.m */; };
+		D272A8E21FDC0DFC0075DB1D /* TestLoginVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */; };
 		D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBA1FD7EB0900554A0C /* return@2x.png */; };
 		D2CF9CC21FD7EB0900554A0C /* addnewtype@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */; };
 		D2CF9CC31FD7EB0900554A0C /* TestTableCell.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */; };
@@ -87,6 +89,9 @@
 		D272A8D01FDA631F0075DB1D /* TestModalVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestModalVC.xml; path = res/TestModalVC.xml; sourceTree = "<group>"; };
 		D272A8D21FDA66220075DB1D /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_right@2x.png"; path = "res/arrow_right@2x.png"; sourceTree = "<group>"; };
 		D272A8D41FDADA370075DB1D /* FlexViewController.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = FlexViewController.xml; path = res/FlexViewController.xml; sourceTree = "<group>"; };
+		D272A8DE1FDC0DD90075DB1D /* TestLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLoginVC.m; sourceTree = "<group>"; };
+		D272A8DF1FDC0DD90075DB1D /* TestLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLoginVC.h; sourceTree = "<group>"; };
+		D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestLoginVC.xml; path = res/TestLoginVC.xml; sourceTree = "<group>"; };
 		D2CF9CBA1FD7EB0900554A0C /* return@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "return@2x.png"; path = "res/return@2x.png"; sourceTree = "<group>"; };
 		D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addnewtype@2x.png"; path = "res/addnewtype@2x.png"; sourceTree = "<group>"; };
 		D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestTableCell.xml; path = res/TestTableCell.xml; sourceTree = "<group>"; };
@@ -178,6 +183,8 @@
 		6003F593195388D20070C39A /* Example for FlexLib */ = {
 			isa = PBXGroup;
 			children = (
+				D272A8DF1FDC0DD90075DB1D /* TestLoginVC.h */,
+				D272A8DE1FDC0DD90075DB1D /* TestLoginVC.m */,
 				D2CF9CC81FD7EB1900554A0C /* TestTableCell.h */,
 				D2CF9CCB1FD7EB1900554A0C /* TestTableCell.m */,
 				D2CF9CCC1FD7EB1900554A0C /* TestTableVC.h */,
@@ -244,6 +251,7 @@
 		D2CF9CB91FD7EAFA00554A0C /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */,
 				D272A8D21FDA66220075DB1D /* arrow_right@2x.png */,
 				D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */,
 				D2CF9CBD1FD7EB0900554A0C /* batchcheck@2x.png */,
@@ -342,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D272A8E21FDC0DFC0075DB1D /* TestLoginVC.xml in Resources */,
 				D2CF9CC71FD7EB0900554A0C /* system.style in Resources */,
 				D2CF9CC31FD7EB0900554A0C /* TestTableCell.xml in Resources */,
 				D272A8C41FD933990075DB1D /* TestScrollVC.xml in Resources */,
@@ -487,6 +496,7 @@
 				D2CF9CCE1FD7EB1A00554A0C /* TestVC.m in Sources */,
 				6003F59E195388D20070C39A /* FlexAppDelegate.m in Sources */,
 				D272A8C21FD933710075DB1D /* TestScrollVC.m in Sources */,
+				D272A8E01FDC0DD90075DB1D /* TestLoginVC.m in Sources */,
 				D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */,
 				6003F5A7195388D20070C39A /* FlexViewController.m in Sources */,
 				D272A8CF1FDA63000075DB1D /* TestModalVC.m in Sources */,

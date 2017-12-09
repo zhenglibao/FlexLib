@@ -9,9 +9,9 @@
 
 
 
-#import "TestScrollVC.h"
+#import "TestLoginVC.h"
 
-@interface TestScrollVC ()
+@interface TestLoginVC ()
 {
     UIScrollView* scroll;
     UIView* close;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation TestScrollVC
+@implementation TestLoginVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,10 +42,6 @@
 */
 
 -(void)tapCloseAction
-{
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-}
--(void)tapShow
 {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
