@@ -103,6 +103,11 @@ FLEXSET(hidden)
 {
     self.hidden = String2BOOL(sValue);
 }
+FLEXSET(clipsToBounds)
+{
+    self.clipsToBounds = String2BOOL(sValue);
+}
+
 FLEXSET(tintColor)
 {
     UIColor* clr = colorFromString(sValue) ;

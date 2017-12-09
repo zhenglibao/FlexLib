@@ -19,6 +19,7 @@
 static void* gObserverHidden    = (void*)1;
 static void* gObserverText      = (void*)2;
 static void* gObserverAttrText  = (void*)3;
+static void* gObserverFrame     = (void*)4;
 
 @implementation UIView(FlexPublic)
 
@@ -52,7 +53,7 @@ static void* gObserverAttrText  = (void*)3;
     CGRect _lastConfigFrame;
     CGRect _thisConfigFrame;
     BOOL _bChildDirty;
-}
+ }
 @end
 @implementation FlexRootView
 
@@ -150,6 +151,12 @@ static void* gObserverAttrText  = (void*)3;
 {
     if(_bInLayouting)
         return;
+    
+    //parent frame changed
+    if(context == gObserverFrame){
+        [self setNeedsLayout];
+        return;
+    }
     
     if(object != nil){
         
@@ -280,6 +287,5 @@ static void* gObserverAttrText  = (void*)3;
         [UIView commitAnimations];
     };
 }
-
 
 @end

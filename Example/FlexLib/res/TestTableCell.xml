@@ -8,8 +8,10 @@
         layout="flex:1,marginLeft:20,marginTop:10,
         marginBottom:5,alignItems: flex-start">
         <UILabel name="_name" attr="fontSize:18,color:#333333,text:物品名字"/>
-        <UILabel name="_model" layout="marginTop:3,marginBottom:3" attr="fontSize:13,color:#333333,text:物品型号"/>
-        <UILabel name="_sn" layout="marginBottom:4" attr="fontSize:12,color:#999999,text:物品编号"/>
+        <UILabel name="_model" layout="marginTop:3,marginBottom:3"
+                 attr="fontSize:13,color:#333333,text:物品型号"/>
+        <UILabel name="_sn" layout="marginBottom:4" attr="fontSize:12,color:
+                 #999999,text:物品编号"/>
         <UILabel name="_updatedBy" attr="fontSize:12,color:#999999,text:操作人"/>
     </UIView>
     <UIView
