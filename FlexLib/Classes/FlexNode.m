@@ -92,9 +92,9 @@ static YGValue String2YGValue(const char* s)
     return YGPointValue(atof(s));
 }
 
-static void SetViewAttr(UIView* view,
-                        NSString* attrName,
-                        NSString* attrValue)
+void FlexSetViewAttr(UIView* view,
+                     NSString* attrName,
+                     NSString* attrValue)
 {
     NSString* methodDesc = [NSString stringWithFormat:@"setFlex%@:",attrName];
     
@@ -341,11 +341,11 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
                 NSArray* ary = [[FlexStyleMgr instance]getStyleByRefPath:attr.value];
                 for(FlexAttr* styleAttr in ary)
                 {
-                    SetViewAttr(view, styleAttr.name, styleAttr.value);
+                    FlexSetViewAttr(view, styleAttr.name, styleAttr.value);
                 }
                 
             }else{
-                SetViewAttr(view, attr.name, attr.value);
+                FlexSetViewAttr(view, attr.name, attr.value);
             }
         }
     }

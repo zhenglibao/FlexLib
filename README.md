@@ -23,6 +23,9 @@ With FlexLib, you can write iOS UI like web style, simple & fast.
 * support view attribute (eg: bgColor/fontSize/...)
 * support reference predefined style
 * view attributes extensible
+* support modal view
+* table cell height calculation
+* support iPhoneX perfectly
 
 ## Example
 
@@ -36,7 +39,7 @@ This file is self-explained.
 
 ### Derive your view controller class from FlexBaseVC or table cell from FlexBaseTableCell.
 Declare any variable in this class which will be binded by those controls with "name" attribute. "onPress" event will also be binded.
-Then you can use your class.
+Then you can use your class as normal.
 
 The following is the effect for the last layout file.
 
@@ -58,8 +61,9 @@ pod 'FlexLib'
 ```
 
 ## Todo
-* More view attributes
-* Hot update layout
+* more view attributes
+* hot update layout
+* size class support
 
 ## Author
 

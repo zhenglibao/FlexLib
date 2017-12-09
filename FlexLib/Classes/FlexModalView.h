@@ -18,6 +18,7 @@
 -(void)setOwnerRootView:(FlexRootView*)rootView;
 
 -(void)showModalInView:(UIView*)view;
+-(void)showModalInView:(UIView*)view Position:(CGPoint)topLeft;
 -(void)hideModal;
 
 @end

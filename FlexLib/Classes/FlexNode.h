@@ -13,6 +13,10 @@
 
 @class FlexRootView;
 
+void FlexSetViewAttr(UIView* view,
+                     NSString* attrName,
+                     NSString* attrValue);
+
 @interface FlexNode : NSObject<NSCoding>
 
 +(FlexNode*)loadNodeFile:(NSString*)nodePath;

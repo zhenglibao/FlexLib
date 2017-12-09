@@ -28,6 +28,9 @@ int NSString2Int(NSString* s,
 // 字符串转换成颜色值，格式：black or #rrggbb or #aarrggbb
 UIColor* colorFromString(NSString* clr);
 
+// eg: white/black/....
+UIColor* systemColor(NSString* clr);
+
 // 字符串转换BOOL
 BOOL String2BOOL(NSString* s);
 

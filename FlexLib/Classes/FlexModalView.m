@@ -48,6 +48,9 @@ static NameValue _gModalPosition[] =
         UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTapOutside)];
         [_root addGestureRecognizer:tap];
         [_root addSubview:self];
+        
+        _position = modalBottom;
+        _cancelable = YES;
     }
     return self;
 }
@@ -55,24 +58,29 @@ static NameValue _gModalPosition[] =
 {
     _ownerRootView = rootView;
 }
--(void)postCreate
+-(void)resetLayout
 {
     YGLayout* layout = self.yoga;
-    
+    YGLayout* rootLayout = _root.yoga;
+    layout.position = YGPositionTypeRelative;
+
     switch (_position) {
         case modalTop:
-            layout.top = YGPointValue(0);
+            rootLayout.justifyContent = YGJustifyFlexStart;
             break;
         case modalCenter:
-            _root.yoga.justifyContent = YGJustifyCenter;
+            rootLayout.justifyContent = YGJustifyCenter;
             break;
         case modalBottom:
-            layout.position = YGPositionTypeAbsolute;
-            layout.bottom = YGPointValue(0);
+            rootLayout.justifyContent = YGJustifyFlexEnd;
             break;
         default:
             break;
     }
+}
+-(void)postCreate
+{
+    [self resetLayout];
 }
 -(void)onTapOutside
 {
@@ -85,7 +93,25 @@ static NameValue _gModalPosition[] =
     
     _root.portraitSafeArea = _ownerRootView.portraitSafeArea;
     _root.landscapeSafeArea = _ownerRootView.landscapeSafeArea;
+    
+    [self resetLayout];
 
+    [view addSubview:_root];
+    [_root markChildDirty:self];
+}
+-(void)showModalInView:(UIView*)view Position:(CGPoint)topLeft
+{
+    [self hideModal];
+    
+    _root.portraitSafeArea = _ownerRootView.portraitSafeArea;
+    _root.landscapeSafeArea = _ownerRootView.landscapeSafeArea;
+    
+    [self configureLayoutWithBlock:^(YGLayout* layout){
+        layout.position = YGPositionTypeAbsolute;
+        layout.left = YGPointValue(topLeft.x);
+        layout.top = YGPointValue(topLeft.y);
+    }];
+    
     [view addSubview:_root];
     [_root markChildDirty:self];
 }
@@ -102,4 +128,8 @@ FLEXSET(position){
 FLEXSET(cancelable){
     _cancelable = String2BOOL(sValue);
 }
+FLEXSET(maskColor){
+    _root.backgroundColor = colorFromString(sValue);
+}
+
 @end
