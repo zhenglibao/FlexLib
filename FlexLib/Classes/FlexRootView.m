@@ -32,6 +32,13 @@ static void* gObserverAttrText  = (void*)3;
         parent = parent.superview;
     }
 }
+-(void)enableFlexLayout:(BOOL)enable
+{
+    self.yoga.isIncludedInLayout = enable;
+}
+-(BOOL)isFlexLayoutEnable{
+    return self.yoga.isIncludedInLayout;
+}
 @end
 
 @interface FlexRootView()

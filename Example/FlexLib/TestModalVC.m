@@ -36,10 +36,10 @@
 }
 -(void)tapModal
 {
-    [modal showModalInView:self.view];
+    [modal showModalInView:self.view Anim:YES];
 }
 -(void)closeModal
 {
-    [modal hideModal];
+    [modal hideModal:YES];
 }
 @end

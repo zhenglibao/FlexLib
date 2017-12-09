@@ -16,6 +16,12 @@
 // 外部可以主动调用此函数让布局得到刷新
 -(void)markDirty;
 
+// 开启关闭布局
+-(void)enableFlexLayout:(BOOL)enable;
+
+//
+-(BOOL)isFlexLayoutEnable;
+
 @end
 
 @interface FlexRootView : UIView

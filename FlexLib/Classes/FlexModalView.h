@@ -17,8 +17,13 @@
 
 -(void)setOwnerRootView:(FlexRootView*)rootView;
 
--(void)showModalInView:(UIView*)view;
--(void)showModalInView:(UIView*)view Position:(CGPoint)topLeft;
--(void)hideModal;
+// 在底部、中心、顶部显示
+-(void)showModalInView:(UIView*)view Anim:(BOOL)anim;
+
+//在绝对位置显示
+-(void)showModalInView:(UIView*)view Position:(CGPoint)topLeft Anim:(BOOL)anim;
+
+//隐藏
+-(void)hideModal:(BOOL)anim;
 
 @end

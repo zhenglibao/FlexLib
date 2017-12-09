@@ -34,6 +34,8 @@ static NameValue _gModalPosition[] =
     
     FlexModalPosition _position;
     BOOL _cancelable;
+    
+    BOOL _showInPosition;
 }
 @end
 
@@ -87,11 +89,11 @@ static NameValue _gModalPosition[] =
 -(void)onTapOutside
 {
     if(_cancelable)
-        [self hideModal];
+        [self hideModal:YES];
 }
--(void)showModalInView:(UIView*)view
+-(void)showModalInView:(UIView*)view Anim:(BOOL)anim
 {
-    [self hideModal];
+    [self hideModal:NO];
     
     _root.portraitSafeArea = _ownerRootView.portraitSafeArea;
     _root.landscapeSafeArea = _ownerRootView.landscapeSafeArea;
@@ -100,10 +102,13 @@ static NameValue _gModalPosition[] =
 
     [view addSubview:_root];
     [_root markChildDirty:self];
+    
+    if(anim)
+        [self beginShowAnim:NO];
 }
--(void)showModalInView:(UIView*)view Position:(CGPoint)topLeft
+-(void)showModalInView:(UIView*)view Position:(CGPoint)topLeft Anim:(BOOL)anim
 {
-    [self hideModal];
+    [self hideModal:NO];
     
     _root.portraitSafeArea = _ownerRootView.portraitSafeArea;
     _root.landscapeSafeArea = _ownerRootView.landscapeSafeArea;
@@ -116,14 +121,89 @@ static NameValue _gModalPosition[] =
     
     [view addSubview:_root];
     [_root markChildDirty:self];
+    
+    if(anim)
+        [self beginShowAnim:YES];
 }
--(void)hideModal
+
+-(void)beginShowAnim:(BOOL)inPosition
+{
+    _showInPosition = inPosition;
+    [_root layoutIfNeeded];
+    [self enableFlexLayout:NO];
+    
+    CGRect rcFinal = self.frame;
+    CGRect rcNew = rcFinal;
+    
+    if(inPosition){
+        rcNew.size = CGSizeMake(0, 0);
+    }else{
+        switch (_position) {
+            case modalTop:
+                rcNew = CGRectOffset(rcFinal, 0, -rcFinal.size.height);
+                break;
+            case modalCenter:
+                rcNew = CGRectOffset(rcFinal, rcFinal.size.width, 0);
+                break;
+            case modalBottom:
+                rcNew = CGRectOffset(rcFinal, 0, rcFinal.size.height);
+                break;
+            default:
+                break;
+        }
+    }
+    self.frame = rcNew;
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:.2];
+    self.frame = rcFinal;
+    [UIView commitAnimations];
+    [self enableFlexLayout:YES];
+}
+-(void)hideModal:(BOOL)anim
 {
     if(_root==nil||_root.superview==nil)
         return;
-    [_root removeFromSuperview];
+    if(!anim)
+        [_root removeFromSuperview];
+    else
+        [self beginHideAnim:_showInPosition];
 }
-
+-(void)beginHideAnim:(BOOL)inPosition
+{
+    [self enableFlexLayout:NO];
+    
+    CGRect rcFinal = self.frame;
+    
+    if(inPosition){
+        rcFinal.size = CGSizeMake(0, 0);
+    }else{
+        switch (_position) {
+            case modalTop:
+                rcFinal = CGRectOffset(rcFinal, 0, -rcFinal.size.height);
+                break;
+            case modalCenter:
+                rcFinal = CGRectOffset(rcFinal, rcFinal.size.width, 0);
+                break;
+            case modalBottom:
+                rcFinal = CGRectOffset(rcFinal, 0, rcFinal.size.height);
+                break;
+            default:
+                break;
+        }
+    }
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:.2];
+    self.frame = rcFinal;
+    [UIView commitAnimations];
+    [self enableFlexLayout:YES];
+    
+    __weak FlexRootView* weakRoot = _root;
+    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2* NSEC_PER_SEC));
+    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+        [weakRoot removeFromSuperview];
+    });
+}
 FLEXSET(position){
     _position = NSString2Int(sValue, _gModalPosition, sizeof(_gModalPosition)/sizeof(NameValue));
 }
