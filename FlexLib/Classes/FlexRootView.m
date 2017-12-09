@@ -24,6 +24,10 @@ static void* gObserverAttrText  = (void*)3;
 {
     BOOL _bInLayouting;
     NSMutableSet<UIView*>* _observedViews;
+    
+    CGRect _lastConfigFrame;
+    CGRect _thisConfigFrame;
+    BOOL _bChildDirty;
 }
 @end
 @implementation FlexRootView
@@ -36,6 +40,9 @@ static void* gObserverAttrText  = (void*)3;
         _observedViews = [NSMutableSet set];
         _portraitSafeArea = UIEdgeInsetsMake(0, 0, 0, 0);
         _landscapeSafeArea = UIEdgeInsetsMake(0, 0, 0, 0);
+        
+        _lastConfigFrame = CGRectZero;
+        _bChildDirty = NO;
         self.yoga.isEnabled = YES;
     }
     return self;
@@ -121,8 +128,9 @@ static void* gObserverAttrText  = (void*)3;
         }
         
         [object.yoga markDirty];
+        _bChildDirty = YES;
+        [self setNeedsLayout];
     }
-    [self setNeedsLayout];
 }
 #pragma mark - layout methods
 
@@ -142,6 +150,8 @@ static void* gObserverAttrText  = (void*)3;
             layout.height = YGPointValue(NAN);
         else
             layout.height = YGPointValue(safeArea.size.height) ;
+        
+        _thisConfigFrame = CGRectMake(layout.left.value, layout.top.value, layout.width.value, layout.height.value);
     }];
 }
 
@@ -155,13 +165,24 @@ static void* gObserverAttrText  = (void*)3;
     }
     return UIEdgeInsetsInsetRect(rcSafeArea,self.landscapeSafeArea);
 }
-
+-(BOOL)isConfigSame
+{
+    return memcmp(&_thisConfigFrame, &_lastConfigFrame, sizeof(CGRect))==0;
+}
 -(void)layoutSubviews
 {
     if(_bInLayouting)
         return;
 
-    [self configureLayout:[self getSafeArea]];
+    [self configureLayout: [self getSafeArea]];
+    BOOL configsame = [self isConfigSame];
+    
+    if(!_bChildDirty && configsame)
+    {
+        return;
+    }
+    
+    _lastConfigFrame = _thisConfigFrame;
     
     YGDimensionFlexibility option = 0 ;
     if(self.flexibleWidth)
@@ -173,6 +194,7 @@ static void* gObserverAttrText  = (void*)3;
     _bInLayouting = YES;
     [self.yoga applyLayoutPreservingOrigin:NO dimensionFlexibility:option];
     _bInLayouting = NO ;
+    _bChildDirty = NO;
     
     if(!CGRectEqualToRect(rcOld, self.frame)){
         [self.superview subFrameChanged:self Rect:self.frame];
