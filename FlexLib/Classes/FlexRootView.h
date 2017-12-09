@@ -26,18 +26,25 @@
 
 @interface FlexRootView : UIView
 
+//宽和高是否可变？
 @property(nonatomic,assign) BOOL flexibleWidth;
 @property(nonatomic,assign) BOOL flexibleHeight;
+
+//四周距离父窗口边界的距离，默认全为0，分水平和竖直两种
 @property(nonatomic,assign) UIEdgeInsets portraitSafeArea;
 @property(nonatomic,assign) UIEdgeInsets landscapeSafeArea;
+
+//获取xml中的顶级窗口
 @property(nonatomic,readonly) UIView* topSubView;
 
+//用于执行layout动画
 @property(nonatomic,copy) void (^beginLayout)(void);
 @property(nonatomic,copy) void (^endLayout)(void);
 
 
 -(void)markChildDirty:(UIView*)child;
 
+// 从xml文件中加载布局
 +(FlexRootView*)loadWithNodeFile:(NSString*)resName
                            Owner:(NSObject*)owner;
 
