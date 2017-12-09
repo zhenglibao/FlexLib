@@ -44,6 +44,7 @@ static NameValue _gModalPosition[] =
     if (self) {
         _root = [[FlexRootView alloc]init];
         _root.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+        
         UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTapOutside)];
         [_root addGestureRecognizer:tap];
         [_root addSubview:self];
@@ -62,6 +63,8 @@ static NameValue _gModalPosition[] =
     YGLayout* layout = self.yoga;
     YGLayout* rootLayout = _root.yoga;
     layout.position = YGPositionTypeRelative;
+    layout.top = YGPointValue(0);
+    layout.left = YGPointValue(0);
 
     switch (_position) {
         case modalTop:
