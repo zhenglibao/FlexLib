@@ -34,7 +34,9 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 ## Usage
 
 ### Write layout with xml file. The following is a demo file:
+
 ![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/xmldemo.png)
+
 This file is self-explained. This file will be used as table cell for UITableView.
 
 ### Derive your view controller class from FlexBaseVC or table cell from FlexBaseTableCell.
