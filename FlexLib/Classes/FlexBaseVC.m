@@ -12,6 +12,7 @@
 #import "FlexBaseVC.h"
 #import "FlexRootView.h"
 #import "YogaKit/UIView+Yoga.h"
+#import "FlexUtils.h"
 
 @interface FlexBaseVC ()
 {
@@ -49,12 +50,39 @@
     }
     FlexRootView* contentView = [FlexRootView loadWithNodeFile:_flexName Owner:self] ;
     _flexRootView = contentView ;
+    _flexRootView.portraitSafeArea = [self getSafeArea:YES];
+    _flexRootView.landscapeSafeArea = [self getSafeArea:NO];
     
     self.view = [[UIView alloc]initWithFrame:CGRectZero];
     self.view.backgroundColor=[UIColor whiteColor];
     [self.view addSubview:contentView];
 }
-
+- (UIEdgeInsets)getSafeArea:(BOOL)portrait
+{
+    if(!IsIphoneX())
+    {
+        if(self.navigationController!=nil)
+            return UIEdgeInsetsZero;
+        
+        if(portrait)
+        {
+            CGFloat statusbarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+            return UIEdgeInsetsMake(statusbarHeight, 0, 0, 0);
+        }
+        return UIEdgeInsetsZero;
+    }
+    if(self.navigationController!=nil)
+    {
+        if(portrait){
+            return UIEdgeInsetsMake(0, 0, 34, 0);
+        }
+        return UIEdgeInsetsMake(0, 44, 21, 44);
+    }
+    if(portrait){
+        return UIEdgeInsetsMake(88, 0, 34, 0);
+    }
+    return UIEdgeInsetsMake(21, 44, 21, 44);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

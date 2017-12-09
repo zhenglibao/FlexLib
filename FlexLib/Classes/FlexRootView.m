@@ -14,6 +14,7 @@
 #import "FlexNode.h"
 #import "FlexModalView.h"
 #import "ViewExt/UIView+Flex.h"
+#import "FlexUtils.h"
 
 static void* gObserverHidden    = (void*)1;
 static void* gObserverText      = (void*)2;
@@ -33,6 +34,8 @@ static void* gObserverAttrText  = (void*)3;
     if (self) {
         _bInLayouting = NO ;
         _observedViews = [NSMutableSet set];
+        _portraitSafeArea = UIEdgeInsetsMake(0, 0, 0, 0);
+        _landscapeSafeArea = UIEdgeInsetsMake(0, 0, 0, 0);
         self.yoga.isEnabled = YES;
     }
     return self;
@@ -123,25 +126,42 @@ static void* gObserverAttrText  = (void*)3;
 }
 #pragma mark - layout methods
 
+-(void)configureLayout:(CGRect)safeArea
+{
+    [self configureLayoutWithBlock:^(YGLayout* layout){
+        
+        layout.left = YGPointValue(safeArea.origin.x) ;
+        layout.top = YGPointValue(safeArea.origin.y);
+        
+        if(self.flexibleWidth)
+            layout.width = YGPointValue(NAN);
+        else
+            layout.width = YGPointValue(safeArea.size.width) ;
+        
+        if(self.flexibleHeight)
+            layout.height = YGPointValue(NAN);
+        else
+            layout.height = YGPointValue(safeArea.size.height) ;
+    }];
+}
+
+-(CGRect)getSafeArea
+{
+    CGRect rcSafeArea = self.superview.frame ;
+    
+    if(IsPortrait())
+    {
+        return UIEdgeInsetsInsetRect(rcSafeArea,self.portraitSafeArea);
+    }
+    return UIEdgeInsetsInsetRect(rcSafeArea,self.landscapeSafeArea);
+}
+
 -(void)layoutSubviews
 {
     if(_bInLayouting)
         return;
 
-    [self configureLayoutWithBlock:^(YGLayout* layout){
-        
-        CGRect rc = self.superview.frame ;
-        
-        if(self.flexibleWidth)
-            layout.width = YGPointValue(NAN);
-        else
-            layout.width = YGPointValue(rc.size.width) ;
-        
-        if(self.flexibleHeight)
-            layout.height = YGPointValue(NAN);
-        else
-            layout.height = YGPointValue(rc.size.height) ;
-    }];
+    [self configureLayout:[self getSafeArea]];
     
     YGDimensionFlexibility option = 0 ;
     if(self.flexibleWidth)
@@ -161,18 +181,10 @@ static void* gObserverAttrText  = (void*)3;
 
 -(CGSize)calculateSize:(CGSize)szLimit
 {
-    [self configureLayoutWithBlock:^(YGLayout* layout){
-        
-        if(self.flexibleWidth)
-            layout.width = YGPointValue(NAN);
-        else
-            layout.width = YGPointValue(szLimit.width) ;
-
-        if(self.flexibleHeight)
-            layout.height = YGPointValue(NAN);
-        else
-            layout.height = YGPointValue(szLimit.height) ;
-    }];
+    CGRect rc ;
+    rc.origin = CGPointMake(0, 0);
+    rc.size = szLimit;
+    [self configureLayout:rc];
     
     if(self.flexibleWidth)
         szLimit.width = NAN ;

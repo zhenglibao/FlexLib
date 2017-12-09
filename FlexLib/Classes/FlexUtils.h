@@ -31,3 +31,7 @@ UIColor* colorFromString(NSString* clr);
 // 字符串转换BOOL
 BOOL String2BOOL(NSString* s);
 
+BOOL IsIphoneX(void);
+
+BOOL IsPortrait(void);
+

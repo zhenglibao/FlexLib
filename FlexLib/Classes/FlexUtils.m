@@ -92,3 +92,34 @@ BOOL String2BOOL(NSString* s)
 {
     return [s compare:@"true" options:NSDiacriticInsensitiveSearch]==NSOrderedSame;
 }
+
+BOOL IsIphoneX(void)
+{
+    static int iphoneX = -1;
+    if(iphoneX < 0)
+    {
+        iphoneX = 0 ;
+        if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+            
+            UIScreen* screen = [UIScreen mainScreen];
+            if([screen respondsToSelector:@selector(nativeBounds)])
+            {
+                if((int)[screen nativeBounds].size.height==2436)
+                {
+                    iphoneX = 1;
+                }
+            }
+        }
+    }
+    return iphoneX;
+}
+BOOL IsPortrait(void)
+{
+    UIDeviceOrientation oriention = [[UIDevice currentDevice] orientation] ;
+    if(oriention == UIDeviceOrientationPortrait ||
+       oriention == UIDeviceOrientationPortraitUpsideDown)
+    {
+        return YES;
+    }
+    return NO;
+}

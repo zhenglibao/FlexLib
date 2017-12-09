@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <UIView
-    layout="top:20,
+    layout="
     flex:1,
     alignItems:center"
     attr="bgColor:white">

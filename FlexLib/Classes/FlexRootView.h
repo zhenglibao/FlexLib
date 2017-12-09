@@ -16,6 +16,8 @@
 
 @property(nonatomic,assign) BOOL flexibleWidth;
 @property(nonatomic,assign) BOOL flexibleHeight;
+@property(nonatomic,assign) UIEdgeInsets portraitSafeArea;
+@property(nonatomic,assign) UIEdgeInsets landscapeSafeArea;
 
 +(FlexRootView*)loadWithNodeFile:(NSString*)resName
                            Owner:(NSObject*)owner;

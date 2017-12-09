@@ -19,6 +19,9 @@
 // override this to provide flex res name
 -(NSString*)getFlexName;
 
+// override this to provide different safeArea
+- (UIEdgeInsets)getSafeArea:(BOOL)portrait;
+
 // get root flex view
 -(UIView*)rootView;
 

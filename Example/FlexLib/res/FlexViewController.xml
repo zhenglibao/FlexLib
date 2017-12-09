@@ -4,7 +4,7 @@
     flex:1,
     justifyContent:center,
     alignItems:center"
-    attr="bgColor:white">
+    attr="bgColor:lightGray">
     <UIView>
         <UIView onPress="onTest:" layout="@:system/button" attr="bgColor:#e5e5e5">
             <UILabel
