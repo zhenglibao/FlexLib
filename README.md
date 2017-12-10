@@ -38,15 +38,15 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 
 * Write layout with xml file. The following is a demo file:
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller.png)
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller.png){:height="100%" width="100%"}
 
 This file is self-explained. This file will be used as table cell for UITableView.
 
 * Derive view controller class from FlexBaseVC
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller_class.png)
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller_class.png){:height="100%" width="100%"}
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller_class2.png)
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller_class2.png){:height="100%" width="100%"}
 
 ### Use xml layout file for TableCell:
 
@@ -54,13 +54,13 @@ This file is self-explained. This file will be used as table cell for UITableVie
 
 * Derive table cell class from FlexBaseTableCell:
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class.png)
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class.png){:height="100%" width="100%"}
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class2.png)
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class2.png){:height="100%" width="100%"}
 
 * In cellForRowAtIndexPath callback, call initWithFlex to build cell. In heightForRowAtIndexPath, call heightForWidth to calculate height
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class3.png)
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class3.png){:height="100%" width="100%"}
 
 
 ### Use xml layout file for other view:
