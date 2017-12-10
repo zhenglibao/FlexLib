@@ -31,7 +31,7 @@
             <UILabel attr="@:system/bigFont,text:Address"/>
             <UIView layout="width:5"/>
             <UIView layout="flex:1">
-                <UILabel layout="width:100%" attr="@:system/bigFont,text:aslkdfjs ldfjlsafjksdjlfksdlfksjkdfjslkdfjlksjdklfjslkdfjlksjdfklsjkldfjslkdjflksjdlfkjslkdfjsljdfsjlkfjskldflsdjfssdfklsdfj,linesNum:4,lineBreakMode:charWrapping"/>
+                <UILabel layout="width:100%" attr="@:system/bigFont,fontSize:18,text:北京市海淀区学院路甲5号-中关村768产业园,linesNum:4,lineBreakMode:charWrapping"/>
             </UIView>
         </UIView>
         <UIView layout="height:20"/>
@@ -40,7 +40,7 @@
             <UILabel layout="height:50" attr="@:system/bigFont,bgColor:orange,text:Beijing"/>
         </UIView>
         <UIView layout="height:20"/>
-        <UILabel name="multilabel" layout="width:100%" attr="@:system/bigFont,text:This is demo string\: you can use \\r、\\n、\\\\、\\\,to trans string. mo text you can UILabel to s\,how multilines te\nxt and can wrap content hello haha nihao ma,linesNum:0"/>
+        <UILabel name="multilabel" layout="width:100%" attr="@:system/bigFont,text:This is demo string\: you can use \\r、\\n、\\\\、\\\,to trans string. Comma is keyword for attribute\, you should use \\\, for the string which include comma,linesNum:0"/>
         <UIView layout="height:40"/>
         <UIView onPress="tapShow" layout="flexDirection:row,justifyContent:center,padding:10,alignItems:center" attr="@:system/border">
             <UILabel layout="height:30" attr="@:system/bigFont,color:red,text:Click to show / hide text"/>
