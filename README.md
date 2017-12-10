@@ -77,30 +77,32 @@ This file is self-explained. This file will be used as table cell for UITableVie
 
 @interface FlexViewController ()
 {
-FlexScrollView* _scroll;
-UILabel* _label;
+    // these will be binded to those control with same name in xml file
+    FlexScrollView* _scroll;
+    UILabel* _label;
 }
 @end
+
 @implementation FlexViewController
 
 - (void)viewDidLoad
 {
-[super viewDidLoad];
-// Do any additional setup after loading the view, typically from a nib.
-self.navigationItem.title = @"FlexLib Demo";
+    [super viewDidLoad];
+    
+    self.navigationItem.title = @"FlexLib Demo";
 }
 - (void)didReceiveMemoryWarning
 {
-[super didReceiveMemoryWarning];
-// Dispose of any resources that can be recreated.
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 - (IBAction)onTest:(id)sender {
-TestVC* vc=[[TestVC alloc]init];
-[self presentViewController:vc animated:YES completion:nil];
+    TestVC* vc=[[TestVC alloc]init];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 - (IBAction)onTestTable:(id)sender {
-TestTableVC* vc=[[TestTableVC alloc]init];
-[self presentViewController:vc animated:YES completion:nil];
+    TestTableVC* vc=[[TestTableVC alloc]init];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end
@@ -124,12 +126,12 @@ TestTableVC* vc=[[TestTableVC alloc]init];
 
 @interface TestTableCell()
 {
-UILabel* _name;
-UILabel* _model;
-UILabel* _sn;
-UILabel* _updatedBy;
+    UILabel* _name;
+    UILabel* _model;
+    UILabel* _sn;
+    UILabel* _updatedBy;
 
-UIImageView* _return;
+    UIImageView* _return;
 }
 @end
 @implementation TestTableCell
@@ -153,9 +155,9 @@ UIImageView* _return;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(_cell==nil){
-    _cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:nil];
-}
-return [_cell heightForWidth:_table.frame.size.width];
+        _cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:nil];
+    }
+    return [_cell heightForWidth:_table.frame.size.width];
 }
 
 ```
