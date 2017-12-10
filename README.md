@@ -38,17 +38,52 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 
 * Write layout with xml file. The following is a demo file:
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller.png){:height="236px" width="236px"}
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller.png)
 
 This file is self-explained. This file will be used as table cell for UITableView.
 
 * Derive view controller class from FlexBaseVC
 
-<img src="Doc/res/viewcontroller_class.png" width="200">
+```objective-c
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller_class.png){:height="100%" width="100%"}
+@interface FlexViewController : FlexBaseVC
+@end
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller_class2.png){:height="100%" width="100%"}
+```
+
+```objective-c
+
+@interface FlexViewController ()
+{
+FlexScrollView* _scroll;
+UILabel* _label;
+}
+@end
+@implementation FlexViewController
+
+- (void)viewDidLoad
+{
+[super viewDidLoad];
+// Do any additional setup after loading the view, typically from a nib.
+self.navigationItem.title = @"FlexLib Demo";
+}
+- (void)didReceiveMemoryWarning
+{
+[super didReceiveMemoryWarning];
+// Dispose of any resources that can be recreated.
+}
+- (IBAction)onTest:(id)sender {
+TestVC* vc=[[TestVC alloc]init];
+[self presentViewController:vc animated:YES completion:nil];
+}
+- (IBAction)onTestTable:(id)sender {
+TestTableVC* vc=[[TestTableVC alloc]init];
+[self presentViewController:vc animated:YES completion:nil];
+}
+
+@end
+
+```
 
 ### Use xml layout file for TableCell:
 
@@ -56,14 +91,52 @@ This file is self-explained. This file will be used as table cell for UITableVie
 
 * Derive table cell class from FlexBaseTableCell:
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class.png){:height="100%" width="100%"}
+```objective-c
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class2.png){:height="100%" width="100%"}
+@interface TestTableCell : FlexBaseTableCell
+@end
+
+```
+
+```objective-c
+
+@interface TestTableCell()
+{
+UILabel* _name;
+UILabel* _model;
+UILabel* _sn;
+UILabel* _updatedBy;
+
+UIImageView* _return;
+}
+@end
+@implementation TestTableCell
+@end
+
+```
 
 * In cellForRowAtIndexPath callback, call initWithFlex to build cell. In heightForRowAtIndexPath, call heightForWidth to calculate height
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class3.png){:height="100%" width="100%"}
+```objective-c
 
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+
+    static NSString *identifier = @"TestTableCellIdentifier";
+    TestTableCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:identifier];
+    }
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(_cell==nil){
+    _cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:nil];
+}
+return [_cell heightForWidth:_table.frame.size.width];
+}
+
+```
 
 ### Use xml layout file for other view:
 
