@@ -34,21 +34,42 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 
 ## Usage
 
-### Write layout with xml file. The following is a demo file:
+### Use xml layout file for ViewController:
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/xmldemo.png)
+* Write layout with xml file. The following is a demo file:
+
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller.png)
 
 This file is self-explained. This file will be used as table cell for UITableView.
 
-### Derive your view controller class from FlexBaseVC or table cell from FlexBaseTableCell.
-Declare any variable in this class which will be binded by those controls with "name" attribute. "onPress" event will also be binded.
-Then you can use your class as normal.
+* Derive view controller class from FlexBaseVC
 
-The following is the effect for the last layout file.
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller_class.png)
 
-![effect for vertical](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/effect-vert.png)
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller_class2.png)
 
-![effect for horzantal](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/effect-horz.png)
+### Use xml layout file for TableCell:
+
+* Write layout with xml file. There is no difference than view controller layout except that it will be used for tabel cell.
+
+* Derive table cell class from FlexBaseTableCell:
+
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tablecell_class.png)
+
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tablecell_class2.png)
+
+* In cellForRowAtIndexPath callback, call initWithFlex to build cell. In heightForRowAtIndexPath, call heightForWidth to calculate height
+
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tablecell_class3.png)
+
+
+### Use xml layout file for other view:
+
+* Write layout xml file.
+
+* Use FlexRootView to load xml file, then set attribute to make it have flexible width or height
+
+* add this FlexRootView as child view to other normal parent view
 
 ## Reference
 
