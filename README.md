@@ -90,11 +90,11 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)onTest:(id)sender {
+- (void)onTest:(id)sender {
     TestVC* vc=[[TestVC alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
 }
-- (IBAction)onTestTable:(id)sender {
+- (void)onTestTable:(id)sender {
     TestTableVC* vc=[[TestTableVC alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
 }
