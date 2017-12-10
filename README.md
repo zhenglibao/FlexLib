@@ -38,7 +38,7 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 
 * Write layout with xml file. The following is a demo file:
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller.png){:height="100%" width="100%"}
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller.png =100x20)
 
 This file is self-explained. This file will be used as table cell for UITableView.
 
