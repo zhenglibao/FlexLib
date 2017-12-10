@@ -24,10 +24,6 @@ With FlexLib, you can write iOS ui as fast as web or android, simple & fast & po
 * table cell height calculation
 * support iPhoneX perfectly
 
-## Example
-
-To run the example project, clone the repo, and open `Example/FlexLib.xcworkspace` with XCode to run.
-
 ## Usage
 
 ### Use xml layout file for ViewController:
@@ -175,7 +171,11 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 
 * add this FlexRootView as child view to other normal parent view
 
-## Reference
+## Example
+
+To run the example project, clone the repo, and open `Example/FlexLib.xcworkspace` with XCode to run.
+
+## Attribute Reference
 
  ![layout attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/layout.pdf)
  
@@ -203,7 +203,7 @@ You can contact me if you have any problem.
 
 I hope you will like it. :)
 
-### Reference
+### About Flexbox
 [CSS-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 [Yoga-flexbox](https://facebook.github.io/yoga/docs/flex-direction/)
