@@ -93,7 +93,11 @@ pod 'FlexLib'
 
 ## Author
 
-zhenglibao, 798393829@qq.com
+zhenglibao, 798393829@qq.com.
+
+You can contact me if you have any problem.
+
+I hope you will like it. :)
 
 ## License
 
