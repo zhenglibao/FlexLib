@@ -54,13 +54,13 @@ This file is self-explained. This file will be used as table cell for UITableVie
 
 * Derive table cell class from FlexBaseTableCell:
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tablecell_class.png)
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class.png)
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tablecell_class2.png)
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class2.png)
 
 * In cellForRowAtIndexPath callback, call initWithFlex to build cell. In heightForRowAtIndexPath, call heightForWidth to calculate height
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tablecell_class3.png)
+![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/tabelcell_class3.png)
 
 
 ### Use xml layout file for other view:
