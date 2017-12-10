@@ -202,7 +202,7 @@ pod 'FlexLib'
 
 ## Author
 
-zhenglibao, 798393829@qq.com.
+zhenglibao, 798393829@qq.com. QQ qun: 687398178
 
 You can contact me if you have any problem.
 
