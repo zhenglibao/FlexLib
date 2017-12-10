@@ -38,7 +38,40 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 
 * Write layout with xml file. The following is a demo file:
 
-![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller.png)
+```xml
+<UIView
+layout="
+flex:1,
+justifyContent:center,
+alignItems:center"
+attr="bgColor:lightGray">
+<UIView layout="height:1,width:100%" attr="bgColor:red"/>
+<FlexScrollView name="_scroll" layout="flex:1,width:100%,alignItems:center" attr="vertScroll:true">
+<UILabel name="_label"
+attr="@:system/buttonText,text:You can run on iPhoneX,color:blue"/>
+<UIView onPress="onTest:" layout="@:system/button" attr="bgColor:#e5e5e5">
+<UILabel
+attr="@:system/buttonText,text:Test ViewController"/>
+</UIView>
+<UIView onPress="onTestTable:" layout="@:system/button" attr="bgColor:#e5e5e5">
+<UILabel
+attr="@:system/buttonText,text:Test TableView"/>
+</UIView>
+<UIView onPress="onTestScrollView:" layout="@:system/button" attr="bgColor:#e5e5e5">
+<UILabel
+attr="@:system/buttonText,text:Test ScrollView"/>
+</UIView>
+<UIView onPress="onTestModalView:" layout="@:system/button" attr="bgColor:#e5e5e5">
+<UILabel
+attr="@:system/buttonText,text:Test ModalView"/>
+</UIView>
+<UIView onPress="onTestLoginView:" layout="@:system/button" attr="bgColor:#e5e5e5">
+<UILabel
+attr="@:system/buttonText,text:Login Example"/>
+</UIView>
+</FlexScrollView>
+</UIView>
+```
 
 This file is self-explained. This file will be used as table cell for UITableView.
 
