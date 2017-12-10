@@ -102,6 +102,17 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 @end
 
 ```
+* Now you can use the controller as normal:
+```objective-c
+
+    FlexViewController *vc = [[FlexViewController alloc] init];
+
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nav;
+
+    [self.window makeKeyAndVisible];
+
+```
 
 ### Use xml layout file for TableCell:
 
