@@ -61,15 +61,17 @@
 {
     if(!IsIphoneX())
     {
+        CGFloat height = 0;
         if(self.navigationController!=nil)
-            return UIEdgeInsetsZero;
+        {
+            height += portrait ? 44 : 32 ;
+        }
         
         if(portrait)
         {
-            CGFloat statusbarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-            return UIEdgeInsetsMake(statusbarHeight, 0, 0, 0);
+            height += 20 ;
         }
-        return UIEdgeInsetsZero;
+        return UIEdgeInsetsMake(height, 0, 0, 0);
     }
     if(self.navigationController!=nil)
     {
@@ -100,8 +102,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (BOOL)shouldAutorotate{
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
+{
     [self layoutFlexRootViews];
-    return YES;
 }
 @end

@@ -5,6 +5,8 @@
     justifyContent:center,
     alignItems:center"
     attr="bgColor:lightGray">
+    <UIView layout="height:1,width:100%" attr="bgColor:red"/>
+    
     <FlexScrollView layout="flex:1,width:100%,alignItems:center" attr="vertScroll:true">
         
         <UILabel

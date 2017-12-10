@@ -52,7 +52,8 @@
 - (IBAction)onTestModalView:(id)sender {
     TestModalVC* vc=[[TestModalVC alloc]init];
     
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+    //[self presentViewController:vc animated:YES completion:nil];
 }
 - (IBAction)onTestLoginView:(id)sender {
     TestLoginVC* vc=[[TestLoginVC alloc]init];

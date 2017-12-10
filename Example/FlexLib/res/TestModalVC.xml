@@ -4,6 +4,7 @@
     flex:1,
     alignItems:center"
     attr="bgColor:#cccccc">
+    <UIView layout="height:1,width:100%" attr="bgColor:red"/>
     <FlexScrollView layout="padding:50,flex:1,width:100%" attr="vertScroll:true">
         <UIView onPress="tapModal" layout="height:300,width:100%,justifyContent:center,alignItems:center" attr="bgColor:red">
             <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Click Me Show Modal"/>
