@@ -62,8 +62,6 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 </UIView>
 ```
 
-This file is self-explained. This file will be used as table cell for UITableView.
-
 * Derive view controller class from FlexBaseVC
 
 ```objective-c
