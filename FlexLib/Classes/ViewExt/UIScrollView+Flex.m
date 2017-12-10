@@ -13,6 +13,13 @@
 #import <objc/runtime.h>
 #import "../FlexUtils.h"
 
+static NameValue _gstyle[] =
+{
+    {"default", UIScrollViewIndicatorStyleDefault},
+    {"black", UIScrollViewIndicatorStyleBlack},
+    {"white", UIScrollViewIndicatorStyleWhite},
+};
+
 
 @implementation UIScrollView (Flex)
 
@@ -32,4 +39,14 @@ FLEXSET(scrollEnabled)
 {
     self.scrollEnabled = String2BOOL(sValue);
 }
+FLEXSET(bounces)
+{
+    self.bounces = String2BOOL(sValue);
+}
+
+FLEXSET(indicatorStyle)
+{
+    self.indicatorStyle = FLEXSTR2INT(_gstyle);
+}
+
 @end
