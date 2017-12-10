@@ -51,8 +51,8 @@ The following is the effect for the last layout file.
 ![effect for horzantal](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/effect-horz.png)
 
 ## Reference
- ![layout attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/layoutattr.htm)
- ![view attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/viewattr.htm)
+ ![layout attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/layout.htm)
+ ![view attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/view.htm)
 
 ## Installation
 
