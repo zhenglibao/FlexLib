@@ -53,9 +53,9 @@ The following is the effect for the last layout file.
 ## Reference
 You can save these two links, then open with browser.
 
- ![layout attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/layout.htm)
+ ![layout attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/layout.pdf)
  
- ![view attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/view.htm)
+ ![view attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/view.pdf)
 
 ## Installation
 
