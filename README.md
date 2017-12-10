@@ -44,7 +44,7 @@ This file is self-explained. This file will be used as table cell for UITableVie
 
 * Derive view controller class from FlexBaseVC
 
-<img src="Doc/res/viewcontroller_class.png" width="200"/>
+<img src="Doc/res/viewcontroller_class.png" width="200">
 
 ![demo](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/viewcontroller_class.png){:height="100%" width="100%"}
 
