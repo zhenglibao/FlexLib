@@ -102,6 +102,11 @@ int String2Int(const char* s,
                NameValue table[],
                int total)
 {
+    //增加数字检测, 支持正整数
+    if(s[0]>='0' && s[0]<='9'){
+        return atoi(s);
+    }
+    
     for(int i=0;i<total;i++){
         if(strcmp(s,table[i].name)==0){
             return table[i].value;

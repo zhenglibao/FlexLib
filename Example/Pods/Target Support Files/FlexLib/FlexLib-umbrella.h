@@ -21,6 +21,7 @@
 #import "FlexStyleMgr.h"
 #import "FlexUtils.h"
 #import "UIButton+Flex.h"
+#import "UIControl+Flex.h"
 #import "UIImageView+Flex.h"
 #import "UILabel+Flex.h"
 #import "UIScrollView+Flex.h"
