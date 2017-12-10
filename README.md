@@ -177,9 +177,14 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 
 ## Attribute Reference
 
+Layout attributes are stable, but view attributes are still in rapid increased. You can search FLEXSET in the library to find all supported view attributes. And you can make extendsion in your project by the catagory to support more view attributes.
+
  ![layout attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/layout.pdf)
  
  ![view attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/view.pdf)
+ 
+
+ 
 
 ## Installation
 
