@@ -377,7 +377,71 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
 }
 
 #pragma mark - build / parse
-
+//用逗号分隔
++(NSArray*)seperateByComma:(NSString*)str
+{
+    NSMutableArray* result = [NSMutableArray array];
+    
+    int s = 0;
+    int e;
+    
+    while (s<str.length) {
+        
+        for(e=s;e<str.length;e++){
+            unichar c = [str characterAtIndex:e];
+            if(c==',')
+                break;
+            if(c=='\\')
+               e++;
+        }
+        if(e>=str.length){
+            [result addObject:[str substringFromIndex:s]];
+            break;
+        }
+        if(e>s){
+            NSRange range = NSMakeRange(s,e-s);
+            [result addObject:[str substringWithRange:range]];
+        }
+        s=e+1;
+    }
+    return result;
+}
+//
++(unichar)transChar:(unichar)c
+{
+    static unichar transTable[]={
+        '\\','\\',
+        't','\t',
+        'r','\r',
+        'n','\n',
+    };
+    int count = sizeof(transTable)/sizeof(unichar);
+    
+    for (int i=0;i<count;i+=2) {
+        if(transTable[i] == c)
+            return transTable[i+1];
+    }
+    return c;
+}
+//处理转义字符
++(NSString*)transString:(NSString*)str
+{
+    if([str rangeOfString:@"\\"].length==0)
+        return str;
+    
+    NSMutableString* s = [str mutableCopy];
+    
+    for(int i=0;i<s.length;i++){
+        unichar c = [s characterAtIndex:i];
+        if(c!='\\'||i+1==s.length)
+            continue;
+        unichar next = [s characterAtIndex:i+1];
+        next = [FlexNode transChar:next];
+        NSString* sc=[NSString stringWithFormat:@"%C",next];
+        [s replaceCharactersInRange:NSMakeRange(i, 2) withString:sc];
+    }
+    return [s copy];
+}
 +(NSArray*)parseStringParams:(NSString*)param
 {
     if( param.length==0 )
@@ -385,18 +449,22 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
     
     NSMutableArray* result = [NSMutableArray array];
     
-    NSArray* parts = [param componentsSeparatedByString:@","];
+    NSArray* parts = [FlexNode seperateByComma:param];
     NSCharacterSet* whiteSet = [NSCharacterSet whitespaceCharacterSet] ;
     
     for (NSString* part in parts)
     {
-        NSArray* two = [part componentsSeparatedByString:@":"];
-        if( two.count!=2 )
+        NSRange range = [part rangeOfString:@":"];
+        if(range.length == 0)
             continue;
         
+        NSString* s1 = [part substringToIndex:range.location];
+        NSString* s2 = [part substringFromIndex:range.location+1];
+        
         FlexAttr* attr = [[FlexAttr alloc]init];
-        attr.name = [two[0] stringByTrimmingCharactersInSet:whiteSet];
-        attr.value = [two[1] stringByTrimmingCharactersInSet:whiteSet];
+        attr.name = [s1 stringByTrimmingCharactersInSet:whiteSet];
+        attr.value = [s2 stringByTrimmingCharactersInSet:whiteSet];
+        attr.value = [FlexNode transString:attr.value];
         
         if(attr.isValid){
             [result addObject:attr];
