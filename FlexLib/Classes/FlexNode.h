@@ -12,10 +12,17 @@
 #import <Foundation/Foundation.h>
 
 @class FlexRootView;
+@class YGLayout;
 
+// 设置视图属性
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,
                      NSString* attrValue);
+
+// 设置布局属性
+void FlexApplyLayoutParam(YGLayout* layout,
+                          NSString* key,
+                          NSString* value);
 
 @interface FlexNode : NSObject<NSCoding>
 

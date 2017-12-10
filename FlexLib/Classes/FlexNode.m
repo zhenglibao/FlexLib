@@ -216,9 +216,9 @@ SETENUMVALUE(display,_display,YGDisplay);
 }
 
 //增加对单一flex属性的支持，相当于同时设置flexGrow和flexShrink
-static void ApplyLayoutWithFlex(YGLayout* layout,
-                                NSString* key,
-                                NSString* value)
+void FlexApplyLayoutParam(YGLayout* layout,
+                          NSString* key,
+                          NSString* value)
 {
     if( [key compare:@"flex" options:NSLiteralSearch]==NSOrderedSame)
     {
@@ -323,11 +323,11 @@ static void ApplyLayoutWithFlex(YGLayout* layout,
                 NSArray* ary = [[FlexStyleMgr instance]getStyleByRefPath:attr.value];
                 for(FlexAttr* styleAttr in ary)
                 {
-                    ApplyLayoutWithFlex(layout, styleAttr.name, styleAttr.value);
+                    FlexApplyLayoutParam(layout, styleAttr.name, styleAttr.value);
                 }
                 
             }else{
-                ApplyLayoutWithFlex(layout, attr.name, attr.value);
+                FlexApplyLayoutParam(layout, attr.name, attr.value);
             }
         }
     }];

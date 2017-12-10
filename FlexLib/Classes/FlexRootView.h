@@ -11,6 +11,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class FlexAttr;
+
 @interface UIView(FlexPublic)
 
 // 外部可以主动调用此函数让布局得到刷新
@@ -21,6 +23,16 @@
 
 //
 -(BOOL)isFlexLayoutEnable;
+
+// 设置视图属性
+-(void)setViewAttr:(NSString*) name
+             Value:(NSString*) value;
+-(void)setViewAttrs:(NSArray<FlexAttr*>*)attrs;
+
+// 设置布局属性
+-(void)setLayoutAttr:(NSString*) name
+               Value:(NSString*) value;
+-(void)setLayoutAttrs:(NSArray<FlexAttr*>*)attrs;
 
 @end
 
@@ -41,19 +53,18 @@
 @property(nonatomic,copy) void (^beginLayout)(void);
 @property(nonatomic,copy) void (^endLayout)(void);
 
-
--(void)markChildDirty:(UIView*)child;
-
 // 从xml文件中加载布局
 +(FlexRootView*)loadWithNodeFile:(NSString*)resName
                            Owner:(NSObject*)owner;
 
--(CGSize)calculateSize;
-
--(CGSize)calculateSize:(CGSize)szLimit;
+-(void)markChildDirty:(UIView*)child;
 
 -(void)registSubView:(UIView*)subView;
 
 -(void)layoutAnimation:(NSTimeInterval)duration;
+
+-(CGSize)calculateSize;
+
+-(CGSize)calculateSize:(CGSize)szLimit;
 
 @end

@@ -15,6 +15,7 @@
 #import "FlexModalView.h"
 #import "ViewExt/UIView+Flex.h"
 #import "FlexUtils.h"
+#import "FlexStyleMgr.h"
 
 static void* gObserverHidden    = (void*)1;
 static void* gObserverText      = (void*)2;
@@ -42,6 +43,32 @@ static void* gObserverFrame     = (void*)4;
 
 -(BOOL)isFlexLayoutEnable{
     return self.yoga.isIncludedInLayout;
+}
+
+-(void)setViewAttr:(NSString*) name
+             Value:(NSString*) value
+{
+    FlexSetViewAttr(self, name, value);
+}
+-(void)setViewAttrs:(NSArray<FlexAttr*>*)attrs
+{
+    for (FlexAttr* attr in attrs) {
+        FlexSetViewAttr(self, attr.name, attr.value);
+    }
+}
+
+-(void)setLayoutAttr:(NSString*) name
+               Value:(NSString*) value
+{
+    FlexApplyLayoutParam(self.yoga, name, value);
+}
+-(void)setLayoutAttrs:(NSArray<FlexAttr*>*)attrs
+{
+    [self configureLayoutWithBlock:^(YGLayout* layout){
+        for (FlexAttr* attr in attrs) {
+            FlexApplyLayoutParam(layout, attr.name, attr.value);
+        }
+    }];
 }
 @end
 
