@@ -23,6 +23,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		D270E9C21FDD7503007FD06C /* README.zh.md in Resources */ = {isa = PBXBuildFile; fileRef = D270E9C11FDD7502007FD06C /* README.zh.md */; };
 		D272A8C21FD933710075DB1D /* TestScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D272A8C11FD933710075DB1D /* TestScrollVC.m */; };
 		D272A8C41FD933990075DB1D /* TestScrollVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8C31FD933990075DB1D /* TestScrollVC.xml */; };
 		D272A8CF1FDA63000075DB1D /* TestModalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D272A8CE1FDA63000075DB1D /* TestModalVC.m */; };
@@ -81,6 +82,7 @@
 		BF0A9AA5EEC0E1A3212D55AE /* Pods-FlexLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3F399040DE88BBD2F2E407B /* Pods_FlexLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20EA7438FB7413D8C580238 /* Pods-FlexLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D270E9C11FDD7502007FD06C /* README.zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.zh.md; path = ../README.zh.md; sourceTree = "<group>"; };
 		D272A8C01FD933710075DB1D /* TestScrollVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestScrollVC.h; sourceTree = "<group>"; };
 		D272A8C11FD933710075DB1D /* TestScrollVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestScrollVC.m; sourceTree = "<group>"; };
 		D272A8C31FD933990075DB1D /* TestScrollVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestScrollVC.xml; path = res/TestScrollVC.xml; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				0A51394BE4DAFCF85348261A /* FlexLib.podspec */,
 				885B2948ED10418285C4C976 /* README.md */,
+				D270E9C11FDD7502007FD06C /* README.zh.md */,
 				2D3FCC96F52EF608017FEEF8 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
@@ -359,6 +362,7 @@
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				D272A8D11FDA631F0075DB1D /* TestModalVC.xml in Resources */,
+				D270E9C21FDD7503007FD06C /* README.zh.md in Resources */,
 				D272A8D31FDA66220075DB1D /* arrow_right@2x.png in Resources */,
 				D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */,
 				D2CF9CC41FD7EB0900554A0C /* batchcheck@2x.png in Resources */,

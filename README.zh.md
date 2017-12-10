@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/FlexLib.svg?style=flat)](http://cocoapods.org/pods/FlexLib)
 
 ## FlexLib
-![english](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Readme.md)
+![english](https://github.com/zhenglibao/FlexLib/blob/master/README.md)
 
 FlexLib是用Obj-c语言编写的ios布局框架。 该框架基于[yoga](https://facebook.github.io/yoga/) 布局引擎，该引擎实现了一套flexbox布局模型，与flexbox大部分是兼容的。
 
