@@ -15,6 +15,10 @@ typedef struct {
     int   value;
 } NameValue;
 
+#define FLEXSTR2INT(kvTable)    \
+NSString2Int(sValue,kvTable,sizeof(kvTable)/sizeof(NameValue))
+
+
 // 在表中查询s字符串，将其转换成int值
 int String2Int(const char* s,
                NameValue table[],
