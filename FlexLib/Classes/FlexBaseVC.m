@@ -73,17 +73,17 @@
         }
         return UIEdgeInsetsMake(height, 0, 0, 0);
     }
+    
+    CGFloat height = 0;
     if(self.navigationController!=nil)
     {
-        if(portrait){
-            return UIEdgeInsetsMake(0, 0, 34, 0);
-        }
-        return UIEdgeInsetsMake(0, 44, 21, 44);
+        height += portrait ? 44 : 32 ;
     }
     if(portrait){
-        return UIEdgeInsetsMake(44, 0, 34, 0);
+        height += 44 ;
+        return UIEdgeInsetsMake(height, 0, 34, 0);
     }
-    return UIEdgeInsetsMake(0, 44, 21, 44);
+    return UIEdgeInsetsMake(height, 44, 21, 44);
 }
 
 -(void)layoutFlexRootViews{
