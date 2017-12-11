@@ -9,7 +9,7 @@
         <UIView layout="height:20"/>
         <UITextField layout="height:50" attr="@:system/filterLeftLabel,text:,placeHolder:Input the sn here,@:system/border"/>
         <UIView layout="height:20"/>
-        <UILabel layout="width:100%,height:40" attr="stickTop:true,bgColor:lightGray,fontSize:14,color:#666666,text:这是一个能够吸附到顶部的控件\,请滚动一下看看效果……"/>
+        <UILabel layout="width:100%,height:50" attr="stickTop:true,bgColor:lightGray,fontSize:18,color:#880000,text:这是一个能够吸附到顶部的控件\,请滚动一下看看效果\,每个scrollview只支持1个吸顶控件……,linesNum:0"/>
         <UIView layout="height:20"/>
         <UIView layout="flexDirection:row,padding:10,alignItems:center" attr="@:system/border,bgColor:white">
             <UIImageView layout="width:40,height:40" attr="source:addnewtype.png"/>
