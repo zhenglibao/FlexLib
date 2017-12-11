@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
     self.navigationItem.title = @"FlexLib Demo";
 }
 - (void)didReceiveMemoryWarning
@@ -34,23 +34,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)onTest:(id)sender {
+- (void)onTest:(id)sender {
     TestVC* vc=[[TestVC alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
 }
-- (IBAction)onTestTable:(id)sender {
+- (void)onTestTable:(id)sender {
     TestTableVC* vc=[[TestTableVC alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
 }
-- (IBAction)onTestScrollView:(id)sender {
+- (void)onTestScrollView:(id)sender {
     TestScrollVC* vc=[[TestScrollVC alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
 }
-- (IBAction)onTestModalView:(id)sender {
+- (void)onTestModalView:(id)sender {
     TestModalVC* vc=[[TestModalVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
-- (IBAction)onTestLoginView:(id)sender {
+- (void)onTestLoginView:(id)sender {
     TestLoginVC* vc=[[TestLoginVC alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
 }
