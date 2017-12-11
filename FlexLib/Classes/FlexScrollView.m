@@ -16,11 +16,18 @@
 #import "YogaKit/UIView+Yoga.h"
 #import "FlexUtils.h"
 
+static void* gObserverFrame         = (void*)1;
+static void* gObserverContentOffset = (void*)2;
+
 @interface FlexScrollView()
 {
     FlexParentView* _subview;
     FlexRootView* _contentView;
     UIView* _holder;
+    
+    NSMutableArray<UIView*>* _stickViews;
+    UIView* _stickingView;
+    NSInteger _stickingZIndex;
 }
 @end
 
@@ -31,6 +38,9 @@
 {
     self = [super init];
     if (self) {
+        
+        _stickViews = [NSMutableArray array];
+        
         // 占位的view
         _holder = [[UIView alloc]init];
         _holder.yoga.isEnabled = YES;
@@ -44,13 +54,17 @@
         };
         
         _contentView = [[FlexRootView alloc]init];
-        _contentView.onLayoutDone = ^{
-            [weakSelf onContentViewLayoutDone];
+        _contentView.onWillLayout = ^{
+            [weakSelf onContentViewWillLayout];
+        };
+        _contentView.onDidLayout = ^{
+            [weakSelf onContentViewDidLayout];
         };
         [_subview addSubview:_contentView];
         [super addSubview:_subview];
         
-        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:gObserverFrame];
+        [self addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:gObserverContentOffset];
     }
     return self;
 }
@@ -58,22 +72,39 @@
 - (void)dealloc
 {
     [self removeObserver:self forKeyPath:@"frame"];
+    [self removeObserver:self forKeyPath:@"contentOffset"];
+}
+-(void)onContentViewWillLayout
+{
+    for (UIView* view in _stickViews) {
+        [view.yoga markDirty];
+    }
+    [self restoreStickView];
 }
 
--(void)onContentViewLayoutDone
+-(void)onContentViewDidLayout
 {
-    
+    for (UIView* view in _stickViews) {
+        view.viewAttrs.originY = view.frame.origin.y ;
+    }
+    [self resetStickViews:YES];
 }
 
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
 {
-    CGRect rcNew = [[change objectForKey:@"new"]CGRectValue];
+    if(context == gObserverFrame){
+        
+        CGRect rcNew = [[change objectForKey:@"new"]CGRectValue];
+        
+        rcNew.origin = _subview.frame.origin;
+        _subview.frame = rcNew;
+        [_contentView setNeedsLayout];
     
-    rcNew.origin = _subview.frame.origin;
-    _subview.frame = rcNew;
-    [_contentView setNeedsLayout];
+    }else if(context == gObserverContentOffset){
+        [self resetStickViews:NO];
+    }
 }
 
 -(void)postCreate
@@ -114,8 +145,58 @@ if(from.prop.unit==YGUnitPoint||    \
 {
     [_contentView addSubview:view];
     [_contentView registSubView:view];
+    
+    if(view.viewAttrs.stickTop){
+       // [_stickViews addObject:view];
+    }
 }
+-(void)restoreStickView
+{
+    if(_stickingView == nil)
+        return;
+    
+    CGRect rc = _stickingView.frame ;
+    rc.origin.y = _stickingView.viewAttrs.originY;
+    _stickingView.frame = rc;
+    [_contentView insertSubview:_stickingView atIndex:_stickingZIndex];
+    _stickingView = nil;
+}
+-(void)resetStickViews:(BOOL)fromLayout
+{
+    CGFloat offsetY = self.contentOffset.y ;
 
+    // 恢复原有stickview坐标
+    if(_stickingView != nil){
+        [self restoreStickView];
+    }
+    
+    UIView* stickView = nil;
+    NSUInteger stickIndex =0;
+    
+    for (NSUInteger i=0;i<_stickViews.count;i++)
+    {
+        UIView* view = [_stickViews objectAtIndex:i];
+        CGFloat y = view.viewAttrs.originY ;
+        
+        if(offsetY>y){
+            if(stickView == nil ||
+               y > stickView.viewAttrs.originY)
+            {
+                stickView = view;
+                stickIndex = i;
+            }
+        }
+    }
+    if(stickView != nil){
+        CGRect rc = stickView.frame ;
+        rc.origin.y = offsetY ;
+        stickView.frame = rc;
+
+        _stickingView = stickView ;
+        _stickingZIndex = stickIndex ;
+        [_contentView bringSubviewToFront:_stickingView];
+    }
+}
 FLEXSET(horzScroll)
 {
     BOOL b = String2BOOL(sValue) ;

@@ -54,7 +54,8 @@
 @property(nonatomic,copy) void (^endLayout)(void);
 
 //事件通知
-@property(nonatomic,copy) void (^onLayoutDone)(void);
+@property(nonatomic,copy) void (^onWillLayout)(void);
+@property(nonatomic,copy) void (^onDidLayout)(void);
 
 // 从xml文件中加载布局
 +(FlexRootView*)loadWithNodeFile:(NSString*)resName

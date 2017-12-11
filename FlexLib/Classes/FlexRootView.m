@@ -263,6 +263,10 @@ static void* gObserverFrame     = (void*)4;
     
     CGRect rcOld = self.frame;
     
+    if(self.onWillLayout != nil){
+        self.onWillLayout();
+    }
+    
     if(self.beginLayout != nil)
         self.beginLayout();
     self.beginLayout = nil;
@@ -280,8 +284,8 @@ static void* gObserverFrame     = (void*)4;
         self.endLayout();
     self.endLayout = nil;
     
-    if(self.onLayoutDone != nil){
-        self.onLayoutDone();
+    if(self.onDidLayout != nil){
+        self.onDidLayout();
     }
 }
 

@@ -65,7 +65,10 @@ self.propName = n;                        \
 
 // 额外的view属性存储
 @interface FlexViewAttrs : NSObject
+
 @property(nonatomic,assign) BOOL stickTop;
+@property(nonatomic,assign) CGFloat originY;
+
 @end
 
 
