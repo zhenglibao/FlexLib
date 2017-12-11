@@ -279,6 +279,10 @@ static void* gObserverFrame     = (void*)4;
     if(self.endLayout !=nil)
         self.endLayout();
     self.endLayout = nil;
+    
+    if(self.onLayoutDone != nil){
+        self.onLayoutDone();
+    }
 }
 
 -(CGSize)calculateSize:(CGSize)szLimit

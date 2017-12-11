@@ -44,6 +44,9 @@
         };
         
         _contentView = [[FlexRootView alloc]init];
+        _contentView.onLayoutDone = ^{
+            [weakSelf onContentViewLayoutDone];
+        };
         [_subview addSubview:_contentView];
         [super addSubview:_subview];
         
@@ -55,6 +58,11 @@
 - (void)dealloc
 {
     [self removeObserver:self forKeyPath:@"frame"];
+}
+
+-(void)onContentViewLayoutDone
+{
+    
 }
 
 #pragma mark - KVO
