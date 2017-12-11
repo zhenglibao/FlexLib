@@ -25,9 +25,9 @@ static void* gObserverContentOffset = (void*)2;
     FlexRootView* _contentView;
     UIView* _holder;
     
-    NSMutableArray<UIView*>* _stickViews;
     UIView* _stickingView;
     NSInteger _stickingZIndex;
+    BOOL _stickingYChanged;
 }
 @end
 
@@ -39,7 +39,7 @@ static void* gObserverContentOffset = (void*)2;
     self = [super init];
     if (self) {
         
-        _stickViews = [NSMutableArray array];
+        _stickingZIndex = -1;
         
         // 占位的view
         _holder = [[UIView alloc]init];
@@ -76,18 +76,15 @@ static void* gObserverContentOffset = (void*)2;
 }
 -(void)onContentViewWillLayout
 {
-    for (UIView* view in _stickViews) {
-        [view.yoga markDirty];
-    }
     [self restoreStickView];
 }
 
 -(void)onContentViewDidLayout
 {
-    for (UIView* view in _stickViews) {
-        view.viewAttrs.originY = view.frame.origin.y ;
+    if(_stickingView != nil){
+        _stickingView.viewAttrs.originY = _stickingView.frame.origin.y ;
+        [self resetStickViews:YES];
     }
-    [self resetStickViews:YES];
 }
 
 #pragma mark - KVO
@@ -143,58 +140,42 @@ if(from.prop.unit==YGUnitPoint||    \
 }
 -(void)addSubview:(UIView *)view
 {
+    if(view.viewAttrs.stickTop){
+        _stickingZIndex = _contentView.subviews.count;
+        _stickingView = view;
+    }
     [_contentView addSubview:view];
     [_contentView registSubView:view];
-    
-    if(view.viewAttrs.stickTop){
-       // [_stickViews addObject:view];
-    }
 }
 -(void)restoreStickView
 {
-    if(_stickingView == nil)
+    if(_stickingView == nil||!_stickingYChanged)
         return;
     
     CGRect rc = _stickingView.frame ;
     rc.origin.y = _stickingView.viewAttrs.originY;
     _stickingView.frame = rc;
+    [_stickingView.yoga markDirty];
     [_contentView insertSubview:_stickingView atIndex:_stickingZIndex];
-    _stickingView = nil;
+    _stickingYChanged = NO;
 }
 -(void)resetStickViews:(BOOL)fromLayout
 {
+    if(_stickingView == nil)
+        return;
+    
     CGFloat offsetY = self.contentOffset.y ;
-
-    // 恢复原有stickview坐标
-    if(_stickingView != nil){
-        [self restoreStickView];
-    }
+    CGFloat y = _stickingView.viewAttrs.originY ;
+    CGFloat newY = MAX(offsetY,y);
     
-    UIView* stickView = nil;
-    NSUInteger stickIndex =0;
+    CGRect rc = _stickingView.frame ;
     
-    for (NSUInteger i=0;i<_stickViews.count;i++)
-    {
-        UIView* view = [_stickViews objectAtIndex:i];
-        CGFloat y = view.viewAttrs.originY ;
+    if(rc.origin.y != newY){
+        rc.origin.y = newY ;
+        _stickingView.frame = rc;
         
-        if(offsetY>y){
-            if(stickView == nil ||
-               y > stickView.viewAttrs.originY)
-            {
-                stickView = view;
-                stickIndex = i;
-            }
-        }
-    }
-    if(stickView != nil){
-        CGRect rc = stickView.frame ;
-        rc.origin.y = offsetY ;
-        stickView.frame = rc;
-
-        _stickingView = stickView ;
-        _stickingZIndex = stickIndex ;
         [_contentView bringSubviewToFront:_stickingView];
+        _stickingYChanged = YES;
     }
 }
 FLEXSET(horzScroll)

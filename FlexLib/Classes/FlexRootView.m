@@ -253,6 +253,7 @@ static void* gObserverFrame     = (void*)4;
         return;
     }
     
+    _bInLayouting = YES;
     _lastConfigFrame = _thisConfigFrame;
     
     YGDimensionFlexibility option = 0 ;
@@ -263,18 +264,21 @@ static void* gObserverFrame     = (void*)4;
     
     CGRect rcOld = self.frame;
     
-    if(self.onWillLayout != nil){
-        self.onWillLayout();
-    }
-    
     if(self.beginLayout != nil)
         self.beginLayout();
     self.beginLayout = nil;
     
-    _bInLayouting = YES;
+    // 布局前事件
+    if(self.onWillLayout != nil){
+        self.onWillLayout();
+    }
+    
     [self.yoga applyLayoutPreservingOrigin:NO dimensionFlexibility:option];
-    _bInLayouting = NO ;
-    _bChildDirty = NO;
+    
+    // 布局后事件
+    if(self.onDidLayout != nil){
+        self.onDidLayout();
+    }
     
     if(!CGRectEqualToRect(rcOld, self.frame)){
         [self.superview subFrameChanged:self Rect:self.frame];
@@ -284,9 +288,8 @@ static void* gObserverFrame     = (void*)4;
         self.endLayout();
     self.endLayout = nil;
     
-    if(self.onDidLayout != nil){
-        self.onDidLayout();
-    }
+    _bInLayouting = NO ;
+    _bChildDirty = NO;
 }
 
 -(CGSize)calculateSize:(CGSize)szLimit
