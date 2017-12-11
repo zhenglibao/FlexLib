@@ -34,10 +34,7 @@ static NameValue _breakMode[] =
 
 @implementation UILabel (Flex)
 
-FLEXSET(text)
-{
-    self.text = sValue ;
-}
+FLEXSETSTR(text)
 FLEXSET(fontSize)
 {
     float nSize = [sValue floatValue];
@@ -46,11 +43,7 @@ FLEXSET(fontSize)
         self.font = font;
     }
 }
-FLEXSET(lineBreakMode)
-{
-    NSLineBreakMode mode = (NSLineBreakMode) NSString2Int(sValue,_breakMode,sizeof(_breakMode)/sizeof(NameValue));
-    self.lineBreakMode = mode;
-}
+FLEXSETENUM(lineBreakMode, _breakMode)
 FLEXSET(linesNum)
 {
     int n = (int)[sValue integerValue];
@@ -88,10 +81,7 @@ FLEXSET(interactEnable)
 {
     self.userInteractionEnabled = String2BOOL(sValue);
 }
-FLEXSET(enabled)
-{
-    self.enabled = String2BOOL(sValue);
-}
+FLEXSETBOOL(enabled)
 FLEXSET(adjustFontSize)
 {
     self.adjustsFontSizeToFitWidth = String2BOOL(sValue);

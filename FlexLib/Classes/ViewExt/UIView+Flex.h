@@ -12,6 +12,58 @@
 #define FLEXSET(propName)               \
 -(void)setFlex##propName:(NSString*)sValue
 
+//下面宏属性名称与UIView的属性名称保持一致
+// 声明颜色属性
+#define FLEXSETCLR(propName)              \
+FLEXSET(propName)                         \
+{                                         \
+self.propName = colorFromString(sValue);  \
+}
+
+// 声明浮点型属性
+#define FLEXSETFLT(propName)              \
+FLEXSET(propName)                         \
+{                                         \
+self.propName = [sValue floatValue];      \
+}
+
+// 声明整形属性
+#define FLEXSETINT(propName)              \
+FLEXSET(propName)                         \
+{                                         \
+self.propName = [sValue integerValue];    \
+}
+
+// 声明bool属性
+#define FLEXSETBOOL(propName)             \
+FLEXSET(propName)                         \
+{                                         \
+self.propName = String2BOOL(sValue);      \
+}
+
+// 声明double属性
+#define FLEXSETDBL(propName)              \
+FLEXSET(propName)                         \
+{                                         \
+self.propName = [sValue doubleValue];     \
+}
+// 声明字符串型属性
+#define FLEXSETSTR(propName)              \
+FLEXSET(propName)                         \
+{                                         \
+self.propName = sValue;                   \
+}
+
+// 声明枚举属性
+#define FLEXSETENUM(propName,table)       \
+FLEXSET(propName)                         \
+{                                         \
+NSInteger n=NSString2Int(sValue,          \
+table,sizeof(table)/sizeof(NameValue));   \
+self.propName = n;                        \
+}
+
+
 @interface UIView (Flex)
 
 //子类可以重载做些加载后的处理

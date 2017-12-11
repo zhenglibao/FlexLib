@@ -89,30 +89,9 @@ FLEXSET(shadowColor)
 {
     self.layer.shadowColor = colorFromString(sValue).CGColor ;
 }
-FLEXSET(contentMode)
-{
-    UIViewContentMode mode = (UIViewContentMode) NSString2Int(sValue,_gcontentModes,sizeof(_gcontentModes)/sizeof(NameValue));
-    self.contentMode = mode;
-}
-FLEXSET(alpha)
-{
-    CGFloat f = [sValue floatValue] ;
-    self.alpha = f ;
-}
-FLEXSET(hidden)
-{
-    self.hidden = String2BOOL(sValue);
-}
-FLEXSET(clipsToBounds)
-{
-    self.clipsToBounds = String2BOOL(sValue);
-}
-
-FLEXSET(tintColor)
-{
-    UIColor* clr = colorFromString(sValue) ;
-    if(clr!=nil){
-        self.tintColor = clr ;
-    }
-}
+FLEXSETENUM(contentMode, _gcontentModes)
+FLEXSETFLT(alpha)
+FLEXSETBOOL(hidden)
+FLEXSETBOOL(clipsToBounds)
+FLEXSETCLR(tintColor)
 @end
