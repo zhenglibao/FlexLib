@@ -63,8 +63,18 @@ table,sizeof(table)/sizeof(NameValue));   \
 self.propName = n;                        \
 }
 
+// 额外的view属性存储
+@interface FlexViewAttrs : NSObject
+@property(nonatomic,assign) BOOL stickTop;
+@end
+
 
 @interface UIView (Flex)
+
+/**
+ *The ViewAttrs that is attached to this view. It is lazily created.
+ */
+@property (nonatomic, readonly, strong) FlexViewAttrs* viewAttrs;
 
 //子类可以重载做些加载后的处理
 -(void)postCreate;

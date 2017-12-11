@@ -13,6 +13,12 @@
 #import "../YogaKit/UIView+Yoga.h"
 #import "../FlexRootView.h"
 
+static const void *kFlexViewAttrAssociatedKey = &kFlexViewAttrAssociatedKey;
+
+@implementation FlexViewAttrs
+
+@end
+
 static NameValue _gcontentModes[] =
 {
     {"scaleToFill",UIViewContentModeScaleToFill},
@@ -31,6 +37,17 @@ static NameValue _gcontentModes[] =
 };
 
 @implementation UIView (Flex)
+
+- (FlexViewAttrs *)viewAttrs
+{
+    FlexViewAttrs *attrs = objc_getAssociatedObject(self, kFlexViewAttrAssociatedKey);
+    if (!attrs) {
+        attrs = [[FlexViewAttrs alloc] init];
+        objc_setAssociatedObject(self, kFlexViewAttrAssociatedKey, attrs, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    
+    return attrs;
+}
 
 #pragma mark - override
 
@@ -94,4 +111,8 @@ FLEXSETFLT(alpha)
 FLEXSETBOOL(hidden)
 FLEXSETBOOL(clipsToBounds)
 FLEXSETCLR(tintColor)
+
+FLEXSET(stickTop){
+    self.viewAttrs.stickTop = String2BOOL(sValue);
+}
 @end
