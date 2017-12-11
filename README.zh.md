@@ -8,7 +8,7 @@
 ## FlexLib
 ![english](https://github.com/zhenglibao/FlexLib/blob/master/README.md)
 
-FlexLib是用Obj-c语言编写的ios布局框架。 该框架基于[yoga](https://facebook.github.io/yoga/) 布局引擎，该引擎实现了一套flexbox布局模型，与flexbox大部分是兼容的。
+FlexLib是用Obj-c语言编写的ios布局框架。 该框架基于[yoga](https://facebook.github.io/yoga/) 布局引擎，该引擎实现了一套[flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)布局模型，与[flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)大部分是兼容的。
 
 使用FlexLib, 可以大幅提高ios的界面开发速度，能够与web和安卓相当，该框架使用简单同时能够应付复杂的布局。
 
