@@ -77,53 +77,53 @@
         @"content": @"我是东方啥地this is test content, haha I need more text, can you input it ? more, more, more ………………方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
         },
     @{
-        @"name": @"测试",
+        @"name": @"Amanda",
         @"type": @"一般类型",
         @"date": @"2011-5-11",
         @"title": @"我是标题",
-        @"content": @"我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快啥阶段了开发建设路口带附件sjdfklsdjf捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
+        @"content": @"This is no good if you want a maximum of three lines, like the question implied. Guess I need to calculate the height of three lines and pass it in to the sizeWithFont function then.",
+        },
+    @{
+        @"name": @"Karry",
+        @"type": @"一般类型",
+        @"date": @"2011-5-11",
+        @"title": @"我是标题",
+        @"content": @"great answer. I found this the most useful for multiline labels",
         },
     @{
         @"name": @"测试",
         @"type": @"一般类型",
         @"date": @"2011-5-11",
         @"title": @"我是标题",
-        @"content": @"我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
+        @"content": @"I found Ian L's answer best using -sizeWithFont:constrainedToSize:lineBreakMode:",
         },
     @{
         @"name": @"测试",
         @"type": @"一般类型",
         @"date": @"2011-5-11",
         @"title": @"我是标题",
-        @"content": @"我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
+        @"content": @"方式快捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多",
         },
     @{
         @"name": @"测试",
         @"type": @"一般类型",
         @"date": @"2011-5-11",
         @"title": @"我是标题",
-        @"content": @"我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
+        @"content": @"int lineCount = myLabel.numberOfLines;ount;",
         },
     @{
         @"name": @"测试",
         @"type": @"一般类型",
         @"date": @"2011-5-11",
         @"title": @"我是标题",
-        @"content": @"我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
+        @"content": @" Beware that for my situation, width of my label is fixed and I only need sizeToFit for adjusting height",
         },
     @{
         @"name": @"测试",
         @"type": @"一般类型",
         @"date": @"2011-5-11",
         @"title": @"我是标题",
-        @"content": @"我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
-        },
-    @{
-        @"name": @"测试",
-        @"type": @"一般类型",
-        @"date": @"2011-5-11",
-        @"title": @"我是标题",
-        @"content": @"我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
+        @"content": @"中华人民共和国北京市海淀区中关村768产业园，回龙观，你的地址？？？？",
         },
     @{
         @"name": @"测试",
@@ -154,16 +154,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 -(void)tapCloseAction
 {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
@@ -193,7 +183,6 @@
     [_cell setData:_datas[indexPath.row]];
     CGFloat h = [_cell heightForWidth:_table.frame.size.width];
     
-    //NSLog(@"height %ld = %f  text=%@",indexPath.row,h,[_datas[indexPath.row]objectForKey:@"content"]);
     return h;
 }
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
