@@ -1,6 +1,6 @@
 # Layout attributes
 
-## There are three basic types attributes:
+## There are three basic type attributes:
 * enumeration:  the value can be one of the list
 * layout value: the value can be number or percentage
 * number value: the value must be number
@@ -31,7 +31,7 @@
 * borderWidth
 * aspectRatio
 
-## Layout attributes:
+## Layout value attributes:
 * width
 * height
 * minWidth

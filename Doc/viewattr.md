@@ -1,8 +1,8 @@
 # View attributes
 
-## There are three basic types attributes:
-* string value:  the value can be one string
-* color value: the value can be color
+## There are six basic type attributes:
+* string value:  the value can be one string. If the string contains comma, you should use \, to prevent mess up, it also support \r(return) \n(newline) \t(table). '\\' will be '\'. Any other \c will be c.
+* color value: the value can be color, the color be like #rrggbb or #aarrggbb, or the system predefined color: black/white/clear/darkGray/lightGray/gray/red/green/blue/cyan/yellow/magenta/orange/purple/brown
 * number value: the value must be number
 * number group value: the value should be like n1/n2/...
 * boolean value: the value must be true or false
