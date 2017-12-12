@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <UIView
     layout="
-    flexDirection: row,
-    marginTop:8,marginBottom:8"
+    flexDirection: row,margin:8"
     attr="bgColor:white">
+    <UIImageView name="header" layout="width:40,height:40,marginLeft:10,marginRight:10"  attr="source:addnewtype.png"/>
     <UIView
-        layout="flex:1,marginLeft:20,marginTop:10,
-        marginBottom:5,alignItems: flex-start">
-        <UILabel name="_name" attr="fontSize:18,color:#333333,text:物品名字"/>
-        <UILabel name="_model" layout="marginTop:3,marginBottom:3"
-                 attr="fontSize:13,color:#333333,text:物品型号"/>
-        <UILabel name="_sn" layout="marginBottom:4" attr="fontSize:12,color:
-                 #999999,text:物品编号"/>
-        <UILabel name="_updatedBy" attr="fontSize:12,color:#999999,text:操作人"/>
-    </UIView>
-    <UIView
-        layout="width: 150,
-        marginRight:20,
-        alignItems:flex-end,
-        justifyContent: space-around">
-        <UIImageView name="_return" attr="source:return.png"/>
+        layout="flex:1">
+        <UIView
+            layout="flexDirection:row">
+            <UILabel name="name" attr="fontSize:14,color:#333333,text:你的名字,linesNum:1"/>
+            <UILabel name="type" layout="flex:1" attr="fontSize:14,color:#999999,text:一般类型,linesNum:1"/>
+            <UILabel name="date" attr="fontSize:14,color:#999999,text:5-11,linesNum:1"/>
+        </UIView>
+        <UILabel name="title"
+        attr="fontSize:18,color:#333333,text:title,linesNum:1"/>
+        <MyLabel name="content" layout="width:100%"
+        attr="fontSize:14,color:#333333,text:aaa,linesNum:4,lineBreakMode:truncatingTail,adjustFontSize:false"/>
     </UIView>
 </UIView> 

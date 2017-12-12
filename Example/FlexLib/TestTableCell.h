@@ -10,4 +10,6 @@
 
 @interface TestTableCell : FlexBaseTableCell
 
+-(void)setData:(NSDictionary*)data;
+
 @end

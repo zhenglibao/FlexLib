@@ -32,6 +32,7 @@
 		D272A8D51FDADA370075DB1D /* FlexViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8D41FDADA370075DB1D /* FlexViewController.xml */; };
 		D272A8E01FDC0DD90075DB1D /* TestLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D272A8DE1FDC0DD90075DB1D /* TestLoginVC.m */; };
 		D272A8E21FDC0DFC0075DB1D /* TestLoginVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */; };
+		D29758371FDFC78C004314CF /* MyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D29758361FDFC78C004314CF /* MyLabel.m */; };
 		D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBA1FD7EB0900554A0C /* return@2x.png */; };
 		D2CF9CC21FD7EB0900554A0C /* addnewtype@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */; };
 		D2CF9CC31FD7EB0900554A0C /* TestTableCell.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */; };
@@ -94,6 +95,8 @@
 		D272A8DE1FDC0DD90075DB1D /* TestLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLoginVC.m; sourceTree = "<group>"; };
 		D272A8DF1FDC0DD90075DB1D /* TestLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLoginVC.h; sourceTree = "<group>"; };
 		D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestLoginVC.xml; path = res/TestLoginVC.xml; sourceTree = "<group>"; };
+		D29758351FDFC78C004314CF /* MyLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyLabel.h; sourceTree = "<group>"; };
+		D29758361FDFC78C004314CF /* MyLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLabel.m; sourceTree = "<group>"; };
 		D2CF9CBA1FD7EB0900554A0C /* return@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "return@2x.png"; path = "res/return@2x.png"; sourceTree = "<group>"; };
 		D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addnewtype@2x.png"; path = "res/addnewtype@2x.png"; sourceTree = "<group>"; };
 		D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestTableCell.xml; path = res/TestTableCell.xml; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				D272A8CE1FDA63000075DB1D /* TestModalVC.m */,
 				D2CF9CC91FD7EB1900554A0C /* TestVC.h */,
 				D2CF9CCA1FD7EB1900554A0C /* TestVC.m */,
+				D29758351FDFC78C004314CF /* MyLabel.h */,
+				D29758361FDFC78C004314CF /* MyLabel.m */,
 				D2CF9CB91FD7EAFA00554A0C /* res */,
 				6003F59C195388D20070C39A /* FlexAppDelegate.h */,
 				6003F59D195388D20070C39A /* FlexAppDelegate.m */,
@@ -496,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D29758371FDFC78C004314CF /* MyLabel.m in Sources */,
 				D2CF9CCF1FD7EB1A00554A0C /* TestTableCell.m in Sources */,
 				D2CF9CCE1FD7EB1A00554A0C /* TestVC.m in Sources */,
 				6003F59E195388D20070C39A /* FlexAppDelegate.m in Sources */,

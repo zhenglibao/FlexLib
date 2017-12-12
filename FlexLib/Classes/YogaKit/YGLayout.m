@@ -304,10 +304,12 @@ static YGSize YGMeasureView(
   const CGFloat constrainedHeight = (heightMode == YGMeasureModeUndefined) ? CGFLOAT_MAX: height;
 
   UIView *view = (__bridge UIView*) YGNodeGetContext(node);
-  const CGSize sizeThatFits = [view sizeThatFits:(CGSize) {
+  CGSize sizeThatFits = [view sizeThatFits:(CGSize) {
     .width = constrainedWidth,
     .height = constrainedHeight,
   }];
+    sizeThatFits.width = ceil(sizeThatFits.width);
+    sizeThatFits.height= ceil(sizeThatFits.height);
 
   return (YGSize) {
     .width = YGSanitizeMeasurement(constrainedWidth, sizeThatFits.width, widthMode),

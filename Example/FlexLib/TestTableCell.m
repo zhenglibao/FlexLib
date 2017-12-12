@@ -13,12 +13,12 @@
 
 @interface TestTableCell()
 {
-    UILabel* _name;
-    UILabel* _model;
-    UILabel* _sn;
-    UILabel* _updatedBy;
-    
-    UIImageView* _return;
+    UIImageView* head;
+    UILabel* name;
+    UILabel* type;
+    UILabel* date;
+    UILabel* title;
+    UILabel* content;
 }
 @end
 @implementation TestTableCell
@@ -33,5 +33,12 @@
 
     // Configure the view for the selected state
 }
-
+-(void)setData:(NSDictionary*)data
+{
+    name.text = [data objectForKey:@"name"];
+    type.text = [data objectForKey:@"type"];
+    date.text = [data objectForKey:@"date"];
+    title.text = [data objectForKey:@"title"];
+    content.text = [data objectForKey:@"content"];
+}
 @end
