@@ -17,7 +17,7 @@
         attr="fontSize:18,color:#333333,text:title,linesNum:1"/>
         <UIView layout="height:8"/>
         <UILabel name="content" layout="width:100%"
-        attr="fontSize:14,color:#333333,text:aaa,linesNum:4,lineBreakMode:truncatingTail"/>
+        attr="fontSize:14,color:#333333,text:aaa,linesNum:0,lineBreakMode:truncatingTail"/>
         <UIView layout="height:8"/>
     </UIView>
 </UIView> 

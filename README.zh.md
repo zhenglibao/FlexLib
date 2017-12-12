@@ -180,9 +180,9 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该框架基于[yoga](https:
 
 布局属性已经稳定，但视图属性仍然在快速增加中。你可以通过在工程中搜索FLEXSET来找到所有支持的视图属性。如果现有的视图属性不能满足要求，你也可以扩展属于自己的视图属性，然后在xml文件中使用.
 
- ![layout attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/layout.pdf)
+ ![layout attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/layout.md)
  
- ![view attributes](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/view.pdf)
+ ![view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
  
 
 ## 安装
