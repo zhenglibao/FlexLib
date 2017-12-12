@@ -47,7 +47,7 @@
 
 -(void)setActiveStatus:(BOOL)bActive
 {
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         if (bActive) {
             self.backgroundColor = _underlayColor ;
         } else {
