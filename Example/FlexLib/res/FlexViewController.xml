@@ -27,7 +27,7 @@
         </UIView>
         <UIView onPress="onTestLoginView:" layout="@:system/button" attr="bgColor:#e5e5e5">
             <UILabel
-            attr="@:system/buttonText,text:Login Example"/>
+            attr="@:system/buttonText,text:Test Touch"/>
         </UIView>
     </FlexScrollView>
 </UIView> 
