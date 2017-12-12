@@ -17,7 +17,7 @@
     UIColor* _underlayColor;
     UIColor* _bgColor;
     
-    BOOL _bPressing;
+    CGFloat _oldAlpha;
 }
 @end
 
@@ -49,8 +49,12 @@
 {
     [UIView animateWithDuration:0.2 animations:^{
         if (bActive) {
+            _oldAlpha = self.alpha ;
+            _bgColor = self.backgroundColor ;
+            self.alpha = _activeOpacity;
             self.backgroundColor = _underlayColor ;
         } else {
+            self.alpha = _oldAlpha;
             self.backgroundColor = _bgColor ;
         }
     }];
@@ -63,11 +67,6 @@ FLEXSET(activeOpacity)
         _activeOpacity = 1;
     else if(_activeOpacity<0)
         _activeOpacity = 0;
-}
-FLEXSET(bgColor)
-{
-    _bgColor = colorFromString(sValue);
-    self.backgroundColor = _bgColor;
 }
 
 FLEXSET(underlayColor)
