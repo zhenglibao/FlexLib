@@ -12,9 +12,12 @@
             <UILabel name="type" layout="flex:1" attr="fontSize:14,color:#999999,text:一般类型,linesNum:1"/>
             <UILabel name="date" attr="fontSize:14,color:#999999,text:5-11,linesNum:1"/>
         </UIView>
+        <UIView layout="height:8"/>
         <UILabel name="title"
         attr="fontSize:18,color:#333333,text:title,linesNum:1"/>
-        <MyLabel name="content" layout="width:100%"
-        attr="fontSize:14,color:#333333,text:aaa,linesNum:4,lineBreakMode:truncatingTail,adjustFontSize:false"/>
+        <UIView layout="height:8"/>
+        <UILabel name="content" layout="width:100%"
+        attr="fontSize:14,color:#333333,text:aaa,linesNum:4,lineBreakMode:truncatingTail"/>
+        <UIView layout="height:8"/>
     </UIView>
 </UIView> 
