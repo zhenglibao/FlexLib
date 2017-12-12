@@ -23,6 +23,16 @@
 
 @implementation FlexTouchView
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _activeOpacity = 1.0f;
+        _underlayColor = nil;
+    }
+    return self;
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self setActiveStatus:YES];
@@ -52,7 +62,8 @@
             _oldAlpha = self.alpha ;
             _bgColor = self.backgroundColor ;
             self.alpha = _activeOpacity;
-            self.backgroundColor = _underlayColor ;
+            if(_underlayColor != nil)
+                self.backgroundColor = _underlayColor ;
         } else {
             self.alpha = _oldAlpha;
             self.backgroundColor = _bgColor ;
