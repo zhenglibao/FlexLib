@@ -24,6 +24,14 @@
 * tintColor: color
 * stickTop: boolean
 
+## FlexTouchView attributes:
+* underlayColor: color
+* activeOpacity: number (0~1)
+
+## FlexScrollView attributes:
+* horzScroll: boolean
+* vertScroll: boolean
+
 ## UILabel attributes:
 * text: string
 * fontSize: number
