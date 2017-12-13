@@ -19,6 +19,7 @@
 #import "FlexRootView.h"
 #import "FlexScrollView.h"
 #import "FlexStyleMgr.h"
+#import "FlexTouchMaskView.h"
 #import "FlexTouchView.h"
 #import "FlexUtils.h"
 #import "UIActivityIndicatorView+Flex.h"

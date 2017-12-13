@@ -10,13 +10,15 @@
 
 #import "FlexTouchView.h"
 #import "FlexUtils.h"
+#import "FlexTouchMaskView.h"
 
 @interface FlexTouchView()
 {
+    FlexTouchMaskView* _maskView;
     CGFloat _activeOpacity;
     UIColor* _underlayColor;
-    UIColor* _bgColor;
     
+    UIColor* _bgColor;
     CGFloat _oldAlpha;
 }
 @end
@@ -32,19 +34,27 @@
     }
     return self;
 }
-
+-(FlexTouchMaskView*)findMaskView:(UIView*)parent
+{
+    for (UIView* sub in parent.subviews) {
+        if( [sub isKindOfClass:[FlexTouchMaskView class]])
+            return (FlexTouchMaskView*)sub;
+        FlexTouchMaskView* mask = [self findMaskView:sub];
+        if(mask != nil)
+            return mask;
+    }
+    return nil;
+}
+-(void)postCreate
+{
+    _maskView = [self findMaskView:self];
+}
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self setActiveStatus:YES];
-//    UITouch *touch1 = [touches anyObject];
-//    CGPoint touchLocation = [touch1 locationInView:self.finalScore];
-//    CGRect startRect = [[[cup layer] presentationLayer] frame];
-//    CGRectContainsPoint(startRect, touchLocation);
-
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -57,6 +67,10 @@
 
 -(void)setActiveStatus:(BOOL)bActive
 {
+    if(bActive && _maskView != nil){
+        CGSize szParent = _maskView.superview.frame.size;
+        _maskView.frame = CGRectMake(0, 0, szParent.width, szParent.height);
+    }
     [UIView animateWithDuration:0.2 animations:^{
         if (bActive) {
             _oldAlpha = self.alpha ;
@@ -64,9 +78,15 @@
             self.alpha = _activeOpacity;
             if(_underlayColor != nil)
                 self.backgroundColor = _underlayColor ;
+            if(_maskView != nil)
+            {
+                _maskView.hidden = NO ;
+            }
         } else {
             self.alpha = _oldAlpha;
             self.backgroundColor = _bgColor ;
+            if(_maskView != nil)
+                _maskView.hidden = YES;
         }
     }];
 }

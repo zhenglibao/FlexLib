@@ -47,13 +47,7 @@
 }
 -(void)tapTouchAction
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                    message:@"You pressed"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"OK",nil];
     
-    [alert show];
 }
 
 @end

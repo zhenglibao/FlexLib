@@ -32,6 +32,7 @@
 		D272A8D51FDADA370075DB1D /* FlexViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8D41FDADA370075DB1D /* FlexViewController.xml */; };
 		D272A8E01FDC0DD90075DB1D /* TestLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D272A8DE1FDC0DD90075DB1D /* TestLoginVC.m */; };
 		D272A8E21FDC0DFC0075DB1D /* TestLoginVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */; };
+		D297583D1FE0D069004314CF /* qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = D297583C1FE0D069004314CF /* qrcode.png */; };
 		D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBA1FD7EB0900554A0C /* return@2x.png */; };
 		D2CF9CC21FD7EB0900554A0C /* addnewtype@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */; };
 		D2CF9CC31FD7EB0900554A0C /* TestTableCell.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */; };
@@ -94,6 +95,7 @@
 		D272A8DE1FDC0DD90075DB1D /* TestLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLoginVC.m; sourceTree = "<group>"; };
 		D272A8DF1FDC0DD90075DB1D /* TestLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLoginVC.h; sourceTree = "<group>"; };
 		D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestLoginVC.xml; path = res/TestLoginVC.xml; sourceTree = "<group>"; };
+		D297583C1FE0D069004314CF /* qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qrcode.png; path = res/qrcode.png; sourceTree = "<group>"; };
 		D2CF9CBA1FD7EB0900554A0C /* return@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "return@2x.png"; path = "res/return@2x.png"; sourceTree = "<group>"; };
 		D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addnewtype@2x.png"; path = "res/addnewtype@2x.png"; sourceTree = "<group>"; };
 		D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestTableCell.xml; path = res/TestTableCell.xml; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		D2CF9CB91FD7EAFA00554A0C /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D297583C1FE0D069004314CF /* qrcode.png */,
 				D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */,
 				D272A8D21FDA66220075DB1D /* arrow_right@2x.png */,
 				D2CF9CBB1FD7EB0900554A0C /* addnewtype@2x.png */,
@@ -363,6 +366,7 @@
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				D272A8D11FDA631F0075DB1D /* TestModalVC.xml in Resources */,
 				D270E9C21FDD7503007FD06C /* README.zh.md in Resources */,
+				D297583D1FE0D069004314CF /* qrcode.png in Resources */,
 				D272A8D31FDA66220075DB1D /* arrow_right@2x.png in Resources */,
 				D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */,
 				D2CF9CC41FD7EB0900554A0C /* batchcheck@2x.png in Resources */,
