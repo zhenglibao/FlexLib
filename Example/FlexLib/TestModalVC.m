@@ -34,8 +34,19 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
--(void)tapModal
+-(void)tapModalTop
 {
+    [modal setViewAttr:@"position" Value:@"top"];
+    [modal showModalInView:self.view Anim:YES];
+}
+-(void)tapModalCenter
+{
+    [modal setViewAttr:@"position" Value:@"center"];
+    [modal showModalInView:self.view Anim:YES];
+}
+-(void)tapModalBottom
+{
+    [modal setViewAttr:@"position" Value:@"bottom"];
     [modal showModalInView:self.view Anim:YES];
 }
 -(void)closeModal
