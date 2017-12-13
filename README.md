@@ -12,6 +12,7 @@ FlexLib is an obj-c layout framework for iOS. It's based on [flexbox](https://cs
 
 With FlexLib, you can write iOS ui much faster than before, and there are better adaptability.
 
+- [Screenshots](#screenshots)
 - [Feature](#feature)
 - [Usage](#usage)
 - [Example](#example)
@@ -20,6 +21,14 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 - [About Flexbox](#about-flexbox)
 - [Author](#author)
 - [License](#license)
+
+---
+
+## Screenshots
+
+![例子1](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example1.png)
+![例子2](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example2.png)
+![例子3](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example3.png)
 
 ---
 
