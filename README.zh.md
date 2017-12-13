@@ -193,10 +193,10 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox
 pod 'FlexLib'
 ```
 
-## 接下来要增加的特性
-* 更多的视图属性
-* 布局热更新机制
-* size class支持
+### 关于Flexbox
+[CSS-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+[Yoga-flexbox](https://facebook.github.io/yoga/docs/flex-direction/)
 
 ## 作者
 
@@ -205,11 +205,6 @@ zhenglibao, 798393829@qq.com. QQ群: 687398178
 欢迎咨询各种问题.
 
 希望你能够喜欢这个项目. :)
-
-### 关于Flexbox
-[CSS-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-
-[Yoga-flexbox](https://facebook.github.io/yoga/docs/flex-direction/)
 
 ## 版权
 

@@ -12,6 +12,14 @@ FlexLib is an obj-c layout framework for iOS. It's based on [flexbox](https://cs
 
 With FlexLib, you can write iOS ui much faster than before, and there are better adaptability.
 
+- [Feature](#Feature)
+- [Usage](#Usage)
+- [Example](#Example)
+- [Attribute Reference](#Attribute)
+- [Installation](#Installation)
+- [About Flexbox](#About)
+- [Author](#Author)
+- [License](#License)
 
 ## Feature
 * layout based on xml format
@@ -195,10 +203,11 @@ it, simply add the following line to your Podfile:
 pod 'FlexLib'
 ```
 
-## Todo
-* more view attributes
-* hot update layout
-* size class support
+
+### About Flexbox
+[CSS-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+[Yoga-flexbox](https://facebook.github.io/yoga/docs/flex-direction/)
 
 ## Author
 
@@ -207,11 +216,6 @@ zhenglibao, 798393829@qq.com. QQ qun: 687398178
 You can contact me if you have any problem.
 
 I hope you will like it. :)
-
-### About Flexbox
-[CSS-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-
-[Yoga-flexbox](https://facebook.github.io/yoga/docs/flex-direction/)
 
 ## License
 
