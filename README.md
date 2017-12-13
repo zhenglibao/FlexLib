@@ -8,9 +8,9 @@
 ## FlexLib
 ![中文版](https://github.com/zhenglibao/FlexLib/blob/master/README.zh.md)
 
-FlexLib is an obj-c layout framework for iOS. It's based on [yoga](https://facebook.github.io/yoga/) layout engine which implement  mostly compatible [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) model.
+FlexLib is an obj-c layout framework for iOS. It's based on [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) model which is standard for web layout. So the layout capability is powerful and easy to use.
 
-With FlexLib, you can write iOS ui as fast as web or android, simple & fast & powerful.
+With FlexLib, you can write iOS ui much faster than before, and there are better adaptability.
 
 
 ## Feature
@@ -176,13 +176,14 @@ With FlexLib, you can write iOS ui as fast as web or android, simple & fast & po
 
 To run the example project, clone the repo, and open `Example/FlexLib.xcworkspace` with XCode to run.
 
+
 ## Attribute Reference
 
 Layout attributes are stable, but view attributes are still in rapid increased. You can search FLEXSET in the library to find all supported view attributes. And you can make extendsion in your project by the catagory to support more view attributes.
 
- ![layout attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/layout.md)
+ [layout attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/layout.md)
  
- ![view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
+ [view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
  
 
 ## Installation

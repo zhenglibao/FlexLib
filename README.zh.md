@@ -8,9 +8,9 @@
 ## FlexLib
 ![english](https://github.com/zhenglibao/FlexLib/blob/master/README.md)
 
-FlexLib是用Obj-c语言编写的ios布局框架。 该框架基于[yoga](https://facebook.github.io/yoga/) 布局引擎，该引擎实现了一套[flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)布局模型，与[flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)大部分是兼容的。
+FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox模型，这个模型是web端的布局标准。基于flexbox模型，FlexLib提供了强大的布局能力，并且易于使用。
 
-使用FlexLib, 可以大幅提高ios的界面开发速度，能够与web和安卓相当，该框架使用简单同时能够应付复杂的布局。
+使用FlexLib, 可以大幅提高ios的界面开发速度，并且适应性更好。
 
 ## 特性
 * 基于xml格式的布局文件
@@ -180,9 +180,9 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该框架基于[yoga](https:
 
 布局属性已经稳定，但视图属性仍然在快速增加中。你可以通过在工程中搜索FLEXSET来找到所有支持的视图属性。如果现有的视图属性不能满足要求，你也可以扩展属于自己的视图属性，然后在xml文件中使用.
 
- ![layout attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/layout.md)
+ [layout attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/layout.md)
  
- ![view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
+ [view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
  
 
 ## 安装

@@ -45,7 +45,7 @@
             <UIImageView attr="source:arrow_right.png"/>
         </UIView>
         
-        <UIView name="btns" layout="height:50,flexDirection:row,alignItems:center">
+        <UIView layout="height:50,flexDirection:row,alignItems:center">
             <UIView layout="width:50%,height:100%,justifyContent:center," attr="bgColor:white">
                 <UILabel attr="fontSize:14,textAlign:center,text:reset"/>
             </UIView>
