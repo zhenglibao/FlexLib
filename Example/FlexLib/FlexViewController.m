@@ -36,15 +36,15 @@
 }
 - (void)onTest:(id)sender {
     TestVC* vc=[[TestVC alloc]init];
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)onTestTable:(id)sender {
     TestTableVC* vc=[[TestTableVC alloc]init];
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)onTestScrollView:(id)sender {
     TestScrollVC* vc=[[TestScrollVC alloc]init];
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)onTestModalView:(id)sender {
     TestModalVC* vc=[[TestModalVC alloc]init];
@@ -52,7 +52,7 @@
 }
 - (void)onTestLoginView:(id)sender {
     TestLoginVC* vc=[[TestLoginVC alloc]init];
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

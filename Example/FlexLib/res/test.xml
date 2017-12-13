@@ -28,11 +28,4 @@
             </UIView>
         </UIView>
     </UIView>
-    
-    <UIView name="close" onPress="tapCloseAction" 
-		layout="position:absolute,width:100%,
-		height:50,bottom:0,alignItems:center">
-        <UIView layout="height:1,width:100%" attr="bgColor:#f0f0f0"/>
-        <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Close"/>
-    </UIView>
 </UIView> 

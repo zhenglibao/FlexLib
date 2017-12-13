@@ -4,17 +4,15 @@
     flex:1,
     alignItems:center"
     attr="bgColor:white">
-    <FlexScrollView name="scroll"  layout="padding:50,flex:1,width:100%" attr="bgColor:white,vertScroll:true,horzIndicator:true,vertIndicator:true">
-        <FlexTouchView onPress="tapTouchAction" layout="height:300,width:100%,alignItems:center,justifyContent:center" attr="bgColor:#e5e5e5,borderRadius:8,borderColor:black,borderWidth:1,underlayColor:lightGray">
+    <FlexScrollView name="scroll"  layout="padding:50,flex:1,width:100%,alignItems:center" attr="bgColor:white,vertScroll:true,horzIndicator:true,vertIndicator:true">
+        <FlexTouchView onPress="tapTouchAction">
             <UIImageView layout="width:100,height:100" attr="borderRadius:50,clipsToBounds:true,source:qrcode.png">
                 <FlexTouchMaskView attr="bgColor:black,alpha:0.7"/>
             </UIImageView>
-            <UILabel layout="width:100%" attr="fontSize:16,textAlign:center,color:red,text:Please touch me and move"/>
+        </FlexTouchView>
+        <UIView layout="height:20"/>
+        <FlexTouchView onPress="tapTouchAction" layout="height:100,width:100%,alignItems:center,justifyContent:center" attr="bgColor:#e5e5e5,borderRadius:8,underlayColor:lightGray">
+            <UILabel layout="width:100%" attr="fontSize:16,textAlign:center,color:red,text:Please touch me and move\,\r\n这是测试touch功能的控件"/>
         </FlexTouchView>
     </FlexScrollView>
-    
-    <UIView name="close" onPress="tapCloseAction" layout="position:absolute,width:100%,height:50,bottom:0,alignItems:center">
-        <UIView layout="height:1,width:100%" attr="bgColor:#f0f0f0"/>
-        <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Close"/>
-    </UIView>
 </UIView> 

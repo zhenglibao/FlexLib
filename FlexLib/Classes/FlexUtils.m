@@ -10,6 +10,7 @@
 
 
 #import "FlexUtils.h"
+#import <sys/time.h>
 
 static NSString* _gclrs[]=
 {
@@ -152,3 +153,13 @@ BOOL IsPortrait(void)
     CGRect rcScreen = [[UIScreen mainScreen]bounds];
     return rcScreen.size.height > rcScreen.size.width ;
 }
+
+double GetAccurateSecondsSince1970()
+{
+    struct timeval now ;
+    gettimeofday(&now,NULL);
+    double tf = now.tv_sec + (double)(now.tv_usec)/1000000.0 ;
+    
+    return tf;
+}
+

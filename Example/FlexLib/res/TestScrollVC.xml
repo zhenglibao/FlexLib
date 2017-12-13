@@ -51,9 +51,4 @@
         <UILabel layout="width:100%" attr="@:system/bigFont,text:测试文字\,没有实际用途\,就是想占据点空间啊\,哈哈哈哈哈哈哈哈哈哈哈哈哈,linesNum:0"/>
         <UIView layout="height:50" attr="bgColor:clear"/>
     </FlexScrollView>
-    
-    <UIView name="close" onPress="tapCloseAction" layout="position:absolute,width:100%,height:50,bottom:0,alignItems:center" attr="bgColor:lightGray">
-        <UIView layout="height:1,width:100%" attr="bgColor:#f0f0f0"/>
-        <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Close"/>
-    </UIView>
 </UIView> 

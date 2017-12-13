@@ -17,6 +17,7 @@
     FlexTouchMaskView* _maskView;
     CGFloat _activeOpacity;
     UIColor* _underlayColor;
+    double _activeStartAt;
     
     UIColor* _bgColor;
     CGFloat _oldAlpha;
@@ -67,12 +68,15 @@
 
 -(void)setActiveStatus:(BOOL)bActive
 {
-    if(bActive && _maskView != nil){
-        CGSize szParent = _maskView.superview.frame.size;
-        _maskView.frame = CGRectMake(0, 0, szParent.width, szParent.height);
-    }
-    [UIView animateWithDuration:0.2 animations:^{
-        if (bActive) {
+    const double duration = 0.2 ;
+    
+    if(bActive){
+        if(_maskView != nil){
+            CGSize szParent = _maskView.superview.frame.size;
+            _maskView.frame = CGRectMake(0, 0, szParent.width, szParent.height);
+        }
+        _activeStartAt = GetAccurateSecondsSince1970();
+        [UIView animateWithDuration:duration animations:^{
             _oldAlpha = self.alpha ;
             _bgColor = self.backgroundColor ;
             self.alpha = _activeOpacity;
@@ -82,13 +86,19 @@
             {
                 _maskView.hidden = NO ;
             }
-        } else {
+        }];
+    }else{
+        double now = GetAccurateSecondsSince1970();
+        double delay = duration - (now - _activeStartAt);
+        if(delay<0) delay = 0;
+        
+        [UIView animateWithDuration:duration delay:delay options:0 animations:^{
             self.alpha = _oldAlpha;
             self.backgroundColor = _bgColor ;
             if(_maskView != nil)
                 _maskView.hidden = YES;
-        }
-    }];
+        }completion:nil];
+    }
 }
 
 FLEXSET(activeOpacity)

@@ -43,7 +43,8 @@
 
 -(void)tapCloseAction
 {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+//    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)tapTouchAction
 {
