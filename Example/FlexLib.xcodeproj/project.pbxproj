@@ -327,6 +327,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = zhenglibao;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = E42H8LHVKT;
+						ProvisioningStyle = Manual;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -636,12 +640,16 @@
 			baseConfigurationReference = D20EA7438FB7413D8C580238 /* Pods-FlexLib_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: zheng libao (UMBFW55KJK)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = E42H8LHVKT;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlexLib/FlexLib-Prefix.pch";
 				INFOPLIST_FILE = "FlexLib/FlexLib-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weibangong.oa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Appstore Development";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -651,12 +659,15 @@
 			baseConfigurationReference = 7B47CA40CE36ADABF2EC0262 /* Pods-FlexLib_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = E42H8LHVKT;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlexLib/FlexLib-Prefix.pch";
 				INFOPLIST_FILE = "FlexLib/FlexLib-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.weibangong.oa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Appstore Development";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

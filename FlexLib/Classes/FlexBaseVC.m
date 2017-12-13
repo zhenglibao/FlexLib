@@ -56,6 +56,13 @@
     self.view = [[UIView alloc]initWithFrame:CGRectZero];
     self.view.backgroundColor=_flexRootView.topSubView.backgroundColor;
     [self.view addSubview:contentView];
+    
+    if (@available(iOS 11.0, *))
+    {
+    }else{
+        // for <ios11, it's necessary
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait
 {

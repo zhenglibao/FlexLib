@@ -24,7 +24,16 @@
 @end
 
 @implementation TestTableVC
+- (void)dealloc
+{
+    [_table removeObserver:self forKeyPath:@"contentOffset"];
+}
+#pragma mark - KVO
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
+{
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,6 +41,8 @@
     
     _table.delegate = self ;
     _table.dataSource = self ;
+    
+            [_table addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     
     _datas =
   @[
@@ -148,6 +159,7 @@
         @"content": @"我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
         },
   ];
+    [_table reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
