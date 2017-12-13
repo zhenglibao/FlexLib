@@ -21,6 +21,8 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 - [Author](#Author)
 - [License](#License)
 
+---
+
 ## Feature
 * layout based on xml format
 * auto variable binding
@@ -32,6 +34,8 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 * support modal view
 * table cell height calculation
 * support iPhoneX perfectly
+
+---
 
 ## Usage
 
@@ -180,10 +184,13 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 
 * add this FlexRootView as child view to other normal parent view
 
+---
+
 ## Example
 
 To run the example project, clone the repo, and open `Example/FlexLib.xcworkspace` with XCode to run.
 
+---
 
 ## Attribute Reference
 
@@ -193,6 +200,7 @@ Layout attributes are stable, but view attributes are still in rapid increased. 
  
  [view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
  
+---
 
 ## Installation
 
@@ -203,11 +211,14 @@ it, simply add the following line to your Podfile:
 pod 'FlexLib'
 ```
 
+---
 
-### About Flexbox
+## About Flexbox
 [CSS-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 [Yoga-flexbox](https://facebook.github.io/yoga/docs/flex-direction/)
+
+---
 
 ## Author
 
@@ -217,6 +228,11 @@ You can contact me if you have any problem.
 
 I hope you will like it. :)
 
+---
+
 ## License
 
 FlexLib is available under the MIT license. See the LICENSE file for more info.
+
+---
+
