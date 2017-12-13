@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/FlexLib.svg?style=flat)](http://cocoapods.org/pods/FlexLib)
 
 ## FlexLib
-![中文版](https://github.com/zhenglibao/FlexLib/blob/master/README.zh.md)
+[中文版](https://github.com/zhenglibao/FlexLib/blob/master/README.zh.md)
 
 FlexLib is an obj-c layout framework for iOS. It's based on [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) model which is standard for web layout. So the layout capability is powerful and easy to use.
 

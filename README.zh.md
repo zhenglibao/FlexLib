@@ -6,11 +6,13 @@
 [![Platform](https://img.shields.io/cocoapods/p/FlexLib.svg?style=flat)](http://cocoapods.org/pods/FlexLib)
 
 ## FlexLib
-![english](https://github.com/zhenglibao/FlexLib/blob/master/README.md)
+[english](https://github.com/zhenglibao/FlexLib/blob/master/README.md)
 
 FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox模型，这个模型是web端的布局标准。基于flexbox模型，FlexLib提供了强大的布局能力，并且易于使用。
 
 使用FlexLib, 可以大幅提高ios的界面开发速度，并且适应性更好。
+
+---
 
 ## 特性
 * 基于xml格式的布局文件
@@ -23,6 +25,8 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox
 * 支持模态显示视图
 * 表格cell高度动态计算
 * 完美适配iPhone X
+
+---
 
 ## 使用方法
 
@@ -171,10 +175,13 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox
 
 * 将FlexRootView添加到其他未使用flexbox进行布局的普通视图上。
 
+---
 
 ## 例子
 
 下载代码, 打开`Example/FlexLib.xcworkspace` 即可运行.
+
+---
 
 ## 属性参考
 
@@ -184,6 +191,7 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox
  
  [view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
  
+ ---
 
 ## 安装
 
@@ -193,10 +201,14 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox
 pod 'FlexLib'
 ```
 
-### 关于Flexbox
+---
+
+## 关于Flexbox
 [CSS-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 [Yoga-flexbox](https://facebook.github.io/yoga/docs/flex-direction/)
+
+---
 
 ## 作者
 
@@ -206,6 +218,11 @@ zhenglibao, 798393829@qq.com. QQ群: 687398178
 
 希望你能够喜欢这个项目. :)
 
+---
+
 ## 版权
 
 FlexLib is available under the MIT license. See the LICENSE file for more info.
+
+---
+
