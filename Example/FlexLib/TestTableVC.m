@@ -26,14 +26,8 @@
 @implementation TestTableVC
 - (void)dealloc
 {
-    [_table removeObserver:self forKeyPath:@"contentOffset"];
 }
-#pragma mark - KVO
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
-{
-    
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -41,8 +35,6 @@
     
     _table.delegate = self ;
     _table.dataSource = self ;
-    
-            [_table addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     
     _datas =
   @[
