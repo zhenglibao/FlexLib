@@ -6,7 +6,7 @@
     alignItems:center"
     attr="bgColor:white">
     <FlexScrollView name="_scroll" layout="flex:1,width:100%,alignItems:center" attr="vertScroll:true">
-        <UILabel name="_label"
+        <UILabel name="_label" layout="marginTop:20"
         attr="@:system/buttonText,text:You can run on iPhoneX,color:blue"/>
         <UIView onPress="onTest:" layout="@:system/button" attr="bgColor:#e5e5e5">
             <UILabel
