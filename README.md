@@ -26,7 +26,7 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 
 ## Screenshots
 
-Can you imagine you almost need nothing code to implement the following code?
+Can you imagine you almost need nothing code to implement the following effect?
 
 ![example1](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example1.png)  ![example2](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example2.png)   ![example3](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example3.png)
 
