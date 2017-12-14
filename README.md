@@ -228,6 +228,7 @@ pod 'FlexLib'
 ---
 
 ## Hot preview
+### Hot preview for view controller
 * start http server in your local folder
 
     For mac with python2.7 installed:
@@ -241,6 +242,14 @@ pod 'FlexLib'
    FlexSetPreviewBaseUrl(@"http://192.168.6.104:8000/FlexLib/res/");
    
 * Run your project, you can press Cmd+R to reload the layout on simulator. Notice: this shortcut is available only on debug mode.
+
+### hot preview for any ui
+
+* Start http server in your local folder as before
+* Set preview base url
+* Set resource load way
+    FlexSetLoadFunc(YES) or
+    FlexSetCustomLoadFunc(loadfunc)
 
 ---
 
