@@ -163,3 +163,33 @@ double GetAccurateSecondsSince1970()
     return tf;
 }
 
+static NSString* gBaseUrl = nil;
+
+void FlexSetPreviewBaseUrl(NSString* filexName)
+{
+    gBaseUrl = [filexName copy];
+}
+NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
+{
+    if(gBaseUrl == nil){
+        NSLog(@"Flexbox: preview base url not set");
+        return nil;
+    }
+    NSString* url = [NSString stringWithFormat:@"%@%@.xml",gBaseUrl,flexName];
+    
+    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest
+                                          returningResponse:&response
+                                                      error:&error];
+    
+    if (error == nil)
+    {
+        return data;
+    }else if(outError != NULL){
+        *outError = error;
+    }
+    return nil;
+}
+

@@ -64,6 +64,39 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
 }
+- (void)resetByFlexData:(NSData*)flexData
+{
+    FlexRootView* contentView = [FlexRootView loadWithNodeData:flexData Owner:self] ;
+    if(contentView != nil){
+        // 移除旧的
+        [_flexRootView removeFromSuperview];
+        _flexRootView = nil;
+    }
+    
+    _flexRootView = contentView ;
+    _flexRootView.portraitSafeArea = [self getSafeArea:YES];
+    _flexRootView.landscapeSafeArea = [self getSafeArea:NO];
+    
+ self.view.backgroundColor=_flexRootView.topSubView.backgroundColor;
+    [self.view addSubview:contentView];
+}
+- (void)reloadFlexView
+{
+    __weak FlexBaseVC* weakSelf = self;
+    dispatch_queue_t queue = dispatch_get_global_queue(
+                                                       DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue,^{
+        NSError* error = nil;
+        NSData* flexData = FlexFetchLayoutFile(_flexName, &error);
+        if(flexData != nil){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf resetByFlexData:flexData];
+            });
+        }else{
+            NSLog(@"Flexbox: reload flex error: %@",error);
+        }
+    });
+}
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait
 {
     if(!IsIphoneX())
@@ -114,4 +147,16 @@
 {
     [self layoutFlexRootViews];
 }
+
+
+- (NSArray<UIKeyCommand *> *)keyCommands
+{
+    return @[
+             // Reload
+             [UIKeyCommand keyCommandWithInput:@"r"
+                                 modifierFlags:UIKeyModifierCommand
+                                        action:@selector(reloadFlexView)],
+             ];
+}
+
 @end

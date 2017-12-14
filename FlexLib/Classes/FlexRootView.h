@@ -60,6 +60,9 @@
 // 从xml文件中加载布局
 +(FlexRootView*)loadWithNodeFile:(NSString*)resName
                            Owner:(NSObject*)owner;
+// 从data中加载布局
++(FlexRootView*)loadWithNodeData:(NSData*)data
+                           Owner:(NSObject*)owner;
 
 -(void)markChildDirty:(UIView*)child;
 

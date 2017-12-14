@@ -516,12 +516,9 @@ void FlexApplyLayoutParam(YGLayout* layout,
     
     return node;
 }
-+(FlexNode*)loadNodeFile:(NSString*)nodePath
++(FlexNode*)loadNodeData:(NSData*)xmlData
 {
-    NSData *xmlData = [NSData dataWithContentsOfFile:nodePath];
-    
     if(xmlData == nil){
-        NSLog(@"FlexNode file %@ load failed.",nodePath);
         return nil;
     }
     
@@ -535,6 +532,15 @@ void FlexApplyLayoutParam(YGLayout* layout,
     
     GDataXMLElement* root=[xmlDoc rootElement];
     return [FlexNode buildNodeWithXml:root];
+}
++(FlexNode*)loadNodeFile:(NSString*)nodePath
+{
+    NSData *xmlData = [NSData dataWithContentsOfFile:nodePath];
+    if(xmlData == nil){
+        NSLog(@"FlexNode file %@ load failed.",nodePath);
+        return nil;
+    }
+    return [FlexNode loadNodeData:xmlData];
 }
 
 @end

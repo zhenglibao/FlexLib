@@ -27,6 +27,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
 @interface FlexNode : NSObject<NSCoding>
 
 +(FlexNode*)loadNodeFile:(NSString*)nodePath;
++(FlexNode*)loadNodeData:(NSData*)data;
 
 -(instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(NSCoder *)aCoder;

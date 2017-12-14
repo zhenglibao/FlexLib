@@ -107,7 +107,23 @@ static void* gObserverFrame     = (void*)4;
     }
     return nil;
 }
-
++(FlexRootView*)loadWithNodeData:(NSData*)data
+                           Owner:(NSObject*)owner
+{
+    FlexRootView* root = [[FlexRootView alloc]init];
+    FlexNode* node = [FlexNode loadNodeData:data];
+    if(node != nil){
+        UIView* sub = [node buildViewTree:owner
+                                 RootView:root];
+        
+        if(sub != nil && ![sub isKindOfClass:[FlexModalView class]])
+        {
+            [root addSubview:sub];
+        }
+    }
+    root.yoga.isEnabled = YES;
+    return root;
+}
 +(FlexRootView*)loadWithNodeFile:(NSString*)resName
                            Owner:(NSObject*)owner
 {

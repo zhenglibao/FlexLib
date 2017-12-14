@@ -98,3 +98,8 @@ BOOL IsPortrait(void);
 //获取自1970/1/1到现在的精确秒数，精确到微秒
 double GetAccurateSecondsSince1970(void);
 
+//设置baseUrl
+void FlexSetPreviewBaseUrl(NSString* filexName);
+
+//通过http拉取资源文件
+NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError);
