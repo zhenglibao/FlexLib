@@ -131,22 +131,8 @@ static void* gObserverFrame     = (void*)4;
         resName = NSStringFromClass([owner class]);
     }
     
-    NSString* path;
-    
-    if([resName hasPrefix:@"/"]){
-        // it's absolute path
-        path = resName ;
-    }else{
-        path = [[NSBundle mainBundle]pathForResource:resName ofType:@"xml"];
-    }
-    
-    if(path==nil){
-        NSLog(@"Flexbox: resource %@ not found.",resName);
-        return nil;
-    }
-    
     FlexRootView* root = [[FlexRootView alloc]init];
-    FlexNode* node = [FlexNode loadNodeFile:path];
+    FlexNode* node = [FlexNode loadNodeFromRes:resName];
     if(node != nil){
         UIView* sub = [node buildViewTree:owner
                                  RootView:root];

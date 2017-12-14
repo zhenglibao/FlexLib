@@ -14,6 +14,15 @@
 @class FlexRootView;
 @class YGLayout;
 
+typedef NSData* (*FlexLoadFunc)(NSString* flexName);
+
+// 设置资源加载方式：网络 or 本地文件
+// 仅在debug模式下生效，release下自动从本地文件加载
+void FlexSetLoadFunc(BOOL bFromNet);
+
+// 设置自定义资源加载方式，任何方式都可生效
+void FlexSetCustomLoadFunc(FlexLoadFunc func);
+
 // 设置视图属性
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,
@@ -26,7 +35,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
 
 @interface FlexNode : NSObject<NSCoding>
 
-+(FlexNode*)loadNodeFile:(NSString*)nodePath;
++(FlexNode*)loadNodeFromRes:(NSString*)flexName;
 +(FlexNode*)loadNodeData:(NSData*)data;
 
 -(instancetype)initWithCoder:(NSCoder *)coder;

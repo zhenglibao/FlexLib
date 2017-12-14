@@ -27,6 +27,10 @@
 
 #pragma mark - Name values
 
+NSData* loadFromNetwork(NSString* resName);
+NSData* loadFromFile(NSString* resName);
+
+static FlexLoadFunc gLoadFunc = loadFromFile;
 
 static NameValue _direction[] =
 {{"inherit", YGDirectionInherit},
@@ -533,14 +537,54 @@ void FlexApplyLayoutParam(YGLayout* layout,
     GDataXMLElement* root=[xmlDoc rootElement];
     return [FlexNode buildNodeWithXml:root];
 }
-+(FlexNode*)loadNodeFile:(NSString*)nodePath
++(FlexNode*)loadNodeFromRes:(NSString*)flexName
 {
-    NSData *xmlData = [NSData dataWithContentsOfFile:nodePath];
+    NSData* xmlData = gLoadFunc(flexName) ;
     if(xmlData == nil){
-        NSLog(@"FlexNode file %@ load failed.",nodePath);
+        NSLog(@"Flexbox: flex res %@ load failed.",flexName);
         return nil;
     }
     return [FlexNode loadNodeData:xmlData];
 }
 
 @end
+
+NSData* loadFromFile(NSString* resName)
+{
+    NSString* path;
+    
+    if([resName hasPrefix:@"/"]){
+        // it's absolute path
+        path = resName ;
+    }else{
+        path = [[NSBundle mainBundle]pathForResource:resName ofType:@"xml"];
+    }
+    
+    if(path==nil){
+        NSLog(@"Flexbox: resource %@ not found.",resName);
+        return nil;
+    }
+    return [NSData dataWithContentsOfFile:path];
+}
+NSData* loadFromNetwork(NSString* resName)
+{
+    NSError* error = nil;
+    NSData* flexData = FlexFetchLayoutFile(resName, &error);
+    return flexData;
+}
+
+
+
+void FlexSetLoadFunc(BOOL bFromNet)
+{
+#ifdef DEBUG
+    gLoadFunc = bFromNet ? loadFromNetwork : loadFromFile ;
+#else
+    gLoadFunc = loadFromFile ;
+#endif
+}
+void FlexSetCustomLoadFunc(FlexLoadFunc func)
+{
+    gLoadFunc = func;
+}
+
