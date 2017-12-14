@@ -40,6 +40,12 @@
         <attr name="justifyContent">center</attr>
         <attr name="margin">20</attr>
     </style>
+    <style name="buttonAttr">
+        <attr name="bgColor">#e5e5e5</attr>
+        <attr name="borderRadius">4</attr>
+        <attr name="clipsToBounds">true</attr>
+        <attr name="underlayColor">darkGray</attr>
+    </style>
     <style name="buttonText">
         <attr name="fontSize">16</attr>
         <attr name="color">#333333</attr>
