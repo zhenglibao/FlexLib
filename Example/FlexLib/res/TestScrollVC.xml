@@ -4,6 +4,8 @@
     flex:1,
     alignItems:center"
     attr="bgColor:white">
+    <UIView layout="height:1,width:100%" attr="bgColor:red"/>
+    
     <FlexScrollView name="scroll"  layout="padding:10,flex:1,width:100%" attr="bgColor:#f5f5f5,vertScroll:true,horzIndicator:false,vertIndicator:true">
         <UILabel attr="fontSize:14,color:#666666,text:Serial No."/>
         <UIView layout="height:20"/>

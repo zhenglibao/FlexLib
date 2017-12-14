@@ -18,6 +18,8 @@
 {
     NSString* _flexName ;
     FlexRootView* _flexRootView ;
+    
+    BOOL _bUpdating;        //正在热更新
 }
 
 @end
@@ -35,6 +37,10 @@
 -(NSString*)getFlexName
 {
     return nil;
+}
+-(void)onLayoutReload
+{
+    
 }
 -(FlexRootView*)rootView
 {
@@ -66,6 +72,11 @@
 }
 - (void)resetByFlexData:(NSData*)flexData
 {
+    _bUpdating = NO ;
+    if(flexData == nil){
+        return;
+    }
+    
     FlexRootView* contentView = [FlexRootView loadWithNodeData:flexData Owner:self] ;
     if(contentView != nil){
         // 移除旧的
@@ -79,21 +90,26 @@
     
  self.view.backgroundColor=_flexRootView.topSubView.backgroundColor;
     [self.view addSubview:contentView];
+    [self onLayoutReload];
 }
 - (void)reloadFlexView
 {
+    if(_bUpdating)
+        return;
+    
+    _bUpdating = YES;
+    
     __weak FlexBaseVC* weakSelf = self;
     dispatch_queue_t queue = dispatch_get_global_queue(
                                                        DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue,^{
         NSError* error = nil;
         NSData* flexData = FlexFetchLayoutFile(_flexName, &error);
-        if(flexData != nil){
-            dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf resetByFlexData:flexData];
-            });
-        }else{
-            NSLog(@"Flexbox: reload flex error: %@",error);
+        });
+        if(error != nil){
+            NSLog(@"Flexbox: reload flex data error: %@",error);
         }
     });
 }
