@@ -11,7 +11,7 @@
             </UIImageView>
         </FlexTouchView>
         <UIView layout="height:20"/>
-        <FlexTouchView onPress="tapTouchAction" layout="height:100,width:100%,alignItems:center,justifyContent:center" attr="bgColor:#e5e5e5,borderRadius:8,underlayColor:lightGray">
+        <FlexTouchView onPress="tapTouchAction" layout="height:100,width:100%,alignItems:center,justifyContent:center" attr="bgColor:green,borderRadius:8,underlayColor:lightGray">
             <UILabel layout="width:100%" attr="fontSize:16,textAlign:center,color:red,text:Please touch me and move\,\r\n这是测试touch功能的控件"/>
         </FlexTouchView>
         <UIView layout="height:20"/>
