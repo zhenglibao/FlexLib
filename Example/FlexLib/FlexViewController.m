@@ -51,22 +51,8 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)onTestLoginView:(id)sender {
-//    TestLoginVC* vc=[[TestLoginVC alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]];
-    NSURLResponse * response = nil;
-    NSError * error = nil;
-    NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest
-                                          returningResponse:&response
-                                                      error:&error];
-    
-    if (error == nil)
-    {
-        NSString* str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        int n=0;
-        // Parse data here
-    }
+    TestLoginVC* vc=[[TestLoginVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
