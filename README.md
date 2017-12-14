@@ -43,7 +43,7 @@ Can you imagine you almost need nothing code to implement the following effect?
 * support modal view
 * table cell height calculation
 * support iPhoneX perfectly
-* support hot update 
+* support hot preview
 
 ---
 
@@ -223,7 +223,7 @@ pod 'FlexLib'
 
 ---
 
-## Hot update
+## Hot preview
 * start http server in your local folder
 
     For mac with python2.7 installed:
