@@ -28,7 +28,7 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 
 This demo is hot preview:
 
-![example0](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/hotpreview.gif)
+![example0](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/hotpreview2.gif)
 
 Can you imagine you almost need nothing code to implement the following effect?
 
