@@ -167,12 +167,16 @@
 
 - (NSArray<UIKeyCommand *> *)keyCommands
 {
+#ifdef DEBUG
     return @[
              // Reload
              [UIKeyCommand keyCommandWithInput:@"r"
                                  modifierFlags:UIKeyModifierCommand
                                         action:@selector(reloadFlexView)],
              ];
+#else
+    return @[];
+#endif
 }
 
 @end

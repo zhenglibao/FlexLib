@@ -10,7 +10,7 @@
 #endif
 #endif
 
-#import "Flex.h"
+#import "FlexLib.h"
 #import "FlexBaseTableCell.h"
 #import "FlexBaseVC.h"
 #import "FlexModalView.h"

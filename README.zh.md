@@ -25,6 +25,7 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox
 * 支持模态显示视图
 * 表格cell高度动态计算
 * 完美适配iPhone X
+* 支持热更新
 
 ---
 
