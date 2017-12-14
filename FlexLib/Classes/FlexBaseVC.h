@@ -21,6 +21,9 @@
 // override this to provide flex res name
 -(NSString*)getFlexName;
 
+// 支持热更新
+- (void)resetByFlexData:(NSData*)flexData;
+
 // override this to do something when xml updated
 -(void)onLayoutReload;
 

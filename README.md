@@ -43,6 +43,7 @@ Can you imagine you almost need nothing code to implement the following effect?
 * support modal view
 * table cell height calculation
 * support iPhoneX perfectly
+* support hot update 
 
 ---
 
