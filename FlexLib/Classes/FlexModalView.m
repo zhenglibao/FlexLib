@@ -101,8 +101,7 @@ static NameValue _gModalPosition[] =
 {
     [self hideModal:NO];
     
-    _root.portraitSafeArea = _ownerRootView.portraitSafeArea;
-    _root.landscapeSafeArea = _ownerRootView.landscapeSafeArea;
+    _root.safeArea = _ownerRootView.safeArea;
     
     [self resetLayout];
 
@@ -116,8 +115,7 @@ static NameValue _gModalPosition[] =
 {
     [self hideModal:NO];
     
-    _root.portraitSafeArea = _ownerRootView.portraitSafeArea;
-    _root.landscapeSafeArea = _ownerRootView.landscapeSafeArea;
+    _root.safeArea = _ownerRootView.safeArea;
     
     [self configureLayoutWithBlock:^(YGLayout* layout){
         layout.position = YGPositionTypeAbsolute;

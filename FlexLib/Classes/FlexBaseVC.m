@@ -148,14 +148,13 @@ static void* gObserverFrame         = (void*)1;
 }
 
 -(void)layoutFlexRootViews{
-    if(IsPortrait()){
-        _flexRootView.portraitSafeArea = [self getSafeArea:YES];
-    }else{
-        _flexRootView.landscapeSafeArea = [self getSafeArea:NO];
-    }
+    BOOL isPortrait = IsPortrait();
+    UIEdgeInsets safeArea = [self getSafeArea:isPortrait];
     
     for(UIView* subview in self.view.subviews){
         if([subview isKindOfClass:[FlexRootView class]]){
+            FlexRootView* rootView = (FlexRootView*)subview;
+            rootView.safeArea = safeArea;
             [subview setNeedsLayout];
         }
     }

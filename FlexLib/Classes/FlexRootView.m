@@ -90,9 +90,7 @@ static void* gObserverFrame     = (void*)4;
     if (self) {
         _bInLayouting = NO ;
         _observedViews = [NSMutableSet set];
-        _portraitSafeArea = UIEdgeInsetsMake(0, 0, 0, 0);
-        _landscapeSafeArea = UIEdgeInsetsMake(0, 0, 0, 0);
-        
+        _safeArea = UIEdgeInsetsMake(0, 0, 0, 0);
         _lastConfigFrame = CGRectZero;
         _bChildDirty = NO;
         self.yoga.isEnabled = YES;
@@ -231,11 +229,7 @@ static void* gObserverFrame     = (void*)4;
 {
     CGRect rcSafeArea = self.superview.frame ;
     
-    if(IsPortrait())
-    {
-        return UIEdgeInsetsInsetRect(rcSafeArea,self.portraitSafeArea);
-    }
-    return UIEdgeInsetsInsetRect(rcSafeArea,self.landscapeSafeArea);
+    return UIEdgeInsetsInsetRect(rcSafeArea,self.safeArea);
 }
 -(BOOL)isConfigSame
 {

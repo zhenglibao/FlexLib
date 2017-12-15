@@ -42,9 +42,8 @@
 @property(nonatomic,assign) BOOL flexibleWidth;
 @property(nonatomic,assign) BOOL flexibleHeight;
 
-//四周距离父窗口边界的距离，默认全为0，分水平和竖直两种
-@property(nonatomic,assign) UIEdgeInsets portraitSafeArea;
-@property(nonatomic,assign) UIEdgeInsets landscapeSafeArea;
+//四周距离父窗口边界的距离
+@property(nonatomic,assign) UIEdgeInsets safeArea;
 
 //获取xml中的顶级窗口
 @property(nonatomic,readonly) UIView* topSubView;
