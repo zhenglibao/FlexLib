@@ -515,6 +515,9 @@ void FlexApplyLayoutParam(YGLayout* layout,
         NSMutableArray* childNodes = [NSMutableArray array] ;
         
         for(GDataXMLElement* child in children){
+            if(![child isKindOfClass:[GDataXMLElement class]]){
+                continue;
+            }
             [childNodes addObject:[FlexNode buildNodeWithXml:child]];
         }
         node.children = [childNodes copy] ;
