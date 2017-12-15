@@ -56,11 +56,11 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)onjustifyContent:(id)sender {
-    DemoFlexVC* vc=[[DemoFlexVC alloc]init];
+    DemoFlexVC* vc=[[DemoFlexVC alloc]initWithFlexName:@"justifyContent"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)onalignItems:(id)sender {
-    DemoFlexVC* vc=[[DemoFlexVC alloc]init];
+    DemoFlexVC* vc=[[DemoFlexVC alloc]initWithFlexName:@"alignItems"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
