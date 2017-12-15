@@ -16,6 +16,9 @@
 
 typedef NSData* (*FlexLoadFunc)(NSString* flexName);
 
+
+// 注意: 下面这些设置的资源加载方式函数是同步调用
+// 如果从网络获取资源可能会导致界面阻塞
 // 设置资源加载方式：网络 or 本地文件
 // 仅在debug模式下生效，release下自动从本地文件加载
 void FlexSetLoadFunc(BOOL bFromNet);
