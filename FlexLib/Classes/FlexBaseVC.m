@@ -14,6 +14,8 @@
 #import "YogaKit/UIView+Yoga.h"
 #import "FlexUtils.h"
 
+static void* gObserverFrame         = (void*)1;
+
 @interface FlexBaseVC ()
 {
     NSString* _flexName ;
@@ -33,6 +35,10 @@
         _flexName = flexName ;
     }
     return self;
+}
+- (void)dealloc
+{
+    [self.view removeObserver:self forKeyPath:@"frame"];
 }
 -(NSString*)getFlexName
 {
@@ -56,8 +62,6 @@
     }
     FlexRootView* contentView = [FlexRootView loadWithNodeFile:_flexName Owner:self] ;
     _flexRootView = contentView ;
-    _flexRootView.portraitSafeArea = [self getSafeArea:YES];
-    _flexRootView.landscapeSafeArea = [self getSafeArea:NO];
     
     self.view = [[UIView alloc]initWithFrame:CGRectZero];
     self.view.backgroundColor=_flexRootView.topSubView.backgroundColor;
@@ -69,6 +73,8 @@
         // for <ios11, it's necessary
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
+    // added
+    [self.view addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:gObserverFrame];
 }
 - (void)resetByFlexData:(NSData*)flexData
 {
@@ -85,9 +91,6 @@
     }
     
     _flexRootView = contentView ;
-    _flexRootView.portraitSafeArea = [self getSafeArea:YES];
-    _flexRootView.landscapeSafeArea = [self getSafeArea:NO];
-    
  self.view.backgroundColor=_flexRootView.topSubView.backgroundColor;
     [self.view addSubview:contentView];
     [self onLayoutReload];
@@ -120,7 +123,7 @@
         CGFloat height = 0;
         if(self.navigationController!=nil)
         {
-            height += portrait ? 44 : 32 ;
+            height += self.navigationController.navigationBar.frame.size.height ;
         }
         
         if(portrait)
@@ -133,7 +136,7 @@
     CGFloat height = 0;
     if(self.navigationController!=nil)
     {
-        height += portrait ? 44 : 32 ;
+        height += self.navigationController.navigationBar.frame.size.height ;
     }
     if(portrait){
         height += 44 ;
@@ -143,6 +146,12 @@
 }
 
 -(void)layoutFlexRootViews{
+    if(IsPortrait()){
+        _flexRootView.portraitSafeArea = [self getSafeArea:YES];
+    }else{
+        _flexRootView.landscapeSafeArea = [self getSafeArea:NO];
+    }
+    
     for(UIView* subview in self.view.subviews){
         if([subview isKindOfClass:[FlexRootView class]]){
             [subview setNeedsLayout];
@@ -161,7 +170,15 @@
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
 {
-    [self layoutFlexRootViews];
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
+{
+    if(context == gObserverFrame){
+        [self layoutFlexRootViews];
+    }
 }
 
 
