@@ -13,7 +13,7 @@
 
 @interface FlexBaseTableCell : UITableViewCell
 
-@property(nonatomic,readonly) UITableView* tableView;
+@property(nonatomic,readonly) UITableView* _Nullable tableView;
 
 // 如果flexName为nil，则使用与同类名的资源文件
 -(instancetype _Nullable)initWithFlex:(nullable NSString*)flexName

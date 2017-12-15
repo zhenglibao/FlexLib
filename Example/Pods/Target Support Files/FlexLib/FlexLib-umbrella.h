@@ -10,15 +10,16 @@
 #endif
 #endif
 
-#import "FlexLib.h"
 #import "FlexBaseTableCell.h"
 #import "FlexBaseVC.h"
+#import "FlexLib.h"
 #import "FlexModalView.h"
 #import "FlexNode.h"
 #import "FlexParentView.h"
 #import "FlexRootView.h"
 #import "FlexScrollView.h"
 #import "FlexStyleMgr.h"
+#import "FlexTextView.h"
 #import "FlexTouchMaskView.h"
 #import "FlexTouchView.h"
 #import "FlexUtils.h"
