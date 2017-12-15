@@ -6,17 +6,17 @@
     attr="bgColor:white">
     
     <FlexScrollView layout="padding:50,flex:1,width:100%" attr="vertScroll:true">
-        <UIView onPress="tapModalTop" layout="height:100,width:100%,justifyContent:center,alignItems:center" attr="bgColor:#e5e5e5">
+        <FlexTouchView onPress="tapModalTop" layout="height:100,width:100%,justifyContent:center,alignItems:center" attr="bgColor:#e5e5e5,underlayColor:lightGray">
             <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Show Modal At Top"/>
-        </UIView>
+        </FlexTouchView>
         <UIView layout="height:20"/>
-        <UIView onPress="tapModalCenter" layout="height:100,width:100%,justifyContent:center,alignItems:center" attr="bgColor:#e5e5e5">
+        <FlexTouchView onPress="tapModalCenter" layout="height:100,width:100%,justifyContent:center,alignItems:center" attr="bgColor:#e5e5e5,underlayColor:lightGray">
             <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Show Modal At Center"/>
-        </UIView>
+        </FlexTouchView>
         <UIView layout="height:20"/>
-        <UIView onPress="tapModalBottom" layout="height:100,width:100%,justifyContent:center,alignItems:center" attr="bgColor:#e5e5e5">
+        <FlexTouchView onPress="tapModalBottom" layout="height:100,width:100%,justifyContent:center,alignItems:center" attr="bgColor:#e5e5e5,underlayColor:lightGray">
             <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Show Modal At Bottom"/>
-        </UIView>
+        </FlexTouchView>
     </FlexScrollView>
     
     <FlexModalView name="modal" layout="width:100%" attr="bgColor:#f5f5f5,position:top,cancelable:true">
