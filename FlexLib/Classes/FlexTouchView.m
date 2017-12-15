@@ -21,6 +21,7 @@
     
     UIColor* _bgColor;
     CGFloat _oldAlpha;
+    BOOL _bActive;
 }
 @end
 
@@ -50,6 +51,9 @@
 {
     _maskView = [self findMaskView:self];
 }
+
+#pragma mark - touch
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self setActiveStatus:YES];
@@ -71,6 +75,11 @@
     const double duration = 0.2 ;
     
     if(bActive){
+        if(_bActive)
+            return;
+        
+        _bActive = YES;
+        
         if(_maskView != nil){
             CGSize szParent = _maskView.superview.frame.size;
             _maskView.frame = CGRectMake(0, 0, szParent.width, szParent.height);
@@ -87,7 +96,9 @@
                 _maskView.hidden = NO ;
             }
         }];
-    }else{
+    }else if(_bActive){
+        _bActive = NO ;
+        
         double now = GetAccurateSecondsSince1970();
         double delay = duration - (now - _activeStartAt);
         if(delay<0) delay = 0;

@@ -15,6 +15,7 @@
 #import "ViewExt/UIView+Flex.h"
 #import "YogaKit/UIView+Yoga.h"
 #import "FlexUtils.h"
+#import "FlexTouchView.h"
 
 static void* gObserverFrame         = (void*)1;
 static void* gObserverContentOffset = (void*)2;
@@ -74,6 +75,7 @@ static void* gObserverContentOffset = (void*)2;
     [self removeObserver:self forKeyPath:@"frame"];
     [self removeObserver:self forKeyPath:@"contentOffset"];
 }
+
 -(void)onContentViewWillLayout
 {
     [self restoreStickView];
@@ -106,6 +108,10 @@ static void* gObserverContentOffset = (void*)2;
 
 -(void)postCreate
 {
+    // let child has chance to process touch event
+    self.canCancelContentTouches = YES;
+    self.delaysContentTouches = NO;
+    
 #define COPYYGVALUE(prop)           \
 if(from.prop.unit==YGUnitPoint||    \
     from.prop.unit==YGUnitPercent)  \

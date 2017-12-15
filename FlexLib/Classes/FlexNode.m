@@ -306,6 +306,8 @@ void FlexApplyLayoutParam(YGLayout* layout,
         if(sel!=nil){
             if([owner respondsToSelector:sel]){
                 UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:owner action:sel];
+                tap.cancelsTouchesInView = NO;
+                tap.delaysTouchesBegan = NO;
                 [view addGestureRecognizer:tap];
             }else{
                 NSLog(@"Flexbox: owner %@ not respond %@", [owner class] , self.onPress);
