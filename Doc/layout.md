@@ -9,7 +9,7 @@
 ## Enumeration & available values:
 * direction: inherit/ltr/rtl
 * flexDirection: col/col-reverse/row/row-reverse
-* justifyContent: flex-start/flex-end/ flex-end/ space-between/ space-around
+* justifyContent: flex-start/center/ flex-end/ space-between/ space-around
 * alignContent: auto/ flex-start/ center/ flex-end/ stretch/ baseline/ space-between/ space-around/
 * alignItems: auto/ flex-start/ center/ flex-end/ stretch/ baseline/ space-between/ space-around/
 * alignSelf: auto/ flex-start/ center/ flex-end/ stretch/ baseline/ space-between/ space-around/

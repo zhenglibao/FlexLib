@@ -93,6 +93,7 @@ static void* gObserverFrame         = (void*)1;
     _flexRootView = contentView ;
  self.view.backgroundColor=_flexRootView.topSubView.backgroundColor;
     [self.view addSubview:contentView];
+    [self layoutFlexRootViews];
     [self onLayoutReload];
 }
 - (void)reloadFlexView

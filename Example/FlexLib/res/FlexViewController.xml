@@ -29,5 +29,9 @@
             <UILabel
             attr="@:system/buttonText,text:Test Touch"/>
         </FlexTouchView>
+        <FlexTouchView onPress="onTestFlexView:" layout="@:system/button" attr="@:system/buttonAttr">
+            <UILabel
+            attr="@:system/buttonText,text:Flexbox Demo"/>
+        </FlexTouchView>
     </FlexScrollView>
 </UIView> 

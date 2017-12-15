@@ -269,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				D26262821FE3C09B000F9841 /* splash.png */,
-				D297585F1FE23DCC004314CF /* DemoFlexVC.xml */,
 				D297583C1FE0D069004314CF /* qrcode.png */,
 				D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */,
 				D272A8D21FDA66220075DB1D /* arrow_right@2x.png */,
@@ -279,6 +278,7 @@
 				D2CF9CC01FD7EB0900554A0C /* system.style */,
 				D2CF9CBE1FD7EB0900554A0C /* test.xml */,
 				D272A8D41FDADA370075DB1D /* FlexViewController.xml */,
+				D297585F1FE23DCC004314CF /* DemoFlexVC.xml */,
 				D272A8D01FDA631F0075DB1D /* TestModalVC.xml */,
 				D2CF9CBC1FD7EB0900554A0C /* TestTableCell.xml */,
 				D2CF9CBF1FD7EB0900554A0C /* TestTableVC.xml */,

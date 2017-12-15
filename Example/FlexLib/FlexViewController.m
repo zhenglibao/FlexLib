@@ -14,6 +14,7 @@
 #import "TestScrollVC.h"
 #import "TestModalVC.h"
 #import "TestLoginVC.h"
+#import "DemoFlexVC.h"
 
 @interface FlexViewController ()
 {
@@ -52,6 +53,10 @@
 }
 - (void)onTestLoginView:(id)sender {
     TestLoginVC* vc=[[TestLoginVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)onTestFlexView:(id)sender {
+    DemoFlexVC* vc=[[DemoFlexVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
