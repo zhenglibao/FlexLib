@@ -18,7 +18,7 @@
     UIView* close;
     TestTableCell* _cell;
     
-    NSArray* _datas;
+    NSMutableArray* _datas;
 }
 
 @end
@@ -36,7 +36,7 @@
     _table.delegate = self ;
     _table.dataSource = self ;
     
-    _datas =
+    NSArray* datas =
   @[
     @{
         @"name": @"研发",
@@ -151,6 +151,7 @@
         @"content": @"我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
         },
   ];
+    _datas = [datas mutableCopy];
     [_table reloadData];
 }
 
@@ -194,5 +195,8 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    TestTableCell* cell = [[tableView visibleCells]objectAtIndex:0];
+    _datas[0] = _datas[indexPath.row];
+    [cell setData:_datas[0]];
 }
 @end

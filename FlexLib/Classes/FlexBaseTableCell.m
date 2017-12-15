@@ -33,8 +33,13 @@
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     
     if( self != nil){
+        __weak FlexBaseTableCell* weakSelf = self;
+        
         _flexRootView = [FlexRootView loadWithNodeFile:flexName Owner:self];
         _flexRootView.flexibleHeight = YES ;
+        _flexRootView.onDidLayout = ^{
+            [weakSelf onRootViewDidLayout];
+        };
         [self.contentView addSubview:_flexRootView];
 
         if(!_bObserved){
@@ -44,6 +49,31 @@
     }
     return self ;
 }
+-(UITableView*)tableView
+{
+    UIView* view = [self superview];
+    
+    while (view && ![view isKindOfClass:[UITableView class]] ) {
+        view = [view superview];
+    }
+    return (UITableView*)view;
+}
+- (void)onRootViewDidLayout
+{
+    CGRect rcRootView = _flexRootView.frame ;
+    if(!CGSizeEqualToSize(self.frame.size,rcRootView.size))
+    {
+        // reload this row when content frame changed.
+        UITableView* tableView = self.tableView;
+        if(tableView != nil){
+            NSIndexPath* indexPath = [tableView indexPathForCell:self];
+            if(indexPath != nil){
+                [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:NO];
+            }
+        }
+    }
+}
+
 - (void)dealloc
 {
     if(_bObserved){
