@@ -572,6 +572,9 @@ NSData* loadFromNetwork(NSString* resName)
 {
     NSError* error = nil;
     NSData* flexData = FlexFetchLayoutFile(resName, &error);
+    if(error != nil){
+        NSLog(@"Flexbox: loadFromNetwork error: %@",error);
+    }
     return flexData;
 }
 
