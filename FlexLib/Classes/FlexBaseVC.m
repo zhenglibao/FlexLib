@@ -75,6 +75,7 @@ static void* gObserverFrame         = (void*)1;
     }
     // added
     [self.view addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:gObserverFrame];
+    [self layoutFlexRootViews];
 }
 - (void)resetByFlexData:(NSData*)flexData
 {
