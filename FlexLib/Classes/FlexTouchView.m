@@ -72,7 +72,7 @@
 
 -(void)setActiveStatus:(BOOL)bActive
 {
-    const double duration = 0.2 ;
+    const double duration = 0.1 ;
     
     if(bActive){
         if(_bActive)
