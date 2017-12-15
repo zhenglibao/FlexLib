@@ -55,7 +55,11 @@
     TestLoginVC* vc=[[TestLoginVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
-- (void)onTestFlexView:(id)sender {
+- (void)onjustifyContent:(id)sender {
+    DemoFlexVC* vc=[[DemoFlexVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)onalignItems:(id)sender {
     DemoFlexVC* vc=[[DemoFlexVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
