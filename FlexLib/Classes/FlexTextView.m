@@ -8,6 +8,7 @@
  */
 
 #import "FlexTextView.h"
+#import "FlexRootView.h"
 
 @implementation FlexTextView
 
@@ -24,33 +25,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextViewTextDidChangeNotification object:self];
 }
 
-- (void)setText:(NSString *)text
-{
-    [super setText:text];
-    [self updateLayout];
-}
-
-- (CGSize)intrinsicContentSize
-{
-    CGRect textRect = [self.layoutManager usedRectForTextContainer:self.textContainer];
-    CGFloat height = textRect.size.height + self.textContainerInset.top + self.textContainerInset.bottom;
-    return CGSizeMake(UIViewNoIntrinsicMetric, height);
-}
-
 - (void)textDidChange:(NSNotification *)notification
 {
-    [self updateLayout];
-}
-
-- (void)updateLayout
-{
-    [self invalidateIntrinsicContentSize];
-    [self layoutIfNeeded];
-}
-
-- (void)scrollRectToVisible:(CGRect)rect animated:(BOOL)animated
-{
-    [self updateLayout];
-    [super scrollRectToVisible:rect animated:animated];
+    //[self markDirty];
 }
 @end

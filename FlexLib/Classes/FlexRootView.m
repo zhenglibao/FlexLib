@@ -36,6 +36,10 @@ static void* gObserverFrame     = (void*)4;
     }
 }
 
+-(void)markYogaDirty
+{
+    [self.yoga markDirty];
+}
 -(void)enableFlexLayout:(BOOL)enable
 {
     self.yoga.isIncludedInLayout = enable;

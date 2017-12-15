@@ -18,6 +18,9 @@
 // 外部可以主动调用此函数让布局得到刷新
 -(void)markDirty;
 
+//该方法框架内部使用
+-(void)markYogaDirty;
+
 // 开启关闭布局
 -(void)enableFlexLayout:(BOOL)enable;
 

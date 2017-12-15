@@ -77,7 +77,7 @@ UIColor* colorFromString(NSString* clr)
         }
     }
     if(![clr hasPrefix:@"#"]){
-        NSLog(@"Flexbox: unrecognized color format");
+        NSLog(@"Flexbox: unrecognized color format %@",clr);
         return nil;
     }
     
