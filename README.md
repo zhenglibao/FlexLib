@@ -15,11 +15,11 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 - [Screenshots](#screenshots)
 - [Feature](#feature)
 - [Usage](#usage)
+- [Hot Preview](#hot-preview)
 - [Example](#example)
 - [Attribute Reference](#attribute-reference)
 - [Installation](#installation)
 - [About Flexbox](#about-flexbox)
-- [Hot Preview](#hot-preview)
 - [Author](#author)
 - [License](#license)
 
