@@ -49,6 +49,8 @@ Can you imagine you almost need nothing code to implement the following effect?
 * table cell height calculation
 * support iPhoneX perfectly
 * support hot preview
+* auto adjust view to avoid keyboard
+* keyboard toolbar to switch input field
 
 ---
 
