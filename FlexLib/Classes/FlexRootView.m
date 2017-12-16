@@ -22,6 +22,24 @@ static void* gObserverText      = (void*)2;
 static void* gObserverAttrText  = (void*)3;
 static void* gObserverFrame     = (void*)4;
 
+static NSInteger _compareInputView(UIView * _Nonnull f,
+                                   UIView * _Nonnull s,
+                                   void * _Nullable context)
+{
+    UIView* rootView = (__bridge UIView*)context;
+    CGPoint pt1 = [rootView convertPoint:f.frame.origin fromView:f.superview];
+    CGPoint pt2 = [rootView convertPoint:s.frame.origin fromView:s.superview];
+    if(pt1.y < pt2.y)
+        return NSOrderedAscending;
+    if(pt1.y > pt2.y)
+        return NSOrderedDescending;
+    if(pt1.x < pt2.x)
+        return NSOrderedAscending;
+    if(pt1.x > pt2.x)
+        return NSOrderedDescending;
+    return NSOrderedSame;
+}
+
 @implementation UIView(FlexPublic)
 
 -(void)markDirty
@@ -73,6 +91,27 @@ static void* gObserverFrame     = (void*)4;
             FlexApplyLayoutParam(layout, attr.name, attr.value);
         }
     }];
+}
+-(void)findAllViews:(NSMutableArray*)result Type:(Class)type
+{
+    for (UIView* sub in self.subviews) {
+        if([sub isKindOfClass:type]){
+            [result addObject:sub];
+        }else if(sub.subviews.count>0){
+            [sub findAllViews:result Type:type];
+        }
+    }
+}
+-(NSArray*)findAllInputs
+{
+    NSMutableArray<UIView*>* ary = [NSMutableArray array];
+    
+    [self findAllViews:ary Type:[UITextField class]];
+    [self findAllViews:ary Type:[UITextView class]];
+    
+    
+    [ary sortUsingFunction:_compareInputView context:(__bridge void * _Nullable)(self)];
+    return [ary copy];
 }
 @end
 
