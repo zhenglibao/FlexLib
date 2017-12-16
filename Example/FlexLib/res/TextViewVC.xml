@@ -53,7 +53,7 @@
             <UIView layout="flex:1">
                 <UILabel attr="fontSize:16,color:#333333,text:备注"/>
                 <UIView layout="height:10"/>
-                <FlexTextView layout="width:100%,minHeight:30,maxHeight:60" attr="placeHolder:500字以内,fontSize:16,color:#333333"/>
+                <FlexTextView layout="width:100%,minHeight:30,maxHeight:88" attr="placeHolder:500字以内,fontSize:16,color:#333333"/>
             </UIView>
         </UIView>
         

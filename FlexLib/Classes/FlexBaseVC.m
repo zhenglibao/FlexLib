@@ -56,6 +56,15 @@ static void* gObserverFrame         = (void*)1;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard)];
+    tap.cancelsTouchesInView = NO;
+    tap.delaysTouchesBegan = NO;
+    [self.view addGestureRecognizer:tap];
+}
+-(void)hideKeyboard
+{
+    [[self.view findFirstResponder]resignFirstResponder];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -294,6 +303,7 @@ static void* gObserverFrame         = (void*)1;
              @"Prev",@"Next",@"Send"
              ];
 }
+
 -(void)prepareInputs
 {
     // 设置所有inputview
