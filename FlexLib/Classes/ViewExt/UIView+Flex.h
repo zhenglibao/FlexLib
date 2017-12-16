@@ -14,7 +14,10 @@
 @interface FlexViewAttrs : NSObject
 
 @property(nonatomic,assign) BOOL stickTop;
+
+// 缓存数据
 @property(nonatomic,assign) CGFloat originY;
+@property(nonatomic,assign) CGPoint originInRoot;
 
 @end
 

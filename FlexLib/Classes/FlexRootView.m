@@ -26,9 +26,8 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
                                    UIView * _Nonnull s,
                                    void * _Nullable context)
 {
-    UIView* rootView = (__bridge UIView*)context;
-    CGPoint pt1 = [rootView convertPoint:f.frame.origin fromView:f.superview];
-    CGPoint pt2 = [rootView convertPoint:s.frame.origin fromView:s.superview];
+    CGPoint pt1 = f.viewAttrs.originInRoot;
+    CGPoint pt2 = s.viewAttrs.originInRoot;
     if(pt1.y < pt2.y)
         return NSOrderedAscending;
     if(pt1.y > pt2.y)
@@ -109,8 +108,12 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     [self findAllViews:ary Type:[UITextField class]];
     [self findAllViews:ary Type:[UITextView class]];
     
+    for (UIView* sub in ary) {
+        CGPoint pt = [self convertPoint:sub.frame.origin fromView:sub.superview];
+        sub.viewAttrs.originInRoot = pt;
+    }
     
-    [ary sortUsingFunction:_compareInputView context:(__bridge void * _Nullable)(self)];
+    [ary sortUsingFunction:_compareInputView context:NULL];
     return [ary copy];
 }
 -(UIView*)findFirstResponder

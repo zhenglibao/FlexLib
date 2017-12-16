@@ -17,13 +17,15 @@
 
 static void* gObserverFrame         = (void*)1;
 
-@interface FlexBaseVC ()
+@interface FlexBaseVC ()<UITextFieldDelegate,UITextViewDelegate>
 {
     NSString* _flexName ;
     FlexRootView* _flexRootView ;
     float _keyboardHeight;
     
     BOOL _bUpdating;        //正在热更新
+    
+    UIToolbar* _tbKeyboard;
 }
 
 @end
@@ -50,6 +52,10 @@ static void* gObserverFrame         = (void*)1;
 - (void)dealloc
 {
     [self.view removeObserver:self forKeyPath:@"frame"];
+}
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -259,17 +265,121 @@ static void* gObserverFrame         = (void*)1;
 -(void)scrollViewToVisible:(UIView*)view
                   animated:(BOOL)bAnim
 {
-    UIView* parent = view;
-    while (parent!=nil && ![parent isKindOfClass:[FlexScrollView class]]) {
+    UIView* parent = view.superview;
+    while (parent!=nil && ![parent isKindOfClass:[UIScrollView class]]) {
         parent = parent.superview;
     }
     
     if(parent !=nil ){
         UIScrollView* scrollView = (UIScrollView*)parent;
         CGRect rcView = view.frame;
+        rcView = CGRectInset(rcView,0,-40);
         
         rcView = [scrollView convertRect:rcView fromView:view.superview];
         [scrollView scrollRectToVisible:rcView animated:bAnim];
     }
+}
+-(void)prepareInputs
+{
+    // 设置所有inputview
+    NSArray<UIView*>* views = [self.view findAllInputs];
+    
+    for (NSUInteger i=0;i<views.count;i++) {
+        UIView* view = [views objectAtIndex:i];
+        UIReturnKeyType keytype = (i+1==views.count)?UIReturnKeySend:UIReturnKeyNext;
+        if([view isKindOfClass:[UITextField class]])
+        {
+            UITextField* tf = (UITextField*)view;
+            tf.delegate = self;
+            tf.returnKeyType = keytype;
+        }else if([view isKindOfClass:[UITextView class]])
+        {
+            UITextView* tv = (UITextView*)view;
+            tv.delegate = self;
+            tv.returnKeyType = keytype;
+        }
+    }
+    //
+    if(_tbKeyboard == nil){
+        _tbKeyboard = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+        UIBarButtonItem* prev=[[UIBarButtonItem alloc]initWithTitle:@"上一个" style:UIBarButtonItemStylePlain target:self action:@selector(onPrevInput)];
+        UIBarButtonItem* next=[[UIBarButtonItem alloc]initWithTitle:@"下一个" style:UIBarButtonItemStylePlain target:self action:@selector(onNextInput)];
+        UIBarButtonItem* space=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+
+        UIBarButtonItem* submit=[[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(onSubmitForm)];
+
+        _tbKeyboard.items = @[prev,next,space,submit];
+    }
+}
+-(void)onPrevInput{
+    NSArray* all = [self.view findAllInputs];
+    if(all.count==0)
+        return;
+    
+    UIView* current = [self.view findFirstResponder];
+    
+    NSUInteger index = [all indexOfObject:current];
+    if( index!=NSNotFound ){
+        if(index>0){
+            [all[index-1] becomeFirstResponder];
+            [self scrollViewToVisible:all[index-1]animated:YES];
+        }
+    }else{
+        [all[0]becomeFirstResponder];
+    }
+}
+-(void)onNextInput{
+    NSArray* all = [self.view findAllInputs];
+    if(all.count==0)
+        return;
+    
+    UIView* current = [self.view findFirstResponder];
+    
+    NSUInteger index = [all indexOfObject:current];
+    if( index!=NSNotFound ){
+        if(index+1 < all.count){
+            [all[index+1] becomeFirstResponder];
+            [self scrollViewToVisible:all[index+1]animated:YES];
+        }
+    }else{
+        [all[0]becomeFirstResponder];
+    }
+}
+-(void)onSubmitForm{
+    [self submitForm];
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    textField.inputAccessoryView = _tbKeyboard;
+    return YES;
+}
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    textView.inputAccessoryView = _tbKeyboard;
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSArray* all = [self.view findAllInputs];
+    if(all.count>0){
+        NSUInteger index = [all indexOfObject:textField];
+        
+        if( index!=NSNotFound ){
+            if(index+1 < all.count){
+                [all[index+1] becomeFirstResponder];
+                [self scrollViewToVisible:all[index+1]animated:YES];
+            }else{
+                [self submitForm];
+            }
+        }else{
+            [self submitForm];
+        }
+    }
+    return NO;
+}
+-(void)submitForm
+{
+    NSLog(@"Flexbox: submitForm called");
 }
 @end

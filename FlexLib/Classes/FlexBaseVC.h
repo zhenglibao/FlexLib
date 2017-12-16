@@ -38,8 +38,14 @@
 
 -(void)layoutFlexRootViews;
 
-//scroll滚动到可见区域,该view必须位于FlexScrollView上
+//scroll滚动到可见区域,该view必须位于UIScrollView上
 -(void)scrollViewToVisible:(UIView*)view
                   animated:(BOOL)bAnim;
+
+// derived class call this to prepare inputs
+-(void)prepareInputs;
+
+// override to submit form
+-(void)submitForm;
 
 @end
