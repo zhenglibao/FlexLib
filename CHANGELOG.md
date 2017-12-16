@@ -2,6 +2,14 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 0.7.0
+1. ViewController增加躲避键盘区域功能
+2. 增加FlexTextView自动更新大小功能
+3. UIView增加扩展方法
+4. FlexBaseTableCell增加onContentSizeChanged通知
+5. 其他bug修复
+
+
 ## 0.6.5
 1. 修复热更新问题
 2. 修复某些情况下导航栏高度获取问题
