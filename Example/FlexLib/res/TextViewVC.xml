@@ -5,7 +5,17 @@
     alignItems:center"
     attr="bgColor:white">
     <FlexScrollView name="scroll"  layout="flex:1,width:100%" attr="bgColor:white,vertScroll:true,horzIndicator:false,vertIndicator:true">
-        
+        <!--buttons-->
+        <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
+            <FlexTouchView onPress="onPrev" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:prev"/>
+            </FlexTouchView>
+            <FlexTouchView onPress="onNext" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:next"/>
+            </FlexTouchView>
+        </UIView>
         <UIView layout="flexDirection:row,alignItems:center,margin:10">
             <UIView layout="flex:1">
                 <UILabel attr="fontSize:16,color:#333333,text:归属合同"/>
@@ -66,18 +76,6 @@
                 <UIView layout="height:10"/>
                 <UIImageView layout="" attr="source:select.png"/>
             </UIView>
-        </UIView>
-        
-        <!--buttons-->
-        <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
-            <FlexTouchView onPress="onPrev" layout="@:system/button" attr="@:system/buttonAttr">
-                <UILabel
-                attr="@:system/buttonText,text:prev"/>
-            </FlexTouchView>
-            <FlexTouchView onPress="onNext" layout="@:system/button" attr="@:system/buttonAttr">
-                <UILabel
-                attr="@:system/buttonText,text:next"/>
-            </FlexTouchView>
         </UIView>
     </FlexScrollView>
 </UIView> 

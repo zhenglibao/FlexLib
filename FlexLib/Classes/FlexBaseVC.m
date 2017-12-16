@@ -13,6 +13,7 @@
 #import "FlexRootView.h"
 #import "YogaKit/UIView+Yoga.h"
 #import "FlexUtils.h"
+#import "FlexScrollView.h"
 
 static void* gObserverFrame         = (void*)1;
 
@@ -255,5 +256,20 @@ static void* gObserverFrame         = (void*)1;
     
     return rcFrameConverted.size.height;
 }
-
+-(void)scrollViewToVisible:(UIView*)view
+                  animated:(BOOL)bAnim
+{
+    UIView* parent = view;
+    while (parent!=nil && ![parent isKindOfClass:[FlexScrollView class]]) {
+        parent = parent.superview;
+    }
+    
+    if(parent !=nil ){
+        UIScrollView* scrollView = (UIScrollView*)parent;
+        CGRect rcView = view.frame;
+        
+        rcView = [scrollView convertRect:rcView fromView:view.superview];
+        [scrollView scrollRectToVisible:rcView animated:bAnim];
+    }
+}
 @end

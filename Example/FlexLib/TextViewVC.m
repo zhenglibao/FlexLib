@@ -39,7 +39,10 @@
     if( index!=NSNotFound ){
         if(index>0){
             [all[index-1] becomeFirstResponder];
+            [self scrollViewToVisible:all[index-1]animated:YES];
         }
+    }else{
+        [all[0]becomeFirstResponder];
     }
 }
 -(void)onNext
@@ -51,7 +54,10 @@
     if( index!=NSNotFound ){
         if(index+1<all.count){
             [all[index+1] becomeFirstResponder];
+            [self scrollViewToVisible:all[index+1] animated:YES];
         }
+    }else{
+        [all[0]becomeFirstResponder];
     }
 }
 @end

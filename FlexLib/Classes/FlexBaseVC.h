@@ -38,4 +38,8 @@
 
 -(void)layoutFlexRootViews;
 
+//scroll滚动到可见区域,该view必须位于FlexScrollView上
+-(void)scrollViewToVisible:(UIView*)view
+                  animated:(BOOL)bAnim;
+
 @end
