@@ -38,6 +38,9 @@
 
 -(void)layoutFlexRootViews;
 
+// 查找view所在的最近一层的scrollview
+-(UIScrollView*)scrollViewOfControl:(UIView*)view;
+
 //scroll滚动到可见区域,该view必须位于UIScrollView上
 -(void)scrollViewToVisible:(UIView*)view
                   animated:(BOOL)bAnim;

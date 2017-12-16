@@ -271,13 +271,18 @@ static void* gObserverFrame         = (void*)1;
     
     return rcFrameConverted.size.height;
 }
--(void)scrollViewToVisible:(UIView*)view
-                  animated:(BOOL)bAnim
+-(UIScrollView*)scrollViewOfControl:(UIView*)view
 {
     UIView* parent = view.superview;
     while (parent!=nil && ![parent isKindOfClass:[UIScrollView class]]) {
         parent = parent.superview;
     }
+    return (UIScrollView*)parent;
+}
+-(void)scrollViewToVisible:(UIView*)view
+                  animated:(BOOL)bAnim
+{
+    UIScrollView* parent = [self scrollViewOfControl:view];
     
     if(parent !=nil ){
         UIScrollView* scrollView = (UIScrollView*)parent;
@@ -386,7 +391,19 @@ static void* gObserverFrame         = (void*)1;
     textView.inputAccessoryView = _tbKeyboard;
     return YES;
 }
-
+- (void)textViewDidChangeSelection:(UITextView *)textView
+{
+    UIScrollView* scrollView = [self scrollViewOfControl:textView];
+    
+    if(scrollView == nil)
+        return;
+    
+    CGRect rcCaret = [textView caretRectForPosition:textView.selectedTextRange.end];
+    
+    rcCaret = [scrollView convertRect:rcCaret fromView:textView];
+    rcCaret = CGRectInset(rcCaret, 0, -20);
+    [scrollView scrollRectToVisible:rcCaret animated:YES];
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     NSArray* all = [self.view findAllInputs];
