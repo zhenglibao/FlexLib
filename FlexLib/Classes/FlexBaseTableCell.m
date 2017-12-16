@@ -63,13 +63,8 @@
     CGRect rcRootView = _flexRootView.frame ;
     if(!CGSizeEqualToSize(self.frame.size,rcRootView.size))
     {
-        // reload this row when content frame changed.
-        UITableView* tableView = self.tableView;
-        if(tableView != nil){
-            NSIndexPath* indexPath = [tableView indexPathForCell:self];
-            if(indexPath != nil){
-                [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:NO];
-            }
+        if(self.onContentSizeChanged != nil){
+            self.onContentSizeChanged(rcRootView.size);
         }
     }
 }

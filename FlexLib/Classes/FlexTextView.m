@@ -27,6 +27,6 @@
 
 - (void)textDidChange:(NSNotification *)notification
 {
-    //[self markDirty];
+    [self markDirty];
 }
 @end
