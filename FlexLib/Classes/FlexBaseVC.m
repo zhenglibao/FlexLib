@@ -202,9 +202,9 @@ static void* gObserverFrame         = (void*)1;
     }
     if(portrait){
         height += 44 ;
-        return UIEdgeInsetsMake(height, 0, 34, 0);
+        return UIEdgeInsetsMake(height, 0, _keyboardHeight>0?0:34, 0);
     }
-    return UIEdgeInsetsMake(height, 44, 21, 44);
+    return UIEdgeInsetsMake(height, 44, _keyboardHeight>0?0:21, 44);
 }
 
 -(void)layoutFlexRootViews{
