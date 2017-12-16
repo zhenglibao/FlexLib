@@ -14,6 +14,20 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox
 
 ---
 
+## 屏幕截图
+
+运行时动态更新界面:
+
+![example0](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/hotpreview2.gif)
+
+样例截图
+
+![example1](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example1.png)
+![example2](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example2.png)
+![example3](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example3.png)
+![example4](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example4.png)
+---
+
 ## 特性
 * 基于xml格式的布局文件
 * 控件与变量自动绑定
@@ -26,6 +40,8 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox
 * 表格cell高度动态计算
 * 完美适配iPhone X
 * 支持运行时更新界面
+* 支持自动调整view的区域来躲避键盘
+* 支持键盘工具栏来切换输入框
 
 ---
 
@@ -175,6 +191,31 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox
 * 使用FlexRootView加载xml文件, 设置对应属性是其高度或者宽度可变
 
 * 将FlexRootView添加到其他未使用flexbox进行布局的普通视图上。
+
+---
+
+## 运行时编辑预览界面
+
+### 编辑预览视图控制器界面
+
+* 在工作目录开启http服务器：
+
+如果mac系统安装的是python2.7，可以在命令行通过如下命令开启：python -m SimpleHTTPServer 8000
+
+* 在程序初始化的地方设置访问本机http服务器的基地址:
+
+    FlexSetPreviewBaseUrl(@"http://你本机的ip:端口号/FlexLib/res/");
+
+* 运行程序，打开要调试的视图控制器，在模拟器中按下Cmd+R来刷新界面. 注意：该快捷键仅在debug模式下可用.
+
+### 编辑预览任意界面
+
+* 按照前面方法开启http服务器并设置http基地址
+
+* 设置资源加载方式
+    FlexSetLoadFunc(YES) or
+    FlexSetCustomLoadFunc(loadfunc)
+这样程序运行后所有界面将通过http进行加载，如果网络速度慢可能会导致界面卡顿
 
 ---
 
