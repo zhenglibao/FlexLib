@@ -20,6 +20,7 @@ static void* gObserverFrame         = (void*)1;
 {
     NSString* _flexName ;
     FlexRootView* _flexRootView ;
+    float _keyboardHeight;
     
     BOOL _bUpdating;        //正在热更新
 }
@@ -28,9 +29,18 @@ static void* gObserverFrame         = (void*)1;
 
 @implementation FlexBaseVC
 
--(instancetype)initWithFlexName:(NSString*)flexName
+- (instancetype)init
 {
     self = [super init];
+    if (self) {
+        _avoidKeyboard = YES;
+        _keyboardHeight = 0;
+    }
+    return self;
+}
+-(instancetype)initWithFlexName:(NSString*)flexName
+{
+    self = [self init];
     if(self){
         _flexName = flexName ;
     }
@@ -40,6 +50,40 @@ static void* gObserverFrame         = (void*)1;
 {
     [self.view removeObserver:self forKeyPath:@"frame"];
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // register keyboard
+    
+    NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];
+    [nsc addObserver:self
+            selector:@selector(keyboardDidShow:)
+                name:UIKeyboardDidShowNotification
+              object:nil];
+    
+    [nsc addObserver:self
+            selector:@selector(keyboardWillHide:)
+                name:UIKeyboardWillHideNotification
+              object:nil];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    // remove keyboard notification
+    
+    NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];
+    
+    [nsc removeObserver:self
+                   name:UIKeyboardDidShowNotification
+                 object:nil];
+    
+    [nsc removeObserver:self
+                   name:UIKeyboardWillHideNotification
+                 object:nil];
+}
+
 -(NSString*)getFlexName
 {
     return nil;
@@ -150,6 +194,7 @@ static void* gObserverFrame         = (void*)1;
 -(void)layoutFlexRootViews{
     BOOL isPortrait = IsPortrait();
     UIEdgeInsets safeArea = [self getSafeArea:isPortrait];
+    safeArea.bottom += _keyboardHeight ;
     
     for(UIView* subview in self.view.subviews){
         if([subview isKindOfClass:[FlexRootView class]]){
@@ -158,19 +203,6 @@ static void* gObserverFrame         = (void*)1;
             [subview setNeedsLayout];
         }
     }
-}
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
-{
 }
 
 #pragma mark - KVO
@@ -195,6 +227,33 @@ static void* gObserverFrame         = (void*)1;
 #else
     return @[];
 #endif
+}
+
+#pragma mark - keybaord
+
+-(void)keyboardDidShow:(NSNotification*) notification {
+    
+    if(self.avoidKeyboard){
+        _keyboardHeight = [self getKeyboardHeight:notification];
+        [self layoutFlexRootViews];
+    }
+}
+
+-(void)keyboardWillHide:(NSNotification*) notification {
+    if(_keyboardHeight>0){
+        _keyboardHeight = 0;
+        [self layoutFlexRootViews];
+    }
+}
+-(float) getKeyboardHeight:(NSNotification*) notification
+{
+    CGRect keyboardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    UIWindow *window = [[[UIApplication sharedApplication] windows]objectAtIndex:0];
+    UIView *mainView = window.rootViewController.view;
+    CGRect rcFrameConverted = [mainView convertRect:keyboardFrame fromView:window];
+    
+    return rcFrameConverted.size.height;
 }
 
 @end

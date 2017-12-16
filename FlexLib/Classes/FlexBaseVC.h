@@ -15,6 +15,9 @@
 
 @interface FlexBaseVC : UIViewController
 
+//自动躲避键盘
+@property(nonatomic,assign) BOOL avoidKeyboard;
+
 // call this to provide flex res name
 -(instancetype)initWithFlexName:(NSString*)flexName;
 
