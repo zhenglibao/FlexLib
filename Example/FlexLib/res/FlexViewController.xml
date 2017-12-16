@@ -42,16 +42,16 @@
             </FlexTouchView>
         </UIView>
 
-       <!--<UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
-            <FlexTouchView onPress="onalignItems:" layout="@:system/button" attr="@:system/buttonAttr">
+       <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
+            <FlexTouchView onPress="onTextView:" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
-                attr="@:system/buttonText,text:alignItems Demo"/>
+                attr="@:system/buttonText,text:TextView Enlarge"/>
             </FlexTouchView>
             <FlexTouchView onPress="on:" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
                 attr="@:system/buttonText,text:未实现"/>
             </FlexTouchView>
-        </UIView>-->
+        </UIView>
 
     </FlexScrollView>
 </UIView> 

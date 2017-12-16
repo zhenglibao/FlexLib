@@ -15,6 +15,7 @@
 #import "TestModalVC.h"
 #import "TestLoginVC.h"
 #import "DemoFlexVC.h"
+#import "TextViewVC.h"
 
 @interface FlexViewController ()
 {
@@ -59,8 +60,8 @@
     DemoFlexVC* vc=[[DemoFlexVC alloc]initWithFlexName:@"justifyContent"];
     [self.navigationController pushViewController:vc animated:YES];
 }
-- (void)onalignItems:(id)sender {
-    DemoFlexVC* vc=[[DemoFlexVC alloc]initWithFlexName:@"alignItems"];
+- (void)onTextView:(id)sender {
+    TextViewVC* vc=[[TextViewVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
