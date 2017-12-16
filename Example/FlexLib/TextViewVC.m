@@ -30,5 +30,28 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)onPrev
+{
+    NSArray* all = [self.view findAllInputs];
+    UIView* current = [self.view findFirstResponder];
+    
+    NSUInteger index = [all indexOfObject:current];
+    if( index!=NSNotFound ){
+        if(index>0){
+            [all[index-1] becomeFirstResponder];
+        }
+    }
+}
+-(void)onNext
+{
+    NSArray* all = [self.view findAllInputs];
+    UIView* current = [self.view findFirstResponder];
+    
+    NSUInteger index = [all indexOfObject:current];
+    if( index!=NSNotFound ){
+        if(index+1<all.count){
+            [all[index+1] becomeFirstResponder];
+        }
+    }
+}
 @end

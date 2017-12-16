@@ -67,5 +67,17 @@
                 <UIImageView layout="" attr="source:select.png"/>
             </UIView>
         </UIView>
+        
+        <!--buttons-->
+        <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
+            <FlexTouchView onPress="onPrev" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:prev"/>
+            </FlexTouchView>
+            <FlexTouchView onPress="onNext" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:next"/>
+            </FlexTouchView>
+        </UIView>
     </FlexScrollView>
 </UIView> 

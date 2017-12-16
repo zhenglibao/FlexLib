@@ -41,7 +41,9 @@
 -(void)findAllViews:(NSMutableArray*)result Type:(Class)type;
 
 // 查找所有具有输入功能的view，并按坐标排序，从上到下，从左往右
--(NSArray*)findAllInputs;
+-(NSArray<UIView*>*)findAllInputs;
+
+-(UIView*)findFirstResponder;
 
 @end
 

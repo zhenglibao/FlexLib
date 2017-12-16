@@ -102,7 +102,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         }
     }
 }
--(NSArray*)findAllInputs
+-(NSArray<UIView*>*)findAllInputs
 {
     NSMutableArray<UIView*>* ary = [NSMutableArray array];
     
@@ -112,6 +112,20 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     
     [ary sortUsingFunction:_compareInputView context:(__bridge void * _Nullable)(self)];
     return [ary copy];
+}
+-(UIView*)findFirstResponder
+{
+    if(self.isFirstResponder)
+        return self;
+    
+    for (UIView* sub in self.subviews) {
+        if(sub.isFirstResponder)
+            return sub;
+        UIView* first = [sub findFirstResponder];
+        if(first != nil)
+            return first;
+    }
+    return nil;
 }
 @end
 
