@@ -29,6 +29,7 @@
 		D26F59E41FE4B8100007CB46 /* TextViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D26F59E21FE4B80F0007CB46 /* TextViewVC.m */; };
 		D26F59E61FE4B8170007CB46 /* TextViewVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D26F59E51FE4B8170007CB46 /* TextViewVC.xml */; };
 		D26F59E81FE4C0160007CB46 /* select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26F59E71FE4C0150007CB46 /* select@2x.png */; };
+		D26F59EA1FE4E81B0007CB46 /* viewattr.md in Resources */ = {isa = PBXBuildFile; fileRef = D26F59E91FE4E81B0007CB46 /* viewattr.md */; };
 		D270E9C21FDD7503007FD06C /* README.zh.md in Resources */ = {isa = PBXBuildFile; fileRef = D270E9C11FDD7502007FD06C /* README.zh.md */; };
 		D272A8C21FD933710075DB1D /* TestScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D272A8C11FD933710075DB1D /* TestScrollVC.m */; };
 		D272A8C41FD933990075DB1D /* TestScrollVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8C31FD933990075DB1D /* TestScrollVC.xml */; };
@@ -98,6 +99,7 @@
 		D26F59E31FE4B80F0007CB46 /* TextViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewVC.h; sourceTree = "<group>"; };
 		D26F59E51FE4B8170007CB46 /* TextViewVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TextViewVC.xml; path = res/TextViewVC.xml; sourceTree = "<group>"; };
 		D26F59E71FE4C0150007CB46 /* select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "select@2x.png"; path = "res/select@2x.png"; sourceTree = "<group>"; };
+		D26F59E91FE4E81B0007CB46 /* viewattr.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = viewattr.md; path = ../Doc/viewattr.md; sourceTree = "<group>"; };
 		D270E9C11FDD7502007FD06C /* README.zh.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.zh.md; path = ../README.zh.md; sourceTree = "<group>"; };
 		D272A8C01FD933710075DB1D /* TestScrollVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestScrollVC.h; sourceTree = "<group>"; };
 		D272A8C11FD933710075DB1D /* TestScrollVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestScrollVC.m; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				D26F59E91FE4E81B0007CB46 /* viewattr.md */,
 				D25F3DB81FE269AC00565892 /* CHANGELOG.md */,
 				0A51394BE4DAFCF85348261A /* FlexLib.podspec */,
 				885B2948ED10418285C4C976 /* README.md */,
@@ -388,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26F59EA1FE4E81B0007CB46 /* viewattr.md in Resources */,
 				D272A8E21FDC0DFC0075DB1D /* TestLoginVC.xml in Resources */,
 				D2CF9CC71FD7EB0900554A0C /* system.style in Resources */,
 				D25F3DB91FE269AC00565892 /* CHANGELOG.md in Resources */,

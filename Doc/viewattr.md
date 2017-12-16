@@ -21,6 +21,7 @@
 * shadowColor: color
 * contentMode: enumeration -- scaleToFill / scaleAspectFit / scaleAspectFill / redraw / center / top / bottom / left / right / topLeft / topRight / bottomLeft / bottomRight
 * alpha: number
+* tag: number
 * hidden: boolean
 * clipsToBounds: boolean
 * tintColor: color

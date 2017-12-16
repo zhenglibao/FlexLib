@@ -111,6 +111,7 @@ FLEXSETFLT(alpha)
 FLEXSETBOOL(hidden)
 FLEXSETBOOL(clipsToBounds)
 FLEXSETCLR(tintColor)
+FLEXSETINT(tag)
 
 FLEXSET(stickTop){
     self.viewAttrs.stickTop = String2BOOL(sValue);
