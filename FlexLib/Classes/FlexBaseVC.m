@@ -164,6 +164,8 @@ static void* gObserverFrame         = (void*)1;
     
     _bUpdating = YES;
     
+    NSLog(@"Flexbox: reloading layout file %@ ...",_flexName);
+    
     __weak FlexBaseVC* weakSelf = self;
     dispatch_queue_t queue = dispatch_get_global_queue(
                                                        DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
