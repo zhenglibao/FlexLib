@@ -279,6 +279,21 @@ static void* gObserverFrame         = (void*)1;
         [scrollView scrollRectToVisible:rcView animated:bAnim];
     }
 }
+-(NSArray*)getKeyboardItemsStrings
+{
+    NSArray *appLanguages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+    NSString *languageName = [appLanguages objectAtIndex:0];
+    if([languageName rangeOfString:@"zh-"].length>0){
+        return @[
+             @"上一个",
+             @"下一个",
+             @"发送"
+             ];
+    }
+    return @[
+             @"Prev",@"Next",@"Send"
+             ];
+}
 -(void)prepareInputs
 {
     // 设置所有inputview
@@ -286,14 +301,15 @@ static void* gObserverFrame         = (void*)1;
     
     for (NSUInteger i=0;i<views.count;i++) {
         UIView* view = [views objectAtIndex:i];
-        UIReturnKeyType keytype = (i+1==views.count)?UIReturnKeySend:UIReturnKeyNext;
         if([view isKindOfClass:[UITextField class]])
         {
+            UIReturnKeyType keytype = (i+1==views.count)?UIReturnKeySend:UIReturnKeyNext;
             UITextField* tf = (UITextField*)view;
             tf.delegate = self;
             tf.returnKeyType = keytype;
         }else if([view isKindOfClass:[UITextView class]])
         {
+            UIReturnKeyType keytype = (i+1==views.count)?UIReturnKeyDefault:UIReturnKeyNext;
             UITextView* tv = (UITextView*)view;
             tv.delegate = self;
             tv.returnKeyType = keytype;
@@ -301,12 +317,14 @@ static void* gObserverFrame         = (void*)1;
     }
     //
     if(_tbKeyboard == nil){
+        NSArray* items = [self getKeyboardItemsStrings];
+        
         _tbKeyboard = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
-        UIBarButtonItem* prev=[[UIBarButtonItem alloc]initWithTitle:@"上一个" style:UIBarButtonItemStylePlain target:self action:@selector(onPrevInput)];
-        UIBarButtonItem* next=[[UIBarButtonItem alloc]initWithTitle:@"下一个" style:UIBarButtonItemStylePlain target:self action:@selector(onNextInput)];
+        UIBarButtonItem* prev=[[UIBarButtonItem alloc]initWithTitle:items[0] style:UIBarButtonItemStylePlain target:self action:@selector(onPrevInput)];
+        UIBarButtonItem* next=[[UIBarButtonItem alloc]initWithTitle:items[1] style:UIBarButtonItemStylePlain target:self action:@selector(onNextInput)];
         UIBarButtonItem* space=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 
-        UIBarButtonItem* submit=[[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(onSubmitForm)];
+        UIBarButtonItem* submit=[[UIBarButtonItem alloc]initWithTitle:items[2] style:UIBarButtonItemStylePlain target:self action:@selector(onSubmitForm)];
 
         _tbKeyboard.items = @[prev,next,space,submit];
     }
