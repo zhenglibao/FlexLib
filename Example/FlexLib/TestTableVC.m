@@ -195,8 +195,5 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    TestTableCell* cell = [[tableView visibleCells]objectAtIndex:0];
-    _datas[0] = _datas[indexPath.row];
-    [cell setData:_datas[0]];
 }
 @end
