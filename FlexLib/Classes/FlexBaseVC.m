@@ -389,10 +389,9 @@ static void* gObserverFrame         = (void*)1;
             tf.returnKeyType = keytype;
         }else if([view isKindOfClass:[UITextView class]])
         {
-            UIReturnKeyType keytype = (i+1==views.count)?UIReturnKeyDefault:UIReturnKeyNext;
             UITextView* tv = (UITextView*)view;
             tv.delegate = self;
-            tv.returnKeyType = keytype;
+            tv.returnKeyType = UIReturnKeyDefault;
         }
     }
     //
