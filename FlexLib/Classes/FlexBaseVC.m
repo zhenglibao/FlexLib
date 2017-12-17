@@ -346,16 +346,23 @@ static void* gObserverFrame         = (void*)1;
 -(void)scrollViewToVisible:(UIView*)view
                   animated:(BOOL)bAnim
 {
-    UIScrollView* parent = [self scrollViewOfControl:view];
+    UIScrollView* scrollView = [self scrollViewOfControl:view];
     
-    if(parent !=nil ){
-        UIScrollView* scrollView = (UIScrollView*)parent;
-        CGRect rcView = view.frame;
-        rcView = CGRectInset(rcView,0,-40);
-        
-        rcView = [scrollView convertRect:rcView fromView:view.superview];
-        [scrollView scrollRectToVisible:rcView animated:bAnim];
+    if(scrollView == nil )
+        return;
+    
+    CGRect rcVisible = [scrollView convertRect:scrollView.frame fromView:scrollView.superview];
+    CGRect rcView = view.frame;
+    rcView = [scrollView convertRect:rcView fromView:view.superview];
+    
+    CGFloat dy = rcVisible.size.height-rcView.size.height;
+    if(dy > 80){
+        rcView = CGRectInset(rcView, 0, -40);
+    }else{
+        rcView = CGRectInset(rcView, 0, -dy/2.0);
     }
+    
+    [scrollView scrollRectToVisible:rcView animated:bAnim];
 }
 -(NSArray*)getKeyboardItemsStrings
 {
@@ -462,10 +469,21 @@ static void* gObserverFrame         = (void*)1;
         return;
     
     CGRect rcCaret = [textView caretRectForPosition:textView.selectedTextRange.end];
-    
     rcCaret = [scrollView convertRect:rcCaret fromView:textView];
-    rcCaret = CGRectInset(rcCaret, 0, -20);
-    [scrollView scrollRectToVisible:rcCaret animated:YES];
+
+    CGRect rcVisible = [scrollView convertRect:scrollView.frame fromView:scrollView.superview];
+    
+    if(!CGRectContainsRect(rcVisible, rcCaret))
+    {
+        CGFloat dy = rcVisible.size.height-rcCaret.size.height;
+        if(dy > 40){
+            rcCaret = CGRectInset(rcCaret, 0, -20);
+        }else{
+            rcCaret = CGRectInset(rcCaret, 0, -dy/2.0);
+        }
+        
+        [scrollView scrollRectToVisible:rcCaret animated:YES];
+    }
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
