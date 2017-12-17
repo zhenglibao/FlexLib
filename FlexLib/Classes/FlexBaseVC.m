@@ -17,7 +17,7 @@
 
 static void* gObserverFrame         = (void*)1;
 
-@interface FlexBaseVC ()<UITextFieldDelegate,UITextViewDelegate>
+@interface FlexBaseVC ()
 {
     NSString* _flexName ;
     FlexRootView* _flexRootView ;
@@ -52,25 +52,35 @@ static void* gObserverFrame         = (void*)1;
 - (void)dealloc
 {
     [self.view removeObserver:self forKeyPath:@"frame"];
+    
+    if (@available(iOS 9.0, *))
+    {
+    }else
+    {
+        // remove keyboard notification
+        NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];
+        
+        [nsc removeObserver:self
+                       name:UIKeyboardDidShowNotification
+                     object:nil];
+        
+        [nsc removeObserver:self
+                       name:UIKeyboardWillHideNotification
+                     object:nil];
+    }
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    // hide keyboard on touch blank area
+    
     UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard)];
     tap.cancelsTouchesInView = NO;
     tap.delaysTouchesBegan = NO;
     [self.view addGestureRecognizer:tap];
-}
--(void)hideKeyboard
-{
-    [[self.view findFirstResponder]resignFirstResponder];
-}
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     
-    // register keyboard
+    // register keyboard observer
     
     NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];
     [nsc addObserver:self
@@ -83,37 +93,62 @@ static void* gObserverFrame         = (void*)1;
                 name:UIKeyboardWillHideNotification
               object:nil];
 }
-- (void)viewWillDisappear:(BOOL)animated
+-(void)hideKeyboard
 {
-    [super viewWillDisappear:animated];
-    
-    // remove keyboard notification
-    
-    NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];
-    
-    [nsc removeObserver:self
-                   name:UIKeyboardDidShowNotification
-                 object:nil];
-    
-    [nsc removeObserver:self
-                   name:UIKeyboardWillHideNotification
-                 object:nil];
+    [[self.view findFirstResponder]resignFirstResponder];
 }
 
 -(NSString*)getFlexName
 {
     return nil;
 }
+
+#pragma mark - override
+
 -(void)onLayoutReload
 {
     
 }
+-(void)onRootDidLayout
+{
+    if(_keyboardHeight>0){
+        UIView* firstResponder = [self.view findFirstResponder];
+        if(firstResponder != nil)
+            [self scrollViewToVisible:firstResponder animated:YES];
+    }
+}
+-(void)submitForm
+{
+    NSLog(@"Flexbox: submitForm called");
+}
+#pragma mark - root view
+
 -(FlexRootView*)rootView
 {
     return _flexRootView;
 }
+-(void)postSetRootView
+{
+    if(_flexRootView == nil)
+        return;
+    
+    __weak FlexBaseVC* weakSelf = self;
+    _flexRootView.onDidLayout = ^{
+        [weakSelf onRootDidLayout];
+    };
+    self.view.backgroundColor=_flexRootView.topSubView.backgroundColor;
+    [self.view addSubview:_flexRootView];
+    [self layoutFlexRootViews];
+}
 -(void)loadView
 {
+    if (@available(iOS 11.0, *))
+    {
+    }else{
+        // for <ios11, it's necessary
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
     if(_flexName == nil){
         _flexName = [self getFlexName];
         if(_flexName == nil){
@@ -124,18 +159,11 @@ static void* gObserverFrame         = (void*)1;
     _flexRootView = contentView ;
     
     self.view = [[UIView alloc]initWithFrame:CGRectZero];
-    self.view.backgroundColor=_flexRootView.topSubView.backgroundColor;
-    [self.view addSubview:contentView];
-    
-    if (@available(iOS 11.0, *))
-    {
-    }else{
-        // for <ios11, it's necessary
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    // added
+   
+    // observe self.view.frame change
     [self.view addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:gObserverFrame];
-    [self layoutFlexRootViews];
+    
+    [self postSetRootView];
 }
 - (void)resetByFlexData:(NSData*)flexData
 {
@@ -152,9 +180,8 @@ static void* gObserverFrame         = (void*)1;
     }
     
     _flexRootView = contentView ;
- self.view.backgroundColor=_flexRootView.topSubView.backgroundColor;
-    [self.view addSubview:contentView];
-    [self layoutFlexRootViews];
+ 
+    [self postSetRootView];
     [self onLayoutReload];
 }
 - (void)reloadFlexView
@@ -425,8 +452,5 @@ static void* gObserverFrame         = (void*)1;
     }
     return NO;
 }
--(void)submitForm
-{
-    NSLog(@"Flexbox: submitForm called");
-}
+
 @end

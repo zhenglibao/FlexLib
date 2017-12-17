@@ -13,7 +13,7 @@
 
 @class FlexRootView;
 
-@interface FlexBaseVC : UIViewController
+@interface FlexBaseVC : UIViewController<UITextFieldDelegate,UITextViewDelegate>
 
 //自动躲避键盘
 @property(nonatomic,assign) BOOL avoidKeyboard;
