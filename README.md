@@ -34,9 +34,13 @@ This demo is hot preview:
 Can you imagine you almost need nothing code to implement the following effect?
 
 ![example1](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/scrollview.gif)
-![example2](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example2.png)
-![example3](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/modelview.gif)
-![example4](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/textview.gif)
+![example2](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/modelview.gif)
+![example3](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/textview.gif)
+
+iPhoneX adaption
+
+![iPhoneX](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/tableview.gif)
+
 
 ---
 
