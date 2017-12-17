@@ -219,7 +219,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     
     [subView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverHidden];
     [subView addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverText];
-    [subView addObserver:self forKeyPath:@"attributedText" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverAttrText];
+    [subView addObserver:self forKeyPath:@"attributedText" options:0 context:gObserverAttrText];
 }
 -(void)removeWatchView:(UIView*)view
 {

@@ -166,7 +166,7 @@ static void* gObserverFrame         = (void*)1;
     self.view = [[UIView alloc]initWithFrame:CGRectZero];
    
     // observe self.view.frame change
-    [self.view addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:gObserverFrame];
+    [self.view addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverFrame];
     
     [self postSetRootView];
 }
@@ -260,7 +260,10 @@ static void* gObserverFrame         = (void*)1;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
 {
     if(context == gObserverFrame){
-        [self layoutFlexRootViews];
+        CGSize szNew = [[change objectForKey:@"new"]CGRectValue].size;
+        CGSize szOld = [[change objectForKey:@"old"]CGRectValue].size;
+        if(!CGSizeEqualToSize(szNew, szOld))
+            [self layoutFlexRootViews];
     }
 }
 

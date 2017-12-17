@@ -43,7 +43,7 @@
         [self.contentView addSubview:_flexRootView];
 
         if(!_bObserved){
-            [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
+            [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
             _bObserved = YES;
         }
     }
@@ -79,7 +79,10 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
 {
-    [_flexRootView setNeedsLayout];
+    CGSize szNew = [[change objectForKey:@"new"]CGRectValue].size;
+    CGSize szOld = [[change objectForKey:@"old"]CGRectValue].size;
+    if(!CGSizeEqualToSize(szNew, szOld))
+        [_flexRootView setNeedsLayout];
 }
 -(CGFloat)heightForWidth:(CGFloat)width
 {
