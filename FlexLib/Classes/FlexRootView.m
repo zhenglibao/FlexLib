@@ -300,7 +300,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 {
     if(_bInLayouting)
         return;
-
+    
     [self configureLayout: [self getSafeArea]];
     BOOL configsame = [self isConfigSame];
     
@@ -309,6 +309,8 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         return;
     }
     
+    NSLog(@"Flexbox: FlexRootView layouting");
+
     _bInLayouting = YES;
     _lastConfigFrame = _thisConfigFrame;
     

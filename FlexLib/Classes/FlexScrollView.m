@@ -64,7 +64,7 @@ static void* gObserverContentOffset = (void*)2;
         [_subview addSubview:_contentView];
         [super addSubview:_subview];
         
-        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:gObserverFrame];
+        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverFrame];
         [self addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:gObserverContentOffset];
     }
     return self;
@@ -95,12 +95,15 @@ static void* gObserverContentOffset = (void*)2;
 {
     if(context == gObserverFrame){
         
-        CGRect rcNew = [[change objectForKey:@"new"]CGRectValue];
+        CGSize szNew = [[change objectForKey:@"new"]CGRectValue].size;
+        CGSize szOld = [[change objectForKey:@"old"]CGRectValue].size;
         
-        rcNew.origin = _subview.frame.origin;
-        _subview.frame = rcNew;
-        [_contentView setNeedsLayout];
-    
+        if(!CGSizeEqualToSize(szOld, szNew)){
+            CGRect rc = _subview.frame;
+            rc.size = szNew;
+            _subview.frame = rc;
+            [_contentView setNeedsLayout];
+        }
     }else if(context == gObserverContentOffset){
         [self resetStickViews:NO];
     }

@@ -112,9 +112,14 @@ static void* gObserverFrame         = (void*)1;
 -(void)onRootDidLayout
 {
     if(_keyboardHeight>0){
-        UIView* firstResponder = [self.view findFirstResponder];
-        if(firstResponder != nil)
-            [self scrollViewToVisible:firstResponder animated:YES];
+        __weak FlexBaseVC* weakSelf = self;
+        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1/*延迟执行时间*/ * NSEC_PER_SEC));
+
+        dispatch_after(delayTime,dispatch_get_main_queue(),^{
+            UIView* firstResponder = [weakSelf.view findFirstResponder];
+            if(firstResponder != nil)
+                [weakSelf scrollViewToVisible:firstResponder animated:YES];
+        });
     }
 }
 -(void)submitForm
