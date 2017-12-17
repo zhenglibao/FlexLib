@@ -53,7 +53,7 @@
             <UIView layout="flex:1">
                 <UILabel attr="fontSize:16,color:#333333,text:备注"/>
                 <UIView layout="height:10"/>
-                <FlexTextView layout="width:100%,minHeight:30,maxHeight:88" attr="fontSize:16,color:#333333"/>
+                <FlexTextView layout="width:100%,minHeight:30,maxHeight:88" attr="fontSize:16,color:#333333,text:这是一个UITextView\,你可以输入多行文本来试试效果:)"/>
             </UIView>
         </UIView>
         
@@ -66,5 +66,16 @@
                 <UIImageView layout="" attr="source:select.png"/>
             </UIView>
         </UIView>
+        
+        <UIView layout="height:10" attr="bgColor:#e5e5e5"/>
+        
+        <UIView layout="flexDirection:row,alignItems:center,margin:10">
+            <UIView layout="flex:1">
+                <UILabel attr="fontSize:16,color:#333333,text:图片"/>
+                <UIView layout="height:10"/>
+                <UIImageView layout="height:150" attr="source:select.png"/>
+            </UIView>
+        </UIView>
+        <UIView layout="height:10" attr="bgColor:#e5e5e5"/>
     </FlexScrollView>
 </UIView>
