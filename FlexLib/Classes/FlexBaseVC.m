@@ -300,7 +300,6 @@ static void* gObserverFrame         = (void*)1;
     
     if(now-_lastKeyTime>tmSep){
         _lastKeyTime = now;
-        NSLog(@"delayLayoutByKeyboard");
         [self layoutFlexRootViews];
         
     }else if(!bFromSelf){
