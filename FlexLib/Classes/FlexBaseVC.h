@@ -15,8 +15,10 @@
 
 @interface FlexBaseVC : UIViewController<UITextFieldDelegate,UITextViewDelegate>
 
+@property(nonatomic,readonly) FlexRootView* rootView;
 //自动躲避键盘
 @property(nonatomic,assign) BOOL avoidKeyboard;
+@property(nonatomic,readonly) float keyboardHeight;
 
 // call this to provide flex res name
 -(instancetype)initWithFlexName:(NSString*)flexName;
@@ -33,8 +35,6 @@
 // override this to provide different safeArea
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait;
 
-// get root flex view
--(FlexRootView*)rootView;
 
 -(void)layoutFlexRootViews;
 

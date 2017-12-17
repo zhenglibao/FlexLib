@@ -21,11 +21,12 @@ static void* gObserverFrame         = (void*)1;
 {
     NSString* _flexName ;
     FlexRootView* _flexRootView ;
-    float _keyboardHeight;
     
     BOOL _bUpdating;        //正在热更新
     
     UIToolbar* _tbKeyboard;
+    float _keyboardHeight;
+    double _lastKeyTime;
 }
 
 @end
@@ -52,22 +53,6 @@ static void* gObserverFrame         = (void*)1;
 - (void)dealloc
 {
     [self.view removeObserver:self forKeyPath:@"frame"];
-    
-    if (@available(iOS 9.0, *))
-    {
-    }else
-    {
-        // remove keyboard notification
-        NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];
-        
-        [nsc removeObserver:self
-                       name:UIKeyboardDidShowNotification
-                     object:nil];
-        
-        [nsc removeObserver:self
-                       name:UIKeyboardWillHideNotification
-                     object:nil];
-    }
 }
 - (void)viewDidLoad
 {
@@ -79,6 +64,10 @@ static void* gObserverFrame         = (void*)1;
     tap.cancelsTouchesInView = NO;
     tap.delaysTouchesBegan = NO;
     [self.view addGestureRecognizer:tap];
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     // register keyboard observer
     
@@ -92,6 +81,22 @@ static void* gObserverFrame         = (void*)1;
             selector:@selector(keyboardWillHide:)
                 name:UIKeyboardWillHideNotification
               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    // remove keyboard notification
+    NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];
+    
+    [nsc removeObserver:self
+                   name:UIKeyboardDidShowNotification
+                 object:nil];
+    
+    [nsc removeObserver:self
+                   name:UIKeyboardWillHideNotification
+                 object:nil];
 }
 -(void)hideKeyboard
 {
@@ -128,10 +133,15 @@ static void* gObserverFrame         = (void*)1;
 }
 #pragma mark - root view
 
+-(float)keyboardHeight
+{
+    return _keyboardHeight;
+}
 -(FlexRootView*)rootView
 {
     return _flexRootView;
 }
+
 -(void)postSetRootView
 {
     if(_flexRootView == nil)
@@ -283,19 +293,37 @@ static void* gObserverFrame         = (void*)1;
 }
 
 #pragma mark - keybaord
-
--(void)keyboardDidShow:(NSNotification*) notification {
+-(void)delayLayoutByKeyboard:(BOOL)bFromSelf
+{
+    const double tmSep = 0.5;
+    double now = GetAccurateSecondsSince1970();
     
-    if(self.avoidKeyboard){
-        _keyboardHeight = [self getKeyboardHeight:notification];
+    if(now-_lastKeyTime>tmSep){
+        _lastKeyTime = now;
+        NSLog(@"delayLayoutByKeyboard");
         [self layoutFlexRootViews];
+        
+    }else if(!bFromSelf){
+        __weak FlexBaseVC* weakSelf = self;
+        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(tmSep* NSEC_PER_SEC));
+        dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+            [weakSelf delayLayoutByKeyboard:YES];
+        });
+    }
+}
+-(void)keyboardDidShow:(NSNotification*) notification {
+    if(self.avoidKeyboard){
+        _lastKeyTime = GetAccurateSecondsSince1970();
+        _keyboardHeight = [self getKeyboardHeight:notification];
+        [self delayLayoutByKeyboard:NO];
     }
 }
 
 -(void)keyboardWillHide:(NSNotification*) notification {
     if(_keyboardHeight>0){
+        _lastKeyTime = GetAccurateSecondsSince1970();
         _keyboardHeight = 0;
-        [self layoutFlexRootViews];
+        [self delayLayoutByKeyboard:NO];
     }
 }
 -(float) getKeyboardHeight:(NSNotification*) notification
