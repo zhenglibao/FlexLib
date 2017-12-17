@@ -22,9 +22,9 @@ FlexLib是用Obj-c语言编写的ios布局框架。 该布局框架基于flexbox
 
 样例截图
 
-![example1](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example1.png)
+![example1](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/scrollview.gif)
 ![example2](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example2.png)
-![example3](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/example3.png)
+![example3](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/modelview.gif)
 ![example4](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/textview.gif)
 ---
 
