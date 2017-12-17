@@ -20,7 +20,6 @@
 static void* gObserverHidden    = (void*)1;
 static void* gObserverText      = (void*)2;
 static void* gObserverAttrText  = (void*)3;
-static void* gObserverFrame     = (void*)4;
 
 static NSInteger _compareInputView(UIView * _Nonnull f,
                                    UIView * _Nonnull s,
@@ -218,9 +217,9 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     
     [_observedViews addObject:subView];
     
-    [subView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew context:gObserverHidden];
-    [subView addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:gObserverText];
-    [subView addObserver:self forKeyPath:@"attributedText" options:NSKeyValueObservingOptionNew context:gObserverAttrText];
+    [subView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverHidden];
+    [subView addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverText];
+    [subView addObserver:self forKeyPath:@"attributedText" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverAttrText];
 }
 -(void)removeWatchView:(UIView*)view
 {
@@ -236,22 +235,23 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
 {
-    if(_bInLayouting)
+    if(_bInLayouting||object == nil)
         return;
     
-    //parent frame changed
-    if(context == gObserverFrame){
-        [self setNeedsLayout];
-        return;
-    }
-    
-    if(object != nil){
-        
-        if( context == gObserverHidden ){
-            BOOL n = [[change objectForKey:@"new"] boolValue];
+    if( context == gObserverHidden ){
+        BOOL n = [[change objectForKey:@"new"] boolValue];
+        BOOL o = [[change objectForKey:@"old"] boolValue];
+        if(n!=o){
             object.yoga.isIncludedInLayout = !n;
+            [self markChildDirty:object];
         }
-        
+    }else if( context == gObserverText ){
+        NSString* n = [change objectForKey:@"new"];
+        NSString* o = [change objectForKey:@"old"];
+        if([n compare:o options:NSLiteralSearch]!=NSOrderedSame){
+            [self markChildDirty:object];
+        }
+    }else if( context == gObserverAttrText ){
         [self markChildDirty:object];
     }
 }
@@ -309,7 +309,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         return;
     }
     
-    NSLog(@"Flexbox: FlexRootView layouting");
+    //NSLog(@"Flexbox: FlexRootView layouting");
 
     _bInLayouting = YES;
     _lastConfigFrame = _thisConfigFrame;
