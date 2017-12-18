@@ -251,6 +251,8 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 
 Layout attributes are stable, but view attributes are still in rapid increased. You can search FLEXSET in the library to find all supported view attributes. And you can make extendsion in your project by the catagory to support more view attributes.
 
+**Notice: FlexLib will output log when it doesn't recognize the attribute you provided. So you should not ignore the log when you develop your project.**
+
  [layout attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/layout.md)
  
  [view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)

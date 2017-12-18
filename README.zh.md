@@ -235,6 +235,8 @@ iPhoneX adaption
 
 布局属性已经稳定，但视图属性仍然在快速增加中。你可以通过在工程中搜索FLEXSET来找到所有支持的视图属性。如果现有的视图属性不能满足要求，你也可以扩展属于自己的视图属性，然后在xml文件中使用.
 
+**注意：当FlexLib检测到任何不支持的属性时，将会在log窗口输出对应的日志，因此当你在开发项目时不要忽视他所输出的信息。**
+
  [layout attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/layout.md)
  
  [view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
