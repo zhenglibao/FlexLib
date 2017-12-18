@@ -47,7 +47,7 @@
                 <UILabel
                 attr="@:system/buttonText,text:TextView Enlarge"/>
             </FlexTouchView>
-            <FlexTouchView onPress="on:" layout="@:system/button" attr="@:system/buttonAttr">
+            <FlexTouchView layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
                 attr="@:system/buttonText,text:未实现"/>
             </FlexTouchView>
