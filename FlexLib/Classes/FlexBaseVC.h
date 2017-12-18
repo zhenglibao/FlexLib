@@ -32,6 +32,9 @@
 // override this to do something when xml updated
 -(void)onLayoutReload;
 
+// override this to provide status bar hidden status
+-(BOOL)isStatusBarHiddenForOrient:(BOOL)portrait;
+
 // override this to provide different safeArea
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait;
 

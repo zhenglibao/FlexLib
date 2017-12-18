@@ -222,6 +222,13 @@ static void* gObserverFrame         = (void*)1;
         }
     });
 }
+
+
+-(BOOL)isStatusBarHiddenForOrient:(BOOL)portrait
+{
+    return !portrait;
+}
+
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait
 {
     if(!IsIphoneX())
@@ -232,7 +239,7 @@ static void* gObserverFrame         = (void*)1;
             height += self.navigationController.navigationBar.frame.size.height ;
         }
         
-        if(portrait)
+        if(![self isStatusBarHiddenForOrient:portrait])
         {
             height += 20 ;
         }
