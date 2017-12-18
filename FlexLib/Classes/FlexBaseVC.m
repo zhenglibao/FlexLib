@@ -296,13 +296,13 @@ static void* gObserverFrame         = (void*)1;
 -(void)delayLayoutByKeyboard:(BOOL)bFromSelf
 {
     const double tmSep = 0.5;
-    double now = GetAccurateSecondsSince1970();
-    
-    if(now-_lastKeyTime>tmSep){
-        _lastKeyTime = now;
-        [self layoutFlexRootViews];
-        
-    }else if(!bFromSelf){
+    if(bFromSelf){
+        double now = GetAccurateSecondsSince1970();
+        if(now-_lastKeyTime>tmSep){
+            _lastKeyTime = now;
+            [self layoutFlexRootViews];
+        }
+    }else{
         __weak FlexBaseVC* weakSelf = self;
         dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(tmSep* NSEC_PER_SEC));
         dispatch_after(delayTime, dispatch_get_main_queue(), ^{
