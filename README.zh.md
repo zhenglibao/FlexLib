@@ -212,6 +212,8 @@ iPhoneX adaption
 
 * 运行程序，打开要调试的视图控制器，在模拟器中按下Cmd+R来刷新界面. 注意：该快捷键仅在debug模式下可用.
 
+**注意：Cmd+R是在模拟器中当试图控制器处于显示状态时按下的，不是在xcode里边。baseurl是用来拼接资源的url用的。比如你设置的是'http://ip:port/abc/',而你需要访问TestVC，则最终的url将是'http://ip:port/abc/TestVC.xml'**
+
 ### 编辑预览任意界面
 
 * 按照前面方法开启http服务器并设置http基地址
