@@ -26,6 +26,11 @@ void FlexSetLoadFunc(BOOL bFromNet);
 // 设置自定义资源加载方式，任何方式都可生效
 void FlexSetCustomLoadFunc(FlexLoadFunc func);
 
+// 默认情况下，只在release模式下使用缓存，可以使用
+// 该方法在debug模式下启用或者在release模式下关闭
+// 缓存，如果启用缓存，将导致上述加载方法失效
+void FlexEnableCache(BOOL bEnable);
+
 // 设置视图属性
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,

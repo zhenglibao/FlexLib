@@ -32,6 +32,12 @@ NSData* loadFromFile(NSString* resName);
 
 static FlexLoadFunc gLoadFunc = loadFromFile;
 
+#ifdef DEBUG
+static BOOL gbUserCache = YES;
+#else
+static BOOL gbUserCache = YES;
+#endif
+
 static NameValue _direction[] =
 {{"inherit", YGDirectionInherit},
  {"ltr", YGDirectionLTR},
@@ -544,14 +550,86 @@ void FlexApplyLayoutParam(YGLayout* layout,
 }
 +(FlexNode*)loadNodeFromRes:(NSString*)flexName
 {
+    FlexNode* node;
+    
+    if(gbUserCache){
+        node = [FlexNode loadFromCache:flexName];
+        if(node != nil)
+            return node;
+    }
+    
     NSData* xmlData = gLoadFunc(flexName) ;
     if(xmlData == nil){
         NSLog(@"Flexbox: flex res %@ load failed.",flexName);
         return nil;
     }
-    return [FlexNode loadNodeData:xmlData];
-}
+    node = [FlexNode loadNodeData:xmlData];
+    
 
+    if(gbUserCache){
+        dispatch_async(
+                       dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                       ^{
+                           [FlexNode storeToCache:flexName Node:node];
+                       });
+    }
+    return node;
+}
++(NSString*)getCacheDir
+{
+    static NSString* documentPath;
+    if(documentPath == nil){
+        NSArray *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        documentPath = documents[0];
+        documentPath = [documentPath stringByAppendingPathComponent:@"flex"];
+        
+        // create run flag
+        
+        NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+        NSString *buildNumber = info[@"CFBundleVersion"];
+        if(buildNumber == nil)
+            buildNumber = @"0";
+        buildNumber = [@"flex_run_" stringByAppendingString:buildNumber];
+
+        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+        BOOL alreadRun = [userDefaults boolForKey:buildNumber];
+       
+         NSFileManager* manager=[NSFileManager defaultManager];
+        if( !alreadRun ){
+            
+            // clear the cache by last version
+            [manager removeItemAtPath:documentPath error:NULL
+             ];
+            [manager createDirectoryAtPath:documentPath withIntermediateDirectories:YES attributes:nil error:nil];
+            [userDefaults setBool:YES forKey:buildNumber];
+        }else{
+            if(![manager fileExistsAtPath:documentPath])
+                [manager createDirectoryAtPath:documentPath withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+    }
+    return documentPath;
+}
++(NSString*)getResCachePath:(NSString*)flexName
+{
+    NSString* sFilePath = [FlexNode getCacheDir];
+    sFilePath = [sFilePath stringByAppendingPathComponent:flexName];
+    sFilePath = [sFilePath stringByAppendingString:@".flex"];
+    return sFilePath;
+}
++(FlexNode*)loadFromCache:(NSString*)flexName
+{
+    NSString* sFilePath = [FlexNode getResCachePath:flexName];
+    
+    FlexNode* node = [NSKeyedUnarchiver unarchiveObjectWithFile:sFilePath];
+
+    return node;
+}
++(void)storeToCache:(NSString*)flexName
+               Node:(FlexNode*)node
+{
+    NSString* sFilePath = [FlexNode getResCachePath:flexName];
+    [NSKeyedArchiver archiveRootObject:node toFile:sFilePath];
+}
 @end
 
 NSData* loadFromFile(NSString* resName)
@@ -595,4 +673,7 @@ void FlexSetCustomLoadFunc(FlexLoadFunc func)
 {
     gLoadFunc = func;
 }
-
+void FlexEnableCache(BOOL bEnable)
+{
+    gbUserCache = bEnable;
+}
