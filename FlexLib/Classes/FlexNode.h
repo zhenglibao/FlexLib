@@ -31,6 +31,8 @@ void FlexSetCustomLoadFunc(FlexLoadFunc func);
 // 缓存，如果启用缓存，将导致上述加载方法失效
 void FlexEnableCache(BOOL bEnable);
 
+BOOL FlexIsCacheEnabled(void);
+
 // 设置视图属性
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,
@@ -45,6 +47,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
 
 +(FlexNode*)loadNodeFromRes:(NSString*)flexName;
 +(FlexNode*)loadNodeData:(NSData*)data;
++(NSString*)getCacheDir;
 
 -(instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(NSCoder *)aCoder;

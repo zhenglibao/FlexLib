@@ -11,6 +11,7 @@
 
 #import "FlexStyleMgr.h"
 #import "GDataXMLNode.h"
+#import "FlexNode.h"
 
 
 @implementation FlexAttr
@@ -133,6 +134,29 @@
     [self parseStyles:root];
     return YES;
 }
+
++(NSString*)getStyleCachePath:(NSString*)styleName
+{
+    NSString* sFilePath = [FlexNode getCacheDir];
+    sFilePath = [sFilePath stringByAppendingPathComponent:styleName];
+    sFilePath = [sFilePath stringByAppendingString:@".style"];
+    return sFilePath;
+}
++(void)storeToCache:(NSString*)styleName
+              Style:(FlexStyleGroup*)styleGroup
+{
+    NSString* sFilePath = [FlexStyleGroup getStyleCachePath:styleName];
+    [NSKeyedArchiver archiveRootObject:styleGroup toFile:sFilePath];
+}
++(FlexStyleGroup*)loadFromCache:(NSString*)styleName
+{
+    NSString* sFilePath = [FlexStyleGroup getStyleCachePath:styleName];
+    
+    FlexStyleGroup* node = [NSKeyedUnarchiver unarchiveObjectWithFile:sFilePath];
+    
+    return node;
+}
+
 @end
 
 /////////////////////////////
@@ -171,14 +195,30 @@ static FlexStyleMgr* _instance=nil;
 
     if(group==nil)
     {
+        if(FlexIsCacheEnabled()){
+            group = [FlexStyleGroup loadFromCache:fileName];
+            if(group != nil)
+                return group;
+        }
+        
         group = [[FlexStyleGroup alloc]init];
         
         NSString* filePath = [[NSBundle mainBundle]pathForResource:fileName ofType:@"style"];
         [group loadFromFile:filePath];
         [_files setObject:group forKey:fileName];
+        
+        if(FlexIsCacheEnabled()){
+            dispatch_async(
+                           dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                           ^{
+                               [FlexStyleGroup storeToCache:fileName Style:group];
+                           });
+        }
     }
     return group;
 }
+
+
 -(NSArray<FlexAttr*>*)getStyle:(NSString*)fileName
                      StyleName:(NSString*)styleName
 {

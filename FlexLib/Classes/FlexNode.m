@@ -33,7 +33,7 @@ NSData* loadFromFile(NSString* resName);
 static FlexLoadFunc gLoadFunc = loadFromFile;
 
 #ifdef DEBUG
-static BOOL gbUserCache = NO;
+static BOOL gbUserCache = YES;
 #else
 static BOOL gbUserCache = YES;
 #endif
@@ -676,4 +676,8 @@ void FlexSetCustomLoadFunc(FlexLoadFunc func)
 void FlexEnableCache(BOOL bEnable)
 {
     gbUserCache = bEnable;
+}
+BOOL FlexIsCacheEnabled(void)
+{
+    return gbUserCache;
 }
