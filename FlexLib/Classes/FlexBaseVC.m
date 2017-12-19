@@ -228,7 +228,10 @@ static void* gObserverFrame         = (void*)1;
 {
     return !portrait;
 }
-
+-(CGFloat)getStatusBarHeight:(BOOL)portrait
+{
+    return 20;
+}
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait
 {
     if(!IsIphoneX())
@@ -241,7 +244,7 @@ static void* gObserverFrame         = (void*)1;
         
         if(![self isStatusBarHiddenForOrient:portrait])
         {
-            height += 20 ;
+            height += [self getStatusBarHeight:portrait] ;
         }
         return UIEdgeInsetsMake(height, 0, 0, 0);
     }
