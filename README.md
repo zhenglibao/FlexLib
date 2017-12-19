@@ -58,6 +58,7 @@ iPhoneX adaption
 * support hot preview
 * auto adjust view to avoid keyboard
 * keyboard toolbar to switch input field
+* cache support for release mode
 
 ---
 
