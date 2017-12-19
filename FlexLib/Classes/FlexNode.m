@@ -33,7 +33,7 @@ NSData* loadFromFile(NSString* resName);
 static FlexLoadFunc gLoadFunc = loadFromFile;
 
 #ifdef DEBUG
-static BOOL gbUserCache = YES;
+static BOOL gbUserCache = NO;
 #else
 static BOOL gbUserCache = YES;
 #endif
