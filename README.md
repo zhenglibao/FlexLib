@@ -284,7 +284,7 @@ zhenglibao, 798393829@qq.com. QQ qun: 687398178
 
 You can contact me if you have any problem.
 
-I hope you will like it. :)
+I hope you will like and star it. :)
 
 ---
 
