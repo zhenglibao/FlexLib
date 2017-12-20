@@ -83,6 +83,13 @@
     
     for (GDataXMLElement* style in styles)
     {
+        if(![style isKindOfClass:[GDataXMLElement class]])
+            continue;
+        
+        NSString* elemName = [style name];
+        if([@"style" compare:elemName options:NSLiteralSearch]!=NSOrderedSame)
+            continue;
+        
         GDataXMLNode* styleNameNode = [style attributeForName:@"name"];
         NSString* styleName = [styleNameNode stringValue];
         if(styleName.length == 0)
