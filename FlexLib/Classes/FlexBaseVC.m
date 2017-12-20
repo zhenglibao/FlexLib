@@ -27,6 +27,7 @@ static void* gObserverFrame         = (void*)1;
     UIToolbar* _tbKeyboard;
     float _keyboardHeight;
     double _lastKeyTime;
+    BOOL   _keyboardDirty;
 }
 
 @end
@@ -307,10 +308,12 @@ static void* gObserverFrame         = (void*)1;
 {
     const double tmSep = 0.5;
     if(bFromSelf){
-        double now = GetAccurateSecondsSince1970();
-        if(now-_lastKeyTime>tmSep){
-            _lastKeyTime = now;
-            [self layoutFlexRootViews];
+        if(_keyboardDirty){
+            double now = GetAccurateSecondsSince1970();
+            if(now-_lastKeyTime>=tmSep){
+                _keyboardDirty = NO;
+                [self layoutFlexRootViews];
+            }
         }
     }else{
         __weak FlexBaseVC* weakSelf = self;
@@ -322,6 +325,7 @@ static void* gObserverFrame         = (void*)1;
 }
 -(void)keyboardDidShow:(NSNotification*) notification {
     if(self.avoidKeyboard){
+        _keyboardDirty = YES;
         _lastKeyTime = GetAccurateSecondsSince1970();
         _keyboardHeight = [self getKeyboardHeight:notification];
         [self delayLayoutByKeyboard:NO];
@@ -330,6 +334,7 @@ static void* gObserverFrame         = (void*)1;
 
 -(void)keyboardWillHide:(NSNotification*) notification {
     if(_keyboardHeight>0){
+        _keyboardDirty = YES;
         _lastKeyTime = GetAccurateSecondsSince1970();
         _keyboardHeight = 0;
         [self delayLayoutByKeyboard:NO];
