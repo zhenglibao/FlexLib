@@ -99,6 +99,9 @@
         NSArray* attrs = [style children] ;
         for(GDataXMLElement* attr in attrs)
         {
+            if(![attr isKindOfClass:[GDataXMLElement class]])
+                continue;
+            
             GDataXMLNode* name = [attr attributeForName:@"name"];
             
             FlexAttr* flexAttr = [[FlexAttr alloc]init];
