@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flex:1,
+    alignItems:center"
+    attr="bgColor:white">
+    
+    <FlexScrollView layout="padding:50,flex:1,width:100%" attr="vertScroll:true">
+        <FlexTouchView onPress="tapModalTop" layout="height:100,width:100%,justifyContent:center,alignItems:center" attr="bgColor:#e5e5e5,underlayColor:lightGray">
+            <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Show Modal At Top"/>
+        </FlexTouchView>
+        <UIView layout="height:20"/>
+        <FlexTouchView onPress="tapModalCenter" layout="height:100,width:100%,justifyContent:center,alignItems:center" attr="bgColor:#e5e5e5,underlayColor:lightGray">
+            <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Show Modal At Center"/>
+        </FlexTouchView>
+        <UIView layout="height:20"/>
+        <FlexTouchView onPress="tapModalBottom" layout="height:100,width:100%,justifyContent:center,alignItems:center" attr="bgColor:#e5e5e5,underlayColor:lightGray">
+            <UILabel layout="flex:0" attr="fontSize:16,color:#666666,text:Show Modal At Bottom"/>
+        </FlexTouchView>
+    </FlexScrollView>
+    
+    <FlexModalView name="modal" layout="width:100%" attr="bgColor:#f5f5f5,position:top,cancelable:true">
+        <UIView layout="height:1" attr="bgColor:#e6e6e6"/>
+        <UIView layout="@:system/filterRow" attr="bgColor:#fafafa">
+            <UILabel attr="@:system/filterLeftLabel,text:领用人"/>
+            <UILabel layout="flex:1" attr="@:system/rightContent,text:陈龙"/>
+            <UIImageView attr="source:arrow_right.png"/>
+        </UIView>
+        <UIView layout="height:1" attr="bgColor:#e6e6e6"/>
+        <UIView layout="@:system/filterRow" attr="bgColor:#fafafa">
+            <UILabel attr="@:system/filterLeftLabel,text:领操作时间"/>
+            <UILabel layout="flex:1" attr="@:system/rightContent,text:2017-12-10"/>
+            <UIImageView attr="source:arrow_right.png"/>
+        </UIView>
+        <UIView layout="height:1" attr="bgColor:#e6e6e6"/>
+        <UIView layout="@:system/filterRow" attr="bgColor:#fafafa">
+            <UILabel attr="@:system/filterLeftLabel,text:操作人"/>
+            <UILabel layout="flex:1" attr="@:system/rightContent,text:回龙观"/>
+            <UIImageView attr="source:arrow_right.png"/>
+        </UIView>
+        <UIView layout="height:1" attr="bgColor:#e6e6e6"/>
+        <UIView layout="@:system/filterRow" attr="bgColor:#fafafa">
+            <UILabel attr="@:system/filterLeftLabel,text:物品编号"/>
+            <UILabel layout="flex:1" attr="@:system/rightContent,text:sn-2017"/>
+            <UIImageView attr="source:arrow_right.png"/>
+        </UIView>
+        
+        <UIView layout="height:50,flexDirection:row,alignItems:center">
+            <UIView layout="width:50%,height:100%,justifyContent:center," attr="bgColor:white">
+                <UILabel attr="fontSize:14,textAlign:center,text:reset"/>
+            </UIView>
+            <UIView layout="width:50%,height:100%,justifyContent:center," attr="bgColor:#289bf0" onPress="closeModal">
+                <UILabel attr="fontSize:14,textAlign:center,text:Close"/>
+            </UIView>
+        </UIView>
+    </FlexModalView>
+</UIView> 

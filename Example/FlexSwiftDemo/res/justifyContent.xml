@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flex:1,
+    justifyContent:center,
+    alignItems:center"
+    attr="bgColor:white">
+    <UILabel layout="marginTop:20"
+    attr="@:system/buttonText,text:justifyContent Demo"/>
+    <FlexScrollView layout="flex:1,width:100%,alignItems:center" attr="vertScroll:true">
+        <UIView layout="flexDirection:row,width:100%,justifyContent:space-around">
+            <!-- justifyContent flex-start -->
+            <UIView layout="width:45%,alignItems:center">
+                <UILabel layout="marginTop:20"
+                attr="@:system/buttonText,text:flex-start"/>
+                <UIView layout="width:100%,height:200,alignItems:center,justifyContent:flex-start" attr="borderWidth:1,borderColor:lightGray,borderRadius:4">
+                    <UIView layout="width:50%,height:15%" attr="bgColor:red"/>
+                    <UIView layout="width:70%,height:15%" attr="bgColor:green"/>
+                    <UIView layout="width:40%,height:15%" attr="bgColor:blue"/>
+                </UIView>
+            </UIView>
+            <!-- justifyContent flex-end -->
+            <UIView layout="width:45%,alignItems:center">
+                <UILabel layout="marginTop:20"
+                attr="@:system/buttonText,text:flex-end"/>
+                <UIView layout="width:100%,height:200,alignItems:center,justifyContent:flex-end" attr="borderWidth:1,borderColor:lightGray,borderRadius:4">
+                    <UIView layout="width:50%,height:15%" attr="bgColor:red"/>
+                    <UIView layout="width:70%,height:15%" attr="bgColor:green"/>
+                    <UIView layout="width:40%,height:15%" attr="bgColor:blue"/>
+                </UIView>
+            </UIView>
+        </UIView>
+        
+        <UIView layout="flexDirection:row,width:100%,justifyContent:space-around">
+            <!-- justifyContent center -->
+            <UIView layout="width:45%,alignItems:center">
+                <UILabel layout="marginTop:20"
+                attr="@:system/buttonText,text:center"/>
+                <UIView layout="width:100%,height:200,alignItems:center,justifyContent:center" attr="borderWidth:1,borderColor:lightGray,borderRadius:4">
+                    <UIView layout="width:50%,height:15%" attr="bgColor:red"/>
+                    <UIView layout="width:70%,height:15%" attr="bgColor:green"/>
+                    <UIView layout="width:40%,height:15%" attr="bgColor:blue"/>
+                </UIView>
+            </UIView>
+            <!-- justifyContent space-between -->
+            <UIView layout="width:45%,alignItems:center">
+                <UILabel layout="marginTop:20"
+                attr="@:system/buttonText,text:space-between"/>
+                <UIView layout="width:100%,height:200,alignItems:center,justifyContent:space-between" attr="borderWidth:1,borderColor:lightGray,borderRadius:4">
+                    <UIView layout="width:50%,height:15%" attr="bgColor:red"/>
+                    <UIView layout="width:70%,height:15%" attr="bgColor:green"/>
+                    <UIView layout="width:40%,height:15%" attr="bgColor:blue"/>
+                </UIView>
+            </UIView>
+        </UIView>
+        
+        <UIView layout="flexDirection:row,width:100%,justifyContent:space-around">
+            <!-- justifyContent space-around -->
+            <UIView layout="width:45%,alignItems:space-around">
+                <UILabel layout="marginTop:20"
+                attr="@:system/buttonText,text:space-around"/>
+                <UIView layout="width:100%,height:200,alignItems:center,justifyContent:space-around" attr="borderWidth:1,borderColor:lightGray,borderRadius:4">
+                    <UIView layout="width:50%,height:15%" attr="bgColor:red"/>
+                    <UIView layout="width:70%,height:15%" attr="bgColor:green"/>
+                    <UIView layout="width:40%,height:15%" attr="bgColor:blue"/>
+                </UIView>
+            </UIView>
+            <!-- justifyContent blank -->
+            <UIView layout="width:45%,alignItems:center">
+               
+            </UIView>
+        </UIView>
+    </FlexScrollView>
+</UIView> 

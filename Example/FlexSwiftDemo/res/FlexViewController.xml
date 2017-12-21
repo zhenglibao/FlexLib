@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flex:1,
+    justifyContent:center,
+    alignItems:center"
+    attr="bgColor:white">
+    <UIView layout="height:1,width:100%" attr="bgColor:red"/>
+    <FlexScrollView name="_scroll" layout="flex:1,width:100%,alignItems:center" attr="vertScroll:true">
+        <UILabel name="_label" layout="marginTop:20"
+        attr="@:system/buttonText,text:You can run on iPhoneX,color:blue"/>
+        
+        <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
+            <FlexTouchView onPress="onTest:" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:Test ViewController"/>
+            </FlexTouchView>
+            <FlexTouchView onPress="onTestTable:" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:Test TableView"/>
+            </FlexTouchView>
+        </UIView>
+        <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
+            <FlexTouchView onPress="onTestScrollView:" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:Test ScrollView"/>
+            </FlexTouchView>
+            <FlexTouchView onPress="onTestModalView:" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:Test ModalView"/>
+            </FlexTouchView>
+        </UIView>
+
+        <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
+            <FlexTouchView onPress="onTestLoginView:" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:Test Touch"/>
+            </FlexTouchView>
+            <FlexTouchView onPress="onjustifyContent:" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:justifyContent Demo"/>
+            </FlexTouchView>
+        </UIView>
+
+       <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
+            <FlexTouchView onPress="onTextView:" layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:TextView Enlarge"/>
+            </FlexTouchView>
+            <FlexTouchView layout="@:system/button" attr="@:system/buttonAttr">
+                <UILabel
+                attr="@:system/buttonText,text:未实现"/>
+            </FlexTouchView>
+        </UIView>
+
+    </FlexScrollView>
+</UIView> 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flex:1,
+    flexDirection:row,
+    alignItems:center"
+    attr="bgColor:white">
+    <UIView layout="width:100%">
+        <UILabel layout="width:100%,marginBottom:50"
+			   attr="fontSize:16,color:#999999,
+			   textAlign:center,text:快速发起"/>
+        
+        <UIView layout="width:100%,flexDirection:row,
+			justifyContent:space-between,paddingLeft:80,
+			paddingRight:80,paddingBottom:100">
+            <UIView name="add"  onPress="tapAddAction" 
+				layout="alignItems: center">
+                <UIImageView attr="source:addnewtype.png"/>
+                <UILabel layout="marginTop: 20" 
+					attr="textAlign: center,fontSize: 14, 
+					color: #666666,text:添加类别"/>
+            </UIView>
+            <UIView name="batch"  onPress="tapBatchAction" 
+				layout="alignItems: center">
+                <UIImageView attr="source:batchcheck.png"/>
+                <UILabel layout="marginTop: 20" attr="textAlign: center,
+					fontSize: 14, color: #666666,text:批量出库"/>
+            </UIView>
+        </UIView>
+    </UIView>
+</UIView> 

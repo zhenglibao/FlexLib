@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flexDirection: row,margin:8"
+    attr="bgColor:white">
+    <UIImageView layout="width:40,height:40,marginLeft:10,marginRight:10"  attr="source:addnewtype.png"/>
+    <UIView
+        layout="flex:1">
+        <UIView
+            layout="flexDirection:row">
+            <UILabel name="name" attr="fontSize:14,color:#333333,text:你的名字,linesNum:1"/>
+            <UILabel name="type" layout="flex:1" attr="fontSize:14,color:#999999,text:一般类型,linesNum:1"/>
+            <UILabel name="date" attr="fontSize:14,color:#999999,text:5-11,linesNum:1"/>
+        </UIView>
+        <UIView layout="height:8"/>
+        <UILabel name="title"
+        attr="fontSize:18,color:#333333,text:title,linesNum:1"/>
+        <UIView layout="height:8"/>
+        <!--<FlexTextView layout="minHeight:30,width:100%" attr="fontSize:16,color:#333333"/>-->
+        <UILabel name="content" layout="width:100%"
+        attr="fontSize:14,color:#333333,text:aaa,linesNum:0,lineBreakMode:truncatingTail"/>
+        <UIView layout="height:8"/>
+    </UIView>
+</UIView> 

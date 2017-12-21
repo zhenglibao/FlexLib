@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<styles>
+    <style name="s1">
+        <attr name="bgColor">#333333</attr>
+    </style>
+    <style name="s2">
+        <attr name="bgColor">#666666</attr>
+    </style>
+    <style name="s3">
+        <attr name="bgColor">white</attr>
+        <attr name="fontSize">16</attr>
+        <attr name="color">#333333</attr>
+    </style>
+    <style name="lineSep">
+        <attr name="height">1</attr>
+        <attr name="bgColor">#e6e6e6</attr>
+    </style>
+    <style name="filterLeftLabel">
+        <attr name="fontSize">14</attr>
+        <attr name="color">#333333</attr>
+    </style>
+    <style name="rightContent">
+        <attr name="fontSize">14</attr>
+        <attr name="color">#333333</attr>
+        <attr name="textAlign">right</attr>
+    </style>
+    <style name="filterRow">
+        <attr name="height">44</attr>
+        <attr name="flexDirection">row</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="paddingLeft">14</attr>
+        <attr name="paddingRight">8</attr>
+        <attr name="justifyContent">space-between</attr>
+    </style>
+    <style name="button">
+        <attr name="height">44</attr>
+        <attr name="width">40%</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="justifyContent">center</attr>
+        <attr name="margin">20</attr>
+    </style>
+    <style name="buttonAttr">
+        <attr name="bgColor">#e5e5e5</attr>
+        <attr name="borderRadius">4</attr>
+        <attr name="clipsToBounds">true</attr>
+        <attr name="underlayColor">darkGray</attr>
+    </style>
+    <style name="buttonText">
+        <attr name="fontSize">16</attr>
+        <attr name="color">#333333</attr>
+    </style>
+    <style name="bigFont">
+        <attr name="fontSize">30</attr>
+        <attr name="color">#333333</attr>
+    </style>
+    <style name="border">
+        <attr name="borderRadius">4</attr>
+        <attr name="borderWidth">1</attr>
+        <attr name="borderColor">lightGray</attr>
+    </style>
+    <style name="redBorder">
+        <attr name="borderRadius">8</attr>
+        <attr name="borderWidth">1</attr>
+        <attr name="borderColor">red</attr>
+    </style>
+</styles>

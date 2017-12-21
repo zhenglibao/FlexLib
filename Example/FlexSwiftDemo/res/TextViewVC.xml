@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flex:1,
+    alignItems:center"
+    attr="bgColor:white">
+    <FlexScrollView name="scroll"  layout="flex:1,width:100%" attr="bgColor:white,vertScroll:true,horzIndicator:false,vertIndicator:true">
+        <UIView layout="flexDirection:row,alignItems:center,margin:10">
+            <UIView layout="flex:1">
+                <UILabel attr="fontSize:16,color:#333333,text:归属合同"/>
+                <UIView layout="height:10"/>
+                <UITextField layout="width:100%" attr="placeHolder:请输入本次收款金额,fontSize:16,color:#333333"/>
+            </UIView>
+            <UIImageView layout="height:20,width:20" attr="source:arrow_right.png"/>
+        </UIView>
+        
+        <UIView layout="height:1" attr="bgColor:#e5e5e5"/>
+        
+        <UIView layout="flexDirection:row,alignItems:center,margin:10">
+            <UIView layout="flex:1">
+                <UILabel attr="fontSize:16,color:#333333,text:收款类型"/>
+                <UIView layout="height:10"/>
+                <UITextField layout="width:100%" attr="placeHolder:请选择,fontSize:16,color:#333333"/>
+            </UIView>
+            <UIImageView layout="height:20,width:20" attr="source:arrow_right.png"/>
+        </UIView>
+        
+        <UIView layout="height:1" attr="bgColor:#e5e5e5"/>
+
+        <UIView layout="flexDirection:row,alignItems:center,margin:10">
+            <UIView layout="flex:1">
+                <UILabel attr="fontSize:16,color:#333333,text:收款日期"/>
+                <UIView layout="height:10"/>
+                <UITextField layout="width:100%" attr="placeHolder:收款人,fontSize:16,color:#333333"/>
+            </UIView>
+            <UIImageView layout="height:20,width:20" attr="source:arrow_right.png"/>
+        </UIView>
+        
+        <UIView layout="height:1" attr="bgColor:#e5e5e5"/>
+
+        <UIView layout="flexDirection:row,alignItems:center,margin:10">
+            <UIView layout="flex:1">
+                <UILabel attr="fontSize:16,color:#333333,text:收款人"/>
+                <UIView layout="height:10"/>
+                <UITextField layout="width:100%" attr="placeHolder:小飞,fontSize:16,color:#333333"/>
+            </UIView>
+            <UIImageView layout="height:20,width:20" attr="source:arrow_right.png"/>
+        </UIView>
+        
+        <UIView layout="height:1" attr="bgColor:#e5e5e5"/>
+        
+        <UIView layout="flexDirection:row,alignItems:center,margin:10">
+            <UIView layout="flex:1">
+                <UILabel attr="fontSize:16,color:#333333,text:备注"/>
+                <UIView layout="height:10"/>
+                <FlexTextView layout="width:100%,minHeight:30,maxHeight:95" attr="fontSize:16,color:#333333,text:这是一个UITextView\,你可以输入多行文本来试试效果:)"/>
+            </UIView>
+        </UIView>
+        
+        <UIView layout="height:10" attr="bgColor:#e5e5e5"/>
+        
+        <UIView layout="flexDirection:row,alignItems:center,margin:10">
+            <UIView layout="flex:1">
+                <UILabel attr="fontSize:16,color:#333333,text:附件"/>
+                <UIView layout="height:10"/>
+                <UIImageView layout="" attr="source:select.png"/>
+            </UIView>
+        </UIView>
+        
+        <UIView layout="height:10" attr="bgColor:#e5e5e5"/>
+        
+        <UIView layout="flexDirection:row,alignItems:center,margin:10">
+            <UIView layout="flex:1">
+                <UILabel attr="fontSize:16,color:#333333,text:图片"/>
+                <UIView layout="height:10"/>
+                <UIImageView layout="height:150" attr="source:select.png"/>
+            </UIView>
+        </UIView>
+        <UIView layout="height:10" attr="bgColor:#e5e5e5"/>
+    </FlexScrollView>
+</UIView>

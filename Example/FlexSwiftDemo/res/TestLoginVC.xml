@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flex:1,
+    alignItems:center"
+    attr="bgColor:white">
+    <FlexScrollView name="scroll"  layout="padding:50,flex:1,width:100%,alignItems:center" attr="bgColor:white,vertScroll:true,">
+        <FlexTouchView onPress="tapTouchAction">
+            <UIImageView layout="width:100,height:100" attr="borderRadius:50,clipsToBounds:true,source:qrcode.png">
+                <FlexTouchMaskView attr="bgColor:black,alpha:0.7"/>
+            </UIImageView>
+        </FlexTouchView>
+        <UIView layout="height:20"/>
+        <FlexTouchView onPress="tapTouchAction" layout="height:100,width:100%,alignItems:center,justifyContent:center" attr="bgColor:#e5e5e5,borderRadius:8,underlayColor:darkGray">
+            <UILabel layout="width:100%" attr="fontSize:16,textAlign:center,color:red,text:Please touch me and move\,\r\n这是测试touch功能的控件"/>
+        </FlexTouchView>
+        <UIView layout="height:20"/>
+        <UILabel layout="width:100%" attr="fontSize:20,linesNum:0,color:#333333,text:You can press the buttons above to see the effect. We use FlexTouchView to provide more powerful function and better flexibility than button."/>
+    </FlexScrollView>
+</UIView> 
