@@ -109,6 +109,11 @@ static void* gObserverFrame         = (void*)1;
     return nil;
 }
 
+-(UIView*)findByName:(NSString*)viewName
+{
+    return [self.view findByName:viewName];
+}
+
 #pragma mark - override
 
 -(void)onLayoutReload

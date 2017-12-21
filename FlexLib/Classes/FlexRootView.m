@@ -90,6 +90,18 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         }
     }];
 }
+-(UIView*)findByName:(NSString*)name
+{
+    if([name compare:self.viewAttrs.name options:NSLiteralSearch]==NSOrderedSame)
+        return self;
+    
+    for (UIView* sub in self.subviews) {
+        UIView* find = [sub findByName:name];
+        if(find != nil)
+            return find;
+    }
+    return nil;
+}
 -(void)findAllViews:(NSMutableArray*)result Type:(Class)type
 {
     for (UIView* sub in self.subviews) {

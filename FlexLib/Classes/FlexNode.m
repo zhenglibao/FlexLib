@@ -299,6 +299,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     
     if(self.name != nil){
         @try{
+            view.viewAttrs.name = self.name ;
             [owner setValue:view forKey:self.name];
         }@catch(NSException* exception){
             NSLog(@"Flexbox: name %@ not found in owner %@",self.name,[owner class]);

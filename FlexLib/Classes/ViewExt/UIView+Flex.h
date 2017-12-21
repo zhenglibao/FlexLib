@@ -13,6 +13,7 @@
 // 额外的view属性存储
 @interface FlexViewAttrs : NSObject
 
+@property(nonatomic,copy) NSString* name;
 @property(nonatomic,assign) BOOL stickTop;
 
 // 缓存数据

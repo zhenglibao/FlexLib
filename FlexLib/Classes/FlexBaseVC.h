@@ -26,6 +26,9 @@
 // override this to provide flex res name
 -(NSString*)getFlexName;
 
+//
+-(UIView*)findByName:(NSString*)viewName;
+
 // 支持热更新
 - (void)resetByFlexData:(NSData*)flexData;
 

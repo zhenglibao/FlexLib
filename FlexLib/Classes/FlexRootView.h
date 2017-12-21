@@ -37,6 +37,8 @@
                Value:(NSString*) value;
 -(void)setLayoutAttrs:(NSArray<FlexAttr*>*)attrs;
 
+-(UIView*)findByName:(NSString*)name;
+
 // 在子窗口中查找所有特定类型的实例
 -(void)findAllViews:(NSMutableArray*)result Type:(Class)type;
 
