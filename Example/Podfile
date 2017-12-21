@@ -1,6 +1,11 @@
+workspace ‘FlexLib.xcworkspace'
+
 use_frameworks!
 
+
 target 'FlexLib_Example' do
+  workspace ‘FlexLib.xcworkspace'
+  xcodeproj ‘FlexLib.xcodeproj'
   pod 'FlexLib', :path => '../'
 
   target 'FlexLib_Tests' do
@@ -9,4 +14,11 @@ target 'FlexLib_Example' do
     pod 'Specta'
   pod 'Expecta'
   end
+end
+
+
+target ‘FlexSwiftDemo’ do
+  workspace ‘FlexLib.xcworkspace'
+  xcodeproj ‘FlexSwiftDemo.xcodeproj'
+  pod 'FlexLib', :path => '../'
 end

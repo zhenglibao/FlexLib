@@ -436,8 +436,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FlexLib/FlexLib.framework",
-				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
+				"${BUILT_PRODUCTS_DIR}/FlexLib-iOS9.3/FlexLib.framework",
+				"${BUILT_PRODUCTS_DIR}/Yoga-iOS9.3/yoga.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

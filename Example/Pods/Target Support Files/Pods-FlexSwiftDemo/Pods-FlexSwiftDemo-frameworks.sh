@@ -111,12 +111,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/FlexLib-iOS9.3/FlexLib.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Yoga-iOS9.3/yoga.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FlexLib-iOS11.2/FlexLib.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Yoga-iOS11.2/yoga.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/FlexLib-iOS9.3/FlexLib.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Yoga-iOS9.3/yoga.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FlexLib-iOS11.2/FlexLib.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Yoga-iOS11.2/yoga.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
