@@ -11,7 +11,7 @@
         attr="@:system/buttonText,text:You can run on iPhoneX,color:blue"/>
         
         <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
-            <FlexTouchView onPress="onTest:" layout="@:system/button" attr="@:system/buttonAttr">
+            <FlexTouchView name="testVcBtn" onPress="onTest:" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
                 attr="@:system/buttonText,text:Test ViewController"/>
             </FlexTouchView>

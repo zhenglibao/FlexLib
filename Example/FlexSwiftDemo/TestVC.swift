@@ -1,36 +1,24 @@
 //
-//  ViewController.swift
+//  TestVC.swift
 //  FlexSwiftDemo
 //
 //  Created by zhenglibao on 2017/12/21.
 //  Copyright © 2017年 wbg. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import FlexLib
 
-class ViewController: FlexBaseVC {
+class TestVC: FlexBaseVC {
     
-    var testVcBtn : UIView?
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "FlexSwiftDemo";
-        
-        testVcBtn = find(byName: "testVcBtn")
-        
+        self.navigationItem.title = "TestVC";
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-    func onTest(sender : Any) -> Void {
-        
-    }
 }
-

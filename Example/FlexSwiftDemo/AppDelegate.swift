@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.main.bounds) ;
         self.window?.backgroundColor = UIColor.white;
         
-        let vc = ViewController();
+        let vc = ViewController.init(flexName: "FlexViewController");
         
-        let nav = UINavigationController.init(rootViewController: vc);
+        let nav = UINavigationController.init(rootViewController: vc!);
         self.window?.rootViewController = nav;
         self.window?.makeKeyAndVisible()
         return true
