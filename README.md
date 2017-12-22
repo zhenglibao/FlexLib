@@ -229,7 +229,7 @@ iPhoneX adaption
 
 * Run your project, you can press Cmd+R to reload the layout on simulator. Notice: this shortcut is available only on debug mode.
 
-**Notice: Cmd+R should be pressed on simulator when view controller is shown, not in XCode. The base url will be used to concate the resource url. For example, if the base url is 'http://ip:port/abc' and you want to access flex resource 'TestVC', then your final url will be 'http://ip:port/abc/TestVC.xml'**
+**Notice: Cmd+R should be pressed on simulator when view controller is shown, not in XCode. The base url will be used to concate the resource url. For example, if the base url is 'http://ip:port/abc/' and you want to access flex resource 'TestVC', then your final url will be 'http://ip:port/abc/TestVC.xml'**
 
 
 ### hot preview for any ui
