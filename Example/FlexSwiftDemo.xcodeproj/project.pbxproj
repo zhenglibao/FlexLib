@@ -18,7 +18,7 @@
 		D2D020971FEBB289008F6DB6 /* return@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D020841FEBB287008F6DB6 /* return@2x.png */; };
 		D2D020981FEBB289008F6DB6 /* TestScrollVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2D020851FEBB287008F6DB6 /* TestScrollVC.xml */; };
 		D2D020991FEBB289008F6DB6 /* alignItems.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2D020861FEBB287008F6DB6 /* alignItems.xml */; };
-		D2D0209A1FEBB289008F6DB6 /* FlexViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2D020871FEBB287008F6DB6 /* FlexViewController.xml */; };
+		D2D0209A1FEBB289008F6DB6 /* ViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2D020871FEBB287008F6DB6 /* ViewController.xml */; };
 		D2D0209B1FEBB289008F6DB6 /* batchcheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D020881FEBB288008F6DB6 /* batchcheck@2x.png */; };
 		D2D0209C1FEBB289008F6DB6 /* TestTableCell.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2D020891FEBB288008F6DB6 /* TestTableCell.xml */; };
 		D2D0209D1FEBB289008F6DB6 /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D0208A1FEBB288008F6DB6 /* arrow_right@2x.png */; };
@@ -26,12 +26,18 @@
 		D2D0209F1FEBB289008F6DB6 /* addnewtype@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D0208C1FEBB288008F6DB6 /* addnewtype@2x.png */; };
 		D2D020A01FEBB289008F6DB6 /* justifyContent.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2D0208D1FEBB288008F6DB6 /* justifyContent.xml */; };
 		D2D020A11FEBB289008F6DB6 /* qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D0208E1FEBB288008F6DB6 /* qrcode.png */; };
-		D2D020A21FEBB289008F6DB6 /* TestLoginVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2D0208F1FEBB288008F6DB6 /* TestLoginVC.xml */; };
+		D2D020A21FEBB289008F6DB6 /* TestTouchVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2D0208F1FEBB288008F6DB6 /* TestTouchVC.xml */; };
 		D2D020A31FEBB289008F6DB6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D020901FEBB288008F6DB6 /* splash.png */; };
 		D2D020A41FEBB289008F6DB6 /* system.style in Resources */ = {isa = PBXBuildFile; fileRef = D2D020911FEBB288008F6DB6 /* system.style */; };
 		D2D020A51FEBB289008F6DB6 /* TestTableVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2D020921FEBB288008F6DB6 /* TestTableVC.xml */; };
 		D2D020A61FEBB289008F6DB6 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2D020931FEBB289008F6DB6 /* test.xml */; };
 		D2D020A81FEBB30B008F6DB6 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020A71FEBB30B008F6DB6 /* TestVC.swift */; };
+		D2D020AA1FEBD24D008F6DB6 /* TestScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020A91FEBD24D008F6DB6 /* TestScrollVC.swift */; };
+		D2D020AC1FEC99D5008F6DB6 /* TestTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020AB1FEC99D5008F6DB6 /* TestTableVC.swift */; };
+		D2D020AE1FEC9A00008F6DB6 /* TestModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020AD1FEC9A00008F6DB6 /* TestModalVC.swift */; };
+		D2D020B01FEC9B12008F6DB6 /* TestTouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020AF1FEC9B12008F6DB6 /* TestTouchVC.swift */; };
+		D2D020B21FEC9B31008F6DB6 /* TestTextviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B11FEC9B31008F6DB6 /* TestTextviewVC.swift */; };
+		D2D020B41FEC9B53008F6DB6 /* TestJustifycontentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B31FEC9B53008F6DB6 /* TestJustifycontentVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +56,7 @@
 		D2D020841FEBB287008F6DB6 /* return@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "return@2x.png"; path = "FlexSwiftDemo/res/return@2x.png"; sourceTree = SOURCE_ROOT; };
 		D2D020851FEBB287008F6DB6 /* TestScrollVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestScrollVC.xml; path = FlexSwiftDemo/res/TestScrollVC.xml; sourceTree = SOURCE_ROOT; };
 		D2D020861FEBB287008F6DB6 /* alignItems.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = alignItems.xml; path = FlexSwiftDemo/res/alignItems.xml; sourceTree = SOURCE_ROOT; };
-		D2D020871FEBB287008F6DB6 /* FlexViewController.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = FlexViewController.xml; path = FlexSwiftDemo/res/FlexViewController.xml; sourceTree = SOURCE_ROOT; };
+		D2D020871FEBB287008F6DB6 /* ViewController.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ViewController.xml; path = FlexSwiftDemo/res/ViewController.xml; sourceTree = SOURCE_ROOT; };
 		D2D020881FEBB288008F6DB6 /* batchcheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "batchcheck@2x.png"; path = "FlexSwiftDemo/res/batchcheck@2x.png"; sourceTree = SOURCE_ROOT; };
 		D2D020891FEBB288008F6DB6 /* TestTableCell.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestTableCell.xml; path = FlexSwiftDemo/res/TestTableCell.xml; sourceTree = SOURCE_ROOT; };
 		D2D0208A1FEBB288008F6DB6 /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_right@2x.png"; path = "FlexSwiftDemo/res/arrow_right@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -58,12 +64,18 @@
 		D2D0208C1FEBB288008F6DB6 /* addnewtype@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addnewtype@2x.png"; path = "FlexSwiftDemo/res/addnewtype@2x.png"; sourceTree = SOURCE_ROOT; };
 		D2D0208D1FEBB288008F6DB6 /* justifyContent.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = justifyContent.xml; path = FlexSwiftDemo/res/justifyContent.xml; sourceTree = SOURCE_ROOT; };
 		D2D0208E1FEBB288008F6DB6 /* qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qrcode.png; path = FlexSwiftDemo/res/qrcode.png; sourceTree = SOURCE_ROOT; };
-		D2D0208F1FEBB288008F6DB6 /* TestLoginVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestLoginVC.xml; path = FlexSwiftDemo/res/TestLoginVC.xml; sourceTree = SOURCE_ROOT; };
+		D2D0208F1FEBB288008F6DB6 /* TestTouchVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestTouchVC.xml; path = FlexSwiftDemo/res/TestTouchVC.xml; sourceTree = SOURCE_ROOT; };
 		D2D020901FEBB288008F6DB6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = FlexSwiftDemo/res/splash.png; sourceTree = SOURCE_ROOT; };
 		D2D020911FEBB288008F6DB6 /* system.style */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = system.style; path = FlexSwiftDemo/res/system.style; sourceTree = SOURCE_ROOT; };
 		D2D020921FEBB288008F6DB6 /* TestTableVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestTableVC.xml; path = FlexSwiftDemo/res/TestTableVC.xml; sourceTree = SOURCE_ROOT; };
 		D2D020931FEBB289008F6DB6 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = test.xml; path = FlexSwiftDemo/res/test.xml; sourceTree = SOURCE_ROOT; };
 		D2D020A71FEBB30B008F6DB6 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		D2D020A91FEBD24D008F6DB6 /* TestScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrollVC.swift; sourceTree = "<group>"; };
+		D2D020AB1FEC99D5008F6DB6 /* TestTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableVC.swift; sourceTree = "<group>"; };
+		D2D020AD1FEC9A00008F6DB6 /* TestModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModalVC.swift; sourceTree = "<group>"; };
+		D2D020AF1FEC9B12008F6DB6 /* TestTouchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTouchVC.swift; sourceTree = "<group>"; };
+		D2D020B11FEC9B31008F6DB6 /* TestTextviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextviewVC.swift; sourceTree = "<group>"; };
+		D2D020B31FEC9B53008F6DB6 /* TestJustifycontentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJustifycontentVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,12 @@
 				D2D020721FEBA946008F6DB6 /* LaunchScreen.storyboard */,
 				D2D020751FEBA946008F6DB6 /* Info.plist */,
 				D2D020A71FEBB30B008F6DB6 /* TestVC.swift */,
+				D2D020A91FEBD24D008F6DB6 /* TestScrollVC.swift */,
+				D2D020AB1FEC99D5008F6DB6 /* TestTableVC.swift */,
+				D2D020AD1FEC9A00008F6DB6 /* TestModalVC.swift */,
+				D2D020AF1FEC9B12008F6DB6 /* TestTouchVC.swift */,
+				D2D020B11FEC9B31008F6DB6 /* TestTextviewVC.swift */,
+				D2D020B31FEC9B53008F6DB6 /* TestJustifycontentVC.swift */,
 			);
 			path = FlexSwiftDemo;
 			sourceTree = "<group>";
@@ -135,7 +153,7 @@
 				D2D0208A1FEBB288008F6DB6 /* arrow_right@2x.png */,
 				D2D020881FEBB288008F6DB6 /* batchcheck@2x.png */,
 				D2D020821FEBB287008F6DB6 /* example1.jpg */,
-				D2D020871FEBB287008F6DB6 /* FlexViewController.xml */,
+				D2D020871FEBB287008F6DB6 /* ViewController.xml */,
 				D2D0208D1FEBB288008F6DB6 /* justifyContent.xml */,
 				D2D0208E1FEBB288008F6DB6 /* qrcode.png */,
 				D2D020841FEBB287008F6DB6 /* return@2x.png */,
@@ -143,7 +161,7 @@
 				D2D020901FEBB288008F6DB6 /* splash.png */,
 				D2D020911FEBB288008F6DB6 /* system.style */,
 				D2D020931FEBB289008F6DB6 /* test.xml */,
-				D2D0208F1FEBB288008F6DB6 /* TestLoginVC.xml */,
+				D2D0208F1FEBB288008F6DB6 /* TestTouchVC.xml */,
 				D2D020831FEBB287008F6DB6 /* TestModalVC.xml */,
 				D2D020851FEBB287008F6DB6 /* TestScrollVC.xml */,
 				D2D020891FEBB288008F6DB6 /* TestTableCell.xml */,
@@ -228,9 +246,9 @@
 				D2D0209F1FEBB289008F6DB6 /* addnewtype@2x.png in Resources */,
 				D2D020941FEBB289008F6DB6 /* select@2x.png in Resources */,
 				D2D020741FEBA946008F6DB6 /* LaunchScreen.storyboard in Resources */,
-				D2D020A21FEBB289008F6DB6 /* TestLoginVC.xml in Resources */,
+				D2D020A21FEBB289008F6DB6 /* TestTouchVC.xml in Resources */,
 				D2D020A11FEBB289008F6DB6 /* qrcode.png in Resources */,
-				D2D0209A1FEBB289008F6DB6 /* FlexViewController.xml in Resources */,
+				D2D0209A1FEBB289008F6DB6 /* ViewController.xml in Resources */,
 				D2D020A61FEBB289008F6DB6 /* test.xml in Resources */,
 				D2D020711FEBA946008F6DB6 /* Assets.xcassets in Resources */,
 				D2D0209C1FEBB289008F6DB6 /* TestTableCell.xml in Resources */,
@@ -303,7 +321,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D020B21FEC9B31008F6DB6 /* TestTextviewVC.swift in Sources */,
+				D2D020AE1FEC9A00008F6DB6 /* TestModalVC.swift in Sources */,
+				D2D020B41FEC9B53008F6DB6 /* TestJustifycontentVC.swift in Sources */,
 				D2D0206C1FEBA946008F6DB6 /* ViewController.swift in Sources */,
+				D2D020AA1FEBD24D008F6DB6 /* TestScrollVC.swift in Sources */,
+				D2D020AC1FEC99D5008F6DB6 /* TestTableVC.swift in Sources */,
+				D2D020B01FEC9B12008F6DB6 /* TestTouchVC.swift in Sources */,
 				D2D020A81FEBB30B008F6DB6 /* TestVC.swift in Sources */,
 				D2D0206A1FEBA946008F6DB6 /* AppDelegate.swift in Sources */,
 			);
