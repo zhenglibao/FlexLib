@@ -224,6 +224,16 @@ iPhoneX adaption
     FlexSetCustomLoadFunc(loadfunc)
 这样程序运行后所有界面将通过http进行加载，如果网络速度慢可能会导致界面卡顿
 
+## 在Swift工程中使用
+* 将Podfile文件调整为使用framework方式，如下
+![podfile](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/podfile.png)
+
+* 从FlexBaseVC, FlexBaseTableCell派生自己的类
+
+* 对于需要进行事件绑定的变量、事件、和类名，需要使用@objc关键字声明，使其能够在obj-c中访问, 如下：
+
+![@objc](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/atobjc.png)
+
 ---
 
 ## 例子
