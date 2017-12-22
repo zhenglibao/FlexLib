@@ -16,7 +16,7 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 - [Feature](#feature)
 - [Usage](#usage)
 - [Hot Preview](#hot-preview)
-- [Swift Usage](#swift-usage)
+- [Usage For Swift Project](#usage-for-swift-project)
 - [Example](#example)
 - [Attribute Reference](#attribute-reference)
 - [Installation](#installation)
@@ -243,7 +243,7 @@ iPhoneX adaption
     FlexSetCustomLoadFunc(loadfunc)
 
 ---
-## Swift Usage
+## Usage For Swift Project
 * Adjust 'Podfile' to use frameworks
 
 ![podfile](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/podfile.png)
