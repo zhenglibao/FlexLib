@@ -114,6 +114,10 @@ static void* gObserverContentOffset = (void*)2;
     // let child has chance to process touch event
     self.canCancelContentTouches = YES;
     self.delaysContentTouches = NO;
+    if (@available(iOS 11.0, *))
+    {
+        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever ;
+    }
     
 #define COPYYGVALUE(prop)           \
 if(from.prop.unit==YGUnitPoint||    \
