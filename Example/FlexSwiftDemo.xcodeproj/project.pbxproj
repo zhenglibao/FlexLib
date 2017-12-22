@@ -38,6 +38,7 @@
 		D2D020B01FEC9B12008F6DB6 /* TestTouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020AF1FEC9B12008F6DB6 /* TestTouchVC.swift */; };
 		D2D020B21FEC9B31008F6DB6 /* TestTextviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B11FEC9B31008F6DB6 /* TestTextviewVC.swift */; };
 		D2D020B41FEC9B53008F6DB6 /* TestJustifycontentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B31FEC9B53008F6DB6 /* TestJustifycontentVC.swift */; };
+		D2D020B61FECB39C008F6DB6 /* TestTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B51FECB39C008F6DB6 /* TestTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		D2D020AF1FEC9B12008F6DB6 /* TestTouchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTouchVC.swift; sourceTree = "<group>"; };
 		D2D020B11FEC9B31008F6DB6 /* TestTextviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextviewVC.swift; sourceTree = "<group>"; };
 		D2D020B31FEC9B53008F6DB6 /* TestJustifycontentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJustifycontentVC.swift; sourceTree = "<group>"; };
+		D2D020B51FECB39C008F6DB6 /* TestTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				D2D020AF1FEC9B12008F6DB6 /* TestTouchVC.swift */,
 				D2D020B11FEC9B31008F6DB6 /* TestTextviewVC.swift */,
 				D2D020B31FEC9B53008F6DB6 /* TestJustifycontentVC.swift */,
+				D2D020B51FECB39C008F6DB6 /* TestTableCell.swift */,
 			);
 			path = FlexSwiftDemo;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			files = (
 				D2D020B21FEC9B31008F6DB6 /* TestTextviewVC.swift in Sources */,
 				D2D020AE1FEC9A00008F6DB6 /* TestModalVC.swift in Sources */,
+				D2D020B61FECB39C008F6DB6 /* TestTableCell.swift in Sources */,
 				D2D020B41FEC9B53008F6DB6 /* TestJustifycontentVC.swift in Sources */,
 				D2D0206C1FEBA946008F6DB6 /* ViewController.swift in Sources */,
 				D2D020AA1FEBD24D008F6DB6 /* TestScrollVC.swift in Sources */,
