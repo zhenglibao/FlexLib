@@ -1,10 +1,11 @@
-//
-//  TestModalVC.swift
-//  FlexSwiftDemo
-//
-//  Created by zhenglibao on 2017/12/22.
-//  Copyright © 2017年 wbg. All rights reserved.
-//
+/**
+ * Copyright (c) 2017-present, zhenglibao, Inc.
+ * email: 798393829@qq.com
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT-style license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 import UIKit
 import FlexLib
