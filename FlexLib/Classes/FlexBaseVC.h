@@ -26,7 +26,7 @@
 // override this to provide flex res name
 -(NSString*)getFlexName;
 
-//
+// find the view with viewName in xml layout
 -(UIView*)findByName:(NSString*)viewName;
 
 // 支持热更新
