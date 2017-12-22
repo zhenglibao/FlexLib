@@ -8,6 +8,7 @@
  */
 
 import UIKit
+import FlexLib
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //
+        //FlexSetPreviewBaseUrl("http://ip of your machine/FlexLib/res/")
+        //FlexSetLoadFunc(true)
+        
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds) ;
         self.window?.backgroundColor = UIColor.white;
