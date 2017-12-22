@@ -229,14 +229,9 @@ static void* gObserverFrame         = (void*)1;
     });
 }
 
-
--(BOOL)isStatusBarHiddenForOrient:(BOOL)portrait
-{
-    return !portrait;
-}
 -(CGFloat)getStatusBarHeight:(BOOL)portrait
 {
-    return 20;
+    return portrait ? 20 : 0;
 }
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait
 {
@@ -248,10 +243,8 @@ static void* gObserverFrame         = (void*)1;
             height += self.navigationController.navigationBar.frame.size.height ;
         }
         
-        if(![self isStatusBarHiddenForOrient:portrait])
-        {
-            height += [self getStatusBarHeight:portrait] ;
-        }
+        height += [self getStatusBarHeight:portrait] ;
+        
         return UIEdgeInsetsMake(height, 0, 0, 0);
     }
     

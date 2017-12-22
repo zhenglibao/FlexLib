@@ -102,6 +102,10 @@
             if(![attr isKindOfClass:[GDataXMLElement class]])
                 continue;
             
+            NSString* attrName = [attr name];
+            if([@"attr" compare:attrName options:NSLiteralSearch]!=NSOrderedSame)
+                continue;
+            
             GDataXMLNode* name = [attr attributeForName:@"name"];
             
             FlexAttr* flexAttr = [[FlexAttr alloc]init];
