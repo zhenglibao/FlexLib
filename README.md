@@ -245,12 +245,13 @@ iPhoneX adaption
 ---
 ## Swift Usage
 * Adjust 'Podfile' to use frameworks
-![podfile](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/podfile.png)
+
+![podfile](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/podfile.png)
 
 * Extend your swift class from FlexBaseVC, FlexBaseTableCell, etc
 * For those variables, onPress events, class, you should declare them with @objc keyword. Like this:
 
-![@objc](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/atobjc.png)
+![@objc](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/atobjc.png)
 
 
 ---
