@@ -169,4 +169,7 @@ class TestTableVC: FlexBaseVC,UITableViewDelegate,UITableViewDataSource {
         _cell?.setData(data: _datas[indexPath.row])
         return (_cell?.height(forWidth: tableView.frame.size.width))!
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
