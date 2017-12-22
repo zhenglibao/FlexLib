@@ -16,6 +16,7 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 - [Feature](#feature)
 - [Usage](#usage)
 - [Hot Preview](#hot-preview)
+- [Swift Usage](#swift-usage)
 - [Example](#example)
 - [Attribute Reference](#attribute-reference)
 - [Installation](#installation)
@@ -59,6 +60,7 @@ iPhoneX adaption
 * auto adjust view to avoid keyboard
 * keyboard toolbar to switch input field
 * cache support for release mode
+* support Swift project
 
 ---
 
@@ -239,6 +241,17 @@ iPhoneX adaption
 * Set resource load way
     FlexSetLoadFunc(YES) or
     FlexSetCustomLoadFunc(loadfunc)
+
+---
+## Swift Usage
+* Adjust 'Podfile' to use frameworks
+![podfile](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/podfile.png)
+
+* Extend your swift class from FlexBaseVC, FlexBaseTableCell, etc
+* For those variables, onPress events, class, you should declare them with @objc keyword. Like this:
+
+![@objc](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/atobjc.png)
+
 
 ---
 
