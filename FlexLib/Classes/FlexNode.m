@@ -610,6 +610,15 @@ void FlexApplyLayoutParam(YGLayout* layout,
     }
     return documentPath;
 }
++(void)clearFlexCache
+{
+    NSString* sCacheDir = [FlexNode getCacheDir];
+    
+    NSFileManager* manager=[NSFileManager defaultManager];
+    [manager removeItemAtPath:sCacheDir error:NULL
+         ];
+    [manager createDirectoryAtPath:sCacheDir withIntermediateDirectories:YES attributes:nil error:nil];
+}
 +(NSString*)getResCachePath:(NSString*)flexName
 {
     NSString* sFilePath = [FlexNode getCacheDir];

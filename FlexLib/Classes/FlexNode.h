@@ -48,6 +48,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
 +(FlexNode*)loadNodeFromRes:(NSString*)flexName;
 +(FlexNode*)loadNodeData:(NSData*)data;
 +(NSString*)getCacheDir;
++(void)clearFlexCache;
 
 -(instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(NSCoder *)aCoder;
