@@ -673,17 +673,16 @@ NSData* loadFromNetwork(NSString* resName)
 
 void FlexRestorePreviewSetting(void)
 {
-#ifndef DEBUG
-    return;
-#endif
-    
+#ifdef DEBUG
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
     
     NSString* baseurl = [defaults objectForKey:FLEXBASEURL];
     BOOL onlineLoad = [defaults boolForKey:FLEXONLINELOAD];
     
     FlexSetPreviewBaseUrl(baseurl);
     FlexSetLoadFunc(onlineLoad?flexFromNet:flexFromFile);
+#endif
 }
 
 void FlexSetLoadFunc(FlexLoadMethod loadFrom)
