@@ -16,7 +16,10 @@
 
 
 @implementation UIButton (Flex)
-
+FLEXSET(text)
+{
+    [self setTitle:sValue forState:UIControlStateNormal];
+}
 FLEXSET(title)
 {
     [self setTitle:sValue forState:UIControlStateNormal];
