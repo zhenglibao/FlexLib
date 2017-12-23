@@ -21,6 +21,7 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 - [Attribute Reference](#attribute-reference)
 - [Installation](#installation)
 - [About Flexbox](#about-flexbox)
+- [FAQ](#faq)
 - [Author](#author)
 - [License](#license)
 
