@@ -295,9 +295,10 @@ pod 'FlexLib'
 Please check your simulator setting:
 goto "Hardware -> Keyboard", checked "Use the Same Keyboard as
 macOS" and "Connect Hardware keyboard"
+If still not work, please restart your simulator and Xcode.
 
 ### Cmd+R shortcut works, but ui not refresh
-Please check your simulator network, make sure your mac http server is accessible on safari.
+Please check your simulator network, make sure your mac http server is accessible on safari. If simulator network has some problem, please restart simulator and Xcode.
 If you set base url with http instead of https, please allow your app to access by http. Http will be unavailable by default.
 
 ---
