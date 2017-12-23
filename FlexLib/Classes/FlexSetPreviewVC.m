@@ -14,6 +14,8 @@
 {
     UITextField* _baseUrlField;
     UISwitch* _loadSwitch;
+    
+    UILabel* _warning;
 }
 
 @end
@@ -35,15 +37,25 @@
     [_baseUrlField setAutocorrectionType:UITextAutocorrectionTypeNo];
     [_baseUrlField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
     _baseUrlField.text = [defaults objectForKey:FLEXBASEURL];
+    
+    [_loadSwitch addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
     _loadSwitch.on = [defaults boolForKey:FLEXONLINELOAD];
     
 }
-
+- (void)reloadFlexView
+{
+    //阻止该界面
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)switchAction:(id)sender
+{
+    UISwitch* sw = (UISwitch*)sender;
+    
+    _warning.hidden = !sw.on;
+}
 -(void)onSave
 {
     NSString* baseurl = _baseUrlField.text;

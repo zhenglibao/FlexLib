@@ -20,6 +20,8 @@
             <UISwitch name="_loadSwitch" attr="on:true"/>
         </UIView>
         
+        <UILabel name="_warning" layout="marginBottom:10" attr="fontSize:16,color:red,linesNum:0,text:注意：打开该选项将会减慢加载速度，如果网络较慢将会阻塞界面"/>
+        
         <UIView layout="height:1" attr="bgColor:#e5e5e5"/>
         
         <UIView layout="flexDirection:row,justifyContent:space-around,alignItems:center,marginTop:30,marginBottom:10">

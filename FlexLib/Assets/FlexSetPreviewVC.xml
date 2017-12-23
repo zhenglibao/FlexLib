@@ -19,6 +19,8 @@
             <UILabel attr="fontSize:16,color:#333333,text:Online load resource"/>
             <UISwitch name="_loadSwitch" attr="on:true"/>
         </UIView>
+        
+        <UILabel name="_warning" layout="marginBottom:10" attr="fontSize:16,color:red,linesNum:0,text:Notice\: this option will slow down the load speed. UI will be blocked if network is slow or unaccessable."/>
 
         <UIView layout="height:1" attr="bgColor:#e5e5e5"/>
         
