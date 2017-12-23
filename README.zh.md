@@ -271,6 +271,22 @@ pod 'FlexLib'
 
 ---
 
+## 问题解答
+### Cmd+R / Cmd+D / Control+V等快捷键不起作用
+请检查模拟器设置，进入 "Hardware -> Keyboard"，确认勾选"Use the Same Keyboard as macOS"和"Connect Hardware keyboard"
+
+### Cmd+R 快捷键起作用, 但界面仍然不刷新
+请检查模拟器网络，确保在模拟器的safari中能够访问对应的url
+
+可能的原因及解决方案：
+* Mac系统打开了代理或者vpn，需要关掉
+* 在iOS系统设置  -> 开发者选项  -> 允许HTTP服务，打开此选项
+* 应用程序默认情况下禁止http请求，需要打开
+* 模拟器需要重启
+* 将mac系统wifi关掉，再打开
+
+---
+
 ## 关于Flexbox
 [CSS-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 

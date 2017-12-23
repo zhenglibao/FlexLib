@@ -300,8 +300,14 @@ macOS" and "Connect Hardware keyboard"
 If still not work, please restart your simulator and Xcode.
 
 ### Cmd+R shortcut works, but ui not refresh
-Please check your simulator network, make sure your mac http server is accessible on safari. If simulator network has some problem, please restart simulator and Xcode.
-If you set base url with http instead of https, please allow your app to access by http. Http will be unavailable by default.
+Please check your simulator network, make sure your mac http server is accessible on safari.
+
+Possible reasons & solutions:
+* proxy or vpn has been set, you need to close it.
+* In iOS system settings -> Developer -> Allow HTTP Services
+* App http access was not allowed by default. You must turn on it.
+* Maybe iOS simulator need restart.
+* Turn off wifi, then turn on it.
 
 ---
 
