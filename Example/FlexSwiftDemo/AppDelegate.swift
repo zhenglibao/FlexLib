@@ -19,9 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // 在此设置预览所需要的baseurl
-        //FlexSetPreviewBaseUrl("http://ip of your machine/FlexLib/res/")
-        //FlexSetLoadFunc(true)
+        FlexRestorePreviewSetting()
         
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds) ;

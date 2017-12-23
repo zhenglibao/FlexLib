@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flex:1,
+    alignItems:center"
+    attr="bgColor:white">
+    <FlexScrollView name="scroll"  layout="flex:1,width:100%,padding:10" attr="bgColor:white,vertScroll:true,horzIndicator:false,vertIndicator:true">
+        <UIView layout="flexDirection:row,alignItems:center">
+            <UIView layout="flex:1">
+                <UILabel attr="fontSize:16,color:#333333,text:Preview base url\:"/>
+                <UIView layout="height:5"/>
+                <UITextField name="_baseUrlField" layout="width:100%,height:40" attr="fontSize:16,color:#333333,placeHolder:input preview base url here"/>
+            </UIView>
+        </UIView>
+        
+        <UIView layout="height:1" attr="bgColor:#e5e5e5"/>
+        
+        <UIView layout="flexDirection:row,justifyContent:space-between,alignItems:center,marginTop:10,marginBottom:10">
+            <UILabel attr="fontSize:16,color:#333333,text:Online load resource"/>
+            <UISwitch name="_loadSwitch" attr="on:true"/>
+        </UIView>
+
+        <UIView layout="height:1" attr="bgColor:#e5e5e5"/>
+        
+        <UIView layout="flexDirection:row,justifyContent:space-around,alignItems:center,marginTop:30,marginBottom:10">
+            <!--<FlexTouchView onPress="onTestHttp" layout="width:40%,height:40,alignItems:center,justifyContent:center" attr="bgColor:#47b0f9,activeOpacity:0.5,borderRadius:4">
+                <UILabel attr="fontSize:16,color:white,text:Test Http"/>
+            </FlexTouchView>-->
+            <FlexTouchView onPress="onSave" layout="width:80%,height:40,alignItems:center,justifyContent:center" attr="bgColor:#47b0f9,activeOpacity:0.5,borderRadius:4">
+                <UILabel attr="fontSize:16,color:white,text:Save"/>
+            </FlexTouchView>
+        </UIView>
+
+    </FlexScrollView>
+</UIView>
+

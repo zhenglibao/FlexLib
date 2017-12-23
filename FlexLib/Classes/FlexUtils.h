@@ -73,6 +73,13 @@ self.propName = n;                        \
 }
 
 
+typedef enum{
+    flexChinese,
+    flexEnglish,
+}FlexLanuage;
+
+FlexLanuage FlexGetLanguage(void);
+
 // 在表中查询s字符串，将其转换成int值
 int String2Int(const char* s,
                NameValue table[],

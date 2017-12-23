@@ -552,14 +552,15 @@ void FlexApplyLayoutParam(YGLayout* layout,
 +(FlexNode*)loadNodeFromRes:(NSString*)flexName
 {
     FlexNode* node;
+    BOOL isAbsoluteRes = [flexName hasPrefix:@"/"];
     
-    if(gbUserCache){
+    if(gbUserCache && !isAbsoluteRes){
         node = [FlexNode loadFromCache:flexName];
         if(node != nil)
             return node;
     }
     
-    NSData* xmlData = gLoadFunc(flexName) ;
+    NSData* xmlData = isAbsoluteRes ? loadFromFile(flexName) : gLoadFunc(flexName) ;
     if(xmlData == nil){
         NSLog(@"Flexbox: flex res %@ load failed.",flexName);
         return nil;
@@ -567,7 +568,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     node = [FlexNode loadNodeData:xmlData];
     
 
-    if(gbUserCache){
+    if(gbUserCache && !isAbsoluteRes){
         dispatch_async(
                        dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                        ^{
@@ -670,11 +671,31 @@ NSData* loadFromNetwork(NSString* resName)
 }
 
 
+void FlexRestorePreviewSetting(void)
+{
+#ifndef DEBUG
+    return;
+#endif
+    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString* baseurl = [defaults objectForKey:FLEXBASEURL];
+    BOOL onlineLoad = [defaults boolForKey:FLEXONLINELOAD];
+    
+    FlexSetPreviewBaseUrl(baseurl);
+    FlexSetLoadFunc(onlineLoad?flexFromNet:flexFromFile);
+}
 
-void FlexSetLoadFunc(BOOL bFromNet)
+void FlexSetLoadFunc(FlexLoadMethod loadFrom)
 {
 #ifdef DEBUG
-    gLoadFunc = bFromNet ? loadFromNetwork : loadFromFile ;
+    if(loadFrom == flexFromFile){
+        gLoadFunc = loadFromFile ;
+    }else if(loadFrom == flexFromNet){
+        gLoadFunc = loadFromNetwork ;
+    }else{
+        NSLog(@"Flexbox: please call FlexSetCustomLoadFunc");
+    }
 #else
     gLoadFunc = loadFromFile ;
 #endif
@@ -682,6 +703,14 @@ void FlexSetLoadFunc(BOOL bFromNet)
 void FlexSetCustomLoadFunc(FlexLoadFunc func)
 {
     gLoadFunc = func;
+}
+FlexLoadMethod FlexGetLoadMethod(void)
+{
+    if(gLoadFunc == loadFromFile)
+        return flexFromFile;
+    if(gLoadFunc == loadFromNetwork)
+        return flexFromNet;
+    return flexCustomLoad;
 }
 void FlexEnableCache(BOOL bEnable)
 {

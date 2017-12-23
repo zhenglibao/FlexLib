@@ -1,9 +1,9 @@
 PODS:
   - Expecta (1.0.6)
-  - FlexLib (0.8.1):
-    - FlexLib/no-arc (= 0.8.1)
+  - FlexLib (0.8.2):
+    - FlexLib/no-arc (= 0.8.2)
     - Yoga
-  - FlexLib/no-arc (0.8.1):
+  - FlexLib/no-arc (0.8.2):
     - Yoga
   - Specta (1.0.7)
   - Yoga (1.6.0)
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
-  FlexLib: a881924edb9cd1cf1bb987b66370e9f401b65aef
+  FlexLib: 94d70df7959309cbc9b6ebbb2fe1f926808c0902
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   Yoga: 81670877477311136b1b3f69a6307ce62e1c89cf
 

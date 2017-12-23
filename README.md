@@ -242,6 +242,10 @@ iPhoneX adaption
     FlexSetLoadFunc(YES) or
     FlexSetCustomLoadFunc(loadfunc)
 
+### Set preview parameter without code (Debug mode only)
+* Press Cmd+D when any view controller based on FlexBaseVC is shown
+* Set all parameters then save.
+
 ---
 ## Usage For Swift Project
 * Adjust 'Podfile' to use frameworks

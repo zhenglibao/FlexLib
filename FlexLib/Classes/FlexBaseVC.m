@@ -14,6 +14,7 @@
 #import "YogaKit/UIView+Yoga.h"
 #import "FlexUtils.h"
 #import "FlexScrollView.h"
+#import "FlexSetPreviewVC.h"
 
 static void* gObserverFrame         = (void*)1;
 
@@ -190,6 +191,7 @@ static void* gObserverFrame         = (void*)1;
 {
     _bUpdating = NO ;
     if(flexData == nil){
+        NSLog(@"Flexbox: Reload Error.");
         return;
     }
     
@@ -204,6 +206,8 @@ static void* gObserverFrame         = (void*)1;
  
     [self postSetRootView];
     [self onLayoutReload];
+    
+    NSLog(@"Flexbox: Reload Successful.");
 }
 - (void)reloadFlexView
 {
@@ -228,7 +232,27 @@ static void* gObserverFrame         = (void*)1;
         }
     });
 }
-
+-(void)previewSetting{
+    
+    if([self isKindOfClass:[FlexSetPreviewVC class]])
+        return;
+    
+    NSString* flexName = NSStringFromClass([FlexSetPreviewVC class]);
+    if(FlexGetLanguage()==flexChinese){
+        flexName = [flexName stringByAppendingString:@"_ch"];
+    }
+    
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[FlexSetPreviewVC class]];
+    NSString *resourcePath = [frameworkBundle pathForResource:flexName ofType:@"xml" inDirectory:@"FlexLib.bundle"];
+    
+    FlexSetPreviewVC* vc = [[FlexSetPreviewVC alloc]initWithFlexName:resourcePath];
+    
+    if(self.navigationController != nil){
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+}
 -(CGFloat)getStatusBarHeight:(BOOL)portrait
 {
     return portrait ? 20 : 0;
@@ -295,6 +319,10 @@ static void* gObserverFrame         = (void*)1;
              [UIKeyCommand keyCommandWithInput:@"r"
                                  modifierFlags:UIKeyModifierCommand
                                         action:@selector(reloadFlexView)],
+             // Setting
+             [UIKeyCommand keyCommandWithInput:@"d"
+                                 modifierFlags:UIKeyModifierCommand
+                                        action:@selector(previewSetting)],
              ];
 #else
     return @[];
@@ -379,9 +407,8 @@ static void* gObserverFrame         = (void*)1;
 }
 -(NSArray*)getKeyboardItemsStrings
 {
-    NSArray *appLanguages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
-    NSString *languageName = [appLanguages objectAtIndex:0];
-    if([languageName rangeOfString:@"zh-"].length>0){
+    if(FlexGetLanguage()==flexChinese)
+    {
         return @[
              @"上一个",
              @"下一个",

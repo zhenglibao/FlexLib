@@ -171,7 +171,7 @@ void FlexSetPreviewBaseUrl(NSString* filexName)
 }
 NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
 {
-    if(gBaseUrl == nil){
+    if(gBaseUrl.length==0){
         NSLog(@"Flexbox: preview base url not set");
         return nil;
     }
@@ -193,3 +193,12 @@ NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
     return nil;
 }
 
+FlexLanuage FlexGetLanguage(void)
+{
+    NSArray *appLanguages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+    NSString *languageName = [appLanguages objectAtIndex:0];
+    if([languageName rangeOfString:@"zh-"].length>0){
+        return flexChinese;
+    }
+    return flexEnglish;
+}

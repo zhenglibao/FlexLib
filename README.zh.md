@@ -224,6 +224,11 @@ iPhoneX adaption
     FlexSetCustomLoadFunc(loadfunc)
 这样程序运行后所有界面将通过http进行加载，如果网络速度慢可能会导致界面卡顿
 
+### 通过界面设置预览参数(仅在debug模式下可用)
+* 当基于FlexBaseVC的界面处于显示状态时，按下Cmd+D
+* 在呼出的界面中设置以上对应参数，然后保存
+
+
 ## 在Swift工程中使用
 * 将Podfile文件调整为使用framework方式，如下
 ![podfile](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/podfile.png)

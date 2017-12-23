@@ -18,6 +18,7 @@
 #import "FlexParentView.h"
 #import "FlexRootView.h"
 #import "FlexScrollView.h"
+#import "FlexSetPreviewVC.h"
 #import "FlexStyleMgr.h"
 #import "FlexTextView.h"
 #import "FlexTouchMaskView.h"
