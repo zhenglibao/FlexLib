@@ -40,16 +40,13 @@
     
     [_loadSwitch addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
     _loadSwitch.on = [defaults boolForKey:FLEXONLINELOAD];
-    
+    _warning.hidden = !_loadSwitch.on;
 }
-- (void)reloadFlexView
+- (NSArray<UIKeyCommand *> *)keyCommands
 {
-    //阻止该界面
+    return @[];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 -(void)switchAction:(id)sender
 {
     UISwitch* sw = (UISwitch*)sender;
@@ -60,6 +57,8 @@
 {
     NSString* baseurl = _baseUrlField.text;
     BOOL onlineLoad = _loadSwitch.isOn;
+    
+    baseurl = [baseurl stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     

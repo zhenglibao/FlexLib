@@ -242,7 +242,7 @@ iPhoneX adaption
     FlexSetLoadFunc(YES) or
     FlexSetCustomLoadFunc(loadfunc)
 
-### Set preview parameter without code (Debug mode only)
+### Set preview parameter without modify your code everytime (Debug mode only)
 * Press Cmd+D when any view controller based on FlexBaseVC is shown
 * Set all parameters then save.
 * Call FlexRestorePreviewSetting when app init. This will restore all setting.
@@ -286,6 +286,19 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'FlexLib'
 ```
+
+---
+
+## FAQ
+
+### Cmd+R or Cmd+D not work
+Please check your simulator setting:
+goto "Hardware -> Keyboard", checked "Use the Same Keyboard as
+macOS" and "Connect Hardware keyboard"
+
+### Cmd+R shortcut works, but ui not refresh
+Please check your simulator network, make sure your mac http server is accessible on safari.
+If you set base url with http instead of https, please allow your app to access by http. Http will be unavailable by default.
 
 ---
 
