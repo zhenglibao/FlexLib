@@ -62,6 +62,7 @@ iPhoneX adaption
 * keyboard toolbar to switch input field
 * cache support for release mode
 * support Swift project
+* view all layouts in one page (Control+V)
 
 ---
 
