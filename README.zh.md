@@ -227,6 +227,7 @@ iPhoneX adaption
 ### 通过界面设置预览参数(仅在debug模式下可用)
 * 当基于FlexBaseVC的界面处于显示状态时，按下Cmd+D
 * 在呼出的界面中设置以上对应参数，然后保存
+* 在程序启动时调用FlexRestorePreviewSetting恢复所有设置
 
 
 ## 在Swift工程中使用
