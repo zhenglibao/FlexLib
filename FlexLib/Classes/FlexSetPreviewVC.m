@@ -68,5 +68,22 @@
     FlexSetPreviewBaseUrl(baseurl);
     FlexSetLoadFunc(onlineLoad?flexFromNet:flexFromFile);
 }
-
++(void)presentInVC:(UIViewController*)parentVC{
+    
+    NSString* flexName = NSStringFromClass([FlexSetPreviewVC class]);
+    if(FlexGetLanguage()==flexChinese){
+        flexName = [flexName stringByAppendingString:@"_ch"];
+    }
+    
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[FlexSetPreviewVC class]];
+    NSString *resourcePath = [frameworkBundle pathForResource:flexName ofType:@"xml" inDirectory:@"FlexLib.bundle"];
+    
+    FlexSetPreviewVC* vc = [[FlexSetPreviewVC alloc]initWithFlexName:resourcePath];
+    
+    if(parentVC.navigationController != nil){
+        [parentVC.navigationController pushViewController:vc animated:YES];
+    }else{
+        [parentVC presentViewController:vc animated:YES completion:nil];
+    }
+}
 @end

@@ -15,6 +15,7 @@
 #import "FlexUtils.h"
 #import "FlexScrollView.h"
 #import "FlexSetPreviewVC.h"
+#import "FlexLayoutViewerVC.h"
 
 static void* gObserverFrame         = (void*)1;
 
@@ -233,25 +234,11 @@ static void* gObserverFrame         = (void*)1;
     });
 }
 -(void)previewSetting{
-    
-    if([self isKindOfClass:[FlexSetPreviewVC class]])
-        return;
-    
-    NSString* flexName = NSStringFromClass([FlexSetPreviewVC class]);
-    if(FlexGetLanguage()==flexChinese){
-        flexName = [flexName stringByAppendingString:@"_ch"];
-    }
-    
-    NSBundle *frameworkBundle = [NSBundle bundleForClass:[FlexSetPreviewVC class]];
-    NSString *resourcePath = [frameworkBundle pathForResource:flexName ofType:@"xml" inDirectory:@"FlexLib.bundle"];
-    
-    FlexSetPreviewVC* vc = [[FlexSetPreviewVC alloc]initWithFlexName:resourcePath];
-    
-    if(self.navigationController != nil){
-        [self.navigationController pushViewController:vc animated:YES];
-    }else{
-        [self presentViewController:vc animated:YES completion:nil];
-    }
+    [FlexSetPreviewVC presentInVC:self];
+}
+-(void)viewLayouts
+{
+    [FlexLayoutViewerVC presentInVC:self];
 }
 -(CGFloat)getStatusBarHeight:(BOOL)portrait
 {
@@ -323,7 +310,12 @@ static void* gObserverFrame         = (void*)1;
              [UIKeyCommand keyCommandWithInput:@"d"
                                  modifierFlags:UIKeyModifierCommand
                                         action:@selector(previewSetting)],
-             ];
+             
+            // view layouts
+            [UIKeyCommand keyCommandWithInput:@"v"
+                                modifierFlags:UIKeyModifierControl
+                                       action:@selector(viewLayouts)],
+            ];
 #else
     return @[];
 #endif

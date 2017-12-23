@@ -9,7 +9,7 @@
 
 #import <FlexLib/FlexLib.h>
 
-@interface FlexSetPreviewVC : FlexBaseVC
+@interface FlexLayoutViewerVC : FlexBaseVC
 
 +(void)presentInVC:(UIViewController*)parentVC;
 
