@@ -64,5 +64,7 @@
     TextViewVC* vc=[[TextViewVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
-
+- (void)onViewLayouts:(id)sender {
+    [FlexLayoutViewerVC presentInVC:self];
+}
 @end

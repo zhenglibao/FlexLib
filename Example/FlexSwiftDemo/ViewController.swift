@@ -61,5 +61,9 @@ class ViewController: FlexBaseVC {
         let vc=TestTextviewVC.init(flexName: "TextViewVC");
         self.navigationController?.pushViewController(vc!, animated: true)
     }
+    @objc func onViewLayouts() -> Void {
+        FlexLayoutViewerVC.present(inVC: self)
+    }
+    
 }
 
