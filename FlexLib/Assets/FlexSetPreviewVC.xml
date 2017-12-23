@@ -4,7 +4,7 @@
     flex:1,
     alignItems:center"
     attr="bgColor:white">
-    <FlexScrollView name="scroll"  layout="flex:1,width:100%,padding:10" attr="bgColor:white,vertScroll:true,horzIndicator:false,vertIndicator:true">
+    <FlexScrollView layout="flex:1,width:100%,padding:10" attr="bgColor:white,vertScroll:true,horzIndicator:false,vertIndicator:true">
         <UIView layout="flexDirection:row,alignItems:center">
             <UIView layout="flex:1">
                 <UILabel attr="fontSize:16,color:#333333,text:Preview base url\:"/>
