@@ -7,4 +7,4 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-"multilangdemo" = "这条字符串用来展示多语言支持能力，你可以切换系统语言来看看效果，仅支持中文和英文";
+"multilangdemo" = "这条字符串用来展示多语言支持能力，你可以切换系统语言来看看效果，这个demo仅支持中文和英文";
