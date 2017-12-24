@@ -25,12 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if(FlexGetLanguage()==flexChinese){
-        self.navigationItem.title = @"预览设置";
-
-    }else{
-        self.navigationItem.title = @"Flex Preview Setting";
-    }
+    self.navigationItem.title = FlexLocalizeString(@"previewVCTitle");
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     

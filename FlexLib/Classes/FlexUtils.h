@@ -10,6 +10,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class FlexBaseVC;
+@class FlexRootView;
+
+typedef enum{
+    flexChinese,
+    flexEnglish,
+}FlexLanuage;
+
 typedef struct {
     const char* name;
     int   value;
@@ -73,10 +81,11 @@ self.propName = n;                        \
 }
 
 
-typedef enum{
-    flexChinese,
-    flexEnglish,
-}FlexLanuage;
+#define FlexLocalizeString(key)   \
+[FlexBundle() localizedStringForKey:key value:@"" table:nil]
+
+
+NSBundle* FlexBundle(void);
 
 FlexLanuage FlexGetLanguage(void);
 

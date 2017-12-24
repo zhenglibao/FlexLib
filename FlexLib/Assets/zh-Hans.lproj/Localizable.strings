@@ -1,0 +1,18 @@
+/**
+ * Copyright (c) 2017-present, zhenglibao, Inc.
+ * email: 798393829@qq.com
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT-style license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+"layoutVCTitle" = "全部布局";
+"previewVCTitle" = "预览设置";
+
+// keyboard toolbar
+"Prev" = "上一个";
+"Next" = "下一个";
+"Send" = "发送";
+
+

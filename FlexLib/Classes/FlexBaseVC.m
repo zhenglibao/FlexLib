@@ -399,16 +399,10 @@ static void* gObserverFrame         = (void*)1;
 }
 -(NSArray*)getKeyboardItemsStrings
 {
-    if(FlexGetLanguage()==flexChinese)
-    {
-        return @[
-             @"上一个",
-             @"下一个",
-             @"发送"
-             ];
-    }
     return @[
-             @"Prev",@"Next",@"Send"
+             FlexLocalizeString(@"Prev"),
+             FlexLocalizeString(@"Next"),
+             FlexLocalizeString(@"Send"),
              ];
 }
 

@@ -9,6 +9,8 @@
 
 #import "FlexLayoutViewerVC.h"
 #import "FlexBaseVC.h"
+#import "FlexUtils.h"
+
 
 @interface FlexViewer : FlexBaseVC
 @end
@@ -34,7 +36,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"All Layouts";
+    self.navigationItem.title = FlexLocalizeString(@"layoutVCTitle");
+    
+    
     _table.delegate = self;
     _table.dataSource = self;
     

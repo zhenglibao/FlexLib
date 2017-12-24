@@ -11,6 +11,7 @@
 
 #import "FlexUtils.h"
 #import <sys/time.h>
+#import "FlexBaseVC.h"
 
 static NSString* _gclrs[]=
 {
@@ -192,7 +193,12 @@ NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
     }
     return nil;
 }
-
+NSBundle* FlexBundle(void)
+{
+    NSString* flexPath = [[NSBundle bundleForClass:[FlexBaseVC class]]resourcePath];
+    flexPath = [flexPath stringByAppendingPathComponent:@"FlexLib.bundle"];
+    return [NSBundle bundleWithPath:flexPath];
+}
 FlexLanuage FlexGetLanguage(void)
 {
     NSArray *appLanguages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
