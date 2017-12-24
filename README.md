@@ -105,8 +105,11 @@ The following is a demo file:
 You can use any UIView subclass in xml file. Every element can have four attribute:  name, onPress, layout, attr.
 
 Every element with name attribute will bind to variable in owner.
+
 Every element with onPress attribute will bind to selector in owner.
+
 You can specify any flexbox attribute in layout attribute, like width、height、padding、margin、justifyContent、alignItems etc.
+
 'attr' support view attribute, like background color, font, text, ...
 
 * Derive view controller class from FlexBaseVC
