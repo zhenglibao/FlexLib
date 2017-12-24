@@ -15,4 +15,10 @@
 "Next" = "下一个";
 "Send" = "发送";
 
+// set preview vc
+"baseUrlPrompt" = "预览基地址:";
+"baseUrlPlaceHolder" = "请输入预览基地址";
+"onlineLoad" = "在线加载所有资源";
+"onlineWarning" = "注意：打开该选项将会减慢加载速度，如果网络较慢将会阻塞界面";
+"Save" = "保存";
 

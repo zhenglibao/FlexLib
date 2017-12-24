@@ -68,12 +68,12 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 -(void)setViewAttr:(NSString*) name
              Value:(NSString*) value
 {
-    FlexSetViewAttr(self, name, value);
+    FlexSetViewAttr(self, name, value,nil);
 }
 -(void)setViewAttrs:(NSArray<FlexAttr*>*)attrs
 {
     for (FlexAttr* attr in attrs) {
-        FlexSetViewAttr(self, attr.name, attr.value);
+        FlexSetViewAttr(self, attr.name, attr.value,nil);
     }
 }
 

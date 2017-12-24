@@ -15,4 +15,9 @@
 "Next" = "Next";
 "Send" = "Send";
 
-
+// set preview vc
+"baseUrlPrompt" = "Preview base url:";
+"baseUrlPlaceHolder" = "input preview base url here";
+"onlineLoad" = "Online load resource";
+"onlineWarning" = "Notice: this option will slow down the load speed. UI will be blocked if network is slow or inaccessible.";
+"Save" = "Save";

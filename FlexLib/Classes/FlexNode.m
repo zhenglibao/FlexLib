@@ -101,9 +101,24 @@ static YGValue String2YGValue(const char* s)
     return YGPointValue(atof(s));
 }
 
+NSString* FlexLocalizeValue(NSString* value,
+                            NSObject* owner)
+{
+    if(value.length<2 || [value characterAtIndex:0]!='@')
+        return value;
+    
+    NSString* key = [value substringFromIndex:1];
+    if([key hasPrefix:@"@"])
+        return key;
+    
+    NSBundle* bundle = [owner bundleForStrings];
+    
+    return [bundle localizedStringForKey:key value:@"" table:[owner tableForStrings]];
+}
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,
-                     NSString* attrValue)
+                     NSString* attrValue,
+                     NSObject* owner)
 {
     NSString* methodDesc = [NSString stringWithFormat:@"setFlex%@:",attrName];
     
@@ -122,6 +137,9 @@ void FlexSetViewAttr(UIView* view,
         NSLog(@"Flexbox: %@ no method %@",[view class],methodDesc);
         return ;
     }
+    
+    // localize value
+    attrValue = FlexLocalizeValue(attrValue, owner);
     
     @try{
         
@@ -353,11 +371,11 @@ void FlexApplyLayoutParam(YGLayout* layout,
                 NSArray* ary = [[FlexStyleMgr instance]getStyleByRefPath:attr.value];
                 for(FlexAttr* styleAttr in ary)
                 {
-                    FlexSetViewAttr(view, styleAttr.name, styleAttr.value);
+                    FlexSetViewAttr(view, styleAttr.name, styleAttr.value,owner);
                 }
                 
             }else{
-                FlexSetViewAttr(view, attr.name, attr.value);
+                FlexSetViewAttr(view, attr.name, attr.value,owner);
             }
         }
     }
@@ -719,3 +737,16 @@ BOOL FlexIsCacheEnabled(void)
 {
     return gbUserCache;
 }
+
+@implementation NSObject (Flex)
+
+-(NSBundle*)bundleForStrings
+{
+    return [NSBundle mainBundle];
+}
+-(NSString*)tableForStrings
+{
+    return nil;
+}
+@end
+

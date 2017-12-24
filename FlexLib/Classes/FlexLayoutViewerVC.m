@@ -44,7 +44,10 @@
     
     [self loadData];
 }
-
+-(NSBundle*)bundleForStrings
+{
+    return FlexBundle();
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

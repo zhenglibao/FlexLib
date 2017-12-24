@@ -50,7 +50,8 @@ BOOL FlexIsCacheEnabled(void);
 // 设置视图属性
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,
-                     NSString* attrValue);
+                     NSString* attrValue,
+                     NSObject* owner);
 
 // 设置布局属性
 void FlexApplyLayoutParam(YGLayout* layout,
@@ -69,5 +70,13 @@ void FlexApplyLayoutParam(YGLayout* layout,
 
 -(UIView*)buildViewTree:(NSObject*)owner
                RootView:(FlexRootView*)rootView;
+
+@end
+
+@interface NSObject (Flex)
+
+// multi-language support
+-(NSBundle*)bundleForStrings;
+-(NSString*)tableForStrings;
 
 @end

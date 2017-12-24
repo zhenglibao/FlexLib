@@ -63,6 +63,7 @@ iPhoneX adaption
 * cache support for release mode
 * support Swift project
 * view all layouts in one page (Control+V)
+* multi-language support
 
 ---
 
@@ -308,6 +309,20 @@ Possible reasons & solutions:
 * App http access was not allowed by default. You must turn on it.
 * Maybe iOS simulator need restart.
 * Turn off wifi, then turn on it.
+
+### How to localize layout file
+In layout file, only view attribute support multi-language. For the attribute value, you can use @ to reference the string in Localizable.strings. Like
+
+```xml
+    <UILabel attr="text:@title"/>
+```
+Notice: if the first character is @, you should use @@ instead of @. Like
+```xml
+    <UILabel attr="text:@@title"/>
+```
+The label text will be @title, not the string in Localizable.strings.
+
+By default, the framework will fetch the localizable string from mainBundle. You can implement bundleForStrings in owner to change it.
 
 ---
 

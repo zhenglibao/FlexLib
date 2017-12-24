@@ -21,7 +21,10 @@
 @end
 
 @implementation FlexSetPreviewVC
-
+-(NSBundle*)bundleForStrings
+{
+    return FlexBundle();
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -66,9 +69,6 @@
 +(void)presentInVC:(UIViewController*)parentVC{
     
     NSString* flexName = NSStringFromClass([FlexSetPreviewVC class]);
-    if(FlexGetLanguage()==flexChinese){
-        flexName = [flexName stringByAppendingString:@"_ch"];
-    }
     
     NSBundle *frameworkBundle = [NSBundle bundleForClass:[FlexSetPreviewVC class]];
     NSString *resourcePath = [frameworkBundle pathForResource:flexName ofType:@"xml" inDirectory:@"FlexLib.bundle"];
