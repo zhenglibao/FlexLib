@@ -113,7 +113,13 @@ NSString* FlexLocalizeValue(NSString* value,
     
     NSBundle* bundle = [owner bundleForStrings];
     
-    return [bundle localizedStringForKey:key value:@"" table:[owner tableForStrings]];
+    NSString* s = [bundle localizedStringForKey:key value:nil table:[owner tableForStrings]];
+    
+    if(s == nil){
+        s = @"";
+        NSLog(@"Flexbox: not found %@ in current Localizable.strings",key);
+    }
+    return s;
 }
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,

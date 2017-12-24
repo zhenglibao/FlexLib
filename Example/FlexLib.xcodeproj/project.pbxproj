@@ -39,6 +39,7 @@
 		D272A8D51FDADA370075DB1D /* FlexViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8D41FDADA370075DB1D /* FlexViewController.xml */; };
 		D272A8E01FDC0DD90075DB1D /* TestLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D272A8DE1FDC0DD90075DB1D /* TestLoginVC.m */; };
 		D272A8E21FDC0DFC0075DB1D /* TestLoginVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */; };
+		D272B7851FEF670F004447E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D272B7871FEF670F004447E2 /* Localizable.strings */; };
 		D297583D1FE0D069004314CF /* qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = D297583C1FE0D069004314CF /* qrcode.png */; };
 		D297585E1FE22CF2004314CF /* DemoFlexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D297585D1FE22CF2004314CF /* DemoFlexVC.m */; };
 		D29758601FE23DCD004314CF /* justifyContent.xml in Resources */ = {isa = PBXBuildFile; fileRef = D297585F1FE23DCC004314CF /* justifyContent.xml */; };
@@ -115,6 +116,8 @@
 		D272B77F1FEF4B8A004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D272B7801FEF4B8A004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D272B7811FEF4B8A004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		D272B7861FEF670F004447E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D272B7881FEF6711004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D297583C1FE0D069004314CF /* qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qrcode.png; path = res/qrcode.png; sourceTree = "<group>"; };
 		D297585C1FE22CF2004314CF /* DemoFlexVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoFlexVC.h; sourceTree = "<group>"; };
 		D297585D1FE22CF2004314CF /* DemoFlexVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoFlexVC.m; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				D272B7871FEF670F004447E2 /* Localizable.strings */,
 			);
 			name = "Example for FlexLib";
 			path = FlexLib;
@@ -405,6 +409,7 @@
 				D26262851FE3D24A000F9841 /* alignItems.xml in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				D2CF9CC51FD7EB0900554A0C /* test.xml in Resources */,
+				D272B7851FEF670F004447E2 /* Localizable.strings in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				D272A8D11FDA631F0075DB1D /* TestModalVC.xml in Resources */,
@@ -604,6 +609,15 @@
 				D272B77F1FEF4B8A004447E2 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D272B7871FEF670F004447E2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D272B7861FEF670F004447E2 /* en */,
+				D272B7881FEF6711004447E2 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
