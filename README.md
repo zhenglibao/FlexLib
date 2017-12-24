@@ -37,6 +37,9 @@ Can you imagine you almost need nothing code to implement the following effect?
 
 ![example1](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/scrollview.gif)
 ![example2](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/modelview.gif)
+
+Avoid keyboard automatically
+
 ![example3](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/textview.gif)
 
 iPhoneX adaption
