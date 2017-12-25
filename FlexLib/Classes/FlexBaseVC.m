@@ -30,6 +30,8 @@ static void* gObserverFrame         = (void*)1;
     float _keyboardHeight;
     double _lastKeyTime;
     BOOL   _keyboardDirty;
+    
+    BOOL _navibarTranslucent;
 }
 
 @end
@@ -42,6 +44,7 @@ static void* gObserverFrame         = (void*)1;
     if (self) {
         _avoidKeyboard = YES;
         _keyboardHeight = 0;
+        _keepNavbarTranslucent = YES;
     }
     return self;
 }
@@ -72,6 +75,12 @@ static void* gObserverFrame         = (void*)1;
 {
     [super viewWillAppear:animated];
     
+    if(self.keepNavbarTranslucent){
+        UINavigationBar* navibar = self.navigationController.navigationBar;
+        _navibarTranslucent = navibar.translucent;
+        navibar.translucent = YES;
+    }
+    
     // register keyboard observer
     
     NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];
@@ -89,6 +98,11 @@ static void* gObserverFrame         = (void*)1;
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    if(self.keepNavbarTranslucent){
+        UINavigationBar* navibar = self.navigationController.navigationBar;
+        navibar.translucent = _navibarTranslucent;
+    }
     
     // remove keyboard notification
     NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];

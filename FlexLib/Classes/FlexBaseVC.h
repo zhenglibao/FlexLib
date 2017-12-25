@@ -19,6 +19,9 @@
 //自动躲避键盘
 @property(nonatomic,assign) BOOL avoidKeyboard;
 @property(nonatomic,readonly) float keyboardHeight;
+//是否保持navibar透明，默认为yes,该属性会影响页面布局,如果
+//navibar的translucent属性为NO，则可能需要重写getSafeArea来修正布局
+@property(nonatomic,assign) BOOL keepNavbarTranslucent;
 
 // call this to provide flex res name
 -(instancetype)initWithFlexName:(NSString*)flexName;
