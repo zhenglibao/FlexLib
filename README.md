@@ -19,6 +19,7 @@ With FlexLib, you can write iOS ui much faster than before, and there are better
 - [Usage For Swift Project](#usage-for-swift-project)
 - [Example](#example)
 - [Attribute Reference](#attribute-reference)
+- [FlexLib Classes](#flexlib-classes)
 - [Installation](#installation)
 - [About Flexbox](#about-flexbox)
 - [FAQ](#faq)
@@ -294,6 +295,25 @@ Layout attributes are stable, but view attributes are still in rapid increased. 
  
  [view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
  
+---
+
+## FlexLib Classes
+
+### FlexScrollView
+It's replacement for UIScrollView. The main goal is to calculate the content size automatically.
+
+### FlexTouchView & FlexTouchMaskView
+It's replacement for UIButton. You can still use UIButton, but FlexTouchView is more powerful.
+
+### FlexTextView
+It's replacement for UITextView. This control will adjust it's frame when input new text.
+
+### FlexModalView
+By default, FlexModalView instance will hide after initial. You can call showModalInView to display it and hideModal to hide it.
+
+### FlexRootView
+In most case you should use FlexBaseVC or FlexBaseTableCell. But you should use FlexRootView if you want to add custom layout to other view.
+
 ---
 
 ## Installation
