@@ -275,34 +275,7 @@ pod 'FlexLib'
 ---
 
 ## 问题解答
-### Cmd+R / Cmd+D / Control+V等快捷键不起作用
-请检查模拟器设置，进入 "Hardware -> Keyboard"，确认勾选"Use the Same Keyboard as macOS"和"Connect Hardware keyboard"
-
-### Cmd+R 快捷键起作用, 但界面仍然不刷新
-请检查模拟器网络，确保在模拟器的safari中能够访问对应的url
-
-可能的原因及解决方案：
-* Mac系统打开了代理或者vpn，需要关掉
-* 在iOS系统设置  -> 开发者选项  -> 允许HTTP服务，打开此选项
-* 应用程序默认情况下禁止http请求，需要打开
-* 模拟器需要重启
-* 将mac系统wifi关掉，再打开
-
-### 如果对布局文件国际化
-在布局文件中，仅attr属性支持多语言。可以使用@符号引用Localizable.strings中的字符串。比如：
-
-```xml
-<UILabel attr="text:@title"/>
-```
-注意：如果字符串本身第一个字符是@，而又不想使用Localizable.strings中的字符串，你需要用@@来代替@，比如
-
-```xml
-<UILabel attr="text:@@title"/>
-```
-
-这个Label的title将是@title，而不是Localizable.strings中的字符串
-
-框架默认使用mainBundle中的字符串进行国际化，可以在Owner中实现bundleForStrings来改变。
+可以到这个[页面](https://github.com/zhenglibao/FlexLib/wiki/FAQ)查看问题解答
 
 ---
 

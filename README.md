@@ -291,28 +291,14 @@ Layout attributes are stable, but view attributes are still in rapid increased. 
 
 **Notice: FlexLib will output log when it doesn't recognize the attribute you provided. So you should not ignore the log when you develop your project.**
 
- [layout attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/layout.md)
+ [layout attributes](https://github.com/zhenglibao/FlexLib/wiki/Layout-Attributes)
  
- [view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
+ [view attributes](https://github.com/zhenglibao/FlexLib/wiki/View-Attributes)
  
 ---
 
 ## FlexLib Classes
-
-### FlexScrollView
-It's replacement for UIScrollView. The main goal is to calculate the content size automatically.
-
-### FlexTouchView & FlexTouchMaskView
-It's replacement for UIButton. You can still use UIButton, but FlexTouchView is more powerful.
-
-### FlexTextView
-It's replacement for UITextView. This control will adjust it's frame when input new text.
-
-### FlexModalView
-By default, FlexModalView instance will hide after initial. You can call showModalInView to display it and hideModal to hide it.
-
-### FlexRootView
-In most case you should use FlexBaseVC or FlexBaseTableCell. But you should use FlexRootView if you want to add custom layout to other view.
+You can get it on [Wiki-FlexLib Classes](https://github.com/zhenglibao/FlexLib/wiki/FlexLib-Classes)
 
 ---
 
@@ -328,36 +314,7 @@ pod 'FlexLib'
 ---
 
 ## FAQ
-
-### Cmd+R or Cmd+D not work
-Please check your simulator setting:
-goto "Hardware -> Keyboard", checked "Use the Same Keyboard as
-macOS" and "Connect Hardware keyboard"
-If still not work, please restart your simulator and Xcode.
-
-### Cmd+R shortcut works, but ui not refresh
-Please check your simulator network, make sure your mac http server is accessible on safari.
-
-Possible reasons & solutions:
-* proxy or vpn has been set, you need to close it.
-* In iOS system settings -> Developer -> Allow HTTP Services
-* App http access was not allowed by default. You must turn on it.
-* Maybe iOS simulator need restart.
-* Turn off wifi, then turn on it.
-
-### How to localize layout file
-In layout file, only view attribute support multi-language. For the attribute value, you can use @ to reference the string in Localizable.strings. Like
-
-```xml
-    <UILabel attr="text:@title"/>
-```
-Notice: if the first character is @, you should use @@ instead of @. Like
-```xml
-    <UILabel attr="text:@@title"/>
-```
-The label text will be @title, not the string in Localizable.strings.
-
-By default, the framework will fetch the localizable string from mainBundle. You can implement bundleForStrings in owner to change it.
+You can get it on [Wiki-FAQ](https://github.com/zhenglibao/FlexLib/wiki/FAQ)
 
 ---
 
