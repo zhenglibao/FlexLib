@@ -33,12 +33,15 @@
 
     // Configure the view for the selected state
 }
--(void)setData:(NSDictionary*)data
+// 因为仅content影响布局
+-(void)setData:(NSDictionary*)data ForHeight:(BOOL)forHeight
 {
-    name.text = [data objectForKey:@"name"];
-    type.text = [data objectForKey:@"type"];
-    date.text = [data objectForKey:@"date"];
-    title.text = [data objectForKey:@"title"];
+    if(!forHeight){
+        name.text = [data objectForKey:@"name"];
+        type.text = [data objectForKey:@"type"];
+        date.text = [data objectForKey:@"date"];
+        title.text = [data objectForKey:@"title"];
+    }
     content.text = [data objectForKey:@"content"];
 }
 @end

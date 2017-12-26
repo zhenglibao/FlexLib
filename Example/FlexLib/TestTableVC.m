@@ -179,7 +179,7 @@
     if (cell == nil) {
         cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:identifier];
     }
-    [cell setData:_datas[indexPath.row]];
+    [cell setData:_datas[indexPath.row] ForHeight:NO];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -187,7 +187,7 @@
     if(_cell==nil){
         _cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:nil];
     }
-    [_cell setData:_datas[indexPath.row]];
+    [_cell setData:_datas[indexPath.row] ForHeight:YES];
     CGFloat h = [_cell heightForWidth:_table.frame.size.width];
     
     return h;

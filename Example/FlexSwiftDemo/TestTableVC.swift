@@ -158,7 +158,7 @@ class TestTableVC: FlexBaseVC,UITableViewDelegate,UITableViewDataSource {
         if (cell == nil) {
             cell = TestTableCell(flex:nil,reuseIdentifier:identifier)
         }
-        cell?.setData(data: _datas[indexPath.row])
+        cell?.setData(data: _datas[indexPath.row],height: false)
         return cell!;
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
@@ -166,7 +166,7 @@ class TestTableVC: FlexBaseVC,UITableViewDelegate,UITableViewDataSource {
         if(_cell==nil){
             _cell = TestTableCell(flex:nil,reuseIdentifier:nil)
         }
-        _cell?.setData(data: _datas[indexPath.row])
+        _cell?.setData(data: _datas[indexPath.row],height: true)
         return (_cell?.height(forWidth: tableView.frame.size.width))!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){

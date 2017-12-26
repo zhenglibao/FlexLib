@@ -32,11 +32,13 @@ class TestTableCell: FlexBaseTableCell {
         // Configure the view for the selected state
     }
 
-    func setData(data : Dictionary<String,String>) -> Void {
-        name?.text = data["name"]
-        type?.text = data["type"]
-        date?.text = data["date"]
-        title?.text = data["title"]
+    func setData(data : Dictionary<String,String>, height:Bool) -> Void {
+        if(!height){
+            name?.text = data["name"]
+            type?.text = data["type"]
+            date?.text = data["date"]
+            title?.text = data["title"]
+        }
         content?.text = data["content"]
     }
 }

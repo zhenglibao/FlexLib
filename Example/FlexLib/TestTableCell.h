@@ -10,6 +10,6 @@
 
 @interface TestTableCell : FlexBaseTableCell
 
--(void)setData:(NSDictionary*)data;
+-(void)setData:(NSDictionary*)data ForHeight:(BOOL)forHeight;
 
 @end
