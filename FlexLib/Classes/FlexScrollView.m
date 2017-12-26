@@ -134,7 +134,7 @@ if(from.prop.unit==YGUnitPoint||    \
     to.flexDirection = from.flexDirection;
     to.justifyContent = from.justifyContent;
     to.alignItems = from.alignItems;
-    to.alignSelf = from.alignSelf;
+    to.alignContent = from.alignContent;
     to.flexWrap = from.flexWrap;
     to.overflow = from.overflow;
     to.display = from.display;
@@ -148,8 +148,6 @@ if(from.prop.unit==YGUnitPoint||    \
     COPYYGVALUE(paddingHorizontal)
     COPYYGVALUE(paddingVertical)
     COPYYGVALUE(padding)
-    
-    to.aspectRatio = from.aspectRatio;
 }
 -(void)addSubview:(UIView *)view
 {
