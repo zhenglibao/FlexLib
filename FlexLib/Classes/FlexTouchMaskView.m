@@ -1,6 +1,3 @@
-//
-//  FlexTouchMaskView.m
-//  Expecta
 /**
  * Copyright (c) 2017-present, zhenglibao, Inc.
  * email: 798393829@qq.com
