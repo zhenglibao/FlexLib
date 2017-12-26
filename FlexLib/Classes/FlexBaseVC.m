@@ -65,11 +65,11 @@ static void* gObserverFrame         = (void*)1;
     [super viewDidLoad];
     
     // hide keyboard on touch blank area
-    
-    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard)];
-    tap.cancelsTouchesInView = NO;
-    tap.delaysTouchesBegan = NO;
-    [self.view addGestureRecognizer:tap];
+    // 会引起某些情况下UITextView焦点响应问题，子view需处理键盘事件
+//    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard)];
+//    tap.cancelsTouchesInView = NO;
+//    tap.delaysTouchesBegan = NO;
+//    [self.view addGestureRecognizer:tap];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
