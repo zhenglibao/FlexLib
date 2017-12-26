@@ -151,6 +151,8 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     CGRect _lastConfigFrame;
     CGRect _thisConfigFrame;
     BOOL _bChildDirty;
+    
+    __weak NSObject* _owner;
  }
 @end
 @implementation FlexRootView
@@ -176,10 +178,16 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     }
     return nil;
 }
+-(NSObject*)owner{
+    return _owner;
+}
+
 +(FlexRootView*)loadWithNodeData:(NSData*)data
                            Owner:(NSObject*)owner
 {
     FlexRootView* root = [[FlexRootView alloc]init];
+    root->_owner = owner;
+    
     FlexNode* node = [FlexNode loadNodeData:data];
     if(node != nil){
         UIView* sub = [node buildViewTree:owner
@@ -201,6 +209,8 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     }
     
     FlexRootView* root = [[FlexRootView alloc]init];
+    root->_owner = owner;
+    
     FlexNode* node = [FlexNode loadNodeFromRes:resName];
     if(node != nil){
         UIView* sub = [node buildViewTree:owner

@@ -61,6 +61,9 @@
 //获取xml中的顶级窗口
 @property(nonatomic,readonly) UIView* topSubView;
 
+//获取owner
+@property(nonatomic,readonly) NSObject* owner;
+
 //用于执行layout动画
 @property(nonatomic,copy) void (^beginLayout)(void);
 @property(nonatomic,copy) void (^endLayout)(void);
