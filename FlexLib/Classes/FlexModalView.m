@@ -215,7 +215,7 @@ FLEXSET(cancelable){
     _cancelable = String2BOOL(sValue);
 }
 FLEXSET(maskColor){
-    _root.backgroundColor = colorFromString(sValue);
+    _root.backgroundColor = colorFromString(sValue,owner);
 }
 
 @end

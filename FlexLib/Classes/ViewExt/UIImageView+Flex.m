@@ -11,6 +11,7 @@
 #import "UIImageView+Flex.h"
 #import "UIView+Flex.h"
 #import "../FlexUtils.h"
+#import "../FlexNode.h"
 #import <objc/runtime.h>
 
 
@@ -18,12 +19,12 @@
 
 FLEXSET(source)
 {
-    UIImage* img = [UIImage imageNamed:sValue];
+    UIImage* img = [UIImage imageNamed:sValue inBundle:[owner bundleForImages] compatibleWithTraitCollection:nil];
     self.image = img ;
 }
 FLEXSET(highlightSource)
 {
-    UIImage* img = [UIImage imageNamed:sValue];
+    UIImage* img = [UIImage imageNamed:sValue inBundle:[owner bundleForImages] compatibleWithTraitCollection:nil];
     self.highlightedImage = img ;
 }
 FLEXSET(interactEnable)

@@ -49,7 +49,7 @@ FLEXSET(fontSize)
 }
 FLEXSET(color)
 {
-    UIColor* clr = colorFromString(sValue);
+    UIColor* clr = colorFromString(sValue,owner);
     if(clr!=nil){
         self.textColor = clr ;
     }

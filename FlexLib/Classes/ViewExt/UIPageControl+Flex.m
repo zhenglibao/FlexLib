@@ -34,11 +34,11 @@ FLEXSET(hidesForSinglePage)
 
 FLEXSET(pageTintColor)
 {
-    self.pageIndicatorTintColor = colorFromString(sValue);
+    self.pageIndicatorTintColor = colorFromString(sValue,owner);
 }
 
 FLEXSET(curPageTintColor)
 {
-    self.currentPageIndicatorTintColor = colorFromString(sValue);
+    self.currentPageIndicatorTintColor = colorFromString(sValue,owner);
 }
 @end

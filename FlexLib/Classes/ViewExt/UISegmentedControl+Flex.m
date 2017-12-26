@@ -23,7 +23,7 @@ FLEXSET(selectedIndex)
 }
 FLEXSET(tintColor)
 {
-    self.tintColor = colorFromString(sValue);
+    self.tintColor = colorFromString(sValue,owner);
 }
 
 @end

@@ -19,12 +19,12 @@
 
 FLEXSET(tintColor)
 {
-    self.tintColor = colorFromString(sValue);
+    self.tintColor = colorFromString(sValue,owner);
 }
 
 FLEXSET(onTintColor)
 {
-    self.onTintColor = colorFromString(sValue);
+    self.onTintColor = colorFromString(sValue,owner);
 }
 
 FLEXSET(on)

@@ -27,14 +27,15 @@ typedef struct {
 NSString2Int(sValue,kvTable,sizeof(kvTable)/sizeof(NameValue))
 
 #define FLEXSET(propName)               \
--(void)setFlex##propName:(NSString*)sValue
+-(void)setFlex##propName:(NSString*)sValue Owner:(NSObject*)owner
+
 
 //下面宏属性名称与UIView的属性名称保持一致
 // 声明颜色属性
 #define FLEXSETCLR(propName)              \
 FLEXSET(propName)                         \
 {                                         \
-self.propName = colorFromString(sValue);  \
+self.propName = colorFromString(sValue,owner);  \
 }
 
 // 声明浮点型属性
@@ -99,7 +100,7 @@ int NSString2Int(NSString* s,
                  int total);
 
 // 字符串转换成颜色值，格式：black or #rrggbb or #aarrggbb
-UIColor* colorFromString(NSString* clr);
+UIColor* colorFromString(NSString* clr,NSObject* owner);
 
 // eg: white/black/....
 UIColor* systemColor(NSString* clr);

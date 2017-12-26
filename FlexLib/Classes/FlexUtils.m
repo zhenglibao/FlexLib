@@ -12,6 +12,7 @@
 #import "FlexUtils.h"
 #import <sys/time.h>
 #import "FlexBaseVC.h"
+#import "FlexNode.h"
 
 static NSString* _gclrs[]=
 {
@@ -65,15 +66,28 @@ UIColor* systemColor(NSString* clr)
     }
     return nil;
 }
-UIColor* colorFromString(NSString* clr)
+UIColor* colorFromString(NSString* clr,
+                         NSObject* owner)
 {
     if(![clr hasPrefix:@"#"]){
-        int total = sizeof(_gclrs)/sizeof(NSString*) ;
-        for(int i=0;i<total;i+=2){
-            if([clr compare:_gclrs[i] options:NSCaseInsensitiveSearch]==0)
-            {
-                clr = _gclrs[i+1];
-                break;
+        
+        if([clr rangeOfString:@"."].length>0){
+            // 这是一张图片
+            UIImage* image = [UIImage imageNamed:clr inBundle:[owner bundleForImages] compatibleWithTraitCollection:nil];
+            if(image == nil){
+                NSLog(@"Flexbox: image %@ for color load failed",clr);
+                return nil;
+            }
+            return [UIColor colorWithPatternImage:image];
+            
+        }else{
+            int total = sizeof(_gclrs)/sizeof(NSString*) ;
+            for(int i=0;i<total;i+=2){
+                if([clr compare:_gclrs[i] options:NSCaseInsensitiveSearch]==0)
+                {
+                    clr = _gclrs[i+1];
+                    break;
+                }
             }
         }
     }

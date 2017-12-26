@@ -123,7 +123,7 @@ FLEXSET(activeOpacity)
 
 FLEXSET(underlayColor)
 {
-    _underlayColor = colorFromString(sValue);
+    _underlayColor = colorFromString(sValue,owner);
 }
 
 @end

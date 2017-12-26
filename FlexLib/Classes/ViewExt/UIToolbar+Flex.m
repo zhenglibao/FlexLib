@@ -36,12 +36,12 @@ FLEXSET(translucent)
 
 FLEXSET(tintColor)
 {
-    self.tintColor = colorFromString(sValue);
+    self.tintColor = colorFromString(sValue,owner);
 }
 
 FLEXSET(barTintColor)
 {
-    self.barTintColor = colorFromString(sValue);
+    self.barTintColor = colorFromString(sValue,owner);
 }
 
 @end

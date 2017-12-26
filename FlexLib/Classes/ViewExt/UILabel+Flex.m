@@ -53,21 +53,21 @@ FLEXSET(linesNum)
 }
 FLEXSET(color)
 {
-    UIColor* clr = colorFromString(sValue);
+    UIColor* clr = colorFromString(sValue,owner);
     if(clr!=nil){
         self.textColor = clr ;
     }
 }
 FLEXSET(shadowColor)
 {
-    UIColor* clr = colorFromString(sValue);
+    UIColor* clr = colorFromString(sValue,owner);
     if(clr!=nil){
         self.shadowColor = clr ;
     }
 }
 FLEXSET(highlightTextColor)
 {
-    UIColor* clr = colorFromString(sValue);
+    UIColor* clr = colorFromString(sValue,owner);
     if(clr!=nil){
         self.highlightedTextColor = clr ;
     }

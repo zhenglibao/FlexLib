@@ -34,11 +34,11 @@ FLEXSET(progress)
 
 FLEXSET(progressTintColor)
 {
-    self.progressTintColor = colorFromString(sValue);
+    self.progressTintColor = colorFromString(sValue,owner);
 }
 
 FLEXSET(trackTintColor)
 {
-    self.trackTintColor = colorFromString(sValue);
+    self.trackTintColor = colorFromString(sValue,owner);
 }
 @end

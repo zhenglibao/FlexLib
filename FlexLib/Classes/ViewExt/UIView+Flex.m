@@ -68,7 +68,7 @@ static NameValue _gcontentModes[] =
 
 FLEXSET(bgColor)
 {
-    UIColor* clr = colorFromString(sValue) ;
+    UIColor* clr = colorFromString(sValue,owner) ;
     if(clr!=nil){
         self.backgroundColor = clr ;
     }
@@ -81,7 +81,7 @@ FLEXSET(borderWidth)
 }
 FLEXSET(borderColor)
 {
-    self.layer.borderColor = colorFromString(sValue).CGColor ;
+    self.layer.borderColor = colorFromString(sValue,owner).CGColor ;
 }
 FLEXSET(borderRadius)
 {
@@ -104,7 +104,7 @@ FLEXSET(shadowRadius)
 }
 FLEXSET(shadowColor)
 {
-    self.layer.shadowColor = colorFromString(sValue).CGColor ;
+    self.layer.shadowColor = colorFromString(sValue,owner).CGColor ;
 }
 FLEXSETENUM(contentMode, _gcontentModes)
 FLEXSETFLT(alpha)

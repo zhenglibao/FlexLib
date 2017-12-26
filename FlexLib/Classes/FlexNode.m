@@ -126,7 +126,7 @@ void FlexSetViewAttr(UIView* view,
                      NSString* attrValue,
                      NSObject* owner)
 {
-    NSString* methodDesc = [NSString stringWithFormat:@"setFlex%@:",attrName];
+    NSString* methodDesc = [NSString stringWithFormat:@"setFlex%@:Owner:",attrName];
     
     SEL sel = NSSelectorFromString(methodDesc) ;
     if(sel == nil)
@@ -153,6 +153,7 @@ void FlexSetViewAttr(UIView* view,
         [inv setTarget:view];
         [inv setSelector:sel];
         [inv setArgument:&attrValue atIndex:2];
+        [inv setArgument:&owner atIndex:3];
         
         [inv invoke];
     }@catch(NSException* e){
@@ -753,6 +754,11 @@ BOOL FlexIsCacheEnabled(void)
 -(NSString*)tableForStrings
 {
     return nil;
+}
+
+-(NSBundle*)bundleForImages
+{
+    return [NSBundle mainBundle];
 }
 @end
 

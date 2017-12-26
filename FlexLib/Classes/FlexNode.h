@@ -79,4 +79,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
 -(NSBundle*)bundleForStrings;
 -(NSString*)tableForStrings;
 
+// image bundle
+-(NSBundle*)bundleForImages;
+
 @end

@@ -39,17 +39,17 @@ FLEXSET(continuous)
 
 FLEXSET(minTintColor)
 {
-    self.minimumTrackTintColor = colorFromString(sValue);
+    self.minimumTrackTintColor = colorFromString(sValue,owner);
 }
 
 FLEXSET(maxTintColor)
 {
-    self.maximumTrackTintColor = colorFromString(sValue);
+    self.maximumTrackTintColor = colorFromString(sValue,owner);
 }
 
 FLEXSET(thumbTintColor)
 {
-    self.thumbTintColor = colorFromString(sValue);
+    self.thumbTintColor = colorFromString(sValue,owner);
 }
 
 @end
