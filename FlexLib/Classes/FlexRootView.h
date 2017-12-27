@@ -81,7 +81,11 @@
 
 -(void)markChildDirty:(UIView*)child;
 
+// 注册事件通知，针对hidden, text, attributedText
 -(void)registSubView:(UIView*)subView;
+
+// 解除事件通知
+-(void)removeWatchView:(UIView*)view;
 
 -(void)layoutAnimation:(NSTimeInterval)duration;
 

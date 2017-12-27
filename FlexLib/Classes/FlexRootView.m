@@ -227,14 +227,15 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 
 - (void)dealloc
 {
-    for(UIView* subview in _observedViews)
+    NSArray* all = _observedViews.allObjects;
+    for(UIView* subview in all)
     {
         [self removeWatchView:subview];
     }
 }
 -(void)registSubView:(UIView*)subView
 {
-    if([_observedViews containsObject:subView])
+    if(subView==nil || [_observedViews containsObject:subView])
         return;
     
     [_observedViews addObject:subView];
@@ -245,8 +246,10 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 }
 -(void)removeWatchView:(UIView*)view
 {
-    if(view==nil)
+    if(view==nil||![_observedViews containsObject:view])
         return;
+    
+    [_observedViews removeObject:view];
     
     [view removeObserver:self forKeyPath:@"hidden"];
     [view removeObserver:self forKeyPath:@"text"];
