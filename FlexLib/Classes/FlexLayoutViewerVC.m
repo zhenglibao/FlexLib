@@ -115,7 +115,13 @@
     NSString* name = [_layouts objectAtIndex:indexPath.row];
     name = [name stringByDeletingPathExtension];
     
-    UIViewController* vc = [[FlexViewer alloc]initWithFlexName:name];
+    Class class = NSClassFromString(name);
+    if(class == nil || ![class isSubclassOfClass:[UIViewController class]])
+    {
+        class = [FlexViewer class];
+    }
+    
+    UIViewController* vc = [[class alloc]initWithFlexName:name];
     vc.navigationItem.title = name;
     [self.navigationController pushViewController:vc animated:YES];
 }

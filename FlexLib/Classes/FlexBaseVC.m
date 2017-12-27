@@ -60,17 +60,7 @@ static void* gObserverFrame         = (void*)1;
 {
     [self.view removeObserver:self forKeyPath:@"frame"];
 }
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    // hide keyboard on touch blank area
-    // 会引起某些情况下UITextView焦点响应问题，子view需处理键盘事件
-//    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard)];
-//    tap.cancelsTouchesInView = NO;
-//    tap.delaysTouchesBegan = NO;
-//    [self.view addGestureRecognizer:tap];
-}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -417,6 +407,7 @@ static void* gObserverFrame         = (void*)1;
              FlexLocalizeString(@"Prev"),
              FlexLocalizeString(@"Next"),
              FlexLocalizeString(@"Send"),
+             FlexLocalizeString(@"Finish"),
              ];
 }
 
@@ -451,7 +442,9 @@ static void* gObserverFrame         = (void*)1;
 
         UIBarButtonItem* submit=[[UIBarButtonItem alloc]initWithTitle:items[2] style:UIBarButtonItemStylePlain target:self action:@selector(onSubmitForm)];
 
-        _tbKeyboard.items = @[prev,next,space,submit];
+        UIBarButtonItem* finish=[[UIBarButtonItem alloc]initWithTitle:items[3] style:UIBarButtonItemStylePlain target:self action:@selector(hideKeyboard)];
+
+        _tbKeyboard.items = @[prev,next,space,submit,finish];
     }
 }
 -(void)onPrevInput{

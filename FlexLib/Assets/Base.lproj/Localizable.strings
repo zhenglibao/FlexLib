@@ -14,6 +14,7 @@
 "Prev" = "Prev";
 "Next" = "Next";
 "Send" = "Send";
+"Finish" = "Finish";
 
 // set preview vc
 "baseUrlPrompt" = "Preview base url:";
