@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A9CEFF54CDF9EA8FE947802D /* Pods_FlexSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DC7645DD2A3050A2A3215C /* Pods_FlexSwiftDemo.framework */; };
+		D24F2EAF1FF3CEB000762ADC /* TableHeader.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EAE1FF3CEB000762ADC /* TableHeader.xml */; };
 		D272B78B1FEF6770004447E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D272B78D1FEF6770004447E2 /* Localizable.strings */; };
 		D2D0206A1FEBA946008F6DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020691FEBA946008F6DB6 /* AppDelegate.swift */; };
 		D2D0206C1FEBA946008F6DB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0206B1FEBA946008F6DB6 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		031350CFF12F685D7428A932 /* Pods-FlexSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3113DD79A226E231CFABE7FC /* Pods-FlexSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		56DC7645DD2A3050A2A3215C /* Pods_FlexSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D24F2EAE1FF3CEB000762ADC /* TableHeader.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TableHeader.xml; path = FlexLib/res/TableHeader.xml; sourceTree = SOURCE_ROOT; };
 		D272B7821FEF4BC3004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D272B78C1FEF6770004447E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D272B78E1FEF6774004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		D2D020801FEBB26F008F6DB6 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D24F2EAE1FF3CEB000762ADC /* TableHeader.xml */,
 				D2D0208C1FEBB288008F6DB6 /* addnewtype@2x.png */,
 				D2D020861FEBB287008F6DB6 /* alignItems.xml */,
 				D2D0208A1FEBB288008F6DB6 /* arrow_right@2x.png */,
@@ -243,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D24F2EAF1FF3CEB000762ADC /* TableHeader.xml in Resources */,
 				D2D020971FEBB289008F6DB6 /* return@2x.png in Resources */,
 				D2D020951FEBB289008F6DB6 /* example1.jpg in Resources */,
 				D2D0209B1FEBB289008F6DB6 /* batchcheck@2x.png in Resources */,
