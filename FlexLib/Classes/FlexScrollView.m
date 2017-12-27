@@ -103,12 +103,19 @@ static void* gObserverContentOffset = (void*)2;
         
         if(!CGSizeEqualToSize(szOld, szNew)){
             CGRect rc = _subview.frame;
-            rc.size = szNew;
-            _subview.frame = rc;
-            [_contentView setNeedsLayout];
+            if(!self.vertical)
+                rc.size.height = szNew.height;
+            if(!self.horizontal)
+                rc.size.width = szNew.width;
+            if(!CGSizeEqualToSize(rc.size,_subview.frame.size)){
+                _subview.frame = rc;
+                [_contentView setNeedsLayout];
+            }
         }
     }else if(context == gObserverContentOffset){
         [self resetStickViews:NO];
+    }else{
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 

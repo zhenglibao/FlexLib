@@ -298,7 +298,10 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
 {
     if(_bInLayouting||object == nil)
+    {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         return;
+    }
     
     if( context == gObserverHidden ){
         BOOL n = [[change objectForKey:@"new"] boolValue];
@@ -315,6 +318,8 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         }
     }else if( context == gObserverAttrText ){
         [self markChildDirty:object];
+    }else{
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 -(void)markChildDirty:(UIView*)child

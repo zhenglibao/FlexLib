@@ -12,6 +12,8 @@
 #import "FlexBaseTableCell.h"
 #import "FlexRootView.h"
 
+static void* gObserverFrame         = (void*)1;
+
 @interface FlexBaseTableCell()
 {
     FlexRootView* _flexRootView ;
@@ -43,7 +45,7 @@
         [self.contentView addSubview:_flexRootView];
 
         if(!_bObserved){
-            [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+            [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverFrame];
             _bObserved = YES;
         }
     }
@@ -79,10 +81,15 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
 {
-    CGSize szNew = [[change objectForKey:@"new"]CGRectValue].size;
-    CGSize szOld = [[change objectForKey:@"old"]CGRectValue].size;
-    if(!CGSizeEqualToSize(szNew, szOld))
-        [_flexRootView setNeedsLayout];
+    if(context == gObserverFrame){
+     
+        CGSize szNew = [[change objectForKey:@"new"]CGRectValue].size;
+        CGSize szOld = [[change objectForKey:@"old"]CGRectValue].size;
+        if(!CGSizeEqualToSize(szNew, szOld))
+            [_flexRootView setNeedsLayout];
+    }else{
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 -(CGFloat)heightForWidth:(CGFloat)width
 {

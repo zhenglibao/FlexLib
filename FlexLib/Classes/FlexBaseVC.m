@@ -298,6 +298,8 @@ static void* gObserverFrame         = (void*)1;
         CGSize szOld = [[change objectForKey:@"old"]CGRectValue].size;
         if(!CGSizeEqualToSize(szNew, szOld))
             [self layoutFlexRootViews];
+    }else{
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 
