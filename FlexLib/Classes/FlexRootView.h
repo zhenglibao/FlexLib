@@ -31,11 +31,13 @@
 -(void)setViewAttr:(NSString*) name
              Value:(NSString*) value;
 -(void)setViewAttrs:(NSArray<FlexAttr*>*)attrs;
+-(void)setViewAttrStrings:(NSArray<NSString*>*)stringAttrs;
 
 // 设置布局属性
 -(void)setLayoutAttr:(NSString*) name
                Value:(NSString*) value;
 -(void)setLayoutAttrs:(NSArray<FlexAttr*>*)attrs;
+-(void)setLayoutAttrStrings:(NSArray<NSString*>*)stringAttrs;
 
 -(UIView*)findByName:(NSString*)name;
 

@@ -76,7 +76,12 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         FlexSetViewAttr(self, attr.name, attr.value,nil);
     }
 }
-
+-(void)setViewAttrStrings:(NSArray<NSString*>*)stringAttrs
+{
+    for (NSInteger i=0;i+1<stringAttrs.count;i+=2) {
+        FlexSetViewAttr(self, stringAttrs[i], stringAttrs[i+1],nil);
+    }
+}
 -(void)setLayoutAttr:(NSString*) name
                Value:(NSString*) value
 {
@@ -87,6 +92,14 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     [self configureLayoutWithBlock:^(YGLayout* layout){
         for (FlexAttr* attr in attrs) {
             FlexApplyLayoutParam(layout, attr.name, attr.value);
+        }
+    }];
+}
+-(void)setLayoutAttrStrings:(NSArray<NSString*>*)stringAttrs
+{
+    [self configureLayoutWithBlock:^(YGLayout* layout){
+        for (NSInteger i=0;i+1<stringAttrs.count;i+=2) {
+            FlexApplyLayoutParam(layout, stringAttrs[i], stringAttrs[i+1]);
         }
     }];
 }
