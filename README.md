@@ -287,7 +287,9 @@ To run the example project, clone the repo, and open `Example/FlexLib.xcworkspac
 
 ## Attribute Reference
 
-Layout attributes are stable, but view attributes are still in rapid increased. You can search FLEXSET in the library to find all supported view attributes. And you can make extendsion in your project by the catagory to support more view attributes.
+
+FlexLib support two kinds of attribute: layout attribute and view attribute. Layout attribute conform with yoga implementation. View attribute can be extensible using FLEXSET macro.
+
 
 **Notice: FlexLib will output log when it doesn't recognize the attribute you provided. So you should not ignore the log when you develop your project.**
 
