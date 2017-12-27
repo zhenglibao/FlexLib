@@ -10,9 +10,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class FlexRootView;
+
 @interface FlexScrollView : UIScrollView
+
+@property(nonatomic,readonly) FlexRootView* contentView;
 
 @property(nonatomic,assign) BOOL horizontal;
 @property(nonatomic,assign) BOOL vertical;
+
+// 移除subview，主要目的是解除事件通知
+-(void)removeSubView:(UIView*)view;
 
 @end

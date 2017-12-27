@@ -75,7 +75,10 @@ static void* gObserverContentOffset = (void*)2;
     [self removeObserver:self forKeyPath:@"frame"];
     [self removeObserver:self forKeyPath:@"contentOffset"];
 }
-
+-(FlexRootView*)contentView
+{
+    return _contentView;
+}
 -(void)onContentViewWillLayout
 {
     [self restoreStickView];
@@ -157,6 +160,11 @@ if(from.prop.unit==YGUnitPoint||    \
     }
     [_contentView addSubview:view];
     [_contentView registSubView:view];
+}
+-(void)removeSubView:(UIView*)view
+{
+    [view removeFromSuperview];
+    [_contentView removeWatchView:view];
 }
 -(void)restoreStickView
 {
