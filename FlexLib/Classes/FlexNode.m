@@ -316,11 +316,12 @@ void FlexApplyLayoutParam(YGLayout* layout,
         return nil;
     }
     
-    UIView* view = [[cls alloc]init];
-    if(![view isKindOfClass:[UIView class]]){
+    if(![cls isSubclassOfClass:[UIView class]]){
         NSLog(@"Flexbox: %@ is not child class of UIView.", self.viewClassName);
         return nil;
     }
+    
+    UIView* view = [[cls alloc]init];
     
     if(self.name != nil){
         @try{

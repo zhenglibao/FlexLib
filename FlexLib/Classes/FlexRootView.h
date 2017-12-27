@@ -15,6 +15,10 @@
 
 @interface UIView(FlexPublic)
 
++(UIView*)buildFlexView:(Class)viewCls
+                 Layout:(NSArray<NSString*>*)layoutAttrs
+              ViewAttrs:(NSArray<NSString*>*)viewAttrs;
+
 // 外部可以主动调用此函数让布局得到刷新
 -(void)markDirty;
 

@@ -40,6 +40,25 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 
 @implementation UIView(FlexPublic)
 
++(UIView*)buildFlexView:(Class)viewCls
+                 Layout:(NSArray<NSString*>*)layoutAttrs
+              ViewAttrs:(NSArray<NSString*>*)viewAttrs
+{
+    if(![viewCls isSubclassOfClass:[UIView class]])
+        return nil;
+    
+    UIView* view = [[viewCls alloc]init];
+    
+    view.yoga.isEnabled = YES;
+    
+    if(layoutAttrs.count > 0){
+        [view setLayoutAttrStrings:layoutAttrs];
+    }
+    if(viewAttrs.count > 0){
+        [view setViewAttrStrings:viewAttrs];
+    }
+    return view;
+}
 -(void)markDirty
 {
     UIView* parent = self.superview;
