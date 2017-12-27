@@ -77,7 +77,12 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 }
 -(void)enableFlexLayout:(BOOL)enable
 {
-    self.yoga.isIncludedInLayout = enable;
+    [self configureLayoutWithBlock:^(YGLayout* layout){
+        
+        layout.isIncludedInLayout = enable;
+        layout.isEnabled = enable;
+        
+    }];
 }
 
 -(BOOL)isFlexLayoutEnable{
