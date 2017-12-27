@@ -63,7 +63,9 @@
             <UIView layout="flex:1">
                 <UILabel attr="fontSize:16,color:#333333,text:附件"/>
                 <UIView layout="height:10"/>
-                <UIImageView layout="" attr="source:select.png"/>
+                <FlexTouchView onPress="onSelect">
+                    <UIImageView layout="" attr="source:select.png"/>
+                </FlexTouchView>
             </UIView>
         </UIView>
         
