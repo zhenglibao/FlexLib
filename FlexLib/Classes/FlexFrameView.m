@@ -1,0 +1,110 @@
+/**
+ * Copyright (c) 2017-present, zhenglibao, Inc.
+ * email: 798393829@qq.com
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT-style license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+#import "FlexFrameView.h"
+#import "FlexRootView.h"
+#import "YogaKit/UIView+Yoga.h"
+
+static void* gObserverFrame         = (void*)1;
+
+@interface FlexFrameView()
+{
+    FlexRootView* _flexRootView;
+    BOOL _bObserved;
+}
+@end
+
+@implementation FlexFrameView
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.yoga.isIncludedInLayout=NO;
+    }
+    return self;
+}
+-(instancetype)initWithFlex:(NSString*)flexname
+                      Frame:(CGRect)frame
+                      Owner:(NSObject*)owner
+{
+    self = [self initWithFrame:frame];
+    
+    if(self){
+        self.yoga.isIncludedInLayout=NO;
+        
+        if(owner == nil)
+            owner = self;
+        
+        _flexRootView = [FlexRootView loadWithNodeFile:flexname Owner:owner];
+        [self addSubview:_flexRootView];
+        
+        if(!_bObserved){
+            [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverFrame];
+            _bObserved = YES;
+        }
+    }
+    return self;
+}
+- (void)dealloc
+{
+    if(_bObserved){
+        [self removeObserver:self forKeyPath:@"frame"];
+    }
+}
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
+{
+    if(context == gObserverFrame){
+        
+        CGSize szNew = [[change objectForKey:@"new"]CGRectValue].size;
+        CGSize szOld = [[change objectForKey:@"old"]CGRectValue].size;
+        if(!CGSizeEqualToSize(szNew, szOld))
+            [_flexRootView setNeedsLayout];
+    }else{
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+-(void)layoutSubviews
+{
+    [_flexRootView layoutIfNeeded];
+}
+-(void)subFrameChanged:(UIView*)subView
+                  Rect:(CGRect)newFrame
+{
+    if(!CGSizeEqualToSize(newFrame.size,self.frame.size))
+    {
+        CGRect rc = self.frame ;
+        rc.size = newFrame.size ;
+        self.frame = rc ;
+        if(self.onFrameChange != nil)
+        {
+            self.onFrameChange(rc);
+        }
+    }
+}
+-(void)setFlexibleWidth:(BOOL)flexibleWidth
+{
+    _flexRootView.flexibleWidth = flexibleWidth ;
+}
+-(BOOL)flexibleWidth
+{
+    return _flexRootView.flexibleWidth;
+}
+-(void)setFlexibleHeight:(BOOL)flexibleHeight
+{
+    _flexRootView.flexibleHeight = flexibleHeight ;
+}
+-(BOOL)flexibleHeight
+{
+    return _flexRootView.flexibleHeight;
+}
+@end

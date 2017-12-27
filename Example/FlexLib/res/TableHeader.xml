@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="padding:14"
+    attr="bgColor:#f5f5f5">
+    <UILabel name="content" layout="width:100%"
+    attr="fontSize:18,color:#333333,text:this is header,linesNum:0,lineBreakMode:truncatingTail"/>
+</UIView> 

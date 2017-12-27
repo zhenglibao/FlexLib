@@ -23,6 +23,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		D24F2EAD1FF3C2D000762ADC /* TableHeader.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */; };
 		D25F3DB91FE269AC00565892 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = D25F3DB81FE269AC00565892 /* CHANGELOG.md */; };
 		D26262831FE3C09B000F9841 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = D26262821FE3C09B000F9841 /* splash.png */; };
 		D26262851FE3D24A000F9841 /* alignItems.xml in Resources */ = {isa = PBXBuildFile; fileRef = D26262841FE3D249000F9841 /* alignItems.xml */; };
@@ -93,6 +94,7 @@
 		BF0A9AA5EEC0E1A3212D55AE /* Pods-FlexLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3F399040DE88BBD2F2E407B /* Pods_FlexLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20EA7438FB7413D8C580238 /* Pods-FlexLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TableHeader.xml; path = res/TableHeader.xml; sourceTree = "<group>"; };
 		D25F3DB81FE269AC00565892 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		D26262821FE3C09B000F9841 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = res/splash.png; sourceTree = "<group>"; };
 		D26262841FE3D249000F9841 /* alignItems.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = alignItems.xml; path = res/alignItems.xml; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		D2CF9CB91FD7EAFA00554A0C /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */,
 				D26F59E71FE4C0150007CB46 /* select@2x.png */,
 				D26262821FE3C09B000F9841 /* splash.png */,
 				D297583C1FE0D069004314CF /* qrcode.png */,
@@ -418,6 +421,7 @@
 				D297583D1FE0D069004314CF /* qrcode.png in Resources */,
 				D272A8D31FDA66220075DB1D /* arrow_right@2x.png in Resources */,
 				D29758601FE23DCD004314CF /* justifyContent.xml in Resources */,
+				D24F2EAD1FF3C2D000762ADC /* TableHeader.xml in Resources */,
 				D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */,
 				D2CF9CC41FD7EB0900554A0C /* batchcheck@2x.png in Resources */,
 				D272A8D51FDADA370075DB1D /* FlexViewController.xml in Resources */,

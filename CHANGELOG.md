@@ -2,6 +2,10 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+
+## 1.2.0
+1. 增加FlexFrameView，方便在不是ViewController和UITableCell的地方使用xml布局方案
+
 ### 1.1.1
 1. 修复FlexScrollView在键盘弹出时子窗口大小不对的问题
 
