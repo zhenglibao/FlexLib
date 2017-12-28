@@ -13,9 +13,9 @@ import FlexLib
 @objc(TestTableVC)
 class TestTableVC: FlexBaseVC,UITableViewDelegate,UITableViewDataSource {
     
-    @objc var _table : UITableView?
-    @objc var _cell : TestTableCell?
-    @objc var content : UILabel?
+    @objc var _table : UITableView!
+    @objc var _cell : TestTableCell!
+    @objc var content : UILabel!
     
     var _datas = [
     [
@@ -137,15 +137,15 @@ class TestTableVC: FlexBaseVC,UITableViewDelegate,UITableViewDataSource {
 
         self.navigationItem.title = "TableView Demo";
         
-        _table?.delegate = self;
-        _table?.dataSource = self;
+        _table.delegate = self;
+        _table.dataSource = self;
         
         let rc : CGRect = CGRect(x:0,y:0,width:UIScreen.main.bounds.size.width,height:0);
-        let header : FlexFrameView? = FlexFrameView.init(flex: "TableHeader", frame: rc, owner: self)
-        content?.text = "这是一个高度可变的header,文字超长,后面的文本就是随机字符:)哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"
-        header?.flexibleHeight=true
-        header?.layoutIfNeeded()
-        _table?.tableHeaderView = header;
+        let header : FlexFrameView = FlexFrameView.init(flex: "TableHeader", frame: rc, owner: self)!
+        content.text = "这是一个高度可变的header,文字超长,后面的文本就是随机字符:)哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"
+        header.flexibleHeight=true
+        header.layoutIfNeeded()
+        _table.tableHeaderView = header;
     }
 
     override func didReceiveMemoryWarning() {
@@ -174,7 +174,7 @@ class TestTableVC: FlexBaseVC,UITableViewDelegate,UITableViewDataSource {
         if(_cell==nil){
             _cell = TestTableCell(flex:nil,reuseIdentifier:nil)
         }
-        _cell?.setData(data: _datas[indexPath.row],height: true)
+        _cell.setData(data: _datas[indexPath.row],height: true)
         return (_cell?.height(forWidth: tableView.frame.size.width))!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
