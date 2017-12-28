@@ -201,6 +201,18 @@ iPhoneX adaption
 
 * 将FlexFrameView添加到其他未使用flexbox进行布局的普通视图上。
 
+```objective-c
+
+    //加载TableHeader.xml作为UITableView的header
+
+    CGRect rcFrame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 0);
+    FlexFrameView* header = [[FlexFrameView alloc]initWithFlex:@"TableHeader" Frame:rcFrame Owner:self];
+    header.flexibleHeight = YES;
+    [header layoutIfNeeded];
+
+    _table.tableHeaderView = header;
+```
+
 ---
 
 ## 运行时编辑预览界面

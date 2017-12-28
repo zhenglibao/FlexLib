@@ -230,6 +230,18 @@ You can specify any flexbox attribute in layout attribute, like width„ÄÅheight„Ä
 
 * add this FlexFrameView  to other traditional view
 
+```objective-c
+
+    //load TableHeader.xml as UITableView header
+    
+    CGRect rcFrame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 0);
+    FlexFrameView* header = [[FlexFrameView alloc]initWithFlex:@"TableHeader" Frame:rcFrame Owner:self];
+    header.flexibleHeight = YES;
+    [header layoutIfNeeded];
+    
+    _table.tableHeaderView = header;
+```
+
 ---
 
 ## Hot preview
