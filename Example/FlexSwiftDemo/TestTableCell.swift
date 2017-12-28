@@ -14,12 +14,12 @@ import FlexLib
 @objc(TestTableCell)
 class TestTableCell: FlexBaseTableCell {
 
-    @objc var head : UIImageView?
-    @objc var name : UILabel?
-    @objc var type : UILabel?
-    @objc var date : UILabel?
-    @objc var title : UILabel?
-    @objc var content : UILabel?
+    @objc var head : UIImageView!
+    @objc var name : UILabel!
+    @objc var type : UILabel!
+    @objc var date : UILabel!
+    @objc var title : UILabel!
+    @objc var content : UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,11 +34,11 @@ class TestTableCell: FlexBaseTableCell {
 
     func setData(data : Dictionary<String,String>, height:Bool) -> Void {
         if(!height){
-            name?.text = data["name"]
-            type?.text = data["type"]
-            date?.text = data["date"]
-            title?.text = data["title"]
+            name.text = data["name"]
+            type.text = data["type"]
+            date.text = data["date"]
+            title.text = data["title"]
         }
-        content?.text = data["content"]
+        content.text = data["content"]
     }
 }
