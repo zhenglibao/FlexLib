@@ -226,9 +226,9 @@ You can specify any flexbox attribute in layout attribute, like width„ÄÅheight„Ä
 
 * Write layout xml file.
 
-* Use FlexRootView to load xml file, then set attribute to make it have flexible width or height
+* Use FlexFrameView to load xml file, you can set frame or make it flexible. After initiation, maybe you need to call layoutIfNeeded before add it to other view.
 
-* add this FlexRootView as child view to other normal parent view
+* add this FlexFrameView  to other traditional view
 
 ---
 

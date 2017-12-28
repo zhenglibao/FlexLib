@@ -197,9 +197,9 @@ iPhoneX adaption
 
 * 编写xml布局文件
 
-* 使用FlexRootView加载xml文件, 设置对应属性是其高度或者宽度可变
+* 使用FlexFrameView加载xml文件, 设置其frame或者将其设置为高度或者宽度可变，在加入到其他view之前可能需要调用layoutIfNeeded
 
-* 将FlexRootView添加到其他未使用flexbox进行布局的普通视图上。
+* 将FlexFrameView添加到其他未使用flexbox进行布局的普通视图上。
 
 ---
 
