@@ -330,7 +330,7 @@ static void* gObserverFrame         = (void*)1;
 #pragma mark - keybaord
 -(void)delayLayoutByKeyboard:(BOOL)bFromSelf
 {
-    const double tmSep = 0.5;
+    const double tmSep = 0.1;
     if(bFromSelf){
         if(_keyboardDirty){
             double now = GetAccurateSecondsSince1970();
