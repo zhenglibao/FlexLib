@@ -86,6 +86,17 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 {
     [self.yoga markDirty];
 }
+-(void)markAllDirty
+{
+    FlexRootView* root = self.rootView ;
+    
+    if(root != nil){
+        for (UIView* subview in self.subviews) {
+            [root markChildDirty:subview];
+        }
+        [root markChildDirty:self];
+    }
+}
 -(void)enableFlexLayout:(BOOL)enable
 {
     [self configureLayoutWithBlock:^(YGLayout* layout){

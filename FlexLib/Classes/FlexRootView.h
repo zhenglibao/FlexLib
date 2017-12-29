@@ -28,6 +28,9 @@
 //该方法框架内部使用
 -(void)markYogaDirty;
 
+// mark all children and self dirty
+-(void)markAllDirty;
+
 // 开启关闭布局
 -(void)enableFlexLayout:(BOOL)enable;
 

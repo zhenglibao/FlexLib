@@ -152,7 +152,15 @@ static YGConfigRef globalConfig;
   // this *should* be fine. Forgive me Hack Gods.
   const YGNodeRef node = self.node;
   if (YGNodeGetMeasureFunc(node) == NULL) {
-    YGNodeSetMeasureFunc(node, YGMeasureView);
+      
+      //fix bug when remove all child from superview
+      if(YGNodeGetChildCount(node)!=0){
+          while (YGNodeGetChildCount(node)>0) {
+              YGNodeRemoveChild(node, YGNodeGetChild(node, 0));
+          }
+      }
+      
+      YGNodeSetMeasureFunc(node, YGMeasureView);
   }
 
   YGNodeMarkDirty(node);

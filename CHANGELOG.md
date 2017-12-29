@@ -2,6 +2,9 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 1.2.1
+1. 增加FlexContainerView，用于在通过程序控制布局时作为动态添加、删除子view时使用
+2. 修复YogaKit在某些情况下视图与yoga节点不一致的问题
 
 ## 1.2.0
 1. 增加FlexFrameView，方便在不是ViewController和UITableCell的地方使用xml布局方案
