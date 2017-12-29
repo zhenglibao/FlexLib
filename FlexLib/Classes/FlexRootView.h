@@ -12,8 +12,11 @@
 #import <UIKit/UIKit.h>
 
 @class FlexAttr;
+@class FlexRootView;
 
 @interface UIView(FlexPublic)
+
+@property(nonatomic,readonly) FlexRootView* rootView;
 
 +(UIView*)buildFlexView:(Class)viewCls
                  Layout:(NSArray<NSString*>*)layoutAttrs

@@ -52,7 +52,7 @@
 {
     multilabel.hidden = !multilabel.isHidden;
     
-    [self.rootView layoutAnimation:0.8];
+    [multilabel.rootView layoutAnimation:0.3];
 }
 
 @end

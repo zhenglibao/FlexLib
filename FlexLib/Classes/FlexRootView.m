@@ -59,6 +59,17 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     }
     return view;
 }
+-(FlexRootView*)rootView
+{
+    UIView* parent = self.superview;
+    while(parent!=nil){
+        if([parent isKindOfClass:[FlexRootView class]]){
+            return (FlexRootView*)parent;
+        }
+        parent = parent.superview;
+    }
+    return nil;
+}
 -(void)markDirty
 {
     UIView* parent = self.superview;
