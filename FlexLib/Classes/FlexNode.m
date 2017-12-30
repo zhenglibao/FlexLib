@@ -91,11 +91,13 @@ static YGValue String2YGValue(const char* s)
 {
     int len = (int) strlen(s) ;
     if(len==0||len>100){
+        NSLog(@"Flexbox: wrong number or pecentage value:%s",s);
         return YGPointValue(0);
     }
     if( s[len-1]=='%' ){
         char dest[100];
         strncpy(dest, s, len-1);
+        dest[len-1]=0;
         return YGPercentValue(atof(dest));
     }
     return YGPointValue(atof(s));

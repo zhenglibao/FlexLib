@@ -155,9 +155,7 @@ static YGConfigRef globalConfig;
       
       //fix bug when remove all child from superview
       if(YGNodeGetChildCount(node)!=0){
-          while (YGNodeGetChildCount(node)>0) {
-              YGNodeRemoveChild(node, YGNodeGetChild(node, 0));
-          }
+          YGRemoveAllChildren(node);
       }
       
       YGNodeSetMeasureFunc(node, YGMeasureView);
