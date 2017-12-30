@@ -26,4 +26,7 @@
 // override this to provide custom flex name
 -(NSString*)getFlexName;
 
+// override this to do aditional initialize
+-(void)onInit;
+
 @end

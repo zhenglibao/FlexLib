@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView layout="flex:1,margin:10">
+    <UILabel attr="fontSize:16,color:#333333,text:附件"/>
+    <FlexContainerView name="_attachParent" layout="marginTop:5,marginBottom:5"/>
+    <FlexTouchView onPress="onAddAttachment">
+        <UIImageView layout="" attr="source:select.png"/>
+    </FlexTouchView>
+</UIView>

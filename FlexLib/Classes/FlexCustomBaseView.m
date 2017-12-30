@@ -29,13 +29,6 @@ static void* gObserverFrame         = (void*)1;
     self = [super init];
     if(self){
         [self inflateFromLayout:CGRectZero];
-        
-        __weak FlexCustomBaseView* weakSelf = self;
-        _frameView.onFrameChange = ^(CGRect rc){
-            if(!CGSizeEqualToSize(rc.size, weakSelf.frame.size)){
-                [weakSelf markDirty];
-            }
-        };
     }
     return self;
 }
@@ -44,6 +37,14 @@ static void* gObserverFrame         = (void*)1;
     self = [super initWithFrame:frame];
     if(self){
         [self inflateFromLayout:frame];
+    }
+    return self;
+}
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self inflateFromLayout:CGRectZero];
     }
     return self;
 }
@@ -57,17 +58,28 @@ static void* gObserverFrame         = (void*)1;
 {
     return NSStringFromClass([self class]);
 }
-
+-(void)onInit
+{
+}
 -(void)inflateFromLayout:(CGRect)frame
 {
     if(_frameView == nil){
+        __weak FlexCustomBaseView* weakSelf = self;
+        
         _frameView = [[FlexFrameView alloc]initWithFlex:[self getFlexName] Frame:frame Owner:self];
+        _frameView.onFrameChange = ^(CGRect rc){
+            if(!CGSizeEqualToSize(rc.size, weakSelf.frame.size)){
+                [weakSelf markDirty];
+            }
+        };
         [self addSubview:_frameView];
         
         if(!_bObserved){
             [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverFrame];
             _bObserved = YES;
         }
+        
+        [self onInit];
     }
 }
 

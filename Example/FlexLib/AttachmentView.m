@@ -17,16 +17,11 @@
 @end
 
 @implementation AttachmentView
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.flexibleWidth = NO;
-        self.flexibleHeight = YES;
-    }
-    return self;
+-(void)onInit{
+    self.flexibleWidth = NO;
+    self.flexibleHeight = YES;
 }
+
 -(void)removeCell:(UIGestureRecognizer*)sender
 {
     UIView* cell = sender.view;

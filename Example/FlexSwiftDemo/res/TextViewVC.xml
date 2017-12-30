@@ -59,13 +59,7 @@
         
         <UIView layout="height:10" attr="bgColor:#e5e5e5"/>
         
-        <UIView layout="flexDirection:row,alignItems:center,margin:10">
-            <UIView layout="flex:1">
-                <UILabel attr="fontSize:16,color:#333333,text:附件"/>
-                <UIView layout="height:10"/>
-                <UIImageView layout="" attr="source:select.png"/>
-            </UIView>
-        </UIView>
+        <AttachmentView/>
         
         <UIView layout="height:10" attr="bgColor:#e5e5e5"/>
         

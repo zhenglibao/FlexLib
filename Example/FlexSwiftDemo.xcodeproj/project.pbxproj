@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A9CEFF54CDF9EA8FE947802D /* Pods_FlexSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DC7645DD2A3050A2A3215C /* Pods_FlexSwiftDemo.framework */; };
 		D24F2EAF1FF3CEB000762ADC /* TableHeader.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EAE1FF3CEB000762ADC /* TableHeader.xml */; };
+		D24F2EC31FF72CEB00762ADC /* AttachmentView.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EC21FF72CEB00762ADC /* AttachmentView.xml */; };
+		D24F2EC51FF72D1900762ADC /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F2EC41FF72D1900762ADC /* AttachmentView.swift */; };
 		D272B78B1FEF6770004447E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D272B78D1FEF6770004447E2 /* Localizable.strings */; };
 		D2D0206A1FEBA946008F6DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020691FEBA946008F6DB6 /* AppDelegate.swift */; };
 		D2D0206C1FEBA946008F6DB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0206B1FEBA946008F6DB6 /* ViewController.swift */; };
@@ -48,6 +50,8 @@
 		3113DD79A226E231CFABE7FC /* Pods-FlexSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		56DC7645DD2A3050A2A3215C /* Pods_FlexSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24F2EAE1FF3CEB000762ADC /* TableHeader.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TableHeader.xml; path = FlexLib/res/TableHeader.xml; sourceTree = SOURCE_ROOT; };
+		D24F2EC21FF72CEB00762ADC /* AttachmentView.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AttachmentView.xml; path = FlexLib/res/AttachmentView.xml; sourceTree = SOURCE_ROOT; };
+		D24F2EC41FF72D1900762ADC /* AttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentView.swift; sourceTree = "<group>"; };
 		D272B7821FEF4BC3004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D272B78C1FEF6770004447E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D272B78E1FEF6774004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 				D2D020701FEBA946008F6DB6 /* Assets.xcassets */,
 				D2D020721FEBA946008F6DB6 /* LaunchScreen.storyboard */,
 				D2D020751FEBA946008F6DB6 /* Info.plist */,
+				D24F2EC41FF72D1900762ADC /* AttachmentView.swift */,
 				D2D020A71FEBB30B008F6DB6 /* TestVC.swift */,
 				D2D020A91FEBD24D008F6DB6 /* TestScrollVC.swift */,
 				D2D020AB1FEC99D5008F6DB6 /* TestTableVC.swift */,
@@ -158,6 +163,7 @@
 		D2D020801FEBB26F008F6DB6 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D24F2EC21FF72CEB00762ADC /* AttachmentView.xml */,
 				D24F2EAE1FF3CEB000762ADC /* TableHeader.xml */,
 				D2D0208C1FEBB288008F6DB6 /* addnewtype@2x.png */,
 				D2D020861FEBB287008F6DB6 /* alignItems.xml */,
@@ -259,6 +265,7 @@
 				D2D0209F1FEBB289008F6DB6 /* addnewtype@2x.png in Resources */,
 				D2D020941FEBB289008F6DB6 /* select@2x.png in Resources */,
 				D2D020741FEBA946008F6DB6 /* LaunchScreen.storyboard in Resources */,
+				D24F2EC31FF72CEB00762ADC /* AttachmentView.xml in Resources */,
 				D2D020A21FEBB289008F6DB6 /* TestTouchVC.xml in Resources */,
 				D272B78B1FEF6770004447E2 /* Localizable.strings in Resources */,
 				D2D020A11FEBB289008F6DB6 /* qrcode.png in Resources */,
@@ -341,6 +348,7 @@
 				D2D020B41FEC9B53008F6DB6 /* TestJustifycontentVC.swift in Sources */,
 				D2D0206C1FEBA946008F6DB6 /* ViewController.swift in Sources */,
 				D2D020AA1FEBD24D008F6DB6 /* TestScrollVC.swift in Sources */,
+				D24F2EC51FF72D1900762ADC /* AttachmentView.swift in Sources */,
 				D2D020AC1FEC99D5008F6DB6 /* TestTableVC.swift in Sources */,
 				D2D020B01FEC9B12008F6DB6 /* TestTouchVC.swift in Sources */,
 				D2D020A81FEBB30B008F6DB6 /* TestVC.swift in Sources */,
