@@ -11,11 +11,15 @@
 
 typedef void (^FrameChanged)(CGRect);
 
+@class FlexRootView;
+
 // This view not use flexlbox layout
 // just set frame or make flexible width
 // or height
 
 @interface FlexFrameView : UIView
+
+@property(nonatomic,readonly) FlexRootView* _Nullable rootView;
 
 //宽和高是否可变？缺省值均为NO
 @property(nonatomic,assign) BOOL flexibleWidth;

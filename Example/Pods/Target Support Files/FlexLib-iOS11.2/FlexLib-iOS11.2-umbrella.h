@@ -13,6 +13,7 @@
 #import "FlexBaseTableCell.h"
 #import "FlexBaseVC.h"
 #import "FlexContainerView.h"
+#import "FlexCustomBaseView.h"
 #import "FlexFrameView.h"
 #import "FlexLayoutViewerVC.h"
 #import "FlexLib.h"

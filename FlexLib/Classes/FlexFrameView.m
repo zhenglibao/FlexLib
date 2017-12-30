@@ -59,6 +59,10 @@ static void* gObserverFrame         = (void*)1;
         [self removeObserver:self forKeyPath:@"frame"];
     }
 }
+-(FlexRootView*)rootView
+{
+    return _flexRootView;
+}
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context

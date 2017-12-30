@@ -24,6 +24,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		D24F2EAD1FF3C2D000762ADC /* TableHeader.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */; };
+		D24F2EBF1FF687C400762ADC /* AttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F2EBE1FF687C400762ADC /* AttachmentView.m */; };
+		D24F2EC11FF6881000762ADC /* AttachmentView.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EC01FF6881000762ADC /* AttachmentView.xml */; };
 		D25F3DB91FE269AC00565892 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = D25F3DB81FE269AC00565892 /* CHANGELOG.md */; };
 		D26262831FE3C09B000F9841 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = D26262821FE3C09B000F9841 /* splash.png */; };
 		D26262851FE3D24A000F9841 /* alignItems.xml in Resources */ = {isa = PBXBuildFile; fileRef = D26262841FE3D249000F9841 /* alignItems.xml */; };
@@ -95,6 +97,9 @@
 		C3F399040DE88BBD2F2E407B /* Pods_FlexLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20EA7438FB7413D8C580238 /* Pods-FlexLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TableHeader.xml; path = res/TableHeader.xml; sourceTree = "<group>"; };
+		D24F2EBD1FF687C400762ADC /* AttachmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttachmentView.h; sourceTree = "<group>"; };
+		D24F2EBE1FF687C400762ADC /* AttachmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttachmentView.m; sourceTree = "<group>"; };
+		D24F2EC01FF6881000762ADC /* AttachmentView.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AttachmentView.xml; path = res/AttachmentView.xml; sourceTree = "<group>"; };
 		D25F3DB81FE269AC00565892 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		D26262821FE3C09B000F9841 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = res/splash.png; sourceTree = "<group>"; };
 		D26262841FE3D249000F9841 /* alignItems.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = alignItems.xml; path = res/alignItems.xml; sourceTree = "<group>"; };
@@ -215,6 +220,8 @@
 		6003F593195388D20070C39A /* Example for FlexLib */ = {
 			isa = PBXGroup;
 			children = (
+				D24F2EBD1FF687C400762ADC /* AttachmentView.h */,
+				D24F2EBE1FF687C400762ADC /* AttachmentView.m */,
 				D26F59E31FE4B80F0007CB46 /* TextViewVC.h */,
 				D26F59E21FE4B80F0007CB46 /* TextViewVC.m */,
 				D272A8DF1FDC0DD90075DB1D /* TestLoginVC.h */,
@@ -291,6 +298,7 @@
 		D2CF9CB91FD7EAFA00554A0C /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D24F2EC01FF6881000762ADC /* AttachmentView.xml */,
 				D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */,
 				D26F59E71FE4C0150007CB46 /* select@2x.png */,
 				D26262821FE3C09B000F9841 /* splash.png */,
@@ -418,6 +426,7 @@
 				D272A8D11FDA631F0075DB1D /* TestModalVC.xml in Resources */,
 				D26F59E81FE4C0160007CB46 /* select@2x.png in Resources */,
 				D270E9C21FDD7503007FD06C /* README.zh.md in Resources */,
+				D24F2EC11FF6881000762ADC /* AttachmentView.xml in Resources */,
 				D297583D1FE0D069004314CF /* qrcode.png in Resources */,
 				D272A8D31FDA66220075DB1D /* arrow_right@2x.png in Resources */,
 				D29758601FE23DCD004314CF /* justifyContent.xml in Resources */,
@@ -562,6 +571,7 @@
 				6003F59E195388D20070C39A /* FlexAppDelegate.m in Sources */,
 				D272A8C21FD933710075DB1D /* TestScrollVC.m in Sources */,
 				D272A8E01FDC0DD90075DB1D /* TestLoginVC.m in Sources */,
+				D24F2EBF1FF687C400762ADC /* AttachmentView.m in Sources */,
 				D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */,
 				6003F5A7195388D20070C39A /* FlexViewController.m in Sources */,
 				D272A8CF1FDA63000075DB1D /* TestModalVC.m in Sources */,

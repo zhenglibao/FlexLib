@@ -70,15 +70,26 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     }
     return nil;
 }
+-(UIView*)findLeaf
+{
+    if(self.yoga.isLeaf)
+        return self;
+    
+    for (UIView* subview in self.subviews) {
+        UIView* leaf = [subview findLeaf];
+        if(leaf != nil)
+            return leaf;
+    }
+    return nil;
+}
 -(void)markDirty
 {
-    UIView* parent = self.superview;
-    while(parent!=nil){
-        if([parent isKindOfClass:[FlexRootView class]]){
-            [(FlexRootView*)parent markChildDirty:self];
-            break;
+    FlexRootView* rootView = self.rootView;
+    if(rootView != nil){
+        UIView* leaf = [self findLeaf];
+        if(leaf != nil){
+            [rootView markChildDirty:leaf];
         }
-        parent = parent.superview;
     }
 }
 
@@ -86,17 +97,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 {
     [self.yoga markDirty];
 }
--(void)markAllDirty
-{
-    FlexRootView* root = self.rootView ;
-    
-    if(root != nil){
-        for (UIView* subview in self.subviews) {
-            [root markChildDirty:subview];
-        }
-        [root markChildDirty:self];
-    }
-}
+
 -(void)enableFlexLayout:(BOOL)enable
 {
     [self configureLayoutWithBlock:^(YGLayout* layout){
