@@ -13,6 +13,8 @@ import FlexLib
 
 @objc(TestScrollVC)
 class TestScrollVC: FlexBaseVC {
+    
+    @objc var multilabel : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,5 +25,11 @@ class TestScrollVC: FlexBaseVC {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc
+    func tapShow() -> Void {
+        multilabel.isHidden = !multilabel.isHidden;
+        multilabel.rootView.layoutAnimation(0.3);
     }
 }
