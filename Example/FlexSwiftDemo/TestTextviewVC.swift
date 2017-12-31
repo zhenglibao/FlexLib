@@ -45,6 +45,7 @@ class TestTextviewVC: FlexBaseVC {
             "justifyContent","center",
             ])
         cell.setViewAttr("bgColor", value: "#e5e5e5")
+        cell.setViewAttr("borderRadius", value: "10")
         _imgParent.insertSubview(cell, at: 0)
         
         let label = UILabel()

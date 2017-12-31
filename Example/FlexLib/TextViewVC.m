@@ -54,6 +54,7 @@
                                  @"justifyContent",@"center",
                                  ]];
     [cell setViewAttr:@"bgColor" Value:@"#e5e5e5"];
+    [cell setViewAttr:@"borderRadius" Value:@"10"];
     [_imgParent insertSubview:cell atIndex:0];
     
     UILabel* label=[UILabel new];
