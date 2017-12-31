@@ -75,7 +75,7 @@ static void* gObserverFrame         = (void*)1;
         [self addSubview:_frameView];
         
         if(!_bObserved){
-            [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverFrame];
+            [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:gObserverFrame];
             _bObserved = YES;
         }
         
@@ -90,8 +90,7 @@ static void* gObserverFrame         = (void*)1;
     if(context == gObserverFrame){
         
         CGSize szNew = [[change objectForKey:@"new"]CGRectValue].size;
-        CGSize szOld = [[change objectForKey:@"old"]CGRectValue].size;
-        if(!CGSizeEqualToSize(szNew, szOld))
+        if(!CGSizeEqualToSize(szNew, _frameView.frame.size))
         {
             CGRect rc = _frameView.frame;
             rc.size = szNew;

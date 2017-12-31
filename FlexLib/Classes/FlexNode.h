@@ -58,6 +58,12 @@ void FlexApplyLayoutParam(YGLayout* layout,
                           NSString* key,
                           NSString* value);
 
+// 设置缩放因子,主要针对字体，但也可以用于其他
+// 以*开头的数字a，最终值将为a*factor+offset
+void FlexSetScale(float fScaleFactor,float fScaleOffset);
+float FlexGetScaleFactor(void);
+float FlexGetScaleOffset(void);
+
 @interface FlexNode : NSObject<NSCoding>
 
 +(FlexNode*)loadNodeFromRes:(NSString*)flexName;

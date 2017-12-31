@@ -30,7 +30,10 @@
 NSData* loadFromNetwork(NSString* resName);
 NSData* loadFromFile(NSString* resName);
 
+// 全局变量
 static FlexLoadFunc gLoadFunc = loadFromFile;
+static float gfScaleFactor = 1.0f;
+static float gfScaleOffset = 0;
 
 #ifdef DEBUG
 static BOOL gbUserCache = NO;
@@ -144,6 +147,20 @@ void FlexSetViewAttr(UIView* view,
     {
         NSLog(@"Flexbox: %@ no method %@",[view class],methodDesc);
         return ;
+    }
+    
+    // '*abc' means scale the value by the screen size,
+    // '**abc' means '*abc'
+    if(attrValue.length>=2 && [attrValue characterAtIndex:0]=='*')
+    {
+        NSString* v = [attrValue substringFromIndex:1];
+        if([v hasPrefix:@"*"]){
+            attrValue = v;
+        }else{
+            float f=[v floatValue];
+            f = f*gfScaleFactor+gfScaleOffset;
+            attrValue=[NSString stringWithFormat:@"%f",f];
+        }
     }
     
     // localize value
@@ -747,7 +764,21 @@ BOOL FlexIsCacheEnabled(void)
 {
     return gbUserCache;
 }
+void FlexSetScale(float fScaleFactor,
+                  float fScaleOffset)
+{
+    gfScaleFactor = fScaleFactor;
+    gfScaleOffset = fScaleOffset;
+}
+float FlexGetScaleFactor(void)
+{
+    return gfScaleFactor;
+}
 
+float FlexGetScaleOffset(void)
+{
+    return gfScaleOffset;
+}
 @implementation NSObject (Flex)
 
 -(NSBundle*)bundleForStrings

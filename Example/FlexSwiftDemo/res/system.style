@@ -47,7 +47,7 @@
         <attr name="underlayColor">darkGray</attr>
     </style>
     <style name="buttonText">
-        <attr name="fontSize">16</attr>
+        <attr name="fontSize">*16</attr>
         <attr name="color">#333333</attr>
     </style>
     <style name="bigFont">
