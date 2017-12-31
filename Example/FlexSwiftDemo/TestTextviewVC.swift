@@ -13,6 +13,8 @@ import FlexLib
 
 @objc(TestTextviewVC)
 class TestTextviewVC: FlexBaseVC {
+    
+    @objc var _imgParent : UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,38 @@ class TestTextviewVC: FlexBaseVC {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func removeCell(sender : UIGestureRecognizer) -> Void {
+        let cell = sender.view
+        cell?.removeFromSuperview()
+        _imgParent.markDirty()
+    }
+    @objc
+    func onAddImage() -> Void {
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(TestTextviewVC.removeCell(sender:)))
+        let cell = UIView()
+        cell.enableFlexLayout(true)
+        cell.addGestureRecognizer(tap)
+        cell.setLayoutAttrStrings([
+            "width","20%",
+            "aspectRatio","1",
+            "margin","2%",
+            "alignItems","center",
+            "justifyContent","center",
+            ])
+        cell.setViewAttr("bgColor", value: "#e5e5e5")
+        _imgParent.insertSubview(cell, at: 0)
+        
+        let label = UILabel()
+        label.enableFlexLayout(true)
+        label.setViewAttrStrings([
+            "fontSize","16",
+            "color","red",
+            "text","删除",
+            ])
+        cell.addSubview(label)
+        
+        _imgParent.markDirty()
     }
 }
