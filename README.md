@@ -8,9 +8,9 @@
 ## FlexLib
 [中文版](https://github.com/zhenglibao/FlexLib/blob/master/README.zh.md)
 
-FlexLib is an obj-c layout framework for iOS. It's based on [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) model which is standard for web layout. So the layout capability is powerful and easy to use.
+FlexLib is an Objective-C layout framework for iOS. It's based on [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) model which is standard for web layout. So the layout capability is powerful and easy to use.
 
-With FlexLib, you can write iOS ui much faster than before, and there are better adaptability.
+With FlexLib, you can write iOS UI much faster than before, and there are better adaptability.
 
 - [Screenshots](#screenshots)
 - [Feature](#feature)
@@ -43,7 +43,7 @@ Avoid keyboard automatically
 
 ![example3](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/textview.gif)
 
-iPhoneX adaption
+iPhone X adaption
 
 ![iPhoneX](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/tableview.gif)
 
@@ -263,7 +263,7 @@ You can specify any flexbox attribute in layout attribute, like width、height�
 **Notice: Cmd+R should be pressed on simulator when view controller is shown, not in XCode. The base url will be used to concate the resource url. For example, if the base url is 'http://ip:port/abc/' and you want to access flex resource 'TestVC', then your final url will be 'http://ip:port/abc/TestVC.xml'**
 
 
-### hot preview for any ui
+### hot preview for any UI
 
 * Start http server in your local folder as before
 
@@ -341,7 +341,7 @@ You can get it on [Wiki-FAQ](https://github.com/zhenglibao/FlexLib/wiki/FAQ)
 
 ## Author
 
-zhenglibao, 798393829@qq.com. QQ qun: 687398178
+zhenglibao, 798393829@qq.com. QQ Group: 687398178
 
 You can contact me if you have any problem.
 
