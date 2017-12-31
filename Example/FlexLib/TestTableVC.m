@@ -29,7 +29,12 @@
 - (void)dealloc
 {
 }
-
+-(void)tableHeaderFrameChange
+{
+    [_table beginUpdates];
+    [_table setTableHeaderView:_table.tableHeaderView];
+    [_table endUpdates];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -38,11 +43,16 @@
     _table.delegate = self ;
     _table.dataSource = self ;
     
+    __weak TestTableVC* weakSelf = self;
+    
     CGRect rcFrame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 0);
     FlexFrameView* header = [[FlexFrameView alloc]initWithFlex:@"TableHeader" Frame:rcFrame Owner:self];
     header.flexibleHeight = YES;
     content.text = @"这是一个高度可变的header,文字超长,后面的文本就是随机字符:)哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈";
     [header layoutIfNeeded];
+    header.onFrameChange = ^(CGRect rc){
+        [weakSelf tableHeaderFrameChange];
+    };
     _table.tableHeaderView = header;
     
     

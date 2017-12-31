@@ -131,6 +131,12 @@ class TestTableVC: FlexBaseVC,UITableViewDelegate,UITableViewDataSource {
     "content": "我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快捷登录放暑假了多分数据代理费   私搭乱建快放暑假了坑多分数据留点饭",
     ]
     ]
+    
+    func tableHeaderFrameChange() -> Void {
+        _table.beginUpdates()
+        _table.tableHeaderView = _table.tableHeaderView
+        _table.endUpdates()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,11 +146,16 @@ class TestTableVC: FlexBaseVC,UITableViewDelegate,UITableViewDataSource {
         _table.delegate = self;
         _table.dataSource = self;
         
+        weak var weakSelf = self;
+        
         let rc : CGRect = CGRect(x:0,y:0,width:UIScreen.main.bounds.size.width,height:0);
         let header : FlexFrameView = FlexFrameView.init(flex: "TableHeader", frame: rc, owner: self)!
         content.text = "这是一个高度可变的header,文字超长,后面的文本就是随机字符:)哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"
         header.flexibleHeight=true
         header.layoutIfNeeded()
+        header.onFrameChange = { (rc)->Void in
+            weakSelf?.tableHeaderFrameChange()
+        }
         _table.tableHeaderView = header;
     }
 
