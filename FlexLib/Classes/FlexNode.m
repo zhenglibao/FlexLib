@@ -89,6 +89,17 @@ static NameValue _display[] =
     {"none", YGDisplayNone},
 };
 
+static CGFloat ScaleSize(const char* s)
+{
+    CGFloat f;
+    if(s[0]=='*')
+    {
+        f = atof(s+1)*gfScaleFactor+gfScaleOffset;
+    }else{
+        f = atof(s);
+    }
+    return f;
+}
 
 static YGValue String2YGValue(const char* s)
 {
@@ -101,9 +112,9 @@ static YGValue String2YGValue(const char* s)
         char dest[100];
         strncpy(dest, s, len-1);
         dest[len-1]=0;
-        return YGPercentValue(atof(dest));
+        return YGPercentValue(ScaleSize(dest));
     }
-    return YGPointValue(atof(s));
+    return YGPointValue(ScaleSize(s));
 }
 
 NSString* FlexLocalizeValue(NSString* value,
@@ -204,7 +215,7 @@ return;                         \
 #define SETNUMVALUE(item)       \
 if(strcmp(k,#item)==0)          \
 {                               \
-layout.item=atof(v);            \
+layout.item=ScaleSize(v);       \
 return;                         \
 }
 

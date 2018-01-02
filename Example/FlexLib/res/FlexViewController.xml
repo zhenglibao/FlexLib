@@ -5,9 +5,9 @@
     justifyContent:center,
     alignItems:center"
     attr="bgColor:white">
-    <UIView layout="height:1,width:100%" attr="bgColor:red"/>
+    <UIView layout="height:1,width:*50%" attr="bgColor:red"/>
     <FlexScrollView name="_scroll" layout="flex:1,width:100%,alignItems:center" attr="vertScroll:true">
-        <UILabel name="_label" layout="marginTop:20"
+        <UILabel name="_label" layout="marginTop:*20"
         attr="@:system/buttonText,text:You can run on iPhoneX,color:blue"/>
         
         <UILabel name="_label" layout="marginTop:20"
