@@ -22,4 +22,8 @@
 #import "FlexFrameView.h"
 #import "FlexContainerView.h"
 #import "FlexCustomBaseView.h"
+#import "FlexTouchView.h"
+#import "FlexTouchMaskView.h"
+#import "FlexTextView.h"
+
 
