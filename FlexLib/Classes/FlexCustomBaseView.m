@@ -12,6 +12,7 @@
 #import "FlexNode.h"
 #import "FlexFrameView.h"
 #import "FlexRootView.h"
+#import "FlexUtils.h"
 
 static void* gObserverFrame         = (void*)1;
 
@@ -121,5 +122,14 @@ static void* gObserverFrame         = (void*)1;
 -(BOOL)flexibleHeight
 {
     return _frameView.flexibleHeight;
+}
+
+FLEXSET(flexibleWidth)
+{
+    self.flexibleWidth = String2BOOL(sValue);
+}
+FLEXSET(flexibleHeight)
+{
+    self.flexibleHeight = String2BOOL(sValue);
 }
 @end
