@@ -18,6 +18,7 @@
 @class YGLayout;
 
 typedef NSData* (*FlexLoadFunc)(NSString* flexName);
+typedef CGFloat (*FlexScaleFunc)(CGFloat f);
 
 typedef enum{
     flexFromFile = 0,
@@ -63,6 +64,8 @@ void FlexApplyLayoutParam(YGLayout* layout,
 void FlexSetScale(float fScaleFactor,float fScaleOffset);
 float FlexGetScaleFactor(void);
 float FlexGetScaleOffset(void);
+// 设置自定义scale
+void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 
 @interface FlexNode : NSObject<NSCoding>
 

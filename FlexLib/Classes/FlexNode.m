@@ -29,11 +29,13 @@
 
 NSData* loadFromNetwork(NSString* resName);
 NSData* loadFromFile(NSString* resName);
+CGFloat scaleLinear(CGFloat f);
 
 // 全局变量
 static FlexLoadFunc gLoadFunc = loadFromFile;
 static float gfScaleFactor = 1.0f;
 static float gfScaleOffset = 0;
+static FlexScaleFunc gScaleFunc = scaleLinear ;
 
 #ifdef DEBUG
 static BOOL gbUserCache = NO;
@@ -94,7 +96,7 @@ static CGFloat ScaleSize(const char* s)
     CGFloat f;
     if(s[0]=='*')
     {
-        f = atof(s+1)*gfScaleFactor+gfScaleOffset;
+        f = gScaleFunc(atof(s+1));
     }else{
         f = atof(s);
     }
@@ -169,7 +171,7 @@ void FlexSetViewAttr(UIView* view,
             attrValue = v;
         }else{
             float f=[v floatValue];
-            f = f*gfScaleFactor+gfScaleOffset;
+            f = gScaleFunc(f);
             attrValue=[NSString stringWithFormat:@"%f",f];
         }
     }
@@ -775,11 +777,22 @@ BOOL FlexIsCacheEnabled(void)
 {
     return gbUserCache;
 }
+void FlexSetCustomScale(FlexScaleFunc scaleFunc)
+{
+    if(scaleFunc != NULL){
+        gScaleFunc = scaleFunc ;
+    }
+}
 void FlexSetScale(float fScaleFactor,
                   float fScaleOffset)
 {
     gfScaleFactor = fScaleFactor;
     gfScaleOffset = fScaleOffset;
+    gScaleFunc = scaleLinear ;
+}
+CGFloat scaleLinear(CGFloat f)
+{
+    return f*gfScaleFactor+gfScaleOffset;
 }
 float FlexGetScaleFactor(void)
 {
