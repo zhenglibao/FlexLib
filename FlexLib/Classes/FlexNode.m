@@ -355,7 +355,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     
     UIView* view = [[cls alloc]init];
     
-    if(self.name != nil){
+    if(self.name.length>0){
         @try{
             view.viewAttrs.name = self.name ;
             [owner setValue:view forKey:self.name];
