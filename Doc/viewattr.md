@@ -165,7 +165,7 @@
 * barStyle: enumeration -- default / black /opaque /translucent
 * translucent: boolean
 
-## UIActivityIndicatorView attributes:
+## UIToolbar attributes:
 * barStyle: enumeration -- default / black /opaque /translucent
 * translucent: boolean
 * tintColor: color
