@@ -53,7 +53,7 @@
 	"UITextField":{
 		"prefix": "textfield",
 		"body": [
-			"<UITextField name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:black,textAlign:left,placeHolder:$2,text:$3\"/>",
+			"<UITextField name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:black,textAlign:left,placeHolder:$3,text:$4\"/>",
 		],
 		"description": "UITextField element"
 	},
