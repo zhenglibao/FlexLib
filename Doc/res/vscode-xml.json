@@ -39,7 +39,7 @@
 	"UILabel":{
 		"prefix": "label",
 		"body": [
-			"<UILabel name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:#ffffff,linesNum:0,text:$3\"/>",
+			"<UILabel name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:#333333,linesNum:0,text:$3\"/>",
 		],
 		"description": "UIView element"
 	},
