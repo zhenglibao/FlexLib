@@ -1,4 +1,31 @@
 {
+	// attribute
+	"name":{
+		"prefix": "name",
+		"body": [
+			"name",
+		],
+	},
+	"layout":{
+		"prefix": "layout",
+		"body": [
+			"layout",
+		],
+	},
+	"attr":{
+		"prefix": "attr",
+		"body": [
+			"attr",
+		],
+	},
+	"onPress":{
+		"prefix": "onPress",
+		"body": [
+			"onPress",
+		],
+	},
+	
+
 	// view
 	"UIView":{
 		"prefix": "view",
