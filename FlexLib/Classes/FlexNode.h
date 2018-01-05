@@ -18,7 +18,7 @@
 @class YGLayout;
 
 typedef NSData* (*FlexLoadFunc)(NSString* flexName);
-typedef CGFloat (*FlexScaleFunc)(CGFloat f);
+typedef CGFloat (*FlexScaleFunc)(CGFloat f,const char* attrName);
 
 typedef enum{
     flexFromFile = 0,

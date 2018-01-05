@@ -56,7 +56,7 @@
     NSString* baseurl = _baseUrlField.text;
     BOOL onlineLoad = _loadSwitch.isOn;
     
-    baseurl = [baseurl stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    baseurl = [baseurl stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     

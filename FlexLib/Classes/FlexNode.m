@@ -29,7 +29,7 @@
 
 NSData* loadFromNetwork(NSString* resName);
 NSData* loadFromFile(NSString* resName);
-CGFloat scaleLinear(CGFloat f);
+CGFloat scaleLinear(CGFloat f,const char* attrName);
 
 // 全局变量
 static FlexLoadFunc gLoadFunc = loadFromFile;
@@ -91,19 +91,21 @@ static NameValue _display[] =
     {"none", YGDisplayNone},
 };
 
-static CGFloat ScaleSize(const char* s)
+static CGFloat ScaleSize(const char* s,
+                         const char* attrName)
 {
     CGFloat f;
     if(s[0]=='*')
     {
-        f = gScaleFunc(atof(s+1));
+        f = gScaleFunc(atof(s+1),attrName);
     }else{
         f = atof(s);
     }
     return f;
 }
 
-static YGValue String2YGValue(const char* s)
+static YGValue String2YGValue(const char* s,
+                              const char* attrName)
 {
     int len = (int) strlen(s) ;
     if(len==0||len>100){
@@ -114,9 +116,9 @@ static YGValue String2YGValue(const char* s)
         char dest[100];
         strncpy(dest, s, len-1);
         dest[len-1]=0;
-        return YGPercentValue(ScaleSize(dest));
+        return YGPercentValue(ScaleSize(dest,attrName));
     }
-    return YGPointValue(ScaleSize(s));
+    return YGPointValue(ScaleSize(s,attrName));
 }
 
 NSString* FlexLocalizeValue(NSString* value,
@@ -171,7 +173,7 @@ void FlexSetViewAttr(UIView* view,
             attrValue = v;
         }else{
             float f=[v floatValue];
-            f = gScaleFunc(f);
+            f = gScaleFunc(f,[attrName cStringUsingEncoding:NSASCIIStringEncoding]);
             attrValue=[NSString stringWithFormat:@"%f",f];
         }
     }
@@ -210,14 +212,14 @@ return;                                  \
 #define SETYGVALUE(item)       \
 if(strcmp(k,#item)==0)          \
 {                               \
-layout.item=String2YGValue(v);  \
+layout.item=String2YGValue(v,k);\
 return;                         \
 }                               \
 
 #define SETNUMVALUE(item)       \
 if(strcmp(k,#item)==0)          \
 {                               \
-layout.item=ScaleSize(v);       \
+layout.item=ScaleSize(v,k);     \
 return;                         \
 }
 
@@ -526,7 +528,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     NSMutableArray* result = [NSMutableArray array];
     
     NSArray* parts = [FlexNode seperateByComma:param];
-    NSCharacterSet* whiteSet = [NSCharacterSet whitespaceCharacterSet] ;
+    NSCharacterSet* whiteSet = [NSCharacterSet whitespaceAndNewlineCharacterSet] ;
     
     for (NSString* part in parts)
     {
@@ -795,7 +797,7 @@ void FlexSetScale(float fScaleFactor,
     gfScaleOffset = fScaleOffset;
     gScaleFunc = scaleLinear ;
 }
-CGFloat scaleLinear(CGFloat f)
+CGFloat scaleLinear(CGFloat f,const char* attrName)
 {
     return f*gfScaleFactor+gfScaleOffset;
 }
