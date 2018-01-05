@@ -80,6 +80,10 @@
         
         _bActive = YES;
         
+        if(self.onTouch != nil){
+            self.onTouch(YES);
+        }
+        
         if(_maskView != nil){
             CGSize szParent = _maskView.superview.frame.size;
             _maskView.frame = CGRectMake(0, 0, szParent.width, szParent.height);
@@ -98,6 +102,10 @@
         }];
     }else if(_bActive){
         _bActive = NO ;
+        
+        if(self.onTouch != nil){
+            self.onTouch(NO);
+        }
         
         double now = GetAccurateSecondsSince1970();
         double delay = duration - (now - _activeStartAt);

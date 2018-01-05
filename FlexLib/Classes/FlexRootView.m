@@ -250,8 +250,14 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     
     FlexNode* node = [FlexNode loadNodeData:data];
     if(node != nil){
-        UIView* sub = [node buildViewTree:owner
-                                 RootView:root];
+        UIView* sub ;
+        
+        @try{
+            sub = [node buildViewTree:owner
+                             RootView:root];
+        }@catch(NSException* exception){
+            NSLog(@"Flexbox: FlexRootView exception occured - %@",exception);
+        }
         
         if(sub != nil && ![sub isKindOfClass:[FlexModalView class]])
         {
@@ -273,8 +279,14 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     
     FlexNode* node = [FlexNode loadNodeFromRes:resName];
     if(node != nil){
-        UIView* sub = [node buildViewTree:owner
-                                 RootView:root];
+        UIView* sub ;
+        
+        @try{
+            sub = [node buildViewTree:owner
+                             RootView:root];
+        }@catch(NSException* exception){
+            NSLog(@"Flexbox: FlexRootView exception occured - %@",exception);
+        }
         
         if(sub != nil && ![sub isKindOfClass:[FlexModalView class]])
         {

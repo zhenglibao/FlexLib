@@ -353,7 +353,11 @@ void FlexApplyLayoutParam(YGLayout* layout,
         return nil;
     }
     
-    UIView* view = [[cls alloc]init];
+    UIView* view = [owner createView:cls Name:self.name];
+    if(view == nil)
+    {
+        view = [[cls alloc]init];
+    }
     
     if(self.name.length>0){
         @try{
@@ -366,7 +370,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
         }
     }
     
-    if(self.onPress != nil){
+    if(self.onPress.length>0){
         SEL sel = NSSelectorFromString(self.onPress);
         if(sel!=nil){
             if([owner respondsToSelector:sel]){
@@ -439,6 +443,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     }
     
     [view postCreate];
+    [owner postCreateView:view];
     
     if(view.isHidden){
         view.yoga.isIncludedInLayout = NO ;
@@ -805,6 +810,16 @@ float FlexGetScaleOffset(void)
 }
 @implementation NSObject (Flex)
 
+-(UIView*)createView:(Class)cls
+                Name:(NSString*)name
+{
+    return nil;
+}
+
+-(void)postCreateView:(UIView*)view
+{
+    
+}
 -(NSBundle*)bundleForStrings
 {
     return [NSBundle mainBundle];

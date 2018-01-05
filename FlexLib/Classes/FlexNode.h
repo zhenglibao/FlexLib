@@ -84,6 +84,10 @@ void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 
 @interface NSObject (Flex)
 
+// owner custom create view
+-(UIView*)createView:(Class)cls Name:(NSString*)name;
+-(void)postCreateView:(UIView*)view;
+
 // multi-language support
 -(NSBundle*)bundleForStrings;
 -(NSString*)tableForStrings;
