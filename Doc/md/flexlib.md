@@ -146,8 +146,12 @@ FlexTextView是另外一个系统提供的类，能够自动根据输入的文�
 
 ![智能提示](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/intellisense.gif)
 
+### 该框架能和Autolayout、Frame方式混用吗？
 
-最后想说的是没有必要争吵xib和代码创建界面孰优孰劣，每个人都会有自己喜欢的方式。如果您对目前的界面开发方式非常满意，开发效率也很高，那么可能这个库不太适合你，这个库更适合那些对目前的开发方式有那么一点点意见的人😀
+当然可以，可以一部分页面使用Autolayout，另外一部分页面使用xml。甚至在同一个页面也可以一部分控件使用frame方式布局，另外一部分控件使用xml方式。
+
+
+最后想说的是没有必要争吵xib和代码创建界面孰优孰劣，每个人都会有自己喜欢的方式。如果您对目前的界面开发方式非常满意，开发效率也很高，那么可能这个库并不适合你，这个库更适合那些对目前的开发方式有那么一点点意见的人😀
 
 对这个库感兴趣的读者可以在这里了解更多的信息：
 [https://github.com/zhenglibao/FlexLib](https://github.com/zhenglibao/FlexLib)
