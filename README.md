@@ -21,8 +21,9 @@ With FlexLib, you can write iOS UI much faster than before, and there are better
 - [Attribute Reference](#attribute-reference)
 - [FlexLib Classes](#flexlib-classes)
 - [Installation](#installation)
-- [About Flexbox](#about-flexbox)
+- [Intellisense](#intellisense)
 - [FAQ](#faq)
+- [About Flexbox](#about-flexbox)
 - [Author](#author)
 - [License](#license)
 
@@ -324,6 +325,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'FlexLib'
 ```
+
+---
+## Intellisense
+You can get it on [Wiki-VSCode Intellisense](https://github.com/zhenglibao/FlexLib/wiki/Visual-Studio-Code%E6%99%BA%E8%83%BD%E6%8F%90%E7%A4%BA)
 
 ---
 

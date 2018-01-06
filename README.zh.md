@@ -285,6 +285,11 @@ pod 'FlexLib'
 ```
 
 ---
+## 智能提示
+智能提示能够极大的提高开发效率，不过现代的IDE基本上都支持自定义配置。这里推荐使用VSCode，更多信息见这里:
+[VSCode智能提示](https://github.com/zhenglibao/FlexLib/wiki/Visual-Studio-Code%E6%99%BA%E8%83%BD%E6%8F%90%E7%A4%BA)
+
+---
 
 ## 问题解答
 可以到这个[页面](https://github.com/zhenglibao/FlexLib/wiki/FAQ)查看问题解答
