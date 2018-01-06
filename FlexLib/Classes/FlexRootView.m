@@ -426,7 +426,6 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     
     if(self.beginLayout != nil)
         self.beginLayout();
-    self.beginLayout = nil;
     
     // 布局前事件
     if(self.onWillLayout != nil){
@@ -446,8 +445,10 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     
     if(self.endLayout !=nil)
         self.endLayout();
+
     self.endLayout = nil;
-    
+    self.beginLayout = nil;
+
     _bInLayouting = NO ;
     _bChildDirty = NO;
 }
