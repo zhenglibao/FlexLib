@@ -307,7 +307,11 @@ pod 'FlexLib'
 
 zhenglibao, 798393829@qq.com. QQ群: 687398178
 
-欢迎咨询各种问题.
+如果碰到问题，您可以：
+
+* 阅读 [Wiki](https://github.com/zhenglibao/FlexLib/wiki)
+* 在[这里](https://github.com/zhenglibao/FlexLib/issues)发起一个问题
+* 加入QQ群咨询或者给我发邮件
 
 希望你能够喜欢这个项目. :)
 

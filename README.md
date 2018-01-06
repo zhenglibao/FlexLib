@@ -348,7 +348,11 @@ You can get it on [Wiki-FAQ](https://github.com/zhenglibao/FlexLib/wiki/FAQ)
 
 zhenglibao, 798393829@qq.com. QQ Group: 687398178
 
-You can contact me if you have any problem.
+If you have problem, you can:
+
+* reading the [wiki](https://github.com/zhenglibao/FlexLib/wiki)
+* submit an issue [here](https://github.com/zhenglibao/FlexLib/issues)
+* join the QQ Group to ask question or email to me
 
 I hope you will like it. :)
 
