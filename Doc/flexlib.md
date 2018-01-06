@@ -1,8 +1,8 @@
-
+使用FlexLib提高iOS界面开发效率
 
 之前写了两篇文章介绍FlexLib这个布局库，见[iOS新一代界面开发利器](https://juejin.im/post/5a367aaaf265da432652eaaf)和[是时候抛弃Masonry了](https://juejin.im/post/5a4468f3f265da432a7be16c)。很多网友非常的感兴趣，也有一些网友质疑该框架是否真的能提高效率。毕竟真用到项目中的话要学习很多新东西，如果不能提高效率无疑会浪费大量时间。
 
-根据在作者自己项目中的经验，复杂页面最多能够节省近80%的时间，一般的页面也能够节省近一半的时间，当然前提是对[flexbox](https://juejin.im/post/5a33a6926fb9a045104a8d3c)模型较为熟悉。关于flexbox，作者想说的是这是一个跨平台的东西，安卓、web、react native、Texture等都支持，如果不想以后一直局限在iOS平台上的话，学习了解一下还是有必要的😀。
+根据在作者自己项目中的经验，复杂页面最多能够节省近80%的开发时间，一般的页面也能够节省近一半的时间，当然前提是对[flexbox](https://juejin.im/post/5a33a6926fb9a045104a8d3c)模型较为熟悉。关于flexbox，作者想说的是这是一个跨平台的东西，安卓、web、react native、Texture等都支持，如果不想以后一直局限在iOS平台上的话，学习了解一下还是有必要的😀。
 
 今天就以一个实际的页面编写过程来介绍一下这个库究竟是如何提高iOS界面开发效率的。
 
@@ -145,7 +145,7 @@ FlexTextView是另外一个系统提供的类，能够自动根据输入的文�
 ![智能提示](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/intellisense.gif)
 
 
-最后想说的是没有必要争吵xib和代码创建界面孰优孰劣，每个人都会有自己喜欢的方式，也有最高效的方式。
+最后想说的是没有必要争吵xib和代码创建界面孰优孰劣，每个人都会有自己喜欢的方式，使用该框架其实就是给大家多了一个选择😀
 
 对这个库感兴趣的读者可以在这里了解更多的信息：
 [https://github.com/zhenglibao/FlexLib](https://github.com/zhenglibao/FlexLib)
