@@ -44,7 +44,7 @@
 		"description": "UIView element"
 	},
 	"FlexTouchView":{
-		"prefix": "touch",
+		"prefix": "touchView",
 		"body": [
 			"<FlexTouchView onPress=\"$1\" layout=\"$2\" attr=\"underlayColor:darkGray,bgColor:lightGray\">",
 			"$3",
@@ -53,7 +53,7 @@
 		"description": "FlexTouchView element"
 	},
 	"FlexScrollView":{
-		"prefix": "scroll",
+		"prefix": "scrollView",
 		"body": [
 			"<FlexScrollView layout=\"flex:1\" attr=\"vertScroll:true\">",
 			"$2",
@@ -62,7 +62,7 @@
 		"description": "FlexScrollView element"
 	},
 	"FlexContainerView":{
-		"prefix": "container",
+		"prefix": "containerView",
 		"body": [
 			"<FlexContainerView name=\"$1\" layout=\"$2\">",
 			"$3",
@@ -71,70 +71,70 @@
 		"description": "FlexContainerView element"
 	},
 	"UIImageView":{
-		"prefix": "image",
+		"prefix": "imageView",
 		"body": [
 			"<UIImageView attr=\"source:$1\"/>",
 		],
 		"description": "UIImageView element"
 	},
 	"UITextField":{
-		"prefix": "textfield",
+		"prefix": "textField",
 		"body": [
 			"<UITextField name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:black,textAlign:left,placeHolder:$3,text:$4\"/>",
 		],
 		"description": "UITextField element"
 	},
 	"UITextView":{
-		"prefix": "textview",
+		"prefix": "textView",
 		"body": [
 			"<UITextView name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:black,textAlign:left\"/>",
 		],
 		"description": "UITextView element"
 	},
 	"UIActivityIndicatorView":{
-		"prefix": "activity",
+		"prefix": "activityIndicatorView",
 		"body": [
 			"<UIActivityIndicatorView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
 		],
 		"description": "UIActivityIndicatorView element"
 	},
 	"UIDatePicker":{
-		"prefix": "date",
+		"prefix": "datePicker",
 		"body": [
 			"<UIDatePicker name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
 		],
 		"description": "UIDatePicker element"
 	},
 	"UIProgressView":{
-		"prefix": "progress",
+		"prefix": "progressView",
 		"body": [
 			"<UIProgressView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
 		],
 		"description": "UIProgressView element"
 	},
 	"UIPageControl":{
-		"prefix": "page",
+		"prefix": "pageControl",
 		"body": [
 			"<UIPageControl name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
 		],
 		"description": "UIPageControl element"
 	},
 	"UIPickerView":{
-		"prefix": "picker",
+		"prefix": "pickerView",
 		"body": [
 			"<UIPickerView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
 		],
 		"description": "UIPickerView element"
 	},
 	"UISearchBar":{
-		"prefix": "search",
+		"prefix": "searchBar",
 		"body": [
 			"<UISearchBar name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
 		],
 		"description": "UISearchBar element"
 	},
 	"UISegmentedControl":{
-		"prefix": "segment",
+		"prefix": "segmentedControl",
 		"body": [
 			"<UISegmentedControl name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
 		],
