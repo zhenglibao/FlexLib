@@ -4,8 +4,6 @@
 
 之前写了两篇文章介绍FlexLib这个布局库，见[iOS新一代界面开发利器](https://juejin.im/post/5a367aaaf265da432652eaaf)和[是时候抛弃Masonry了](https://juejin.im/post/5a4468f3f265da432a7be16c)。很多网友非常的感兴趣，也有一些网友质疑该框架是否真的能提高效率。毕竟真用到项目中的话要学习很多新东西，如果不能提高效率无疑会浪费大量时间。
 
-根据在作者自己项目中的经验，复杂页面最多能够节省近80%的开发时间，一般的页面也能够节省近一半的时间，当然前提是对[flexbox](https://juejin.im/post/5a33a6926fb9a045104a8d3c)模型较为熟悉。关于flexbox，作者想说的是这是一个跨平台的东西，安卓、web、react native、Texture等都支持，如果不想以后一直局限在iOS平台上的话，学习了解一下还是有必要的😀。
-
 今天就以一个实际的页面编写过程来介绍一下这个库究竟是如何提高iOS界面开发效率的。
 
 ## 最终的运行效果图
@@ -50,7 +48,7 @@
     <UIView layout="margin:10">
         <UILabel attr="fontSize:16,color:#333333,text:图片"/>
         <UIView layout="height:10"/>
-        <FlexContainerView name="_imgParent" layout="flexWrap:wrap,flexDirection:row,justifyContent:flex-start">           
+        <FlexContainerView name="_imgParent" layout="flexWrap:wrap,flexDirection:row,">           
             <FlexTouchView onPress="onAddImage" layout="width:20%,margin:2%,aspectRatio:1,justifyContent:center,alignItems:center" attr="borderRadius:10,borderWidth:1,borderColor:#e5e5e5,underlayColor:#e5e5e5">
                 <UILabel attr="text:+,fontSize:20,color:#999999"/>
             </FlexTouchView>
@@ -148,10 +146,10 @@ FlexTextView是另外一个系统提供的类，能够自动根据输入的文�
 
 ### 该框架能和Autolayout、Frame方式混用吗？
 
-当然可以，可以一部分页面使用Autolayout，另外一部分页面使用xml。甚至在同一个页面也可以一部分控件使用frame方式布局，另外一部分控件使用xml方式。
+当然可以，可以一部分页面使用Autolayout，另外一部分页面使用xml。甚至在同一个页面也可以一部分控件使用frame方式布局，另外一部分控件使用xml方式。具体使用方式可以参考[这里](https://github.com/zhenglibao/FlexLib/wiki/%E5%9C%A8%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%AD%E6%B7%B7%E5%90%88%E4%BD%BF%E7%94%A8%E4%BC%A0%E7%BB%9Fframe%E5%B8%83%E5%B1%80%E5%92%8Cflex%E5%B8%83%E5%B1%80)
 
 
-最后想说的是没有必要争吵xib和代码创建界面孰优孰劣，每个人都会有自己喜欢的方式。如果您对目前的界面开发方式非常满意，开发效率也很高，那么可能这个库并不适合你，这个库更适合那些对目前的开发方式有那么一点点意见的人😀
+根据在作者自己项目中的经验，使用该框架对于复杂页面最多能够节省近80%的开发时间，一般的页面也能够节省近一半的时间，当然前提是对[flexbox](https://juejin.im/post/5a33a6926fb9a045104a8d3c)模型较为熟悉。关于flexbox，作者想说的是这是一个跨平台的东西，安卓、web、react native、Texture等都支持，如果不想以后一直局限在iOS平台上的话，学习了解一下还是有必要的😀。
 
 对这个库感兴趣的读者可以在这里了解更多的信息：
 [https://github.com/zhenglibao/FlexLib](https://github.com/zhenglibao/FlexLib)
