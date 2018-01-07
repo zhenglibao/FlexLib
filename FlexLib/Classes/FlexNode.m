@@ -696,9 +696,15 @@ void FlexApplyLayoutParam(YGLayout* layout,
 {
     NSString* sFilePath = [FlexNode getResCachePath:flexName];
     
-    FlexNode* node = [NSKeyedUnarchiver unarchiveObjectWithFile:sFilePath];
-
-    return node;
+    FlexNode* node ;
+    
+    @try{
+        node = [NSKeyedUnarchiver unarchiveObjectWithFile:sFilePath];
+        return node;
+    }@catch(NSException* exception){
+        NSLog(@"Flexbox: loadFromCache failed - %@",flexName);
+    }
+    return nil;
 }
 +(void)storeToCache:(NSString*)flexName
                Node:(FlexNode*)node

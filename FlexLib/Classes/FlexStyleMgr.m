@@ -166,9 +166,15 @@
 {
     NSString* sFilePath = [FlexStyleGroup getStyleCachePath:styleName];
     
-    FlexStyleGroup* node = [NSKeyedUnarchiver unarchiveObjectWithFile:sFilePath];
+    FlexStyleGroup* node;
     
-    return node;
+    @try{
+        node = [NSKeyedUnarchiver unarchiveObjectWithFile:sFilePath];
+        return node;
+    }@catch(NSException* exception){
+        NSLog(@"Flexbox: loadFromCache style failed - %@",styleName);
+    }
+    return nil;
 }
 
 @end
