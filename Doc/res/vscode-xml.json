@@ -24,6 +24,152 @@
 			"onPress",
 		],
 	},
+
+	// uikit views
+	"UIView_":{
+		"prefix": "UIView",
+		"body": [
+			"UIView",
+		],
+	},
+	"FlexTouchView_":{
+		"prefix": "FlexTouchView",
+		"body": [
+			"FlexTouchView",
+		],
+	},
+	"FlexScrollView_":{
+		"prefix": "FlexScrollView",
+		"body": [
+			"FlexScrollView",
+		],
+	},
+	"UILabel_":{
+		"prefix": "UILabel",
+		"body": [
+			"UILabel",
+		],
+	},
+	"UITableView_":{
+		"prefix": "UITableView",
+		"body": [
+			"UITableView",
+		],
+	},
+	"UICollectionView_":{
+		"prefix": "UICollectionView",
+		"body": [
+			"UICollectionView",
+		],
+	},
+	"UIButton_":{
+		"prefix": "UIButton",
+		"body": [
+			"UIButton",
+		],
+	},
+	"UIImageView_":{
+		"prefix": "UIImageView",
+		"body": [
+			"UIImageView",
+		],
+	},
+	"UIScrollView_":{
+		"prefix": "UIScrollView",
+		"body": [
+			"UIScrollView",
+		],
+	},
+	"UITextField_":{
+		"prefix": "UITextField",
+		"body": [
+			"UITextField",
+		],
+	},
+	"UITextView_":{
+		"prefix": "UITextView",
+		"body": [
+			"UITextView",
+		],
+	},
+	"UIActivityIndicatorView_":{
+		"prefix": "UIActivityIndicatorView",
+		"body": [
+			"UIActivityIndicatorView",
+		],
+	},
+	"UIDatePicker_":{
+		"prefix": "UIDatePicker",
+		"body": [
+			"UIDatePicker",
+		],
+	},
+	"UIPageControl_":{
+		"prefix": "UIPageControl",
+		"body": [
+			"UIPageControl",
+		],
+	},
+	"UIPickerView_":{
+		"prefix": "UIPickerView",
+		"body": [
+			"UIPickerView",
+		],
+	},
+	"UIProgressView_":{
+		"prefix": "UIProgressView",
+		"body": [
+			"UIProgressView",
+		],
+	},
+	"UISearchBar_":{
+		"prefix": "UISearchBar",
+		"body": [
+			"UISearchBar",
+		],
+	},
+	"UISegmentedControl_":{
+		"prefix": "UISegmentedControl",
+		"body": [
+			"UISegmentedControl",
+		],
+	},
+	"UISlider_":{
+		"prefix": "UISlider",
+		"body": [
+			"UISlider",
+		],
+	},
+	"UIStepper_":{
+		"prefix": "UIStepper",
+		"body": [
+			"UIStepper",
+		],
+	},
+	"UISwitch_":{
+		"prefix": "UISwitch",
+		"body": [
+			"UISwitch",
+		],
+	},
+	"UITabBar_":{
+		"prefix": "UITabBar",
+		"body": [
+			"UITabBar",
+		],
+	},
+	"UIToolbar_":{
+		"prefix": "UIToolbar",
+		"body": [
+			"UIToolbar",
+		],
+	},
+	"WKWebView_":{
+		"prefix": "WKWebView",
+		"body": [
+			"WKWebView",
+		],
+	},
 	
 
 	// view
@@ -51,6 +197,20 @@
 			"</FlexTouchView>",
 		],
 		"description": "FlexTouchView element"
+	},
+	"UITableView":{
+		"prefix": "tableView",
+		"body": [
+			"<UITableView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+		],
+		"description": "UIView element"
+	},
+	"UICollectionView":{
+		"prefix": "collectionView",
+		"body": [
+			"<UICollectionView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+		],
+		"description": "UIView element"
 	},
 	"FlexScrollView":{
 		"prefix": "scrollView",
