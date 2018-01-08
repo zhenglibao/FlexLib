@@ -346,13 +346,13 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
             [self markChildDirty:object];
         }
     }else if( context == gObserverText ){
-        NSString* n = [change objectForKey:@"new"];
-        NSString* o = [change objectForKey:@"old"];
-        if([n compare:o options:NSLiteralSearch]!=NSOrderedSame){
-            [self markChildDirty:object];
-        }
-    }else if( context == gObserverAttrText ){
+        
         [self markChildDirty:object];
+        
+    }else if( context == gObserverAttrText ){
+        
+        [self markChildDirty:object];
+        
     }else{
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
