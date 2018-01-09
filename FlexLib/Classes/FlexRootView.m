@@ -390,7 +390,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 -(CGRect)getSafeArea
 {
     CGRect rcSafeArea = self.superview.frame ;
-    
+    rcSafeArea.origin = CGPointZero;
     return UIEdgeInsetsInsetRect(rcSafeArea,self.safeArea);
 }
 -(BOOL)isConfigSame
