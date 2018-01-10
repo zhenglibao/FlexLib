@@ -1420,4 +1420,222 @@
 			"opaque",
 		],
 	},
+
+	// layer properties
+	"shadowOpacity":{
+		"prefix": "shadowOpacity",
+		"body": [
+			"shadowOpacity",
+		],
+	},
+	"layerBounds":{
+		"prefix": "layerBounds",
+		"body": [
+			"layerBounds",
+		],
+	},
+	"layerPosition":{
+		"prefix": "layerPosition",
+		"body": [
+			"layerPosition",
+		],
+	},
+	"layerZPosition":{
+		"prefix": "layerZPosition",
+		"body": [
+			"layerZPosition",
+		],
+	},
+	"layerAnchorPoint":{
+		"prefix": "layerAnchorPoint",
+		"body": [
+			"layerAnchorPoint",
+		],
+	},
+	"layerAnchorPointZ":{
+		"prefix": "layerAnchorPointZ",
+		"body": [
+			"layerAnchorPointZ",
+		],
+	},
+	"layerFrame":{
+		"prefix": "layerFrame",
+		"body": [
+			"layerFrame",
+		],
+	},
+	"layerHidden":{
+		"prefix": "layerHidden",
+		"body": [
+			"layerHidden",
+		],
+	},
+	"layerDoubleSided":{
+		"prefix": "layerDoubleSided",
+		"body": [
+			"layerDoubleSided",
+		],
+	},
+	"layerGeometryFlipped":{
+		"prefix": "layerGeometryFlipped",
+		"body": [
+			"layerGeometryFlipped",
+		],
+	},
+	"layerMasksToBounds":{
+		"prefix": "layerMasksToBounds",
+		"body": [
+			"layerMasksToBounds",
+		],
+	},
+	"layerContentsRect":{
+		"prefix": "layerContentsRect",
+		"body": [
+			"layerContentsRect",
+		],
+	},
+	"layerContentsGravity":{
+		"prefix": "layerContentsGravity",
+		"body": [
+			"layerContentsGravity",
+		],
+	},
+	"layerContentsScale":{
+		"prefix": "layerContentsScale",
+		"body": [
+			"layerContentsScale",
+		],
+	},
+	"layerContentsCenter":{
+		"prefix": "layerContentsCenter",
+		"body": [
+			"layerContentsCenter",
+		],
+	},
+	"layerContentsFormat":{
+		"prefix": "layerContentsFormat",
+		"body": [
+			"layerContentsFormat",
+		],
+	},
+	"layerMinificationFilter":{
+		"prefix": "layerMinificationFilter",
+		"body": [
+			"layerMinificationFilter",
+		],
+	},
+	"layerMagnificationFiltery":{
+		"prefix": "layerMagnificationFiltery",
+		"body": [
+			"layerMagnificationFiltery",
+		],
+	},
+	"layerMinificationFilterBias":{
+		"prefix": "layerMinificationFilterBias",
+		"body": [
+			"layerMinificationFilterBias",
+		],
+	},
+	"layerOpaque":{
+		"prefix": "layerOpaque",
+		"body": [
+			"layerOpaque",
+		],
+	},
+	"layerNeedsDisplayOnBoundsChange":{
+		"prefix": "layerNeedsDisplayOnBoundsChange",
+		"body": [
+			"layerNeedsDisplayOnBoundsChange",
+		],
+	},
+	"layerDrawsAsynchronously":{
+		"prefix": "layerDrawsAsynchronously",
+		"body": [
+			"layerDrawsAsynchronously",
+		],
+	},
+	"layerAllowsEdgeAntialiasing":{
+		"prefix": "layerAllowsEdgeAntialiasing",
+		"body": [
+			"layerAllowsEdgeAntialiasing",
+		],
+	},
+	"layerBackgroundColor":{
+		"prefix": "layerBackgroundColor",
+		"body": [
+			"layerBackgroundColor",
+		],
+	},
+	"layerCornerRadius":{
+		"prefix": "layerCornerRadius",
+		"body": [
+			"layerCornerRadius",
+		],
+	},
+	"layerOpacity":{
+		"prefix": "layerOpacity",
+		"body": [
+			"layerOpacity",
+		],
+	},
+	"allowsGroupOpacity":{
+		"prefix": "allowsGroupOpacity",
+		"body": [
+			"allowsGroupOpacity",
+		],
+	},
+	"shouldRasterize":{
+		"prefix": "shouldRasterize",
+		"body": [
+			"shouldRasterize",
+		],
+	},
+	"rasterizationScale":{
+		"prefix": "rasterizationScale",
+		"body": [
+			"rasterizationScale",
+		],
+	},
+	"layerName":{
+		"prefix": "layerName",
+		"body": [
+			"layerName",
+		],
+	},
+	"userInteractionEnabled":{
+		"prefix": "userInteractionEnabled",
+		"body": [
+			"userInteractionEnabled",
+		],
+	},
+	"contentScaleFactor":{
+		"prefix": "contentScaleFactor",
+		"body": [
+			"contentScaleFactor",
+		],
+	},
+	"multipleTouchEnabled":{
+		"prefix": "multipleTouchEnabled",
+		"body": [
+			"multipleTouchEnabled",
+		],
+	},
+	"exclusiveTouch":{
+		"prefix": "exclusiveTouch",
+		"body": [
+			"exclusiveTouch",
+		],
+	},
+	"autoresizesSubviews":{
+		"prefix": "autoresizesSubviews",
+		"body": [
+			"autoresizesSubviews",
+		],
+	},
+	"clearsContextBeforeDrawing":{
+		"prefix": "clearsContextBeforeDrawing",
+		"body": [
+			"clearsContextBeforeDrawing",
+		],
+	},
 }
