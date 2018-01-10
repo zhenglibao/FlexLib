@@ -36,6 +36,7 @@ static NameValue _gcontentModes[] =
     {"bottomRight",UIViewContentModeBottomRight},
 };
 
+
 @implementation UIView (Flex)
 
 - (FlexViewAttrs *)viewAttrs
@@ -97,6 +98,11 @@ FLEXSET(shadowOffset)
         self.layer.shadowOffset = CGSizeMake(f1, f2) ;
     }
 }
+FLEXSET(shadowOpacity)
+{
+    CGFloat f = [sValue floatValue] ;
+    self.layer.shadowOpacity = f ;
+}
 FLEXSET(shadowRadius)
 {
     CGFloat f = [sValue floatValue] ;
@@ -116,4 +122,170 @@ FLEXSETINT(tag)
 FLEXSET(stickTop){
     self.viewAttrs.stickTop = String2BOOL(sValue);
 }
+FLEXSET(layerBounds)
+{
+    NSArray* ary = [sValue componentsSeparatedByString:@"/"];
+    if(ary.count==4){
+        CGFloat f1 = [ary[0] floatValue] ;
+        CGFloat f2 = [ary[1] floatValue] ;
+        CGFloat f3 = [ary[3] floatValue] ;
+        CGFloat f4 = [ary[4] floatValue] ;
+        self.layer.bounds = CGRectMake(f1, f2, f3, f4);
+    }
+}
+FLEXSET(layerPosition)
+{
+    NSArray* ary = [sValue componentsSeparatedByString:@"/"];
+    if(ary.count==2){
+        CGFloat f1 = [ary[0] floatValue] ;
+        CGFloat f2 = [ary[1] floatValue] ;
+        self.layer.position = CGPointMake(f1, f2);
+    }
+}
+FLEXSET(layerZPosition)
+{
+    CGFloat f = [sValue floatValue];
+    self.layer.zPosition = f;
+}
+FLEXSET(layerAnchorPoint)
+{
+    NSArray* ary = [sValue componentsSeparatedByString:@"/"];
+    if(ary.count==2){
+        CGFloat f1 = [ary[0] floatValue] ;
+        CGFloat f2 = [ary[1] floatValue] ;
+        self.layer.anchorPoint = CGPointMake(f1, f2);
+    }
+}
+FLEXSET(layerAnchorPointZ)
+{
+    self.layer.anchorPointZ = [sValue floatValue];
+}
+FLEXSET(layerFrame)
+{
+    NSArray* ary = [sValue componentsSeparatedByString:@"/"];
+    if(ary.count==4){
+        CGFloat f1 = [ary[0] floatValue] ;
+        CGFloat f2 = [ary[1] floatValue] ;
+        CGFloat f3 = [ary[3] floatValue] ;
+        CGFloat f4 = [ary[4] floatValue] ;
+        self.layer.frame = CGRectMake(f1, f2, f3, f4);
+    }
+}
+FLEXSET(layerHidden)
+{
+    self.layer.hidden = String2BOOL(sValue);
+}
+FLEXSET(layerDoubleSided)
+{
+    self.layer.doubleSided = String2BOOL(sValue);
+}
+FLEXSET(layerGeometryFlipped)
+{
+    self.layer.geometryFlipped = String2BOOL(sValue);
+}
+FLEXSET(layerMasksToBounds)
+{
+    self.layer.masksToBounds = String2BOOL(sValue);
+}
+FLEXSET(layerContentsRect)
+{
+    NSArray* ary = [sValue componentsSeparatedByString:@"/"];
+    if(ary.count==4){
+        CGFloat f1 = [ary[0] floatValue] ;
+        CGFloat f2 = [ary[1] floatValue] ;
+        CGFloat f3 = [ary[3] floatValue] ;
+        CGFloat f4 = [ary[4] floatValue] ;
+        self.layer.contentsRect = CGRectMake(f1, f2, f3, f4);
+    }
+}
+FLEXSET(layerContentsGravity)
+{
+    self.layer.contentsGravity = sValue;
+}
+FLEXSET(layerContentsScale)
+{
+    self.layer.contentsScale = [sValue floatValue];
+}
+FLEXSET(layerContentsCenter)
+{
+    NSArray* ary = [sValue componentsSeparatedByString:@"/"];
+    if(ary.count==4){
+        CGFloat f1 = [ary[0] floatValue] ;
+        CGFloat f2 = [ary[1] floatValue] ;
+        CGFloat f3 = [ary[3] floatValue] ;
+        CGFloat f4 = [ary[4] floatValue] ;
+        self.layer.contentsCenter = CGRectMake(f1, f2, f3, f4);
+    }
+}
+FLEXSET(layerContentsFormat)
+{
+    if (@available(iOS 10.0, *)) {
+        self.layer.contentsFormat = sValue;
+    } else {
+    }
+}
+FLEXSET(layerMinificationFilter)
+{
+    self.layer.minificationFilter = sValue;
+}
+FLEXSET(layerMagnificationFiltery)
+{
+    self.layer.magnificationFilter = sValue;
+}
+FLEXSET(layerMinificationFilterBias)
+{
+    self.layer.minificationFilterBias = [sValue floatValue];
+}
+FLEXSET(layerOpaque)
+{
+    self.layer.opaque = String2BOOL(sValue);
+}
+FLEXSET(layerNeedsDisplayOnBoundsChange)
+{
+    self.layer.needsDisplayOnBoundsChange = String2BOOL(sValue);
+}
+FLEXSET(layerDrawsAsynchronously)
+{
+    self.layer.drawsAsynchronously = String2BOOL(sValue);
+}
+FLEXSET(layerAllowsEdgeAntialiasing)
+{
+    self.layer.allowsEdgeAntialiasing = String2BOOL(sValue);
+}
+FLEXSET(layerBackgroundColor)
+{
+    self.layer.backgroundColor = colorFromString(sValue, owner).CGColor;
+}
+FLEXSET(layerCornerRadius)
+{
+    self.layer.cornerRadius = [sValue floatValue];
+}
+FLEXSET(layerOpacity)
+{
+    self.layer.opacity = [sValue floatValue];
+}
+FLEXSET(allowsGroupOpacity)
+{
+    self.layer.allowsGroupOpacity = String2BOOL(sValue);
+}
+FLEXSET(shouldRasterize)
+{
+    self.layer.shouldRasterize = String2BOOL(sValue);
+}
+FLEXSET(rasterizationScale)
+{
+    self.layer.rasterizationScale = [sValue floatValue];
+}
+FLEXSET(layerName)
+{
+    self.layer.name = sValue;
+}
+FLEXSETBOOL(userInteractionEnabled)
+FLEXSETFLT(contentScaleFactor)
+FLEXSETBOOL(multipleTouchEnabled)
+FLEXSETBOOL(exclusiveTouch)
+FLEXSETBOOL(autoresizesSubviews)
+FLEXSETBOOL(opaque)
+FLEXSETBOOL(clearsContextBeforeDrawing)
+
 @end
