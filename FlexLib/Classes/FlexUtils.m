@@ -137,7 +137,26 @@ int NSString2Int(NSString* s,
     const char* c = [s cStringUsingEncoding:NSASCIIStringEncoding];
     return String2Int(c, table, total);
 }
-
+int NSString2GroupInt(NSString* s,
+                      NameValue table[],
+                      int total)
+{
+    int result = 0;
+    NSArray* ary = [s componentsSeparatedByString:@"|"];
+    NSCharacterSet* white = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    
+    for (NSString* part in ary) {
+        NSString* ps = [part stringByTrimmingCharactersInSet:white];
+        if(ps.length==0)
+            continue;
+        
+        int tmp = NSString2Int(ps,
+                               table,
+                               total);
+        result |= tmp ;
+    }
+    return result;
+}
 BOOL String2BOOL(NSString* s)
 {
     return [s compare:@"true" options:NSDiacriticInsensitiveSearch]==NSOrderedSame;

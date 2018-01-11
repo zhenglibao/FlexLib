@@ -99,6 +99,10 @@ int NSString2Int(NSString* s,
                  NameValue table[],
                  int total);
 
+int NSString2GroupInt(NSString* s,
+                      NameValue table[],
+                      int total);
+
 // 字符串转换成颜色值，格式：black or #rrggbb or #aarrggbb
 UIColor* colorFromString(NSString* clr,NSObject* owner);
 
