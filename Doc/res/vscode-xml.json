@@ -44,6 +44,12 @@
 			"FlexScrollView",
 		],
 	},
+	"FlexCollectionView_":{
+		"prefix": "FlexCollectionView",
+		"body": [
+			"FlexCollectionView",
+		],
+	},
 	"UILabel_":{
 		"prefix": "UILabel",
 		"body": [
@@ -203,14 +209,14 @@
 		"body": [
 			"<UITableView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
 		],
-		"description": "UIView element"
+		"description": "UITableView element"
 	},
-	"UICollectionView":{
+	"FlexCollectionView":{
 		"prefix": "collectionView",
 		"body": [
-			"<UICollectionView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<FlexCollectionView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
 		],
-		"description": "UIView element"
+		"description": "FlexCollectionView element"
 	},
 	"FlexScrollView":{
 		"prefix": "scrollView",
