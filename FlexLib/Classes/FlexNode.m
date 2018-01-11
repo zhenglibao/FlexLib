@@ -358,7 +358,17 @@ void FlexApplyLayoutParam(YGLayout* layout,
     UIView* view = [owner createView:cls Name:self.name];
     if(view == nil)
     {
-        view = [[cls alloc]init];
+        @try{
+            view = [[cls alloc]init];
+            if(view == nil)
+            {
+                NSLog(@"Flexbox: Class %@ init return nil",cls);
+                return nil;
+            }
+        }@catch(NSException* exception){
+             NSLog(@"Flexbox: Class %@ init failed - %@",cls,exception);
+            return nil;
+        }
     }
     
     if(self.name.length>0){
