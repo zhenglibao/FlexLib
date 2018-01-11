@@ -25,5 +25,6 @@
 #import "FlexTouchView.h"
 #import "FlexTouchMaskView.h"
 #import "FlexTextView.h"
+#import "FlexCollectionView.h"
 
 
