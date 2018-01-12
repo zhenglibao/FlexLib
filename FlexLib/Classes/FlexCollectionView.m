@@ -14,7 +14,7 @@
 - (instancetype)init
 {
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc]init];
-    return [[FlexCollectionView alloc]initWithFrame:CGRectZero collectionViewLayout: layout];
+    return [super initWithFrame:CGRectZero collectionViewLayout: layout];
 }
 
 @end
