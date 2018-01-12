@@ -14,45 +14,45 @@
         attr="@:system/buttonText,text:@multilangdemo,linesNum:0,color:blue"/>
         
         <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
-            <FlexTouchView onPress="onTest:" layout="@:system/button" attr="@:system/buttonAttr">
+            <FlexTouchView onPress="onControls" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
-                attr="@:system/buttonText,text:Test ViewController"/>
+                attr="@:system/buttonText,text:Controls"/>
             </FlexTouchView>
             <FlexTouchView onPress="onTestTable:" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
-                attr="@:system/buttonText,text:Test TableView"/>
+                attr="@:system/buttonText,text:TableView"/>
             </FlexTouchView>
         </UIView>
         <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
             <FlexTouchView onPress="onTestScrollView:" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
-                attr="@:system/buttonText,text:Test ScrollView"/>
+                attr="@:system/buttonText,text:ScrollView"/>
             </FlexTouchView>
             <FlexTouchView onPress="onTestModalView:" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
-                attr="@:system/buttonText,text:Test ModalView"/>
+                attr="@:system/buttonText,text:ModalView"/>
             </FlexTouchView>
         </UIView>
 
         <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
             <FlexTouchView onPress="onTestLoginView:" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
-                attr="@:system/buttonText,text:Test Touch"/>
+                attr="@:system/buttonText,text:FlexTouchView"/>
             </FlexTouchView>
             <FlexTouchView onPress="onjustifyContent:" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
-                attr="@:system/buttonText,text:justifyContent Demo"/>
+                attr="@:system/buttonText,text:justifyContent"/>
             </FlexTouchView>
         </UIView>
 
        <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
             <FlexTouchView onPress="onTextView:" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
-                attr="@:system/buttonText,text:TextView Enlarge"/>
+                attr="@:system/buttonText,text:Forms"/>
             </FlexTouchView>
             <FlexTouchView onPress="onViewLayouts:" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
-                attr="@:system/buttonText,text:View Layouts"/>
+                attr="@:system/buttonText,text:Layouts"/>
             </FlexTouchView>
         </UIView>
 

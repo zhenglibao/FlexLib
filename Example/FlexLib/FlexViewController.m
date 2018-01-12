@@ -16,6 +16,7 @@
 #import "TestLoginVC.h"
 #import "DemoFlexVC.h"
 #import "TextViewVC.h"
+#import "ControlsVC.h"
 
 @interface FlexViewController ()
 {
@@ -66,5 +67,9 @@
 }
 - (void)onViewLayouts:(id)sender {
     [FlexLayoutViewerVC presentInVC:self];
+}
+- (void)onControls{
+    ControlsVC* vc=[[ControlsVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

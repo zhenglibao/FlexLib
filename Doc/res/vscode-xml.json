@@ -98,6 +98,12 @@
 			"UITextView",
 		],
 	},
+	"FlexTextView_":{
+		"prefix": "FlexTextView",
+		"body": [
+			"FlexTextView",
+		],
+	},
 	"UIActivityIndicatorView_":{
 		"prefix": "UIActivityIndicatorView",
 		"body": [
@@ -246,16 +252,16 @@
 	"UITextField":{
 		"prefix": "textField",
 		"body": [
-			"<UITextField name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:black,textAlign:left,placeHolder:$3,text:$4\"/>",
+			"<UITextField name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:black,textAlign:left,placeholder:$3,text:$4\"/>",
 		],
 		"description": "UITextField element"
 	},
-	"UITextView":{
+	"FlexTextView":{
 		"prefix": "textView",
 		"body": [
-			"<UITextView name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:black,textAlign:left\"/>",
+			"<FlexTextView name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:black,textAlign:left\"/>",
 		],
-		"description": "UITextView element"
+		"description": "FlexTextView element"
 	},
 	"UIActivityIndicatorView":{
 		"prefix": "activityIndicatorView",
@@ -1642,6 +1648,18 @@
 		"prefix": "clearsContextBeforeDrawing",
 		"body": [
 			"clearsContextBeforeDrawing",
+		],
+	},
+	"bar":{
+		"prefix": "bar",
+		"body": [
+			"bar",
+		],
+	},
+	"on":{
+		"prefix": "on",
+		"body": [
+			"on",
 		],
 	},
 }

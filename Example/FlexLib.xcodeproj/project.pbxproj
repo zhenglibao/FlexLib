@@ -42,6 +42,8 @@
 		D272A8E01FDC0DD90075DB1D /* TestLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D272A8DE1FDC0DD90075DB1D /* TestLoginVC.m */; };
 		D272A8E21FDC0DFC0075DB1D /* TestLoginVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D272A8E11FDC0DFC0075DB1D /* TestLoginVC.xml */; };
 		D272B7851FEF670F004447E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D272B7871FEF670F004447E2 /* Localizable.strings */; };
+		D28F172C200854E500F5AEB2 /* ControlsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D28F172B200854E500F5AEB2 /* ControlsVC.m */; };
+		D28F172E200855D400F5AEB2 /* ControlsVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D28F172D200855D400F5AEB2 /* ControlsVC.xml */; };
 		D297583D1FE0D069004314CF /* qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = D297583C1FE0D069004314CF /* qrcode.png */; };
 		D297585E1FE22CF2004314CF /* DemoFlexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D297585D1FE22CF2004314CF /* DemoFlexVC.m */; };
 		D29758601FE23DCD004314CF /* justifyContent.xml in Resources */ = {isa = PBXBuildFile; fileRef = D297585F1FE23DCC004314CF /* justifyContent.xml */; };
@@ -123,6 +125,9 @@
 		D272B7811FEF4B8A004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D272B7861FEF670F004447E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D272B7881FEF6711004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D28F172A200854E500F5AEB2 /* ControlsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlsVC.h; sourceTree = "<group>"; };
+		D28F172B200854E500F5AEB2 /* ControlsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControlsVC.m; sourceTree = "<group>"; };
+		D28F172D200855D400F5AEB2 /* ControlsVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ControlsVC.xml; path = res/ControlsVC.xml; sourceTree = "<group>"; };
 		D297583C1FE0D069004314CF /* qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qrcode.png; path = res/qrcode.png; sourceTree = "<group>"; };
 		D297585C1FE22CF2004314CF /* DemoFlexVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoFlexVC.h; sourceTree = "<group>"; };
 		D297585D1FE22CF2004314CF /* DemoFlexVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoFlexVC.m; sourceTree = "<group>"; };
@@ -236,6 +241,8 @@
 				D272A8CE1FDA63000075DB1D /* TestModalVC.m */,
 				D2CF9CC91FD7EB1900554A0C /* TestVC.h */,
 				D2CF9CCA1FD7EB1900554A0C /* TestVC.m */,
+				D28F172A200854E500F5AEB2 /* ControlsVC.h */,
+				D28F172B200854E500F5AEB2 /* ControlsVC.m */,
 				D2CF9CB91FD7EAFA00554A0C /* res */,
 				6003F59C195388D20070C39A /* FlexAppDelegate.h */,
 				6003F59D195388D20070C39A /* FlexAppDelegate.m */,
@@ -295,6 +302,7 @@
 		D2CF9CB91FD7EAFA00554A0C /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D28F172D200855D400F5AEB2 /* ControlsVC.xml */,
 				D24F2EC01FF6881000762ADC /* AttachmentView.xml */,
 				D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */,
 				D26F59E71FE4C0150007CB46 /* select@2x.png */,
@@ -408,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D272A8E21FDC0DFC0075DB1D /* TestLoginVC.xml in Resources */,
+				D28F172E200855D400F5AEB2 /* ControlsVC.xml in Resources */,
 				D2CF9CC71FD7EB0900554A0C /* system.style in Resources */,
 				D25F3DB91FE269AC00565892 /* CHANGELOG.md in Resources */,
 				D2CF9CC31FD7EB0900554A0C /* TestTableCell.xml in Resources */,
@@ -571,6 +580,7 @@
 				D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */,
 				6003F5A7195388D20070C39A /* FlexViewController.m in Sources */,
 				D272A8CF1FDA63000075DB1D /* TestModalVC.m in Sources */,
+				D28F172C200854E500F5AEB2 /* ControlsVC.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,7 +35,12 @@ FLEXSET(text)
 {
     self.text = sValue ;
 }
+//暂时保留兼容老版本
 FLEXSET(placeHolder)
+{
+    self.placeholder = sValue ;
+}
+FLEXSET(placeholder)
 {
     self.placeholder = sValue ;
 }

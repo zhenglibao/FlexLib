@@ -30,10 +30,10 @@ class ViewController: FlexBaseVC {
     }
 
 
-    @objc func onTest() -> Void {
+    @objc func onControls() -> Void {
        
-        let vc=TestVC.init(flexName: "test");
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let vc=Controls();
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func onTestTable() -> Void {
