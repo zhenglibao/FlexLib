@@ -9,6 +9,7 @@
 
 #import "FlexSetPreviewVC.h"
 #import "FlexNode.h"
+#import "FlexUtils.h"
 
 @interface FlexSetPreviewVC ()
 {

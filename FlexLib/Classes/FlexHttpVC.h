@@ -7,10 +7,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-
 #import "FlexBaseVC.h"
 
-@interface FlexSetPreviewVC : FlexBaseVC
+@interface FlexHttpVC : FlexBaseVC
+
+@property(nonatomic,copy) NSString* url;
 
 +(void)presentInVC:(UIViewController*)parentVC;
 

@@ -9,6 +9,7 @@
 
 "layoutVCTitle" = "全部布局";
 "previewVCTitle" = "预览设置";
+"HttpVCTitle" = "在线布局浏览器";
 
 // keyboard toolbar
 "Prev" = "上一个";
@@ -22,4 +23,10 @@
 "onlineLoad" = "在线加载所有资源";
 "onlineWarning" = "注意：打开该选项将会减慢加载速度，如果网络较慢将会阻塞界面";
 "Save" = "保存";
+
+// http vc
+"goup" = "上一级";
+"gohome" = "主页";
+"refresh" = "刷新";
+
 

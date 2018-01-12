@@ -16,6 +16,7 @@
 #import "FlexScrollView.h"
 #import "FlexSetPreviewVC.h"
 #import "FlexLayoutViewerVC.h"
+#import "FlexHttpVC.h"
 
 static void* gObserverFrame         = (void*)1;
 
@@ -244,6 +245,10 @@ static void* gObserverFrame         = (void*)1;
 {
     [FlexLayoutViewerVC presentInVC:self];
 }
+-(void)viewOnlineResources
+{
+    [FlexHttpVC presentInVC:self];
+}
 -(CGFloat)getStatusBarHeight:(BOOL)portrait
 {
     return portrait ? 20 : 0;
@@ -321,6 +326,11 @@ static void* gObserverFrame         = (void*)1;
             [UIKeyCommand keyCommandWithInput:@"v"
                                 modifierFlags:UIKeyModifierControl
                                        action:@selector(viewLayouts)],
+             
+             // view online resources
+             [UIKeyCommand keyCommandWithInput:@"e"
+                                 modifierFlags:UIKeyModifierControl
+                                        action:@selector(viewOnlineResources)],
             ];
 #else
     return @[];

@@ -203,14 +203,13 @@ void FlexSetPreviewBaseUrl(NSString* filexName)
 {
     gBaseUrl = [filexName copy];
 }
-NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
+NSString* FlexGetPreviewBaseUrl(void)
 {
-    if(gBaseUrl.length==0){
-        NSLog(@"Flexbox: preview base url not set");
-        return nil;
-    }
-    NSString* url = [NSString stringWithFormat:@"%@%@.xml",gBaseUrl,flexName];
-    
+    return [gBaseUrl copy];
+}
+NSData* FlexFetchHttpRes(NSString* url,
+                         NSError** outError)
+{
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
     NSURLResponse * response = nil;
     NSError * error = nil;
@@ -226,6 +225,16 @@ NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
     }
     return nil;
 }
+NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
+{
+    if(gBaseUrl.length==0){
+        NSLog(@"Flexbox: preview base url not set");
+        return nil;
+    }
+    NSString* url = [NSString stringWithFormat:@"%@%@.xml",gBaseUrl,flexName];
+    return FlexFetchHttpRes(url, outError);
+}
+
 NSBundle* FlexBundle(void)
 {
     NSString* flexPath = [[NSBundle bundleForClass:[FlexBaseVC class]]resourcePath];

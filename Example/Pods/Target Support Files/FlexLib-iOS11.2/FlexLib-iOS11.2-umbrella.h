@@ -16,6 +16,7 @@
 #import "FlexContainerView.h"
 #import "FlexCustomBaseView.h"
 #import "FlexFrameView.h"
+#import "FlexHttpVC.h"
 #import "FlexLayoutViewerVC.h"
 #import "FlexLib.h"
 #import "FlexModalView.h"

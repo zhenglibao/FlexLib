@@ -7,7 +7,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#import <FlexLib/FlexLib.h>
+
+#import "FlexBaseVC.h"
 
 @interface FlexLayoutViewerVC : FlexBaseVC
 

@@ -9,6 +9,7 @@
 
 "layoutVCTitle" = "All Layouts";
 "previewVCTitle" = "Flex Preview Setting";
+"HttpVCTitle" = "Online Flex Explorer";
 
 // keyboard toolbar
 "Prev" = "Prev";
@@ -22,3 +23,10 @@
 "onlineLoad" = "Online load resource";
 "onlineWarning" = "Notice: this option will slow down the load speed. UI will be blocked if network is slow or inaccessible.";
 "Save" = "Save";
+
+// http vc
+"goup" = "Up";
+"gohome" = "Home";
+"refresh" = "Refresh";
+
+
