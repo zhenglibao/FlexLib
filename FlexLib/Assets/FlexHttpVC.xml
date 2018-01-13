@@ -15,6 +15,9 @@
    <FlexTouchView onPress="onRefresh" layout="width:20%,height:35,justifyContent:center,alignItems:center" attr="underlayColor:darkGray,bgColor:#e5e9ea,borderRadius:8">
       <UILabel attr="fontSize:14,color:#157efb,linesNum:0,text:@refresh"/>
    </FlexTouchView>
+   <FlexTouchView onPress="onSetting" layout="width:20%,height:35,justifyContent:center,alignItems:center" attr="underlayColor:darkGray,bgColor:#e5e9ea,borderRadius:8">
+       <UILabel attr="fontSize:14,color:#157efb,linesNum:0,text:@setting"/>
+   </FlexTouchView>
   </UIView>
 
    <UITableView name="_table" layout="flex:1" attr="bgColor:white"/>

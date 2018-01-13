@@ -250,3 +250,62 @@ FlexLanuage FlexGetLanguage(void)
     }
     return flexEnglish;
 }
+
+/**
+ * FlexToast
+ */
+@interface FlexToast : UIView
+@property(nonatomic,strong)UILabel * label;
++(FlexToast *)makeText:(NSString *)text;
+-(void)show:(CGFloat)durationInSec;
+@end
+
+@implementation FlexToast
++(FlexToast *)makeText:(NSString *)text
+{
+    static FlexToast * toast=nil;
+    static dispatch_once_t predicate;
+    
+    const CGFloat SCALE=1.0f;
+    const CGFloat SCREENWIDTH=[[UIScreen mainScreen] bounds].size.width;
+    const CGFloat SCREENHEIGHT=[[UIScreen mainScreen] bounds].size.height;
+    
+    dispatch_once(&predicate, ^{
+        toast=[[self alloc]init];
+        toast.label=[[UILabel alloc]init];
+        toast.label.textColor=[UIColor whiteColor];
+        toast.label.textAlignment=NSTextAlignmentCenter;
+        toast.label.layer.masksToBounds=YES;
+        toast.label.numberOfLines=0;
+        toast.label.layer.cornerRadius=15*SCALE;
+        toast.label.backgroundColor=[[UIColor blackColor]colorWithAlphaComponent:0.75f];
+    });
+    
+    CGSize size=[text boundingRectWithSize:CGSizeMake(250*SCALE, 100*SCALE) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20*SCALE]} context:nil].size;
+    size.width += 20;
+    size.height += 20;
+    
+    toast.label.frame=CGRectMake((SCREENWIDTH-size.width)/2, (SCREENHEIGHT-size.height)/2.0f, size.width, size.height);
+    toast.label.text=text;
+    return toast;
+}
+-(void)show:(CGFloat)durationInSec
+{
+    UIWindow* window =  [UIApplication sharedApplication].keyWindow;
+
+    [window addSubview:self.label];
+    [window bringSubviewToFront:self.label];
+    [UIView animateWithDuration:0.4 delay:durationInSec options:UIViewAnimationOptionCurveEaseIn animations:^{
+        self.label.alpha=0;
+    } completion:^(BOOL finished) {
+        self.label.alpha=1;
+        [self.label removeFromSuperview];
+    }];
+}
+@end
+
+void FlexShowToast(NSString* message,
+                   CGFloat durationInSec)
+{
+    [[FlexToast makeText:message]show:durationInSec];
+}

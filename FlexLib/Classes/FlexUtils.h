@@ -130,3 +130,7 @@ NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError);
 NSData* FlexFetchHttpRes(NSString* url,
                          NSError** outError);
 
+//显示toast
+void FlexShowToast(NSString* message,
+                   CGFloat durationInSec);
+

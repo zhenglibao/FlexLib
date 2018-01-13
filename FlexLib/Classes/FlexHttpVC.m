@@ -9,10 +9,11 @@
 
 #import "FlexHttpVC.h"
 #import "FlexUtils.h"
+#import "FlexSetPreviewVC.h"
 
 @interface FlexHttpViewerVC : FlexBaseVC
 
-@property (nonatomic,strong) NSData* flexData;
+@property (nonatomic,copy) NSString* url;
 
 @end
 
@@ -21,9 +22,46 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     
-    if(self.flexData!=nil)
-        [self resetByFlexData:self.flexData];
+    [self viewFlexWithUrl:self.url];
 }
+- (void)reloadFlexView
+{
+     [self viewFlexWithUrl:self.url];
+}
+-(void)viewFlexWithUrl:(NSString*)url
+{
+    __weak FlexHttpViewerVC* weakSelf = self;
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(
+                                                       DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue,^{
+        
+        NSError* error = nil;
+        NSData* data = FlexFetchHttpRes(url, &error);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf onViewFlex:data error:error];
+        });
+    });
+}
+-(void)onViewFlex:(NSData*)flexData
+            error:(NSError*)error
+{
+    if(flexData!=nil){
+        
+        [self resetByFlexData:flexData];
+        
+    }else{
+        NSString* status;
+        if(error==nil){
+            status = @"Unknown error";
+        }else{
+            status = [error localizedDescription];
+        }
+        FlexShowToast(status, 1.0f);
+    }
+}
+
 @end
 
 
@@ -71,14 +109,19 @@
     
     return resourcePath;
 }
+- (void)reloadFlexView
+{
+    [self loadData];
+}
 - (NSArray<UIKeyCommand *> *)keyCommands
 {
-    return @[
-             // close: control + w
-             [UIKeyCommand keyCommandWithInput:@"w"
-                                 modifierFlags:UIKeyModifierControl
-                                        action:@selector(closeViewer)],
-             ];
+    NSMutableArray* result = [[super keyCommands]mutableCopy];
+    
+    // close: control + w
+    [result addObject:[UIKeyCommand keyCommandWithInput:@"w"
+                                          modifierFlags:UIKeyModifierControl
+                                                 action:@selector(closeViewer)]];
+    return result;
 }
 -(void)closeViewer
 {
@@ -120,8 +163,18 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     }
     
-    cell.textLabel.text = [_layouts objectAtIndex:indexPath.row*2+1];
+    NSString* name = [_layouts objectAtIndex:indexPath.row*2+1];
+    cell.textLabel.text = name;
     cell.textLabel.font = [UIFont systemFontOfSize:16];
+    
+    if([name hasSuffix:@"/"]){
+        cell.textLabel.textColor = colorFromString(@"#0921ea", nil);
+    }else if([name hasSuffix:@".xml"]){
+        cell.textLabel.textColor = colorFromString(@"#157efb", nil);
+    }else{
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.detailTextLabel.text = @"";
     return cell;
@@ -136,13 +189,20 @@
     
     NSString* href = [_layouts objectAtIndex:indexPath.row*2];
     NSString* name = [_layouts objectAtIndex:indexPath.row*2+1];
+    NSString* url = self.url ;
     
+    if(![url hasSuffix:@"/"])
+        url = [url stringByAppendingString:@"/"];
+    url = [url stringByAppendingString:href];
+        
     if([href hasSuffix:@"/"]){
-        self.url = [self.url stringByAppendingPathComponent:href];
+        self.url = url;
         [self loadData];
     }else{
-        NSString* url = [self.url stringByAppendingPathComponent:href];
-        [self viewFlexWithUrl:url name:name];
+        FlexHttpViewerVC* vc = [[FlexHttpViewerVC alloc]init];
+        vc.url = url;
+        vc.navigationItem.title = name;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -204,7 +264,7 @@
         if(error==nil){
             status = @"Unknown error";
         }else{
-            status = [error description];
+            status = [error localizedDescription];
         }
     }
     _statusBar.text = status;
@@ -232,43 +292,6 @@
         [weakSelf loadInBackground:url];
     });
 }
--(void)viewFlexWithUrl:(NSString*)url name:(NSString*)name
-{
-    __weak FlexHttpVC* weakSelf = self;
-    _statusBar.text = @"loading...";
-    
-    dispatch_queue_t queue = dispatch_get_global_queue(
-                                                       DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue,^{
-        
-        NSError* error = nil;
-        NSData* data = FlexFetchHttpRes(url, &error);
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf onViewFlex:data error:error name:name];
-        });
-    });
-}
--(void)onViewFlex:(NSData*)flexData
-            error:(NSError*)error
-             name:(NSString*)name
-{
-    if(flexData!=nil){
-        FlexHttpViewerVC* vc = [[FlexHttpViewerVC alloc]init];
-        vc.flexData = flexData;
-        vc.navigationItem.title = name;
-        [self.navigationController pushViewController:vc animated:YES];
-        _statusBar.text = @"Success";
-    }else{
-        NSString* status;
-        if(error==nil){
-            status = @"Unknown error";
-        }else{
-            status = [error description];
-        }
-        _statusBar.text = status;
-    }
-}
 
 #pragma mark - actions
 
@@ -276,6 +299,7 @@
 {
     NSString* s = [self.url stringByDeletingLastPathComponent];
     if(s.length>7){
+        s = [s stringByReplacingOccurrencesOfString:@":/" withString:@"://"];
         self.url = s;
         [self loadData];
     }
@@ -289,5 +313,8 @@
 {
     [self loadData];
 }
-
+-(void)onSetting
+{
+    [FlexSetPreviewVC presentInVC:self];
+}
 @end
