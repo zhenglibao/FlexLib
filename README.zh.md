@@ -61,26 +61,10 @@ iPhoneX adaption
 * 编写xml布局文件，下面是一个样例:
 
 ```xml
-<UIView layout="flex:1,justifyContent:center,alignItems:center" attr="bgColor:lightGray">
-    <UIView layout="height:1,width:100%" attr="bgColor:red"/>
-    <FlexScrollView name="_scroll" layout="flex:1,width:100%,alignItems:center" attr="vertScroll:true">
-        <UILabel name="_label" attr="@:system/buttonText,text:You can run on iPhoneX,color:blue"/>
-        <UIView onPress="onTest:" layout="@:system/button" attr="bgColor:#e5e5e5">
-            <UILabel attr="@:system/buttonText,text:Test ViewController"/>
-        </UIView>
-        <UIView onPress="onTestTable:" layout="@:system/button" attr="bgColor:#e5e5e5">
-            <UILabel attr="@:system/buttonText,text:Test TableView"/>
-        </UIView>
-        <UIView onPress="onTestScrollView:" layout="@:system/button" attr="bgColor:#e5e5e5">
-            <UILabel attr="@:system/buttonText,text:Test ScrollView"/>
-        </UIView>
-        <UIView onPress="onTestModalView:" layout="@:system/button" attr="bgColor:#e5e5e5">
-            <UILabel attr="@:system/buttonText,text:Test ModalView"/>
-        </UIView>
-        <UIView onPress="onTestLoginView:" layout="@:system/button" attr="bgColor:#e5e5e5">
-            <UILabel attr="@:system/buttonText,text:Login Example"/>
-        </UIView>
-    </FlexScrollView>
+<?xml version="1.0" encoding="utf-8"?>
+
+<UIView layout="flex:1,justifyContent:center,alignItems:center" attr="bgColor:white">
+    <UIView name="_test" onPress="onPressTest" layout="width:40,height:40" attr="bgColor:lightGray"/>
 </UIView>
 ```
 
@@ -89,13 +73,6 @@ iPhoneX adaption
 ```objective-c
 
 @interface FlexViewController : FlexBaseVC
-@end
-
-```
-
-```objective-c
-
-@interface FlexViewController ()
 {
     // these will be binded to those control with same name in xml file
     FlexScrollView* _scroll;
@@ -111,20 +88,11 @@ iPhoneX adaption
     
     self.navigationItem.title = @"FlexLib Demo";
 }
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+// event binding
 - (void)onTest:(id)sender {
     TestVC* vc=[[TestVC alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
 }
-- (void)onTestTable:(id)sender {
-    TestTableVC* vc=[[TestTableVC alloc]init];
-    [self presentViewController:vc animated:YES completion:nil];
-}
-
 @end
 
 ```
@@ -149,13 +117,6 @@ iPhoneX adaption
 ```objective-c
 
 @interface TestTableCell : FlexBaseTableCell
-@end
-
-```
-
-```objective-c
-
-@interface TestTableCell()
 {
     UILabel* _name;
     UILabel* _model;

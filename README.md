@@ -81,51 +81,18 @@ iPhone X adaption
 The following is a demo file:
 
 ```xml
-<UIView layout="flex:1,justifyContent:center,alignItems:center" attr="bgColor:lightGray">
-    <UIView layout="height:1,width:100%" attr="bgColor:red"/>
-    <FlexScrollView name="_scroll" layout="flex:1,width:100%,alignItems:center" attr="vertScroll:true">
-        <UILabel name="_label" attr="@:system/buttonText,text:You can run on iPhoneX,color:blue"/>
-        <UIView onPress="onTest:" layout="@:system/button" attr="bgColor:#e5e5e5">
-            <UILabel attr="@:system/buttonText,text:Test ViewController"/>
-        </UIView>
-        <UIView onPress="onTestTable:" layout="@:system/button" attr="bgColor:#e5e5e5">
-            <UILabel attr="@:system/buttonText,text:Test TableView"/>
-        </UIView>
-        <UIView onPress="onTestScrollView:" layout="@:system/button" attr="bgColor:#e5e5e5">
-            <UILabel attr="@:system/buttonText,text:Test ScrollView"/>
-        </UIView>
-        <UIView onPress="onTestModalView:" layout="@:system/button" attr="bgColor:#e5e5e5">
-            <UILabel attr="@:system/buttonText,text:Test ModalView"/>
-        </UIView>
-        <UIView onPress="onTestLoginView:" layout="@:system/button" attr="bgColor:#e5e5e5">
-            <UILabel attr="@:system/buttonText,text:Login Example"/>
-        </UIView>
-    </FlexScrollView>
+<?xml version="1.0" encoding="utf-8"?>
+
+<UIView layout="flex:1,justifyContent:center,alignItems:center" attr="bgColor:white">
+    <UIView name="_test" onPress="onPressTest" layout="width:40,height:40" attr="bgColor:lightGray"/>
 </UIView>
 ```
-
-You can use any UIView subclass in xml file. Every element can have four attribute:  name, onPress, layout, attr.
-
-Every element with name attribute will bind to variable in owner.
-
-Every element with onPress attribute will bind to selector in owner.
-
-You can specify any flexbox attribute in layout attribute, like width、height、padding、margin、justifyContent、alignItems etc.
-
-'attr' support view attribute, like background color, font, text, ...
 
 * Derive view controller class from FlexBaseVC
 
 ```objective-c
 
 @interface FlexViewController : FlexBaseVC
-@end
-
-```
-
-```objective-c
-
-@interface FlexViewController ()
 {
     // these will be binded to those control with same name in xml file
     FlexScrollView* _scroll;
@@ -179,13 +146,6 @@ You can specify any flexbox attribute in layout attribute, like width、height�
 ```objective-c
 
 @interface TestTableCell : FlexBaseTableCell
-@end
-
-```
-
-```objective-c
-
-@interface TestTableCell()
 {
     UILabel* _name;
     UILabel* _model;
