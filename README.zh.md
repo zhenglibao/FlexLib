@@ -216,36 +216,9 @@ iPhoneX adaption
 ---
 
 ## 运行时编辑预览界面
+您可以在[这里](https://github.com/zhenglibao/FlexLib/wiki/Hot-preview)获取关于热预览的信息
 
-### 编辑预览视图控制器界面
-
-* 在工作目录开启http服务器：
-
-如果mac系统安装的是python2.7，可以在命令行通过如下命令开启：python -m SimpleHTTPServer 8000
-
-* 在程序初始化的地方设置访问本机http服务器的基地址:
-
-    FlexSetPreviewBaseUrl(@"http://你本机的ip:端口号/FlexLib/res/");
-
-* 运行程序，打开要调试的视图控制器，在模拟器中按下Cmd+R来刷新界面. 注意：该快捷键仅在debug模式下可用.
-
-**注意：Cmd+R是在模拟器中当试图控制器处于显示状态时按下的，不是在xcode里边。baseurl是用来拼接资源的url用的。比如你设置的是'http://ip:port/abc/',而你需要访问TestVC，则最终的url将是'http://ip:port/abc/TestVC.xml'**
-
-### 编辑预览任意界面
-
-* 按照前面方法开启http服务器并设置http基地址
-
-* 设置资源加载方式
-    FlexSetLoadFunc(YES) or
-    FlexSetCustomLoadFunc(loadfunc)
-这样程序运行后所有界面将通过http进行加载，如果网络速度慢可能会导致界面卡顿
-
-### 通过界面设置预览参数(仅在debug模式下可用)
-* 当基于FlexBaseVC的界面处于显示状态时，按下Cmd+D
-* 在呼出的界面中设置以上对应参数，然后保存
-* 在程序启动时调用FlexRestorePreviewSetting恢复所有设置
-
-
+---
 ## 在Swift工程中使用
 * 将Podfile文件调整为使用framework方式，如下
 ![podfile](https://raw.githubusercontent.com/zhenglibao/FlexLib/master/Doc/res/podfile.png)

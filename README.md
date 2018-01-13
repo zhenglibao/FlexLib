@@ -246,38 +246,8 @@ You can specify any flexbox attribute in layout attribute, like width„ÄÅheight„Ä
 ---
 
 ## Hot preview
-### Hot preview for view controller
-* start http server in your local folder
+You can see it [here](https://github.com/zhenglibao/FlexLib/wiki/Hot-preview)
 
-    For mac with python2.7 installed:
-
-    open Terminal and go to your folder, then input:
-
-    python -m SimpleHTTPServer 8000
-
-* Set preview base url, call like this:
-
-    FlexSetPreviewBaseUrl(@"http://192.168.6.104:8000/FlexLib/res/");
-
-* Run your project, you can press Cmd+R to reload the layout on simulator. Notice: this shortcut is available only on debug mode.
-
-**Notice: Cmd+R should be pressed on simulator when view controller is shown, not in XCode. The base url will be used to concate the resource url. For example, if the base url is 'http://ip:port/abc/' and you want to access flex resource 'TestVC', then your final url will be 'http://ip:port/abc/TestVC.xml'**
-
-
-### hot preview for any UI
-
-* Start http server in your local folder as before
-
-* Set preview base url
-
-* Set resource load way
-    FlexSetLoadFunc(YES) or
-    FlexSetCustomLoadFunc(loadfunc)
-
-### Set preview parameter without modify your code everytime (Debug mode only)
-* Press Cmd+D when any view controller based on FlexBaseVC is shown
-* Set all parameters then save.
-* Call FlexRestorePreviewSetting when app init. This will restore all setting.
 ---
 ## Usage For Swift Project
 * Adjust 'Podfile' to use frameworks
