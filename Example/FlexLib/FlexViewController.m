@@ -72,4 +72,8 @@
     ControlsVC* vc=[[ControlsVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+-(void)onExplorerFlex
+{
+    [FlexHttpVC presentInVC:self];
+}
 @end

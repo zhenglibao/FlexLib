@@ -56,5 +56,11 @@
             </FlexTouchView>
         </UIView>
 
+    <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
+        <FlexTouchView onPress="onExplorerFlex" layout="@:system/button,width:50%" attr="@:system/buttonAttr">
+        <UILabel
+        attr="@:system/buttonText,text:Online Flex Explorer"/>
+    </FlexTouchView>
+</UIView>
     </FlexScrollView>
 </UIView> 

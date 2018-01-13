@@ -23,6 +23,6 @@
    <UITableView name="_table" layout="flex:1" attr="bgColor:white"/>
 
    <UIView layout="height:40,paddingLeft:14,paddingRight:14,justifyContent:center" attr="bgColor:#f6f6f6">
-     <UILabel name="_statusBar" layout="height:40,marginLeft:14,marginRight:14" attr="fontSize:14,color:#157efb,linesNum:0,text:空闲!"/>
+     <UILabel name="_statusBar" attr="fontSize:14,color:#157efb,linesNum:0,text:空闲!"/>
   </UIView>
 </UIView>

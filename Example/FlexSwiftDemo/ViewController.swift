@@ -64,6 +64,8 @@ class ViewController: FlexBaseVC {
     @objc func onViewLayouts() -> Void {
         FlexLayoutViewerVC.present(inVC: self)
     }
-    
+    @objc func onExplorerFlex()->Void{
+        FlexHttpVC.present(inVC: self)
+    }
 }
 
