@@ -227,7 +227,7 @@ static FlexStyleMgr* _instance=nil;
         if(filePath != nil){
             [group loadFromFile:filePath];
         }else{
-            NSLog(@"Flexbox: style file %@ not found.",fileName);
+            NSLog(@"Flexbox: style %@ not found.",fileName);
         }
         [_files setObject:group forKey:fileName];
         

@@ -119,18 +119,10 @@ BOOL IsPortrait(void);
 //获取自1970/1/1到现在的精确秒数，精确到微秒
 double GetAccurateSecondsSince1970(void);
 
-//设置baseUrl
-void FlexSetPreviewBaseUrl(NSString* filexName);
-NSString* FlexGetPreviewBaseUrl(void);
-
-//通过http拉取布局文件
-NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError);
-
-//拉取http资源
-NSData* FlexFetchHttpRes(NSString* url,
-                         NSError** outError);
-
 //显示toast
 void FlexShowToast(NSString* message,
                    CGFloat durationInSec);
+
+void FlexShowBusyForView(UIView* view);
+void FlexHideBusyForView(UIView* view);
 

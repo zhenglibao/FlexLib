@@ -15,4 +15,6 @@
 
 +(void)presentInVC:(UIViewController*)parentVC;
 
++(NSMutableArray*)extractLinks:(NSString*)data;
+
 @end

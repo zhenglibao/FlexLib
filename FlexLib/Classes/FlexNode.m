@@ -43,6 +43,10 @@ static BOOL gbUserCache = NO;
 static BOOL gbUserCache = YES;
 #endif
 
+// 布局文件索引，Flexname -> Http Url
+static NSDictionary* gFlexIndex = nil;
+static NSString* gBaseUrl = nil;
+
 static NameValue _direction[] =
 {{"inherit", YGDirectionInherit},
  {"ltr", YGDirectionLTR},
@@ -724,6 +728,53 @@ void FlexApplyLayoutParam(YGLayout* layout,
 }
 @end
 
+#pragma mark - Global Functions
+
+void FlexSetPreviewBaseUrl(NSString* filexName)
+{
+    gBaseUrl = [filexName copy];
+}
+NSString* FlexGetPreviewBaseUrl(void)
+{
+    return [gBaseUrl copy];
+}
+NSData* FlexFetchHttpRes(NSString* url,
+                         NSError** outError)
+{
+    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest
+                                          returningResponse:&response
+                                                      error:&error];
+    
+    if (error == nil)
+    {
+        return data;
+    }else if(outError != NULL){
+        *outError = error;
+    }
+    return nil;
+}
+NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
+{
+    if(gBaseUrl.length==0){
+        NSLog(@"Flexbox: preview base url not set");
+        return nil;
+    }
+    NSString* url ;
+    
+    if(gFlexIndex != nil){
+        @synchronized(gFlexIndex){
+            url = [gFlexIndex valueForKey:flexName];
+        }
+    }
+    if(url == nil){
+        url = [NSString stringWithFormat:@"%@%@.xml",gBaseUrl,flexName];
+    }
+    return FlexFetchHttpRes(url, outError);
+}
+
 NSData* loadFromFile(NSString* resName)
 {
     NSString* path;
@@ -752,6 +803,30 @@ NSData* loadFromNetwork(NSString* resName)
 }
 
 
+void FlexSetFlexIndex(NSDictionary* resIndex)
+{
+    if(resIndex != nil){
+        gFlexIndex = [resIndex copy];
+        
+        NSString* sFilePath = [FlexNode getCacheDir];
+        sFilePath = [sFilePath stringByAppendingPathComponent:FLEXINDEXNAME];
+        [NSKeyedArchiver archiveRootObject:resIndex toFile:sFilePath];
+    }
+}
+void FlexLoadFlexIndex(void)
+{
+    NSString* sFilePath = [FlexNode getCacheDir];
+    sFilePath = [sFilePath stringByAppendingPathComponent:FLEXINDEXNAME];
+    
+    @try{
+        NSDictionary* dic = [NSKeyedUnarchiver unarchiveObjectWithFile:sFilePath];
+        if(dic!=nil){
+            gFlexIndex = dic;
+        }
+    }@catch(NSException* exception){
+    }
+}
+
 void FlexRestorePreviewSetting(void)
 {
 #ifdef DEBUG
@@ -763,12 +838,12 @@ void FlexRestorePreviewSetting(void)
     
     FlexSetPreviewBaseUrl(baseurl);
     FlexSetLoadFunc(onlineLoad?flexFromNet:flexFromFile);
+    FlexLoadFlexIndex();
 #endif
 }
 
 void FlexSetLoadFunc(FlexLoadMethod loadFrom)
 {
-#ifdef DEBUG
     if(loadFrom == flexFromFile){
         gLoadFunc = loadFromFile ;
     }else if(loadFrom == flexFromNet){
@@ -776,9 +851,6 @@ void FlexSetLoadFunc(FlexLoadMethod loadFrom)
     }else{
         NSLog(@"Flexbox: please call FlexSetCustomLoadFunc");
     }
-#else
-    gLoadFunc = loadFromFile ;
-#endif
 }
 void FlexSetCustomLoadFunc(FlexLoadFunc func)
 {
@@ -826,6 +898,9 @@ float FlexGetScaleOffset(void)
 {
     return gfScaleOffset;
 }
+
+#pragma mark - Owner overridable functions
+
 @implementation NSObject (Flex)
 
 -(UIView*)createView:(Class)cls

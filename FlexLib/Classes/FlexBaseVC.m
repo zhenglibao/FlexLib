@@ -17,6 +17,7 @@
 #import "FlexSetPreviewVC.h"
 #import "FlexLayoutViewerVC.h"
 #import "FlexHttpVC.h"
+#import "FlexNode.h"
 
 static void* gObserverFrame         = (void*)1;
 

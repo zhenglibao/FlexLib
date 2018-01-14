@@ -10,13 +10,91 @@
 #import "FlexSetPreviewVC.h"
 #import "FlexNode.h"
 #import "FlexUtils.h"
+#import "FlexHttpVC.h"
 
-@interface FlexSetPreviewVC ()
+@protocol FlexIndexProtocol<NSObject>
+@required
+-(BOOL)shouldContinue;
+-(void)onProgress:(CGFloat)percent; // 0~1
+-(void)onError:(NSString*)error;
+@end
+
+NSString* appendPathComponent(NSString* baseUrl,NSString* filename)
+{
+    if(![baseUrl hasSuffix:@"/"])
+        baseUrl = [baseUrl stringByAppendingString:@"/"];
+    return [baseUrl stringByAppendingString:filename];
+}
+
+void createFlexIndex(NSString* url,
+                     NSMutableDictionary* flexIndex,
+                     CGFloat basePercent,
+                     CGFloat startPercent,
+                     id<FlexIndexProtocol> delegate)
+{
+    if(![delegate shouldContinue])
+        return;
+    
+    NSError* error = nil;
+    NSData* data = FlexFetchHttpRes(url, &error);
+    if(data!=nil){
+        
+        NSString* sdata = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        NSArray* links = [FlexHttpVC extractLinks:sdata];
+        
+        if(links.count==0){
+            [delegate onProgress:basePercent+startPercent];
+            return;
+        }
+        
+        CGFloat thisBasePercent = basePercent/links.count;
+        
+        for (NSInteger i=0;i<links.count;i+=2) {
+            NSString* link = links[i];
+            NSString* name = links[i+1];
+            NSString* fullPath = appendPathComponent(url, link);
+            CGFloat thisStartPercent = startPercent + thisBasePercent*i;
+            
+            if([name hasSuffix:@"/"]){
+                
+                createFlexIndex(fullPath,
+                                flexIndex,
+                                thisBasePercent*2.0,
+                                thisStartPercent,
+                                delegate);
+                
+            }else if([name hasSuffix:@".xml"]){
+                name = [name stringByDeletingPathExtension];
+                [flexIndex setObject:fullPath forKey:name];
+            }
+            [delegate onProgress:thisStartPercent+thisBasePercent*2.0];
+            
+            if(![delegate shouldContinue])
+                return;
+        }
+        [delegate onProgress:basePercent+startPercent];
+        
+    }else{
+        NSString* se ;
+        if(error == nil)
+            se = @"unknown error";
+        else
+            se = [error localizedDescription];
+        
+        [delegate onError:se];
+    }
+}
+
+@interface FlexSetPreviewVC ()<FlexIndexProtocol>
 {
     UITextField* _baseUrlField;
     UISwitch* _loadSwitch;
-    
     UILabel* _warning;
+    UIProgressView* _progress;
+    
+    NSString* _errorMsg;
+    BOOL _creatingIndex;
+    BOOL _canContinue;
 }
 
 @end
@@ -41,6 +119,18 @@
     _loadSwitch.on = [defaults boolForKey:FLEXONLINELOAD];
     _warning.hidden = !_loadSwitch.on;
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    _canContinue = YES;
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    _canContinue = NO;
+}
+- (void)dealloc
+{
+    
+}
 - (NSArray<UIKeyCommand *> *)keyCommands
 {
     return @[];
@@ -59,6 +149,15 @@
     
     baseurl = [baseurl stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
+    if(baseurl.length==0){
+        FlexShowToast(FlexLocalizeString(@"baseUrlNonNull"), 1.0f);
+        return;
+    }
+    
+    if(![baseurl hasSuffix:@"/"]){
+        baseurl = [baseurl stringByAppendingString:@"/"];
+    }
+    
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
     [defaults setObject:baseurl forKey:FLEXBASEURL];
@@ -67,6 +166,72 @@
     FlexSetPreviewBaseUrl(baseurl);
     FlexSetLoadFunc(onlineLoad?flexFromNet:flexFromFile);
 }
+
+-(void)onCreateIndexFinish:(NSDictionary*)dict
+{
+    FlexHideBusyForView(self.view);
+
+    _creatingIndex = NO;
+    _progress.hidden = YES;
+    
+    if(_errorMsg!=nil){
+        FlexShowToast(_errorMsg, 1.0f);
+    }else{
+        FlexSetFlexIndex(dict);
+        FlexShowToast(FlexLocalizeString(@"createFlexIndexStatus"), 1.0f);
+    }
+}
+-(void)onCreateIndex
+{
+    if(_creatingIndex)
+        return ;
+    
+    _creatingIndex = YES;
+
+    __weak FlexSetPreviewVC* weakSelf = self;
+    
+    _errorMsg = nil;
+    _progress.hidden = NO;
+    _progress.progress = 0;
+    
+    FlexShowBusyForView(self.view);
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(
+                                                       DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue,^{
+        
+        NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+        
+        createFlexIndex(FlexGetPreviewBaseUrl(),
+                        dict, 1, 0, weakSelf);
+        
+        dispatch_async(dispatch_get_main_queue(),
+                       ^{
+                           [weakSelf onCreateIndexFinish:dict];
+                       });
+    });
+}
+
+#pragma mark - create index delegate
+
+-(BOOL)shouldContinue
+{
+    return _canContinue;
+}
+-(void)onProgress:(CGFloat)percent
+{
+    dispatch_async(dispatch_get_main_queue(),
+                   ^{
+                       _progress.progress = percent;
+                   });
+}
+-(void)onError:(NSString*)error
+{
+    _errorMsg = error;
+}
+
+#pragma mark - present
+
 +(void)presentInVC:(UIViewController*)parentVC{
     
     NSString* flexName = NSStringFromClass([FlexSetPreviewVC class]);

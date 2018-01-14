@@ -9,6 +9,7 @@
 
 #import "FlexHttpVC.h"
 #import "FlexUtils.h"
+#import "FlexNode.h"
 #import "FlexSetPreviewVC.h"
 
 @interface FlexHttpViewerVC : FlexBaseVC
@@ -213,7 +214,7 @@
  * 返回提取内容，<a href="path">title</a>
  * 将path和title一对一加入到数组中返回
  */
--(NSMutableArray*)extractLinks:(NSString*)data
++(NSMutableArray*)extractLinks:(NSString*)data
 {
     NSString * patton = @"<a href=\"([^<>]+)\">([^<>]+)</a>";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:patton options:NSRegularExpressionCaseInsensitive error:nil];
@@ -243,7 +244,7 @@
     
     if(data != nil){
         NSString* sdata = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-        links = [self extractLinks:sdata];
+        links = [FlexHttpVC extractLinks:sdata];
     }
     __weak FlexHttpVC* weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{

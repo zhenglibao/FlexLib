@@ -197,43 +197,6 @@ double GetAccurateSecondsSince1970()
     return tf;
 }
 
-static NSString* gBaseUrl = nil;
-
-void FlexSetPreviewBaseUrl(NSString* filexName)
-{
-    gBaseUrl = [filexName copy];
-}
-NSString* FlexGetPreviewBaseUrl(void)
-{
-    return [gBaseUrl copy];
-}
-NSData* FlexFetchHttpRes(NSString* url,
-                         NSError** outError)
-{
-    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
-    NSURLResponse * response = nil;
-    NSError * error = nil;
-    NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest
-                                          returningResponse:&response
-                                                      error:&error];
-    
-    if (error == nil)
-    {
-        return data;
-    }else if(outError != NULL){
-        *outError = error;
-    }
-    return nil;
-}
-NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
-{
-    if(gBaseUrl.length==0){
-        NSLog(@"Flexbox: preview base url not set");
-        return nil;
-    }
-    NSString* url = [NSString stringWithFormat:@"%@%@.xml",gBaseUrl,flexName];
-    return FlexFetchHttpRes(url, outError);
-}
 
 NSBundle* FlexBundle(void)
 {
@@ -308,4 +271,40 @@ void FlexShowToast(NSString* message,
                    CGFloat durationInSec)
 {
     [[FlexToast makeText:message]show:durationInSec];
+}
+
+/////////////////////
+//
+void FlexShowBusyForView(UIView* view)
+{
+    const NSInteger tag = 4321;
+    if(view==nil || [view viewWithTag:tag]!=nil){
+        return;
+    }
+    
+    CGRect rcBusy = CGRectMake(0, 0, 80, 80);
+    UIView* busyView = [[UIView alloc]initWithFrame:rcBusy];
+    busyView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.75f];
+    busyView.layer.cornerRadius = 6;
+    busyView.tag = tag;
+    busyView.center = CGPointMake(view.frame.size.width/2.0f, view.frame.size.height/2.0f);
+    
+    UIActivityIndicatorView* indicView = [UIActivityIndicatorView new];
+    indicView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    indicView.center = CGPointMake(rcBusy.size.width/2.0f, rcBusy.size.height/2.0f);
+    
+    [busyView addSubview:indicView];
+    [view addSubview:busyView];
+    [indicView startAnimating];
+}
+
+void FlexHideBusyForView(UIView* view)
+{
+    const NSInteger tag = 4321;
+    if(view!=nil){
+        UIView* busyView = [view viewWithTag:tag];
+        if(busyView!=nil){
+            [busyView removeFromSuperview];
+        }
+    }
 }
