@@ -22,6 +22,8 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:FlexLocalizeString(@"refresh") style:UIBarButtonItemStylePlain target:self action:@selector(reloadFlexView)];
+    
     [self viewFlexWithUrl:self.url];
 }
 - (void)reloadFlexView

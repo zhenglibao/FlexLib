@@ -224,7 +224,11 @@ static FlexStyleMgr* _instance=nil;
         group = [[FlexStyleGroup alloc]init];
         
         NSString* filePath = [[NSBundle mainBundle]pathForResource:fileName ofType:@"style"];
-        [group loadFromFile:filePath];
+        if(filePath != nil){
+            [group loadFromFile:filePath];
+        }else{
+            NSLog(@"Flexbox: style file %@ not found.",fileName);
+        }
         [_files setObject:group forKey:fileName];
         
         if(FlexIsCacheEnabled()){
