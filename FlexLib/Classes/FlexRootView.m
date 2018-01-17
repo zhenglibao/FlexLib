@@ -343,15 +343,15 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         BOOL o = [[change objectForKey:@"old"] boolValue];
         if(n!=o){
             object.yoga.isIncludedInLayout = !n;
-            [self markChildDirty:object];
+            [object markDirty];
         }
     }else if( context == gObserverText ){
         
-        [self markChildDirty:object];
+        [object markDirty];
         
     }else if( context == gObserverAttrText ){
         
-        [self markChildDirty:object];
+        [object markDirty];
         
     }else{
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
