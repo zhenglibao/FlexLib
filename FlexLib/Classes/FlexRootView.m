@@ -451,6 +451,8 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 
     _bInLayouting = NO ;
     _bChildDirty = NO;
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:FLEXDIDLAYOUT object:self];
 }
 
 -(CGSize)calculateSize:(CGSize)szLimit

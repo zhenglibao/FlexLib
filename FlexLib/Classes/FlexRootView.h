@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+// 布局完成事件通知
+#define FLEXDIDLAYOUT @"FlexDidLayout"
+
 @class FlexAttr;
 @class FlexRootView;
 
@@ -77,7 +80,8 @@
 @property(nonatomic,copy) void (^beginLayout)(void);
 @property(nonatomic,copy) void (^endLayout)(void);
 
-//事件通知
+//事件通知,布局完成事件也可以通过[NSNotificationCenter defaultCenter]
+//注册FLEXDIDLAYOUT事件进行接收
 @property(nonatomic,copy) void (^onWillLayout)(void);
 @property(nonatomic,copy) void (^onDidLayout)(void);
 
