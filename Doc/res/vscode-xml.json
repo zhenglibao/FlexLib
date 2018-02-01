@@ -1500,6 +1500,12 @@
 			"layerMasksToBounds",
 		],
 	},
+	"masksToBounds":{
+		"prefix": "masksToBounds",
+		"body": [
+			"masksToBounds",
+		],
+	},
 	"layerContentsRect":{
 		"prefix": "layerContentsRect",
 		"body": [
@@ -1660,6 +1666,283 @@
 		"prefix": "on",
 		"body": [
 			"on",
+		],
+	},
+
+	"autocapitalizationType":{
+		"prefix": "autocapitalizationType",
+		"body": [
+			"autocapitalizationType",
+		],
+	},
+	"autocorrectionType":{
+		"prefix": "autocorrectionType",
+		"body": [
+			"autocorrectionType",
+		],
+	},
+	"spellCheckingType":{
+		"prefix": "spellCheckingType",
+		"body": [
+			"spellCheckingType",
+		],
+	},
+	"secureTextEntry":{
+		"prefix": "secureTextEntry",
+		"body": [
+			"secureTextEntry",
+		],
+	},
+	"keyboardType":{
+		"prefix": "keyboardType",
+		"body": [
+			"keyboardType",
+		],
+	},
+	"keyboardAppearanceon":{
+		"prefix": "keyboardAppearance",
+		"body": [
+			"keyboardAppearance",
+		],
+	},
+	"returnKeyType":{
+		"prefix": "returnKeyType",
+		"body": [
+			"returnKeyType",
+		],
+	},
+	"clearButtonMode":{
+		"prefix": "clearButtonMode",
+		"body": [
+			"clearButtonMode",
+		],
+	},
+	"enablesReturnKeyAutomatically":{
+		"prefix": "enablesReturnKeyAutomatically",
+		"body": [
+			"enablesReturnKeyAutomatically",
+		],
+	},
+	"leftViewMode":{
+		"prefix": "leftViewMode",
+		"body": [
+			"leftViewMode",
+		],
+	},
+	"rightViewMode":{
+		"prefix": "rightViewMode",
+		"body": [
+			"rightViewMode",
+		],
+	},
+
+	"asciiCapable":{
+		"prefix": "asciiCapable",
+		"body": [
+			"asciiCapable",
+		],
+	},
+	"numberAndPunct":{
+		"prefix": "numberAndPunct",
+		"body": [
+			"numberAndPunct",
+		],
+	},
+	"url":{
+		"prefix": "url",
+		"body": [
+			"url",
+		],
+	},
+	"numberPad":{
+		"prefix": "numberPad",
+		"body": [
+			"numberPad",
+		],
+	},
+	"phonePad":{
+		"prefix": "phonePad",
+		"body": [
+			"phonePad",
+		],
+	},
+	"namePhonePad":{
+		"prefix": "namePhonePad",
+		"body": [
+			"namePhonePad",
+		],
+	},
+	"emailAddress":{
+		"prefix": "emailAddress",
+		"body": [
+			"emailAddress",
+		],
+	},
+
+
+	"decimalPad":{
+		"prefix": "decimalPad",
+		"body": [
+			"decimalPad",
+		],
+	},
+	"twitter":{
+		"prefix": "twitter",
+		"body": [
+			"twitter",
+		],
+	},
+	"webSearch":{
+		"prefix": "webSearch",
+		"body": [
+			"webSearch",
+		],
+	},
+	"asciiCapableNumberPad":{
+		"prefix": "asciiCapableNumberPad",
+		"body": [
+			"asciiCapableNumberPad",
+		],
+	},
+	"never":{
+		"prefix": "never",
+		"body": [
+			"never",
+		],
+	},
+	"whileEditing":{
+		"prefix": "whileEditing",
+		"body": [
+			"whileEditing",
+		],
+	},
+	"unlessEditing":{
+		"prefix": "unlessEditing",
+		"body": [
+			"unlessEditing",
+		],
+	},
+
+	"always":{
+		"prefix": "always",
+		"body": [
+			"always",
+		],
+	},
+	"words":{
+		"prefix": "words",
+		"body": [
+			"words",
+		],
+	},
+	"allCharacters":{
+		"prefix": "allCharacters",
+		"body": [
+			"allCharacters",
+		],
+	},
+	"no":{
+		"prefix": "no",
+		"body": [
+			"no",
+		],
+	},
+
+
+	"no":{
+		"prefix": "no",
+		"body": [
+			"no",
+		],
+	},
+	"yes":{
+		"prefix": "yes",
+		"body": [
+			"yes",
+		],
+	},
+	"dark":{
+		"prefix": "dark",
+		"body": [
+			"dark",
+		],
+	},
+	"light":{
+		"prefix": "light",
+		"body": [
+			"light",
+		],
+	},
+	"alert":{
+		"prefix": "alert",
+		"body": [
+			"alert",
+		],
+	},
+	"go":{
+		"prefix": "go",
+		"body": [
+			"go",
+		],
+	},
+	"google":{
+		"prefix": "google",
+		"body": [
+			"google",
+		],
+	},
+	"join":{
+		"prefix": "join",
+		"body": [
+			"join",
+		],
+	},
+	"next":{
+		"prefix": "next",
+		"body": [
+			"next",
+		],
+	},
+	"route":{
+		"prefix": "route",
+		"body": [
+			"route",
+		],
+	},
+	"search":{
+		"prefix": "search",
+		"body": [
+			"search",
+		],
+	},
+	"send":{
+		"prefix": "send",
+		"body": [
+			"send",
+		],
+	},
+	"yahoo":{
+		"prefix": "yahoo",
+		"body": [
+			"yahoo",
+		],
+	},
+	"done":{
+		"prefix": "done",
+		"body": [
+			"done",
+		],
+	},
+	"emergencyCall":{
+		"prefix": "emergencyCall",
+		"body": [
+			"emergencyCall",
+		],
+	},
+	"continue":{
+		"prefix": "continue",
+		"body": [
+			"continue",
 		],
 	},
 }

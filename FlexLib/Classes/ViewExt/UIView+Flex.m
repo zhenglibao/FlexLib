@@ -187,6 +187,10 @@ FLEXSET(layerMasksToBounds)
 {
     self.layer.masksToBounds = String2BOOL(sValue);
 }
+FLEXSET(masksToBounds)
+{
+    self.layer.masksToBounds = String2BOOL(sValue);
+}
 FLEXSET(layerContentsRect)
 {
     NSArray* ary = [sValue componentsSeparatedByString:@"/"];
