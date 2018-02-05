@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flex:1,
+    alignItems:center,marginTop:64"
+    attr="bgColor:white">
+    <UIView layout="height:1,width:100%" attr="bgColor:red"/>
+    
+    <FlexScrollView name="scroll"  layout="padding:10,flex:1,width:100%" attr="bgColor:#f5f5f5,vertScroll:true,horzIndicator:false,vertIndicator:true">
+        <UILabel layout="margin:10" attr="fontSize:16,linesNum:0,color:red,text:这个页面的控制器直接从UIViewController继承，不使用FlexBaseVC，注意这个xml里边的最外层view的marginTop设置成了64"/>
+        
+        
+        <UILabel attr="fontSize:14,color:#666666,text:Serial No."/>
+        <UIView layout="height:20"/>
+        <UITextField layout="height:50" attr="@:system/filterLeftLabel,text:,placeHolder:Input the sn here,@:system/border"/>
+        <UIView layout="height:20"/>
+        <UILabel layout="width:100%,height:50" attr="stickTop:true,bgColor:lightGray,fontSize:18,color:#880000,text:这是一个能够吸附到顶部的控件\,请滚动一下看看效果\,每个scrollview只支持1个吸顶控件……,linesNum:0"/>
+        <UIView layout="height:20"/>
+        <UIView layout="flexDirection:row,padding:10,alignItems:center" attr="@:system/border,bgColor:white">
+            <UIImageView layout="width:40,height:40" attr="source:addnewtype.png"/>
+            <UIView>
+                <UILabel attr="fontSize:14,color:#666666,text:Name - zhenglibao"/>
+                <UIView layout="height:10"/>
+                <UILabel attr="fontSize:12,color:#999999,text:Your favorite."/>
+            </UIView>
+        </UIView>
+        <UIView layout="height:20"/>
+        <UIView layout="padding:10" attr="@:system/border">
+            <UILabel layout="marginLeft:5" attr="@:system/filterLeftLabel,text:Sex"/>
+            <UIView layout="flexDirection:row,justifyContent:space-around">
+                <UILabel layout="width:30%," attr="@:system/filterLeftLabel,text:200,@:system/redBorder,textAlign:center"/>
+                <UILabel layout="width:30%," attr="@:system/filterLeftLabel,text:300,@:system/redBorder,textAlign:center"/>
+                <UILabel layout="width:30%," attr="@:system/filterLeftLabel,text:400,@:system/redBorder,textAlign:center"/>
+            </UIView>
+        </UIView>
+        <UIView layout="height:20"/>
+        <UIView layout="flexDirection:row,padding:10" attr="@:system/border">
+            <UILabel attr="@:system/bigFont,text:Address"/>
+            <UIView layout="width:5"/>
+            <UIView layout="flex:1">
+                <UILabel layout="width:100%" attr="@:system/bigFont,fontSize:18,text:北京市海淀区学院路甲5号-中关村768产业园,linesNum:4,lineBreakMode:charWrapping"/>
+            </UIView>
+        </UIView>
+        <UIView layout="height:20"/>
+        <UIView layout="flexDirection:row,justifyContent:center,padding:10,alignItems:center" attr="@:system/border">
+            <UILabel layout="height:30" attr="@:system/bigFont,bgColor:#55ff55,text:Address"/>
+            <UILabel layout="height:50" attr="@:system/bigFont,bgColor:orange,text:Beijing"/>
+        </UIView>
+        <UIView layout="height:20"/>
+        <UILabel name="multilabel" layout="width:100%" attr="@:system/bigFont,text:This is demo string\: you can use \\r、\\n、\\\\、\\\,to trans string. Comma is keyword for attribute\, you should use \\\, for the string which include comma,linesNum:0"/>
+        <UIView layout="height:40"/>
+        <UIView onPress="tapShow" layout="flexDirection:row,justifyContent:center,padding:10,alignItems:center" attr="@:system/border">
+            <UILabel layout="height:30" attr="@:system/bigFont,color:red,text:Click to show / hide text"/>
+        </UIView>
+        <UIView layout="height:20" attr="bgColor:clear"/>
+        <UILabel layout="width:100%" attr="@:system/bigFont,text:测试文字\,没有实际用途\,就是想占据点空间啊\,哈哈哈哈哈哈哈哈哈哈哈哈哈,linesNum:0"/>
+        <UIView layout="height:50" attr="bgColor:clear"/>
+    </FlexScrollView>
+</UIView> 

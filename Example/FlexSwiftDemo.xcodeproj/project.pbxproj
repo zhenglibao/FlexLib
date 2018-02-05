@@ -45,6 +45,8 @@
 		D2D020B21FEC9B31008F6DB6 /* TestTextviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B11FEC9B31008F6DB6 /* TestTextviewVC.swift */; };
 		D2D020B41FEC9B53008F6DB6 /* TestJustifycontentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B31FEC9B53008F6DB6 /* TestJustifycontentVC.swift */; };
 		D2D020B61FECB39C008F6DB6 /* TestTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B51FECB39C008F6DB6 /* TestTableCell.swift */; };
+		D2E8049820280D9200B54656 /* FrameVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2E8049720280D9200B54656 /* FrameVC.xml */; };
+		D2E8049A20280DAD00B54656 /* FrameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8049920280DAD00B54656 /* FrameVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		D2D020B11FEC9B31008F6DB6 /* TestTextviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextviewVC.swift; sourceTree = "<group>"; };
 		D2D020B31FEC9B53008F6DB6 /* TestJustifycontentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJustifycontentVC.swift; sourceTree = "<group>"; };
 		D2D020B51FECB39C008F6DB6 /* TestTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableCell.swift; sourceTree = "<group>"; };
+		D2E8049720280D9200B54656 /* FrameVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = FrameVC.xml; path = FlexSwiftDemo/res/FrameVC.xml; sourceTree = SOURCE_ROOT; };
+		D2E8049920280DAD00B54656 /* FrameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 				D2D020721FEBA946008F6DB6 /* LaunchScreen.storyboard */,
 				D2D020751FEBA946008F6DB6 /* Info.plist */,
 				D24F2EC41FF72D1900762ADC /* AttachmentView.swift */,
+				D2E8049920280DAD00B54656 /* FrameVC.swift */,
 				D2D020A71FEBB30B008F6DB6 /* TestVC.swift */,
 				D2D020A91FEBD24D008F6DB6 /* TestScrollVC.swift */,
 				D2D020AB1FEC99D5008F6DB6 /* TestTableVC.swift */,
@@ -168,6 +173,7 @@
 		D2D020801FEBB26F008F6DB6 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D2E8049720280D9200B54656 /* FrameVC.xml */,
 				D28F173120087EEB00F5AEB2 /* Controls.xml */,
 				D24F2EC21FF72CEB00762ADC /* AttachmentView.xml */,
 				D24F2EAE1FF3CEB000762ADC /* TableHeader.xml */,
@@ -270,6 +276,7 @@
 				D2D020961FEBB289008F6DB6 /* TestModalVC.xml in Resources */,
 				D2D0209F1FEBB289008F6DB6 /* addnewtype@2x.png in Resources */,
 				D2D020941FEBB289008F6DB6 /* select@2x.png in Resources */,
+				D2E8049820280D9200B54656 /* FrameVC.xml in Resources */,
 				D2D020741FEBA946008F6DB6 /* LaunchScreen.storyboard in Resources */,
 				D24F2EC31FF72CEB00762ADC /* AttachmentView.xml in Resources */,
 				D2D020A21FEBB289008F6DB6 /* TestTouchVC.xml in Resources */,
@@ -360,6 +367,7 @@
 				D2D020AC1FEC99D5008F6DB6 /* TestTableVC.swift in Sources */,
 				D2D020B01FEC9B12008F6DB6 /* TestTouchVC.swift in Sources */,
 				D2D020A81FEBB30B008F6DB6 /* TestVC.swift in Sources */,
+				D2E8049A20280DAD00B54656 /* FrameVC.swift in Sources */,
 				D2D0206A1FEBA946008F6DB6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

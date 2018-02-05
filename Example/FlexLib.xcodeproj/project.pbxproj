@@ -119,6 +119,8 @@
 		D2CF9CCE1FD7EB1A00554A0C /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF9CCA1FD7EB1900554A0C /* TestVC.m */; };
 		D2CF9CCF1FD7EB1A00554A0C /* TestTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF9CCB1FD7EB1900554A0C /* TestTableCell.m */; };
 		D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF9CCD1FD7EB1A00554A0C /* TestTableVC.m */; };
+		D2E804942028099200B54656 /* FrameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E804932028099200B54656 /* FrameVC.m */; };
+		D2E8049620280C2700B54656 /* FrameVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2E8049520280C2600B54656 /* FrameVC.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +297,9 @@
 		D2CF9CCB1FD7EB1900554A0C /* TestTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableCell.m; sourceTree = "<group>"; };
 		D2CF9CCC1FD7EB1900554A0C /* TestTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableVC.h; sourceTree = "<group>"; };
 		D2CF9CCD1FD7EB1A00554A0C /* TestTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableVC.m; sourceTree = "<group>"; };
+		D2E804922028099200B54656 /* FrameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameVC.h; sourceTree = "<group>"; };
+		D2E804932028099200B54656 /* FrameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrameVC.m; sourceTree = "<group>"; };
+		D2E8049520280C2600B54656 /* FrameVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = FrameVC.xml; path = res/FrameVC.xml; sourceTree = "<group>"; };
 		EAF5D4D82057BA2F2195E3B3 /* Pods_FlexLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EA3C4A77DCE70224422A8A /* Pods-FlexLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -402,6 +407,8 @@
 				D2CF9CCA1FD7EB1900554A0C /* TestVC.m */,
 				D28F172A200854E500F5AEB2 /* ControlsVC.h */,
 				D28F172B200854E500F5AEB2 /* ControlsVC.m */,
+				D2E804922028099200B54656 /* FrameVC.h */,
+				D2E804932028099200B54656 /* FrameVC.m */,
 				D2CF9CB91FD7EAFA00554A0C /* res */,
 				6003F59C195388D20070C39A /* FlexAppDelegate.h */,
 				6003F59D195388D20070C39A /* FlexAppDelegate.m */,
@@ -592,6 +599,7 @@
 				D2CF9CBD1FD7EB0900554A0C /* batchcheck@2x.png */,
 				D2CF9CBA1FD7EB0900554A0C /* return@2x.png */,
 				D2CF9CC01FD7EB0900554A0C /* system.style */,
+				D2E8049520280C2600B54656 /* FrameVC.xml */,
 				D2CF9CBE1FD7EB0900554A0C /* test.xml */,
 				D26F59E51FE4B8170007CB46 /* TextViewVC.xml */,
 				D272A8D41FDADA370075DB1D /* FlexViewController.xml */,
@@ -760,6 +768,7 @@
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				D272A8D11FDA631F0075DB1D /* TestModalVC.xml in Resources */,
+				D2E8049620280C2700B54656 /* FrameVC.xml in Resources */,
 				D26F59E81FE4C0160007CB46 /* select@2x.png in Resources */,
 				D270E9C21FDD7503007FD06C /* README.zh.md in Resources */,
 				D24F2EC11FF6881000762ADC /* AttachmentView.xml in Resources */,
@@ -917,6 +926,7 @@
 				D24F2EBF1FF687C400762ADC /* AttachmentView.m in Sources */,
 				D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */,
 				6003F5A7195388D20070C39A /* FlexViewController.m in Sources */,
+				D2E804942028099200B54656 /* FrameVC.m in Sources */,
 				D272A8CF1FDA63000075DB1D /* TestModalVC.m in Sources */,
 				D28F172C200854E500F5AEB2 /* ControlsVC.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

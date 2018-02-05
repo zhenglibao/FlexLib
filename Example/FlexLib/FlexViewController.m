@@ -17,6 +17,7 @@
 #import "DemoFlexVC.h"
 #import "TextViewVC.h"
 #import "ControlsVC.h"
+#import "FrameVC.h"
 
 @interface FlexViewController ()
 {
@@ -70,6 +71,10 @@
 }
 - (void)onControls{
     ControlsVC* vc=[[ControlsVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)onFrameVC{
+    FrameVC* vc=[[FrameVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)onExplorerFlex

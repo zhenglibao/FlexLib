@@ -64,8 +64,13 @@ class ViewController: FlexBaseVC {
     @objc func onViewLayouts() -> Void {
         FlexLayoutViewerVC.present(inVC: self)
     }
+    @objc func onFrameVC()->Void{
+        let vc=FrameVC.init(nibName: nil, bundle: nil);
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     @objc func onExplorerFlex()->Void{
         FlexHttpVC.present(inVC: self)
     }
+    
 }
 
