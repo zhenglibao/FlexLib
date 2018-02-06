@@ -204,9 +204,9 @@ FlexLib支持两种类型的属性：布局属性和视图属性，布局属性�
 
 **注意：当FlexLib检测到任何不支持的属性时，将会在log窗口输出对应的日志，因此当你在开发项目时不要忽视他所输出的信息。**
 
- [layout attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/layout.md)
- 
- [view attributes](https://github.com/zhenglibao/FlexLib/blob/master/Doc/viewattr.md)
+[layout attributes](https://github.com/zhenglibao/FlexLib/wiki/Layout-Attributes)
+
+[view attributes](https://github.com/zhenglibao/FlexLib/wiki/View-Attributes)
  
  ---
 
