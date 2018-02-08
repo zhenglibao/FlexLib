@@ -84,7 +84,7 @@ The following is a demo file:
 <?xml version="1.0" encoding="utf-8"?>
 
 <UIView layout="flex:1,justifyContent:center,alignItems:center" attr="bgColor:white">
-    <UIView name="_test" onPress="onPressTest" layout="width:40,height:40" attr="bgColor:lightGray"/>
+<UIView name="_test" onPress="onPressTest:" layout="width:40,height:40" attr="bgColor:lightGray"/>
 </UIView>
 ```
 
@@ -95,8 +95,7 @@ The following is a demo file:
 @interface FlexViewController : FlexBaseVC
 {
     // these will be binded to those control with same name in xml file
-    FlexScrollView* _scroll;
-    UILabel* _label;
+    UIView* _test;
 }
 @end
 
@@ -108,20 +107,11 @@ The following is a demo file:
     
     self.navigationItem.title = @"FlexLib Demo";
 }
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-- (void)onTest:(id)sender {
+// This function will bind to onPress event
+- (void)onPressTest:(id)sender {
     TestVC* vc=[[TestVC alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
 }
-- (void)onTestTable:(id)sender {
-    TestTableVC* vc=[[TestTableVC alloc]init];
-    [self presentViewController:vc animated:YES completion:nil];
-}
-
 @end
 
 ```

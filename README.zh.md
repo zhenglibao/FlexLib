@@ -64,7 +64,7 @@ iPhoneX adaption
 <?xml version="1.0" encoding="utf-8"?>
 
 <UIView layout="flex:1,justifyContent:center,alignItems:center" attr="bgColor:white">
-    <UIView name="_test" onPress="onPressTest" layout="width:40,height:40" attr="bgColor:lightGray"/>
+<UIView name="_test" onPress="onPressTest:" layout="width:40,height:40" attr="bgColor:lightGray"/>
 </UIView>
 ```
 
@@ -75,8 +75,7 @@ iPhoneX adaption
 @interface FlexViewController : FlexBaseVC
 {
     // these will be binded to those control with same name in xml file
-    FlexScrollView* _scroll;
-    UILabel* _label;
+    UIView* _test;
 }
 @end
 
@@ -89,7 +88,7 @@ iPhoneX adaption
     self.navigationItem.title = @"FlexLib Demo";
 }
 // event binding
-- (void)onTest:(id)sender {
+- (void)onPressTest:(id)sender {
     TestVC* vc=[[TestVC alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
 }
