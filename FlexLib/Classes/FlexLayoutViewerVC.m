@@ -121,7 +121,12 @@
         class = [FlexViewer class];
     }
     
-    UIViewController* vc = [[class alloc]initWithFlexName:name];
+    UIViewController* vc ;
+    if( [class isSubclassOfClass:[FlexBaseVC class]] ){
+        vc = [[class alloc]initWithFlexName:name];
+    }else{
+        vc = [[class alloc]init];
+    }
     vc.navigationItem.title = name;
     [self.navigationController pushViewController:vc animated:YES];
 }
