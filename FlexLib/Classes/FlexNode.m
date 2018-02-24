@@ -440,7 +440,8 @@ void FlexApplyLayoutParam(YGLayout* layout,
         }
     }
     
-    if(self.children.count > 0){
+    if(self.children.count > 0 &&
+       ![view buildChildElements:self.children Owner:owner RootView:rootView]){
         NSArray* children = self.children ;
         for(FlexNode* node in children){
             UIView* child = [node buildViewTree:owner RootView:rootView] ;

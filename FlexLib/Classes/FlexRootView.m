@@ -82,6 +82,12 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     }
     return nil;
 }
+-(BOOL)buildChildElements:(NSArray<FlexNode*>*)childElems
+                    Owner:(NSObject*)owner
+                 RootView:(FlexRootView*)rootView
+{
+    return NO;
+}
 -(void)markDirty
 {
     FlexRootView* rootView = self.rootView;

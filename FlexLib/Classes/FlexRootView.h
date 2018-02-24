@@ -16,6 +16,7 @@
 
 @class FlexAttr;
 @class FlexRootView;
+@class FlexNode;
 
 @interface UIView(FlexPublic)
 
@@ -24,6 +25,11 @@
 +(UIView*)buildFlexView:(Class)viewCls
                  Layout:(NSArray<NSString*>*)layoutAttrs
               ViewAttrs:(NSArray<NSString*>*)viewAttrs;
+
+// 派生类重写此方法可以实现自定义创建view节点
+-(BOOL)buildChildElements:(NSArray<FlexNode*>*)childElems
+                    Owner:(NSObject*)owner
+                 RootView:(FlexRootView*)rootView;
 
 // 外部可以主动调用此函数让布局得到刷新
 -(void)markDirty;
