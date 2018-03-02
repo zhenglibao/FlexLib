@@ -171,7 +171,6 @@ static YGConfigRef globalConfig;
 
 - (BOOL)isLeaf
 {
-  NSAssert([NSThread isMainThread], @"This method must be called on the main thread.");
   if (self.isEnabled) {
     for (UIView *subview in self.view.subviews) {
       YGLayout *const yoga = subview.yoga;
@@ -279,7 +278,6 @@ YG_PROPERTY(CGFloat, aspectRatio, AspectRatio)
 
 - (CGSize)calculateLayoutWithSize:(CGSize)size
 {
-  NSAssert([NSThread isMainThread], @"Yoga calculation must be done on main.");
   NSAssert(self.isEnabled, @"Yoga is not enabled for this view.");
 
   YGAttachNodesFromViewHierachy(self.view);
@@ -411,8 +409,6 @@ static CGFloat YGRoundPixelValue(CGFloat value)
 
 static void YGApplyLayoutToViewHierarchy(UIView *view, BOOL preserveOrigin)
 {
-  NSCAssert([NSThread isMainThread], @"Framesetting should only be done on the main thread.");
-
   const YGLayout *yoga = view.yoga;
 
   if (!yoga.isIncludedInLayout) {
