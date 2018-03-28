@@ -7,6 +7,7 @@ target 'FlexLib_Example' do
   workspace ‘FlexLib.xcworkspace'
   xcodeproj ‘FlexLib.xcodeproj'
   pod 'FlexLib', :path => '../'
+  pod 'Yoga', '1.6.0'
 
   target 'FlexLib_Tests' do
     inherit! :search_paths
@@ -21,4 +22,5 @@ target ‘FlexSwiftDemo’ do
   workspace ‘FlexLib.xcworkspace'
   xcodeproj ‘FlexSwiftDemo.xcodeproj'
   pod 'FlexLib', :path => '../'
+  pod 'Yoga', '1.6.0'
 end

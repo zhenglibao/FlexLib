@@ -288,7 +288,7 @@
 		D8AEC7201FAAFF7ED15965C2AC00F375 /* UITabBar+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = C688D3F853260EEF55179481565C146B /* UITabBar+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB8F3665E9E382DF52E0DCB4DECE5EAE /* NSObject+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = AE934C2C5DEC71210A14B18E8A4107AD /* NSObject+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC046257891E45BF62E9FD00CBE18E9D /* FlexTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB033C9E0647B3B1A308CB2DFB39CFE /* FlexTextView.m */; };
-		DC15A24E6F9A1A9A2B5DAB3DFAABCB69 /* FlexLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6765F3608855541008C986D475A3712F /* FlexLib.bundle */; };
+		DC15A24E6F9A1A9A2B5DAB3DFAABCB69 /* FlexLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 398CA9337EF1C1CB32A6F38D6486F64E /* FlexLib.bundle */; };
 		DC423A980C991970F4D637AC4C47D863 /* EXPMatchers+conformTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 44845EB3E3BD5EF27F623AD1A0A61821 /* EXPMatchers+conformTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEA492C3D47AA26E8FE1F1E48B7B4E7B /* FlexBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8B95DE75E4C238A3CA3579B99F2535 /* FlexBaseVC.m */; };
 		DEBFE64EFB30E63184BE522529AFE6EF /* FlexTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = DA37227E97E10BF6ABB6B76E4AE04EA9 /* FlexTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -306,7 +306,7 @@
 		E61E28B50602F353D95914765667969F /* EXPMatcherHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AE0CEAF2575BA5FB2D3CBE4B68AD7E9 /* EXPMatcherHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6AC2B17BCA5DEF12219003EF0F49573 /* FlexLib-iOS9.3-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 204FABDBDD2EBF54CE9AF47F95D6486F /* FlexLib-iOS9.3-dummy.m */; };
 		E6D59CAA2A6E134A4643254406ED11F2 /* EXPMatchers+equal.m in Sources */ = {isa = PBXBuildFile; fileRef = 2569E345B49C92E95796FB85423976B3 /* EXPMatchers+equal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E84DF2D563F0A0837FB79FE6D3C00A33 /* FlexLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 15D8F36D692EB29509B6FB1B1008C141 /* FlexLib.bundle */; };
+		E84DF2D563F0A0837FB79FE6D3C00A33 /* FlexLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 327D7A879EB7A56F21A97822CC97C45A /* FlexLib.bundle */; };
 		E85F73DAC041AF77DDDF94120512CF52 /* FlexCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 340AE3ECD07BC01278A5D0E2DEE273D9 /* FlexCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8A09E2B6DA413E225C08DE3D8AC203C /* FlexContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFCBA9BFC63CF53154F6BE786D41E408 /* FlexContainerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA393E83FDA0AEB3E8621192BCEBE4BD /* FlexUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EB67C5AC7211E9184D5A8E6B2C54CBBA /* FlexUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -435,10 +435,9 @@
 		13F7D1135FD119B72C9024C7581D1809 /* SPTExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTExample.m; path = Specta/Specta/SPTExample.m; sourceTree = "<group>"; };
 		151E6BA2CBF1C45653CC96B691F13DC2 /* SPTSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSpec.m; path = Specta/Specta/SPTSpec.m; sourceTree = "<group>"; };
 		1577E5A35DFEA867A7116C35C2E5911F /* EXPMatchers+beInstanceOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beInstanceOf.m"; path = "Expecta/Matchers/EXPMatchers+beInstanceOf.m"; sourceTree = "<group>"; };
-		15D8F36D692EB29509B6FB1B1008C141 /* FlexLib.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FlexLib.bundle; path = "FlexLib-iOS11.2-FlexLib.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		171DC8F01C7726BEE630481C3C97ABD1 /* FlexTouchView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexTouchView.m; path = FlexLib/Classes/FlexTouchView.m; sourceTree = "<group>"; };
+		173EA843CE9C8918E65A0C15CDA40CC7 /* Pods_FlexLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlexLib_Tests.framework; path = "Pods-FlexLib_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C98870DCB2122D00DFB4787234A931 /* XCTestCase+Specta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTestCase+Specta.h"; path = "Specta/Specta/XCTestCase+Specta.h"; sourceTree = "<group>"; };
-		1AEA91F04DFD618C84532CBB76F636CA /* FlexLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlexLib.framework; path = "FlexLib-iOS9.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFE526734DB796992DC8D84D1C0DE5E /* EXPMatchers+match.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+match.m"; path = "Expecta/Matchers/EXPMatchers+match.m"; sourceTree = "<group>"; };
 		1B817FA47361705962226F9B7DF53C91 /* FlexHttpVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexHttpVC.h; path = FlexLib/Classes/FlexHttpVC.h; sourceTree = "<group>"; };
 		1B8CA89C6698DC7B6B1CC391D3FC6CFA /* Pods-FlexLib_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlexLib_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -457,12 +456,14 @@
 		27FC44E24E3175F6DF4649B7825BE7A1 /* Pods-FlexLib_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlexLib_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		28532218BC8F9375BFDDF62DDF2DF69E /* FlexTouchMaskView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexTouchMaskView.h; path = FlexLib/Classes/FlexTouchMaskView.h; sourceTree = "<group>"; };
 		28892CD949B18BC58891269156231C92 /* FlexCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexCollectionView.m; path = FlexLib/Classes/FlexCollectionView.m; sourceTree = "<group>"; };
+		29EE2B71B3480936B177E2AB3AB62CB5 /* Pods_FlexSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlexSwiftDemo.framework; path = "Pods-FlexSwiftDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2E5AFE203C8E71F7A47431193FF945 /* EXPMatchers+beLessThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.h"; sourceTree = "<group>"; };
 		2C419E092C42FA34EE502201E73FF1CC /* EXPMatchers+beInTheRangeOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beInTheRangeOf.m"; path = "Expecta/Matchers/EXPMatchers+beInTheRangeOf.m"; sourceTree = "<group>"; };
 		2E9B9E6B6E077470C4DECB6F83520D8C /* EXPMatchers+beTruthy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beTruthy.m"; path = "Expecta/Matchers/EXPMatchers+beTruthy.m"; sourceTree = "<group>"; };
 		2F4072A2B1EF647F02E8752E754A0A8A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../FlexLib-iOS9.3/Info.plist"; sourceTree = "<group>"; };
 		305BAA14F2889FF9C9216D61537E3BF1 /* SPTExampleGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTExampleGroup.m; path = Specta/Specta/SPTExampleGroup.m; sourceTree = "<group>"; };
 		3165810906CAB91C0DBA4F68FB6E54A8 /* UIView+Yoga.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Yoga.m"; sourceTree = "<group>"; };
+		327D7A879EB7A56F21A97822CC97C45A /* FlexLib.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FlexLib.bundle; path = "FlexLib-iOS11.2-FlexLib.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		333AB030C3E8F1F0B01A16714419A3AB /* Expecta-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Expecta-prefix.pch"; sourceTree = "<group>"; };
 		340AE3ECD07BC01278A5D0E2DEE273D9 /* FlexCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexCollectionView.h; path = FlexLib/Classes/FlexCollectionView.h; sourceTree = "<group>"; };
 		34533D3A08D3D15FFB965F0517E42D33 /* FlexBaseTableCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexBaseTableCell.m; path = FlexLib/Classes/FlexBaseTableCell.m; sourceTree = "<group>"; };
@@ -475,14 +476,15 @@
 		3824F58F33F9E388BEDE45DC0898B575 /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPBlockDefinedMatcher.h; path = Expecta/EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		38CA61A705B0AC53F000CBAE32C45215 /* YGLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YGLayout.m; sourceTree = "<group>"; };
 		38CA9E1F0E65ADA68156240EFC3C9FF4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		398CA9337EF1C1CB32A6F38D6486F64E /* FlexLib.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FlexLib.bundle; path = "FlexLib-iOS9.3-FlexLib.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CE1BBF8A4DD3D60F876211ED8EE298 /* FlexNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexNode.h; path = FlexLib/Classes/FlexNode.h; sourceTree = "<group>"; };
 		39F777B5AA08D6C3ABFEF1C4DABC8FED /* UISegmentedControl+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+Flex.m"; sourceTree = "<group>"; };
-		3A6D64427E073DD51136BE980E990F9B /* Pods_FlexLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlexLib_Example.framework; path = "Pods-FlexLib_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3407BCCCA205CA1F0A336F8F7D059D /* EXPMatchers+beFalsy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beFalsy.h"; path = "Expecta/Matchers/EXPMatchers+beFalsy.h"; sourceTree = "<group>"; };
 		3C58D2F75E0869FEDA14117E135BE3F7 /* Pods-FlexSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3CEF53C161504D0D1BB20C9147469C78 /* EXPMatchers+beNil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beNil.m"; path = "Expecta/Matchers/EXPMatchers+beNil.m"; sourceTree = "<group>"; };
 		3CFC93C868C04759461DCA52DFDC3A2B /* FlexLib-iOS9.3-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FlexLib-iOS9.3-prefix.pch"; path = "../FlexLib-iOS9.3/FlexLib-iOS9.3-prefix.pch"; sourceTree = "<group>"; };
 		3D623EABA5387B17CE4DD51F1E07913A /* EXPMatchers+beIdenticalTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beIdenticalTo.h"; path = "Expecta/Matchers/EXPMatchers+beIdenticalTo.h"; sourceTree = "<group>"; };
+		3E6D7AFBB5512F9B55ADB11F52D8A94E /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = yoga.framework; path = "Yoga-iOS9.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA349C6D53C45790F03F9FFA28438ED /* UIPickerView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+Flex.h"; sourceTree = "<group>"; };
 		3F84431ECBD9BF2BD40610DD181DCE81 /* EXPMatchers+equal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+equal.h"; path = "Expecta/Matchers/EXPMatchers+equal.h"; sourceTree = "<group>"; };
 		41D7BC542A365BA2B8203E8899C7E131 /* EXPExpect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPExpect.h; path = Expecta/EXPExpect.h; sourceTree = "<group>"; };
@@ -492,13 +494,13 @@
 		44801F2CFD38855488EE70875ECDF4BB /* EXPMatchers+beLessThan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThan.h"; path = "Expecta/Matchers/EXPMatchers+beLessThan.h"; sourceTree = "<group>"; };
 		44845EB3E3BD5EF27F623AD1A0A61821 /* EXPMatchers+conformTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+conformTo.h"; path = "Expecta/Matchers/EXPMatchers+conformTo.h"; sourceTree = "<group>"; };
 		44B358787A03E44C81B97C7AA58FB54E /* Pods-FlexLib_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlexLib_Example-frameworks.sh"; sourceTree = "<group>"; };
-		44C05225823DF06A28C57A9F8024D2F1 /* FlexLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlexLib.framework; path = "FlexLib-iOS11.2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		452F71544FF1248FA2F69993CAAF7A66 /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Specta.modulemap; sourceTree = "<group>"; };
 		46A65534613CFB4D3F96E6216747D2B3 /* SPTExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExample.h; path = Specta/Specta/SPTExample.h; sourceTree = "<group>"; };
 		47A233CD1BF47AEC4943B318DC2D35E6 /* EXPMatchers+beGreaterThan.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beGreaterThan.m"; path = "Expecta/Matchers/EXPMatchers+beGreaterThan.m"; sourceTree = "<group>"; };
 		47FB38870108EBBEFDDDFE04ABC32228 /* EXPDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDefines.h; path = Expecta/EXPDefines.h; sourceTree = "<group>"; };
 		481DD3032B4F86BBE9869BBFD327E5C5 /* Expecta-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Expecta-dummy.m"; sourceTree = "<group>"; };
 		4992ACB2AB354F4F702D4DAC10CDF798 /* EXPFloatTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPFloatTuple.m; path = Expecta/EXPFloatTuple.m; sourceTree = "<group>"; };
+		4A76D671B82D724AF02A53E4F6F743D9 /* Expecta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Expecta.framework; path = Expecta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE0CEAF2575BA5FB2D3CBE4B68AD7E9 /* EXPMatcherHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatcherHelpers.h; path = Expecta/Matchers/EXPMatcherHelpers.h; sourceTree = "<group>"; };
 		4BA593F2279B7E7DBC9B321C77ED195D /* EXPUnsupportedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPUnsupportedObject.h; path = Expecta/EXPUnsupportedObject.h; sourceTree = "<group>"; };
 		4BDEE7EC04CB1AAF761928E571273F39 /* UISlider+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISlider+Flex.m"; sourceTree = "<group>"; };
@@ -541,15 +543,12 @@
 		66794233A898B47DD2A83244FC9EDA85 /* Pods-FlexLib_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlexLib_Example-dummy.m"; sourceTree = "<group>"; };
 		667D6FC3E5567817C6C87101BE4FE791 /* FlexContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexContainerView.m; path = FlexLib/Classes/FlexContainerView.m; sourceTree = "<group>"; };
 		667E50632171D3EB86B582B3364253BE /* EXPMatchers+beKindOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beKindOf.m"; path = "Expecta/Matchers/EXPMatchers+beKindOf.m"; sourceTree = "<group>"; };
-		6765F3608855541008C986D475A3712F /* FlexLib.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FlexLib.bundle; path = "FlexLib-iOS9.3-FlexLib.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F0A5443981E6E6FC8482D2BE1EA967 /* SpectaTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaTypes.h; path = Specta/Specta/SpectaTypes.h; sourceTree = "<group>"; };
 		68F280065A2D1DE7DBBCC4F8BBBE2722 /* Pods-FlexLib_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlexLib_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		6A642F7D2137A77582273DE034FA75F7 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = yoga.framework; path = "Yoga-iOS9.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B049261A0ED5F6CAF3FA940E4ABAA04 /* EXPMatchers+beSubclassOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beSubclassOf.m"; path = "Expecta/Matchers/EXPMatchers+beSubclassOf.m"; sourceTree = "<group>"; };
 		6B1DE39C5E41F99186CFDAEC38D00665 /* FlexRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexRootView.h; path = FlexLib/Classes/FlexRootView.h; sourceTree = "<group>"; };
 		6B7490C7FDF8FE6E05BEF3A1EF177E08 /* Pods-FlexLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6BA146F79B31EB7D4A90F249519EB235 /* SpectaDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaDSL.m; path = Specta/Specta/SpectaDSL.m; sourceTree = "<group>"; };
-		6BFABC8B34F4E1EECE2C5BACCC7BE41C /* Pods_FlexSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlexSwiftDemo.framework; path = "Pods-FlexSwiftDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CECF3AC696DDE2780532EB9A4753FEE /* UIView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Flex.h"; sourceTree = "<group>"; };
 		6D3C0172656FCCC09D8A44F97E9374C7 /* SPTCallSite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCallSite.h; path = Specta/Specta/SPTCallSite.h; sourceTree = "<group>"; };
 		6DCC8CC5A2D403F5E9FABE353FA99026 /* FlexScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexScrollView.h; path = FlexLib/Classes/FlexScrollView.h; sourceTree = "<group>"; };
@@ -563,6 +562,7 @@
 		75EB541F740170554EC387EDCDF4830F /* FlexTouchMaskView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexTouchMaskView.m; path = FlexLib/Classes/FlexTouchMaskView.m; sourceTree = "<group>"; };
 		7745701618AB6B0BBD0BAFF9C3974C56 /* SpectaDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaDSL.h; path = Specta/Specta/SpectaDSL.h; sourceTree = "<group>"; };
 		7B293017A619163E7650B0D3DB5BA273 /* FlexSetPreviewVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexSetPreviewVC.m; path = FlexLib/Classes/FlexSetPreviewVC.m; sourceTree = "<group>"; };
+		7D3E1E2B2339762FD638E7C10B327AA0 /* FlexLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlexLib.framework; path = "FlexLib-iOS11.2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9B048815BDCDED58CB8511846AAA6C /* UIImageView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Flex.h"; sourceTree = "<group>"; };
 		7DDA993EAF4A139F33C0CA8263026694 /* EXPMatchers+postNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+postNotification.h"; path = "Expecta/Matchers/EXPMatchers+postNotification.h"; sourceTree = "<group>"; };
 		7E5F9E661D40DF77B12E5BE80B291A3D /* UILabel+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Flex.m"; sourceTree = "<group>"; };
@@ -576,6 +576,7 @@
 		82DBF0AB84841C0D7049AA8D4BABA0D6 /* EXPMatchers+beKindOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beKindOf.h"; path = "Expecta/Matchers/EXPMatchers+beKindOf.h"; sourceTree = "<group>"; };
 		855528C76A45A7B61B94FEAC91354EF9 /* EXPMatchers+respondTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+respondTo.h"; path = "Expecta/Matchers/EXPMatchers+respondTo.h"; sourceTree = "<group>"; };
 		85853D3259FC97AD166E43A4DF4B3F55 /* SPTCallSite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTCallSite.m; path = Specta/Specta/SPTCallSite.m; sourceTree = "<group>"; };
+		864EECEEB9368B0771CD80B4834471CE /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = yoga.framework; path = "Yoga-iOS11.2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E2ABD473488ECEBE08B17FF7880D87 /* EXPMatchers+beginWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beginWith.m"; path = "Expecta/Matchers/EXPMatchers+beginWith.m"; sourceTree = "<group>"; };
 		8738C1603DC607003411FC62753604E0 /* Pods-FlexLib_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlexLib_Tests-dummy.m"; sourceTree = "<group>"; };
 		89B44A96EBDDEF4F321609478703896A /* YGMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGMacros.h; path = yoga/YGMacros.h; sourceTree = "<group>"; };
@@ -613,24 +614,24 @@
 		ACCDDAC2DA304C1FE9851B6DAEEDB397 /* Pods-FlexLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AE934C2C5DEC71210A14B18E8A4107AD /* NSObject+Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Expecta.h"; path = "Expecta/NSObject+Expecta.h"; sourceTree = "<group>"; };
 		AEDB7939DBCBE565E806B7AC0B2949A1 /* UIDatePicker+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIDatePicker+Flex.h"; sourceTree = "<group>"; };
-		B12E1F51423E183EFAE9174EF39BAFE8 /* Specta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Specta.framework; path = Specta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1BFF92DDC69F092316AD8EE882F99D0 /* Yoga-iOS11.2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Yoga-iOS11.2-dummy.m"; sourceTree = "<group>"; };
+		B2BCE3B2D598ED5564DA8B761730EF40 /* Specta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Specta.framework; path = Specta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F9E91F557E5B1DBF6A1B9E85C78B1F /* NSValue+Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValue+Expecta.h"; path = "Expecta/NSValue+Expecta.h"; sourceTree = "<group>"; };
 		B445988900C65176FD814CFF1772D7F4 /* SPTCompiledExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTCompiledExample.m; path = Specta/Specta/SPTCompiledExample.m; sourceTree = "<group>"; };
 		B44AB4B3D91C22A98F9EBB9A4E9D20A3 /* EXPMatchers+postNotification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+postNotification.m"; path = "Expecta/Matchers/EXPMatchers+postNotification.m"; sourceTree = "<group>"; };
 		B458779B8D32F808FA72E44539B2A371 /* FlexNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexNode.m; path = FlexLib/Classes/FlexNode.m; sourceTree = "<group>"; };
 		B5219408362C8FF5A5F95EAEF6142A15 /* UITextView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Flex.m"; sourceTree = "<group>"; };
-		B5AB0730D46DA42A1E353CD0BFD3CB5C /* Expecta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Expecta.framework; path = Expecta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BBBC9B8F6DED779C7220ECCA597080 /* FlexLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlexLib.framework; path = "FlexLib-iOS9.3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F7FABB8E9E57F812FE1449B1486B67 /* Pods-FlexSwiftDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlexSwiftDemo-frameworks.sh"; sourceTree = "<group>"; };
 		B72EEF15A2535E1FC03B01869116D734 /* Yoga-iOS11.2-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Yoga-iOS11.2-prefix.pch"; sourceTree = "<group>"; };
 		BAB033C9E0647B3B1A308CB2DFB39CFE /* FlexTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexTextView.m; path = FlexLib/Classes/FlexTextView.m; sourceTree = "<group>"; };
 		BC7C196D5385EB78E5D038BCDB4CDE5A /* FlexModalView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexModalView.m; path = FlexLib/Classes/FlexModalView.m; sourceTree = "<group>"; };
 		BE0AB81745568B6A71953ED9E1E9E441 /* Expecta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Expecta.xcconfig; sourceTree = "<group>"; };
+		C0FC69694480DFE20E29DF9B09EE041D /* Pods_FlexLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlexLib_Example.framework; path = "Pods-FlexLib_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C135455040EA0F7215065C5BDB15CC50 /* Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Expecta.h; path = Expecta/Expecta.h; sourceTree = "<group>"; };
 		C2A79B674CE650AB69F3E838D0F08C0D /* SpectaUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaUtility.h; path = Specta/Specta/SpectaUtility.h; sourceTree = "<group>"; };
 		C53953E55B17D328CC27A47CE9379C91 /* FlexLib-iOS11.2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlexLib-iOS11.2-umbrella.h"; sourceTree = "<group>"; };
 		C688D3F853260EEF55179481565C146B /* UITabBar+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Flex.h"; sourceTree = "<group>"; };
-		C723B2EA93E9C9121A01A3D4EED5F4D7 /* Pods_FlexLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlexLib_Tests.framework; path = "Pods-FlexLib_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7B808D6E56F605A981B865994266F45 /* UISearchBar+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+Flex.h"; sourceTree = "<group>"; };
 		CA5EE220ED6C1EB92A5AF787AB773152 /* Pods-FlexLib_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FlexLib_Example.modulemap"; sourceTree = "<group>"; };
 		CBBA0DF93EE789CF69AE3FD35B69544D /* EXPFloatTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPFloatTuple.h; path = Expecta/EXPFloatTuple.h; sourceTree = "<group>"; };
@@ -659,7 +660,6 @@
 		E0BB7024F7FCFE1D6FE3EBC3B635464C /* FlexParentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexParentView.h; path = FlexLib/Classes/FlexParentView.h; sourceTree = "<group>"; };
 		E256826E3359127C4E781917793017EB /* FlexLib-iOS9.3-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FlexLib-iOS9.3-umbrella.h"; path = "../FlexLib-iOS9.3/FlexLib-iOS9.3-umbrella.h"; sourceTree = "<group>"; };
 		E3BCB1727A9A95DDD8CF88D2F7411E64 /* EXPMatchers+match.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+match.h"; path = "Expecta/Matchers/EXPMatchers+match.h"; sourceTree = "<group>"; };
-		E3C11981376018A23D1E8BF0B060D475 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = yoga.framework; path = "Yoga-iOS11.2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46A85E1EBA6E13D83BF11DBA2214012 /* ExpectaSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaSupport.m; path = Expecta/ExpectaSupport.m; sourceTree = "<group>"; };
 		E472F55DB1221205D2FEA95E4E479F5B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E54C07E9E6CF2D9765FFB4BB9B83698D /* UITextField+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextField+Flex.h"; sourceTree = "<group>"; };
@@ -1020,7 +1020,7 @@
 				D8F10D2A3B8069CE57224A0CAB402FA1 /* Development Pods */,
 				C916A5D995A23EC78B88ACD3FC665100 /* Frameworks */,
 				A8AAD994C0482761FCC97B669F99B999 /* Pods */,
-				8EA4C87E03B3A4E27D29DC2FAB4F92B9 /* Products */,
+				B45DEE6FE6E7A6FB6F35941885E0B3D2 /* Products */,
 				3C92F046D7B1D1D10A07479A47974E5C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -1039,24 +1039,6 @@
 			);
 			name = Yoga;
 			path = Yoga;
-			sourceTree = "<group>";
-		};
-		8EA4C87E03B3A4E27D29DC2FAB4F92B9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B5AB0730D46DA42A1E353CD0BFD3CB5C /* Expecta.framework */,
-				6765F3608855541008C986D475A3712F /* FlexLib.bundle */,
-				15D8F36D692EB29509B6FB1B1008C141 /* FlexLib.bundle */,
-				1AEA91F04DFD618C84532CBB76F636CA /* FlexLib.framework */,
-				44C05225823DF06A28C57A9F8024D2F1 /* FlexLib.framework */,
-				3A6D64427E073DD51136BE980E990F9B /* Pods_FlexLib_Example.framework */,
-				C723B2EA93E9C9121A01A3D4EED5F4D7 /* Pods_FlexLib_Tests.framework */,
-				6BFABC8B34F4E1EECE2C5BACCC7BE41C /* Pods_FlexSwiftDemo.framework */,
-				B12E1F51423E183EFAE9174EF39BAFE8 /* Specta.framework */,
-				6A642F7D2137A77582273DE034FA75F7 /* yoga.framework */,
-				E3C11981376018A23D1E8BF0B060D475 /* yoga.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A67DCCCC646671283472250D5DA276D0 /* Expecta */ = {
@@ -1149,6 +1131,24 @@
 				8C92E82EF25E01F81289EBB2011C42FC /* Yoga */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B45DEE6FE6E7A6FB6F35941885E0B3D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A76D671B82D724AF02A53E4F6F743D9 /* Expecta.framework */,
+				327D7A879EB7A56F21A97822CC97C45A /* FlexLib.bundle */,
+				398CA9337EF1C1CB32A6F38D6486F64E /* FlexLib.bundle */,
+				7D3E1E2B2339762FD638E7C10B327AA0 /* FlexLib.framework */,
+				B5BBBC9B8F6DED779C7220ECCA597080 /* FlexLib.framework */,
+				C0FC69694480DFE20E29DF9B09EE041D /* Pods_FlexLib_Example.framework */,
+				173EA843CE9C8918E65A0C15CDA40CC7 /* Pods_FlexLib_Tests.framework */,
+				29EE2B71B3480936B177E2AB3AB62CB5 /* Pods_FlexSwiftDemo.framework */,
+				B2BCE3B2D598ED5564DA8B761730EF40 /* Specta.framework */,
+				3E6D7AFBB5512F9B55ADB11F52D8A94E /* yoga.framework */,
+				864EECEEB9368B0771CD80B4834471CE /* yoga.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B5755A59C9D69FCD41CB4B00C0D7859E /* YogaKit */ = {
@@ -1493,7 +1493,7 @@
 			);
 			name = "Yoga-iOS9.3";
 			productName = "Yoga-iOS9.3";
-			productReference = 6A642F7D2137A77582273DE034FA75F7 /* yoga.framework */;
+			productReference = 3E6D7AFBB5512F9B55ADB11F52D8A94E /* yoga.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4C7960298974703C61649F73930373A3 /* Pods-FlexLib_Tests */ = {
@@ -1512,7 +1512,7 @@
 			);
 			name = "Pods-FlexLib_Tests";
 			productName = "Pods-FlexLib_Tests";
-			productReference = C723B2EA93E9C9121A01A3D4EED5F4D7 /* Pods_FlexLib_Tests.framework */;
+			productReference = 173EA843CE9C8918E65A0C15CDA40CC7 /* Pods_FlexLib_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5D161BA711701D7E41E02A5702FD024E /* Expecta */ = {
@@ -1529,7 +1529,7 @@
 			);
 			name = Expecta;
 			productName = Expecta;
-			productReference = B5AB0730D46DA42A1E353CD0BFD3CB5C /* Expecta.framework */;
+			productReference = 4A76D671B82D724AF02A53E4F6F743D9 /* Expecta.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		600835E88571FE8991C9D36532DE58B9 /* Yoga-iOS11.2 */ = {
@@ -1546,7 +1546,7 @@
 			);
 			name = "Yoga-iOS11.2";
 			productName = "Yoga-iOS11.2";
-			productReference = E3C11981376018A23D1E8BF0B060D475 /* yoga.framework */;
+			productReference = 864EECEEB9368B0771CD80B4834471CE /* yoga.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7AF87FAEF1935E4CDAB220B11FBAA9C2 /* Pods-FlexLib_Example */ = {
@@ -1565,7 +1565,7 @@
 			);
 			name = "Pods-FlexLib_Example";
 			productName = "Pods-FlexLib_Example";
-			productReference = 3A6D64427E073DD51136BE980E990F9B /* Pods_FlexLib_Example.framework */;
+			productReference = C0FC69694480DFE20E29DF9B09EE041D /* Pods_FlexLib_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		968463F6AC2B3391EA892365011BE764 /* Specta */ = {
@@ -1582,7 +1582,7 @@
 			);
 			name = Specta;
 			productName = Specta;
-			productReference = B12E1F51423E183EFAE9174EF39BAFE8 /* Specta.framework */;
+			productReference = B2BCE3B2D598ED5564DA8B761730EF40 /* Specta.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A49106C3ED64DFA2575F3E8582096235 /* FlexLib-iOS11.2-FlexLib */ = {
@@ -1599,7 +1599,7 @@
 			);
 			name = "FlexLib-iOS11.2-FlexLib";
 			productName = "FlexLib-iOS11.2-FlexLib";
-			productReference = 15D8F36D692EB29509B6FB1B1008C141 /* FlexLib.bundle */;
+			productReference = 327D7A879EB7A56F21A97822CC97C45A /* FlexLib.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		A9AB9F51C89ECF7FF40E8C8362027EA9 /* Pods-FlexSwiftDemo */ = {
@@ -1618,7 +1618,7 @@
 			);
 			name = "Pods-FlexSwiftDemo";
 			productName = "Pods-FlexSwiftDemo";
-			productReference = 6BFABC8B34F4E1EECE2C5BACCC7BE41C /* Pods_FlexSwiftDemo.framework */;
+			productReference = 29EE2B71B3480936B177E2AB3AB62CB5 /* Pods_FlexSwiftDemo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		ABBBBA723E0132EA40585D5E11969E5B /* FlexLib-iOS9.3 */ = {
@@ -1638,7 +1638,7 @@
 			);
 			name = "FlexLib-iOS9.3";
 			productName = "FlexLib-iOS9.3";
-			productReference = 1AEA91F04DFD618C84532CBB76F636CA /* FlexLib.framework */;
+			productReference = B5BBBC9B8F6DED779C7220ECCA597080 /* FlexLib.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D0328FD4D6F2784AC5D65D31067BA114 /* FlexLib-iOS9.3-FlexLib */ = {
@@ -1655,7 +1655,7 @@
 			);
 			name = "FlexLib-iOS9.3-FlexLib";
 			productName = "FlexLib-iOS9.3-FlexLib";
-			productReference = 6765F3608855541008C986D475A3712F /* FlexLib.bundle */;
+			productReference = 398CA9337EF1C1CB32A6F38D6486F64E /* FlexLib.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		DD03D1B6C859AFC33EA936BAF7B728DB /* FlexLib-iOS11.2 */ = {
@@ -1675,7 +1675,7 @@
 			);
 			name = "FlexLib-iOS11.2";
 			productName = "FlexLib-iOS11.2";
-			productReference = 44C05225823DF06A28C57A9F8024D2F1 /* FlexLib.framework */;
+			productReference = 7D3E1E2B2339762FD638E7C10B327AA0 /* FlexLib.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1695,7 +1695,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 8EA4C87E03B3A4E27D29DC2FAB4F92B9 /* Products */;
+			productRefGroup = B45DEE6FE6E7A6FB6F35941885E0B3D2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
