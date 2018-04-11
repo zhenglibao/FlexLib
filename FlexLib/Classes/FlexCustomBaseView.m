@@ -14,7 +14,7 @@
 #import "FlexRootView.h"
 #import "FlexUtils.h"
 
-static void* gObserverFrame         = (void*)1;
+static void* gObserverFrame = &gObserverFrame;
 
 @interface FlexCustomBaseView()
 {

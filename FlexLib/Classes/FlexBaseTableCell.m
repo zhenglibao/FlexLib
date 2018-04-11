@@ -12,7 +12,7 @@
 #import "FlexBaseTableCell.h"
 #import "FlexRootView.h"
 
-static void* gObserverFrame         = (void*)1;
+static void* gObserverFrame         = &gObserverFrame;
 
 @interface FlexBaseTableCell()
 {

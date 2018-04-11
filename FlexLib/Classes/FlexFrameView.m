@@ -12,7 +12,7 @@
 #import "FlexRootView.h"
 #import "YogaKit/UIView+Yoga.h"
 
-static void* gObserverFrame         = (void*)1;
+static void* gObserverFrame = &gObserverFrame;
 
 @interface FlexFrameView()
 {

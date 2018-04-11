@@ -19,7 +19,7 @@
 #import "FlexHttpVC.h"
 #import "FlexNode.h"
 
-static void* gObserverFrame         = (void*)1;
+static void* gObserverFrame = &gObserverFrame;
 
 @interface FlexBaseVC ()
 {

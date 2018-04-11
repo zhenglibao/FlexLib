@@ -17,9 +17,9 @@
 #import "FlexUtils.h"
 #import "FlexStyleMgr.h"
 
-static void* gObserverHidden    = (void*)1;
-static void* gObserverText      = (void*)2;
-static void* gObserverAttrText  = (void*)3;
+static void* gObserverHidden    = &gObserverHidden;
+static void* gObserverText = &gObserverText;
+static void* gObserverAttrText  = &gObserverAttrText;
 
 static NSInteger _compareInputView(UIView * _Nonnull f,
                                    UIView * _Nonnull s,

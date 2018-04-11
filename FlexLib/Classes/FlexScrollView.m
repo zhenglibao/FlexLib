@@ -17,8 +17,8 @@
 #import "FlexUtils.h"
 #import "FlexTouchView.h"
 
-static void* gObserverFrame         = (void*)1;
-static void* gObserverContentOffset = (void*)2;
+static void* gObserverFrame = &gObserverFrame;
+static void* gObserverContentOffset = &gObserverContentOffset;
 
 @interface FlexScrollView()
 {
