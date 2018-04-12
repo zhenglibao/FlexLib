@@ -48,7 +48,7 @@
     CGRect rcFrame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 0);
     FlexFrameView* header = [[FlexFrameView alloc]initWithFlex:@"TableHeader" Frame:rcFrame Owner:self];
     header.flexibleHeight = YES;
-    content.text = @"这个例子演示了在后台线程计算布局高度：）这是一个高度可变的header,文字超长,后面的文本就是随机字符:)哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈";
+    content.text = @"这个例子演示了在后台线程计算布局高度：）这个例子在横竖屏切换时没有重新计算高度，因此切换横竖屏时会有问题：）";
     [header layoutIfNeeded];
     header.onFrameChange = ^(CGRect rc){
         [weakSelf tableHeaderFrameChange];
