@@ -37,7 +37,7 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
   }
 
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Yoga'
+  s.dependency 'Yoga', '1.6.0'
 
   s.library = 'xml2'
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
