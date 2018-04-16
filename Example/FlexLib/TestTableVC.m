@@ -181,10 +181,12 @@
     
     TestTableCell*  cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:nil];
     
+    CGFloat tableWidth = [[UIScreen mainScreen]bounds].size.width;
+    
     for (NSDictionary* data in _datas)
     {
         [cell setData:data ForHeight:YES];
-        CGFloat h = [cell heightForWidth:_table.frame.size.width];
+        CGFloat h = [cell heightForWidth:tableWidth];
         [_heights addObject:[NSNumber numberWithFloat:h]];
     }
     

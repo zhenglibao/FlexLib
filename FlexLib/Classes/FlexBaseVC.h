@@ -16,9 +16,14 @@
 @interface FlexBaseVC : UIViewController<UITextFieldDelegate,UITextViewDelegate>
 
 @property(nonatomic,readonly) FlexRootView* rootView;
+
 //自动躲避键盘
 @property(nonatomic,assign) BOOL avoidKeyboard;
 @property(nonatomic,readonly) float keyboardHeight;
+
+//是否避开iPhoneX底部区域,默认是NO
+@property(nonatomic,assign) BOOL avoidiPhoneXBottom;
+
 //是否保持navibar透明，默认为yes,该属性会影响页面布局,如果
 //navibar的translucent属性为NO，则可能需要重写getSafeArea来修正布局
 @property(nonatomic,assign) BOOL keepNavbarTranslucent;

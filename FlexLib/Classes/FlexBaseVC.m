@@ -274,11 +274,12 @@ static void* gObserverFrame = &gObserverFrame;
     {
         height += self.navigationController.navigationBar.frame.size.height ;
     }
+    BOOL bottomZero = _keyboardHeight > 0 || (!self.avoidiPhoneXBottom) ;
     if(portrait){
         height += 44 ;
-        return UIEdgeInsetsMake(height, 0, _keyboardHeight>0?0:34, 0);
+        return UIEdgeInsetsMake(height, 0, bottomZero?0:34, 0);
     }
-    return UIEdgeInsetsMake(height, 44, _keyboardHeight>0?0:21, 44);
+    return UIEdgeInsetsMake(height, 44, bottomZero?0:21, 44);
 }
 
 -(void)layoutFlexRootViews{
