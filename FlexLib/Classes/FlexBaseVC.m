@@ -45,6 +45,7 @@ static void* gObserverFrame = &gObserverFrame;
     self = [super init];
     if (self) {
         _avoidKeyboard = YES;
+        _avoidiPhoneXBottom = YES;
         _keyboardHeight = 0;
         _keepNavbarTranslucent = YES;
     }

@@ -21,7 +21,7 @@
 @property(nonatomic,assign) BOOL avoidKeyboard;
 @property(nonatomic,readonly) float keyboardHeight;
 
-//是否避开iPhoneX底部区域,默认是NO
+//是否避开iPhoneX底部区域,默认是YES
 @property(nonatomic,assign) BOOL avoidiPhoneXBottom;
 
 //是否保持navibar透明，默认为yes,该属性会影响页面布局,如果
