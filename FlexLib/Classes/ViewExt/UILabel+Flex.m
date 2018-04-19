@@ -86,4 +86,9 @@ FLEXSET(adjustFontSize)
 {
     self.adjustsFontSizeToFitWidth = String2BOOL(sValue);
 }
+
+FLEXSET(value)
+{
+    self.text = sValue;
+}
 @end

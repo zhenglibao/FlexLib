@@ -32,5 +32,9 @@ FLEXSET(on)
     self.on = String2BOOL(sValue);
 }
 
+FLEXSET(value)
+{
+    self.on = String2BOOL(sValue);
+}
 
 @end

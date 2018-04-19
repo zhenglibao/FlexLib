@@ -292,4 +292,9 @@ FLEXSETBOOL(autoresizesSubviews)
 FLEXSETBOOL(opaque)
 FLEXSETBOOL(clearsContextBeforeDrawing)
 
+FLEXSET(value)
+{
+    NSLog(@"%@ not implement value property, UIView.value should not be called.",self.class);
+}
+
 @end

@@ -164,6 +164,10 @@ FLEXSETBOOL(enablesReturnKeyAutomatically)
 FLEXSETENUM(leftViewMode, _gTextFieldMode)
 FLEXSETENUM(rightViewMode, _gTextFieldMode)
 
+FLEXSET(value)
+{
+    self.text = sValue;
+}
 @end
 
 #pragma clang diagnostic pop

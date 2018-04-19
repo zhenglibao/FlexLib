@@ -133,6 +133,11 @@ FLEXSETENUM(keyboardAppearance, _gKeyboardAppearance)
 FLEXSETENUM(returnKeyType, _gReturnKeyType)
 FLEXSETBOOL(enablesReturnKeyAutomatically)
 
+FLEXSET(value)
+{
+    self.text = sValue;
+}
+
 @end
 
 #pragma clang diagnostic pop
