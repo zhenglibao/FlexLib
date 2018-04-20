@@ -224,14 +224,16 @@ static void* gObserverFrame = &gObserverFrame;
     
     _bUpdating = YES;
     
-    NSLog(@"Flexbox: reloading layout file %@ ...",_flexName);
+    NSString* flexname = _flexName.lastPathComponent ;
+    
+    NSLog(@"Flexbox: reloading layout file %@ ...",flexname);
     
     __weak FlexBaseVC* weakSelf = self;
     dispatch_queue_t queue = dispatch_get_global_queue(
                                                        DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue,^{
         NSError* error = nil;
-        NSData* flexData = FlexFetchLayoutFile(_flexName, &error);
+        NSData* flexData = FlexFetchLayoutFile(flexname, &error);
         dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf resetByFlexData:flexData];
         });
