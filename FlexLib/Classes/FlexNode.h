@@ -87,7 +87,8 @@ void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 
 @interface FlexNode : NSObject<NSCoding>
 
-+(FlexNode*)loadNodeFromRes:(NSString*)flexName;
++(FlexNode*)loadNodeFromRes:(NSString*)flexName
+                      Owner:(NSObject*)owner;
 +(FlexNode*)loadNodeData:(NSData*)data;
 +(NSString*)getCacheDir;
 +(void)clearFlexCache;
@@ -101,6 +102,9 @@ void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 @end
 
 @interface NSObject (Flex)
+
+//load xml layout data in owner
+-(NSData*)loadXmlLayoutData:(NSString*)flexname;
 
 // owner custom create view
 -(UIView*)createView:(Class)cls Name:(NSString*)name;

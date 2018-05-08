@@ -630,6 +630,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     return [FlexNode buildNodeWithXml:root];
 }
 +(FlexNode*)loadNodeFromRes:(NSString*)flexName
+                      Owner:(NSObject*)owner
 {
     FlexNode* node;
     BOOL isAbsoluteRes = [flexName hasPrefix:@"/"];
@@ -640,10 +641,15 @@ void FlexApplyLayoutParam(YGLayout* layout,
             return node;
     }
     
-    NSData* xmlData = isAbsoluteRes ? loadFromFile(flexName) : gLoadFunc(flexName) ;
-    if(xmlData == nil){
-        NSLog(@"Flexbox: flex res %@ load failed.",flexName);
-        return nil;
+    NSData* xmlData = [owner loadXmlLayoutData:flexName];
+    
+    if(xmlData==nil){
+        xmlData = isAbsoluteRes ? loadFromFile(flexName) : gLoadFunc(flexName) ;
+        
+        if(xmlData == nil){
+            NSLog(@"Flexbox: flex res %@ load failed.",flexName);
+            return nil;
+        }
     }
     node = [FlexNode loadNodeData:xmlData];
     
@@ -903,6 +909,11 @@ float FlexGetScaleOffset(void)
 #pragma mark - Owner overridable functions
 
 @implementation NSObject (Flex)
+
+-(NSData*)loadXmlLayoutData:(NSString*)flexname
+{
+    return nil;
+}
 
 -(UIView*)createView:(Class)cls
                 Name:(NSString*)name

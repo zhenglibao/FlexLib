@@ -283,7 +283,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     FlexRootView* root = [[FlexRootView alloc]init];
     root->_owner = owner;
     
-    FlexNode* node = [FlexNode loadNodeFromRes:resName];
+    FlexNode* node = [FlexNode loadNodeFromRes:resName Owner:owner];
     if(node != nil){
         UIView* sub ;
         
