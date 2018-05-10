@@ -2,6 +2,9 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 1.7.4
+1. 修复FlexCustomBaseView中initWithFrame的问题
+
 ## 1.7.3
 1. 增加owner自定义加载布局接口
 

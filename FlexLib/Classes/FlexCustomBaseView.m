@@ -67,7 +67,10 @@ static void* gObserverFrame = &gObserverFrame;
     if(_frameView == nil){
         __weak FlexCustomBaseView* weakSelf = self;
         
-        _frameView = [[FlexFrameView alloc]initWithFlex:[self getFlexName] Frame:frame Owner:self];
+        CGRect rcFrameView = frame;
+        rcFrameView.origin = CGPointZero;
+        
+        _frameView = [[FlexFrameView alloc]initWithFlex:[self getFlexName] Frame:rcFrameView Owner:self];
         _frameView.onFrameChange = ^(CGRect rc){
             if(!CGSizeEqualToSize(rc.size, weakSelf.frame.size)){
                 [weakSelf markDirty];
