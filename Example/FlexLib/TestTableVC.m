@@ -21,6 +21,8 @@
     NSMutableArray* _heights;
     
     UILabel* content;   //header中的content
+    
+    TestTableCell* _heightCell;
 }
 
 @end
@@ -42,6 +44,7 @@
     
     _table.delegate = self ;
     _table.dataSource = self ;
+    _heightCell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:nil];
     
     __weak TestTableVC* weakSelf = self;
     
@@ -309,24 +312,24 @@
           @"content": @"时代峰峻历史课带附件莱克斯顿解放路我是东方啥地方世纪东方手机里的放假了时代峰峻历史记录东方闪电交流方式快受打击了开放时间类库地方就是留点饭捷登录放暑假了多分数据代理费私搭乱建快放暑假了坑多分数据留点饭",
           },
       ];
-    _datas = [datas mutableCopy];
-    for (int i=0;i<200; i++) {
-        [_datas addObjectsFromArray:datas];
+    NSMutableArray* ary = [datas mutableCopy];
+    for (int i=0;i<20; i++) {
+        [ary addObjectsFromArray:datas];
     }
-    _heights = [NSMutableArray array];
     
-    TestTableCell*  cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:nil];
-    
+    NSMutableArray* heights = [NSMutableArray array];
     CGFloat tableWidth = [[UIScreen mainScreen]bounds].size.width;
     
-    for (NSDictionary* data in _datas)
+    for (NSDictionary* data in ary)
     {
-        [cell setData:data ForHeight:YES];
-        CGFloat h = [cell heightForWidth:tableWidth];
-        [_heights addObject:[NSNumber numberWithFloat:h]];
+        [_heightCell setData:data ForHeight:YES];
+        CGFloat h = [_heightCell heightForWidth:tableWidth];
+        [heights addObject:[NSNumber numberWithFloat:h]];
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        _datas = ary;
+        _heights = heights;
         [_table reloadData];
     });
 }
@@ -351,12 +354,10 @@
     
     static NSString *identifier = @"TestTableCellIdentifier";
     TestTableCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    static long count = 0;
+    
     if (cell == nil) {
         cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:identifier];
-        NSLog(@"created count:%ld",(long)++count);
     }else{
-        NSLog(@"reused cell");
     }
     [cell setData:_datas[indexPath.row] ForHeight:NO];
     return cell;
