@@ -47,17 +47,6 @@
     _heightCell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:nil];
     
     __weak TestTableVC* weakSelf = self;
-    
-    CGRect rcFrame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 0);
-    FlexFrameView* header = [[FlexFrameView alloc]initWithFlex:@"TableHeader" Frame:rcFrame Owner:self];
-    header.flexibleHeight = YES;
-    content.text = @"这个例子演示了在后台线程计算布局高度：）这个例子在横竖屏切换时没有重新计算高度，因此切换横竖屏时会有问题：）";
-    [header layoutIfNeeded];
-    header.onFrameChange = ^(CGRect rc){
-        [weakSelf tableHeaderFrameChange];
-    };
-    _table.tableHeaderView = header;
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [weakSelf loadInBackground];
     });
@@ -327,11 +316,28 @@
         [heights addObject:[NSNumber numberWithFloat:h]];
     }
     
+    // load
     dispatch_async(dispatch_get_main_queue(), ^{
         _datas = ary;
         _heights = heights;
-        [_table reloadData];
+        [self onLoadFinish];
     });
+}
+-(void)onLoadFinish
+{
+    __weak TestTableVC* weakSelf = self;
+    
+    CGRect rcFrame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 0);
+    FlexFrameView* header = [[FlexFrameView alloc]initWithFlex:@"TableHeader" Frame:rcFrame Owner:self];
+    header.flexibleHeight = YES;
+    content.text = @"这个例子演示了在后台线程计算布局高度：）这个例子在横竖屏切换时没有重新计算高度，因此切换横竖屏时会有问题：）";
+    [header layoutIfNeeded];
+    header.onFrameChange = ^(CGRect rc){
+        [weakSelf tableHeaderFrameChange];
+    };
+    _table.tableHeaderView = header;
+    
+    [_table reloadData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
