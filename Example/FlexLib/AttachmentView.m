@@ -33,9 +33,10 @@
     UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(removeCell:)];
     UIView* cell = [[UIView alloc]init];
     
+    [_attachParent addSubview:cell];
+    
     [cell enableFlexLayout:YES];
     [cell addGestureRecognizer:tap];
-    
     [cell setLayoutAttrStrings:@[
                                  @"width",@"100%",
                                  @"height",@"44",
@@ -45,16 +46,15 @@
                                  @"justifyContent",@"center",
                                  ]];
     [cell setViewAttr:@"bgColor" Value:@"#e5e5e5"];
-    [_attachParent addSubview:cell];
     
     UILabel* label=[UILabel new];
+    [cell addSubview:label];
     [label enableFlexLayout:YES];
     [label setViewAttrStrings:@[
                                 @"fontSize",@"16",
                                 @"color",@"red",
                                 @"text",@"点我删除",
                                 ]];
-    [cell addSubview:label];
     
     [_attachParent markDirty];
 }
