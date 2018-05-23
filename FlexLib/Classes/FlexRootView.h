@@ -21,6 +21,7 @@
 @interface UIView(FlexPublic)
 
 @property(nonatomic,readonly) FlexRootView* rootView;
+@property(nonatomic,readonly) NSObject* owner;
 
 +(UIView*)buildFlexView:(Class)viewCls
                  Layout:(NSArray<NSString*>*)layoutAttrs

@@ -61,7 +61,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 }
 -(FlexRootView*)rootView
 {
-    UIView* parent = self.superview;
+    UIView* parent = self;
     while(parent!=nil){
         if([parent isKindOfClass:[FlexRootView class]]){
             return (FlexRootView*)parent;
@@ -70,6 +70,20 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     }
     return nil;
 }
+-(NSObject*)owner
+{
+    UIView* parent = self;
+    while(parent!=nil){
+        if([parent isKindOfClass:[FlexRootView class]] &&
+           [(FlexRootView*)parent owner]!=nil)
+        {
+            return [(FlexRootView*)parent owner];
+        }
+        parent = parent.superview;
+    }
+    return nil;
+}
+
 -(UIView*)findLeaf
 {
     if(self.yoga.isLeaf)
@@ -121,18 +135,20 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 -(void)setViewAttr:(NSString*) name
              Value:(NSString*) value
 {
-    FlexSetViewAttr(self, name, value,nil);
+    FlexSetViewAttr(self, name, value,self.owner);
 }
 -(void)setViewAttrs:(NSArray<FlexAttr*>*)attrs
 {
+    NSObject* owner = self.owner ;
     for (FlexAttr* attr in attrs) {
-        FlexSetViewAttr(self, attr.name, attr.value,nil);
+        FlexSetViewAttr(self, attr.name, attr.value,owner);
     }
 }
 -(void)setViewAttrStrings:(NSArray<NSString*>*)stringAttrs
 {
+    NSObject* owner = self.owner ;
     for (NSInteger i=0;i+1<stringAttrs.count;i+=2) {
-        FlexSetViewAttr(self, stringAttrs[i], stringAttrs[i+1],nil);
+        FlexSetViewAttr(self, stringAttrs[i], stringAttrs[i+1],owner);
     }
 }
 -(void)setLayoutAttr:(NSString*) name
