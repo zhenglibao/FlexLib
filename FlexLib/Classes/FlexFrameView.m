@@ -88,9 +88,6 @@ static void* gObserverFrame = &gObserverFrame;
         return;
     }
     
-    if(CGSizeEqualToSize(newFrame.size,self.frame.size))
-        return;
-    
     CGRect rc = self.frame ;
     UIEdgeInsets safeArea = _flexRootView.safeArea;
     if(self.flexibleWidth){
@@ -99,12 +96,15 @@ static void* gObserverFrame = &gObserverFrame;
     if(self.flexibleHeight){
         rc.size.height = CGRectGetHeight(newFrame) + safeArea.top + safeArea.bottom;
     }
-    self.frame = rc ;
-    if(self.onFrameChange != nil)
-    {
-        self.onFrameChange(rc);
-    }
     
+    if(!CGSizeEqualToSize(rc.size,self.frame.size))
+    {
+        self.frame = rc ;
+        if(self.onFrameChange != nil)
+        {
+            self.onFrameChange(rc);
+        }
+    }
 }
 -(void)setFlexibleWidth:(BOOL)flexibleWidth
 {

@@ -2,11 +2,9 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
-## 1.8.0
+## 1.8.1
 1. FlexFrameView增加对safeArea的支持，能够更好的用在ViewController上（也就是FlexFrameView可以不再和子FlexRootView的大小保持一致），使用时直接设置FlexRootView的safeArea属性即可。
-
-## 1.7.6
-1. 修复FlexContainerView在所有子view均隐藏时返回大小不正确的问题
+2. 修复FlexContainerView在所有子view均隐藏时返回大小不正确的问题
 
 ## 1.7.4
 1. 修复FlexCustomBaseView中initWithFrame的问题
