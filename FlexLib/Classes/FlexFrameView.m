@@ -84,16 +84,27 @@ static void* gObserverFrame = &gObserverFrame;
 -(void)subFrameChanged:(UIView*)subView
                   Rect:(CGRect)newFrame
 {
-    if(!CGSizeEqualToSize(newFrame.size,self.frame.size))
-    {
-        CGRect rc = self.frame ;
-        rc.size = newFrame.size ;
-        self.frame = rc ;
-        if(self.onFrameChange != nil)
-        {
-            self.onFrameChange(rc);
-        }
+    if(!(self.flexibleWidth||self.flexibleHeight)){
+        return;
     }
+    
+    if(CGSizeEqualToSize(newFrame.size,self.frame.size))
+        return;
+    
+    CGRect rc = self.frame ;
+    UIEdgeInsets safeArea = _flexRootView.safeArea;
+    if(self.flexibleWidth){
+        rc.size.width = CGRectGetWidth(newFrame) + safeArea.left + safeArea.right ;
+    }
+    if(self.flexibleHeight){
+        rc.size.height = CGRectGetHeight(newFrame) + safeArea.top + safeArea.bottom;
+    }
+    self.frame = rc ;
+    if(self.onFrameChange != nil)
+    {
+        self.onFrameChange(rc);
+    }
+    
 }
 -(void)setFlexibleWidth:(BOOL)flexibleWidth
 {
