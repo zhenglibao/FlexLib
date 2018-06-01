@@ -214,7 +214,6 @@ FlexLib支持两种类型的属性：布局属性和视图属性，布局属性�
 通过pod方式安装FlexLib，例子如下:
 
 ```ruby
-pod 'Yoga','1.6.0'   #Yoga1.8.0不再支持iOS
 pod 'FlexLib'
 ```
 

@@ -244,7 +244,6 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 
-pod 'Yoga','1.6.0'   #new yoga(1.8.0) not support iOS
 pod 'FlexLib'
 ```
 
