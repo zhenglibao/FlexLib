@@ -109,6 +109,9 @@ UIColor* colorFromString(NSString* clr,NSObject* owner);
 // eg: white/black/....
 UIColor* systemColor(NSString* clr);
 
+// 字符串转字体，格式： 字体名称|字体大小  其中字体名称也可以是bold或者italic
+UIFont* fontFromString(NSString* fontStr);
+
 // 字符串转换BOOL
 BOOL String2BOOL(NSString* s);
 

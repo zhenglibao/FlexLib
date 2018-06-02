@@ -13,6 +13,8 @@
 #import <objc/runtime.h>
 #import "../FlexUtils.h"
 
+static char *PARASTYLEKEY = "paraStyleKey";
+
 static NameValue _align[] =
 {
     {"left", NSTextAlignmentLeft},
@@ -34,7 +36,11 @@ static NameValue _breakMode[] =
 
 @implementation UILabel (Flex)
 
-FLEXSETSTR(text)
+FLEXSET(text)
+{
+    self.text = sValue;
+    [self updateAttributeText];
+}
 FLEXSET(fontSize)
 {
     float nSize = [sValue floatValue];
@@ -90,5 +96,66 @@ FLEXSET(adjustFontSize)
 FLEXSET(value)
 {
     self.text = sValue;
+}
+
+-(NSMutableParagraphStyle*)paraStyle
+{
+    NSMutableParagraphStyle *style = objc_getAssociatedObject(self, PARASTYLEKEY);
+    if (!style) {
+        style = [[NSMutableParagraphStyle alloc] init];
+        
+        objc_setAssociatedObject(self, PARASTYLEKEY, style, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return style;
+}
+
+FLEXSET(lineSpacing)
+{
+    NSMutableParagraphStyle* style=[self paraStyle];
+    style.lineSpacing = [sValue floatValue];
+    if(self.text){
+        [self updateAttributeText];
+    }
+}
+FLEXSET(paragraphSpacing)
+{
+    NSMutableParagraphStyle* style=[self paraStyle];
+    style.paragraphSpacing = [sValue floatValue];
+    if(self.text){
+        [self updateAttributeText];
+    }
+}
+FLEXSET(firstLineHeadIndent)
+{
+    NSMutableParagraphStyle* style=[self paraStyle];
+    style.firstLineHeadIndent = [sValue floatValue];
+    if(self.text){
+        [self updateAttributeText];
+    }
+}
+FLEXSET(headIndent)
+{
+    NSMutableParagraphStyle* style=[self paraStyle];
+    style.headIndent = [sValue floatValue];
+    if(self.text){
+        [self updateAttributeText];
+    }
+}
+FLEXSET(tailIndent)
+{
+    NSMutableParagraphStyle* style=[self paraStyle];
+    style.tailIndent = [sValue floatValue];
+    if(self.text){
+        [self updateAttributeText];
+    }
+}
+-(void)updateAttributeText
+{
+    NSString* text = self.text ;
+    
+    NSMutableAttributedString * attributedString1 = [[NSMutableAttributedString alloc] initWithString:self.text];
+    NSMutableParagraphStyle * style = [self paraStyle];
+    [attributedString1 addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0,text.length)];
+    [self setAttributedText:attributedString1];
 }
 @end

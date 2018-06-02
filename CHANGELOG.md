@@ -2,6 +2,18 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 1.8.2
+批量增加以下属性：
+UIView::font，格式为   字体名称|字体大小    字体名称也可以是bold或者italic
+FlexTextView::placeholder
+FlexTextView::placeholderColor
+UILabel::lineSpacing
+UILabel::paragraphSpacing
+UILabel::firstLineHeadIndent
+UILabel::headIndent
+UILabel::tailIndent
+
+
 ## 1.8.1
 1. FlexFrameView增加对safeArea的支持，能够更好的用在ViewController上（也就是FlexFrameView可以不再和子FlexRootView的大小保持一致），使用时直接设置FlexRootView的safeArea属性即可。
 2. 修复FlexContainerView在所有子view均隐藏时返回大小不正确的问题

@@ -1945,4 +1945,48 @@
 			"continue",
 		],
 	},
+
+	// added at 2018/6/2
+	"lineSpacing":{
+		"prefix": "lineSpacing",
+		"body": [
+			"lineSpacing",
+		],
+	},
+	"paragraphSpacing":{
+		"prefix": "paragraphSpacing",
+		"body": [
+			"paragraphSpacing",
+		],
+	},
+	"firstLineHeadIndent":{
+		"prefix": "firstLineHeadIndent",
+		"body": [
+			"firstLineHeadIndent",
+		],
+	},
+	"headIndent":{
+		"prefix": "headIndent",
+		"body": [
+			"headIndent",
+		],
+	},
+	"tailIndent":{
+		"prefix": "tailIndent",
+		"body": [
+			"tailIndent",
+		],
+	},
+	"font":{
+		"prefix": "font",
+		"body": [
+			"font",
+		],
+	},
+	"placeholderColor":{
+		"prefix": "placeholderColor",
+		"body": [
+			"placeholderColor",
+		],
+	},
 }

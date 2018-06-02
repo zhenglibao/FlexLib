@@ -12,4 +12,10 @@
 //
 @interface FlexTextView : UITextView
 
+@property(nonatomic,readonly) UILabel *placeholdLabel;
+@property(nonatomic,strong) NSString *placeholder;
+@property(nonatomic,strong) UIColor *placeholderColor;
+@property(nonatomic,nonnull,strong)  NSAttributedString *attributePlaceholder;
+@property(nonatomic,assign) CGPoint location;
+
 @end

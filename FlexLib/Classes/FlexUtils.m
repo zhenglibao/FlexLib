@@ -113,6 +113,29 @@ UIColor* colorFromString(NSString* clr,
                            alpha:a / 255.0f];
 }
 
+UIFont* fontFromString(NSString* fontStr)
+{
+    NSArray* ary = [fontStr componentsSeparatedByString:@"|"];
+    
+    if(ary.count==0)
+        return nil;
+    
+    if(ary.count==1){
+        return [UIFont systemFontOfSize:[ary.firstObject floatValue]];
+    }
+    
+    NSString* fontName = ary.firstObject;
+    CGFloat fontSize = [ary[1] floatValue];
+    
+    if([@"bold" compare:fontName]==NSOrderedSame)
+        return [UIFont boldSystemFontOfSize:fontSize];
+    
+    if([@"italic" compare:fontName]==NSOrderedSame)
+        return [UIFont italicSystemFontOfSize:fontSize];
+    
+    return [UIFont fontWithName:fontName size:fontSize];;
+}
+
 
 int String2Int(const char* s,
                NameValue table[],
