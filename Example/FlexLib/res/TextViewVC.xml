@@ -53,7 +53,7 @@
             <UIView layout="flex:1">
                 <UILabel attr="fontSize:16,color:#333333,text:备注"/>
                 <UIView layout="height:10"/>
-                <FlexTextView layout="width:100%,minHeight:30,maxHeight:95" attr="fontSize:16,color:#333333,text:这是一个UITextView\,你可以输入多行文本来试试效果:)"/>
+                <FlexTextView layout="width:100%,minHeight:30,maxHeight:95" attr="fontSize:16,color:#333333,placeholder:这是一个UITextView\,你可以输入多行文本来试试效果:)"/>
             </UIView>
         </UIView>
         

@@ -35,6 +35,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:UITextViewTextDidChangeNotification object:nil];
         
         [self addObserver:self forKeyPath:@"font" options:NSKeyValueObservingOptionNew context:nil];
+        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
         
         _placeholderLabel = label;
     }
@@ -42,6 +43,9 @@
 }
 - (void)dealloc
 {
+    [self removeObserver:self forKeyPath:@"font"];
+    [self removeObserver:self forKeyPath:@"frame"];
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -167,6 +171,13 @@
     {
         self.needAdjustFont = YES;
         [self updatePlaceholder];
+    }else if([keyPath isEqualToString:@"frame"]){
+
+        [self updatePlaceholder];
+
+    }else{
+
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 

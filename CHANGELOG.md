@@ -2,6 +2,10 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 1.8.3
+修复以下问题：
+FlexTextView的placeholder在重设frame后没有刷新的问题
+
 ## 1.8.2
 批量增加以下属性：
 UIView::font，格式为   字体名称|字体大小    字体名称也可以是bold或者italic

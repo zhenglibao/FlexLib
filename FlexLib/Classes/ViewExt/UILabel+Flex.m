@@ -49,7 +49,17 @@ FLEXSET(fontSize)
         self.font = font;
     }
 }
-FLEXSETENUM(lineBreakMode, _breakMode)
+FLEXSET(lineBreakMode)
+{
+    NSInteger n = NSString2Int(sValue,
+                               _breakMode,
+                               sizeof(_breakMode)/sizeof(NameValue));
+    self.lineBreakMode = n;
+    
+    NSMutableParagraphStyle* style=[self paraStyle];
+    style.lineBreakMode = n;
+    [self updateAttributeText];
+}
 FLEXSET(linesNum)
 {
     int n = (int)[sValue integerValue];
@@ -82,6 +92,10 @@ FLEXSET(textAlign)
 {
     const char* c =  [sValue cStringUsingEncoding:NSASCIIStringEncoding];
     self.textAlignment = (NSTextAlignment)String2Int(c, _align, sizeof(_align)/sizeof(NameValue));
+    
+    NSMutableParagraphStyle* style=[self paraStyle];
+    style.alignment = self.textAlignment;
+    [self updateAttributeText];
 }
 FLEXSET(interactEnable)
 {
@@ -96,6 +110,7 @@ FLEXSET(adjustFontSize)
 FLEXSET(value)
 {
     self.text = sValue;
+    [self updateAttributeText];
 }
 
 -(NSMutableParagraphStyle*)paraStyle

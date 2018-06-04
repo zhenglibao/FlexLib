@@ -18,4 +18,6 @@
 @property(nonatomic,nonnull,strong)  NSAttributedString *attributePlaceholder;
 @property(nonatomic,assign) CGPoint location;
 
+- (void)updatePlaceholder;
+
 @end
