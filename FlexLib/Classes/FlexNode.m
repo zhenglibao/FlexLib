@@ -195,7 +195,7 @@ void FlexSetViewAttr(UIView* view,
         
         [inv invoke];
     }@catch(NSException* e){
-        NSLog(@"Flexbox: %@ called failed.",methodDesc);
+        NSLog(@"Flexbox: **** exception occur in %@::%@ property *** \r\nReason - %@.\r\n This may cause memory leak.",[view class],attrName,[e reason]);
     }
 }
 

@@ -167,8 +167,10 @@ FLEXSET(tailIndent)
 -(void)updateAttributeText
 {
     NSString* text = self.text ;
+    if(text==nil)
+        text=@"";
     
-    NSMutableAttributedString * attributedString1 = [[NSMutableAttributedString alloc] initWithString:self.text];
+    NSMutableAttributedString * attributedString1 = [[NSMutableAttributedString alloc] initWithString:text];
     NSMutableParagraphStyle * style = [self paraStyle];
     [attributedString1 addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0,text.length)];
     [self setAttributedText:attributedString1];
