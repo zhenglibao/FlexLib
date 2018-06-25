@@ -73,6 +73,7 @@
 -(void)setActiveStatus:(BOOL)bActive
 {
     const double duration = 0.1 ;
+    __weak FlexTouchView* weakSelf = self;
     
     if(bActive){
         if(_bActive)
@@ -90,15 +91,7 @@
         }
         _activeStartAt = GetAccurateSecondsSince1970();
         [UIView animateWithDuration:duration animations:^{
-            _oldAlpha = self.alpha ;
-            _bgColor = self.backgroundColor ;
-            self.alpha = _activeOpacity;
-            if(_underlayColor != nil)
-                self.backgroundColor = _underlayColor ;
-            if(_maskView != nil)
-            {
-                _maskView.hidden = NO ;
-            }
+            [weakSelf setAnimProperty:YES];
         }];
     }else if(_bActive){
         _bActive = NO ;
@@ -112,11 +105,28 @@
         if(delay<0) delay = 0;
         
         [UIView animateWithDuration:duration delay:delay options:0 animations:^{
-            self.alpha = _oldAlpha;
-            self.backgroundColor = _bgColor ;
-            if(_maskView != nil)
-                _maskView.hidden = YES;
+            [weakSelf setAnimProperty:NO];
         }completion:nil];
+    }
+}
+
+-(void)setAnimProperty:(BOOL)bActive
+{
+    if(bActive){
+        _oldAlpha = self.alpha ;
+        _bgColor = self.backgroundColor ;
+        self.alpha = _activeOpacity;
+        if(_underlayColor != nil)
+            self.backgroundColor = _underlayColor ;
+        if(_maskView != nil)
+        {
+            _maskView.hidden = NO ;
+        }
+    }else{
+        self.alpha = _oldAlpha;
+        self.backgroundColor = _bgColor ;
+        if(_maskView != nil)
+            _maskView.hidden = YES;
     }
 }
 

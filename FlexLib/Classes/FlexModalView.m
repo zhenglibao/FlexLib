@@ -29,27 +29,29 @@ static NameValue _gModalPosition[] =
 
 @interface FlexModalView()
 {
-    FlexRootView* _root;
-    FlexRootView* _ownerRootView;
+    __weak FlexRootView* _root;
+    __weak FlexRootView* _ownerRootView;
     
     FlexModalPosition _position;
     BOOL _cancelable;
-    
     BOOL _showInPosition;
+    
+    FlexRootView* _realRoot;
 }
 @end
 
 @implementation FlexModalView
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _root = [[FlexRootView alloc]init];
+        _realRoot = [[FlexRootView alloc]init];
+        _root = _realRoot;
         _root.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
         
         UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTapOutside)];
         [_root addGestureRecognizer:tap];
-        [_root addSubview:self];
         
         tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTapInside)];
         [self addGestureRecognizer:tap];
@@ -106,7 +108,10 @@ static NameValue _gModalPosition[] =
     [self resetLayout];
 
     [view addSubview:_root];
+    [_root addSubview:self];
     [_root markChildDirty:self];
+    
+    _realRoot = nil;
     
     if(anim)
         [self beginShowAnim:NO];
@@ -124,7 +129,10 @@ static NameValue _gModalPosition[] =
     }];
     
     [view addSubview:_root];
+    [_root addSubview:self];
     [_root markChildDirty:self];
+    
+    _realRoot = nil;
     
     if(anim)
         [self beginShowAnim:YES];
@@ -168,7 +176,11 @@ static NameValue _gModalPosition[] =
     if(_root==nil||_root.superview==nil)
         return;
     if(!anim)
+    {
+        _realRoot = _root;
+        [self removeFromSuperview];
         [_root removeFromSuperview];
+    }
     else
         [self beginHideAnim:_showInPosition];
 }
@@ -203,8 +215,12 @@ static NameValue _gModalPosition[] =
     [self enableFlexLayout:YES];
     
     __weak FlexRootView* weakRoot = _root;
+    __weak FlexModalView* weakSelf = self;
+    _realRoot = _root;
+    
     dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2* NSEC_PER_SEC));
     dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+        [weakSelf removeFromSuperview];
         [weakRoot removeFromSuperview];
     });
 }
