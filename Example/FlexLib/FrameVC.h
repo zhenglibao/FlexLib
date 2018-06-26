@@ -9,6 +9,9 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+ 这个例子演示了如何不继承 FlexBaseVC来使用xml布局
+ */
 @interface FrameVC : UIViewController
 
 @end

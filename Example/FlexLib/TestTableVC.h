@@ -10,6 +10,9 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+ 该例子演示了在UITableView的cell中使用xml布局
+ */
 @interface TestTableVC : FlexBaseVC
 
 @end

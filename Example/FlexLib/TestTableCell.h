@@ -7,6 +7,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/*
+ 该例子演示了在UITableView的cell中使用xml布局
+ */
 
 @interface TestTableCell : FlexBaseTableCell
 

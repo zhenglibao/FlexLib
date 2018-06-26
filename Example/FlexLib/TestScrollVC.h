@@ -8,7 +8,10 @@
  */
 
 
-
+/*
+ 该例子演示了FlexScrollView的使用方法，关键属性vertScroll,horzScroll，表示
+ 是否允许对应方向的滚动，FlexScrollView会自动管理contentSize
+ */
 @interface TestScrollVC : FlexBaseVC
 
 @end
