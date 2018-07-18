@@ -335,8 +335,10 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     [_observedViews addObject:subView];
     
     [subView addObserver:self forKeyPath:@"hidden" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverHidden];
-    [subView addObserver:self forKeyPath:@"text" options:0 context:gObserverText];
-    [subView addObserver:self forKeyPath:@"attributedText" options:0 context:gObserverAttrText];
+    if(![subView isKindOfClass:[UITextField class]]){
+        [subView addObserver:self forKeyPath:@"text" options:0 context:gObserverText];
+        [subView addObserver:self forKeyPath:@"attributedText" options:0 context:gObserverAttrText];
+    }
 }
 -(void)removeWatchView:(UIView*)view
 {
@@ -346,8 +348,10 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     [_observedViews removeObject:view];
     
     [view removeObserver:self forKeyPath:@"hidden"];
-    [view removeObserver:self forKeyPath:@"text"];
-    [view removeObserver:self forKeyPath:@"attributedText"];
+    if(![view isKindOfClass:[UITextField class]]){
+        [view removeObserver:self forKeyPath:@"text"];
+        [view removeObserver:self forKeyPath:@"attributedText"];
+    }
 }
 
 #pragma mark - KVO
