@@ -20,6 +20,13 @@
 
 @implementation FlexHttpViewerVC
 
+/*
+ * 重写以防止变量绑定异常导致查看xml时有内存泄漏
+ */
+- (void)setValue:(id)value forKey:(NSString *)key
+{
+}
+
 -(void)viewDidLoad{
     [super viewDidLoad];
     

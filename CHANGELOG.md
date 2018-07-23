@@ -2,6 +2,11 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+
+## 1.8.7
+1. 重写FlexHttpViewerVC::setValue:forKey:和FlexViewer::setValue:forKey:防止查看xml布局时有内存泄漏
+2. FlexRootView的KVO策略调整，只观测UILabel的text和attributeText属性
+
 ## 1.8.6
 修复监听UITextField导致的泄漏
 
