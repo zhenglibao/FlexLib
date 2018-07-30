@@ -1312,6 +1312,12 @@
 			"bottomRight",
 		],
 	},
+	"lineBreakMode":{
+		"prefix": "lineBreakMode",
+		"body": [
+			"lineBreakMode",
+		],
+	},
 	"wordWrapping":{
 		"prefix": "wordWrapping",
 		"body": [
