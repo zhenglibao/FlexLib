@@ -76,6 +76,7 @@ iPhone X adaption
 ## Advantage
 
 * The speed of flexbox is much faster than autolayout. 
+
 ![compare result](https://user-gold-cdn.xitu.io/2017/12/25/1608d27446d5177d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 * Flexbox is more general than autolayout. Flexbox is standard for web and it's also used in ReactNative, Weex, AsyncDisplayKit, Android, ...
@@ -83,6 +84,7 @@ iPhone X adaption
 * FlexLib has better readability. View the autolayout written by others is really boring.
 
 * For page like the following image, you don't need UITableView any more. Just write everything in one xml. It's much simpler and maintainable.
+
 ![setting page](https://github.com/zhenglibao/FlexLib/raw/master/Doc/res/setting.png)
 
 * The calculation for height of complex UITableViewCell is really boring. With FlexLib, all the calculation is automatically.
