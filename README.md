@@ -14,6 +14,7 @@ With FlexLib, you can write iOS UI much faster than before, and there are better
 
 - [Screenshots](#screenshots)
 - [Feature](#feature)
+- [Advantage](#advantage)
 - [Usage](#usage)
 - [Hot Preview](#hot-preview)
 - [Usage For Swift Project](#usage-for-swift-project)
@@ -69,6 +70,28 @@ iPhone X adaption
 * support Swift project
 * view all layouts in one page (Control+V)
 * multi-language support
+
+---
+
+## Advantage
+
+* The speed of flexbox is much faster than autolayout. 
+![compare result](https://user-gold-cdn.xitu.io/2017/12/25/1608d27446d5177d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+* Flexbox is more general than autolayout. Flexbox is standard for web and it's also used in ReactNative, Weex, AsyncDisplayKit, Android, ...
+
+* FlexLib has better readability. View the autolayout written by others is really boring.
+
+* For page like the following image, you don't need UITableView any more. Just write everything in one xml. It's much simpler and maintainable.
+![setting page](https://github.com/zhenglibao/FlexLib/raw/master/Doc/res/setting.png)
+
+* The calculation for height of complex UITableViewCell is really boring. With FlexLib, all the calculation is automatically.
+
+* FlexScrollView (the subclass of UIScrollView) can manage its contentSize automatically. I'm sure it will save you a lot of time.
+
+* To show or hide subview, just set hidden property. All the layout will refresh automatically.
+
+* Hot preview is magic. You can see the final effect on device without restart the app.
 
 ---
 

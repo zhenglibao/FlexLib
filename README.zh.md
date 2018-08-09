@@ -54,6 +54,28 @@ iPhoneX adaption
 
 ---
 
+## FlexLib的优势
+
+* 与Autolayout相比，Flexbox的布局速度要快的多，下图是各种布局的性能对比 
+![compare result](https://user-gold-cdn.xitu.io/2017/12/25/1608d27446d5177d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+* Flexbox更加通用，flexbox本身是web的布局标准，同时很多知名的开发库也都在使用Flexbox布局，比如ReactNative, Weex, AsyncDisplayKit, Android等
+
+* FlexLib采用xml来书写布局，可读性更好
+
+* 对于像下图这样的页面，无需再使用UITableView来实现，只需要在一个xml里边即可完成所有的界面效果，更加简单并且可维护性更好.
+![setting page](https://github.com/zhenglibao/FlexLib/raw/master/Doc/res/setting.png)
+
+* 对于复杂的UITableViewCell布局，计算cell的高度是件复杂的事情。使用FlexLib的话，所有的计算都可以自动完成
+
+* FlexScrollView( UIScrollView的子类)可以自动管理滚动范围
+
+* 显示或者隐藏子视图的话，只需要设置hidden属性即可，布局可以自动刷新
+
+* 支持热刷新，无需重新启动app便可以看到修改后的界面效果
+
+---
+
 ## 使用方法
 
 ### 将xml布局文件用于视图控制器:
