@@ -7,6 +7,17 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/*
+ 最新的例子使用评估高度，如下：
+ 
+ _table.rowHeight = UITableViewAutomaticDimension;
+ _table.estimatedRowHeight = 88;
+ 
+ 无需再重写
+ - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+ 
+ 原来的方式仍然支持
+ */
 
 
 #import "TestTableVC.h"
@@ -337,6 +348,9 @@
     };
     _table.tableHeaderView = header;
     
+    _table.rowHeight = UITableViewAutomaticDimension;
+    _table.estimatedRowHeight = 88;
+    
     [_table reloadData];
 }
 - (void)didReceiveMemoryWarning {
@@ -368,12 +382,12 @@
     [cell setData:_datas[indexPath.row] ForHeight:NO];
     return cell;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.row<_heights.count)
-        return [[_heights objectAtIndex:indexPath.row]floatValue];
-    return 0;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if(indexPath.row<_heights.count)
+//        return [[_heights objectAtIndex:indexPath.row]floatValue];
+//    return 0;
+//}
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

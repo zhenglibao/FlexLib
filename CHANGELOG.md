@@ -2,6 +2,8 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 1.9.0
+1. FlexBaseTableCell支持评估高度，增加onInit方法可以重写。
 
 ## 1.8.7
 1. 重写FlexHttpViewerVC::setValue:forKey:和FlexViewer::setValue:forKey:防止查看xml布局时有内存泄漏

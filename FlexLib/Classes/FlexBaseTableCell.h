@@ -31,4 +31,7 @@
 
 -(CGSize)calculateSize:(CGSize)szLimit;
 
+// override this to do aditional initialize
+-(void)onInit;
+
 @end

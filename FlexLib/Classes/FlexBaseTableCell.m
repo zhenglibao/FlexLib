@@ -48,8 +48,12 @@ static void* gObserverFrame         = &gObserverFrame;
             [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverFrame];
             _bObserved = YES;
         }
+        
+        [self onInit];
     }
     return self ;
+}
+- (void)onInit{
 }
 -(UITableView*)tableView
 {
@@ -90,6 +94,14 @@ static void* gObserverFrame         = &gObserverFrame;
     }else{
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
+}
+- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize
+{
+    return [self calculateSize:targetSize];
+}
+- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority
+{
+    return [self calculateSize:targetSize];
 }
 -(CGFloat)heightForWidth:(CGFloat)width
 {
