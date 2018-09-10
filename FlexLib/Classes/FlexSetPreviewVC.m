@@ -121,10 +121,12 @@ void createFlexIndex(NSString* url,
 }
 -(void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     _canContinue = YES;
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     _canContinue = NO;
 }
 - (void)dealloc
