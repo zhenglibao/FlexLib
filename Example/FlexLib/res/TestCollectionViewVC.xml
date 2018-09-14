@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView
+    layout="
+    flex:1"
+    attr="bgColor:white">
+    <FlexCollectionView name="_collectionView" layout="flex:1" attr="bgColor:white"/>
+</UIView> 

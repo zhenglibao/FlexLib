@@ -39,9 +39,9 @@
                 <UILabel
                 attr="@:system/buttonText,text:FlexTouchView"/>
             </FlexTouchView>
-            <FlexTouchView onPress="onjustifyContent:" layout="@:system/button" attr="@:system/buttonAttr">
+            <FlexTouchView onPress="onCollectionView" layout="@:system/button" attr="@:system/buttonAttr">
                 <UILabel
-                attr="@:system/buttonText,text:justifyContent"/>
+                attr="@:system/buttonText,text:CollectionView"/>
             </FlexTouchView>
         </UIView>
 

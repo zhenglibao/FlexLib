@@ -213,7 +213,6 @@
 				D2D020631FEBA946008F6DB6 /* Frameworks */,
 				D2D020641FEBA946008F6DB6 /* Resources */,
 				9045EA13D850423B8BC667E6 /* [CP] Embed Pods Frameworks */,
-				665B3ED10E9D82613CC7EFC3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,21 +295,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		665B3ED10E9D82613CC7EFC3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9045EA13D850423B8BC667E6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -18,6 +18,7 @@
 #import "TextViewVC.h"
 #import "ControlsVC.h"
 #import "FrameVC.h"
+#import "TestCollectionViewVC.h"
 
 @interface FlexViewController ()
 {
@@ -58,8 +59,8 @@
     TestLoginVC* vc=[[TestLoginVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
-- (void)onjustifyContent:(id)sender {
-    DemoFlexVC* vc=[[DemoFlexVC alloc]initWithFlexName:@"justifyContent"];
+- (void)onCollectionView{
+    TestCollectionViewVC* vc=[[TestCollectionViewVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)onTextView:(id)sender {

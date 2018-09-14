@@ -8,24 +8,25 @@
  */
 
 
-
-#import "FlexBaseTableCell.h"
+#import "FlexCollectionCell.h"
 #import "FlexRootView.h"
 
 static void* gObserverFrame         = &gObserverFrame;
 
-@interface FlexBaseTableCell()
+@interface FlexCollectionCell()
 {
     FlexRootView* _flexRootView ;
     BOOL _bObserved;
 }
 @end
 
-@implementation FlexBaseTableCell
-- (instancetype)init
+@implementation FlexCollectionCell
+
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
+        [self internalInit:nil];
     }
     return self;
 }
@@ -35,7 +36,7 @@ static void* gObserverFrame         = &gObserverFrame;
     if(_flexRootView!=nil)
         return;
     
-    __weak FlexBaseTableCell* weakSelf = self;
+    __weak FlexCollectionCell* weakSelf = self;
     
     _flexRootView = [FlexRootView loadWithNodeFile:flexName Owner:self];
     _flexRootView.flexibleHeight = YES ;
@@ -51,38 +52,17 @@ static void* gObserverFrame         = &gObserverFrame;
     
     [self onInit];
 }
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)dealloc
 {
-    self = [super initWithStyle: style reuseIdentifier:reuseIdentifier];
-    
-    if( self != nil){
-        [self internalInit:nil];
+    if(_bObserved){
+        [self removeObserver:self forKeyPath:@"frame"];
     }
-    return self;
 }
 
--(instancetype)initWithFlex:(NSString*)flexName
-            reuseIdentifier:(nullable NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+-(void)onInit{
     
-    if( self != nil){
-        [self internalInit:flexName];
-    }
-    return self ;
 }
-- (void)onInit{
-}
--(UITableView*)tableView
-{
-    UIView* view = [self superview];
-    
-    while (view && ![view isKindOfClass:[UITableView class]] ) {
-        view = [view superview];
-    }
-    return (UITableView*)view;
-}
+
 - (void)onRootViewDidLayout
 {
     CGRect rcRootView = _flexRootView.frame ;
@@ -94,18 +74,12 @@ static void* gObserverFrame         = &gObserverFrame;
     }
 }
 
-- (void)dealloc
-{
-    if(_bObserved){
-        [self removeObserver:self forKeyPath:@"frame"];
-    }
-}
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
 {
     if(context == gObserverFrame){
-     
+        
         CGSize szNew = [[change objectForKey:@"new"]CGRectValue].size;
         CGSize szOld = [[change objectForKey:@"old"]CGRectValue].size;
         if(!CGSizeEqualToSize(szNew, szOld))
@@ -114,25 +88,10 @@ static void* gObserverFrame         = &gObserverFrame;
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
-- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize
-{
-    return [self calculateSize:targetSize];
-}
-- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority
-{
-    return [self calculateSize:targetSize];
-}
--(CGFloat)heightForWidth:(CGFloat)width
-{
-    CGSize szLimit = CGSizeMake(width, FLT_MAX);
-    return [_flexRootView calculateSize:szLimit].height;
-}
--(CGFloat)heightForWidth
-{
-    return [self heightForWidth:self.contentView.frame.size.width];
-}
+
 -(CGSize)calculateSize:(CGSize)szLimit
 {
     return [_flexRootView calculateSize:szLimit];
 }
+
 @end

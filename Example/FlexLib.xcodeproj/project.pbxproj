@@ -121,6 +121,10 @@
 		D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF9CCD1FD7EB1A00554A0C /* TestTableVC.m */; };
 		D2E804942028099200B54656 /* FrameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E804932028099200B54656 /* FrameVC.m */; };
 		D2E8049620280C2700B54656 /* FrameVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2E8049520280C2600B54656 /* FrameVC.xml */; };
+		D2EDA722214B8AF500B6A26D /* TestCollectionViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EDA721214B8AF500B6A26D /* TestCollectionViewVC.m */; };
+		D2EDA724214B8B5C00B6A26D /* TestCollectionViewVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2EDA723214B8B5C00B6A26D /* TestCollectionViewVC.xml */; };
+		D2EDA727214B8CC900B6A26D /* TestCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EDA726214B8CC900B6A26D /* TestCollectionCell.m */; };
+		D2EDA729214B8D7400B6A26D /* TestCollectionCell.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2EDA728214B8D7400B6A26D /* TestCollectionCell.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,6 +304,12 @@
 		D2E804922028099200B54656 /* FrameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameVC.h; sourceTree = "<group>"; };
 		D2E804932028099200B54656 /* FrameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrameVC.m; sourceTree = "<group>"; };
 		D2E8049520280C2600B54656 /* FrameVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = FrameVC.xml; path = res/FrameVC.xml; sourceTree = "<group>"; };
+		D2EDA720214B8AF500B6A26D /* TestCollectionViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewVC.h; sourceTree = "<group>"; };
+		D2EDA721214B8AF500B6A26D /* TestCollectionViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewVC.m; sourceTree = "<group>"; };
+		D2EDA723214B8B5C00B6A26D /* TestCollectionViewVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestCollectionViewVC.xml; path = res/TestCollectionViewVC.xml; sourceTree = "<group>"; };
+		D2EDA725214B8CC900B6A26D /* TestCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionCell.h; sourceTree = "<group>"; };
+		D2EDA726214B8CC900B6A26D /* TestCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionCell.m; sourceTree = "<group>"; };
+		D2EDA728214B8D7400B6A26D /* TestCollectionCell.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestCollectionCell.xml; path = res/TestCollectionCell.xml; sourceTree = "<group>"; };
 		EAF5D4D82057BA2F2195E3B3 /* Pods_FlexLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EA3C4A77DCE70224422A8A /* Pods-FlexLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -393,6 +403,10 @@
 				D26F59E21FE4B80F0007CB46 /* TextViewVC.m */,
 				D272A8DF1FDC0DD90075DB1D /* TestLoginVC.h */,
 				D272A8DE1FDC0DD90075DB1D /* TestLoginVC.m */,
+				D2EDA720214B8AF500B6A26D /* TestCollectionViewVC.h */,
+				D2EDA721214B8AF500B6A26D /* TestCollectionViewVC.m */,
+				D2EDA725214B8CC900B6A26D /* TestCollectionCell.h */,
+				D2EDA726214B8CC900B6A26D /* TestCollectionCell.m */,
 				D297585C1FE22CF2004314CF /* DemoFlexVC.h */,
 				D297585D1FE22CF2004314CF /* DemoFlexVC.m */,
 				D2CF9CC81FD7EB1900554A0C /* TestTableCell.h */,
@@ -587,6 +601,8 @@
 		D2CF9CB91FD7EAFA00554A0C /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D2EDA728214B8D7400B6A26D /* TestCollectionCell.xml */,
+				D2EDA723214B8B5C00B6A26D /* TestCollectionViewVC.xml */,
 				D28F172D200855D400F5AEB2 /* ControlsVC.xml */,
 				D24F2EC01FF6881000762ADC /* AttachmentView.xml */,
 				D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */,
@@ -655,7 +671,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				1516B907C64FF46370189E28 /* [CP] Embed Pods Frameworks */,
-				294AD6016624C64DDEA817F9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -675,7 +690,6 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				B648B45A51D89CBE713EA95E /* [CP] Embed Pods Frameworks */,
-				9DC9C70542D19C8B78023FD7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -769,6 +783,7 @@
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				D272A8D11FDA631F0075DB1D /* TestModalVC.xml in Resources */,
 				D2E8049620280C2700B54656 /* FrameVC.xml in Resources */,
+				D2EDA729214B8D7400B6A26D /* TestCollectionCell.xml in Resources */,
 				D26F59E81FE4C0160007CB46 /* select@2x.png in Resources */,
 				D270E9C21FDD7503007FD06C /* README.zh.md in Resources */,
 				D24F2EC11FF6881000762ADC /* AttachmentView.xml in Resources */,
@@ -779,6 +794,7 @@
 				D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */,
 				D2CF9CC41FD7EB0900554A0C /* batchcheck@2x.png in Resources */,
 				D272A8D51FDADA370075DB1D /* FlexViewController.xml in Resources */,
+				D2EDA724214B8B5C00B6A26D /* TestCollectionViewVC.xml in Resources */,
 				D2CF9CC21FD7EB0900554A0C /* addnewtype@2x.png in Resources */,
 				D26F59E61FE4B8170007CB46 /* TextViewVC.xml in Resources */,
 				D2CF9CC61FD7EB0900554A0C /* TestTableVC.xml in Resources */,
@@ -823,21 +839,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		294AD6016624C64DDEA817F9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		35758F78B3E9BF741CCF085C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -854,21 +855,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9DC9C70542D19C8B78023FD7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B648B45A51D89CBE713EA95E /* [CP] Embed Pods Frameworks */ = {
@@ -918,6 +904,7 @@
 			files = (
 				D26F59E41FE4B8100007CB46 /* TextViewVC.m in Sources */,
 				D2CF9CCF1FD7EB1A00554A0C /* TestTableCell.m in Sources */,
+				D2EDA722214B8AF500B6A26D /* TestCollectionViewVC.m in Sources */,
 				D2CF9CCE1FD7EB1A00554A0C /* TestVC.m in Sources */,
 				D297585E1FE22CF2004314CF /* DemoFlexVC.m in Sources */,
 				6003F59E195388D20070C39A /* FlexAppDelegate.m in Sources */,
@@ -926,6 +913,7 @@
 				D24F2EBF1FF687C400762ADC /* AttachmentView.m in Sources */,
 				D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */,
 				6003F5A7195388D20070C39A /* FlexViewController.m in Sources */,
+				D2EDA727214B8CC900B6A26D /* TestCollectionCell.m in Sources */,
 				D2E804942028099200B54656 /* FrameVC.m in Sources */,
 				D272A8CF1FDA63000075DB1D /* TestModalVC.m in Sources */,
 				D28F172C200854E500F5AEB2 /* ControlsVC.m in Sources */,

@@ -90,12 +90,12 @@ void createFlexIndex(NSString* url,
     UITextField* _baseUrlField;
     UISwitch* _loadSwitch;
     UILabel* _warning;
-    UIProgressView* _progress;
     
     NSString* _errorMsg;
     BOOL _creatingIndex;
     BOOL _canContinue;
 }
+@property(nonatomic,strong) UIProgressView* progress;
 
 @end
 
@@ -222,9 +222,10 @@ void createFlexIndex(NSString* url,
 }
 -(void)onProgress:(CGFloat)percent
 {
+    __weak FlexSetPreviewVC* weakSelf = self;
     dispatch_async(dispatch_get_main_queue(),
                    ^{
-                       _progress.progress = percent;
+                       weakSelf.progress.progress = percent;
                    });
 }
 -(void)onError:(NSString*)error

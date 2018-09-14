@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView layout="flex:1,alignItems:center">
+    <UIImageView name="image" layout="width:40,height:40" attr="source:addnewtype.png"/>
+    <UILabel name="label" layout="" attr="fontSize:14,color:#333333,linesNum:1,text:标签"/>
+</UIView> 

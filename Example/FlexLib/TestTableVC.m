@@ -23,6 +23,8 @@
 #import "TestTableVC.h"
 #import "TestTableCell.h"
 
+static NSString *identifier = @"TestTableCellIdentifier";
+
 @interface TestTableVC ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView* _table;
@@ -52,6 +54,8 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Table Demo";
+    
+    [_table registerClass:TestTableCell.class forCellReuseIdentifier:identifier];
     
     _table.delegate = self ;
     _table.dataSource = self ;
@@ -372,8 +376,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    static NSString *identifier = @"TestTableCellIdentifier";
-    TestTableCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    TestTableCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
     if (cell == nil) {
         cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:identifier];
