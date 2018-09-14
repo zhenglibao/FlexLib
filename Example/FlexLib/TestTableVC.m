@@ -378,10 +378,6 @@ static NSString *identifier = @"TestTableCellIdentifier";
     
     TestTableCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
-    if (cell == nil) {
-        cell = [[TestTableCell alloc]initWithFlex:nil reuseIdentifier:identifier];
-    }else{
-    }
     [cell setData:_datas[indexPath.row] ForHeight:NO];
     return cell;
 }
