@@ -19,6 +19,10 @@
 @property(nonatomic,copy) void (^ _Nullable onContentSizeChanged)(CGSize newSize);
 
 
+/*
+ * 计算cell大小，使用该方法之前需要在onInit方法中设置rootview的宽度和高度是否可变
+ * 只有高度或者宽度可变才有必要调用该方法计算匹配的大小
+ */
 -(CGSize)calculateSize:(CGSize)szLimit;
 
 // override this to do aditional initialize
