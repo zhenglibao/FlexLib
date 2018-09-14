@@ -9,7 +9,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class FlexRootView;
+
 @interface FlexCollectionCell : UICollectionViewCell
+
+@property(nonatomic,readonly) FlexRootView* rootview;
 
 // 事件通知，content大小发生了变化
 @property(nonatomic,copy) void (^ _Nullable onContentSizeChanged)(CGSize newSize);

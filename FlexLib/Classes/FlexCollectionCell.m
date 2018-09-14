@@ -39,7 +39,6 @@ static void* gObserverFrame         = &gObserverFrame;
     __weak FlexCollectionCell* weakSelf = self;
     
     _flexRootView = [FlexRootView loadWithNodeFile:flexName Owner:self];
-    _flexRootView.flexibleHeight = YES ;
     _flexRootView.onDidLayout = ^{
         [weakSelf onRootViewDidLayout];
     };
@@ -62,7 +61,10 @@ static void* gObserverFrame         = &gObserverFrame;
 -(void)onInit{
     
 }
-
+-(FlexRootView*)rootview
+{
+    return _flexRootView;
+}
 - (void)onRootViewDidLayout
 {
     CGRect rcRootView = _flexRootView.frame ;
