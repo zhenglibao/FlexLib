@@ -2,6 +2,10 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 1.9.1
+1. 升级检测iPhone X设备方法
+2. 升级getSafeArea方法实现，兼容性更好
+
 ## 1.9.0
 1. FlexBaseTableCell支持评估高度，增加onInit方法可以重写。
 

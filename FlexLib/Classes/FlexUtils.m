@@ -185,6 +185,10 @@ BOOL String2BOOL(NSString* s)
     return [s compare:@"true" options:NSDiacriticInsensitiveSearch]==NSOrderedSame;
 }
 
+/*
+ * 判断是否是iPhone X的设备，也包括iPhone XS和iPhone XS等
+ * iPhone X指的是上边有刘海屏，下边有安全区的设备
+ */
 BOOL IsIphoneX(void)
 {
     static int iphoneX = -1;
@@ -193,11 +197,11 @@ BOOL IsIphoneX(void)
         iphoneX = 0 ;
         if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
             
-            UIScreen* screen = [UIScreen mainScreen];
-            if([screen respondsToSelector:@selector(nativeBounds)])
-            {
-                if((int)[screen nativeBounds].size.height==2436)
-                {
+            if(@available(iOS 11.0,*)){
+                
+                UIWindow* mainWindow = [[[UIApplication sharedApplication]delegate]window];
+                
+                if(mainWindow.safeAreaInsets.bottom>0){
                     iphoneX = 1;
                 }
             }

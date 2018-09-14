@@ -259,30 +259,25 @@ static void* gObserverFrame = &gObserverFrame;
 }
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait
 {
-    if(!IsIphoneX())
-    {
-        CGFloat height = 0;
-        if(self.navigationController!=nil)
-        {
-            height += self.navigationController.navigationBar.frame.size.height ;
-        }
+    UIEdgeInsets safeArea = UIEdgeInsetsZero ;
+    
+    if(@available(iOS 11.0,*)){
         
-        height += [self getStatusBarHeight:portrait] ;
+        UIWindow* mainWindow = [[[UIApplication sharedApplication]delegate]window];
         
-        return UIEdgeInsetsMake(height, 0, 0, 0);
+        safeArea = mainWindow.safeAreaInsets;
     }
     
-    CGFloat height = 0;
     if(self.navigationController!=nil)
     {
-        height += self.navigationController.navigationBar.frame.size.height ;
+        safeArea.top += self.navigationController.navigationBar.frame.size.height ;
     }
-    BOOL bottomZero = _keyboardHeight > 0 || (!self.avoidiPhoneXBottom) ;
-    if(portrait){
-        height += 44 ;
-        return UIEdgeInsetsMake(height, 0, bottomZero?0:34, 0);
+    
+    if( _keyboardHeight > 0 || ( IsIphoneX() && !self.avoidiPhoneXBottom) ){
+        safeArea.bottom = 0;
     }
-    return UIEdgeInsetsMake(height, 44, bottomZero?0:21, 44);
+    
+    return safeArea;
 }
 
 -(void)layoutFlexRootViews{
