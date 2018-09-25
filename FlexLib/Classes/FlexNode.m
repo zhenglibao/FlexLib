@@ -111,6 +111,16 @@ static CGFloat ScaleSize(const char* s,
 static YGValue String2YGValue(const char* s,
                               const char* attrName)
 {
+    if(strcmp(s, "none")==0)
+    {
+        return (YGValue) { .value = NAN, .unit = YGUnitUndefined };
+        
+    }else if(strcmp(s, "auto")==0){
+        
+        return (YGValue) { .value = NAN, .unit = YGUnitAuto };
+        
+    }
+    
     int len = (int) strlen(s) ;
     if(len==0||len>100){
         NSLog(@"Flexbox: wrong number or pecentage value:%s",s);
