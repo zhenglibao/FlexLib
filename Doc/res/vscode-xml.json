@@ -188,8 +188,8 @@
 	"UIView":{
 		"prefix": "view",
 		"body": [
-			"<UIView layout=\"$1\" attr=\"$2\">",
-			"$3",
+			"<UIView layout=\"\" attr=\"\">",
+			"",
 			"</UIView>",
 		],
 		"description": "UIView element"
@@ -197,15 +197,15 @@
 	"UILabel":{
 		"prefix": "label",
 		"body": [
-			"<UILabel name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:#333333,linesNum:0,text:$3\"/>",
+			"<UILabel name=\"\" layout=\"\" attr=\"fontSize:14,color:#333333,linesNum:0,text:\"/>",
 		],
 		"description": "UIView element"
 	},
 	"FlexTouchView":{
 		"prefix": "touchView",
 		"body": [
-			"<FlexTouchView onPress=\"$1\" layout=\"$2\" attr=\"underlayColor:darkGray,bgColor:lightGray\">",
-			"$3",
+			"<FlexTouchView onPress=\"\" layout=\"\" attr=\"underlayColor:darkGray,bgColor:lightGray\">",
+			"",
 			"</FlexTouchView>",
 		],
 		"description": "FlexTouchView element"
@@ -213,14 +213,14 @@
 	"UITableView":{
 		"prefix": "tableView",
 		"body": [
-			"<UITableView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UITableView name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UITableView element"
 	},
 	"FlexCollectionView":{
 		"prefix": "collectionView",
 		"body": [
-			"<FlexCollectionView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<FlexCollectionView name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "FlexCollectionView element"
 	},
@@ -228,7 +228,7 @@
 		"prefix": "scrollView",
 		"body": [
 			"<FlexScrollView layout=\"flex:1\" attr=\"vertScroll:true\">",
-			"$2",
+			"",
 			"</FlexScrollView>",
 		],
 		"description": "FlexScrollView element"
@@ -236,8 +236,8 @@
 	"FlexContainerView":{
 		"prefix": "containerView",
 		"body": [
-			"<FlexContainerView name=\"$1\" layout=\"$2\">",
-			"$3",
+			"<FlexContainerView name=\"\" layout=\"\">",
+			"",
 			"</FlexContainerView>",
 		],
 		"description": "FlexContainerView element"
@@ -245,105 +245,105 @@
 	"UIImageView":{
 		"prefix": "imageView",
 		"body": [
-			"<UIImageView attr=\"source:$1\"/>",
+			"<UIImageView attr=\"source:\"/>",
 		],
 		"description": "UIImageView element"
 	},
 	"UITextField":{
 		"prefix": "textField",
 		"body": [
-			"<UITextField name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:black,textAlign:left,placeholder:$3,text:$4\"/>",
+			"<UITextField name=\"\" layout=\"\" attr=\"fontSize:14,color:black,textAlign:left,placeholder:,text:\"/>",
 		],
 		"description": "UITextField element"
 	},
 	"FlexTextView":{
 		"prefix": "textView",
 		"body": [
-			"<FlexTextView name=\"$1\" layout=\"$2\" attr=\"fontSize:14,color:black,textAlign:left\"/>",
+			"<FlexTextView name=\"\" layout=\"\" attr=\"fontSize:14,color:black,textAlign:left\"/>",
 		],
 		"description": "FlexTextView element"
 	},
 	"UIActivityIndicatorView":{
 		"prefix": "activityIndicatorView",
 		"body": [
-			"<UIActivityIndicatorView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UIActivityIndicatorView name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UIActivityIndicatorView element"
 	},
 	"UIDatePicker":{
 		"prefix": "datePicker",
 		"body": [
-			"<UIDatePicker name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UIDatePicker name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UIDatePicker element"
 	},
 	"UIProgressView":{
 		"prefix": "progressView",
 		"body": [
-			"<UIProgressView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UIProgressView name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UIProgressView element"
 	},
 	"UIPageControl":{
 		"prefix": "pageControl",
 		"body": [
-			"<UIPageControl name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UIPageControl name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UIPageControl element"
 	},
 	"UIPickerView":{
 		"prefix": "pickerView",
 		"body": [
-			"<UIPickerView name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UIPickerView name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UIPickerView element"
 	},
 	"UISearchBar":{
 		"prefix": "searchBar",
 		"body": [
-			"<UISearchBar name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UISearchBar name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UISearchBar element"
 	},
 	"UISegmentedControl":{
 		"prefix": "segmentedControl",
 		"body": [
-			"<UISegmentedControl name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UISegmentedControl name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UISegmentedControl element"
 	},
 	"UISlider":{
 		"prefix": "slider",
 		"body": [
-			"<UISlider name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UISlider name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UISlider element"
 	},
 	"UIStepper":{
 		"prefix": "stepper",
 		"body": [
-			"<UIStepper name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UIStepper name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UIStepper element"
 	},
 	"UISwitch":{
 		"prefix": "switch",
 		"body": [
-			"<UISwitch name=\"$1\" layout=\"$2\" attr=\"on:false\"/>",
+			"<UISwitch name=\"\" layout=\"\" attr=\"on:false\"/>",
 		],
 		"description": "UISwitch element"
 	},
 	"UITabBar":{
 		"prefix": "tabbar",
 		"body": [
-			"<UITabBar name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UITabBar name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UITabBar element"
 	},
 	"UIToolbar":{
 		"prefix": "toolbar",
 		"body": [
-			"<UIToolbar name=\"$1\" layout=\"$2\" attr=\"$3\"/>",
+			"<UIToolbar name=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UIToolbar element"
 	},
