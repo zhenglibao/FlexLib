@@ -11,10 +11,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class FlexRootView;
+
 @interface FlexBaseTableCell : UITableViewCell
 
 // 获取所关联的tableview
 @property(nonatomic,readonly) UITableView* _Nullable tableView;
+
+//
+@property(nonatomic,readonly) FlexRootView* _Nullable rootView;
 
 // 事件通知，content大小发生了变化
 @property(nonatomic,copy) void (^ _Nullable onContentSizeChanged)(CGSize newSize);

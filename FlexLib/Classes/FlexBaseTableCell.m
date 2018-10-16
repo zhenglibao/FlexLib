@@ -83,6 +83,9 @@ static void* gObserverFrame         = &gObserverFrame;
     }
     return (UITableView*)view;
 }
+- (FlexRootView *)rootView{
+    return _flexRootView;
+}
 - (void)onRootViewDidLayout
 {
     CGRect rcRootView = _flexRootView.frame ;

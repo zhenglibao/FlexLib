@@ -197,7 +197,7 @@
 	"UILabel":{
 		"prefix": "label",
 		"body": [
-			"<UILabel name=\"\" layout=\"\" attr=\"fontSize:14,color:#333333,linesNum:0,text:\"/>",
+			"<UILabel name=\"\" layout=\"\" attr=\"fontSize:14,color:#333333,lineBreakMode:truncatingTail,linesNum:1,text:\"/>",
 		],
 		"description": "UIView element"
 	},
@@ -1993,6 +1993,18 @@
 		"prefix": "placeholderColor",
 		"body": [
 			"placeholderColor",
+		],
+	},
+	"alwaysBounceHorizontal":{
+		"prefix": "alwaysBounceHorizontal",
+		"body": [
+			"alwaysBounceHorizontal",
+		],
+	},
+	"alwaysBounceVertical":{
+		"prefix": "alwaysBounceVertical",
+		"body": [
+			"alwaysBounceVertical",
 		],
 	},
 }

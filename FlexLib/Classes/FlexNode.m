@@ -303,10 +303,34 @@ void FlexApplyLayoutParam(YGLayout* layout,
                           NSString* key,
                           NSString* value)
 {
-    if( [key compare:@"flex" options:NSLiteralSearch]==NSOrderedSame)
+    if( [@"flex" compare:key options:NSLiteralSearch]==NSOrderedSame)
     {
         ApplyLayoutParam(layout, @"flexShrink", value);
         ApplyLayoutParam(layout, @"flexGrow", value);
+    }else if( [@"margin" compare:key options:NSLiteralSearch]==NSOrderedSame){
+        
+        NSArray* ary = [value componentsSeparatedByString:@"/"];
+        if( ary.count==1 ){
+            ApplyLayoutParam(layout, key, value);
+        }else if(ary.count==4){
+            ApplyLayoutParam(layout, @"marginLeft", ary[0]);
+            ApplyLayoutParam(layout, @"marginTop", ary[1]);
+            ApplyLayoutParam(layout, @"marginRight", ary[2]);
+            ApplyLayoutParam(layout, @"marginBottom", ary[3]);
+        }
+        
+    }else if( [@"padding" compare:key options:NSLiteralSearch]==NSOrderedSame){
+        
+        NSArray* ary = [value componentsSeparatedByString:@"/"];
+        if( ary.count==1 ){
+            ApplyLayoutParam(layout, key, value);
+        }else if(ary.count==4){
+            ApplyLayoutParam(layout, @"paddingLeft", ary[0]);
+            ApplyLayoutParam(layout, @"paddingTop", ary[1]);
+            ApplyLayoutParam(layout, @"paddingRight", ary[2]);
+            ApplyLayoutParam(layout, @"paddingBottom", ary[3]);
+        }
+        
     }else{
         ApplyLayoutParam(layout, key, value);
     }

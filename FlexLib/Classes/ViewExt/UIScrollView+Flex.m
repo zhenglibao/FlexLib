@@ -49,4 +49,13 @@ FLEXSET(indicatorStyle)
     self.indicatorStyle = FLEXSTR2INT(_gstyle);
 }
 
+FLEXSET(alwaysBounceVertical)
+{
+    self.alwaysBounceVertical = String2BOOL(sValue);
+}
+FLEXSET(alwaysBounceHorizontal)
+{
+    self.alwaysBounceHorizontal = String2BOOL(sValue);
+}
+
 @end

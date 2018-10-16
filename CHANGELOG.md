@@ -2,6 +2,12 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 1.9.3
+1. 对于margin, padding等Layout类型的值（支持数值和百分比），可以通过设置为none或auto取消原来设置的值
+2. margin和padding支持一次设置4个不同的值，格式为  左/上/右/下
+3. FlexBaseTableCell增加rootview属性
+4. UIScrollView增加alwaysBounceVertical和alwaysBounceHorizontal属性
+
 ## 1.9.2
 1. 增加FlexCollectionCell
 2. FlexBaseTableCell支持通过registerClass方式创建
