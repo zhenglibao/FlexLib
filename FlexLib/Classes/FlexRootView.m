@@ -419,6 +419,8 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 {
     CGRect rcSafeArea = self.superview.frame ;
     rcSafeArea.origin = CGPointZero;
+    if(self.calcSafeArea!=nil)
+        return UIEdgeInsetsInsetRect(rcSafeArea,self.calcSafeArea());
     return UIEdgeInsetsInsetRect(rcSafeArea,self.safeArea);
 }
 -(BOOL)isConfigSame

@@ -38,6 +38,7 @@ static NameValue _gModalPosition[] =
     
     FlexRootView* _realRoot;
 }
+@property(nonatomic,assign) BOOL bLastHiding;
 @end
 
 @implementation FlexModalView
@@ -103,6 +104,8 @@ static NameValue _gModalPosition[] =
 {
     [self hideModal:NO];
     
+    self.bLastHiding = NO;
+    
     _root.safeArea = _ownerRootView.safeArea;
     
     [self resetLayout];
@@ -119,6 +122,8 @@ static NameValue _gModalPosition[] =
 -(void)showModalInView:(UIView*)view Position:(CGPoint)topLeft Anim:(BOOL)anim
 {
     [self hideModal:NO];
+    
+    self.bLastHiding = NO;
     
     _root.safeArea = _ownerRootView.safeArea;
     
@@ -175,6 +180,8 @@ static NameValue _gModalPosition[] =
 {
     if(_root==nil||_root.superview==nil)
         return;
+    
+    self.bLastHiding = YES;
     if(!anim)
     {
         _realRoot = _root;
@@ -220,8 +227,12 @@ static NameValue _gModalPosition[] =
     
     dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2* NSEC_PER_SEC));
     dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-        [weakSelf removeFromSuperview];
-        [weakRoot removeFromSuperview];
+        
+        // 防止执行显示动画的时候将其移除
+        if(weakSelf.bLastHiding){
+            [weakSelf removeFromSuperview];
+            [weakRoot removeFromSuperview];
+        }
     });
 }
 FLEXSET(position){
