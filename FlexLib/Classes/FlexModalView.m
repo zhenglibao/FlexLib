@@ -52,9 +52,13 @@ static NameValue _gModalPosition[] =
         _root.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
         
         UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTapOutside)];
+        tap.cancelsTouchesInView = NO;
+        tap.delaysTouchesBegan = NO;
         [_root addGestureRecognizer:tap];
         
         tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTapInside)];
+        tap.cancelsTouchesInView = NO;
+        tap.delaysTouchesBegan = NO;
         [self addGestureRecognizer:tap];
         
         _position = modalBottom;
