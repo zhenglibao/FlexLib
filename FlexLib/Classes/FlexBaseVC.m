@@ -266,6 +266,8 @@ static void* gObserverFrame = &gObserverFrame;
         UIWindow* mainWindow = [[[UIApplication sharedApplication]delegate]window];
         
         safeArea = mainWindow.safeAreaInsets;
+    }else if(portrait) {
+        safeArea.top = 20;
     }
     
     if(self.navigationController!=nil)
