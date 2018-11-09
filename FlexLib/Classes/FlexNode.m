@@ -251,6 +251,8 @@ SETENUMVALUE(display,_display,YGDisplay);
     SETNUMVALUE(flexGrow);
     SETNUMVALUE(flexShrink);
     
+    SETYGVALUE(flexBasis);
+    
     SETYGVALUE(left);
     SETYGVALUE(top);
     SETYGVALUE(right);
