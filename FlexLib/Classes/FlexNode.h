@@ -19,7 +19,7 @@
 @class FlexRootView;
 @class YGLayout;
 
-typedef NSData* (*FlexLoadFunc)(NSString* flexName);
+typedef NSData* (*FlexLoadFunc)(NSString* flexName,NSObject* owner);
 typedef CGFloat (*FlexScaleFunc)(CGFloat f,const char* attrName);
 
 typedef enum{
@@ -114,7 +114,10 @@ void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 -(NSBundle*)bundleForStrings;
 -(NSString*)tableForStrings;
 
-// image bundle
+// xml文件所在bundle
+-(NSBundle*)bundleForRes;
+
+// image所在bundle，默认使用bundleForRes的结果
 -(NSBundle*)bundleForImages;
 
 @end

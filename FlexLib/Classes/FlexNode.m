@@ -27,8 +27,8 @@
 
 #pragma mark - Name values
 
-NSData* loadFromNetwork(NSString* resName);
-NSData* loadFromFile(NSString* resName);
+NSData* loadFromNetwork(NSString* resName,NSObject* owner);
+NSData* loadFromFile(NSString* resName,NSObject* owner);
 CGFloat scaleLinear(CGFloat f,const char* attrName);
 
 // 全局变量
@@ -680,7 +680,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     NSData* xmlData = [owner loadXmlLayoutData:flexName];
     
     if(xmlData==nil){
-        xmlData = isAbsoluteRes ? loadFromFile(flexName) : gLoadFunc(flexName) ;
+        xmlData = isAbsoluteRes ? loadFromFile(flexName,owner) : gLoadFunc(flexName,owner) ;
         
         if(xmlData == nil){
             NSLog(@"Flexbox: flex res %@ load failed.",flexName);
@@ -818,7 +818,7 @@ NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
     return FlexFetchHttpRes(url, outError);
 }
 
-NSData* loadFromFile(NSString* resName)
+NSData* loadFromFile(NSString* resName,NSObject* owner)
 {
     NSString* path;
     
@@ -826,7 +826,7 @@ NSData* loadFromFile(NSString* resName)
         // it's absolute path
         path = resName ;
     }else{
-        path = [[NSBundle mainBundle]pathForResource:resName ofType:@"xml"];
+        path = [[owner bundleForRes]pathForResource:resName ofType:@"xml"];
     }
     
     if(path==nil){
@@ -835,7 +835,7 @@ NSData* loadFromFile(NSString* resName)
     }
     return [NSData dataWithContentsOfFile:path];
 }
-NSData* loadFromNetwork(NSString* resName)
+NSData* loadFromNetwork(NSString* resName,NSObject* owner)
 {
     NSError* error = nil;
     NSData* flexData = FlexFetchLayoutFile(resName, &error);
@@ -969,10 +969,13 @@ float FlexGetScaleOffset(void)
 {
     return nil;
 }
-
--(NSBundle*)bundleForImages
+-(NSBundle*)bundleForRes
 {
     return [NSBundle mainBundle];
+}
+-(NSBundle*)bundleForImages
+{
+    return [self bundleForRes];
 }
 @end
 
