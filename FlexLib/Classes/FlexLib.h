@@ -28,4 +28,5 @@
 #import "FlexCollectionView.h"
 #import "FlexCollectionCell.h"
 #import "FlexHttpVC.h"
+#import "UILabel+Flex.h"
 

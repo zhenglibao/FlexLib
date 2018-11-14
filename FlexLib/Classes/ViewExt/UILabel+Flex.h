@@ -13,6 +13,7 @@
 
 @interface UILabel (Flex)
 
+-(void)updateAttributeText;
 
 @end
 
