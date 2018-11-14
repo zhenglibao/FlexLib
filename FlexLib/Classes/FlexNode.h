@@ -106,6 +106,9 @@ void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 //load xml layout data in owner
 -(NSData*)loadXmlLayoutData:(NSString*)flexname;
 
+//bind variables with name ?
+-(BOOL)needBindVariable;
+
 // owner custom create view
 -(UIView*)createView:(Class)cls Name:(NSString*)name;
 -(void)postCreateView:(UIView*)view;

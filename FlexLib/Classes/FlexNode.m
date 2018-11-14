@@ -414,7 +414,10 @@ void FlexApplyLayoutParam(YGLayout* layout,
     if(self.name.length>0){
         @try{
             view.viewAttrs.name = self.name ;
-            [owner setValue:view forKey:self.name];
+            
+            if([owner needBindVariable]){
+                [owner setValue:view forKey:self.name];
+            }
         }@catch(NSException* exception){
             NSLog(@"Flexbox: name %@ not found in owner %@",self.name,[owner class]);
         }@finally
@@ -951,6 +954,10 @@ float FlexGetScaleOffset(void)
     return nil;
 }
 
+-(BOOL)needBindVariable
+{
+    return YES;
+}
 -(UIView*)createView:(Class)cls
                 Name:(NSString*)name
 {
