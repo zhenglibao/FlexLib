@@ -124,6 +124,14 @@ static void* gObserverFrame = &gObserverFrame;
     CGSize sz=[_frameView.rootView calculateSize:size];
     return sz;
 }
+- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize
+{
+    return [_frameView.rootView calculateSize:targetSize];
+}
+- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority
+{
+    return [_frameView.rootView calculateSize:targetSize];
+}
 -(void)setFlexibleWidth:(BOOL)flexibleWidth
 {
     _frameView.flexibleWidth = flexibleWidth ;

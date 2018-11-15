@@ -122,4 +122,12 @@ static void* gObserverFrame = &gObserverFrame;
 {
     return _flexRootView.flexibleHeight;
 }
+- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize
+{
+    return [_flexRootView calculateSize:targetSize];
+}
+- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority
+{
+    return [_flexRootView calculateSize:targetSize];
+}
 @end
