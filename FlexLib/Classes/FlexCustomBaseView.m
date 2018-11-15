@@ -72,9 +72,7 @@ static void* gObserverFrame = &gObserverFrame;
         
         _frameView = [[FlexFrameView alloc]initWithFlex:[self getFlexName] Frame:rcFrameView Owner:self];
         _frameView.onFrameChange = ^(CGRect rc){
-            if(!CGSizeEqualToSize(rc.size, weakSelf.frame.size)){
-                [weakSelf markDirty];
-            }
+            [weakSelf onFrameChange:rc];
         };
         [self addSubview:_frameView];
         
@@ -84,6 +82,22 @@ static void* gObserverFrame = &gObserverFrame;
         }
         
         [self onInit];
+    }
+}
+
+-(void)onFrameChange:(CGRect)rc
+{
+    if(!CGSizeEqualToSize(rc.size, self.frame.size)){
+        if([self isFlexLayoutEnable]){
+            [self markDirty];
+        }else{
+            CGRect rcSelf = self.frame ;
+            if(self.flexibleWidth)
+                rcSelf.size.width = rc.size.width;
+            if(self.flexibleHeight)
+                rcSelf.size.height = rc.size.height;
+            self.frame = rcSelf;
+        }
     }
 }
 

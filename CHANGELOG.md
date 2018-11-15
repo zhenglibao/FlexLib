@@ -2,10 +2,12 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 1.9.5
 1. 增加bundleForRes接口，bundleForImage默认使用bundleForRes的返回值
 2. 增加flexBasis属性
 3. iOS11以下添加状态栏高度
 4. owner增加可重载方法needBindVariable, 允许owner不声明变量而使用动态获取视图的方式
+5. FlexCustomBaseView用在非xml布局时允许根据内容更新自身的frame
 
 
 ## 1.9.4
