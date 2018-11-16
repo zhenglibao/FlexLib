@@ -9,7 +9,7 @@
 
 
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface FlexAttr : NSObject<NSCoding>
 @property(nonatomic,strong) NSString* name ;

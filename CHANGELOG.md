@@ -2,6 +2,9 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 2.0.1
+1. 替换FlexNode.h和FlexUtils.h的头文件引用，之前可能导致某些版本的ide报错
+
 ## 2.0.0
 1. 增加bundleForRes接口，bundleForImage默认使用bundleForRes的返回值，此方法能够更好地支持在组件中使用xml布局
 2. 增加flexBasis属性

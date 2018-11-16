@@ -8,7 +8,7 @@
  */
 
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class FlexBaseVC;
 @class FlexRootView;
