@@ -42,6 +42,7 @@ iPhoneX adaption
 * 支持大量的布局属性 (padding/margin/width/...)
 * 支持视图属性 (eg: bgColor/fontSize/...)
 * 支持引用预定义的风格
+* UILabel支持在xml中设置富文本格式
 * 视图属性支持扩展
 * 支持模态显示视图
 * 表格cell高度动态计算
@@ -75,6 +76,8 @@ iPhoneX adaption
 * 显示或者隐藏子视图的话，只需要设置hidden属性即可，布局可以自动刷新
 
 * 支持热刷新，无需重新启动app便可以看到修改后的界面效果
+
+* UILabel支持直接在xml中设置富文本内容并支持点击事件，并允许运行时可以通过代码动态更新富文本内容
 
 ---
 

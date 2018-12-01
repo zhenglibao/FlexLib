@@ -60,6 +60,7 @@ iPhone X adaption
 * support view attribute (eg: bgColor/fontSize/...)
 * support reference predefined style
 * view attributes extensible
+* UILabel fully support rich-text
 * support modal view
 * table cell height calculation
 * support iPhoneX perfectly
@@ -94,6 +95,8 @@ iPhone X adaption
 * To show or hide subview, just set hidden property. All the layout will refresh automatically.
 
 * Hot preview is magic. You can see the final effect on device without restart the app.
+
+* UILabel support rich-text and onPress for every rich-text part, and it also allow to change rich-text dynamically.
 
 ---
 
