@@ -175,7 +175,7 @@ static NameValue _breakMode[] =
                 }
                 
                 FlexAttr* attr = [[FlexAttr alloc]init];
-                attr.name = name;
+                attr.name = @"text";
                 attr.value = text;
                 [viewAttrs addObject:attr];
             }
@@ -216,7 +216,7 @@ static NameValue _breakMode[] =
                 }
                 
                 FlexAttr* attr = [[FlexAttr alloc]init];
-                attr.name = name;
+                attr.name = @"source";
                 attr.value = imageSource;
                 [viewAttrs addObject:attr];
             }
