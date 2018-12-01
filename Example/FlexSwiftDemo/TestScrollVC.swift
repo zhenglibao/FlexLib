@@ -15,6 +15,7 @@ import FlexLib
 class TestScrollVC: FlexBaseVC {
     
     @objc var multilabel : UILabel!
+    @objc var attrLabel : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,4 +33,37 @@ class TestScrollVC: FlexBaseVC {
         multilabel.isHidden = !multilabel.isHidden;
         multilabel.rootView.layoutAnimation(0.3);
     }
+    
+    @objc(tapLabel:)
+    func tapLabel(sender:Any)->Void{
+        
+        let node : FlexNode = attrLabel.getFlexNode("a1")
+        
+        for attr:FlexAttr in node.viewAttrs {
+        
+            if( attr.name=="text"){
+                let newstr = attr.value.appending("abc")
+                attrLabel.setFlexAttrString(newstr, name: "a1")
+                break;
+            }
+        }
+        
+        attrLabel.updateAttributeText()
+        attrLabel.markDirty()
+    }
+    
+    @objc
+    func tapLabel()->Void{
+        NSLog("tap2")
+    }
+    @objc(tapText:)
+    func tapText(click:FlexClickRange)->Void
+    {
+        let range = Range(click.range,in:attrLabel.text!)
+        let txt = attrLabel.text![range!]
+        
+        let alertview = UIAlertView.init(title: "点击了", message: String(txt), delegate: nil, cancelButtonTitle: "取消")
+        alertview.show()
+    }
+
 }
