@@ -338,14 +338,6 @@ void FlexApplyLayoutParam(YGLayout* layout,
     }
 }
 @interface FlexNode()
-
-@property (nonatomic, strong) NSString* viewClassName;
-@property (nonatomic, strong) NSString* name;
-@property (nonatomic, strong) NSString* onPress;
-@property (nonatomic, strong) NSArray<FlexAttr*>* layoutParams;
-@property (nonatomic, strong) NSArray<FlexAttr*>* viewAttrs;
-@property (nonatomic, strong) NSArray<FlexNode*>* children;
-
 @end
 
 @implementation FlexNode
@@ -985,4 +977,151 @@ float FlexGetScaleOffset(void)
     return [self bundleForRes];
 }
 @end
+
+#pragma mark - 创建AttributedString支持
+
+
+static NameValue _underlineValue[] =
+{
+    {"none", NSUnderlineStyleNone},
+    {"single", NSUnderlineStyleSingle},
+    {"thick", NSUnderlineStyleThick},
+    {"double", NSUnderlineStyleDouble},
+    {"solid", NSUnderlinePatternSolid},
+    {"dot", NSUnderlinePatternDot},
+    {"dash", NSUnderlinePatternDash},
+    {"dashdot", NSUnderlinePatternDashDot},
+    {"dashdotdot", NSUnderlinePatternDashDotDot},
+};
+
+@implementation FlexClickRange
+- (id)copyWithZone:(NSZone *)zone {
+    FlexClickRange *model = [[FlexClickRange allocWithZone:zone] init];
+    model.name = self.name;
+    model.range = self.range;
+    model.onPress = self.onPress;
+    return model;
+}
+@end
+
+
+static NSAttributedString* createAttributedText(FlexNode* node,
+                                                NSObject* owner,
+                                                UIFont* defaultFont)
+{
+    NSString* text = @"";
+    NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+    
+    for (FlexAttr* attr in node.viewAttrs) {
+        
+        if( [attr.name isEqualToString:@"text"] ){
+            
+            text = attr.value;
+            
+        }else if( [attr.name isEqualToString:@"font"]){
+            
+            UIFont* font = fontFromString(attr.value);
+            [dict setObject:font forKey:NSFontAttributeName];
+            
+        }else if( [attr.name isEqualToString:@"fontSize"]){
+            
+            UIFont* font = [UIFont systemFontOfSize:[attr.value floatValue]];
+            if(font!=nil){
+                [dict setObject:font forKey:NSFontAttributeName];
+            }
+            
+        }else if( [attr.name isEqualToString:@"color"]){
+            
+            UIColor* color = colorFromString(attr.value, owner);
+            if( color!=nil){
+                [dict setObject:color forKey:NSForegroundColorAttributeName];
+            }
+        }else if( [attr.name isEqualToString:@"bgColor"]){
+            UIColor* color = colorFromString(attr.value, owner);
+            if( color!=nil){
+                [dict setObject:color forKey:NSBackgroundColorAttributeName];
+            }
+        }else if( [attr.name isEqualToString:@"strike"]){
+            
+            int underline = NSString2Int(attr.value, _underlineValue, sizeof(_underlineValue)/sizeof(NameValue));
+            [dict setObject:@(underline) forKey:NSStrikethroughStyleAttributeName];
+        }else if( [attr.name isEqualToString:@"underline"]){
+            
+            int underline = NSString2Int(attr.value, _underlineValue, sizeof(_underlineValue)/sizeof(NameValue));
+            [dict setObject:@(underline) forKey:NSUnderlineStyleAttributeName];
+        }else if( [attr.name isEqualToString:@"kern"]){
+            
+            int kern = [attr.value intValue];
+            [dict setObject:@(kern) forKey:NSKernAttributeName];
+        }
+    }
+    
+    if( [dict objectForKey:NSFontAttributeName]==nil && defaultFont!=nil ){
+        [dict setObject:defaultFont forKey:NSFontAttributeName];
+    }
+    
+    return [[NSAttributedString alloc]initWithString:text attributes:dict];
+}
+static NSAttributedString* createAttributedImage(FlexNode* node,NSObject* owner)
+{
+    NSTextAttachment* attach = [[NSTextAttachment alloc]init];
+    
+    for (FlexAttr* attr in node.viewAttrs) {
+        
+        if( [attr.name isEqualToString:@"source"] ){
+            UIImage* img = [UIImage imageNamed:attr.value inBundle:[owner bundleForImages] compatibleWithTraitCollection:nil];
+            attach.image = img ;
+        }else if( [attr.name isEqualToString:@"bounds"] ){
+            NSArray* ary = [attr.value componentsSeparatedByString:@"/"];
+            if(ary.count>=4){
+                CGFloat x = [ary[0]floatValue];
+                CGFloat y = [ary[1]floatValue];
+                CGFloat w = [ary[2]floatValue];
+                CGFloat h = [ary[3]floatValue];
+                attach.bounds = CGRectMake(x, y, w, h);
+            }
+        }else if( [attr.name isEqualToString:@"size"] ){
+            NSArray* ary = [attr.value componentsSeparatedByString:@"/"];
+            if(ary.count>=2){
+                CGFloat w = [ary[0]floatValue];
+                CGFloat h = [ary[1]floatValue];
+                attach.bounds = CGRectMake(0, 0, w, h);
+            }
+        }
+    }
+    
+    return [NSAttributedString attributedStringWithAttachment:attach];
+}
+
+NSMutableAttributedString* createAttributedString(NSArray<FlexNode*>* childElems,
+                                                  NSObject* owner,
+                                                  UIFont* defaultFont,
+                                                  NSMutableArray<FlexClickRange*>* clicks)
+{
+    NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc]init];
+    
+    for (FlexNode* node in childElems) {
+        
+        NSUInteger oldLength = attrString.length;
+        
+        if( [node.viewClassName isEqualToString:@"Text"] ){
+            
+            [attrString appendAttributedString:createAttributedText(node,owner,defaultFont)];
+            
+        }else if( [node.viewClassName isEqualToString:@"Image"] ){
+            
+            [attrString appendAttributedString:createAttributedImage(node, owner)];
+        }
+        
+        if( node.onPress.length>0 ){
+            FlexClickRange* click = [[FlexClickRange alloc]init];
+            click.name = node.name;
+            click.onPress = node.onPress;
+            click.range = NSMakeRange(oldLength, attrString.length-oldLength);
+            [clicks addObject:click];
+        }
+    }
+    return attrString;
+}
+
 

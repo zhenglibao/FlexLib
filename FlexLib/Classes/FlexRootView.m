@@ -411,7 +411,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         else
             layout.height = YGPointValue(safeArea.size.height) ;
         
-        _thisConfigFrame = CGRectMake(layout.left.value, layout.top.value, layout.width.value, layout.height.value);
+        self->_thisConfigFrame = CGRectMake(layout.left.value, layout.top.value, layout.width.value, layout.height.value);
     }];
 }
 

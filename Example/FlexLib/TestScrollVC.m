@@ -17,6 +17,7 @@
     UIView* close;
     
     UILabel* multilabel;
+    UILabel* attrLabel;
 }
 
 @end
@@ -53,6 +54,34 @@
     multilabel.hidden = !multilabel.isHidden;
     
     [multilabel.rootView layoutAnimation:0.3];
+}
+
+-(void)tapLabel:(id)sender
+{
+    FlexNode* node = [attrLabel getFlexNode:@"a1"];
+    
+    for (FlexAttr* attr in node.viewAttrs) {
+        
+        if( [attr.name isEqualToString:@"text"] ){
+            NSString* newstr = [attr.value stringByAppendingString:@"abc"];
+            [attrLabel setFlexAttrString:newstr name:@"a1"];
+            NSLog(@"new string: %@",newstr);
+            break;
+        }
+    }
+    [attrLabel updateAttributeText];
+    [attrLabel markDirty];
+}
+
+-(void)tapLabel
+{
+    NSLog(@"tap2");
+}
+-(void)tapText:(FlexClickRange*)click
+{
+    NSString* txt = [attrLabel.text substringWithRange:click.range];
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"点击了" message:txt delegate:self cancelButtonTitle:nil otherButtonTitles:@"好的", nil];
+    [alertview show];
 }
 
 @end

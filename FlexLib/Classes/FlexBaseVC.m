@@ -255,31 +255,42 @@ static void* gObserverFrame = &gObserverFrame;
 }
 -(CGFloat)getStatusBarHeight:(BOOL)portrait
 {
-    return portrait ? 20 : 0;
+    if(IS_IPHONE){
+        return portrait?20:0;
+    }
+    return 20;
+}
+-(CGFloat)getNavibarHeight
+{
+    if(self.navigationController!=nil && !self.navigationController.navigationBar.hidden)
+    {
+        return self.navigationController.navigationBar.frame.size.height ;
+    }
+    return 0;
 }
 - (UIEdgeInsets)getSafeArea:(BOOL)portrait
 {
-    UIEdgeInsets safeArea = UIEdgeInsetsZero ;
-    
-    if(@available(iOS 11.0,*)){
-        
-        UIWindow* mainWindow = [[[UIApplication sharedApplication]delegate]window];
-        
-        safeArea = mainWindow.safeAreaInsets;
-    }else if(portrait) {
-        safeArea.top = 20;
-    }
-    
-    if(self.navigationController!=nil)
+    if(!IsIphoneX())
     {
-        safeArea.top += self.navigationController.navigationBar.frame.size.height ;
+        CGFloat height = [self getStatusBarHeight:portrait] ;
+        
+        height += [self getNavibarHeight] ;
+        
+        return UIEdgeInsetsMake(height, 0, 0, 0);
     }
     
-    if( _keyboardHeight > 0 || ( IsIphoneX() && !self.avoidiPhoneXBottom) ){
-        safeArea.bottom = 0;
+    CGFloat height = [self getNavibarHeight];
+    CGFloat bottom = portrait ? 34 : 21 ;
+    
+    if( _keyboardHeight > 0 || (!self.avoidiPhoneXBottom) ){
+        bottom = 0;
     }
     
-    return safeArea;
+    if(portrait){
+        height += 44 ;
+        return UIEdgeInsetsMake(height, 0, bottom, 0);
+    }
+    return UIEdgeInsetsMake(height, 44, bottom, 44);
 }
 
 -(void)layoutFlexRootViews{

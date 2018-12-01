@@ -39,9 +39,16 @@
             </UIView>
         </UIView>
         <UIView layout="height:20"/>
-        <UIView layout="flexDirection:row,justifyContent:center,padding:10,alignItems:center" attr="@:system/border">
-            <UILabel layout="height:30" attr="@:system/bigFont,bgColor:#55ff55,text:Address"/>
-            <UILabel layout="height:50" attr="@:system/bigFont,bgColor:orange,text:Beijing"/>
+        <UIView layout="padding:10,width:100%" attr="@:system/border">
+            <UILabel name="attrLabel" layout="width:100%" attr="linesNum:0,lineSpacing:20">
+                <Text name="a1" onPress="tapText:" attr="text:这是一个富文本的UILabel控件,font:system|18"/>
+                <Text onPress="tapText:" attr="text:粗体粗体粗体粗体粗体,font:bold|22"/>
+                <Text name="a2" onPress="tapText:" attr="text:斜体斜体斜体斜体斜体斜体斜体,font:italic|12,color:red,bgColor:green"/>
+                <Image name="a3" onPress="tapText:" attr="source:addnewtype.png,size:80/80"/>
+                <Text onPress="tapText:" attr="text:http://www.baidu.com, font:bold|18,underline:single,color:blue"/>
+                <Text onPress="tapText:" attr="text:删除线,font:bold|18,strike:single"/>
+                <Text onPress="tapLabel:" attr="text:请点击这里修改AttributeString,font:bold|18,color:red"/>
+            </UILabel>
         </UIView>
         <UIView layout="height:20"/>
         <UILabel name="multilabel" layout="width:100%" attr="@:system/bigFont,text:This is demo string\: you can use \\r、\\n、\\\\、\\\,to trans string. Comma is keyword for attribute\, you should use \\\, for the string which include comma,linesNum:0"/>

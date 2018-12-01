@@ -18,6 +18,7 @@
 
 @class FlexRootView;
 @class YGLayout;
+@class FlexAttr;
 
 typedef NSData* (*FlexLoadFunc)(NSString* flexName,NSObject* owner);
 typedef CGFloat (*FlexScaleFunc)(CGFloat f,const char* attrName);
@@ -87,6 +88,14 @@ void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 
 @interface FlexNode : NSObject<NSCoding>
 
+@property (nonatomic, strong) NSString* viewClassName;
+@property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong) NSString* onPress;
+@property (nonatomic, strong) NSArray<FlexAttr*>* layoutParams;
+@property (nonatomic, strong) NSArray<FlexAttr*>* viewAttrs;
+@property (nonatomic, strong) NSArray<FlexNode*>* children;
+
+
 +(FlexNode*)loadNodeFromRes:(NSString*)flexName
                       Owner:(NSObject*)owner;
 +(FlexNode*)loadNodeData:(NSData*)data;
@@ -124,3 +133,20 @@ void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 -(NSBundle*)bundleForImages;
 
 @end
+
+
+@interface FlexClickRange : NSObject<NSCopying>
+
+@property (nonatomic,copy) NSString* name;
+@property (nonatomic,assign) NSRange range;
+@property (nonatomic,copy) NSString* onPress;
+
+@end
+
+
+// 创建AttributedString
+NSMutableAttributedString* createAttributedString(NSArray<FlexNode*>* childElems,
+                                                  NSObject* owner,
+                                                  UIFont* defaultFont,
+                                                  NSMutableArray<FlexClickRange*>* clicks);
+

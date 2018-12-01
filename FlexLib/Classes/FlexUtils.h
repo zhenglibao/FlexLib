@@ -86,6 +86,11 @@ self.propName = n;                        \
 [FlexBundle() localizedStringForKey:key value:@"" table:nil]
 
 
+// 判断是否是手机或者ipad
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_PAD (UI_USER_INTERFACE_IDIOM()== UIUserInterfaceIdiomPad)
+
+
 NSBundle* FlexBundle(void);
 
 FlexLanuage FlexGetLanguage(void);

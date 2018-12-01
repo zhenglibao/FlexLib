@@ -2,6 +2,10 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 2.1.0
+1. UILabel全面支持富文本，可以在XML中直接给UILabel添加子元素，包括Text属性和Image属性，且子元素支持设置点击事件
+2. 更完善的getSafeArea实现，全面支持手机和pad的横竖屏设置
+
 ## 2.0.1
 1. 替换FlexNode.h和FlexUtils.h的头文件引用，之前可能导致某些版本的ide报错
 

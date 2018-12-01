@@ -116,24 +116,43 @@ UIColor* colorFromString(NSString* clr,
 UIFont* fontFromString(NSString* fontStr)
 {
     NSArray* ary = [fontStr componentsSeparatedByString:@"|"];
+    CGFloat fontSize = 17;
+    NSString* fontName = nil ;
+    UIFont* font = nil;
     
-    if(ary.count==0)
-        return nil;
-    
-    if(ary.count==1){
-        return [UIFont systemFontOfSize:[ary.firstObject floatValue]];
+    if(ary.count==1)
+    {
+        fontSize = [ary.firstObject floatValue];
+        
+    }else if( ary.count>=2 ){
+        
+        fontName = ary.firstObject ;
+        fontSize = [ary[1]floatValue];
+    }
+    if(fontSize<=0){
+        fontSize = 17;
     }
     
-    NSString* fontName = ary.firstObject;
-    CGFloat fontSize = [ary[1] floatValue];
-    
     if([@"bold" compare:fontName]==NSOrderedSame)
-        return [UIFont boldSystemFontOfSize:fontSize];
+    {
+        font = [UIFont boldSystemFontOfSize:fontSize];
+    }
+    else if([@"italic" compare:fontName]==NSOrderedSame){
+        
+        font = [UIFont italicSystemFontOfSize:fontSize];
     
-    if([@"italic" compare:fontName]==NSOrderedSame)
-        return [UIFont italicSystemFontOfSize:fontSize];
+    }else{
+        font = [UIFont fontWithName:fontName size:fontSize];
+    }
     
-    return [UIFont fontWithName:fontName size:fontSize];;
+    if( font==nil ){
+        font = [UIFont systemFontOfSize:fontSize];
+        
+        if( font==nil ){
+            font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        }
+    }
+    return font;
 }
 
 
