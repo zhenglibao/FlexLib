@@ -362,8 +362,12 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 {
     if(_bInLayouting||object == nil)
     {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-        return;
+        if(context==gObserverHidden ||
+           context==gObserverText||
+           context==gObserverAttrText)
+        {
+            return;
+        }
     }
     
     if( context == gObserverHidden ){
