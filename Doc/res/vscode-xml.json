@@ -2007,4 +2007,16 @@
 			"alwaysBounceVertical",
 		],
 	},
+	"Text - RichText":{
+		"prefix": "Text for UILabel",
+		"body": [
+			"<Text name=\"\" onPress=\"\" attr=\"text:, font:system|18, color:black, bgColor:lightGray\"/>",
+		],
+	},
+	"Image - RichText":{
+		"prefix": "Image for UILabel",
+		"body": [
+			"<Image name=\"\" onPress=\"\" attr=\"source:, size:20/20\"/>",
+		],
+	},
 }
