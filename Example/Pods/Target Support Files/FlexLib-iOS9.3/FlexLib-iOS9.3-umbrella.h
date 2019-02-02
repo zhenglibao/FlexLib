@@ -31,6 +31,7 @@
 #import "FlexTouchMaskView.h"
 #import "FlexTouchView.h"
 #import "FlexUtils.h"
+#import "FlexXmlBaseView.h"
 #import "UIActivityIndicatorView+Flex.h"
 #import "UIButton+Flex.h"
 #import "UIControl+Flex.h"

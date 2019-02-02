@@ -9,6 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class FlexRootView;
 
 // 额外的view属性存储
 @interface FlexViewAttrs : NSObject
@@ -29,6 +30,9 @@
  *The ViewAttrs that is attached to this view. It is lazily created.
  */
 @property (nonatomic, readonly, strong) FlexViewAttrs* viewAttrs;
+
+//子类可以在调用完init方法后做额外的初始化,内部框架使用
+-(void)afterInit:(NSObject*)owner rootView:(FlexRootView*)rootView;
 
 //子类可以重载做些加载后的处理
 -(void)postCreate;

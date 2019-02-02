@@ -65,6 +65,11 @@ static NameValue _gcontentModes[] =
 {
 }
 
+-(void)afterInit:(NSObject*)owner
+        rootView:(FlexRootView*)rootView
+{
+}
+
 #pragma mark - attribute
 
 FLEXSET(bgColor)

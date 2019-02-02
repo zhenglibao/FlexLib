@@ -2,6 +2,9 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 2.2.0
+1. 增加FlexXmlBaseView，该类用来制作组件，与FlexCustomBaseView类似，不同的是FlexXmlBaseView的派生类只能用在xml中，好处是减少视图层级
+
 ## 2.1.2
 1. 修复UILabel中不存在text属性时却动态修改导致不生效的问题
 2. 修复布局过程中再次调用hidden或者text属性导致KVO异常的问题

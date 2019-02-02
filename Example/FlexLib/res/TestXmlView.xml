@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<TestXmlView layout="flex:1,margin:10" attr="bgColor:green,borderColor:red,borderWidth:1,borderRadius:5">
+    <UILabel attr="fontSize:16,color:#333333,linesNum:0,text:这是一个基于FlexXmlBaseView的组件，只能使用在xml中，可以减少视图层级"/>
+    <FlexContainerView name="_attachParent" layout="marginTop:5,marginBottom:5,alignItems:center"/>
+    <FlexTouchView onPress="onAddAttachment" attr="underlayColor:#e5e5e5">
+        <UIImageView layout="" attr="source:select.png"/>
+    </FlexTouchView>
+</TestXmlView>

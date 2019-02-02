@@ -397,6 +397,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
                 NSLog(@"Flexbox: Class %@ init return nil",cls);
                 return nil;
             }
+            [view afterInit:owner rootView:rootView];
         }@catch(NSException* exception){
              NSLog(@"Flexbox: Class %@ init failed - %@",cls,exception);
             return nil;
