@@ -148,5 +148,6 @@ void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 NSMutableAttributedString* createAttributedString(NSArray<FlexNode*>* childElems,
                                                   NSObject* owner,
                                                   UIFont* defaultFont,
+                                                  UIColor* defaultColor,
                                                   NSMutableArray<FlexClickRange*>* clicks);
 

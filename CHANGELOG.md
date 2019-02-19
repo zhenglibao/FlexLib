@@ -2,6 +2,10 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 2.2.1
+1. UILabel的富文本支持国际化
+2. FlexXmlBaseView增加代码创建方式
+
 ## 2.2.0
 1. 增加FlexXmlBaseView，该类用来制作组件，与FlexCustomBaseView类似，不同的是FlexXmlBaseView的派生类只能用在xml中，好处是减少视图层级
 

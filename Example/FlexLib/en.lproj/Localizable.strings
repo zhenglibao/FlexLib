@@ -8,3 +8,5 @@
  */
 
 "multilangdemo" = "This string is multi-language demo. You can change system language to see the effect. This example only support English & Chinese.";
+"uilabellang" = "This is Richtext UILabel control(Multi-language support),";
+

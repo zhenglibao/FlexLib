@@ -238,6 +238,7 @@ static NameValue _breakMode[] =
     NSMutableAttributedString* string = createAttributedString(childElems,
                                                                owner,
                                                                self.font,
+                                                               self.textColor,
                                                                aryClickRange);
     if( string.length>0 ){
         NSMutableParagraphStyle * style = [self paraStyle];

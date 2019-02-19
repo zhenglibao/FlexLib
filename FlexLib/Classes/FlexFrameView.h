@@ -16,6 +16,7 @@ typedef void (^FrameChanged)(CGRect);
 // This view not use flexlbox layout
 // just set frame or make flexible width
 // or height
+// 该类也支持继承并创建组件
 
 @interface FlexFrameView : UIView
 
@@ -29,6 +30,7 @@ typedef void (^FrameChanged)(CGRect);
 //如果外部直接设置其frame，将不会调用
 @property(nonatomic,copy) FrameChanged _Nullable onFrameChange;
 
+//如果用来制作组件的时候，调用initWithFlex初始化的时候一定要给owner传递nil
 -(instancetype _Nullable )initWithFlex:(nullable NSString*)flexname
                                  Frame:(CGRect)frame
                                  Owner:(nullable NSObject*)owner;

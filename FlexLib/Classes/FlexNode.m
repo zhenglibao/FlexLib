@@ -155,6 +155,30 @@ NSString* FlexLocalizeValue(NSString* value,
     }
     return s;
 }
+
+NSString* FlexProcessAttrValue(NSString* attrName,
+                               NSString* attrValue,
+                               NSObject* owner)
+{
+    // '*abc' means scale the value by the screen size,
+    // '**abc' means '*abc'
+    if(attrValue.length>=2 && [attrValue characterAtIndex:0]=='*')
+    {
+        NSString* v = [attrValue substringFromIndex:1];
+        if([v hasPrefix:@"*"]){
+            attrValue = v;
+        }else{
+            float f=[v floatValue];
+            f = gScaleFunc(f,[attrName cStringUsingEncoding:NSASCIIStringEncoding]);
+            attrValue=[NSString stringWithFormat:@"%f",f];
+        }
+    }
+    
+    // localize value
+    attrValue = FlexLocalizeValue(attrValue, owner);
+    return attrValue;
+}
+
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,
                      NSString* attrValue,
@@ -178,22 +202,7 @@ void FlexSetViewAttr(UIView* view,
         return ;
     }
     
-    // '*abc' means scale the value by the screen size,
-    // '**abc' means '*abc'
-    if(attrValue.length>=2 && [attrValue characterAtIndex:0]=='*')
-    {
-        NSString* v = [attrValue substringFromIndex:1];
-        if([v hasPrefix:@"*"]){
-            attrValue = v;
-        }else{
-            float f=[v floatValue];
-            f = gScaleFunc(f,[attrName cStringUsingEncoding:NSASCIIStringEncoding]);
-            attrValue=[NSString stringWithFormat:@"%f",f];
-        }
-    }
-    
-    // localize value
-    attrValue = FlexLocalizeValue(attrValue, owner);
+    attrValue = FlexProcessAttrValue(attrName,attrValue, owner);
     
     @try{
         
@@ -1008,12 +1017,15 @@ static NameValue _underlineValue[] =
 
 static NSAttributedString* createAttributedText(FlexNode* node,
                                                 NSObject* owner,
-                                                UIFont* defaultFont)
+                                                UIFont* defaultFont,
+                                                UIColor* defaultColor)
 {
     NSString* text = @"";
     NSMutableDictionary* dict = [NSMutableDictionary dictionary];
     
     for (FlexAttr* attr in node.viewAttrs) {
+        
+        attr.value = FlexProcessAttrValue(attr.name, attr.value, owner);
         
         if( [attr.name isEqualToString:@"text"] ){
             
@@ -1060,6 +1072,9 @@ static NSAttributedString* createAttributedText(FlexNode* node,
     if( [dict objectForKey:NSFontAttributeName]==nil && defaultFont!=nil ){
         [dict setObject:defaultFont forKey:NSFontAttributeName];
     }
+    if( [dict objectForKey:NSForegroundColorAttributeName]==nil && defaultColor!=nil ){
+        [dict setObject:defaultColor forKey:NSForegroundColorAttributeName];
+    }
     
     return [[NSAttributedString alloc]initWithString:text attributes:dict];
 }
@@ -1068,6 +1083,8 @@ static NSAttributedString* createAttributedImage(FlexNode* node,NSObject* owner)
     NSTextAttachment* attach = [[NSTextAttachment alloc]init];
     
     for (FlexAttr* attr in node.viewAttrs) {
+        
+        attr.value = FlexProcessAttrValue(attr.name, attr.value, owner);
         
         if( [attr.name isEqualToString:@"source"] ){
             UIImage* img = [UIImage imageNamed:attr.value inBundle:[owner bundleForImages] compatibleWithTraitCollection:nil];
@@ -1097,6 +1114,7 @@ static NSAttributedString* createAttributedImage(FlexNode* node,NSObject* owner)
 NSMutableAttributedString* createAttributedString(NSArray<FlexNode*>* childElems,
                                                   NSObject* owner,
                                                   UIFont* defaultFont,
+                                                  UIColor* defaultColor,
                                                   NSMutableArray<FlexClickRange*>* clicks)
 {
     NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc]init];
@@ -1107,7 +1125,7 @@ NSMutableAttributedString* createAttributedString(NSArray<FlexNode*>* childElems
         
         if( [node.viewClassName isEqualToString:@"Text"] ){
             
-            [attrString appendAttributedString:createAttributedText(node,owner,defaultFont)];
+            [attrString appendAttributedString:createAttributedText(node,owner,defaultFont,defaultColor)];
             
         }else if( [node.viewClassName isEqualToString:@"Image"] ){
             

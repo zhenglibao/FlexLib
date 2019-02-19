@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 最外层的名字必须与组件的类名保持一致, 在xml中使用时设置的layout和attr属性会覆盖本xml中最外层的layout和attr -->
+<FlexScrollView layout="flex:1,margin:50" attr="vertScroll:true,bgColor:lightGray,borderColor:red,borderWidth:1,borderRadius:5">
+    <UILabel attr="fontSize:16,color:#333333,linesNum:0,text:这是一个基于FlexFrameView的组件，不能使用在xml中，只能通过传统的initWithFrame方式创建并存取frame，与FlexCustomBaseView相比可以减少视图层级"/>
+    <FlexContainerView name="_attachParent" layout="marginTop:5,marginBottom:5,alignItems:center"/>
+    <FlexTouchView onPress="onAddAttachment" attr="underlayColor:#e5e5e5">
+        <UIImageView layout="" attr="source:select.png"/>
+    </FlexTouchView>
+    <FlexTouchView onPress="onClose" layout="alignItems:center" attr="underlayColor:#e5e5e5">
+        <UILabel layout="" attr="text:关闭"/>
+    </FlexTouchView>
+</FlexScrollView>

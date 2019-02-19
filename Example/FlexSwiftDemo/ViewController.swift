@@ -71,6 +71,13 @@ class ViewController: FlexBaseVC {
     @objc func onExplorerFlex()->Void{
         FlexHttpVC.present(inVC: self)
     }
+    @objc func onFrameView()->Void{
+        var  frame = UIScreen.main.bounds;
+        frame.origin.y = 100
+        frame.size.height=400
+        let view = TestFrameView.init(flex: nil, frame: frame, owner: nil)
+        self.view.addSubview(view!)
+    }
     
 }
 

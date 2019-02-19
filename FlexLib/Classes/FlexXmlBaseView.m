@@ -47,6 +47,15 @@
     return self;
 }
 
+-(instancetype)initWithRootView:(FlexRootView*)rootview
+{
+    self = [self init];
+    if (self) {
+        [self afterInit:self rootView:rootview];
+    }
+    return self;
+}
+
 - (void)afterInit:(NSObject *)owner rootView:(FlexRootView *)rootView
 {
     FlexNode* node = self.flexNode ;
