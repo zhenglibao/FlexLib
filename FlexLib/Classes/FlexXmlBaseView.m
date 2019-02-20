@@ -30,23 +30,6 @@
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        NSAssert(NO, @"Flexbox: the derived class of FlexXmlBaseView should be used only in xml");
-    }
-    return self;
-}
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        NSAssert(NO, @"Flexbox: the derived class of FlexXmlBaseView should be used only in xml");
-    }
-    return self;
-}
-
 -(instancetype)initWithRootView:(FlexRootView*)rootview
 {
     self = [self init];

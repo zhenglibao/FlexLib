@@ -2,6 +2,9 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 2.2.2
+修复FlexXmlBaseView的bug
+
 ## 2.2.1
 1. UILabel的富文本支持国际化
 2. FlexXmlBaseView增加代码创建方式
