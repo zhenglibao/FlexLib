@@ -47,9 +47,9 @@
     [cell addGestureRecognizer:tap];
     
     [cell setLayoutAttrStrings:@[
-                                 @"width",@"20%",
-                                 @"aspectRatio",@"1",
-                                 @"margin",@"10",
+                                 @"width",@"60",
+                                 @"margin",@"2",
+                                 @"height",@"40",
                                  @"alignItems",@"center",
                                  @"justifyContent",@"center",
                                  ]];

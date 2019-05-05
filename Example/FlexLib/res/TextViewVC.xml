@@ -68,7 +68,7 @@
             <UIView layout="height:10"/>
             <FlexContainerView name="_imgParent" layout="flexWrap:wrap,flexDirection:row,justifyContent:flex-start">
                 
-                <FlexTouchView onPress="onAddImage" layout="width:20%,margin:10,aspectRatio:1,justifyContent:center,alignItems:center" attr="borderRadius:10,borderWidth:1,borderColor:#e5e5e5,underlayColor:#e5e5e5">
+                <FlexTouchView onPress="onAddImage" layout="width:60,margin:2,height:40,justifyContent:center,alignItems:center" attr="borderRadius:10,borderWidth:1,borderColor:#e5e5e5,underlayColor:#e5e5e5">
                     <UILabel attr="text:+,fontSize:20,color:#999999"/>
                 </FlexTouchView>
             </FlexContainerView>
