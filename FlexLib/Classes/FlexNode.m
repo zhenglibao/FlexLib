@@ -446,6 +446,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     [view configureLayoutWithBlock:^(YGLayout* layout){
         
         layout.isEnabled = YES;
+        layout.isIncludedInLayout = YES;
         
         NSArray<FlexAttr*>* layoutParam = self.layoutParams ;
 
@@ -504,7 +505,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     [owner postCreateView:view];
     
     if(view.isHidden){
-        view.yoga.isIncludedInLayout = NO ;
+        [view enableFlexLayout:NO];
     }
     
     return view;

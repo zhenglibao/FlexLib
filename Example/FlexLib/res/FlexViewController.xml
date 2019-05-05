@@ -67,15 +67,15 @@
             </FlexTouchView>
         </UIView>
 
-       <UIView layout="width:100%,flexDirection:row">
+       <UIView layout="width:100%,flexDirection:row,justifyContent:space-around">
            <FlexTouchView onPress="onFrameView" layout="@:system/button" attr="@:system/buttonAttr">
                <UILabel
                attr="@:system/buttonText,text:FrameView"/>
            </FlexTouchView>
-<!--           <FlexTouchView onPress="onExplorerFlex" layout="@:system/button" attr="@:system/buttonAttr">-->
-<!--               <UILabel-->
-<!--               attr="@:system/buttonText,text:"/>-->
-<!--           </FlexTouchView>-->
+           <FlexTouchView onPress="onFrameView" layout="@:system/button" attr="@:system/buttonAttr,alpha:0,userInteractionEnabled:false">
+               <UILabel
+               attr="@:system/buttonText,text:FrameView"/>
+           </FlexTouchView>
        </UIView>
 
     </FlexScrollView>

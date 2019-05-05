@@ -27,7 +27,6 @@ static void* gObserverFrame = &gObserverFrame;
 {
     self = [super init];
     if (self) {
-        self.yoga.isIncludedInLayout=NO;
     }
     return self;
 }
@@ -37,9 +36,7 @@ static void* gObserverFrame = &gObserverFrame;
 {
     self = [self initWithFrame:frame];
     
-    if(self){
-        self.yoga.isIncludedInLayout=NO;
-        
+    if(self){        
         if(owner == nil)
             owner = self;
         

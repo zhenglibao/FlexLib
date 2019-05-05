@@ -1,9 +1,8 @@
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-iOS11.2" "${PODS_CONFIGURATION_BUILD_DIR}/Yoga-iOS11.2"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) /usr/include/libxml2
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-iOS11.2/FlexLib.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Yoga-iOS11.2/yoga.framework/Headers" /usr/include/libxml2
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-iOS11.2/FlexLib.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Yoga-iOS11.2/yoga.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "FlexLib" -framework "yoga"
+OTHER_LDFLAGS = $(inherited) -l"xml2" -framework "FlexLib" -framework "yoga"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

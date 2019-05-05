@@ -40,7 +40,7 @@ class TestTextviewVC: FlexBaseVC {
         cell.setLayoutAttrStrings([
             "width","20%",
             "aspectRatio","1",
-            "margin","2%",
+            "margin","10",
             "alignItems","center",
             "justifyContent","center",
             ])

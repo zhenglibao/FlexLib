@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A9CEFF54CDF9EA8FE947802D /* Pods_FlexSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DC7645DD2A3050A2A3215C /* Pods_FlexSwiftDemo.framework */; };
-		D24F2EAF1FF3CEB000762ADC /* TableHeader.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EAE1FF3CEB000762ADC /* TableHeader.xml */; };
-		D24F2EC31FF72CEB00762ADC /* AttachmentView.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EC21FF72CEB00762ADC /* AttachmentView.xml */; };
 		D24F2EC51FF72D1900762ADC /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F2EC41FF72D1900762ADC /* AttachmentView.swift */; };
 		D272B78B1FEF6770004447E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D272B78D1FEF6770004447E2 /* Localizable.strings */; };
 		D28F173020087B3100F5AEB2 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F172F20087B3100F5AEB2 /* Controls.swift */; };
@@ -50,7 +48,6 @@
 		D2D020B21FEC9B31008F6DB6 /* TestTextviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B11FEC9B31008F6DB6 /* TestTextviewVC.swift */; };
 		D2D020B41FEC9B53008F6DB6 /* TestJustifycontentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B31FEC9B53008F6DB6 /* TestJustifycontentVC.swift */; };
 		D2D020B61FECB39C008F6DB6 /* TestTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D020B51FECB39C008F6DB6 /* TestTableCell.swift */; };
-		D2E0E2A922059A9E00D24288 /* TestXmlView.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2E0E2A822059A9E00D24288 /* TestXmlView.xml */; };
 		D2E0E2AB22059AC800D24288 /* TestXmlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E0E2AA22059AC800D24288 /* TestXmlView.swift */; };
 		D2E8049820280D9200B54656 /* FrameVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2E8049720280D9200B54656 /* FrameVC.xml */; };
 		D2E8049A20280DAD00B54656 /* FrameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8049920280DAD00B54656 /* FrameVC.swift */; };
@@ -60,8 +57,6 @@
 		031350CFF12F685D7428A932 /* Pods-FlexSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3113DD79A226E231CFABE7FC /* Pods-FlexSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		56DC7645DD2A3050A2A3215C /* Pods_FlexSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D24F2EAE1FF3CEB000762ADC /* TableHeader.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TableHeader.xml; path = FlexLib/res/TableHeader.xml; sourceTree = SOURCE_ROOT; };
-		D24F2EC21FF72CEB00762ADC /* AttachmentView.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AttachmentView.xml; path = FlexLib/res/AttachmentView.xml; sourceTree = SOURCE_ROOT; };
 		D24F2EC41FF72D1900762ADC /* AttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentView.swift; sourceTree = "<group>"; };
 		D272B7821FEF4BC3004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D272B78C1FEF6770004447E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -106,7 +101,6 @@
 		D2D020B11FEC9B31008F6DB6 /* TestTextviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextviewVC.swift; sourceTree = "<group>"; };
 		D2D020B31FEC9B53008F6DB6 /* TestJustifycontentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJustifycontentVC.swift; sourceTree = "<group>"; };
 		D2D020B51FECB39C008F6DB6 /* TestTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableCell.swift; sourceTree = "<group>"; };
-		D2E0E2A822059A9E00D24288 /* TestXmlView.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestXmlView.xml; path = FlexLib/res/TestXmlView.xml; sourceTree = SOURCE_ROOT; };
 		D2E0E2AA22059AC800D24288 /* TestXmlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestXmlView.swift; sourceTree = "<group>"; };
 		D2E8049720280D9200B54656 /* FrameVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = FrameVC.xml; path = FlexSwiftDemo/res/FrameVC.xml; sourceTree = SOURCE_ROOT; };
 		D2E8049920280DAD00B54656 /* FrameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameVC.swift; sourceTree = "<group>"; };
@@ -189,15 +183,12 @@
 		D2D020801FEBB26F008F6DB6 /* res */ = {
 			isa = PBXGroup;
 			children = (
-				D2E0E2A822059A9E00D24288 /* TestXmlView.xml */,
 				D29D0D5F221BF14400DE5543 /* AttachmentView.xml */,
 				D29D0D5D221BF14400DE5543 /* TableHeader.xml */,
 				D29D0D5C221BF14300DE5543 /* TestFrameView.xml */,
 				D29D0D5E221BF14400DE5543 /* TestXmlView.xml */,
 				D2E8049720280D9200B54656 /* FrameVC.xml */,
 				D28F173120087EEB00F5AEB2 /* Controls.xml */,
-				D24F2EC21FF72CEB00762ADC /* AttachmentView.xml */,
-				D24F2EAE1FF3CEB000762ADC /* TableHeader.xml */,
 				D2D0208C1FEBB288008F6DB6 /* addnewtype@2x.png */,
 				D2D020861FEBB287008F6DB6 /* alignItems.xml */,
 				D2D0208A1FEBB288008F6DB6 /* arrow_right@2x.png */,
@@ -284,8 +275,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2E0E2A922059A9E00D24288 /* TestXmlView.xml in Resources */,
-				D24F2EAF1FF3CEB000762ADC /* TableHeader.xml in Resources */,
 				D29D0D60221BF14400DE5543 /* TestFrameView.xml in Resources */,
 				D2D020971FEBB289008F6DB6 /* return@2x.png in Resources */,
 				D29D0D63221BF14400DE5543 /* AttachmentView.xml in Resources */,
@@ -302,7 +291,6 @@
 				D2D020941FEBB289008F6DB6 /* select@2x.png in Resources */,
 				D2E8049820280D9200B54656 /* FrameVC.xml in Resources */,
 				D2D020741FEBA946008F6DB6 /* LaunchScreen.storyboard in Resources */,
-				D24F2EC31FF72CEB00762ADC /* AttachmentView.xml in Resources */,
 				D2D020A21FEBB289008F6DB6 /* TestTouchVC.xml in Resources */,
 				D272B78B1FEF6770004447E2 /* Localizable.strings in Resources */,
 				D2D020A11FEBB289008F6DB6 /* qrcode.png in Resources */,
@@ -327,7 +315,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FlexLib-iOS11.2/FlexLib.framework",
 				"${BUILT_PRODUCTS_DIR}/Yoga-iOS11.2/yoga.framework",
 			);
@@ -338,7 +326,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E8BBC67982B2299142440F61 /* [CP] Check Pods Manifest.lock */ = {

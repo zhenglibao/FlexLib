@@ -1,6 +1,6 @@
 {
   "name": "FlexLib",
-  "version": "2.1.2",
+  "version": "2.2.2",
   "summary": "An obj-c flex layout framework for IOS",
   "description": "It's a layout framework based on yoga engine. The main purpose is to provide easy and fast usage.",
   "homepage": "https://github.com/zhenglibao/FlexLib",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/zhenglibao/FlexLib.git",
-    "tag": "2.1.2"
+    "tag": "2.2.2"
   },
   "platforms": {
     "ios": "8.0"
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "Yoga": [
-      "1.6.0"
+      "1.14.0"
     ]
   },
   "libraries": "xml2",

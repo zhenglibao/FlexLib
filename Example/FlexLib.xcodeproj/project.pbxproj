@@ -843,7 +843,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FlexLib-iOS9.3/FlexLib.framework",
 				"${BUILT_PRODUCTS_DIR}/Yoga-iOS9.3/yoga.framework",
 			);
@@ -854,7 +854,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		35758F78B3E9BF741CCF085C /* [CP] Check Pods Manifest.lock */ = {
@@ -881,7 +881,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Expecta/Expecta.framework",
 				"${BUILT_PRODUCTS_DIR}/Specta/Specta.framework",
 			);
@@ -892,7 +892,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEA5E8EEB4AFE0028765288E /* [CP] Check Pods Manifest.lock */ = {
