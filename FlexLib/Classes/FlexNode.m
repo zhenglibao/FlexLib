@@ -64,6 +64,7 @@ static NameValue _justify[] =
     {"flex-end", YGJustifyFlexEnd},
     {"space-between", YGJustifySpaceBetween},
     {"space-around", YGJustifySpaceAround},
+    {"space-evenly", YGJustifySpaceEvenly},
 };
 static NameValue _align[] =
 {   {"auto", YGAlignAuto},
@@ -257,6 +258,7 @@ SETENUMVALUE(flexWrap,_wrap,YGWrap);
 SETENUMVALUE(overflow,_overflow,YGOverflow);
 SETENUMVALUE(display,_display,YGDisplay);
 
+    SETNUMVALUE(flex);
     SETNUMVALUE(flexGrow);
     SETNUMVALUE(flexShrink);
     
@@ -314,11 +316,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
                           NSString* key,
                           NSString* value)
 {
-    if( [@"flex" compare:key options:NSLiteralSearch]==NSOrderedSame)
-    {
-        ApplyLayoutParam(layout, @"flexShrink", value);
-        ApplyLayoutParam(layout, @"flexGrow", value);
-    }else if( [@"margin" compare:key options:NSLiteralSearch]==NSOrderedSame){
+    if( [@"margin" compare:key options:NSLiteralSearch]==NSOrderedSame){
         
         NSArray* ary = [value componentsSeparatedByString:@"/"];
         if( ary.count==1 ){

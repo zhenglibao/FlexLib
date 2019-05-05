@@ -1072,6 +1072,12 @@
 			"space-around",
 		],
 	},
+	"space-evenly":{
+		"prefix": "space-evenly",
+		"body": [
+			"space-evenly",
+		],
+	},
 	"inherit":{
 		"prefix": "inherit",
 		"body": [
