@@ -12,6 +12,8 @@
 #import "FlexNode.h"
 #import "FlexSetPreviewVC.h"
 
+static NSString* gLastVisitedUrl = nil;
+
 @interface FlexHttpViewerVC : FlexBaseVC
 
 @property (nonatomic,copy) NSString* url;
@@ -98,12 +100,21 @@
     _table.delegate = self;
     _table.dataSource = self;
     
+    if (self.url == nil) {
+        self.url = gLastVisitedUrl;
+    }
+    
     [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    gLastVisitedUrl = self.url;
 }
 -(NSBundle*)bundleForStrings
 {

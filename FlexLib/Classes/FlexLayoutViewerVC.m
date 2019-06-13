@@ -83,7 +83,12 @@
     for (NSString* item in items) {
         [layouts addObject:item.lastPathComponent];
     }
-    _layouts = [layouts copy];
+    
+    _layouts = [layouts sortedArrayUsingComparator:
+                ^NSComparisonResult(NSString* obj1, NSString* obj2)
+                {
+                    return  [obj1 compare:obj2 options:NSCaseInsensitiveSearch];
+                }];
     
     [_table reloadData];
 }

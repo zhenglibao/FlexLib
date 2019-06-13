@@ -2,6 +2,9 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 2.3.2
+1. 优化查看布局
+
 ## 2.3.1
 1. flex实现使用yoga原生方式
 2. justifyContent增加space-evenly布局方式
