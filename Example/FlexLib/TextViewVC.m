@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"TextView Demo";
+    self.navigationItem.title = @"TextView自适应高度/动态添加删除view";
     [self prepareInputs];
 }
 
