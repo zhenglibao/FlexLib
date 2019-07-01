@@ -30,11 +30,11 @@
     return self;
 }
 
--(instancetype)initWithRootView:(FlexRootView*)rootview
+-(instancetype)initWithRootView:(FlexRootView*)rootView
 {
     self = [self init];
     if (self) {
-        [self afterInit:self rootView:rootview];
+        [self afterInit:self rootView:rootView];
     }
     return self;
 }

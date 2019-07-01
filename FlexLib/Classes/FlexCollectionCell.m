@@ -61,7 +61,7 @@ static void* gObserverFrame         = &gObserverFrame;
 -(void)onInit{
     
 }
--(FlexRootView*)rootview
+-(FlexRootView*)rootView
 {
     return _flexRootView;
 }

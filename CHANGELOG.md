@@ -2,6 +2,10 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 2.3.3
+1. 规范FlexCollectionCell的rootView属性命名
+
+
 ## 2.3.2
 1. 优化查看布局
 2. 适配iOS13，移除placeholder的kvo
@@ -49,7 +53,7 @@
 ## 1.9.3
 1. 对于margin, padding等Layout类型的值（支持数值和百分比），可以通过设置为none或auto取消原来设置的值
 2. margin和padding支持一次设置4个不同的值，格式为  左/上/右/下
-3. FlexBaseTableCell增加rootview属性
+3. FlexBaseTableCell增加rootView属性
 4. UIScrollView增加alwaysBounceVertical和alwaysBounceHorizontal属性
 
 ## 1.9.2
@@ -132,7 +136,7 @@ UILabel::tailIndent
 2. 增加枚举组属性支持
 3. 创建视图初始化增加容错机制
 4. 增加大量视图属性
-5. 修复在有导航栏且导航栏不透明时导致rootview位置不对的问题
+5. 修复在有导航栏且导航栏不透明时导致rootView位置不对的问题
 6. 自定义缩放接口增加属性名称
 7. 修复text属性监听问题
 

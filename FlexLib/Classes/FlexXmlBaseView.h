@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FlexXmlBaseView : UIView
 
 /// 用代码的方式创建视图组件
--(instancetype)initWithRootView:(FlexRootView*)rootview;
+-(instancetype)initWithRootView:(FlexRootView*)rootView;
 
 /// 子类可以重写这个方法来做额外的初始化工作
 -(void)onInit;
