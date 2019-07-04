@@ -79,7 +79,7 @@ static void* gObserverFrame = &gObserverFrame;
     NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];
     [nsc addObserver:self
             selector:@selector(keyboardDidShow:)
-                name:UIKeyboardDidShowNotification
+                name:UIKeyboardWillChangeFrameNotification
               object:nil];
     
     [nsc addObserver:self
@@ -101,7 +101,7 @@ static void* gObserverFrame = &gObserverFrame;
     NSNotificationCenter* nsc = [NSNotificationCenter defaultCenter];
     
     [nsc removeObserver:self
-                   name:UIKeyboardDidShowNotification
+                   name:UIKeyboardWillChangeFrameNotification
                  object:nil];
     
     [nsc removeObserver:self
@@ -351,31 +351,12 @@ static void* gObserverFrame = &gObserverFrame;
 }
 
 #pragma mark - keybaord
--(void)delayLayoutByKeyboard:(BOOL)bFromSelf
-{
-    const double tmSep = 0.1;
-    if(bFromSelf){
-        if(_keyboardDirty){
-            double now = GetAccurateSecondsSince1970();
-            if(now-_lastKeyTime>=tmSep){
-                _keyboardDirty = NO;
-                [self layoutFlexRootViews];
-            }
-        }
-    }else{
-        __weak FlexBaseVC* weakSelf = self;
-        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(tmSep* NSEC_PER_SEC));
-        dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-            [weakSelf delayLayoutByKeyboard:YES];
-        });
-    }
-}
 -(void)keyboardDidShow:(NSNotification*) notification {
     if(self.avoidKeyboard){
         _keyboardDirty = YES;
         _lastKeyTime = GetAccurateSecondsSince1970();
         _keyboardHeight = [self getKeyboardHeight:notification];
-        [self delayLayoutByKeyboard:NO];
+        [self layoutFlexRootViews];
     }
 }
 
@@ -384,7 +365,7 @@ static void* gObserverFrame = &gObserverFrame;
         _keyboardDirty = YES;
         _lastKeyTime = GetAccurateSecondsSince1970();
         _keyboardHeight = 0;
-        [self delayLayoutByKeyboard:NO];
+        [self layoutFlexRootViews];
     }
 }
 -(float) getKeyboardHeight:(NSNotification*) notification

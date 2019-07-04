@@ -32,7 +32,7 @@
         label.numberOfLines = 0;
         label.textColor = [self.class defaultColor];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:UITextViewTextDidChangeNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:UITextViewTextDidChangeNotification object:self];
         
         [self addObserver:self forKeyPath:@"font" options:NSKeyValueObservingOptionNew context:nil];
         [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];

@@ -2,6 +2,10 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 2.3.4
+1. 优化键盘弹起事件监听
+2. 优化FlexTextView文本改变事件
+
 ## 2.3.3
 1. 规范FlexCollectionCell的rootView属性命名
 
