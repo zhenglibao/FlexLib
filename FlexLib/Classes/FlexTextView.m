@@ -88,9 +88,7 @@
     static UIColor *color = nil;
     static dispatch_once_t once_t;
     dispatch_once(&once_t, ^{
-        UITextField *textField = [[UITextField alloc] init];
-        textField.placeholder = @" ";
-        color = [textField valueForKeyPath:@"_placeholderLabel.textColor"];
+        color = [UIColor colorWithRed:0 green:0 blue:0.098039215686274508 alpha:0.22];
     });
     return color;
 }
