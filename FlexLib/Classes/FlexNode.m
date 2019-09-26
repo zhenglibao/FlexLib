@@ -848,6 +848,15 @@ NSData* loadFromNetwork(NSString* resName,NSObject* owner)
     if(error != nil){
         NSLog(@"Flexbox: loadFromNetwork error: %@",error);
     }
+    
+    // check http result valid
+    error = nil;
+    GDataXMLDocument* xmlDoc = [[GDataXMLDocument alloc]initWithData:flexData options:0 error:&error];
+    if (error!=nil) {
+        NSLog(@"Flexbox: the online data for %@ not valid, local xml resource used.(%lld)",resName,(SInt64)xmlDoc);
+        
+        flexData = loadFromFile(resName, owner);
+    }
     return flexData;
 }
 
