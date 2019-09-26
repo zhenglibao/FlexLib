@@ -707,33 +707,35 @@ void FlexApplyLayoutParam(YGLayout* layout,
 {
     static NSString* documentPath;
     if(documentPath == nil){
-        NSArray *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        documentPath = documents[0];
-        documentPath = [documentPath stringByAppendingPathComponent:@"flex"];
         
-        // create run flag
-        
-        NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
-        NSString *buildNumber = info[@"CFBundleVersion"];
-        if(buildNumber == nil)
+        NSString *buildNumber = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+        if(buildNumber.length==0)
             buildNumber = @"0";
-        buildNumber = [@"flex_run_" stringByAppendingString:buildNumber];
-
-        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-        BOOL alreadRun = [userDefaults boolForKey:buildNumber];
-       
-         NSFileManager* manager=[NSFileManager defaultManager];
-        if( !alreadRun ){
+        NSString* flexDirName = [NSString stringWithFormat:@"flex_%@",buildNumber];
+        
+        NSArray *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        documentPath = [documents[0]stringByAppendingPathComponent:flexDirName];
+        
+        // 创建目录
+        NSFileManager* manager=[NSFileManager defaultManager];
+        if(![manager fileExistsAtPath:documentPath]){
             
-            // clear the cache by last version
-            [manager removeItemAtPath:documentPath error:NULL
-             ];
             [manager createDirectoryAtPath:documentPath withIntermediateDirectories:YES attributes:nil error:nil];
-            [userDefaults setBool:YES forKey:buildNumber];
-        }else{
-            if(![manager fileExistsAtPath:documentPath])
-                [manager createDirectoryAtPath:documentPath withIntermediateDirectories:YES attributes:nil error:nil];
         }
+        
+        // 删除上次缓存目录
+        NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+        NSString* lastFolder = [userDefaults objectForKey:@"flex_cache_dir"] ?:@"flex";
+        if (![flexDirName isEqualToString:lastFolder])
+        {
+            NSString* lastPath = [documents[0] stringByAppendingPathComponent:lastFolder];
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+                [manager removeItemAtPath:lastPath error:NULL];
+                [userDefaults setObject:flexDirName forKey:@"flex_cache_dir"];
+            });
+        }
+        
     }
     return documentPath;
 }
