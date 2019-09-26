@@ -2,6 +2,12 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 2.2.4
+优化Release下缓存目录
+
+## 2.2.3
+解决iOS13下UITextField的KVC异常问题
+
 ## 2.2.2
 修复FlexXmlBaseView的bug
 
