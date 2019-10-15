@@ -36,6 +36,7 @@ static FlexLoadFunc gLoadFunc = loadFromFile;
 static float gfScaleFactor = 1.0f;
 static float gfScaleOffset = 0;
 static FlexScaleFunc gScaleFunc = scaleLinear ;
+static NSString* gResourceSuffix = nil;
 
 #ifdef DEBUG
 static BOOL gbUserCache = NO;
@@ -669,7 +670,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     GDataXMLElement* root=[xmlDoc rootElement];
     return [FlexNode buildNodeWithXml:root];
 }
-+(FlexNode*)loadNodeFromRes:(NSString*)flexName
++(FlexNode*)internalLoadRes:(NSString*)flexName
                       Owner:(NSObject*)owner
 {
     FlexNode* node;
@@ -693,7 +694,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     }
     node = [FlexNode loadNodeData:xmlData];
     
-
+    
     if(gbUserCache && !isAbsoluteRes){
         dispatch_async(
                        dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
@@ -702,6 +703,26 @@ void FlexApplyLayoutParam(YGLayout* layout,
                        });
     }
     return node;
+}
++(FlexNode*)loadNodeFromRes:(NSString*)flexName
+                      Owner:(NSObject*)owner
+{
+    //支持资源后缀
+    
+    NSString* resName ;
+    if (gResourceSuffix.length>0) {
+        resName = [flexName stringByAppendingString:gResourceSuffix];
+    }else{
+        resName = flexName;
+    }
+    
+    FlexNode* node = [self internalLoadRes:resName Owner:owner];
+    if(node!=nil ||gResourceSuffix.length==0){
+        return node;
+    }
+    
+    // 如果带后缀的资源不存在，则使用原始资源
+    return [self internalLoadRes:flexName Owner:owner];
 }
 +(NSString*)getCacheDir
 {
@@ -921,6 +942,14 @@ FlexLoadMethod FlexGetLoadMethod(void)
     if(gLoadFunc == loadFromNetwork)
         return flexFromNet;
     return flexCustomLoad;
+}
+void FlexSetResourceSuffix(NSString* resourceSuffix)
+{
+    gResourceSuffix = resourceSuffix;
+}
+NSString* FlexGetResourceSuffix(void)
+{
+    return gResourceSuffix;
 }
 void FlexEnableCache(BOOL bEnable)
 {

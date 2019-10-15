@@ -14,6 +14,8 @@
 #import "FlexBaseVC.h"
 #import "FlexNode.h"
 
+static FlexMapColor gMapColor = NULL;
+
 static NSString* _gclrs[]=
 {
     @"black",   @"#0",
@@ -106,6 +108,10 @@ UIColor* colorFromString(NSString* clr,
     int g = (hex >> 8) & 0xFF;
     int b = (hex) & 0xFF;
     int a = clr.length>7 ? (hex >> 24)& 0xFF : 255 ;
+    
+    if (gMapColor!=NULL) {
+        gMapColor(&r,&g,&b,&a);
+    }
     
     return [UIColor colorWithRed:r / 255.0f
                            green:g / 255.0f
@@ -353,4 +359,13 @@ void FlexHideBusyForView(UIView* view)
             [busyView removeFromSuperview];
         }
     }
+}
+
+void FlexSetMapColor(FlexMapColor mapFunc)
+{
+    gMapColor = mapFunc;
+}
+FlexMapColor FlexGetMapColor(void)
+{
+    return gMapColor;
 }

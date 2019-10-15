@@ -221,14 +221,14 @@ static FlexStyleMgr* _instance=nil;
                 return group;
         }
         
-        group = [[FlexStyleGroup alloc]init];
-        
         NSString* filePath = [[NSBundle mainBundle]pathForResource:fileName ofType:@"style"];
-        if(filePath != nil){
-            [group loadFromFile:filePath];
-        }else{
+        if(filePath == nil)
+        {
             NSLog(@"Flexbox: style %@ not found.",fileName);
+            return nil;
         }
+        group = [[FlexStyleGroup alloc]init];
+        [group loadFromFile:filePath];
         [_files setObject:group forKey:fileName];
         
         if(FlexIsCacheEnabled()){
@@ -246,6 +246,15 @@ static FlexStyleMgr* _instance=nil;
 -(NSArray<FlexAttr*>*)getStyle:(NSString*)fileName
                      StyleName:(NSString*)styleName
 {
+    NSString* resourceSuffix = FlexGetResourceSuffix();
+    
+    if(resourceSuffix.length>0){
+        FlexStyleGroup* group = [self getStyleGroup:[fileName stringByAppendingString:resourceSuffix]];
+        
+        if (group!=nil) {
+            return [group getStyleByName:styleName];
+        }
+    }
     FlexStyleGroup* group = [self getStyleGroup:fileName];
     
     return [group getStyleByName:styleName];
@@ -255,7 +264,10 @@ static FlexStyleMgr* _instance=nil;
     NSArray* ary = [ref componentsSeparatedByString:@"/"];
     if(ary.count==2)
     {
-        return [self getStyle:ary[0] StyleName:ary[1]];
+        NSArray* result = [self getStyle:ary[0] StyleName:ary[1]];
+        if(result!=nil){
+            return result;
+        }
     }
     return [NSArray array];
 }

@@ -22,6 +22,7 @@
 
 typedef NSData* (*FlexLoadFunc)(NSString* flexName,NSObject* owner);
 typedef CGFloat (*FlexScaleFunc)(CGFloat f,const char* attrName);
+typedef void (*FlexMapColor)(int* r,int* g,int* b,int* a);
 
 typedef enum{
     flexFromFile = 0,
@@ -39,6 +40,10 @@ void FlexSetLoadFunc(FlexLoadMethod loadFrom);
 // 设置自定义资源加载方式
 void FlexSetCustomLoadFunc(FlexLoadFunc func);
 FlexLoadMethod FlexGetLoadMethod(void);
+
+// 设置资源后缀，用来支持多种模式，比如暗黑模式
+void FlexSetResourceSuffix(NSString* resourceSuffix);
+NSString* FlexGetResourceSuffix(void);
 
 // 恢复预览设置，仅在debug下生效
 void FlexRestorePreviewSetting(void);
@@ -85,6 +90,9 @@ float FlexGetScaleOffset(void);
 // 设置自定义scale
 void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 
+// 设置颜色映射
+void FlexSetMapColor(FlexMapColor mapFunc);
+FlexMapColor FlexGetMapColor(void);
 
 @interface FlexNode : NSObject<NSCoding>
 
