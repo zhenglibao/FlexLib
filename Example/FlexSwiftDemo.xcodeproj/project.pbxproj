@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A9CEFF54CDF9EA8FE947802D /* Pods_FlexSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DC7645DD2A3050A2A3215C /* Pods_FlexSwiftDemo.framework */; };
+		96BD46A14DFF90B48262F30F /* Pods_FlexSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1128F142210C595EFCAA18 /* Pods_FlexSwiftDemo.framework */; };
 		D24F2EC51FF72D1900762ADC /* AttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F2EC41FF72D1900762ADC /* AttachmentView.swift */; };
 		D272B78B1FEF6770004447E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D272B78D1FEF6770004447E2 /* Localizable.strings */; };
 		D28F173020087B3100F5AEB2 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F172F20087B3100F5AEB2 /* Controls.swift */; };
@@ -55,8 +55,8 @@
 
 /* Begin PBXFileReference section */
 		031350CFF12F685D7428A932 /* Pods-FlexSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2A1128F142210C595EFCAA18 /* Pods_FlexSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3113DD79A226E231CFABE7FC /* Pods-FlexSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
-		56DC7645DD2A3050A2A3215C /* Pods_FlexSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24F2EC41FF72D1900762ADC /* AttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentView.swift; sourceTree = "<group>"; };
 		D272B7821FEF4BC3004447E2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D272B78C1FEF6770004447E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9CEFF54CDF9EA8FE947802D /* Pods_FlexSwiftDemo.framework in Frameworks */,
+				96BD46A14DFF90B48262F30F /* Pods_FlexSwiftDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +121,7 @@
 		76548E73FFD432FCAB926999 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				56DC7645DD2A3050A2A3215C /* Pods_FlexSwiftDemo.framework */,
+				2A1128F142210C595EFCAA18 /* Pods_FlexSwiftDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,7 +224,7 @@
 				D2D020621FEBA946008F6DB6 /* Sources */,
 				D2D020631FEBA946008F6DB6 /* Frameworks */,
 				D2D020641FEBA946008F6DB6 /* Resources */,
-				9045EA13D850423B8BC667E6 /* [CP] Embed Pods Frameworks */,
+				1C6E39B6871F68D627BAAB35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,15 +309,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9045EA13D850423B8BC667E6 /* [CP] Embed Pods Frameworks */ = {
+		1C6E39B6871F68D627BAAB35 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FlexSwiftDemo/Pods-FlexSwiftDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FlexLib-iOS11.2/FlexLib.framework",
-				"${BUILT_PRODUCTS_DIR}/Yoga-iOS11.2/yoga.framework",
+				"${BUILT_PRODUCTS_DIR}/FlexLib-framework/FlexLib.framework",
+				"${BUILT_PRODUCTS_DIR}/Yoga-framework/yoga.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

@@ -1,8 +1,10 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks" "${PODS_CONFIGURATION_BUILD_DIR}/Expecta" "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-iOS9.3" "${PODS_CONFIGURATION_BUILD_DIR}/Specta" "${PODS_CONFIGURATION_BUILD_DIR}/Yoga-iOS9.3"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Expecta/Expecta.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-iOS9.3/FlexLib.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Specta/Specta.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Yoga-iOS9.3/yoga.framework/Headers" /usr/include/libxml2
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -l"xml2" -framework "Expecta" -framework "FlexLib" -framework "Foundation" -framework "Specta" -framework "XCTest" -framework "yoga"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Expecta" "${PODS_ROOT}/Headers/Public/FlexLib" "${PODS_ROOT}/Headers/Public/Specta" "${PODS_ROOT}/Headers/Public/Yoga" /usr/include/libxml2
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Expecta" "${PODS_CONFIGURATION_BUILD_DIR}/Specta"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_ROOT}/Headers/Public/yoga/Yoga-library.modulemap"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Expecta" -l"Specta" -l"xml2" -framework "Foundation" -framework "XCTest"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/yoga/Yoga-library.modulemap"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

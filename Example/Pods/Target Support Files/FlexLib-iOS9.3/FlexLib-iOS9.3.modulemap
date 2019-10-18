@@ -1,6 +1,0 @@
-framework module FlexLib {
-  umbrella header "FlexLib-iOS9.3-umbrella.h"
-
-  export *
-  module * { export * }
-}

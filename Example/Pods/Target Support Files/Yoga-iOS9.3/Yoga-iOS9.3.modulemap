@@ -1,6 +1,0 @@
-framework module yoga {
-  umbrella header "Yoga-iOS9.3-umbrella.h"
-
-  export *
-  module * { export * }
-}

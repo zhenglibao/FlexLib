@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53F9762A3B7FD1E295A3ACEF /* Pods_FlexLib_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F399040DE88BBD2F2E407B /* Pods_FlexLib_Example.framework */; };
-		58782A908180548750A1FE7A /* Pods_FlexLib_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF5D4D82057BA2F2195E3B3 /* Pods_FlexLib_Tests.framework */; };
+		101214CAF97E3CADF2C985A4 /* libPods-FlexLib_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4959FDDA4B59C6AB6BCBC7A /* libPods-FlexLib_Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -23,6 +22,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		97CCC3B0AEB943DCA462CC33 /* libPods-FlexLib_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8227A994DC6400C8F197660C /* libPods-FlexLib_Example.a */; };
 		D210B84F20189A7500166DA7 /* FlexBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D210B7F620189A7500166DA7 /* FlexBaseTableCell.m */; };
 		D210B85120189A7500166DA7 /* FlexBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D210B7F820189A7500166DA7 /* FlexBaseVC.m */; };
 		D210B85320189A7500166DA7 /* FlexCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D210B7FA20189A7500166DA7 /* FlexCollectionView.m */; };
@@ -125,6 +125,7 @@
 		D2CF9CD01FD7EB1A00554A0C /* TestTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CF9CCD1FD7EB1A00554A0C /* TestTableVC.m */; };
 		D2E804942028099200B54656 /* FrameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E804932028099200B54656 /* FrameVC.m */; };
 		D2E8049620280C2700B54656 /* FrameVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2E8049520280C2600B54656 /* FrameVC.xml */; };
+		D2EB5D7323596579008247C3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EB5D7223596579008247C3 /* libc++.tbd */; };
 		D2EDA722214B8AF500B6A26D /* TestCollectionViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EDA721214B8AF500B6A26D /* TestCollectionViewVC.m */; };
 		D2EDA724214B8B5C00B6A26D /* TestCollectionViewVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2EDA723214B8B5C00B6A26D /* TestCollectionViewVC.xml */; };
 		D2EDA727214B8CC900B6A26D /* TestCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EDA726214B8CC900B6A26D /* TestCollectionCell.m */; };
@@ -165,9 +166,9 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B47CA40CE36ADABF2EC0262 /* Pods-FlexLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example.release.xcconfig"; sourceTree = "<group>"; };
+		8227A994DC6400C8F197660C /* libPods-FlexLib_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlexLib_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		885B2948ED10418285C4C976 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BF0A9AA5EEC0E1A3212D55AE /* Pods-FlexLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C3F399040DE88BBD2F2E407B /* Pods_FlexLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20EA7438FB7413D8C580238 /* Pods-FlexLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D210B7EB20189A5200166DA7 /* FlexLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlexLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D210B7EE20189A5200166DA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -314,13 +315,14 @@
 		D2E804922028099200B54656 /* FrameVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameVC.h; sourceTree = "<group>"; };
 		D2E804932028099200B54656 /* FrameVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrameVC.m; sourceTree = "<group>"; };
 		D2E8049520280C2600B54656 /* FrameVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = FrameVC.xml; path = res/FrameVC.xml; sourceTree = "<group>"; };
+		D2EB5D7223596579008247C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D2EDA720214B8AF500B6A26D /* TestCollectionViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewVC.h; sourceTree = "<group>"; };
 		D2EDA721214B8AF500B6A26D /* TestCollectionViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewVC.m; sourceTree = "<group>"; };
 		D2EDA723214B8B5C00B6A26D /* TestCollectionViewVC.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestCollectionViewVC.xml; path = res/TestCollectionViewVC.xml; sourceTree = "<group>"; };
 		D2EDA725214B8CC900B6A26D /* TestCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionCell.h; sourceTree = "<group>"; };
 		D2EDA726214B8CC900B6A26D /* TestCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionCell.m; sourceTree = "<group>"; };
 		D2EDA728214B8D7400B6A26D /* TestCollectionCell.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestCollectionCell.xml; path = res/TestCollectionCell.xml; sourceTree = "<group>"; };
-		EAF5D4D82057BA2F2195E3B3 /* Pods_FlexLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlexLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4959FDDA4B59C6AB6BCBC7A /* libPods-FlexLib_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlexLib_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EA3C4A77DCE70224422A8A /* Pods-FlexLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -329,10 +331,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2EB5D7323596579008247C3 /* libc++.tbd in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				53F9762A3B7FD1E295A3ACEF /* Pods_FlexLib_Example.framework in Frameworks */,
+				97CCC3B0AEB943DCA462CC33 /* libPods-FlexLib_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +346,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				58782A908180548750A1FE7A /* Pods_FlexLib_Tests.framework in Frameworks */,
+				101214CAF97E3CADF2C985A4 /* libPods-FlexLib_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,12 +397,13 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2EB5D7223596579008247C3 /* libc++.tbd */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				C3F399040DE88BBD2F2E407B /* Pods_FlexLib_Example.framework */,
-				EAF5D4D82057BA2F2195E3B3 /* Pods_FlexLib_Tests.framework */,
+				8227A994DC6400C8F197660C /* libPods-FlexLib_Example.a */,
+				D4959FDDA4B59C6AB6BCBC7A /* libPods-FlexLib_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -686,7 +690,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				1516B907C64FF46370189E28 /* [CP] Embed Pods Frameworks */,
+				2C047ED85D47780586D3534C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -705,7 +709,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				B648B45A51D89CBE713EA95E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -837,24 +840,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1516B907C64FF46370189E28 /* [CP] Embed Pods Frameworks */ = {
+		2C047ED85D47780586D3534C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FlexLib-iOS9.3/FlexLib.framework",
-				"${BUILT_PRODUCTS_DIR}/Yoga-iOS9.3/yoga.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-library/FlexLib.bundle",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlexLib.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FlexLib.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		35758F78B3E9BF741CCF085C /* [CP] Check Pods Manifest.lock */ = {
@@ -873,26 +874,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B648B45A51D89CBE713EA95E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Expecta/Expecta.framework",
-				"${BUILT_PRODUCTS_DIR}/Specta/Specta.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expecta.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Specta.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEA5E8EEB4AFE0028765288E /* [CP] Check Pods Manifest.lock */ = {

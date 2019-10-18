@@ -1,8 +1,9 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-iOS9.3" "${PODS_CONFIGURATION_BUILD_DIR}/Yoga-iOS9.3"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-iOS9.3/FlexLib.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Yoga-iOS9.3/yoga.framework/Headers" /usr/include/libxml2
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -l"xml2" -framework "FlexLib" -framework "yoga"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Expecta" "${PODS_ROOT}/Headers/Public/FlexLib" "${PODS_ROOT}/Headers/Public/Specta" "${PODS_ROOT}/Headers/Public/Yoga" /usr/include/libxml2
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-library" "${PODS_CONFIGURATION_BUILD_DIR}/Yoga-library"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_ROOT}/Headers/Public/yoga/Yoga-library.modulemap"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"FlexLib-library" -l"Yoga-library" -l"xml2"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/yoga/Yoga-library.modulemap"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
