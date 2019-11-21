@@ -26,9 +26,10 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
   s.author           = { '798393829@qq.com' => '798393829@qq.com' }
   s.source           = { :git => 'https://github.com/zhenglibao/FlexLib.git', :tag => s.version.to_s }
 
+  s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.10'
   
   # ios
-  s.ios.deployment_target = '8.0'
   s.ios.source_files = 'FlexLib/Classes/**/*'
   s.ios.resource_bundles = {
      'FlexLib' => ['FlexLib/Assets/*']
@@ -40,7 +41,6 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
   end
   
   # macosx
-  s.osx.deployment_target = '10.10'
   s.osx.source_files = 'macosx/Classes/**/*'
   s.osx.resource_bundles = {
      #'FlexLib' => ['macosx/Assets/*']
