@@ -370,12 +370,15 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     }
     
     if( context == gObserverHidden ){
+        
         BOOL n = [[change objectForKey:@"new"] boolValue];
-        BOOL o = [[change objectForKey:@"old"] boolValue];
-        if(n!=o){
-            [object enableFlexLayout:!n];
-            [object markDirty];
+        if (n) {
+            [object setLayoutAttr:@"display" Value:@"none"];
+        } else {
+            [object setLayoutAttr:@"display" Value:@"flex"];
         }
+        [object markDirty];
+        
     }else if( context == gObserverText ){
         
         [object markDirty];

@@ -16,13 +16,23 @@
     "tag": "2.4.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.0",
+    "osx": "10.10"
   },
-  "source_files": "FlexLib/Classes/**/*",
-  "resource_bundles": {
-    "FlexLib": [
-      "FlexLib/Assets/*"
-    ]
+  "ios": {
+    "source_files": "FlexLib/Classes/**/*",
+    "resource_bundles": {
+      "FlexLib": [
+        "FlexLib/Assets/*"
+      ]
+    },
+    "exclude_files": "FlexLib/Classes/GDataXMLNode.{h,m}"
+  },
+  "osx": {
+    "source_files": "macosx/Classes/**/*",
+    "resource_bundles": {
+    },
+    "exclude_files": "macosx/Classes/GDataXMLNode.{h,m}"
   },
   "dependencies": {
     "Yoga": [
@@ -33,12 +43,20 @@
   "xcconfig": {
     "HEADER_SEARCH_PATHS": "/usr/include/libxml2"
   },
-  "exclude_files": "FlexLib/Classes/GDataXMLNode.{h,m}",
   "subspecs": [
     {
       "name": "no-arc",
-      "requires_arc": false,
-      "source_files": "FlexLib/Classes/GDataXMLNode.{h,m}"
+      "ios": {
+        "requires_arc": false,
+        "source_files": "FlexLib/Classes/GDataXMLNode.{h,m}"
+      }
+    },
+    {
+      "name": "osx-no-arc",
+      "osx": {
+        "requires_arc": false,
+        "source_files": "macosx/Classes/GDataXMLNode.{h,m}"
+      }
     }
   ]
 }

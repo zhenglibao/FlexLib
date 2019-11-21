@@ -1,1 +1,1 @@
-../../../../../FlexLib/Classes/FlexLib.h
+../../../../../macosx/Classes/FlexLib.h

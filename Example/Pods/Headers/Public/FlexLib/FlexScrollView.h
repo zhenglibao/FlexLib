@@ -1,1 +1,1 @@
-../../../../../FlexLib/Classes/FlexScrollView.h
+../../../../../macosx/Classes/FlexScrollView.h

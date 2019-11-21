@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27309F11CA0EF593A10D4F86 /* libPods-FlexOsxDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF206C4A692D55D497DDC499 /* libPods-FlexOsxDemo.a */; };
+		D286601D2386656300FBFA98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D286601C2386656300FBFA98 /* AppDelegate.m */; };
+		D286601F2386656500FBFA98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D286601E2386656500FBFA98 /* Assets.xcassets */; };
+		D28660222386656500FBFA98 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28660202386656500FBFA98 /* MainMenu.xib */; };
+		D28660252386656500FBFA98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D28660242386656500FBFA98 /* main.m */; };
+		D286602D2386681800FBFA98 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D286602C2386681800FBFA98 /* libc++.tbd */; };
+		D2866034238668C300FBFA98 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D286602E238668C300FBFA98 /* ViewController.m */; };
+		D2866035238668C300FBFA98 /* chat_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2866030238668C300FBFA98 /* chat_phone@2x.png */; };
+		D2866036238668C300FBFA98 /* chat_phone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2866031238668C300FBFA98 /* chat_phone@3x.png */; };
+		D2866037238668C300FBFA98 /* ViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2866032238668C300FBFA98 /* ViewController.xml */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2CD1952C68ECBAB081316B63 /* Pods-FlexOsxDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexOsxDemo.debug.xcconfig"; path = "Target Support Files/Pods-FlexOsxDemo/Pods-FlexOsxDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		ACE5C69683A70FEFDAC8C675 /* Pods-FlexOsxDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexOsxDemo.release.xcconfig"; path = "Target Support Files/Pods-FlexOsxDemo/Pods-FlexOsxDemo.release.xcconfig"; sourceTree = "<group>"; };
+		AF206C4A692D55D497DDC499 /* libPods-FlexOsxDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlexOsxDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28660182386656300FBFA98 /* FlexOsxDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexOsxDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D286601B2386656300FBFA98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D286601C2386656300FBFA98 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D286601E2386656500FBFA98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D28660212386656500FBFA98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D28660232386656500FBFA98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28660242386656500FBFA98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D28660262386656500FBFA98 /* FlexOsxDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlexOsxDemo.entitlements; sourceTree = "<group>"; };
+		D286602C2386681800FBFA98 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D286602E238668C300FBFA98 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D2866030238668C300FBFA98 /* chat_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_phone@2x.png"; sourceTree = "<group>"; };
+		D2866031238668C300FBFA98 /* chat_phone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_phone@3x.png"; sourceTree = "<group>"; };
+		D2866032238668C300FBFA98 /* ViewController.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ViewController.xml; sourceTree = "<group>"; };
+		D2866033238668C300FBFA98 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D28660152386656300FBFA98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D286602D2386681800FBFA98 /* libc++.tbd in Frameworks */,
+				27309F11CA0EF593A10D4F86 /* libPods-FlexOsxDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C5E6A632F58C2D274D7A2EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CD1952C68ECBAB081316B63 /* Pods-FlexOsxDemo.debug.xcconfig */,
+				ACE5C69683A70FEFDAC8C675 /* Pods-FlexOsxDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ABBCC4C319AE8260B685C05C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D286602C2386681800FBFA98 /* libc++.tbd */,
+				AF206C4A692D55D497DDC499 /* libPods-FlexOsxDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D286600F2386656300FBFA98 = {
+			isa = PBXGroup;
+			children = (
+				D286601A2386656300FBFA98 /* FlexOsxDemo */,
+				D28660192386656300FBFA98 /* Products */,
+				5C5E6A632F58C2D274D7A2EB /* Pods */,
+				ABBCC4C319AE8260B685C05C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D28660192386656300FBFA98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D28660182386656300FBFA98 /* FlexOsxDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D286601A2386656300FBFA98 /* FlexOsxDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D286602F238668C300FBFA98 /* res */,
+				D2866033238668C300FBFA98 /* ViewController.h */,
+				D286602E238668C300FBFA98 /* ViewController.m */,
+				D2866032238668C300FBFA98 /* ViewController.xml */,
+				D286601B2386656300FBFA98 /* AppDelegate.h */,
+				D286601C2386656300FBFA98 /* AppDelegate.m */,
+				D286601E2386656500FBFA98 /* Assets.xcassets */,
+				D28660202386656500FBFA98 /* MainMenu.xib */,
+				D28660232386656500FBFA98 /* Info.plist */,
+				D28660242386656500FBFA98 /* main.m */,
+				D28660262386656500FBFA98 /* FlexOsxDemo.entitlements */,
+			);
+			path = FlexOsxDemo;
+			sourceTree = "<group>";
+		};
+		D286602F238668C300FBFA98 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				D2866030238668C300FBFA98 /* chat_phone@2x.png */,
+				D2866031238668C300FBFA98 /* chat_phone@3x.png */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D28660172386656300FBFA98 /* FlexOsxDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D28660292386656500FBFA98 /* Build configuration list for PBXNativeTarget "FlexOsxDemo" */;
+			buildPhases = (
+				AFDCC458380FF55213D5FA38 /* [CP] Check Pods Manifest.lock */,
+				D28660142386656300FBFA98 /* Sources */,
+				D28660152386656300FBFA98 /* Frameworks */,
+				D28660162386656300FBFA98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlexOsxDemo;
+			productName = FlexOsxDemo;
+			productReference = D28660182386656300FBFA98 /* FlexOsxDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D28660102386656300FBFA98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "郑立宝";
+				TargetAttributes = {
+					D28660172386656300FBFA98 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = D28660132386656300FBFA98 /* Build configuration list for PBXProject "FlexOsxDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D286600F2386656300FBFA98;
+			productRefGroup = D28660192386656300FBFA98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D28660172386656300FBFA98 /* FlexOsxDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D28660162386656300FBFA98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2866037238668C300FBFA98 /* ViewController.xml in Resources */,
+				D2866036238668C300FBFA98 /* chat_phone@3x.png in Resources */,
+				D286601F2386656500FBFA98 /* Assets.xcassets in Resources */,
+				D2866035238668C300FBFA98 /* chat_phone@2x.png in Resources */,
+				D28660222386656500FBFA98 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AFDCC458380FF55213D5FA38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlexOsxDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D28660142386656300FBFA98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2866034238668C300FBFA98 /* ViewController.m in Sources */,
+				D28660252386656500FBFA98 /* main.m in Sources */,
+				D286601D2386656300FBFA98 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D28660202386656500FBFA98 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D28660212386656500FBFA98 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D28660272386656500FBFA98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D28660282386656500FBFA98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D286602A2386656500FBFA98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CD1952C68ECBAB081316B63 /* Pods-FlexOsxDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FlexOsxDemo/FlexOsxDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FlexOsxDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hpbr.FlexOsxDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D286602B2386656500FBFA98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACE5C69683A70FEFDAC8C675 /* Pods-FlexOsxDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FlexOsxDemo/FlexOsxDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FlexOsxDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hpbr.FlexOsxDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D28660132386656300FBFA98 /* Build configuration list for PBXProject "FlexOsxDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D28660272386656500FBFA98 /* Debug */,
+				D28660282386656500FBFA98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D28660292386656500FBFA98 /* Build configuration list for PBXNativeTarget "FlexOsxDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D286602A2386656500FBFA98 /* Debug */,
+				D286602B2386656500FBFA98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D28660102386656300FBFA98 /* Project object */;
+}

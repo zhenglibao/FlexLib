@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FlexLib'
-  s.version          = '2.4.0'
+  s.version          = '2.4.1'
   s.summary          = 'An obj-c flex layout framework for IOS'
 
 # This description is used to generate tags and improve search results.
@@ -22,34 +22,37 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
                        DESC
 
   s.homepage         = 'https://github.com/zhenglibao/FlexLib'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '798393829@qq.com' => '798393829@qq.com' }
   s.source           = { :git => 'https://github.com/zhenglibao/FlexLib.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'FlexLib/Classes/**/*'
   
-  s.resource_bundles = {
+  # ios
+  s.ios.deployment_target = '8.0'
+  s.ios.source_files = 'FlexLib/Classes/**/*'
+  s.ios.resource_bundles = {
      'FlexLib' => ['FlexLib/Assets/*']
   }
-
-  # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Yoga', '1.14.0'
-
-  s.library = 'xml2'
-  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
-  #s.private_header_files = 'FlexLib/Classes/private/*.h'
-  #s.public_header_files = 'FlexLib/Classes/*.h'
-
-  non_arc_files   = 'FlexLib/Classes/GDataXMLNode.{h,m}'
-  s.exclude_files = non_arc_files
+  s.ios.exclude_files = 'FlexLib/Classes/GDataXMLNode.{h,m}'
   s.subspec 'no-arc' do |sna|
-    sna.requires_arc = false
-    sna.source_files = non_arc_files
+    sna.ios.requires_arc = false
+    sna.ios.source_files = 'FlexLib/Classes/GDataXMLNode.{h,m}'
+  end
+  
+  # macosx
+  s.osx.deployment_target = '10.10'
+  s.osx.source_files = 'macosx/Classes/**/*'
+  s.osx.resource_bundles = {
+     #'FlexLib' => ['macosx/Assets/*']
+  }
+  s.osx.exclude_files = 'macosx/Classes/GDataXMLNode.{h,m}'
+  s.subspec 'osx-no-arc' do |sna|
+    sna.osx.requires_arc = false
+    sna.osx.source_files = 'macosx/Classes/GDataXMLNode.{h,m}'
   end
 
+  s.dependency 'Yoga', '1.14.0'
+  s.library = 'xml2'
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
 end
 

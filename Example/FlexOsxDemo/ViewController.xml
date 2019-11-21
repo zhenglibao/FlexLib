@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIView layout="flex:1" attr="bgColor:lightGray">
+    <UIView layout="alignSelf:center,width:30%,height:20%" attr="bgColor:yellow">
+    </UIView>
+    <UILabel name="lbName" layout="width:200,alignSelf:flex-start" attr="fontSize:16,color:#333333,linesNum:0,text:这是一个测试文字安吉拉三等奖分开了世纪东方看时间打发时间六块腹肌抗裂砂浆打发时间考虑到房价开始了缴费"/>
+    <UIImageView onPress="testAction" layout="width:45,height:45,alignSelf:center" attr="source:chat_phone"/>
+</UIView>

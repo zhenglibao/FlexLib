@@ -1,0 +1,7 @@
+module yoga {
+  umbrella header "Yoga-library-macOS-umbrella.h"
+  exclude header "Yoga-library-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

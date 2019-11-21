@@ -1,7 +1,6 @@
 workspace ‘FlexLib.xcworkspace'
 
 
-
 target 'FlexLib_Example' do
   workspace ‘FlexLib.xcworkspace'
   xcodeproj ‘FlexLib.xcodeproj'
@@ -11,7 +10,7 @@ target 'FlexLib_Example' do
   target 'FlexLib_Tests' do
     inherit! :search_paths
 
-    pod 'Specta'
+  pod 'Specta'
   pod 'Expecta'
   end
 end
@@ -21,6 +20,15 @@ target ‘FlexSwiftDemo’ do
 use_frameworks!
   workspace ‘FlexLib.xcworkspace'
   xcodeproj ‘FlexSwiftDemo.xcodeproj'
+  pod 'FlexLib', :path => '../'
+  pod 'Yoga', '1.14.0'
+end
+
+
+
+target 'FlexOsxDemo' do
+  workspace ‘FlexLib.xcworkspace'
+  xcodeproj ‘FlexOsxDemo.xcodeproj'
   pod 'FlexLib', :path => '../'
   pod 'Yoga', '1.14.0'
 end

@@ -1,1 +1,1 @@
-../../../../../FlexLib/Classes/FlexXmlBaseView.h
+../../../../../macosx/Classes/FlexXmlBaseView.h
