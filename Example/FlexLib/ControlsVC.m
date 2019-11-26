@@ -10,6 +10,18 @@
 
 #import "ControlsVC.h"
 
+@interface TestIndicator : UIActivityIndicatorView
+
+@end
+@implementation TestIndicator
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+}
+
+@end
+
 @interface ControlsVC ()<UIPickerViewDelegate,UIPickerViewDataSource>
 {
     UIActivityIndicatorView* _activityView;
@@ -28,6 +40,8 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Controls";
+    
+    [self.view layoutIfNeeded];
 
     [_activityView startAnimating];
     

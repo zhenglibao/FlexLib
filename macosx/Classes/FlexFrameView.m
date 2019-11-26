@@ -7,15 +7,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-
-#import "FlexFrameView.h"
 #import "FlexRootView.h"
+#import "FlexFrameView.h"
 #import "YogaKit/NSView+Yoga.h"
-
 
 @interface FlexFrameView()
 {
-    FlexRootView* _flexRootView;
 }
 @end
 
@@ -25,6 +22,7 @@
 {
     self = [super init];
     if (self) {
+        self.useFrame = YES;
     }
     return self;
 }
@@ -34,12 +32,15 @@
 {
     self = [self initWithFrame:frame];
     
-    if(self){        
+    if(self){
         if(owner == nil)
             owner = self;
         
-        _flexRootView = [FlexRootView loadWithNodeFile:flexname Owner:owner];
-        [self addSubview:_flexRootView];
+        self.useFrame = YES;
+        
+        [self loadWithNodeFile:flexname Owner:owner];
+        
+        [self onInit];
     }
     return self;
 }
@@ -48,68 +49,39 @@
 }
 -(FlexRootView*)rootView
 {
-    return _flexRootView;
+    return self;
 }
-- (void)setFrameSize:(NSSize)newSize
+- (void)onInit
 {
-    NSSize oldSize = self.frame.size;
-    [_flexRootView setFrameSize:newSize];
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    CGSize oldSize = self.frame.size ;
     
-    if (!CGSizeEqualToSize(oldSize, newSize)) {
-        [_flexRootView setNeedsLayout:YES];
+    [super setFrame:frame];
+    
+    if (!self.inLayouting && !CGSizeEqualToSize(oldSize, frame.size)) {
+        [self setNeedsLayout:YES];
     }
 }
--(void)layoutSubviews
+
+- (void)layout
 {
-    [_flexRootView layoutSubtreeIfNeeded];
-}
--(void)subFrameChanged:(NSView*)subView
-                  Rect:(CGRect)newFrame
-{
-    if(!(self.flexibleWidth||self.flexibleHeight)){
-        return;
-    }
+    CGSize oldSize = self.frame.size ;
     
-    CGRect rc = self.frame ;
-    NSEdgeInsets safeArea = _flexRootView.safeArea;
-    if(self.flexibleWidth){
-        rc.size.width = CGRectGetWidth(newFrame) + safeArea.left + safeArea.right ;
-    }
-    if(self.flexibleHeight){
-        rc.size.height = CGRectGetHeight(newFrame) + safeArea.top + safeArea.bottom;
-    }
+    [super layout];
     
-    if(!CGSizeEqualToSize(rc.size,self.frame.size))
+    if(self.onFrameChange!=nil &&
+       !CGSizeEqualToSize(oldSize, self.frame.size))
     {
-        self.frame = rc ;
-        if(self.onFrameChange != nil)
-        {
-            self.onFrameChange(rc);
-        }
+        self.onFrameChange(self.frame);
     }
 }
--(void)setFlexibleWidth:(BOOL)flexibleWidth
-{
-    _flexRootView.flexibleWidth = flexibleWidth ;
-}
--(BOOL)flexibleWidth
-{
-    return _flexRootView.flexibleWidth;
-}
--(void)setFlexibleHeight:(BOOL)flexibleHeight
-{
-    _flexRootView.flexibleHeight = flexibleHeight ;
-}
--(BOOL)flexibleHeight
-{
-    return _flexRootView.flexibleHeight;
-}
+
 - (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize
 {
-    return [_flexRootView calculateSize:targetSize];
+    return [self calculateSize:targetSize];
 }
-//- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority
-//{
-//    return [_flexRootView calculateSize:targetSize];
-//}
+
 @end

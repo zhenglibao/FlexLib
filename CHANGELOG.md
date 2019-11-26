@@ -5,6 +5,8 @@
 ## 2.4.1
 1. 新增对macosx的支持，现在你可以用它来编写macosx的界面了，注意两个平台的api并不完全一样
 2. 对hidden属性变化时的优化
+3. 优化各个组件的性能，减少FlexFrameView, FlexCustomBaseView的视图层级
+4. 移除FlexScrollView对吸顶效果的支持
 
 ## 2.4.0
 1.布局文件和风格支持后缀

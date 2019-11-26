@@ -70,28 +70,57 @@
 
 @interface FlexRootView : UIView
 
-//宽和高是否可变？
+/**
+ * 是否使用frame模式，默认NO
+ * 如果为YES，则需要明确设置自身的frame,也就是self.frame必须是明确的有效值
+ * 如果为NO，则使用距离父窗口四周的距离来决定自身大小
+ */
+@property(nonatomic,assign) BOOL useFrame;
+
+/**
+ * 宽和高是否有内容决定，默认为NO
+ * 如果为NO，则表示外部必须明确指定宽度或者高度
+ * 如果为YES，则表示无需指定宽度或者高度，当布局完成后，自动由内容撑开
+ */
 @property(nonatomic,assign) BOOL flexibleWidth;
 @property(nonatomic,assign) BOOL flexibleHeight;
 
-//四周距离父窗口边界的距离,优先使用block，低优先级使用safeArea
+/**
+ * 四周距离父窗口边界的距离,优先使用block，低优先级使用safeArea
+ * 只有在useFrame=NO的情况下生效
+ */
 @property(nonatomic,assign) UIEdgeInsets safeArea;
 @property(nonatomic,copy) UIEdgeInsets (^calcSafeArea)(void);
 
-//获取xml中的顶级窗口
+/**
+ * 获取xml中的顶级窗口
+ */
 @property(nonatomic,readonly) UIView* topSubView;
 
-//获取owner
+/**
+ * 获取owner
+ */
 @property(nonatomic,readonly) NSObject* owner;
 
-//用于执行layout动画
+/**
+ * 当前是否正在布局
+ */
+@property(nonatomic,readonly) BOOL inLayouting;
+
+/**
+ * 用于执行layout动画
+ */
 @property(nonatomic,copy) void (^beginLayout)(void);
 @property(nonatomic,copy) void (^endLayout)(void);
 
-//事件通知,布局完成事件也可以通过[NSNotificationCenter defaultCenter]
-//注册FLEXDIDLAYOUT事件进行接收
+/**
+ * 事件通知,布局完成事件也可以通过[NSNotificationCenter defaultCenter]
+ * 注册FLEXDIDLAYOUT事件进行接收
+ */
 @property(nonatomic,copy) void (^onWillLayout)(void);
 @property(nonatomic,copy) void (^onDidLayout)(void);
+
+#pragma mark - 加载布局
 
 // 从xml文件中加载布局
 +(FlexRootView*)loadWithNodeFile:(NSString*)resName
@@ -99,6 +128,19 @@
 // 从data中加载布局
 +(FlexRootView*)loadWithNodeData:(NSData*)data
                            Owner:(NSObject*)owner;
+
+/**
+ * 从数据中加载xml视图树
+ */
+-(BOOL)loadWithNodeData:(NSData*)data
+                  Owner:(NSObject*)owner;
+/**
+ * 从xml文件中加载视图树
+ */
+-(BOOL)loadWithNodeFile:(NSString*)resName
+                  Owner:(NSObject*)owner;
+
+#pragma mark - 其他方法
 
 -(void)markChildDirty:(UIView*)child;
 

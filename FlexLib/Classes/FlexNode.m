@@ -503,10 +503,6 @@ void FlexApplyLayoutParam(YGLayout* layout,
     [view postCreate];
     [owner postCreateView:view];
     
-    if(view.isHidden){
-        [view enableFlexLayout:NO];
-    }
-    
     return view;
 }
 

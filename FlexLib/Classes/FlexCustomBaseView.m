@@ -7,14 +7,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-
+#import "FlexRootView.h"
 #import "FlexCustomBaseView.h"
 #import "FlexNode.h"
 #import "FlexFrameView.h"
-#import "FlexRootView.h"
 #import "FlexUtils.h"
-
-static void* gObserverFrame = &gObserverFrame;
 
 @interface FlexCustomBaseView()
 {
@@ -76,11 +73,6 @@ static void* gObserverFrame = &gObserverFrame;
         };
         [self addSubview:_frameView];
         
-        if(!_bObserved){
-            [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:gObserverFrame];
-            _bObserved = YES;
-        }
-        
         [self onInit];
     }
 }
@@ -101,21 +93,17 @@ static void* gObserverFrame = &gObserverFrame;
     }
 }
 
-#pragma mark - KVO
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
+- (void)setFrame:(CGRect)frame
 {
-    if(context == gObserverFrame){
-        
-        CGSize szNew = [[change objectForKey:@"new"]CGRectValue].size;
-        if(!CGSizeEqualToSize(szNew, _frameView.frame.size))
-        {
-            CGRect rc = _frameView.frame;
-            rc.size = szNew;
-            _frameView.frame = rc;
-        }
-    }else{
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    CGSize oldSize = self.frame.size;
+    
+    [super setFrame:frame];
+    
+    if(!CGSizeEqualToSize(oldSize, frame.size))
+    {
+        CGRect rc = _frameView.frame;
+        rc.size = frame.size;
+        _frameView.frame = rc;
     }
 }
 

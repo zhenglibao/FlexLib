@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "FlexFrameView.h"
 #import "FlexLib.h"
 
 @interface ViewController ()

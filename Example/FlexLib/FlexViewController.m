@@ -85,9 +85,8 @@
 }
 -(void)onFrameView
 {
-    CGRect rcFrame = [[UIScreen mainScreen]bounds];
-    rcFrame.origin.y = 100;
-    rcFrame.size.height = 500;
+    CGRect rcScreen = [[UIScreen mainScreen]bounds];
+    CGRect rcFrame = CGRectMake(rcScreen.size.width/2-200, 100, 400, 500);
     TestFrameView* frameview=[[TestFrameView alloc]initWithFlex:nil Frame:rcFrame Owner:nil];
     [self.view addSubview:frameview];
 }

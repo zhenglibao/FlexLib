@@ -248,8 +248,6 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         _safeArea = UIEdgeInsetsMake(0, 0, 0, 0);
         _lastConfigFrame = CGRectZero;
         _bChildDirty = NO;
-        
-        [self enableFlexLayout:YES];
     }
     return self;
 }
@@ -265,11 +263,15 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     return _owner;
 }
 
-+(FlexRootView*)loadWithNodeData:(NSData*)data
-                           Owner:(NSObject*)owner
+- (BOOL)inLayouting
 {
-    FlexRootView* root = [[FlexRootView alloc]init];
-    root->_owner = owner;
+    return _bInLayouting;
+}
+
+-(BOOL)loadWithNodeData:(NSData*)data
+                  Owner:(NSObject*)owner
+{
+    _owner = owner;
     
     FlexNode* node = [FlexNode loadNodeData:data];
     if(node != nil){
@@ -277,27 +279,28 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         
         @try{
             sub = [node buildViewTree:owner
-                             RootView:root];
+                             RootView:self];
         }@catch(NSException* exception){
             NSLog(@"Flexbox: FlexRootView exception occured - %@",exception);
         }
         
         if(sub != nil && ![sub isKindOfClass:[FlexModalView class]])
         {
-            [root addSubview:sub];
+            [self addSubview:sub];
         }
+        return sub!=nil;
     }
-    return root;
+    return NO;
 }
-+(FlexRootView*)loadWithNodeFile:(NSString*)resName
-                           Owner:(NSObject*)owner
+
+-(BOOL)loadWithNodeFile:(NSString*)resName
+                  Owner:(NSObject*)owner
 {
     if(resName==nil){
         resName = NSStringFromClass([owner class]);
     }
     
-    FlexRootView* root = [[FlexRootView alloc]init];
-    root->_owner = owner;
+    _owner = owner;
     
     FlexNode* node = [FlexNode loadNodeFromRes:resName Owner:owner];
     if(node != nil){
@@ -305,16 +308,32 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         
         @try{
             sub = [node buildViewTree:owner
-                             RootView:root];
+                             RootView:self];
         }@catch(NSException* exception){
             NSLog(@"Flexbox: FlexRootView exception occured - %@",exception);
         }
         
         if(sub != nil && ![sub isKindOfClass:[FlexModalView class]])
         {
-            [root addSubview:sub];
+            [self addSubview:sub];
         }
+        return sub!=nil;
     }
+    return NO;
+}
+
++(FlexRootView*)loadWithNodeData:(NSData*)data
+                           Owner:(NSObject*)owner
+{
+    FlexRootView* root = [[FlexRootView alloc]init];
+    [root loadWithNodeData:data Owner:owner];
+    return root;
+}
++(FlexRootView*)loadWithNodeFile:(NSString*)resName
+                           Owner:(NSObject*)owner
+{
+    FlexRootView* root = [[FlexRootView alloc]init];
+    [root loadWithNodeFile:resName Owner:owner];
     return root;
 }
 
@@ -423,11 +442,21 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 
 -(CGRect)getSafeArea
 {
-    CGRect rcSafeArea = self.superview.frame ;
-    rcSafeArea.origin = CGPointZero;
-    if(self.calcSafeArea!=nil)
-        return UIEdgeInsetsInsetRect(rcSafeArea,self.calcSafeArea());
-    return UIEdgeInsetsInsetRect(rcSafeArea,self.safeArea);
+    CGRect rcSafeArea ;
+    
+    if (self.useFrame) {
+        rcSafeArea = self.frame;
+    } else {
+        rcSafeArea = self.superview.frame ;
+        rcSafeArea.origin = CGPointZero;
+        if(self.calcSafeArea!=nil)
+        {
+            rcSafeArea = UIEdgeInsetsInsetRect(rcSafeArea,self.calcSafeArea());
+        }else{
+            rcSafeArea = UIEdgeInsetsInsetRect(rcSafeArea,self.safeArea);
+        }
+    }
+    return rcSafeArea;
 }
 -(BOOL)isConfigSame
 {
@@ -468,7 +497,9 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         self.onWillLayout();
     }
     
+    [self enableFlexLayout:YES];
     [self.yoga applyLayoutPreservingOrigin:NO dimensionFlexibility:option];
+    [self enableFlexLayout:NO];
     
     // 布局后事件
     if(self.onDidLayout != nil){
@@ -503,7 +534,10 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     if(self.flexibleHeight)
         szLimit.height = NAN ;
     
-    CGSize sz=[self.yoga calculateLayoutWithSize:szLimit];
+    CGSize sz;
+    [self enableFlexLayout:YES];
+    sz=[self.yoga calculateLayoutWithSize:szLimit];
+    [self enableFlexLayout:NO];
     return sz;
 }
 -(CGSize)calculateSize

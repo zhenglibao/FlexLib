@@ -33,7 +33,6 @@
 		D210B85D20189A7500166DA7 /* FlexLayoutViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D210B80420189A7500166DA7 /* FlexLayoutViewerVC.m */; };
 		D210B86020189A7500166DA7 /* FlexModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = D210B80720189A7500166DA7 /* FlexModalView.m */; };
 		D210B86220189A7500166DA7 /* FlexNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D210B80920189A7500166DA7 /* FlexNode.m */; };
-		D210B86420189A7500166DA7 /* FlexParentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D210B80B20189A7500166DA7 /* FlexParentView.m */; };
 		D210B86620189A7500166DA7 /* FlexRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D210B80D20189A7500166DA7 /* FlexRootView.m */; };
 		D210B86820189A7500166DA7 /* FlexScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D210B80F20189A7500166DA7 /* FlexScrollView.m */; };
 		D210B86A20189A7500166DA7 /* FlexSetPreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D210B81120189A7500166DA7 /* FlexSetPreviewVC.m */; };
@@ -76,7 +75,6 @@
 		D210B8AC20189AC900166DA7 /* FlexLib.h in Headers */ = {isa = PBXBuildFile; fileRef = D210B80520189A7500166DA7 /* FlexLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D210B8AD20189AC900166DA7 /* FlexModalView.h in Headers */ = {isa = PBXBuildFile; fileRef = D210B80620189A7500166DA7 /* FlexModalView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D210B8AE20189AC900166DA7 /* FlexNode.h in Headers */ = {isa = PBXBuildFile; fileRef = D210B80820189A7500166DA7 /* FlexNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D210B8AF20189AC900166DA7 /* FlexParentView.h in Headers */ = {isa = PBXBuildFile; fileRef = D210B80A20189A7500166DA7 /* FlexParentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D210B8B020189AC900166DA7 /* FlexRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = D210B80C20189A7500166DA7 /* FlexRootView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D210B8B120189AC900166DA7 /* FlexScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = D210B80E20189A7500166DA7 /* FlexScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D210B8B220189AC900166DA7 /* FlexSetPreviewVC.h in Headers */ = {isa = PBXBuildFile; fileRef = D210B81020189A7500166DA7 /* FlexSetPreviewVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -193,8 +191,6 @@
 		D210B80720189A7500166DA7 /* FlexModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexModalView.m; sourceTree = "<group>"; };
 		D210B80820189A7500166DA7 /* FlexNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexNode.h; sourceTree = "<group>"; };
 		D210B80920189A7500166DA7 /* FlexNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexNode.m; sourceTree = "<group>"; };
-		D210B80A20189A7500166DA7 /* FlexParentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexParentView.h; sourceTree = "<group>"; };
-		D210B80B20189A7500166DA7 /* FlexParentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexParentView.m; sourceTree = "<group>"; };
 		D210B80C20189A7500166DA7 /* FlexRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexRootView.h; sourceTree = "<group>"; };
 		D210B80D20189A7500166DA7 /* FlexRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexRootView.m; sourceTree = "<group>"; };
 		D210B80E20189A7500166DA7 /* FlexScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexScrollView.h; sourceTree = "<group>"; };
@@ -530,8 +526,6 @@
 				D210B80720189A7500166DA7 /* FlexModalView.m */,
 				D210B80820189A7500166DA7 /* FlexNode.h */,
 				D210B80920189A7500166DA7 /* FlexNode.m */,
-				D210B80A20189A7500166DA7 /* FlexParentView.h */,
-				D210B80B20189A7500166DA7 /* FlexParentView.m */,
 				D210B80C20189A7500166DA7 /* FlexRootView.h */,
 				D210B80D20189A7500166DA7 /* FlexRootView.m */,
 				D210B80E20189A7500166DA7 /* FlexScrollView.h */,
@@ -667,7 +661,6 @@
 				D210B8AC20189AC900166DA7 /* FlexLib.h in Headers */,
 				D210B8AD20189AC900166DA7 /* FlexModalView.h in Headers */,
 				D210B8AE20189AC900166DA7 /* FlexNode.h in Headers */,
-				D210B8AF20189AC900166DA7 /* FlexParentView.h in Headers */,
 				D210B8B020189AC900166DA7 /* FlexRootView.h in Headers */,
 				D210B8B120189AC900166DA7 /* FlexScrollView.h in Headers */,
 				D210B8B220189AC900166DA7 /* FlexSetPreviewVC.h in Headers */,
@@ -690,7 +683,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				2C047ED85D47780586D3534C /* [CP] Copy Pods Resources */,
+				5577A4B660525CE6EEAC9E43 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -766,6 +759,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hans",
@@ -840,24 +834,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C047ED85D47780586D3534C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-library-iOS/FlexLib.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FlexLib.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		35758F78B3E9BF741CCF085C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -874,6 +850,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5577A4B660525CE6EEAC9E43 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FlexLib-library-iOS/FlexLib.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FlexLib.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEA5E8EEB4AFE0028765288E /* [CP] Check Pods Manifest.lock */ = {
@@ -967,7 +961,6 @@
 				D210B89020189A7500166DA7 /* UISlider+Flex.m in Sources */,
 				D210B89820189A7500166DA7 /* UITextField+Flex.m in Sources */,
 				D210B85D20189A7500166DA7 /* FlexLayoutViewerVC.m in Sources */,
-				D210B86420189A7500166DA7 /* FlexParentView.m in Sources */,
 				D210B87020189A7500166DA7 /* FlexTouchMaskView.m in Sources */,
 				D210B88820189A7500166DA7 /* UIProgressView+Flex.m in Sources */,
 				D210B87C20189A7500166DA7 /* UIControl+Flex.m in Sources */,

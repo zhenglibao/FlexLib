@@ -10,7 +10,7 @@
 #import "FrameVC.h"
 
 @interface FrameVC ()
-
+@property(nonatomic,strong) FlexFrameView* frameView;
 @end
 
 @implementation FrameVC
@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     FlexFrameView* view = [[FlexFrameView alloc]initWithFlex:@"FrameVC" Frame:CGRectZero Owner:self];
+    self.frameView = view;
     self.view = view;
 }
 
