@@ -124,6 +124,8 @@ BOOL IsIphoneX(void);
 
 BOOL IsPortrait(void);
 
+UIWindow* keyWindow(void);
+
 //获取自1970/1/1到现在的精确秒数，精确到微秒
 double GetAccurateSecondsSince1970(void);
 
