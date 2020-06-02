@@ -1,6 +1,6 @@
 {
   "name": "FlexLib",
-  "version": "2.4.1",
+  "version": "2.4.0",
   "summary": "An obj-c flex layout framework for IOS",
   "description": "It's a layout framework based on yoga engine. The main purpose is to provide easy and fast usage.",
   "homepage": "https://github.com/zhenglibao/FlexLib",
@@ -13,50 +13,35 @@
   },
   "source": {
     "git": "https://github.com/zhenglibao/FlexLib.git",
-    "tag": "2.4.1"
+    "tag": "2.4.0"
   },
   "platforms": {
-    "ios": "8.0",
-    "osx": "10.10"
+    "ios": "8.0"
   },
-  "ios": {
-    "source_files": "FlexLib/Classes/**/*",
-    "resource_bundles": {
-      "FlexLib": [
-        "FlexLib/Assets/*"
-      ]
-    },
-    "exclude_files": "FlexLib/Classes/GDataXMLNode.{h,m}"
-  },
-  "osx": {
-    "source_files": "macosx/Classes/**/*",
-    "resource_bundles": {
-    },
-    "exclude_files": "macosx/Classes/GDataXMLNode.{h,m}"
+  "source_files": "FlexLib/Classes/**/*",
+  "resource_bundles": {
+    "FlexLib": [
+      "FlexLib/Assets/*"
+    ]
   },
   "dependencies": {
     "Yoga": [
       "1.14.0"
     ]
   },
-  "libraries": "xml2",
+  "libraries": [
+    "xml2",
+    "c++"
+  ],
   "xcconfig": {
     "HEADER_SEARCH_PATHS": "/usr/include/libxml2"
   },
+  "exclude_files": "FlexLib/Classes/GDataXMLNode.{h,m}",
   "subspecs": [
     {
       "name": "no-arc",
-      "ios": {
-        "requires_arc": false,
-        "source_files": "FlexLib/Classes/GDataXMLNode.{h,m}"
-      }
-    },
-    {
-      "name": "osx-no-arc",
-      "osx": {
-        "requires_arc": false,
-        "source_files": "macosx/Classes/GDataXMLNode.{h,m}"
-      }
+      "requires_arc": false,
+      "source_files": "FlexLib/Classes/GDataXMLNode.{h,m}"
     }
   ]
 }

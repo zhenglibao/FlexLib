@@ -1,1 +1,1 @@
-../../../../../macosx/Classes/FlexTextView.h
+../../../../../FlexLib/Classes/FlexTextView.h

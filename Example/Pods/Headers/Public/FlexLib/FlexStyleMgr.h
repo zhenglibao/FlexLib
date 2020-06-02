@@ -1,1 +1,1 @@
-../../../../../macosx/Classes/FlexStyleMgr.h
+../../../../../FlexLib/Classes/FlexStyleMgr.h

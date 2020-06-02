@@ -1,1 +1,1 @@
-../../../../../macosx/Classes/GDataXMLNode.h
+../../../../../FlexLib/Classes/GDataXMLNode.h

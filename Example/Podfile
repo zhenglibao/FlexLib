@@ -24,11 +24,3 @@ use_frameworks!
   pod 'Yoga', '1.14.0'
 end
 
-
-
-target 'FlexOsxDemo' do
-  workspace ‘FlexLib.xcworkspace'
-  xcodeproj ‘FlexOsxDemo.xcodeproj'
-  pod 'FlexLib', :path => '../'
-  pod 'Yoga', '1.14.0'
-end
