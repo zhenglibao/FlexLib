@@ -7,153 +7,155 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00B236E42358CFC9E1CCFF5E315515A1 /* FlexScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B40BB819BEC6B3683461379D656C9625 /* FlexScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0E8C377BA0924022F0025E3FBCAEF475 /* FlexHttpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D16B7C254E52CE3B4EF9A398F86B643 /* FlexHttpVC.m */; };
-		0FBDF83637BFDA13964BE29E4A0123A1 /* FlexContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB550212B29919D87C24E7BFD55C808 /* FlexContainerView.m */; };
-		18A2D13803ABC9EA0FBAF5524791A1DE /* YGEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26174CC4CC89559B7AF38B93F4E5D7B /* YGEnums.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		1988E247487A4F34E850E04BDE635EC9 /* UITextField+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = B512D567F1BC3CBB0ADBCB9D2545620C /* UITextField+Flex.m */; };
-		1A24ABCFB5077D422766CF0F72B1C285 /* FlexNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 85227CE653FB4C1A4D564B378D0E6DDF /* FlexNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BCD49DC02A0AA17B3E274BC2A235338 /* UIPickerView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 06D1C5307C25F7985BF10503FD53E44E /* UIPickerView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D95747F91369B0557F3E6E922780A46 /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B8823EB7C66411A9DB8F0AB70C2CD7C /* GDataXMLNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1DB5FD99F7EF5D347BEE771000DE183C /* YGValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B381366205B8169F453BE2407FFBD49 /* YGValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E5F4EDB08114AA1E7A497DCF8D01530 /* FlexSetPreviewVC.h in Headers */ = {isa = PBXBuildFile; fileRef = B4C371F55B476FDD543B4B88969A2263 /* FlexSetPreviewVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		222BB27FD1B86F5A6F4F956E5B459C76 /* UILabel+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C818C85D0CB2739FE332EF99FA0ED6 /* UILabel+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2508B17A95BC75AB7F59FE9E0798BD34 /* YGStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5CCA99ACE813AA6C79CD772AA0A41A1 /* YGStyle.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		25B9599AE50D210F29FD4A0839528B6F /* YGLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F12907A1E22D6225174D75483BB2B5D6 /* YGLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		25D84E8F74DE039CE858CA3460F33761 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D21B3285A932B22FA230339FC811F /* zh-Hans.lproj */; };
-		26078FC3D6236D3AB703F57F8E1BC553 /* UILabel+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B266E52750BE8ED872A38DB2FB811F0 /* UILabel+Flex.m */; };
-		298D70406155939511565AB2059320AC /* FlexXmlBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B3C21944E7EB1FB4F4589133F9BB158 /* FlexXmlBaseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A1669C2E46F7DAB29863748AB73CE2C /* UIView+Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = AC94DF442282422EF0901581D184F8A3 /* UIView+Yoga.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2DE0D1D10C23987A8CB0442D4C75B0F1 /* UIProgressView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = EB47BBE3F3D74DA1FF3280BC63C7E446 /* UIProgressView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2E0C9382498C047CAE60D6DA32F5AC0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17DE0AAF4350268D96CC73EE6D6558D /* Foundation.framework */; };
-		2E6570D57A848FBE0D2995DAAB602313 /* FlexBaseVC.h in Headers */ = {isa = PBXBuildFile; fileRef = CF50D30ADAA28C4EA72E20FEE636D404 /* FlexBaseVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2F776FA10FFE1437650E4C783734E44F /* UISlider+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD129EB0A4EA1810CD020435768D2AF /* UISlider+Flex.m */; };
-		305EF391CDD340B176B1C24A674D4E05 /* yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7357649794D25679E54CCCDF2358F6E4 /* yoga.framework */; };
-		31061C3E8D1629E150469827061E97AD /* UIPickerView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C32C840B44CB5B38F2243CD0DFEB14 /* UIPickerView+Flex.m */; };
-		338B316B10CA5638EE4F4631B0190642 /* UISlider+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8AE7C12390AB5E6A0810484808E4D8 /* UISlider+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		35B8CAC2952244B3368C42C8C6CADC33 /* FlexModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C017104987E45E34B09B9D481652CE /* FlexModalView.m */; };
-		35BCD3285B9CACC93F23474BC8FA09FF /* FlexFrameView.h in Headers */ = {isa = PBXBuildFile; fileRef = DFCF24A16D4844D9EF1106FE4C8891A5 /* FlexFrameView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A00D3779C459D16A1DCF7A8A3D60D66 /* YGNodePrint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EFABBD4ACA054BC9BE6B0ABC7D3CB97 /* YGNodePrint.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		3BC929AE65C6A1477334390A1288157A /* UIStepper+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEDCC5F3D96BC45472B2A57C69A406 /* UIStepper+Flex.m */; };
-		3F7F9E62C4A484C7F5594640F18AEF6B /* UIProgressView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFFDDA3176163A551FBC3E88F1D8446 /* UIProgressView+Flex.m */; };
-		40AE00069D477DB695E323943093A9F5 /* Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = FBDECC5D4656B05F750CCE4299C490BD /* Yoga.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43C2C8C2D9F21BA0134781F6E5DAE258 /* FlexHttpVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 51078AC132A8737958D5B744D1AC76D3 /* FlexHttpVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		44D6E85B042CC483E916E89CFB0C9DF9 /* UIButton+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A508A40EDEA4ACFD75DDA5A76A636EC /* UIButton+Flex.m */; };
-		4B0429DC2DFCF14ADE277A7C00E7F883 /* CompactValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B84F059B828D9A97A5A253529A35556 /* CompactValue.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4B5151A1BC3BE6874B5132C6D399571A /* UIActivityIndicatorView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE83FC62145D90E470BB303C25E95B /* UIActivityIndicatorView+Flex.m */; };
-		4B71169F3F3F138A7954F85B017041AB /* FlexBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA3DA209D06F872EC486153EF9961F4 /* FlexBaseVC.m */; };
-		4F18BDF6062C50DB173AAAF6943D6DE8 /* UIScrollView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 847F0A408ED9C2AD8EB06C6CC5F1EC69 /* UIScrollView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5085C30CBA9A4551EBEAD25CF3A24662 /* UIDatePicker+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D3017B93D1E911C718B16D07A515362 /* UIDatePicker+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50BACAEFA1F2AF3D306E47E5DBD4473A /* YGLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = ABD479638FB7871AF298796E8C7F5306 /* YGLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		52E72F118DA4BA6B7375AFC7F6872D50 /* FlexStyleMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F23104131BE500A674C09BDD74E6E /* FlexStyleMgr.m */; };
-		537B7FDDCB7240590687C0A76E7D1BA1 /* FlexCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1173957986EB863A5D3326C0F79939C8 /* FlexCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54BBDAC620C0CA8000920AB71585BACA /* UITextView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0438BCD8F0A5D0CD7F976AE3B79954EF /* UITextView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		552B0502BDA5DF7899A2F7BA469E045E /* YGMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 929E3A9A35441331A1E37BC3C266D20B /* YGMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		553FFC88C331FBBDB9A6580A493F86E2 /* UITextField+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1DE38384A18ACE6E75D8A2BBFE5C70 /* UITextField+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		58E5C69C3146720134AFE903CE12D770 /* FlexSetPreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3432D80A7D0F5B1BE8E4699C17F428 /* FlexSetPreviewVC.m */; };
-		5AB5EBFD537DC647E3144A702B74BFCE /* FlexTouchMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCBE9CCCD47EA2A7709EDD30337160 /* FlexTouchMaskView.m */; };
-		5CFF473D208A282C0663A675F7EC1A8A /* FlexHttpVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = 71D41274091CE7C69A369B613E0A6330 /* FlexHttpVC.xml */; };
-		5E2FAB1D83A3599AFD9E5C0217720CF9 /* Yoga-internal.h in Headers */ = {isa = PBXBuildFile; fileRef = EBAB4EF6BC393FAFD409F60EE1782688 /* Yoga-internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		664E7744054128A10AA4D6744BD26010 /* FlexSetPreviewVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = 49338AD4DA69A08286C58E6F7228833D /* FlexSetPreviewVC.xml */; };
-		667CE41779A9EFA5564C1E3C84EBA2B6 /* UIPageControl+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = FC49C731AD624B20845AA6D2D06A7B24 /* UIPageControl+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		67F3414A82AD8C0C026D2691BE707718 /* YGMarker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4AE59A9A8A8D7D72E91F2395DA9DA71 /* YGMarker.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		69164D81DB34AA0ED054CFCE9FF810CE /* UIScrollView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = DB99AD6FFD8303E52D7F7871D73351F5 /* UIScrollView+Flex.m */; };
-		69AD2766DA5E8064FA8F84A1798AC9FC /* UIControl+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8C6BE6AF414857D7FAEBE18278C448 /* UIControl+Flex.m */; };
-		69C3E7D16933B27A7F6BD55A0E6A3A90 /* FlexFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DDD76FEFDDBFDB04D47742BE11EA0A /* FlexFrameView.m */; };
-		6B6FEBF232732E1E8AC1B18409818BC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17DE0AAF4350268D96CC73EE6D6558D /* Foundation.framework */; };
-		6FD770A2C8DC3B404BBEABA1E460BC70 /* FlexStyleMgr.h in Headers */ = {isa = PBXBuildFile; fileRef = 38A6071D1A797C93729392025FA95638 /* FlexStyleMgr.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		75CABF701B3AF9C2BE94955F4C2505D3 /* FlexRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDD14866ADDE0E91BDEB260A802393C /* FlexRootView.m */; };
-		7A0C7561489E8A5CD20D4BE4E45DF1B4 /* FlexNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FC862172B6D08D3BFFE512CB97E6AE /* FlexNode.m */; };
-		7AFA325765255708D3F2DFFEBA8CC753 /* UIActivityIndicatorView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A05FC25E8ED53D688A504B45462CA47 /* UIActivityIndicatorView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7B8EBE3B0356C9A094E506A9A57AFCE4 /* UISwitch+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 83731BAC3F9B5225970C0203DF38894A /* UISwitch+Flex.m */; };
-		7CAE08F88AE837103EEE6A40325A1B01 /* FlexLayoutViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F1237DC1725346A296E1F3B570347B /* FlexLayoutViewerVC.m */; };
-		7F3EFE4ABB199CADAFD1360B4872D56A /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D60A8CED9000158BDE51BE50802603C /* Utils.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		7FA1F0FA3F3E9189DDD9B24FFD1938D3 /* FlexModalView.h in Headers */ = {isa = PBXBuildFile; fileRef = E39A87C6FC9BF34A2248B5DCD261DA31 /* FlexModalView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7FD3E77EFF66F28F4EC1EFB5FBCBBA3F /* YGEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = C3635745BD7B664718C3BC266332A8B4 /* YGEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		80715E45C22DBDA32CF2678DA2B8EC0D /* YGLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F746675F38D3066019650D72861135AA /* YGLayout.m */; };
-		841B9DF844890C5A2D858505DF10D8EA /* FlexLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B89B98964FE11FD261619050DFBA7F /* FlexLib.bundle */; };
-		850922F9B8F807A7E8FC3F20ABD08C21 /* Yoga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E620739EA01BACDE9F0D79B3835E6CF /* Yoga.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		86421947496EF33BFA3E0DAB92B78189 /* UIDatePicker+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = CD29E5797DAAB485E84283BE4C1317A7 /* UIDatePicker+Flex.m */; };
-		86B56E3662667E3AED07C7BFDEC760A1 /* YGLayout+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 755A28B7CF1A69632A7368C4D02AAD6B /* YGLayout+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A04C591340D4254C981A65C8707BA24 /* YGNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 28310EE5246B9973321F6F44572C9390 /* YGNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9A2D281D7DFFF54B6A9F2B16FE5635D3 /* UIPageControl+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = BD88A6CFA537B374E0B04036FBDEA579 /* UIPageControl+Flex.m */; };
-		9AA65C1779DD9619C2CCA820001F288F /* Yoga-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3889DC8A7412F1132602DF19701D1010 /* Yoga-dummy.m */; };
-		9BC3CFE34C444F148AA381CD80170B9C /* log.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3839BC6AFC7AFBBFA07780D1553053 /* log.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A0AF2A50B24844058DE941E358E5D9FF /* YGStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6714B178A3B0D5933433747D7A089E64 /* YGStyle.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A18B8693264DBCC2C278174ECD7A9F86 /* UIControl+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 8660A89E82EA863B4024E7F049A42203 /* UIControl+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A415ADEDBFE1A08B6F5D5CD8D5CD41D8 /* YGValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7837ADE35CDD99640F1E53B2666A1A2 /* YGValue.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		A62E3BFA53E9316805E8DA639B3DA8B7 /* YGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7259C4A2AD9434C5F1F1D38A0F81F575 /* YGNode.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		A784C7CB87C8ADF1FB78126F994EB592 /* UIView+Yoga.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB08167314053A80EED2763B21715A /* UIView+Yoga.m */; };
+		0716AEB904B08C52DAFB805FEC8EC157 /* Yoga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E620739EA01BACDE9F0D79B3835E6CF /* Yoga.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		0987C3A30107CD6979A87DB1DEFFF6CE /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D60A8CED9000158BDE51BE50802603C /* Utils.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		0B32502B35DC2DDFB6A074A9E5CBCA52 /* FlexHttpVC.h in Headers */ = {isa = PBXBuildFile; fileRef = AFC43B4856343AD5D23AC16CEEB1D4A9 /* FlexHttpVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C292C8EFD8123521B447482D8FA8940 /* Yoga-internal.h in Headers */ = {isa = PBXBuildFile; fileRef = EBAB4EF6BC393FAFD409F60EE1782688 /* Yoga-internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0DBC89D0E9A64A398A4DBABE5C87BF3C /* YGConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 547C0D7C0EC61C37AD11C9F50BE3C83E /* YGConfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		10983613B90408EEAF15A6F6523001DC /* UIActivityIndicatorView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FCA382297F35DDDCCB12CC7230CEC3B /* UIActivityIndicatorView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		111447BC3DF7DBE85D870E27076C44C1 /* UISearchBar+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 375E08D6681F4139580426AED925F869 /* UISearchBar+Flex.m */; };
+		129C9C880E2F40D4CD516E22ADE9CB2C /* UITextField+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 9180AA80225B7D916956F7BF64508153 /* UITextField+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16CCC04E4383941B1EB73C75D4619F9E /* YGNodePrint.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E22605FC8A4D0FF61456281343A019 /* YGNodePrint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1A6BB984E542E9E9B20D6149435414DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17DE0AAF4350268D96CC73EE6D6558D /* Foundation.framework */; };
+		1A6C7763C091A49B4658EA7AA11B27B0 /* UIToolbar+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D97AC98E01023F21DE02570E7D504E /* UIToolbar+Flex.m */; };
+		1AC67AE3110DB3439028FDBAA8C5071C /* UIActivityIndicatorView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ABAEFE161E6713089E53476FD6B026 /* UIActivityIndicatorView+Flex.m */; };
+		1B92FEBD25793CE9CFBBB2B13A690A65 /* UIPageControl+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 224ED5D88163049BAC53D93BAB3161A2 /* UIPageControl+Flex.m */; };
+		1CEB7AA45F87E794271C980B47275032 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17DE0AAF4350268D96CC73EE6D6558D /* Foundation.framework */; };
+		1D9B7A71925E8DB1607F50B85DC01E99 /* UISlider+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D2AD065D1BE457AB4C4034EF2E68717 /* UISlider+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DC28B08A4EA8EAF6B083A2F9A8529CD /* UISwitch+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = CDB212B563CFC57E7EC00168704F0CB7 /* UISwitch+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2272DFA6613A0BE208C6086B40B69B33 /* UIDatePicker+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = E58F955B6EF2548FF43A4D10EA58050C /* UIDatePicker+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		247CA1815DCCA4C18EF86AC25272D3A9 /* FlexContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACDB6817F608ECF3D180AF3C7AB4A7F /* FlexContainerView.m */; };
+		278E586F96EE232E786E85BB1D7A3AF8 /* YGLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 072F99D1E7D3D5F05FA7B5DC2C226B8D /* YGLayout.m */; };
+		2868B79A5EB43512E75468FCC9829DBA /* YGNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 28310EE5246B9973321F6F44572C9390 /* YGNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		29AED21664725F05237CF7A0B41B4AB0 /* UIProgressView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 55813E268D01E1F7476C4FE136B78E95 /* UIProgressView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29DBADF4CD813F9039BC38F6C6BC1CF1 /* FlexCustomBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4531C97219F8D0AB03D74346C875BBD9 /* FlexCustomBaseView.m */; };
+		2B60A264472ECBE6E16DF0B3FCD66673 /* FlexHttpVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8F9B967E057405CF83E7598E95C494E2 /* FlexHttpVC.xml */; };
+		2C9800771AF3D4BA292915A0592E4C42 /* FlexNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 328A68C12C4B1D27ABDE03B6F5BBD38C /* FlexNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DCA9A12E5D8D0F8C3046C1F79973675 /* FlexLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EF586233E38B0824FC84259CB7B083 /* FlexLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		300214C816E969A8868D565DA1A789BC /* FlexHttpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C31A16B658987D3E0E62B4CAAE6A59 /* FlexHttpVC.m */; };
+		36B87AC290B221BA4A403D544979896A /* FlexSetPreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 322CF675CEFB17C046A64DF91E85D6CC /* FlexSetPreviewVC.m */; };
+		3912690DA4ED836CBC6E85057EA3DDB4 /* UIView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = F6324BB9A692560D283DEA5511D65DD3 /* UIView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39F6509B2E0A4C43BFF9E950628E1B88 /* UISlider+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C88A9B4094F855B8F0E25968942246 /* UISlider+Flex.m */; };
+		3A0F882098A44148FDB1A58E272CB28C /* FlexLayoutViewerVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5C4ACDF46C80D23BD1FC0519E8E265AF /* FlexLayoutViewerVC.xml */; };
+		3AAB663A47846E455857A77EF16DB1A8 /* log.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3839BC6AFC7AFBBFA07780D1553053 /* log.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3B392028CF170BC56E6E2897B0212776 /* YGLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD34893C52121CFE1BCF18046B5E78E9 /* YGLayout.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		3C1A79B3046DF40024BA8CABF16134BD /* UILabel+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9740680B0116343B0803B2639CA60863 /* UILabel+Flex.m */; };
+		3C948A6D772FFE5574CEFD345F23C14D /* FlexBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E31DBA91EC63A235C73CE87358ACC097 /* FlexBaseVC.m */; };
+		3D8BE8CD78DFB919DCF909CF2F553924 /* YGLayout+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = F68F538CA695D221804C562565B5CFC1 /* YGLayout+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EF351E8242DE5ECC1D7C8AD29851FB4 /* FlexCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88244D133749847788F1F34D2D9D4017 /* FlexCollectionView.m */; };
+		3F0800C0F8E33429A8DD3048AC3703AD /* FlexCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D25841BC4CDC868203FEDEC24363C9EB /* FlexCollectionCell.m */; };
+		4140A3E3E05C449E8F7FACDF051121C3 /* FlexStyleMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A35D7E116126E65063B4A08B5C827854 /* FlexStyleMgr.m */; };
+		4430DDED9B4A7454D4226BA68FF4F34A /* UIPageControl+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = FC3BCDF74F45D9049E9CF56C27D96FA8 /* UIPageControl+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45045AB9E73D1839A3DDBDBC638696D8 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9857F1A3A8AF36B23D310694B996DF56 /* Utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4809B12D64276359E423192355D2F63F /* FlexLayoutViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A4199AAB0AD734FA339F59C332B122 /* FlexLayoutViewerVC.m */; };
+		4F92713334200A24FF71D1196FC1B900 /* UIProgressView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDB34D8610F2F00D224198CAA522B8B /* UIProgressView+Flex.m */; };
+		500D7A3C23EFF2F5C99BD7FE00AAC1CC /* FlexScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = D7081D22F1E4AEF0E2A4AEACB87D3586 /* FlexScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50C6E60762AC3D55A6D607709ACF93B0 /* UITabBar+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = ADA799BC73C2442B0EAF2405D4AC2E05 /* UITabBar+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50E4E0597F0AF72F212D93E07C7145DA /* FlexCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D1FFDBDD09966E231B31305EF87A98 /* FlexCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51EF0374DAF9B2633DD0DB81C3269D24 /* UITabBar+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6520BF22F78EB1ED65CD957BE99A18F3 /* UITabBar+Flex.m */; };
+		5212E4A831607743736FC9BCE090461C /* UILabel+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 23E40EFE1E1548DD0803C7E44E17EDA6 /* UILabel+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53BC1CD39013F45EE2608D9A08F05CE1 /* FlexTouchMaskView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1AE3AA0577EC324BEFA0F234F4551D /* FlexTouchMaskView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54780BF620F86CCF166E8EAFBD7B00CF /* FlexStyleMgr.h in Headers */ = {isa = PBXBuildFile; fileRef = AF9BCA0BEC451D879E0088051D55B9FD /* FlexStyleMgr.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54AB85338B6D8959880AFAABD2D0B0E1 /* FlexTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BD5164D4647F2A2A4CB460A9FF5573 /* FlexTouchView.m */; };
+		55952A0EB5A08257A9C58FCE5AB991A7 /* UIDatePicker+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E275D69DD883877B23044026C5E6021 /* UIDatePicker+Flex.m */; };
+		56911FF9075E62894FC1F683C9D93F5A /* FlexXmlBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = 700815074CF4428F6D45A257FCF1075A /* FlexXmlBaseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		582E56C3EAB81FAC0BBED3EE89390836 /* UIView+Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = 712D74D2D270ABF387BE71EC379F33DF /* UIView+Yoga.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A6BFBB17954C290CF5114A75B2E971F /* UIButton+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 81781E40E2B72D141D1A16442F015B01 /* UIButton+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60257B15A19323C75F6165FAACB95F20 /* Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = FBDECC5D4656B05F750CCE4299C490BD /* Yoga.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62D040DED56367B359C7A75859BFA20E /* UISegmentedControl+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 709BD66794A336E2E01E326B2A7EC4B0 /* UISegmentedControl+Flex.m */; };
+		6497DB69F83ED5646327DF460E3599B8 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 31C338ACF9B7E4801074576D2ABFD56E /* zh-Hans.lproj */; };
+		6670221AC878B43D7BCE7CAF29AFBD1A /* UIStepper+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 7631426BF56893C0DA7AF341727C2034 /* UIStepper+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68E5AA3F1014D11A3D61C1D6F4AF3FA3 /* yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7357649794D25679E54CCCDF2358F6E4 /* yoga.framework */; };
+		691F6F895F873A905724E2186A1F16BA /* UIScrollView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = ED0F7347ADDC463C5ED42E1C7C20A7DF /* UIScrollView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A8E884E4DA943B66E0E36AC28AF6A0D /* UIImageView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 89C1C64CDBB01E85BBAC3D398BD6A8ED /* UIImageView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AD795D9F21CC0A559F2AFA43FAF668D /* FlexTouchView.h in Headers */ = {isa = PBXBuildFile; fileRef = E792C349097DB3B322B3C3063AE0C590 /* FlexTouchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F6B95A2EDCBD05844AB0AD28C006F70 /* YGMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 929E3A9A35441331A1E37BC3C266D20B /* YGMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71B022FE4AF5B3A85C43C79D7C872F79 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 12F83864F8B599735AC5F807AEF71121 /* Base.lproj */; };
+		7404B1ED81E29CFA5A2CDA41B9806CEA /* FlexRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 494FD0FFA674AAA34216BBDF334A6338 /* FlexRootView.m */; };
+		7A52176FD85FD7B9E2761B6324F0483E /* FlexUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A163B0DB6BFC606D778B6BB5DABA52AB /* FlexUtils.m */; };
+		7D12E2EBA1E51151D6A4CAAAB531DB1F /* UITextView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6FD598FD1F087F34AE31958BAD4293 /* UITextView+Flex.m */; };
+		7E60160EA6693814C9477EFAA1122AE2 /* YGMarker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4AE59A9A8A8D7D72E91F2395DA9DA71 /* YGMarker.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		7F9B21C75DFF38DC80CC8493C42EE4CB /* FlexTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F88D5FCEC13F639D0F25202E312A9 /* FlexTextView.m */; };
+		7FE6F588CDF83F93D8A05254788AF391 /* YGValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B381366205B8169F453BE2407FFBD49 /* YGValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8009AC4E0476287EF27A55421502A71F /* FlexNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE72A440224845234376A135885F8 /* FlexNode.m */; };
+		80207A7205D92164ED6F00AEC1113DAF /* FlexScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F261BBBA21705143446716DDA0DD17 /* FlexScrollView.m */; };
+		836D1993008618724E9B37D034EB605B /* UISegmentedControl+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E56042E332D531A091BEFB2F1BA3ED /* UISegmentedControl+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		851B13392C4B4F8E15B7E82E04BE22A5 /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = B348981371EFF53E719734CF7DE77D26 /* GDataXMLNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87685472541395F6ECFD32F5637D9E3F /* YGConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38E3EFC5B9F390B3E77928276D26A3C5 /* YGConfig.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		88E25E17F09D7A167CD3162D698B3382 /* YGNodePrint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EFABBD4ACA054BC9BE6B0ABC7D3CB97 /* YGNodePrint.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		8AAB7CC374F5D1AAA42D9674F81FD3AF /* YGFloatOptional.h in Headers */ = {isa = PBXBuildFile; fileRef = C7C20624F0C3A9E89E7813160EE47747 /* YGFloatOptional.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8B3E7AAE9C38497960B95F2B07D3D592 /* FlexLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0363675D87967B7C1A2FC5F191386AB1 /* FlexLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E7C5996FDD4626EBE52DB964ECEF507 /* instrumentation.h in Headers */ = {isa = PBXBuildFile; fileRef = D9FB77D135CAF5BACD9C268F1E34B9B1 /* instrumentation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8ECDED08DFC1D4231287D4FC92097C3A /* FlexSetPreviewVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B79C9A3A5DB7554D5479A53CC4F6F8F /* FlexSetPreviewVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		933EF6298FB13024CD40AB9F7F7E477A /* UIPickerView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E0372F0384DB985F843FAC720175D /* UIPickerView+Flex.m */; };
+		9947B34E009540CDBEAC956B5DC2A03D /* UIView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = F35297743031CFC85ADFA88E7748201B /* UIView+Flex.m */; };
+		99A8783B0C3317684504462821BF4D93 /* YGLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F12907A1E22D6225174D75483BB2B5D6 /* YGLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9A40313FB04A244101C9E0EE9C3B6D23 /* FlexCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F27E2FE4DF3FE506503EB60F7057808 /* FlexCollectionCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9AED52C41A74EB84D6F4465E4C0F969A /* FlexCustomBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = C448C89E01AA7B3B78F9357E20870F20 /* FlexCustomBaseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B20124A1E71352C37BE4A897572FD86 /* UIControl+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = E2283E939A0DE71E00AEAD39501835AC /* UIControl+Flex.m */; };
+		9F711CD1611BB7CE2119503ACB4B589D /* FlexRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 701F05297B729305B93DA89572AAB785 /* FlexRootView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0B8F3374C49C2E405C296C67E9A3C51 /* FlexModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1E24E5A405F02A8806B78574C1C0C1 /* FlexModalView.m */; };
+		A1AA174EDBDC9DDC24D89E00351C437A /* FlexSetPreviewVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = B74366952D72D2664AC16B0CC4FDB88B /* FlexSetPreviewVC.xml */; };
+		A8BB1FA43DC738E3907270CB77874025 /* FlexModalView.h in Headers */ = {isa = PBXBuildFile; fileRef = BDD8A6D2CB42DCAF82DA9BF9EC2729D0 /* FlexModalView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A8E4CE9B721203A22B6AA92B0FBE75D9 /* Pods-FlexSwiftDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A3EE178F743E7DEEC01E875D5D3104F /* Pods-FlexSwiftDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A93BC2711EC96AA3FAE457887BAEA8DD /* FlexContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7C21E684571E6DD00A386732D27F99 /* FlexContainerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ACDE48807D2BDA3E6C811A20BFF3240C /* FlexTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BBD287E1ECE54E4345A79057E5FE36 /* FlexTouchView.m */; };
-		B19EFF9A5AB576AB534F04F2F6C73D6D /* UISegmentedControl+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6D451BD7C161B55D1C3418F3A46113 /* UISegmentedControl+Flex.m */; };
-		B77D9F4C94753EE415C12A92D58BD197 /* UISegmentedControl+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6CB4FBB389F3B97B074C6B992346F7 /* UISegmentedControl+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B91821F5F9FE776EBF1C45C87C6D17E3 /* UIToolbar+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BC7861D0E1C48CAD6F32886657BF912 /* UIToolbar+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA01E61B8EE8EE0C7BF12BE9D300AB1A /* FlexLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D866412532DCD56DD59A4B77123BEF /* FlexLib-dummy.m */; };
-		BA08B0878139742176D32C2E66005C0B /* YGFloatOptional.h in Headers */ = {isa = PBXBuildFile; fileRef = C7C20624F0C3A9E89E7813160EE47747 /* YGFloatOptional.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BA82D13E8668CAB5E4DFFF1CC2639CE9 /* UIImageView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A512C7F7EA8897B30F78BF7F7AEB03D /* UIImageView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BAA8F37B046F2F907CABDFCB1EB855CF /* FlexTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF98A996599E3BD9FB2812729371C58 /* FlexTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BB13A8A222446FA3332DE9A94A427560 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A00063A127D1D0BB7BD0D8ABB378A0 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		BCF786F320D41C575D4C0E9F5B16FD2F /* YGMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = 8131765AAC7C1CFBA5371D6E9CC4F5E2 /* YGMarker.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BD76304AEC43D796793137DD38E2835B /* FlexBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA6E2D5A5ADF2DB39BEBEEEA1FF0FCE /* FlexBaseTableCell.m */; };
-		BDBB0F314B9A2510039840DED077E755 /* FlexUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A9D9FB79A5C7D1A445F208CF378F801 /* FlexUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C045EF61A5BF1632AB8B791E2E8A30D1 /* YGConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38E3EFC5B9F390B3E77928276D26A3C5 /* YGConfig.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		C047B35961201CBC7A927E84D3DD9FB9 /* FlexCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD724C055623B066174D9DA2BAC2EBD4 /* FlexCollectionCell.m */; };
-		C1F2C712419E5950EF42C648AE21DE8A /* UITabBar+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B6AE48115F599BEA761CE62DBB34A1 /* UITabBar+Flex.m */; };
-		C4144CBE6E4CA4E9BA7D51DE1D2CD81D /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9857F1A3A8AF36B23D310694B996DF56 /* Utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C5F669350FC966A0BD052841AFF6256D /* UITabBar+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4780886CA1D7D3B2402529CDC5F31F6D /* UITabBar+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C72F2BE6D88ABC059786F035648E0D68 /* YGLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD34893C52121CFE1BCF18046B5E78E9 /* YGLayout.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		C93F47AB2A67E977FAA8DB0BBCE82D2E /* UIView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2164D5B5D846ACBB54EAFD8AB2FA0A08 /* UIView+Flex.m */; };
-		CA0D60157529874635FD4FF6546F3833 /* UIStepper+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA850DA761352B008837FA8D8E2BC58 /* UIStepper+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CAF64BC48D46DE89C138A4CBDDFBD142 /* UIToolbar+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B6EC79C56814E903C5D482ADF9C264 /* UIToolbar+Flex.m */; };
-		CB55787B221AA9C8D8DA26464651A5B4 /* FlexCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E8B88FD80F07006A37B06F0A2560EA /* FlexCollectionView.m */; };
-		CFA331AEAE7C87D000FC5A85DEF0A130 /* YGNodePrint.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E22605FC8A4D0FF61456281343A019 /* YGNodePrint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A9140558FD7F899B9E3D2AEBBA27BF8A /* FlexBaseTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E5A0283D8B72C974A33DF1EE9DE1CE22 /* FlexBaseTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A95ED163182D0580B30780E611EC3F59 /* YGMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = 8131765AAC7C1CFBA5371D6E9CC4F5E2 /* YGMarker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A97AE67D8D316F9A3E38EF2EAEC0BB86 /* FlexUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 859C69DC892543EF81D62BEE429C56F5 /* FlexUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA0CCE4E7EFD55F4F739B8EB6AD5A327 /* UITextField+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E2B1F9B0C9275DC04A5CCEA8808C7 /* UITextField+Flex.m */; };
+		AA6F8243169BB18677131082CEAA553C /* UIStepper+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C251D87549CECA53FB5E1D16841949 /* UIStepper+Flex.m */; };
+		AB0EAA1EEE55FD0405C435A22D143152 /* UIView+Yoga.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C69B99543756886A48E2749BBF1F70 /* UIView+Yoga.m */; };
+		B24E29D4AD05953CB4C49BF7411FB283 /* UISwitch+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDDA17979AADA1E3D1A672A2F75C8B3 /* UISwitch+Flex.m */; };
+		B4B73A1834F702F30C5FEC24BDC39968 /* FlexBaseVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A56F8D49B9C107195C09B92F48AAE63 /* FlexBaseVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4DC3267042C13E62232FFD3F4014255 /* UIImageView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = FE032F90BA692515B686DFD4850943B7 /* UIImageView+Flex.m */; };
+		B4DDF72D60461E09DFF5C7B2F1E94426 /* YGStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5CCA99ACE813AA6C79CD772AA0A41A1 /* YGStyle.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		B5592C45BEB71D08B0C4C686E222DCE0 /* FlexTouchMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E876E39B0400A85331FCE453AAE4A /* FlexTouchMaskView.m */; };
+		BC865689EE47521C19FBE15486878AD0 /* UITextView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B71FB324714A366B4932D0337D6A8EB /* UITextView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE3244BCB93682697C7024C358CB8388 /* FlexLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7FF022FB0159D66638D728B62250C4 /* FlexLib-dummy.m */; };
+		BF2342B93FB74F93DB63C1CB5CE5F265 /* UIControl+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 94FE01E0DA404AE8E5CED3D6012FE334 /* UIControl+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C21E5E09B2413648E36DC6E0B2D4DC8B /* YGValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7837ADE35CDD99640F1E53B2666A1A2 /* YGValue.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		C3083F194E7A4384CAEA4C721615C70B /* UIScrollView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5815E29B2F8FBB123BD52224679B2036 /* UIScrollView+Flex.m */; };
+		C5F5D1B0F24A7A40EEEB7EB8F0047FC8 /* UISearchBar+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7C1870B33122AA33D770496BF72F01 /* UISearchBar+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C67B247433EE7697B134CD48DA57DE9B /* UIToolbar+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 237165D3E0FA93E75AC7350805D035D1 /* UIToolbar+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD63FDC2C06FA9A26651596CD204F6B6 /* FlexXmlBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 986B33F5F97DB211BC2FD28DAE84A14F /* FlexXmlBaseView.m */; };
+		CE0CB1612A13A85A01520359D426327B /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AB46CD5207C7FC93223C2B61DB2EA1 /* log.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		CEFE0CEA00EFB860538C659DCCEF8ADC /* FlexTableHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 879521BCBE2D1D14DA9E82EB707D6D6A /* FlexTableHeaderFooterView.m */; };
+		CF184C97923F7867CB49A03FD179534B /* YGStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6714B178A3B0D5933433747D7A089E64 /* YGStyle.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CFDB3C72C9B3EFC6E68D8369370CE531 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17DE0AAF4350268D96CC73EE6D6558D /* Foundation.framework */; };
-		D39433508F4D617D31671B780CEDBD9F /* UITextView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 151E11228863FF1B8E0E60D75B7F9175 /* UITextView+Flex.m */; };
-		D3D29487A6154BF22B8D377F2954BEFC /* FlexLayoutViewerVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C950244DCC33E6DFE259C92450AD487 /* FlexLayoutViewerVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D41E675F6C5D4B42EB44D56E8187EC8D /* Pods-FlexSwiftDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 591619CD0E5AB1417DF9E793154E86CA /* Pods-FlexSwiftDemo-dummy.m */; };
-		D4230A85267E346017FC90BD6BF6B648 /* UISearchBar+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CF2823285AB4ED6CD3A636C49F8FC /* UISearchBar+Flex.m */; };
-		DABC91A38F0733E55F8EB4F719D86729 /* FlexCustomBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ACCA6D83ECA8BF98D65D6B5C184BE7 /* FlexCustomBaseView.m */; };
-		DC5692DBF42DD1826080DEAF5D88FAE9 /* FlexTouchMaskView.h in Headers */ = {isa = PBXBuildFile; fileRef = BCBC944A4879C7820BA671C9BA967C7C /* FlexTouchMaskView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DD060CAD4EAF7D1D53F4083302127E04 /* FlexLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 39BA6E4DD84C8A9110A19DCFEFB000C3 /* FlexLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE4169C40F8D20A4F144B9C02E9FFBF1 /* FlexTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFBF15DA9FAB108A4740A7DD596EC4F /* FlexTextView.m */; };
-		DEB607C3D005134FA36723EE188063AD /* UIView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = E67F14324884B6CBA686376B77A88D09 /* UIView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E1434351FAA10890C3C5F018C3D147AB /* FlexLayoutViewerVC.xml in Resources */ = {isa = PBXBuildFile; fileRef = C367D9AF2DB698605E042BE101AE50B0 /* FlexLayoutViewerVC.xml */; };
-		E229A85D5F30380C88A67B396A4B8E9C /* FlexScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3914E3CF12CA1AFC2C6B30B626E8A81 /* FlexScrollView.m */; };
-		E373817FCFAD4B20E2DED00A02E058F2 /* instrumentation.h in Headers */ = {isa = PBXBuildFile; fileRef = D9FB77D135CAF5BACD9C268F1E34B9B1 /* instrumentation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E50085C114332B5E749503F2F0B280E1 /* UISearchBar+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = D36516E9E8FDECD90B9A20C95B7E7408 /* UISearchBar+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E6F5E88B6ABE92FC05DE5800C971FB94 /* FlexCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9E3B13750CFAA638AD04C6AACFF55A /* FlexCollectionCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7C3E2F2458EEFFA6952148EA4ED9063 /* UIButton+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = CFEA33A0A1C5AED83AFEF0AD3C11744D /* UIButton+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC9878152F7C925CDFBC272FA69501BB /* FlexLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 949B21D46A89F8F2DC584995543FF73B /* FlexLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ECCE45918CEDD41DEE7619E8BE706787 /* FlexRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 57DC94A5CEEBBFB42CC35478F4E01321 /* FlexRootView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED713820A8BB1BAB694EEE1895D06854 /* FlexTouchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6159065CE14C29A0387838BC7027324E /* FlexTouchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EEBC3B47F830A63D7796A3A857A4D148 /* FlexCustomBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = F468BBA3F957458E321804BD9D481D66 /* FlexCustomBaseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F12D5CFD72B0E704BC0A8CDD77790FBA /* FlexBaseTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4347A346D695182C164AC6D72C32AD31 /* FlexBaseTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F36B623239B2C05447A704781D348552 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 812A9CE9CBF083C5BA4D8146C9896C64 /* Base.lproj */; };
-		F381E6003069966B1FB76C539B2501C3 /* FlexUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AF29A79CC5E5084E143C4C2733D4A32B /* FlexUtils.m */; };
-		F652B1FDE30CAE8FB67485B2412EC604 /* YGConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 547C0D7C0EC61C37AD11C9F50BE3C83E /* YGConfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F69E825BC598A6760A58DB2C7C1DB332 /* UISwitch+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = B35928E2F9F3953AC7F99E1C0687CBFE /* UISwitch+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9146FA6BD8002E7AD1DA82A3A6D6DE1 /* FlexXmlBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5CF8906B2D6BD79C432C02E0357AC3 /* FlexXmlBaseView.m */; };
-		F9C57539085CF0AF6D65983E46F0A4DA /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05AB46CD5207C7FC93223C2B61DB2EA1 /* log.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		FD709B2A77B76B71C55E705D8ABAB79D /* UIImageView+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D871446A14717D589379AE72302FAA /* UIImageView+Flex.m */; };
-		FEA22F6BC7CA0F32C92F9D328A740C9C /* Yoga-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4C7997973A56EAF71BE6A9B34A80FA /* Yoga-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7A18844BFF5AF4D3C3155369F3D4F17 /* Yoga-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B4C7997973A56EAF71BE6A9B34A80FA /* Yoga-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D904C4C0DBF2ACC7F93CE5A317229CEF /* FlexLayoutViewerVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 0976E3B68B8A7B9FBC43C019FA11C19E /* FlexLayoutViewerVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA5A83462616F43DD89D2AA67F6C9B2F /* UIPickerView+Flex.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8429423BE609235BD3BD482E2E49AC /* UIPickerView+Flex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDDDF57AA3A02E9168E1B74DC2AFA884 /* YGLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 8008175561DD075966FEEEC9F18F0F6A /* YGLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA4C152CB8FC67AA41A82A5D99A92BCF /* FlexTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 517697EE45DFB9D27FAFF00E937EC57E /* FlexTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA5E71C0ED20DE1165CA20A9F5085C8A /* FlexContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C91CF47C156180A3467E26D1BEEAB5E /* FlexContainerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB4EE0147D950113EFBAC12A4041CD3A /* YGEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = C3635745BD7B664718C3BC266332A8B4 /* YGEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED064364F5B27AFF06A87E3A394173DE /* FlexTableHeaderFooterView.h in Headers */ = {isa = PBXBuildFile; fileRef = F1534AA23025D7C273D1194A97BA3542 /* FlexTableHeaderFooterView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE17C7395E4A9F46C91F690291726771 /* FlexBaseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 884940B2BE5874407E91B0AF642DEAB5 /* FlexBaseTableCell.m */; };
+		EF2B3DF183BE89F2B41BD1872112BA99 /* FlexLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B89B98964FE11FD261619050DFBA7F /* FlexLib.bundle */; };
+		F15DFC5146566B0BF275ECC7E558C12B /* Yoga-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3889DC8A7412F1132602DF19701D1010 /* Yoga-dummy.m */; };
+		F1629FBAC7D1441F22BB2BD4820CED56 /* FlexFrameView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A56C01982285081F73B5A2903664E9E /* FlexFrameView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F18C587196D459A2F3F852EB30882DAC /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D6ED2AA88DD7C050905B0D53BE2DB5 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F5E93401ECBEF72B2502B4CD515421EA /* UIButton+Flex.m in Sources */ = {isa = PBXBuildFile; fileRef = 04539C36B60F3EC5DF1B751E5D2688ED /* UIButton+Flex.m */; };
+		F7B829E3B97E799742493F17FD3F4192 /* CompactValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B84F059B828D9A97A5A253529A35556 /* CompactValue.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FB2805B278ECD1E1A6CBCF952FBD4594 /* YGEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D26174CC4CC89559B7AF38B93F4E5D7B /* YGEnums.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
+		FE520A8928955445405A8DDBF313D846 /* FlexFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 726E9A1FDE11E580BD7619128D2CD558 /* FlexFrameView.m */; };
+		FEA5EDEB53690986241409D69F2062D6 /* YGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7259C4A2AD9434C5F1F1D38A0F81F575 /* YGNode.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3E24B27713131B902A5B58F68408ADF1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 86B2BB9E445137DD6687C2755B6B601C;
-			remoteInfo = "FlexLib-FlexLib";
-		};
-		CB4B7BB2CF99BCDAA75FAB8E0AEAFCD6 /* PBXContainerItemProxy */ = {
+		509766B16C1A70C16C6922DF058802FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2B25F90D819B9ADF2AF2D8733A890333;
 			remoteInfo = Yoga;
+		};
+		CDEDF888125F44EC4E2C617CB28ED4AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86B2BB9E445137DD6687C2755B6B601C;
+			remoteInfo = "FlexLib-FlexLib";
 		};
 		E2F0E4BCDA100EC127EDB9026FC2A02A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -172,170 +174,181 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0438BCD8F0A5D0CD7F976AE3B79954EF /* UITextView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextView+Flex.h"; sourceTree = "<group>"; };
+		01C88A9B4094F855B8F0E25968942246 /* UISlider+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISlider+Flex.m"; sourceTree = "<group>"; };
+		0363675D87967B7C1A2FC5F191386AB1 /* FlexLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlexLib-umbrella.h"; sourceTree = "<group>"; };
 		04418AF08A6770C8F4DD5AA75D20DDD6 /* Pods-FlexSwiftDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlexSwiftDemo-Info.plist"; sourceTree = "<group>"; };
+		04539C36B60F3EC5DF1B751E5D2688ED /* UIButton+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Flex.m"; sourceTree = "<group>"; };
 		05AB46CD5207C7FC93223C2B61DB2EA1 /* log.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = log.cpp; path = yoga/log.cpp; sourceTree = "<group>"; };
-		06D1C5307C25F7985BF10503FD53E44E /* UIPickerView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+Flex.h"; sourceTree = "<group>"; };
+		06C251D87549CECA53FB5E1D16841949 /* UIStepper+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIStepper+Flex.m"; sourceTree = "<group>"; };
+		072F99D1E7D3D5F05FA7B5DC2C226B8D /* YGLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YGLayout.m; sourceTree = "<group>"; };
 		076D0E4D4DFE0A8E0F4C6A44526FA0E4 /* Pods_FlexSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlexSwiftDemo.framework; path = "Pods-FlexSwiftDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		093F23104131BE500A674C09BDD74E6E /* FlexStyleMgr.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexStyleMgr.m; path = FlexLib/Classes/FlexStyleMgr.m; sourceTree = "<group>"; };
+		0976E3B68B8A7B9FBC43C019FA11C19E /* FlexLayoutViewerVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexLayoutViewerVC.h; path = FlexLib/Classes/FlexLayoutViewerVC.h; sourceTree = "<group>"; };
 		0A3EE178F743E7DEEC01E875D5D3104F /* Pods-FlexSwiftDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlexSwiftDemo-umbrella.h"; sourceTree = "<group>"; };
-		0A9D9FB79A5C7D1A445F208CF378F801 /* FlexUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexUtils.h; path = FlexLib/Classes/FlexUtils.h; sourceTree = "<group>"; };
-		1173957986EB863A5D3326C0F79939C8 /* FlexCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexCollectionView.h; path = FlexLib/Classes/FlexCollectionView.h; sourceTree = "<group>"; };
-		151E11228863FF1B8E0E60D75B7F9175 /* UITextView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Flex.m"; sourceTree = "<group>"; };
+		0C2F88D5FCEC13F639D0F25202E312A9 /* FlexTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexTextView.m; path = FlexLib/Classes/FlexTextView.m; sourceTree = "<group>"; };
+		0D2AD065D1BE457AB4C4034EF2E68717 /* UISlider+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISlider+Flex.h"; sourceTree = "<group>"; };
+		12F83864F8B599735AC5F807AEF71121 /* Base.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = Base.lproj; path = FlexLib/Assets/Base.lproj; sourceTree = "<group>"; };
+		16C6845C0BFB49B51D0C067F56270C54 /* FlexLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FlexLib.modulemap; sourceTree = "<group>"; };
+		16C69B99543756886A48E2749BBF1F70 /* UIView+Yoga.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Yoga.m"; sourceTree = "<group>"; };
 		178BFDD40134E7D6E26FE1930F66B563 /* Pods-FlexSwiftDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlexSwiftDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1B266E52750BE8ED872A38DB2FB811F0 /* UILabel+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Flex.m"; sourceTree = "<group>"; };
-		1D9E3B13750CFAA638AD04C6AACFF55A /* FlexCollectionCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexCollectionCell.h; path = FlexLib/Classes/FlexCollectionCell.h; sourceTree = "<group>"; };
+		181374281F258EE14EAA503FC7B87D60 /* ResourceBundle-FlexLib-FlexLib-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-FlexLib-FlexLib-Info.plist"; sourceTree = "<group>"; };
+		189E2B1F9B0C9275DC04A5CCEA8808C7 /* UITextField+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Flex.m"; sourceTree = "<group>"; };
+		1B1AE3AA0577EC324BEFA0F234F4551D /* FlexTouchMaskView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexTouchMaskView.h; path = FlexLib/Classes/FlexTouchMaskView.h; sourceTree = "<group>"; };
+		1B79C9A3A5DB7554D5479A53CC4F6F8F /* FlexSetPreviewVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexSetPreviewVC.h; path = FlexLib/Classes/FlexSetPreviewVC.h; sourceTree = "<group>"; };
 		1E620739EA01BACDE9F0D79B3835E6CF /* Yoga.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = Yoga.cpp; path = yoga/Yoga.cpp; sourceTree = "<group>"; };
-		2164D5B5D846ACBB54EAFD8AB2FA0A08 /* UIView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Flex.m"; sourceTree = "<group>"; };
-		2493C86C4687C73012739B3600754125 /* FlexLib-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FlexLib-Info.plist"; sourceTree = "<group>"; };
+		1E8429423BE609235BD3BD482E2E49AC /* UIPickerView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+Flex.h"; sourceTree = "<group>"; };
+		224ED5D88163049BAC53D93BAB3161A2 /* UIPageControl+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIPageControl+Flex.m"; sourceTree = "<group>"; };
+		237165D3E0FA93E75AC7350805D035D1 /* UIToolbar+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+Flex.h"; sourceTree = "<group>"; };
+		23E40EFE1E1548DD0803C7E44E17EDA6 /* UILabel+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UILabel+Flex.h"; sourceTree = "<group>"; };
 		27A303696241B7155D1F3C0F22A63796 /* Yoga-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Yoga-Info.plist"; sourceTree = "<group>"; };
 		28310EE5246B9973321F6F44572C9390 /* YGNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGNode.h; path = yoga/YGNode.h; sourceTree = "<group>"; };
-		2BB550212B29919D87C24E7BFD55C808 /* FlexContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexContainerView.m; path = FlexLib/Classes/FlexContainerView.m; sourceTree = "<group>"; };
-		2BFFDDA3176163A551FBC3E88F1D8446 /* UIProgressView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+Flex.m"; sourceTree = "<group>"; };
-		2FD129EB0A4EA1810CD020435768D2AF /* UISlider+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISlider+Flex.m"; sourceTree = "<group>"; };
+		28F261BBBA21705143446716DDA0DD17 /* FlexScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexScrollView.m; path = FlexLib/Classes/FlexScrollView.m; sourceTree = "<group>"; };
+		31C338ACF9B7E4801074576D2ABFD56E /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hans.lproj"; path = "FlexLib/Assets/zh-Hans.lproj"; sourceTree = "<group>"; };
+		322CF675CEFB17C046A64DF91E85D6CC /* FlexSetPreviewVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexSetPreviewVC.m; path = FlexLib/Classes/FlexSetPreviewVC.m; sourceTree = "<group>"; };
+		328A68C12C4B1D27ABDE03B6F5BBD38C /* FlexNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexNode.h; path = FlexLib/Classes/FlexNode.h; sourceTree = "<group>"; };
+		34E56042E332D531A091BEFB2F1BA3ED /* UISegmentedControl+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+Flex.h"; sourceTree = "<group>"; };
+		375E08D6681F4139580426AED925F869 /* UISearchBar+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+Flex.m"; sourceTree = "<group>"; };
 		3889DC8A7412F1132602DF19701D1010 /* Yoga-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Yoga-dummy.m"; sourceTree = "<group>"; };
-		38A6071D1A797C93729392025FA95638 /* FlexStyleMgr.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexStyleMgr.h; path = FlexLib/Classes/FlexStyleMgr.h; sourceTree = "<group>"; };
 		38E3EFC5B9F390B3E77928276D26A3C5 /* YGConfig.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGConfig.cpp; path = yoga/YGConfig.cpp; sourceTree = "<group>"; };
-		39BA6E4DD84C8A9110A19DCFEFB000C3 /* FlexLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexLib.h; path = FlexLib/Classes/FlexLib.h; sourceTree = "<group>"; };
-		3A05FC25E8ED53D688A504B45462CA47 /* UIActivityIndicatorView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+Flex.h"; sourceTree = "<group>"; };
-		3AA6E2D5A5ADF2DB39BEBEEEA1FF0FCE /* FlexBaseTableCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexBaseTableCell.m; path = FlexLib/Classes/FlexBaseTableCell.m; sourceTree = "<group>"; };
-		4347A346D695182C164AC6D72C32AD31 /* FlexBaseTableCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexBaseTableCell.h; path = FlexLib/Classes/FlexBaseTableCell.h; sourceTree = "<group>"; };
+		3C2E0372F0384DB985F843FAC720175D /* UIPickerView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+Flex.m"; sourceTree = "<group>"; };
+		3C91CF47C156180A3467E26D1BEEAB5E /* FlexContainerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexContainerView.h; path = FlexLib/Classes/FlexContainerView.h; sourceTree = "<group>"; };
 		44439B03C00F5082401904A3FC14E7ED /* Yoga.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Yoga.xcconfig; sourceTree = "<group>"; };
-		4780886CA1D7D3B2402529CDC5F31F6D /* UITabBar+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Flex.h"; sourceTree = "<group>"; };
-		49338AD4DA69A08286C58E6F7228833D /* FlexSetPreviewVC.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = FlexSetPreviewVC.xml; path = FlexLib/Assets/FlexSetPreviewVC.xml; sourceTree = "<group>"; };
-		49C818C85D0CB2739FE332EF99FA0ED6 /* UILabel+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UILabel+Flex.h"; sourceTree = "<group>"; };
-		4B3C21944E7EB1FB4F4589133F9BB158 /* FlexXmlBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexXmlBaseView.h; path = FlexLib/Classes/FlexXmlBaseView.h; sourceTree = "<group>"; };
+		4531C97219F8D0AB03D74346C875BBD9 /* FlexCustomBaseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexCustomBaseView.m; path = FlexLib/Classes/FlexCustomBaseView.m; sourceTree = "<group>"; };
+		494FD0FFA674AAA34216BBDF334A6338 /* FlexRootView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexRootView.m; path = FlexLib/Classes/FlexRootView.m; sourceTree = "<group>"; };
+		4A56F8D49B9C107195C09B92F48AAE63 /* FlexBaseVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexBaseVC.h; path = FlexLib/Classes/FlexBaseVC.h; sourceTree = "<group>"; };
 		4B84F059B828D9A97A5A253529A35556 /* CompactValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CompactValue.h; path = yoga/CompactValue.h; sourceTree = "<group>"; };
+		4E275D69DD883877B23044026C5E6021 /* UIDatePicker+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIDatePicker+Flex.m"; sourceTree = "<group>"; };
 		4EB3DEEC1905A6BD9EEE2C1F355DB1C7 /* FlexLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlexLib.framework; path = FlexLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F3D21B3285A932B22FA230339FC811F /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = "zh-Hans.lproj"; path = "FlexLib/Assets/zh-Hans.lproj"; sourceTree = "<group>"; };
-		51078AC132A8737958D5B744D1AC76D3 /* FlexHttpVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexHttpVC.h; path = FlexLib/Classes/FlexHttpVC.h; sourceTree = "<group>"; };
+		517697EE45DFB9D27FAFF00E937EC57E /* FlexTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexTextView.h; path = FlexLib/Classes/FlexTextView.h; sourceTree = "<group>"; };
 		547C0D7C0EC61C37AD11C9F50BE3C83E /* YGConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGConfig.h; path = yoga/YGConfig.h; sourceTree = "<group>"; };
-		54C017104987E45E34B09B9D481652CE /* FlexModalView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexModalView.m; path = FlexLib/Classes/FlexModalView.m; sourceTree = "<group>"; };
-		57DC94A5CEEBBFB42CC35478F4E01321 /* FlexRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexRootView.h; path = FlexLib/Classes/FlexRootView.h; sourceTree = "<group>"; };
+		55813E268D01E1F7476C4FE136B78E95 /* UIProgressView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+Flex.h"; sourceTree = "<group>"; };
+		5815E29B2F8FBB123BD52224679B2036 /* UIScrollView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Flex.m"; sourceTree = "<group>"; };
+		58ABAEFE161E6713089E53476FD6B026 /* UIActivityIndicatorView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+Flex.m"; sourceTree = "<group>"; };
 		591619CD0E5AB1417DF9E793154E86CA /* Pods-FlexSwiftDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlexSwiftDemo-dummy.m"; sourceTree = "<group>"; };
-		5A508A40EDEA4ACFD75DDA5A76A636EC /* UIButton+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Flex.m"; sourceTree = "<group>"; };
-		5A512C7F7EA8897B30F78BF7F7AEB03D /* UIImageView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Flex.h"; sourceTree = "<group>"; };
 		5A5F69D9FFD827661B72CC5721DF041D /* Pods-FlexSwiftDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlexSwiftDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		5D16B7C254E52CE3B4EF9A398F86B643 /* FlexHttpVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexHttpVC.m; path = FlexLib/Classes/FlexHttpVC.m; sourceTree = "<group>"; };
+		5C4ACDF46C80D23BD1FC0519E8E265AF /* FlexLayoutViewerVC.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = FlexLayoutViewerVC.xml; path = FlexLib/Assets/FlexLayoutViewerVC.xml; sourceTree = "<group>"; };
 		5D60A8CED9000158BDE51BE50802603C /* Utils.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = Utils.cpp; path = yoga/Utils.cpp; sourceTree = "<group>"; };
-		6159065CE14C29A0387838BC7027324E /* FlexTouchView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexTouchView.h; path = FlexLib/Classes/FlexTouchView.h; sourceTree = "<group>"; };
-		64ACCA6D83ECA8BF98D65D6B5C184BE7 /* FlexCustomBaseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexCustomBaseView.m; path = FlexLib/Classes/FlexCustomBaseView.m; sourceTree = "<group>"; };
+		5DCA6F050BC98429030BCC9709AF1A44 /* FlexLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlexLib.xcconfig; sourceTree = "<group>"; };
+		6077A15B0701672D104B59196B076BEA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		6520BF22F78EB1ED65CD957BE99A18F3 /* UITabBar+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Flex.m"; sourceTree = "<group>"; };
 		65D0A19C165FA1126B1360680FE6DB12 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = yoga.framework; path = Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6714B178A3B0D5933433747D7A089E64 /* YGStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGStyle.h; path = yoga/YGStyle.h; sourceTree = "<group>"; };
 		6B4C7997973A56EAF71BE6A9B34A80FA /* Yoga-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Yoga-umbrella.h"; sourceTree = "<group>"; };
-		6CEEDCC5F3D96BC45472B2A57C69A406 /* UIStepper+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIStepper+Flex.m"; sourceTree = "<group>"; };
-		6D3017B93D1E911C718B16D07A515362 /* UIDatePicker+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIDatePicker+Flex.h"; sourceTree = "<group>"; };
-		70DCBE9CCCD47EA2A7709EDD30337160 /* FlexTouchMaskView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexTouchMaskView.m; path = FlexLib/Classes/FlexTouchMaskView.m; sourceTree = "<group>"; };
-		71D41274091CE7C69A369B613E0A6330 /* FlexHttpVC.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = FlexHttpVC.xml; path = FlexLib/Assets/FlexHttpVC.xml; sourceTree = "<group>"; };
+		700815074CF4428F6D45A257FCF1075A /* FlexXmlBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexXmlBaseView.h; path = FlexLib/Classes/FlexXmlBaseView.h; sourceTree = "<group>"; };
+		701F05297B729305B93DA89572AAB785 /* FlexRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexRootView.h; path = FlexLib/Classes/FlexRootView.h; sourceTree = "<group>"; };
+		709BD66794A336E2E01E326B2A7EC4B0 /* UISegmentedControl+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+Flex.m"; sourceTree = "<group>"; };
+		712D74D2D270ABF387BE71EC379F33DF /* UIView+Yoga.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Yoga.h"; sourceTree = "<group>"; };
 		7259C4A2AD9434C5F1F1D38A0F81F575 /* YGNode.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGNode.cpp; path = yoga/YGNode.cpp; sourceTree = "<group>"; };
+		726E9A1FDE11E580BD7619128D2CD558 /* FlexFrameView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexFrameView.m; path = FlexLib/Classes/FlexFrameView.m; sourceTree = "<group>"; };
 		7357649794D25679E54CCCDF2358F6E4 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73BBD287E1ECE54E4345A79057E5FE36 /* FlexTouchView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexTouchView.m; path = FlexLib/Classes/FlexTouchView.m; sourceTree = "<group>"; };
-		755A28B7CF1A69632A7368C4D02AAD6B /* YGLayout+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YGLayout+Private.h"; sourceTree = "<group>"; };
+		7631426BF56893C0DA7AF341727C2034 /* UIStepper+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIStepper+Flex.h"; sourceTree = "<group>"; };
 		78665FBFA10B87F7B7E62CEABA5364D7 /* Pods-FlexSwiftDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FlexSwiftDemo.modulemap"; sourceTree = "<group>"; };
-		7B8823EB7C66411A9DB8F0AB70C2CD7C /* GDataXMLNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDataXMLNode.h; path = FlexLib/Classes/GDataXMLNode.h; sourceTree = "<group>"; };
-		7C7C21E684571E6DD00A386732D27F99 /* FlexContainerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexContainerView.h; path = FlexLib/Classes/FlexContainerView.h; sourceTree = "<group>"; };
-		7EA850DA761352B008837FA8D8E2BC58 /* UIStepper+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIStepper+Flex.h"; sourceTree = "<group>"; };
-		802905CAA611BD97A7A33FFA4A3164D5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		80DDD76FEFDDBFDB04D47742BE11EA0A /* FlexFrameView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexFrameView.m; path = FlexLib/Classes/FlexFrameView.m; sourceTree = "<group>"; };
-		812A9CE9CBF083C5BA4D8146C9896C64 /* Base.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = Base.lproj; path = FlexLib/Assets/Base.lproj; sourceTree = "<group>"; };
+		7A56C01982285081F73B5A2903664E9E /* FlexFrameView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexFrameView.h; path = FlexLib/Classes/FlexFrameView.h; sourceTree = "<group>"; };
+		7F27E2FE4DF3FE506503EB60F7057808 /* FlexCollectionCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexCollectionCell.h; path = FlexLib/Classes/FlexCollectionCell.h; sourceTree = "<group>"; };
+		8008175561DD075966FEEEC9F18F0F6A /* YGLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YGLayout.h; sourceTree = "<group>"; };
+		811CD343B3D98303353B7EC4C1C2B438 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		8131765AAC7C1CFBA5371D6E9CC4F5E2 /* YGMarker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGMarker.h; path = yoga/YGMarker.h; sourceTree = "<group>"; };
-		82A00063A127D1D0BB7BD0D8ABB378A0 /* GDataXMLNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDataXMLNode.m; path = FlexLib/Classes/GDataXMLNode.m; sourceTree = "<group>"; };
-		83731BAC3F9B5225970C0203DF38894A /* UISwitch+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+Flex.m"; sourceTree = "<group>"; };
-		847F0A408ED9C2AD8EB06C6CC5F1EC69 /* UIScrollView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Flex.h"; sourceTree = "<group>"; };
+		81781E40E2B72D141D1A16442F015B01 /* UIButton+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+Flex.h"; sourceTree = "<group>"; };
+		82EF586233E38B0824FC84259CB7B083 /* FlexLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexLib.h; path = FlexLib/Classes/FlexLib.h; sourceTree = "<group>"; };
 		84B89B98964FE11FD261619050DFBA7F /* FlexLib.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FlexLib.bundle; path = "FlexLib-FlexLib.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		85227CE653FB4C1A4D564B378D0E6DDF /* FlexNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexNode.h; path = FlexLib/Classes/FlexNode.h; sourceTree = "<group>"; };
-		8660A89E82EA863B4024E7F049A42203 /* UIControl+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIControl+Flex.h"; sourceTree = "<group>"; };
+		859C69DC892543EF81D62BEE429C56F5 /* FlexUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexUtils.h; path = FlexLib/Classes/FlexUtils.h; sourceTree = "<group>"; };
+		879521BCBE2D1D14DA9E82EB707D6D6A /* FlexTableHeaderFooterView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexTableHeaderFooterView.m; path = FlexLib/Classes/FlexTableHeaderFooterView.m; sourceTree = "<group>"; };
+		88244D133749847788F1F34D2D9D4017 /* FlexCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexCollectionView.m; path = FlexLib/Classes/FlexCollectionView.m; sourceTree = "<group>"; };
+		884940B2BE5874407E91B0AF642DEAB5 /* FlexBaseTableCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexBaseTableCell.m; path = FlexLib/Classes/FlexBaseTableCell.m; sourceTree = "<group>"; };
 		898E16C901EF50CF5C051CE7C4F7E156 /* Pods-FlexSwiftDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlexSwiftDemo-frameworks.sh"; sourceTree = "<group>"; };
+		89C1C64CDBB01E85BBAC3D398BD6A8ED /* UIImageView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Flex.h"; sourceTree = "<group>"; };
+		8A7E876E39B0400A85331FCE453AAE4A /* FlexTouchMaskView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexTouchMaskView.m; path = FlexLib/Classes/FlexTouchMaskView.m; sourceTree = "<group>"; };
+		8ACDB6817F608ECF3D180AF3C7AB4A7F /* FlexContainerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexContainerView.m; path = FlexLib/Classes/FlexContainerView.m; sourceTree = "<group>"; };
+		8B71FB324714A366B4932D0337D6A8EB /* UITextView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextView+Flex.h"; sourceTree = "<group>"; };
 		8EFABBD4ACA054BC9BE6B0ABC7D3CB97 /* YGNodePrint.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGNodePrint.cpp; path = yoga/YGNodePrint.cpp; sourceTree = "<group>"; };
-		91B6AE48115F599BEA761CE62DBB34A1 /* UITabBar+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Flex.m"; sourceTree = "<group>"; };
-		91C702C1C8EE3A10A119F8248966CD3D /* FlexLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlexLib.xcconfig; sourceTree = "<group>"; };
+		8F9B967E057405CF83E7598E95C494E2 /* FlexHttpVC.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = FlexHttpVC.xml; path = FlexLib/Assets/FlexHttpVC.xml; sourceTree = "<group>"; };
+		8FCA382297F35DDDCCB12CC7230CEC3B /* UIActivityIndicatorView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+Flex.h"; sourceTree = "<group>"; };
+		9180AA80225B7D916956F7BF64508153 /* UITextField+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextField+Flex.h"; sourceTree = "<group>"; };
+		91A4199AAB0AD734FA339F59C332B122 /* FlexLayoutViewerVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexLayoutViewerVC.m; path = FlexLib/Classes/FlexLayoutViewerVC.m; sourceTree = "<group>"; };
 		929E3A9A35441331A1E37BC3C266D20B /* YGMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGMacros.h; path = yoga/YGMacros.h; sourceTree = "<group>"; };
-		949B21D46A89F8F2DC584995543FF73B /* FlexLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlexLib-umbrella.h"; sourceTree = "<group>"; };
-		94C32C840B44CB5B38F2243CD0DFEB14 /* UIPickerView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+Flex.m"; sourceTree = "<group>"; };
-		96F1237DC1725346A296E1F3B570347B /* FlexLayoutViewerVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexLayoutViewerVC.m; path = FlexLib/Classes/FlexLayoutViewerVC.m; sourceTree = "<group>"; };
+		94FE01E0DA404AE8E5CED3D6012FE334 /* UIControl+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIControl+Flex.h"; sourceTree = "<group>"; };
+		9740680B0116343B0803B2639CA60863 /* UILabel+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Flex.m"; sourceTree = "<group>"; };
 		9857F1A3A8AF36B23D310694B996DF56 /* Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = yoga/Utils.h; sourceTree = "<group>"; };
+		986B33F5F97DB211BC2FD28DAE84A14F /* FlexXmlBaseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexXmlBaseView.m; path = FlexLib/Classes/FlexXmlBaseView.m; sourceTree = "<group>"; };
+		9898320AC48DA921B673A74C9C586A98 /* FlexLib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FlexLib.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9B381366205B8169F453BE2407FFBD49 /* YGValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGValue.h; path = yoga/YGValue.h; sourceTree = "<group>"; };
 		9BAA883D206F54D273CFC8C97C692209 /* Yoga.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Yoga.modulemap; sourceTree = "<group>"; };
-		9BC7861D0E1C48CAD6F32886657BF912 /* UIToolbar+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+Flex.h"; sourceTree = "<group>"; };
-		9C950244DCC33E6DFE259C92450AD487 /* FlexLayoutViewerVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexLayoutViewerVC.h; path = FlexLib/Classes/FlexLayoutViewerVC.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D9E7311C46A7655FBC622B03BC48975 /* FlexLib-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlexLib-prefix.pch"; sourceTree = "<group>"; };
-		9FDE83FC62145D90E470BB303C25E95B /* UIActivityIndicatorView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+Flex.m"; sourceTree = "<group>"; };
+		A163B0DB6BFC606D778B6BB5DABA52AB /* FlexUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexUtils.m; path = FlexLib/Classes/FlexUtils.m; sourceTree = "<group>"; };
+		A35D7E116126E65063B4A08B5C827854 /* FlexStyleMgr.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexStyleMgr.m; path = FlexLib/Classes/FlexStyleMgr.m; sourceTree = "<group>"; };
 		A5CCA99ACE813AA6C79CD772AA0A41A1 /* YGStyle.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGStyle.cpp; path = yoga/YGStyle.cpp; sourceTree = "<group>"; };
-		A5F17B72BEF94CCDEBF56E4004894143 /* FlexLib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FlexLib.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		ABD479638FB7871AF298796E8C7F5306 /* YGLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YGLayout.h; sourceTree = "<group>"; };
-		AC94DF442282422EF0901581D184F8A3 /* UIView+Yoga.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Yoga.h"; sourceTree = "<group>"; };
-		AE1DE38384A18ACE6E75D8A2BBFE5C70 /* UITextField+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextField+Flex.h"; sourceTree = "<group>"; };
-		AE8AE7C12390AB5E6A0810484808E4D8 /* UISlider+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISlider+Flex.h"; sourceTree = "<group>"; };
-		AF29A79CC5E5084E143C4C2733D4A32B /* FlexUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexUtils.m; path = FlexLib/Classes/FlexUtils.m; sourceTree = "<group>"; };
+		ADA799BC73C2442B0EAF2405D4AC2E05 /* UITabBar+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Flex.h"; sourceTree = "<group>"; };
 		AF5F76EEFB085AFDBCC4948457F12A39 /* Yoga-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Yoga-prefix.pch"; sourceTree = "<group>"; };
-		AFA3DA209D06F872EC486153EF9961F4 /* FlexBaseVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexBaseVC.m; path = FlexLib/Classes/FlexBaseVC.m; sourceTree = "<group>"; };
+		AF9BCA0BEC451D879E0088051D55B9FD /* FlexStyleMgr.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexStyleMgr.h; path = FlexLib/Classes/FlexStyleMgr.h; sourceTree = "<group>"; };
+		AFC43B4856343AD5D23AC16CEEB1D4A9 /* FlexHttpVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexHttpVC.h; path = FlexLib/Classes/FlexHttpVC.h; sourceTree = "<group>"; };
 		B17DE0AAF4350268D96CC73EE6D6558D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B30109F27BAB859A9EF30CE6E121F36B /* ResourceBundle-FlexLib-FlexLib-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-FlexLib-FlexLib-Info.plist"; sourceTree = "<group>"; };
-		B35928E2F9F3953AC7F99E1C0687CBFE /* UISwitch+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISwitch+Flex.h"; sourceTree = "<group>"; };
-		B40BB819BEC6B3683461379D656C9625 /* FlexScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexScrollView.h; path = FlexLib/Classes/FlexScrollView.h; sourceTree = "<group>"; };
-		B4C371F55B476FDD543B4B88969A2263 /* FlexSetPreviewVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexSetPreviewVC.h; path = FlexLib/Classes/FlexSetPreviewVC.h; sourceTree = "<group>"; };
-		B512D567F1BC3CBB0ADBCB9D2545620C /* UITextField+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Flex.m"; sourceTree = "<group>"; };
+		B348981371EFF53E719734CF7DE77D26 /* GDataXMLNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDataXMLNode.h; path = FlexLib/Classes/GDataXMLNode.h; sourceTree = "<group>"; };
+		B3D1FFDBDD09966E231B31305EF87A98 /* FlexCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexCollectionView.h; path = FlexLib/Classes/FlexCollectionView.h; sourceTree = "<group>"; };
 		B63A8C85638F3C233DA269F66A0E04B1 /* Pods-FlexSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
-		B7FC862172B6D08D3BFFE512CB97E6AE /* FlexNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexNode.m; path = FlexLib/Classes/FlexNode.m; sourceTree = "<group>"; };
-		B9D871446A14717D589379AE72302FAA /* UIImageView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Flex.m"; sourceTree = "<group>"; };
-		BA6CB4FBB389F3B97B074C6B992346F7 /* UISegmentedControl+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+Flex.h"; sourceTree = "<group>"; };
-		BB3432D80A7D0F5B1BE8E4699C17F428 /* FlexSetPreviewVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexSetPreviewVC.m; path = FlexLib/Classes/FlexSetPreviewVC.m; sourceTree = "<group>"; };
-		BB8C6BE6AF414857D7FAEBE18278C448 /* UIControl+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Flex.m"; sourceTree = "<group>"; };
-		BCBC944A4879C7820BA671C9BA967C7C /* FlexTouchMaskView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexTouchMaskView.h; path = FlexLib/Classes/FlexTouchMaskView.h; sourceTree = "<group>"; };
-		BD88A6CFA537B374E0B04036FBDEA579 /* UIPageControl+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIPageControl+Flex.m"; sourceTree = "<group>"; };
-		BFFBF15DA9FAB108A4740A7DD596EC4F /* FlexTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexTextView.m; path = FlexLib/Classes/FlexTextView.m; sourceTree = "<group>"; };
+		B74366952D72D2664AC16B0CC4FDB88B /* FlexSetPreviewVC.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = FlexSetPreviewVC.xml; path = FlexLib/Assets/FlexSetPreviewVC.xml; sourceTree = "<group>"; };
+		BC7C1870B33122AA33D770496BF72F01 /* UISearchBar+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+Flex.h"; sourceTree = "<group>"; };
+		BD1E24E5A405F02A8806B78574C1C0C1 /* FlexModalView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexModalView.m; path = FlexLib/Classes/FlexModalView.m; sourceTree = "<group>"; };
+		BD7FF022FB0159D66638D728B62250C4 /* FlexLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FlexLib-dummy.m"; sourceTree = "<group>"; };
+		BDD8A6D2CB42DCAF82DA9BF9EC2729D0 /* FlexModalView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexModalView.h; path = FlexLib/Classes/FlexModalView.h; sourceTree = "<group>"; };
+		BF9242384956840763DF6E17AFFC236F /* FlexLib-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlexLib-prefix.pch"; sourceTree = "<group>"; };
 		C3635745BD7B664718C3BC266332A8B4 /* YGEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGEnums.h; path = yoga/YGEnums.h; sourceTree = "<group>"; };
-		C367D9AF2DB698605E042BE101AE50B0 /* FlexLayoutViewerVC.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = FlexLayoutViewerVC.xml; path = FlexLib/Assets/FlexLayoutViewerVC.xml; sourceTree = "<group>"; };
 		C3E22605FC8A4D0FF61456281343A019 /* YGNodePrint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGNodePrint.h; path = yoga/YGNodePrint.h; sourceTree = "<group>"; };
+		C448C89E01AA7B3B78F9357E20870F20 /* FlexCustomBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexCustomBaseView.h; path = FlexLib/Classes/FlexCustomBaseView.h; sourceTree = "<group>"; };
 		C4AE59A9A8A8D7D72E91F2395DA9DA71 /* YGMarker.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGMarker.cpp; path = yoga/YGMarker.cpp; sourceTree = "<group>"; };
-		C6E8B88FD80F07006A37B06F0A2560EA /* FlexCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexCollectionView.m; path = FlexLib/Classes/FlexCollectionView.m; sourceTree = "<group>"; };
+		C6BD5164D4647F2A2A4CB460A9FF5573 /* FlexTouchView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexTouchView.m; path = FlexLib/Classes/FlexTouchView.m; sourceTree = "<group>"; };
+		C6D6ED2AA88DD7C050905B0D53BE2DB5 /* GDataXMLNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDataXMLNode.m; path = FlexLib/Classes/GDataXMLNode.m; sourceTree = "<group>"; };
 		C7C20624F0C3A9E89E7813160EE47747 /* YGFloatOptional.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGFloatOptional.h; path = yoga/YGFloatOptional.h; sourceTree = "<group>"; };
-		CA18703BDF5F4FF3951C0AD67F531DA8 /* FlexLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FlexLib.modulemap; sourceTree = "<group>"; };
-		CD29E5797DAAB485E84283BE4C1317A7 /* UIDatePicker+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIDatePicker+Flex.m"; sourceTree = "<group>"; };
-		CF50D30ADAA28C4EA72E20FEE636D404 /* FlexBaseVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexBaseVC.h; path = FlexLib/Classes/FlexBaseVC.h; sourceTree = "<group>"; };
-		CFEA33A0A1C5AED83AFEF0AD3C11744D /* UIButton+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+Flex.h"; sourceTree = "<group>"; };
-		D1B6EC79C56814E903C5D482ADF9C264 /* UIToolbar+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+Flex.m"; sourceTree = "<group>"; };
+		C9C31A16B658987D3E0E62B4CAAE6A59 /* FlexHttpVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexHttpVC.m; path = FlexLib/Classes/FlexHttpVC.m; sourceTree = "<group>"; };
+		CDB212B563CFC57E7EC00168704F0CB7 /* UISwitch+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISwitch+Flex.h"; sourceTree = "<group>"; };
+		CEA5EA2B1CCF3EFF1034A99B771DA281 /* FlexLib-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FlexLib-Info.plist"; sourceTree = "<group>"; };
+		CEDB34D8610F2F00D224198CAA522B8B /* UIProgressView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+Flex.m"; sourceTree = "<group>"; };
+		D25841BC4CDC868203FEDEC24363C9EB /* FlexCollectionCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexCollectionCell.m; path = FlexLib/Classes/FlexCollectionCell.m; sourceTree = "<group>"; };
 		D26174CC4CC89559B7AF38B93F4E5D7B /* YGEnums.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGEnums.cpp; path = yoga/YGEnums.cpp; sourceTree = "<group>"; };
-		D36516E9E8FDECD90B9A20C95B7E7408 /* UISearchBar+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+Flex.h"; sourceTree = "<group>"; };
+		D65CE72A440224845234376A135885F8 /* FlexNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexNode.m; path = FlexLib/Classes/FlexNode.m; sourceTree = "<group>"; };
+		D7081D22F1E4AEF0E2A4AEACB87D3586 /* FlexScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexScrollView.h; path = FlexLib/Classes/FlexScrollView.h; sourceTree = "<group>"; };
 		D9FB77D135CAF5BACD9C268F1E34B9B1 /* instrumentation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = instrumentation.h; path = yoga/instrumentation.h; sourceTree = "<group>"; };
-		DB99AD6FFD8303E52D7F7871D73351F5 /* UIScrollView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Flex.m"; sourceTree = "<group>"; };
 		DC3839BC6AFC7AFBBFA07780D1553053 /* log.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = log.h; path = yoga/log.h; sourceTree = "<group>"; };
 		DD34893C52121CFE1BCF18046B5E78E9 /* YGLayout.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGLayout.cpp; path = yoga/YGLayout.cpp; sourceTree = "<group>"; };
-		DD724C055623B066174D9DA2BAC2EBD4 /* FlexCollectionCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexCollectionCell.m; path = FlexLib/Classes/FlexCollectionCell.m; sourceTree = "<group>"; };
-		DFCF24A16D4844D9EF1106FE4C8891A5 /* FlexFrameView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexFrameView.h; path = FlexLib/Classes/FlexFrameView.h; sourceTree = "<group>"; };
-		E39A87C6FC9BF34A2248B5DCD261DA31 /* FlexModalView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexModalView.h; path = FlexLib/Classes/FlexModalView.h; sourceTree = "<group>"; };
-		E67F14324884B6CBA686376B77A88D09 /* UIView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Flex.h"; sourceTree = "<group>"; };
+		DFDDA17979AADA1E3D1A672A2F75C8B3 /* UISwitch+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+Flex.m"; sourceTree = "<group>"; };
+		E2283E939A0DE71E00AEAD39501835AC /* UIControl+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Flex.m"; sourceTree = "<group>"; };
+		E31DBA91EC63A235C73CE87358ACC097 /* FlexBaseVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexBaseVC.m; path = FlexLib/Classes/FlexBaseVC.m; sourceTree = "<group>"; };
+		E4D97AC98E01023F21DE02570E7D504E /* UIToolbar+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+Flex.m"; sourceTree = "<group>"; };
+		E58F955B6EF2548FF43A4D10EA58050C /* UIDatePicker+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIDatePicker+Flex.h"; sourceTree = "<group>"; };
+		E5A0283D8B72C974A33DF1EE9DE1CE22 /* FlexBaseTableCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexBaseTableCell.h; path = FlexLib/Classes/FlexBaseTableCell.h; sourceTree = "<group>"; };
 		E7837ADE35CDD99640F1E53B2666A1A2 /* YGValue.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = YGValue.cpp; path = yoga/YGValue.cpp; sourceTree = "<group>"; };
-		EB47BBE3F3D74DA1FF3280BC63C7E446 /* UIProgressView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+Flex.h"; sourceTree = "<group>"; };
-		EB5CF8906B2D6BD79C432C02E0357AC3 /* FlexXmlBaseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexXmlBaseView.m; path = FlexLib/Classes/FlexXmlBaseView.m; sourceTree = "<group>"; };
+		E792C349097DB3B322B3C3063AE0C590 /* FlexTouchView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexTouchView.h; path = FlexLib/Classes/FlexTouchView.h; sourceTree = "<group>"; };
+		EA6FD598FD1F087F34AE31958BAD4293 /* UITextView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Flex.m"; sourceTree = "<group>"; };
 		EBAB4EF6BC393FAFD409F60EE1782688 /* Yoga-internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Yoga-internal.h"; path = "yoga/Yoga-internal.h"; sourceTree = "<group>"; };
+		ED0F7347ADDC463C5ED42E1C7C20A7DF /* UIScrollView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Flex.h"; sourceTree = "<group>"; };
 		F12907A1E22D6225174D75483BB2B5D6 /* YGLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGLayout.h; path = yoga/YGLayout.h; sourceTree = "<group>"; };
-		F3738BECE53DE11BF1CC6860E88235D9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		F3914E3CF12CA1AFC2C6B30B626E8A81 /* FlexScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexScrollView.m; path = FlexLib/Classes/FlexScrollView.m; sourceTree = "<group>"; };
-		F468BBA3F957458E321804BD9D481D66 /* FlexCustomBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexCustomBaseView.h; path = FlexLib/Classes/FlexCustomBaseView.h; sourceTree = "<group>"; };
+		F1534AA23025D7C273D1194A97BA3542 /* FlexTableHeaderFooterView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexTableHeaderFooterView.h; path = FlexLib/Classes/FlexTableHeaderFooterView.h; sourceTree = "<group>"; };
+		F35297743031CFC85ADFA88E7748201B /* UIView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Flex.m"; sourceTree = "<group>"; };
 		F5185D435D3D714707870C5CAD55AF23 /* Pods-FlexSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlexSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		F746675F38D3066019650D72861135AA /* YGLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YGLayout.m; sourceTree = "<group>"; };
-		F7D866412532DCD56DD59A4B77123BEF /* FlexLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FlexLib-dummy.m"; sourceTree = "<group>"; };
-		F9FB08167314053A80EED2763B21715A /* UIView+Yoga.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Yoga.m"; sourceTree = "<group>"; };
-		FA4CF2823285AB4ED6CD3A636C49F8FC /* UISearchBar+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+Flex.m"; sourceTree = "<group>"; };
-		FBDD14866ADDE0E91BDEB260A802393C /* FlexRootView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlexRootView.m; path = FlexLib/Classes/FlexRootView.m; sourceTree = "<group>"; };
+		F6324BB9A692560D283DEA5511D65DD3 /* UIView+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Flex.h"; sourceTree = "<group>"; };
+		F68F538CA695D221804C562565B5CFC1 /* YGLayout+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YGLayout+Private.h"; sourceTree = "<group>"; };
 		FBDECC5D4656B05F750CCE4299C490BD /* Yoga.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Yoga.h; path = yoga/Yoga.h; sourceTree = "<group>"; };
-		FC49C731AD624B20845AA6D2D06A7B24 /* UIPageControl+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIPageControl+Flex.h"; sourceTree = "<group>"; };
-		FC6D451BD7C161B55D1C3418F3A46113 /* UISegmentedControl+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+Flex.m"; sourceTree = "<group>"; };
-		FDF98A996599E3BD9FB2812729371C58 /* FlexTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlexTextView.h; path = FlexLib/Classes/FlexTextView.h; sourceTree = "<group>"; };
+		FC3BCDF74F45D9049E9CF56C27D96FA8 /* UIPageControl+Flex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIPageControl+Flex.h"; sourceTree = "<group>"; };
+		FE032F90BA692515B686DFD4850943B7 /* UIImageView+Flex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Flex.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		73CB0FA8D21AAC3B91C515734CB36183 /* Frameworks */ = {
+		161D4BDD7ED98259B0F55C1B2D8C116D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E0C9382498C047CAE60D6DA32F5AC0E /* Foundation.framework in Frameworks */,
+				1A6BB984E542E9E9B20D6149435414DF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE502740C21364C497E2F2526BFF742B /* Frameworks */ = {
+		693D1B672CB16151B6CA682B0F5EBC70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CEB7AA45F87E794271C980B47275032 /* Foundation.framework in Frameworks */,
+				68E5AA3F1014D11A3D61C1D6F4AF3FA3 /* yoga.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF9F9FA901E0F8D9BD3F92EF5213605 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -350,28 +363,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C92521620446CA4BAD855289B1EA3C2C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6B6FEBF232732E1E8AC1B18409818BC2 /* Foundation.framework in Frameworks */,
-				305EF391CDD340B176B1C24A674D4E05 /* yoga.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02B8B8C2D80FE0D66F88AB7FB7BF555A /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				A5F17B72BEF94CCDEBF56E4004894143 /* FlexLib.podspec */,
-				802905CAA611BD97A7A33FFA4A3164D5 /* LICENSE */,
-				F3738BECE53DE11BF1CC6860E88235D9 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		05BBA83E97419C4EBBAD8EF8C14E9F05 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,59 +380,14 @@
 			path = "../Target Support Files/Yoga";
 			sourceTree = "<group>";
 		};
-		131FE35163EC0AAD9E504EC231FA8F2A /* FlexLib */ = {
+		0CC86EC548626AD8B54EABE43CA5221B /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				4347A346D695182C164AC6D72C32AD31 /* FlexBaseTableCell.h */,
-				3AA6E2D5A5ADF2DB39BEBEEEA1FF0FCE /* FlexBaseTableCell.m */,
-				CF50D30ADAA28C4EA72E20FEE636D404 /* FlexBaseVC.h */,
-				AFA3DA209D06F872EC486153EF9961F4 /* FlexBaseVC.m */,
-				1D9E3B13750CFAA638AD04C6AACFF55A /* FlexCollectionCell.h */,
-				DD724C055623B066174D9DA2BAC2EBD4 /* FlexCollectionCell.m */,
-				1173957986EB863A5D3326C0F79939C8 /* FlexCollectionView.h */,
-				C6E8B88FD80F07006A37B06F0A2560EA /* FlexCollectionView.m */,
-				7C7C21E684571E6DD00A386732D27F99 /* FlexContainerView.h */,
-				2BB550212B29919D87C24E7BFD55C808 /* FlexContainerView.m */,
-				F468BBA3F957458E321804BD9D481D66 /* FlexCustomBaseView.h */,
-				64ACCA6D83ECA8BF98D65D6B5C184BE7 /* FlexCustomBaseView.m */,
-				DFCF24A16D4844D9EF1106FE4C8891A5 /* FlexFrameView.h */,
-				80DDD76FEFDDBFDB04D47742BE11EA0A /* FlexFrameView.m */,
-				51078AC132A8737958D5B744D1AC76D3 /* FlexHttpVC.h */,
-				5D16B7C254E52CE3B4EF9A398F86B643 /* FlexHttpVC.m */,
-				9C950244DCC33E6DFE259C92450AD487 /* FlexLayoutViewerVC.h */,
-				96F1237DC1725346A296E1F3B570347B /* FlexLayoutViewerVC.m */,
-				39BA6E4DD84C8A9110A19DCFEFB000C3 /* FlexLib.h */,
-				E39A87C6FC9BF34A2248B5DCD261DA31 /* FlexModalView.h */,
-				54C017104987E45E34B09B9D481652CE /* FlexModalView.m */,
-				85227CE653FB4C1A4D564B378D0E6DDF /* FlexNode.h */,
-				B7FC862172B6D08D3BFFE512CB97E6AE /* FlexNode.m */,
-				57DC94A5CEEBBFB42CC35478F4E01321 /* FlexRootView.h */,
-				FBDD14866ADDE0E91BDEB260A802393C /* FlexRootView.m */,
-				B40BB819BEC6B3683461379D656C9625 /* FlexScrollView.h */,
-				F3914E3CF12CA1AFC2C6B30B626E8A81 /* FlexScrollView.m */,
-				B4C371F55B476FDD543B4B88969A2263 /* FlexSetPreviewVC.h */,
-				BB3432D80A7D0F5B1BE8E4699C17F428 /* FlexSetPreviewVC.m */,
-				38A6071D1A797C93729392025FA95638 /* FlexStyleMgr.h */,
-				093F23104131BE500A674C09BDD74E6E /* FlexStyleMgr.m */,
-				FDF98A996599E3BD9FB2812729371C58 /* FlexTextView.h */,
-				BFFBF15DA9FAB108A4740A7DD596EC4F /* FlexTextView.m */,
-				BCBC944A4879C7820BA671C9BA967C7C /* FlexTouchMaskView.h */,
-				70DCBE9CCCD47EA2A7709EDD30337160 /* FlexTouchMaskView.m */,
-				6159065CE14C29A0387838BC7027324E /* FlexTouchView.h */,
-				73BBD287E1ECE54E4345A79057E5FE36 /* FlexTouchView.m */,
-				0A9D9FB79A5C7D1A445F208CF378F801 /* FlexUtils.h */,
-				AF29A79CC5E5084E143C4C2733D4A32B /* FlexUtils.m */,
-				4B3C21944E7EB1FB4F4589133F9BB158 /* FlexXmlBaseView.h */,
-				EB5CF8906B2D6BD79C432C02E0357AC3 /* FlexXmlBaseView.m */,
-				262C349708A4BD6CE6BFB4AB93A47884 /* no-arc */,
-				02B8B8C2D80FE0D66F88AB7FB7BF555A /* Pod */,
-				C5D27B82F0687514EC40D8F0994637D1 /* Resources */,
-				72C64872BEDC9030D91358786B6B5549 /* Support Files */,
-				EEF46F7301B26FE1A1406119CD3ECCD7 /* ViewExt */,
-				AF88B7D23CBC4E08A72024541AF34C1B /* YogaKit */,
+				9898320AC48DA921B673A74C9C586A98 /* FlexLib.podspec */,
+				6077A15B0701672D104B59196B076BEA /* LICENSE */,
+				811CD343B3D98303353B7EC4C1C2B438 /* README.md */,
 			);
-			name = FlexLib;
-			path = ../..;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		151EE57D61DB0E8366EF6A96E622EE5F /* iOS */ = {
@@ -447,15 +396,6 @@
 				B17DE0AAF4350268D96CC73EE6D6558D /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		262C349708A4BD6CE6BFB4AB93A47884 /* no-arc */ = {
-			isa = PBXGroup;
-			children = (
-				7B8823EB7C66411A9DB8F0AB70C2CD7C /* GDataXMLNode.h */,
-				82A00063A127D1D0BB7BD0D8ABB378A0 /* GDataXMLNode.m */,
-			);
-			name = "no-arc";
 			sourceTree = "<group>";
 		};
 		395A03D06E0ADC03AC44850D10C0436D /* Products */ = {
@@ -469,6 +409,124 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4EE7743279D107F4AF90940F8A6CC310 /* YogaKit */ = {
+			isa = PBXGroup;
+			children = (
+				712D74D2D270ABF387BE71EC379F33DF /* UIView+Yoga.h */,
+				16C69B99543756886A48E2749BBF1F70 /* UIView+Yoga.m */,
+				8008175561DD075966FEEEC9F18F0F6A /* YGLayout.h */,
+				072F99D1E7D3D5F05FA7B5DC2C226B8D /* YGLayout.m */,
+				F68F538CA695D221804C562565B5CFC1 /* YGLayout+Private.h */,
+			);
+			name = YogaKit;
+			path = FlexLib/Classes/YogaKit;
+			sourceTree = "<group>";
+		};
+		5737C7040EC3FBF1E2F97D1058BDBFD7 /* FlexLib */ = {
+			isa = PBXGroup;
+			children = (
+				E5A0283D8B72C974A33DF1EE9DE1CE22 /* FlexBaseTableCell.h */,
+				884940B2BE5874407E91B0AF642DEAB5 /* FlexBaseTableCell.m */,
+				4A56F8D49B9C107195C09B92F48AAE63 /* FlexBaseVC.h */,
+				E31DBA91EC63A235C73CE87358ACC097 /* FlexBaseVC.m */,
+				7F27E2FE4DF3FE506503EB60F7057808 /* FlexCollectionCell.h */,
+				D25841BC4CDC868203FEDEC24363C9EB /* FlexCollectionCell.m */,
+				B3D1FFDBDD09966E231B31305EF87A98 /* FlexCollectionView.h */,
+				88244D133749847788F1F34D2D9D4017 /* FlexCollectionView.m */,
+				3C91CF47C156180A3467E26D1BEEAB5E /* FlexContainerView.h */,
+				8ACDB6817F608ECF3D180AF3C7AB4A7F /* FlexContainerView.m */,
+				C448C89E01AA7B3B78F9357E20870F20 /* FlexCustomBaseView.h */,
+				4531C97219F8D0AB03D74346C875BBD9 /* FlexCustomBaseView.m */,
+				7A56C01982285081F73B5A2903664E9E /* FlexFrameView.h */,
+				726E9A1FDE11E580BD7619128D2CD558 /* FlexFrameView.m */,
+				AFC43B4856343AD5D23AC16CEEB1D4A9 /* FlexHttpVC.h */,
+				C9C31A16B658987D3E0E62B4CAAE6A59 /* FlexHttpVC.m */,
+				0976E3B68B8A7B9FBC43C019FA11C19E /* FlexLayoutViewerVC.h */,
+				91A4199AAB0AD734FA339F59C332B122 /* FlexLayoutViewerVC.m */,
+				82EF586233E38B0824FC84259CB7B083 /* FlexLib.h */,
+				BDD8A6D2CB42DCAF82DA9BF9EC2729D0 /* FlexModalView.h */,
+				BD1E24E5A405F02A8806B78574C1C0C1 /* FlexModalView.m */,
+				328A68C12C4B1D27ABDE03B6F5BBD38C /* FlexNode.h */,
+				D65CE72A440224845234376A135885F8 /* FlexNode.m */,
+				701F05297B729305B93DA89572AAB785 /* FlexRootView.h */,
+				494FD0FFA674AAA34216BBDF334A6338 /* FlexRootView.m */,
+				D7081D22F1E4AEF0E2A4AEACB87D3586 /* FlexScrollView.h */,
+				28F261BBBA21705143446716DDA0DD17 /* FlexScrollView.m */,
+				1B79C9A3A5DB7554D5479A53CC4F6F8F /* FlexSetPreviewVC.h */,
+				322CF675CEFB17C046A64DF91E85D6CC /* FlexSetPreviewVC.m */,
+				AF9BCA0BEC451D879E0088051D55B9FD /* FlexStyleMgr.h */,
+				A35D7E116126E65063B4A08B5C827854 /* FlexStyleMgr.m */,
+				F1534AA23025D7C273D1194A97BA3542 /* FlexTableHeaderFooterView.h */,
+				879521BCBE2D1D14DA9E82EB707D6D6A /* FlexTableHeaderFooterView.m */,
+				517697EE45DFB9D27FAFF00E937EC57E /* FlexTextView.h */,
+				0C2F88D5FCEC13F639D0F25202E312A9 /* FlexTextView.m */,
+				1B1AE3AA0577EC324BEFA0F234F4551D /* FlexTouchMaskView.h */,
+				8A7E876E39B0400A85331FCE453AAE4A /* FlexTouchMaskView.m */,
+				E792C349097DB3B322B3C3063AE0C590 /* FlexTouchView.h */,
+				C6BD5164D4647F2A2A4CB460A9FF5573 /* FlexTouchView.m */,
+				859C69DC892543EF81D62BEE429C56F5 /* FlexUtils.h */,
+				A163B0DB6BFC606D778B6BB5DABA52AB /* FlexUtils.m */,
+				700815074CF4428F6D45A257FCF1075A /* FlexXmlBaseView.h */,
+				986B33F5F97DB211BC2FD28DAE84A14F /* FlexXmlBaseView.m */,
+				A5488EF2428613CCDAB15DA70B9F6069 /* no-arc */,
+				0CC86EC548626AD8B54EABE43CA5221B /* Pod */,
+				D62A843026CFA9219E0F95A4FF2B45CD /* Resources */,
+				9FECFD7BB1973E12B4A77C8439E3286A /* Support Files */,
+				59C956D6CB7E82E7E0D1C10A73130E00 /* ViewExt */,
+				4EE7743279D107F4AF90940F8A6CC310 /* YogaKit */,
+			);
+			name = FlexLib;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		59C956D6CB7E82E7E0D1C10A73130E00 /* ViewExt */ = {
+			isa = PBXGroup;
+			children = (
+				8FCA382297F35DDDCCB12CC7230CEC3B /* UIActivityIndicatorView+Flex.h */,
+				58ABAEFE161E6713089E53476FD6B026 /* UIActivityIndicatorView+Flex.m */,
+				81781E40E2B72D141D1A16442F015B01 /* UIButton+Flex.h */,
+				04539C36B60F3EC5DF1B751E5D2688ED /* UIButton+Flex.m */,
+				94FE01E0DA404AE8E5CED3D6012FE334 /* UIControl+Flex.h */,
+				E2283E939A0DE71E00AEAD39501835AC /* UIControl+Flex.m */,
+				E58F955B6EF2548FF43A4D10EA58050C /* UIDatePicker+Flex.h */,
+				4E275D69DD883877B23044026C5E6021 /* UIDatePicker+Flex.m */,
+				89C1C64CDBB01E85BBAC3D398BD6A8ED /* UIImageView+Flex.h */,
+				FE032F90BA692515B686DFD4850943B7 /* UIImageView+Flex.m */,
+				23E40EFE1E1548DD0803C7E44E17EDA6 /* UILabel+Flex.h */,
+				9740680B0116343B0803B2639CA60863 /* UILabel+Flex.m */,
+				FC3BCDF74F45D9049E9CF56C27D96FA8 /* UIPageControl+Flex.h */,
+				224ED5D88163049BAC53D93BAB3161A2 /* UIPageControl+Flex.m */,
+				1E8429423BE609235BD3BD482E2E49AC /* UIPickerView+Flex.h */,
+				3C2E0372F0384DB985F843FAC720175D /* UIPickerView+Flex.m */,
+				55813E268D01E1F7476C4FE136B78E95 /* UIProgressView+Flex.h */,
+				CEDB34D8610F2F00D224198CAA522B8B /* UIProgressView+Flex.m */,
+				ED0F7347ADDC463C5ED42E1C7C20A7DF /* UIScrollView+Flex.h */,
+				5815E29B2F8FBB123BD52224679B2036 /* UIScrollView+Flex.m */,
+				BC7C1870B33122AA33D770496BF72F01 /* UISearchBar+Flex.h */,
+				375E08D6681F4139580426AED925F869 /* UISearchBar+Flex.m */,
+				34E56042E332D531A091BEFB2F1BA3ED /* UISegmentedControl+Flex.h */,
+				709BD66794A336E2E01E326B2A7EC4B0 /* UISegmentedControl+Flex.m */,
+				0D2AD065D1BE457AB4C4034EF2E68717 /* UISlider+Flex.h */,
+				01C88A9B4094F855B8F0E25968942246 /* UISlider+Flex.m */,
+				7631426BF56893C0DA7AF341727C2034 /* UIStepper+Flex.h */,
+				06C251D87549CECA53FB5E1D16841949 /* UIStepper+Flex.m */,
+				CDB212B563CFC57E7EC00168704F0CB7 /* UISwitch+Flex.h */,
+				DFDDA17979AADA1E3D1A672A2F75C8B3 /* UISwitch+Flex.m */,
+				ADA799BC73C2442B0EAF2405D4AC2E05 /* UITabBar+Flex.h */,
+				6520BF22F78EB1ED65CD957BE99A18F3 /* UITabBar+Flex.m */,
+				9180AA80225B7D916956F7BF64508153 /* UITextField+Flex.h */,
+				189E2B1F9B0C9275DC04A5CCEA8808C7 /* UITextField+Flex.m */,
+				8B71FB324714A366B4932D0337D6A8EB /* UITextView+Flex.h */,
+				EA6FD598FD1F087F34AE31958BAD4293 /* UITextView+Flex.m */,
+				237165D3E0FA93E75AC7350805D035D1 /* UIToolbar+Flex.h */,
+				E4D97AC98E01023F21DE02570E7D504E /* UIToolbar+Flex.m */,
+				F6324BB9A692560D283DEA5511D65DD3 /* UIView+Flex.h */,
+				F35297743031CFC85ADFA88E7748201B /* UIView+Flex.m */,
+			);
+			name = ViewExt;
+			path = FlexLib/Classes/ViewExt;
+			sourceTree = "<group>";
+		};
 		6A900E9891E1C46AC5D9D826AC3DD504 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,32 +535,36 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		72C64872BEDC9030D91358786B6B5549 /* Support Files */ = {
+		8D51A2C35A4B7F862ACCDF1E7B86A640 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CA18703BDF5F4FF3951C0AD67F531DA8 /* FlexLib.modulemap */,
-				91C702C1C8EE3A10A119F8248966CD3D /* FlexLib.xcconfig */,
-				F7D866412532DCD56DD59A4B77123BEF /* FlexLib-dummy.m */,
-				2493C86C4687C73012739B3600754125 /* FlexLib-Info.plist */,
-				9D9E7311C46A7655FBC622B03BC48975 /* FlexLib-prefix.pch */,
-				949B21D46A89F8F2DC584995543FF73B /* FlexLib-umbrella.h */,
-				B30109F27BAB859A9EF30CE6E121F36B /* ResourceBundle-FlexLib-FlexLib-Info.plist */,
+				5737C7040EC3FBF1E2F97D1058BDBFD7 /* FlexLib */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		9FECFD7BB1973E12B4A77C8439E3286A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				16C6845C0BFB49B51D0C067F56270C54 /* FlexLib.modulemap */,
+				5DCA6F050BC98429030BCC9709AF1A44 /* FlexLib.xcconfig */,
+				BD7FF022FB0159D66638D728B62250C4 /* FlexLib-dummy.m */,
+				CEA5EA2B1CCF3EFF1034A99B771DA281 /* FlexLib-Info.plist */,
+				BF9242384956840763DF6E17AFFC236F /* FlexLib-prefix.pch */,
+				0363675D87967B7C1A2FC5F191386AB1 /* FlexLib-umbrella.h */,
+				181374281F258EE14EAA503FC7B87D60 /* ResourceBundle-FlexLib-FlexLib-Info.plist */,
 			);
 			name = "Support Files";
 			path = "Example_swift/Pods/Target Support Files/FlexLib";
 			sourceTree = "<group>";
 		};
-		AF88B7D23CBC4E08A72024541AF34C1B /* YogaKit */ = {
+		A5488EF2428613CCDAB15DA70B9F6069 /* no-arc */ = {
 			isa = PBXGroup;
 			children = (
-				AC94DF442282422EF0901581D184F8A3 /* UIView+Yoga.h */,
-				F9FB08167314053A80EED2763B21715A /* UIView+Yoga.m */,
-				ABD479638FB7871AF298796E8C7F5306 /* YGLayout.h */,
-				F746675F38D3066019650D72861135AA /* YGLayout.m */,
-				755A28B7CF1A69632A7368C4D02AAD6B /* YGLayout+Private.h */,
+				B348981371EFF53E719734CF7DE77D26 /* GDataXMLNode.h */,
+				C6D6ED2AA88DD7C050905B0D53BE2DB5 /* GDataXMLNode.m */,
 			);
-			name = YogaKit;
-			path = FlexLib/Classes/YogaKit;
+			name = "no-arc";
 			sourceTree = "<group>";
 		};
 		B6F1EF9394F1DFC43B2D495886541125 /* Pods-FlexSwiftDemo */ = {
@@ -522,36 +584,28 @@
 			path = "Target Support Files/Pods-FlexSwiftDemo";
 			sourceTree = "<group>";
 		};
-		B8B01EE9B01A84119AF30FC90E5848BE /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				131FE35163EC0AAD9E504EC231FA8F2A /* FlexLib */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		C5D27B82F0687514EC40D8F0994637D1 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				812A9CE9CBF083C5BA4D8146C9896C64 /* Base.lproj */,
-				71D41274091CE7C69A369B613E0A6330 /* FlexHttpVC.xml */,
-				C367D9AF2DB698605E042BE101AE50B0 /* FlexLayoutViewerVC.xml */,
-				49338AD4DA69A08286C58E6F7228833D /* FlexSetPreviewVC.xml */,
-				4F3D21B3285A932B22FA230339FC811F /* zh-Hans.lproj */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				B8B01EE9B01A84119AF30FC90E5848BE /* Development Pods */,
+				8D51A2C35A4B7F862ACCDF1E7B86A640 /* Development Pods */,
 				E52D232E8B1ED2DD24D0D066E456D73D /* Frameworks */,
 				E226E6EB4971D013084DF569B0622198 /* Pods */,
 				395A03D06E0ADC03AC44850D10C0436D /* Products */,
 				6A900E9891E1C46AC5D9D826AC3DD504 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D62A843026CFA9219E0F95A4FF2B45CD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				12F83864F8B599735AC5F807AEF71121 /* Base.lproj */,
+				8F9B967E057405CF83E7598E95C494E2 /* FlexHttpVC.xml */,
+				5C4ACDF46C80D23BD1FC0519E8E265AF /* FlexLayoutViewerVC.xml */,
+				B74366952D72D2664AC16B0CC4FDB88B /* FlexSetPreviewVC.xml */,
+				31C338ACF9B7E4801074576D2ABFD56E /* zh-Hans.lproj */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		E226E6EB4971D013084DF569B0622198 /* Pods */ = {
@@ -569,54 +623,6 @@
 				151EE57D61DB0E8366EF6A96E622EE5F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EEF46F7301B26FE1A1406119CD3ECCD7 /* ViewExt */ = {
-			isa = PBXGroup;
-			children = (
-				3A05FC25E8ED53D688A504B45462CA47 /* UIActivityIndicatorView+Flex.h */,
-				9FDE83FC62145D90E470BB303C25E95B /* UIActivityIndicatorView+Flex.m */,
-				CFEA33A0A1C5AED83AFEF0AD3C11744D /* UIButton+Flex.h */,
-				5A508A40EDEA4ACFD75DDA5A76A636EC /* UIButton+Flex.m */,
-				8660A89E82EA863B4024E7F049A42203 /* UIControl+Flex.h */,
-				BB8C6BE6AF414857D7FAEBE18278C448 /* UIControl+Flex.m */,
-				6D3017B93D1E911C718B16D07A515362 /* UIDatePicker+Flex.h */,
-				CD29E5797DAAB485E84283BE4C1317A7 /* UIDatePicker+Flex.m */,
-				5A512C7F7EA8897B30F78BF7F7AEB03D /* UIImageView+Flex.h */,
-				B9D871446A14717D589379AE72302FAA /* UIImageView+Flex.m */,
-				49C818C85D0CB2739FE332EF99FA0ED6 /* UILabel+Flex.h */,
-				1B266E52750BE8ED872A38DB2FB811F0 /* UILabel+Flex.m */,
-				FC49C731AD624B20845AA6D2D06A7B24 /* UIPageControl+Flex.h */,
-				BD88A6CFA537B374E0B04036FBDEA579 /* UIPageControl+Flex.m */,
-				06D1C5307C25F7985BF10503FD53E44E /* UIPickerView+Flex.h */,
-				94C32C840B44CB5B38F2243CD0DFEB14 /* UIPickerView+Flex.m */,
-				EB47BBE3F3D74DA1FF3280BC63C7E446 /* UIProgressView+Flex.h */,
-				2BFFDDA3176163A551FBC3E88F1D8446 /* UIProgressView+Flex.m */,
-				847F0A408ED9C2AD8EB06C6CC5F1EC69 /* UIScrollView+Flex.h */,
-				DB99AD6FFD8303E52D7F7871D73351F5 /* UIScrollView+Flex.m */,
-				D36516E9E8FDECD90B9A20C95B7E7408 /* UISearchBar+Flex.h */,
-				FA4CF2823285AB4ED6CD3A636C49F8FC /* UISearchBar+Flex.m */,
-				BA6CB4FBB389F3B97B074C6B992346F7 /* UISegmentedControl+Flex.h */,
-				FC6D451BD7C161B55D1C3418F3A46113 /* UISegmentedControl+Flex.m */,
-				AE8AE7C12390AB5E6A0810484808E4D8 /* UISlider+Flex.h */,
-				2FD129EB0A4EA1810CD020435768D2AF /* UISlider+Flex.m */,
-				7EA850DA761352B008837FA8D8E2BC58 /* UIStepper+Flex.h */,
-				6CEEDCC5F3D96BC45472B2A57C69A406 /* UIStepper+Flex.m */,
-				B35928E2F9F3953AC7F99E1C0687CBFE /* UISwitch+Flex.h */,
-				83731BAC3F9B5225970C0203DF38894A /* UISwitch+Flex.m */,
-				4780886CA1D7D3B2402529CDC5F31F6D /* UITabBar+Flex.h */,
-				91B6AE48115F599BEA761CE62DBB34A1 /* UITabBar+Flex.m */,
-				AE1DE38384A18ACE6E75D8A2BBFE5C70 /* UITextField+Flex.h */,
-				B512D567F1BC3CBB0ADBCB9D2545620C /* UITextField+Flex.m */,
-				0438BCD8F0A5D0CD7F976AE3B79954EF /* UITextView+Flex.h */,
-				151E11228863FF1B8E0E60D75B7F9175 /* UITextView+Flex.m */,
-				9BC7861D0E1C48CAD6F32886657BF912 /* UIToolbar+Flex.h */,
-				D1B6EC79C56814E903C5D482ADF9C264 /* UIToolbar+Flex.m */,
-				E67F14324884B6CBA686376B77A88D09 /* UIView+Flex.h */,
-				2164D5B5D846ACBB54EAFD8AB2FA0A08 /* UIView+Flex.m */,
-			);
-			name = ViewExt;
-			path = FlexLib/Classes/ViewExt;
 			sourceTree = "<group>";
 		};
 		F6AFDA457772B151755708625B282B3E /* Yoga */ = {
@@ -666,80 +672,81 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2A37634F247D963288F6544AB4A088E /* Headers */ = {
+		B2E6955B302D24E3AD9BF49DAC62E103 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B0429DC2DFCF14ADE277A7C00E7F883 /* CompactValue.h in Headers */,
-				E373817FCFAD4B20E2DED00A02E058F2 /* instrumentation.h in Headers */,
-				9BC3CFE34C444F148AA381CD80170B9C /* log.h in Headers */,
-				C4144CBE6E4CA4E9BA7D51DE1D2CD81D /* Utils.h in Headers */,
-				F652B1FDE30CAE8FB67485B2412EC604 /* YGConfig.h in Headers */,
-				7FD3E77EFF66F28F4EC1EFB5FBCBBA3F /* YGEnums.h in Headers */,
-				BA08B0878139742176D32C2E66005C0B /* YGFloatOptional.h in Headers */,
-				25B9599AE50D210F29FD4A0839528B6F /* YGLayout.h in Headers */,
-				552B0502BDA5DF7899A2F7BA469E045E /* YGMacros.h in Headers */,
-				BCF786F320D41C575D4C0E9F5B16FD2F /* YGMarker.h in Headers */,
-				9A04C591340D4254C981A65C8707BA24 /* YGNode.h in Headers */,
-				CFA331AEAE7C87D000FC5A85DEF0A130 /* YGNodePrint.h in Headers */,
-				A0AF2A50B24844058DE941E358E5D9FF /* YGStyle.h in Headers */,
-				1DB5FD99F7EF5D347BEE771000DE183C /* YGValue.h in Headers */,
-				5E2FAB1D83A3599AFD9E5C0217720CF9 /* Yoga-internal.h in Headers */,
-				FEA22F6BC7CA0F32C92F9D328A740C9C /* Yoga-umbrella.h in Headers */,
-				40AE00069D477DB695E323943093A9F5 /* Yoga.h in Headers */,
+				F7B829E3B97E799742493F17FD3F4192 /* CompactValue.h in Headers */,
+				8E7C5996FDD4626EBE52DB964ECEF507 /* instrumentation.h in Headers */,
+				3AAB663A47846E455857A77EF16DB1A8 /* log.h in Headers */,
+				45045AB9E73D1839A3DDBDBC638696D8 /* Utils.h in Headers */,
+				0DBC89D0E9A64A398A4DBABE5C87BF3C /* YGConfig.h in Headers */,
+				EB4EE0147D950113EFBAC12A4041CD3A /* YGEnums.h in Headers */,
+				8AAB7CC374F5D1AAA42D9674F81FD3AF /* YGFloatOptional.h in Headers */,
+				99A8783B0C3317684504462821BF4D93 /* YGLayout.h in Headers */,
+				6F6B95A2EDCBD05844AB0AD28C006F70 /* YGMacros.h in Headers */,
+				A95ED163182D0580B30780E611EC3F59 /* YGMarker.h in Headers */,
+				2868B79A5EB43512E75468FCC9829DBA /* YGNode.h in Headers */,
+				16CCC04E4383941B1EB73C75D4619F9E /* YGNodePrint.h in Headers */,
+				CF184C97923F7867CB49A03FD179534B /* YGStyle.h in Headers */,
+				7FE6F588CDF83F93D8A05254788AF391 /* YGValue.h in Headers */,
+				0C292C8EFD8123521B447482D8FA8940 /* Yoga-internal.h in Headers */,
+				D7A18844BFF5AF4D3C3155369F3D4F17 /* Yoga-umbrella.h in Headers */,
+				60257B15A19323C75F6165FAACB95F20 /* Yoga.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2F5CCDC0C8F8E93E57FE8EE516D941B /* Headers */ = {
+		E32C546B7E3B1CDBD61AD31C86A588BC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F12D5CFD72B0E704BC0A8CDD77790FBA /* FlexBaseTableCell.h in Headers */,
-				2E6570D57A848FBE0D2995DAAB602313 /* FlexBaseVC.h in Headers */,
-				E6F5E88B6ABE92FC05DE5800C971FB94 /* FlexCollectionCell.h in Headers */,
-				537B7FDDCB7240590687C0A76E7D1BA1 /* FlexCollectionView.h in Headers */,
-				A93BC2711EC96AA3FAE457887BAEA8DD /* FlexContainerView.h in Headers */,
-				EEBC3B47F830A63D7796A3A857A4D148 /* FlexCustomBaseView.h in Headers */,
-				35BCD3285B9CACC93F23474BC8FA09FF /* FlexFrameView.h in Headers */,
-				43C2C8C2D9F21BA0134781F6E5DAE258 /* FlexHttpVC.h in Headers */,
-				D3D29487A6154BF22B8D377F2954BEFC /* FlexLayoutViewerVC.h in Headers */,
-				EC9878152F7C925CDFBC272FA69501BB /* FlexLib-umbrella.h in Headers */,
-				DD060CAD4EAF7D1D53F4083302127E04 /* FlexLib.h in Headers */,
-				7FA1F0FA3F3E9189DDD9B24FFD1938D3 /* FlexModalView.h in Headers */,
-				1A24ABCFB5077D422766CF0F72B1C285 /* FlexNode.h in Headers */,
-				ECCE45918CEDD41DEE7619E8BE706787 /* FlexRootView.h in Headers */,
-				00B236E42358CFC9E1CCFF5E315515A1 /* FlexScrollView.h in Headers */,
-				1E5F4EDB08114AA1E7A497DCF8D01530 /* FlexSetPreviewVC.h in Headers */,
-				6FD770A2C8DC3B404BBEABA1E460BC70 /* FlexStyleMgr.h in Headers */,
-				BAA8F37B046F2F907CABDFCB1EB855CF /* FlexTextView.h in Headers */,
-				DC5692DBF42DD1826080DEAF5D88FAE9 /* FlexTouchMaskView.h in Headers */,
-				ED713820A8BB1BAB694EEE1895D06854 /* FlexTouchView.h in Headers */,
-				BDBB0F314B9A2510039840DED077E755 /* FlexUtils.h in Headers */,
-				298D70406155939511565AB2059320AC /* FlexXmlBaseView.h in Headers */,
-				1D95747F91369B0557F3E6E922780A46 /* GDataXMLNode.h in Headers */,
-				7AFA325765255708D3F2DFFEBA8CC753 /* UIActivityIndicatorView+Flex.h in Headers */,
-				E7C3E2F2458EEFFA6952148EA4ED9063 /* UIButton+Flex.h in Headers */,
-				A18B8693264DBCC2C278174ECD7A9F86 /* UIControl+Flex.h in Headers */,
-				5085C30CBA9A4551EBEAD25CF3A24662 /* UIDatePicker+Flex.h in Headers */,
-				BA82D13E8668CAB5E4DFFF1CC2639CE9 /* UIImageView+Flex.h in Headers */,
-				222BB27FD1B86F5A6F4F956E5B459C76 /* UILabel+Flex.h in Headers */,
-				667CE41779A9EFA5564C1E3C84EBA2B6 /* UIPageControl+Flex.h in Headers */,
-				1BCD49DC02A0AA17B3E274BC2A235338 /* UIPickerView+Flex.h in Headers */,
-				2DE0D1D10C23987A8CB0442D4C75B0F1 /* UIProgressView+Flex.h in Headers */,
-				4F18BDF6062C50DB173AAAF6943D6DE8 /* UIScrollView+Flex.h in Headers */,
-				E50085C114332B5E749503F2F0B280E1 /* UISearchBar+Flex.h in Headers */,
-				B77D9F4C94753EE415C12A92D58BD197 /* UISegmentedControl+Flex.h in Headers */,
-				338B316B10CA5638EE4F4631B0190642 /* UISlider+Flex.h in Headers */,
-				CA0D60157529874635FD4FF6546F3833 /* UIStepper+Flex.h in Headers */,
-				F69E825BC598A6760A58DB2C7C1DB332 /* UISwitch+Flex.h in Headers */,
-				C5F669350FC966A0BD052841AFF6256D /* UITabBar+Flex.h in Headers */,
-				553FFC88C331FBBDB9A6580A493F86E2 /* UITextField+Flex.h in Headers */,
-				54BBDAC620C0CA8000920AB71585BACA /* UITextView+Flex.h in Headers */,
-				B91821F5F9FE776EBF1C45C87C6D17E3 /* UIToolbar+Flex.h in Headers */,
-				DEB607C3D005134FA36723EE188063AD /* UIView+Flex.h in Headers */,
-				2A1669C2E46F7DAB29863748AB73CE2C /* UIView+Yoga.h in Headers */,
-				86B56E3662667E3AED07C7BFDEC760A1 /* YGLayout+Private.h in Headers */,
-				50BACAEFA1F2AF3D306E47E5DBD4473A /* YGLayout.h in Headers */,
+				A9140558FD7F899B9E3D2AEBBA27BF8A /* FlexBaseTableCell.h in Headers */,
+				B4B73A1834F702F30C5FEC24BDC39968 /* FlexBaseVC.h in Headers */,
+				9A40313FB04A244101C9E0EE9C3B6D23 /* FlexCollectionCell.h in Headers */,
+				50E4E0597F0AF72F212D93E07C7145DA /* FlexCollectionView.h in Headers */,
+				EA5E71C0ED20DE1165CA20A9F5085C8A /* FlexContainerView.h in Headers */,
+				9AED52C41A74EB84D6F4465E4C0F969A /* FlexCustomBaseView.h in Headers */,
+				F1629FBAC7D1441F22BB2BD4820CED56 /* FlexFrameView.h in Headers */,
+				0B32502B35DC2DDFB6A074A9E5CBCA52 /* FlexHttpVC.h in Headers */,
+				D904C4C0DBF2ACC7F93CE5A317229CEF /* FlexLayoutViewerVC.h in Headers */,
+				8B3E7AAE9C38497960B95F2B07D3D592 /* FlexLib-umbrella.h in Headers */,
+				2DCA9A12E5D8D0F8C3046C1F79973675 /* FlexLib.h in Headers */,
+				A8BB1FA43DC738E3907270CB77874025 /* FlexModalView.h in Headers */,
+				2C9800771AF3D4BA292915A0592E4C42 /* FlexNode.h in Headers */,
+				9F711CD1611BB7CE2119503ACB4B589D /* FlexRootView.h in Headers */,
+				500D7A3C23EFF2F5C99BD7FE00AAC1CC /* FlexScrollView.h in Headers */,
+				8ECDED08DFC1D4231287D4FC92097C3A /* FlexSetPreviewVC.h in Headers */,
+				54780BF620F86CCF166E8EAFBD7B00CF /* FlexStyleMgr.h in Headers */,
+				ED064364F5B27AFF06A87E3A394173DE /* FlexTableHeaderFooterView.h in Headers */,
+				EA4C152CB8FC67AA41A82A5D99A92BCF /* FlexTextView.h in Headers */,
+				53BC1CD39013F45EE2608D9A08F05CE1 /* FlexTouchMaskView.h in Headers */,
+				6AD795D9F21CC0A559F2AFA43FAF668D /* FlexTouchView.h in Headers */,
+				A97AE67D8D316F9A3E38EF2EAEC0BB86 /* FlexUtils.h in Headers */,
+				56911FF9075E62894FC1F683C9D93F5A /* FlexXmlBaseView.h in Headers */,
+				851B13392C4B4F8E15B7E82E04BE22A5 /* GDataXMLNode.h in Headers */,
+				10983613B90408EEAF15A6F6523001DC /* UIActivityIndicatorView+Flex.h in Headers */,
+				5A6BFBB17954C290CF5114A75B2E971F /* UIButton+Flex.h in Headers */,
+				BF2342B93FB74F93DB63C1CB5CE5F265 /* UIControl+Flex.h in Headers */,
+				2272DFA6613A0BE208C6086B40B69B33 /* UIDatePicker+Flex.h in Headers */,
+				6A8E884E4DA943B66E0E36AC28AF6A0D /* UIImageView+Flex.h in Headers */,
+				5212E4A831607743736FC9BCE090461C /* UILabel+Flex.h in Headers */,
+				4430DDED9B4A7454D4226BA68FF4F34A /* UIPageControl+Flex.h in Headers */,
+				DA5A83462616F43DD89D2AA67F6C9B2F /* UIPickerView+Flex.h in Headers */,
+				29AED21664725F05237CF7A0B41B4AB0 /* UIProgressView+Flex.h in Headers */,
+				691F6F895F873A905724E2186A1F16BA /* UIScrollView+Flex.h in Headers */,
+				C5F5D1B0F24A7A40EEEB7EB8F0047FC8 /* UISearchBar+Flex.h in Headers */,
+				836D1993008618724E9B37D034EB605B /* UISegmentedControl+Flex.h in Headers */,
+				1D9B7A71925E8DB1607F50B85DC01E99 /* UISlider+Flex.h in Headers */,
+				6670221AC878B43D7BCE7CAF29AFBD1A /* UIStepper+Flex.h in Headers */,
+				1DC28B08A4EA8EAF6B083A2F9A8529CD /* UISwitch+Flex.h in Headers */,
+				50C6E60762AC3D55A6D607709ACF93B0 /* UITabBar+Flex.h in Headers */,
+				129C9C880E2F40D4CD516E22ADE9CB2C /* UITextField+Flex.h in Headers */,
+				BC865689EE47521C19FBE15486878AD0 /* UITextView+Flex.h in Headers */,
+				C67B247433EE7697B134CD48DA57DE9B /* UIToolbar+Flex.h in Headers */,
+				3912690DA4ED836CBC6E85057EA3DDB4 /* UIView+Flex.h in Headers */,
+				582E56C3EAB81FAC0BBED3EE89390836 /* UIView+Yoga.h in Headers */,
+				3D8BE8CD78DFB919DCF909CF2F553924 /* YGLayout+Private.h in Headers */,
+				DDDDF57AA3A02E9168E1B74DC2AFA884 /* YGLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,12 +775,12 @@
 		};
 		2B25F90D819B9ADF2AF2D8733A890333 /* Yoga */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9AC70737B2BAB2EF8C78611511087988 /* Build configuration list for PBXNativeTarget "Yoga" */;
+			buildConfigurationList = FB8FC465102021180F1CFC3476D8C348 /* Build configuration list for PBXNativeTarget "Yoga" */;
 			buildPhases = (
-				B2A37634F247D963288F6544AB4A088E /* Headers */,
-				AA201ECBDC0DF2C31AD39A7C80C01F5A /* Sources */,
-				73CB0FA8D21AAC3B91C515734CB36183 /* Frameworks */,
-				1FA3B47587E56AFC3A05F0CC5CBD540E /* Resources */,
+				B2E6955B302D24E3AD9BF49DAC62E103 /* Headers */,
+				F739B87C75D4C29963AFEF54A53CF5A3 /* Sources */,
+				161D4BDD7ED98259B0F55C1B2D8C116D /* Frameworks */,
+				86264BFBCA36D5A038A5EA5089543D2C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -786,18 +793,18 @@
 		};
 		317454BD8F0A72BD312FCA3621EC3E1E /* FlexLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1C3045781DF0C10E5D8AB672EBD309FD /* Build configuration list for PBXNativeTarget "FlexLib" */;
+			buildConfigurationList = 096DEA3A265693007A12899360D06420 /* Build configuration list for PBXNativeTarget "FlexLib" */;
 			buildPhases = (
-				F2F5CCDC0C8F8E93E57FE8EE516D941B /* Headers */,
-				50285388AECB73E156F22BE4EDD2ABCD /* Sources */,
-				C92521620446CA4BAD855289B1EA3C2C /* Frameworks */,
-				9EB91AD0C3FBC19D851A47805F7AD112 /* Resources */,
+				E32C546B7E3B1CDBD61AD31C86A588BC /* Headers */,
+				C0B7A13CDDB6F9A33EBD97CA216C4B49 /* Sources */,
+				693D1B672CB16151B6CA682B0F5EBC70 /* Frameworks */,
+				BC0C1C06D003119C194228D7B33C9A7C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5B900D9869F78E7EBFBA310DDE5A4A74 /* PBXTargetDependency */,
-				EB85A78AA6A2856BAB9B90A149950FEB /* PBXTargetDependency */,
+				A2B954808D8D15790161B97407CFC2BD /* PBXTargetDependency */,
+				1E8B2AA0756C8060004234E7DBD4B910 /* PBXTargetDependency */,
 			);
 			name = FlexLib;
 			productName = FlexLib;
@@ -806,11 +813,11 @@
 		};
 		86B2BB9E445137DD6687C2755B6B601C /* FlexLib-FlexLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6E7889486E832E2E7BA6D7B2B203C8B /* Build configuration list for PBXNativeTarget "FlexLib-FlexLib" */;
+			buildConfigurationList = 66EC9EA0156A3F4DAEB326ABE26F5CC1 /* Build configuration list for PBXNativeTarget "FlexLib-FlexLib" */;
 			buildPhases = (
-				F42DB61FDFD371635A4E83B1B346DAEF /* Sources */,
-				AE502740C21364C497E2F2526BFF742B /* Frameworks */,
-				49CB9A0EC63F0EBA960E397777206ADD /* Resources */,
+				FD48F2936552A476FF659EC1F51B4463 /* Sources */,
+				8FF9F9FA901E0F8D9BD3F92EF5213605 /* Frameworks */,
+				FBAAE539859AF05DFFB7F4DDFB68A6DB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -851,22 +858,10 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1FA3B47587E56AFC3A05F0CC5CBD540E /* Resources */ = {
+		86264BFBCA36D5A038A5EA5089543D2C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49CB9A0EC63F0EBA960E397777206ADD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F36B623239B2C05447A704781D348552 /* Base.lproj in Resources */,
-				5CFF473D208A282C0663A675F7EC1A8A /* FlexHttpVC.xml in Resources */,
-				E1434351FAA10890C3C5F018C3D147AB /* FlexLayoutViewerVC.xml in Resources */,
-				664E7744054128A10AA4D6744BD26010 /* FlexSetPreviewVC.xml in Resources */,
-				25D84E8F74DE039CE858CA3460F33761 /* zh-Hans.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,87 +872,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9EB91AD0C3FBC19D851A47805F7AD112 /* Resources */ = {
+		BC0C1C06D003119C194228D7B33C9A7C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841B9DF844890C5A2D858505DF10D8EA /* FlexLib.bundle in Resources */,
+				EF2B3DF183BE89F2B41BD1872112BA99 /* FlexLib.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBAAE539859AF05DFFB7F4DDFB68A6DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71B022FE4AF5B3A85C43C79D7C872F79 /* Base.lproj in Resources */,
+				2B60A264472ECBE6E16DF0B3FCD66673 /* FlexHttpVC.xml in Resources */,
+				3A0F882098A44148FDB1A58E272CB28C /* FlexLayoutViewerVC.xml in Resources */,
+				A1AA174EDBDC9DDC24D89E00351C437A /* FlexSetPreviewVC.xml in Resources */,
+				6497DB69F83ED5646327DF460E3599B8 /* zh-Hans.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		50285388AECB73E156F22BE4EDD2ABCD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BD76304AEC43D796793137DD38E2835B /* FlexBaseTableCell.m in Sources */,
-				4B71169F3F3F138A7954F85B017041AB /* FlexBaseVC.m in Sources */,
-				C047B35961201CBC7A927E84D3DD9FB9 /* FlexCollectionCell.m in Sources */,
-				CB55787B221AA9C8D8DA26464651A5B4 /* FlexCollectionView.m in Sources */,
-				0FBDF83637BFDA13964BE29E4A0123A1 /* FlexContainerView.m in Sources */,
-				DABC91A38F0733E55F8EB4F719D86729 /* FlexCustomBaseView.m in Sources */,
-				69C3E7D16933B27A7F6BD55A0E6A3A90 /* FlexFrameView.m in Sources */,
-				0E8C377BA0924022F0025E3FBCAEF475 /* FlexHttpVC.m in Sources */,
-				7CAE08F88AE837103EEE6A40325A1B01 /* FlexLayoutViewerVC.m in Sources */,
-				BA01E61B8EE8EE0C7BF12BE9D300AB1A /* FlexLib-dummy.m in Sources */,
-				35B8CAC2952244B3368C42C8C6CADC33 /* FlexModalView.m in Sources */,
-				7A0C7561489E8A5CD20D4BE4E45DF1B4 /* FlexNode.m in Sources */,
-				75CABF701B3AF9C2BE94955F4C2505D3 /* FlexRootView.m in Sources */,
-				E229A85D5F30380C88A67B396A4B8E9C /* FlexScrollView.m in Sources */,
-				58E5C69C3146720134AFE903CE12D770 /* FlexSetPreviewVC.m in Sources */,
-				52E72F118DA4BA6B7375AFC7F6872D50 /* FlexStyleMgr.m in Sources */,
-				DE4169C40F8D20A4F144B9C02E9FFBF1 /* FlexTextView.m in Sources */,
-				5AB5EBFD537DC647E3144A702B74BFCE /* FlexTouchMaskView.m in Sources */,
-				ACDE48807D2BDA3E6C811A20BFF3240C /* FlexTouchView.m in Sources */,
-				F381E6003069966B1FB76C539B2501C3 /* FlexUtils.m in Sources */,
-				F9146FA6BD8002E7AD1DA82A3A6D6DE1 /* FlexXmlBaseView.m in Sources */,
-				BB13A8A222446FA3332DE9A94A427560 /* GDataXMLNode.m in Sources */,
-				4B5151A1BC3BE6874B5132C6D399571A /* UIActivityIndicatorView+Flex.m in Sources */,
-				44D6E85B042CC483E916E89CFB0C9DF9 /* UIButton+Flex.m in Sources */,
-				69AD2766DA5E8064FA8F84A1798AC9FC /* UIControl+Flex.m in Sources */,
-				86421947496EF33BFA3E0DAB92B78189 /* UIDatePicker+Flex.m in Sources */,
-				FD709B2A77B76B71C55E705D8ABAB79D /* UIImageView+Flex.m in Sources */,
-				26078FC3D6236D3AB703F57F8E1BC553 /* UILabel+Flex.m in Sources */,
-				9A2D281D7DFFF54B6A9F2B16FE5635D3 /* UIPageControl+Flex.m in Sources */,
-				31061C3E8D1629E150469827061E97AD /* UIPickerView+Flex.m in Sources */,
-				3F7F9E62C4A484C7F5594640F18AEF6B /* UIProgressView+Flex.m in Sources */,
-				69164D81DB34AA0ED054CFCE9FF810CE /* UIScrollView+Flex.m in Sources */,
-				D4230A85267E346017FC90BD6BF6B648 /* UISearchBar+Flex.m in Sources */,
-				B19EFF9A5AB576AB534F04F2F6C73D6D /* UISegmentedControl+Flex.m in Sources */,
-				2F776FA10FFE1437650E4C783734E44F /* UISlider+Flex.m in Sources */,
-				3BC929AE65C6A1477334390A1288157A /* UIStepper+Flex.m in Sources */,
-				7B8EBE3B0356C9A094E506A9A57AFCE4 /* UISwitch+Flex.m in Sources */,
-				C1F2C712419E5950EF42C648AE21DE8A /* UITabBar+Flex.m in Sources */,
-				1988E247487A4F34E850E04BDE635EC9 /* UITextField+Flex.m in Sources */,
-				D39433508F4D617D31671B780CEDBD9F /* UITextView+Flex.m in Sources */,
-				CAF64BC48D46DE89C138A4CBDDFBD142 /* UIToolbar+Flex.m in Sources */,
-				C93F47AB2A67E977FAA8DB0BBCE82D2E /* UIView+Flex.m in Sources */,
-				A784C7CB87C8ADF1FB78126F994EB592 /* UIView+Yoga.m in Sources */,
-				80715E45C22DBDA32CF2678DA2B8EC0D /* YGLayout.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA201ECBDC0DF2C31AD39A7C80C01F5A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F9C57539085CF0AF6D65983E46F0A4DA /* log.cpp in Sources */,
-				7F3EFE4ABB199CADAFD1360B4872D56A /* Utils.cpp in Sources */,
-				C045EF61A5BF1632AB8B791E2E8A30D1 /* YGConfig.cpp in Sources */,
-				18A2D13803ABC9EA0FBAF5524791A1DE /* YGEnums.cpp in Sources */,
-				C72F2BE6D88ABC059786F035648E0D68 /* YGLayout.cpp in Sources */,
-				67F3414A82AD8C0C026D2691BE707718 /* YGMarker.cpp in Sources */,
-				A62E3BFA53E9316805E8DA639B3DA8B7 /* YGNode.cpp in Sources */,
-				3A00D3779C459D16A1DCF7A8A3D60D66 /* YGNodePrint.cpp in Sources */,
-				2508B17A95BC75AB7F59FE9E0798BD34 /* YGStyle.cpp in Sources */,
-				A415ADEDBFE1A08B6F5D5CD8D5CD41D8 /* YGValue.cpp in Sources */,
-				9AA65C1779DD9619C2CCA820001F288F /* Yoga-dummy.m in Sources */,
-				850922F9B8F807A7E8FC3F20ABD08C21 /* Yoga.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BF8F755CC2D8EF0DC03E028BFB692A8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -966,7 +903,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F42DB61FDFD371635A4E83B1B346DAEF /* Sources */ = {
+		C0B7A13CDDB6F9A33EBD97CA216C4B49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE17C7395E4A9F46C91F690291726771 /* FlexBaseTableCell.m in Sources */,
+				3C948A6D772FFE5574CEFD345F23C14D /* FlexBaseVC.m in Sources */,
+				3F0800C0F8E33429A8DD3048AC3703AD /* FlexCollectionCell.m in Sources */,
+				3EF351E8242DE5ECC1D7C8AD29851FB4 /* FlexCollectionView.m in Sources */,
+				247CA1815DCCA4C18EF86AC25272D3A9 /* FlexContainerView.m in Sources */,
+				29DBADF4CD813F9039BC38F6C6BC1CF1 /* FlexCustomBaseView.m in Sources */,
+				FE520A8928955445405A8DDBF313D846 /* FlexFrameView.m in Sources */,
+				300214C816E969A8868D565DA1A789BC /* FlexHttpVC.m in Sources */,
+				4809B12D64276359E423192355D2F63F /* FlexLayoutViewerVC.m in Sources */,
+				BE3244BCB93682697C7024C358CB8388 /* FlexLib-dummy.m in Sources */,
+				A0B8F3374C49C2E405C296C67E9A3C51 /* FlexModalView.m in Sources */,
+				8009AC4E0476287EF27A55421502A71F /* FlexNode.m in Sources */,
+				7404B1ED81E29CFA5A2CDA41B9806CEA /* FlexRootView.m in Sources */,
+				80207A7205D92164ED6F00AEC1113DAF /* FlexScrollView.m in Sources */,
+				36B87AC290B221BA4A403D544979896A /* FlexSetPreviewVC.m in Sources */,
+				4140A3E3E05C449E8F7FACDF051121C3 /* FlexStyleMgr.m in Sources */,
+				CEFE0CEA00EFB860538C659DCCEF8ADC /* FlexTableHeaderFooterView.m in Sources */,
+				7F9B21C75DFF38DC80CC8493C42EE4CB /* FlexTextView.m in Sources */,
+				B5592C45BEB71D08B0C4C686E222DCE0 /* FlexTouchMaskView.m in Sources */,
+				54AB85338B6D8959880AFAABD2D0B0E1 /* FlexTouchView.m in Sources */,
+				7A52176FD85FD7B9E2761B6324F0483E /* FlexUtils.m in Sources */,
+				CD63FDC2C06FA9A26651596CD204F6B6 /* FlexXmlBaseView.m in Sources */,
+				F18C587196D459A2F3F852EB30882DAC /* GDataXMLNode.m in Sources */,
+				1AC67AE3110DB3439028FDBAA8C5071C /* UIActivityIndicatorView+Flex.m in Sources */,
+				F5E93401ECBEF72B2502B4CD515421EA /* UIButton+Flex.m in Sources */,
+				9B20124A1E71352C37BE4A897572FD86 /* UIControl+Flex.m in Sources */,
+				55952A0EB5A08257A9C58FCE5AB991A7 /* UIDatePicker+Flex.m in Sources */,
+				B4DC3267042C13E62232FFD3F4014255 /* UIImageView+Flex.m in Sources */,
+				3C1A79B3046DF40024BA8CABF16134BD /* UILabel+Flex.m in Sources */,
+				1B92FEBD25793CE9CFBBB2B13A690A65 /* UIPageControl+Flex.m in Sources */,
+				933EF6298FB13024CD40AB9F7F7E477A /* UIPickerView+Flex.m in Sources */,
+				4F92713334200A24FF71D1196FC1B900 /* UIProgressView+Flex.m in Sources */,
+				C3083F194E7A4384CAEA4C721615C70B /* UIScrollView+Flex.m in Sources */,
+				111447BC3DF7DBE85D870E27076C44C1 /* UISearchBar+Flex.m in Sources */,
+				62D040DED56367B359C7A75859BFA20E /* UISegmentedControl+Flex.m in Sources */,
+				39F6509B2E0A4C43BFF9E950628E1B88 /* UISlider+Flex.m in Sources */,
+				AA6F8243169BB18677131082CEAA553C /* UIStepper+Flex.m in Sources */,
+				B24E29D4AD05953CB4C49BF7411FB283 /* UISwitch+Flex.m in Sources */,
+				51EF0374DAF9B2633DD0DB81C3269D24 /* UITabBar+Flex.m in Sources */,
+				AA0CCE4E7EFD55F4F739B8EB6AD5A327 /* UITextField+Flex.m in Sources */,
+				7D12E2EBA1E51151D6A4CAAAB531DB1F /* UITextView+Flex.m in Sources */,
+				1A6C7763C091A49B4658EA7AA11B27B0 /* UIToolbar+Flex.m in Sources */,
+				9947B34E009540CDBEAC956B5DC2A03D /* UIView+Flex.m in Sources */,
+				AB0EAA1EEE55FD0405C435A22D143152 /* UIView+Yoga.m in Sources */,
+				278E586F96EE232E786E85BB1D7A3AF8 /* YGLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F739B87C75D4C29963AFEF54A53CF5A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0CB1612A13A85A01520359D426327B /* log.cpp in Sources */,
+				0987C3A30107CD6979A87DB1DEFFF6CE /* Utils.cpp in Sources */,
+				87685472541395F6ECFD32F5637D9E3F /* YGConfig.cpp in Sources */,
+				FB2805B278ECD1E1A6CBCF952FBD4594 /* YGEnums.cpp in Sources */,
+				3B392028CF170BC56E6E2897B0212776 /* YGLayout.cpp in Sources */,
+				7E60160EA6693814C9477EFAA1122AE2 /* YGMarker.cpp in Sources */,
+				FEA5EDEB53690986241409D69F2062D6 /* YGNode.cpp in Sources */,
+				88E25E17F09D7A167CD3162D698B3382 /* YGNodePrint.cpp in Sources */,
+				B4DDF72D60461E09DFF5C7B2F1E94426 /* YGStyle.cpp in Sources */,
+				C21E5E09B2413648E36DC6E0B2D4DC8B /* YGValue.cpp in Sources */,
+				F15DFC5146566B0BF275ECC7E558C12B /* Yoga-dummy.m in Sources */,
+				0716AEB904B08C52DAFB805FEC8EC157 /* Yoga.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD48F2936552A476FF659EC1F51B4463 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -976,17 +984,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1E8B2AA0756C8060004234E7DBD4B910 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Yoga;
+			target = 2B25F90D819B9ADF2AF2D8733A890333 /* Yoga */;
+			targetProxy = 509766B16C1A70C16C6922DF058802FC /* PBXContainerItemProxy */;
+		};
 		25241D195D054EE0E2D370D6FA792710 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Yoga;
 			target = 2B25F90D819B9ADF2AF2D8733A890333 /* Yoga */;
 			targetProxy = E2F0E4BCDA100EC127EDB9026FC2A02A /* PBXContainerItemProxy */;
 		};
-		5B900D9869F78E7EBFBA310DDE5A4A74 /* PBXTargetDependency */ = {
+		A2B954808D8D15790161B97407CFC2BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "FlexLib-FlexLib";
 			target = 86B2BB9E445137DD6687C2755B6B601C /* FlexLib-FlexLib */;
-			targetProxy = 3E24B27713131B902A5B58F68408ADF1 /* PBXContainerItemProxy */;
+			targetProxy = CDEDF888125F44EC4E2C617CB28ED4AE /* PBXContainerItemProxy */;
 		};
 		DF55906285E2F29A360CDCC2E9056F8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -994,18 +1008,43 @@
 			target = 317454BD8F0A72BD312FCA3621EC3E1E /* FlexLib */;
 			targetProxy = F43C333FF22645A29F21C499E29D13D0 /* PBXContainerItemProxy */;
 		};
-		EB85A78AA6A2856BAB9B90A149950FEB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Yoga;
-			target = 2B25F90D819B9ADF2AF2D8733A890333 /* Yoga */;
-			targetProxy = CB4B7BB2CF99BCDAA75FAB8E0AEAFCD6 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		26863379F508A19BE1156271E8884287 /* Debug */ = {
+		012C9860B9E482E6A24520974343E071 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91C702C1C8EE3A10A119F8248966CD3D /* FlexLib.xcconfig */;
+			baseConfigurationReference = 44439B03C00F5082401904A3FC14E7ED /* Yoga.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Yoga/Yoga-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Yoga/Yoga-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Yoga/Yoga.modulemap";
+				PRODUCT_MODULE_NAME = yoga;
+				PRODUCT_NAME = yoga;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0686018CC19B6C1F2BCF31A48BB76192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DCA6F050BC98429030BCC9709AF1A44 /* FlexLib.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlexLib";
@@ -1150,41 +1189,9 @@
 			};
 			name = Release;
 		};
-		4CFF5E4E7A3706DC6AD2E6AAD57152ED /* Release */ = {
+		4DACDE946AC4483AAC74D8EC8EE0CE88 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44439B03C00F5082401904A3FC14E7ED /* Yoga.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Yoga/Yoga-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Yoga/Yoga-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Yoga/Yoga.modulemap";
-				PRODUCT_MODULE_NAME = yoga;
-				PRODUCT_NAME = yoga;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		54FCEBD482FFE648D5147C84E15A5F35 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91C702C1C8EE3A10A119F8248966CD3D /* FlexLib.xcconfig */;
+			baseConfigurationReference = 5DCA6F050BC98429030BCC9709AF1A44 /* FlexLib.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
@@ -1213,6 +1220,22 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		83356B5ADD6A1F76ED808E45FA339221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DCA6F050BC98429030BCC9709AF1A44 /* FlexLib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlexLib";
+				INFOPLIST_FILE = "Target Support Files/FlexLib/ResourceBundle-FlexLib-FlexLib-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = FlexLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		959DAB4EC1BE4ADE4B22644C3E349521 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1278,7 +1301,7 @@
 			};
 			name = Debug;
 		};
-		ADD5536EC768387AA4427B9F5BE4DFB7 /* Debug */ = {
+		EAACDE24955013A26A41A8C85AE30205 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44439B03C00F5082401904A3FC14E7ED /* Yoga.xcconfig */;
 			buildSettings = {
@@ -1304,14 +1327,15 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		B3A51428E884DB7CCFBE68167E938EA0 /* Release */ = {
+		EF77A2945BA59494E61B77A6A12FDFCA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91C702C1C8EE3A10A119F8248966CD3D /* FlexLib.xcconfig */;
+			baseConfigurationReference = 5DCA6F050BC98429030BCC9709AF1A44 /* FlexLib.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
@@ -1342,30 +1366,14 @@
 			};
 			name = Release;
 		};
-		C3769F2A3E500E4E318DC80431171EBF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91C702C1C8EE3A10A119F8248966CD3D /* FlexLib.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlexLib";
-				INFOPLIST_FILE = "Target Support Files/FlexLib/ResourceBundle-FlexLib-FlexLib-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = FlexLib;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1C3045781DF0C10E5D8AB672EBD309FD /* Build configuration list for PBXNativeTarget "FlexLib" */ = {
+		096DEA3A265693007A12899360D06420 /* Build configuration list for PBXNativeTarget "FlexLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				54FCEBD482FFE648D5147C84E15A5F35 /* Debug */,
-				B3A51428E884DB7CCFBE68167E938EA0 /* Release */,
+				4DACDE946AC4483AAC74D8EC8EE0CE88 /* Debug */,
+				EF77A2945BA59494E61B77A6A12FDFCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1379,20 +1387,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9AC70737B2BAB2EF8C78611511087988 /* Build configuration list for PBXNativeTarget "Yoga" */ = {
+		66EC9EA0156A3F4DAEB326ABE26F5CC1 /* Build configuration list for PBXNativeTarget "FlexLib-FlexLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ADD5536EC768387AA4427B9F5BE4DFB7 /* Debug */,
-				4CFF5E4E7A3706DC6AD2E6AAD57152ED /* Release */,
+				0686018CC19B6C1F2BCF31A48BB76192 /* Debug */,
+				83356B5ADD6A1F76ED808E45FA339221 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6E7889486E832E2E7BA6D7B2B203C8B /* Build configuration list for PBXNativeTarget "FlexLib-FlexLib" */ = {
+		FB8FC465102021180F1CFC3476D8C348 /* Build configuration list for PBXNativeTarget "Yoga" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				26863379F508A19BE1156271E8884287 /* Debug */,
-				C3769F2A3E500E4E318DC80431171EBF /* Release */,
+				012C9860B9E482E6A24520974343E071 /* Debug */,
+				EAACDE24955013A26A41A8C85AE30205 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

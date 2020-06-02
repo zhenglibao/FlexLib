@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class FlexRootView;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FlexTableHeaderFooterView : UITableViewHeaderFooterView

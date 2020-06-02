@@ -7,6 +7,7 @@
 //
 
 #import "FlexTableHeaderFooterView.h"
+#import "FlexRootView.h"
 
 static void* gObserverFrame         = &gObserverFrame;
 @interface FlexTableHeaderFooterView ()

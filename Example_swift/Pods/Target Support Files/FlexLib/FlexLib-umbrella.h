@@ -26,6 +26,7 @@
 #import "FlexScrollView.h"
 #import "FlexSetPreviewVC.h"
 #import "FlexStyleMgr.h"
+#import "FlexTableHeaderFooterView.h"
 #import "FlexTextView.h"
 #import "FlexTouchMaskView.h"
 #import "FlexTouchView.h"
