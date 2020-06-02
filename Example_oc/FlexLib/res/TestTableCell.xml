@@ -2,7 +2,7 @@
 <UIView
     layout="
     flexDirection: row,margin:8"
-    attr="bgColor:white">
+    attr="">
     <UIImageView layout="width:40,height:40,marginLeft:10,marginRight:10"  attr="source:addnewtype.png"/>
     <UIView
         layout="flex:1">
