@@ -372,7 +372,7 @@ static void* gObserverFrame = &gObserverFrame;
 {
     CGRect keyboardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
-    UIWindow *window = [[[UIApplication sharedApplication] windows]objectAtIndex:0];
+    UIWindow *window = keyWindow();
     UIView *mainView = window.rootViewController.view;
     CGRect rcFrameConverted = [mainView convertRect:keyboardFrame fromView:window];
     
