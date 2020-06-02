@@ -58,10 +58,7 @@
 
 -(void)onContentViewDidLayout
 {
-    if (!CGSizeEqualToSize(self.contentSize,_contentView.frame.size))
-    {
-        self.contentSize = _contentView.frame.size;
-    }
+    self.contentSize = _contentView.frame.size;
 }
 
 - (void)setFrame:(CGRect)frame
