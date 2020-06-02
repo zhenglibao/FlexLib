@@ -168,6 +168,8 @@
 		7B47CA40CE36ADABF2EC0262 /* Pods-FlexLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8227A994DC6400C8F197660C /* libPods-FlexLib_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlexLib_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		885B2948ED10418285C4C976 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		93212F9F22E9B6F3000EF0B9 /* FlexTableHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexTableHeaderFooterView.h; sourceTree = "<group>"; };
+		93212FA022E9B6F3000EF0B9 /* FlexTableHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexTableHeaderFooterView.m; sourceTree = "<group>"; };
 		BF0A9AA5EEC0E1A3212D55AE /* Pods-FlexLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Tests/Pods-FlexLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D20EA7438FB7413D8C580238 /* Pods-FlexLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexLib_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D210B7EB20189A5200166DA7 /* FlexLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlexLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -540,6 +542,8 @@
 				D210B81120189A7500166DA7 /* FlexSetPreviewVC.m */,
 				D210B81220189A7500166DA7 /* FlexStyleMgr.h */,
 				D210B81320189A7500166DA7 /* FlexStyleMgr.m */,
+				93212F9F22E9B6F3000EF0B9 /* FlexTableHeaderFooterView.h */,
+				93212FA022E9B6F3000EF0B9 /* FlexTableHeaderFooterView.m */,
 				D210B81420189A7500166DA7 /* FlexTextView.h */,
 				D210B81520189A7500166DA7 /* FlexTextView.m */,
 				D210B81620189A7500166DA7 /* FlexTouchMaskView.h */,
@@ -670,6 +674,7 @@
 				D210B8AF20189AC900166DA7 /* FlexParentView.h in Headers */,
 				D210B8B020189AC900166DA7 /* FlexRootView.h in Headers */,
 				D210B8B120189AC900166DA7 /* FlexScrollView.h in Headers */,
+				93212FA122E9B6F4000EF0B9 /* FlexTableHeaderFooterView.h in Headers */,
 				D210B8B220189AC900166DA7 /* FlexSetPreviewVC.h in Headers */,
 				D210B8B320189AC900166DA7 /* FlexStyleMgr.h in Headers */,
 				D210B8B420189AC900166DA7 /* FlexTextView.h in Headers */,
@@ -766,6 +771,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hans",
@@ -936,6 +942,7 @@
 			files = (
 				D210B85120189A7500166DA7 /* FlexBaseVC.m in Sources */,
 				D210B85720189A7500166DA7 /* FlexCustomBaseView.m in Sources */,
+				93212FA222E9B6F4000EF0B9 /* FlexTableHeaderFooterView.m in Sources */,
 				D210B87420189A7500166DA7 /* FlexUtils.m in Sources */,
 				D210B86C20189A7500166DA7 /* FlexStyleMgr.m in Sources */,
 				D210B86220189A7500166DA7 /* FlexNode.m in Sources */,
