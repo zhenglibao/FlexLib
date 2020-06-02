@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FlexScrollView layout="flex:1,padding:14" attr="vertScroll:true,bgColor:white">
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UILabel"/>
+    <UILabel name="" layout="maxWidth:200" attr="fontSize:14,color:#333333,linesNum:0,text:这是一个多行的label\,随着文字增加，自动调整高度。这是一个多行的label\,随着文字增加，自动调整高度。"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UIButton"/>
+    <UIButton name="" layout="maxWidth:200" attr="title:Button,color:red"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UIImageView"/>
+    <UIImageView name="" layout="maxWidth:200" attr="source:addnewtype.png"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UITextField"/>
+    <UITextField name="" layout="flex:1,height:40" attr="placeholder:这是一个UITextField，可以输入文字,borderColor:#f5f5f5,borderWidth:1,borderRadius:4"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UITextView"/>
+    <FlexTextView layout="flex:1,minHeight:40,maxHeight:95" attr="borderColor:#f5f5f5,borderWidth:1,borderRadius:4,fontSize:18,color:darkGray,text:这是一个能自动根据字数调整高度的文本输入框"/>
+  </UIView>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UIActivityIndicatorView"/>
+    <UIActivityIndicatorView name="_activityView" layout="width:40,height:40" attr="style:gray,color:blue,tag:888"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UIDatePicker"/>
+    <UIDatePicker name="_datePicker" layout="flex:1,height:100" attr="pickerMode:dateTime"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UIPageControl"/>
+    <UIPageControl name="_pageControl" layout="width:100,height:50" attr="numberOfPages:5,currentPage:3,pageTintColor:red,curPageTintColor:blue"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UIPickerView"/>
+    <UIPickerView name="_pickerView" layout="width:100,height:100" attr="showSelIndicator:true"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UIProgressView"/>
+    <UIProgressView name="_progress" layout="flex:1,margin:10" attr="style:bar,progress:0.5,progressTintColor:red,trackTintColor:green"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UISearchBar"/>
+    <UISearchBar name="_searchBar" layout="flex:1,margin:10" attr="barStyle:default,text:search bar,placeholder:请输入搜索内容"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UISegmentedControl"/>
+    <UISegmentedControl name="_segment" layout="flex:1,margin:10" attr="selectedIndex:1,tintColor:red"/>
+  </UIView>
+  
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UISlider"/>
+    <UISlider name="_slider" layout="flex:1,margin:10" attr="minValue:0,maxValue:1,value:0.3,continuous:true,minTintColor:green,maxTintColor:red,thumbTintColor:blue"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UIStepper"/>
+    <UIStepper name="_stepper" layout="" attr="minValue:0,maxValue:1,value:0.3,stepValue:0.1,wraps:true,tintColor:red"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UISwitch"/>
+    <UISwitch layout="" attr="tintColor:green,on:true"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+  <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UITabBar"/>
+    <UITabBar name="_tabBar" layout="flex:1,height:44" attr="tintColor:green,barTintColor:red,unSelTintColor:blue,itemSpacing:5,itemWidth:50,translucent:true,bgColor:lightGray"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+   <UIView layout="minHeight:44,flexDirection:row,justifyContent:space-between,alignItems:center" attr="">
+    <UILabel name="" layout="width:40%" attr="fontSize:14,color:#333333,linesNum:0,text:UIToolbar"/>
+    <UIToolbar name="_toolbar" layout="flex:1,height:44" attr="barStyle:default,tintColor:red,barTintColor:green,bgColor:lightGray"/>
+  </UIView>
+
+  <UIView layout="height:1,marginTop:8,marginBottom:8" attr="bgColor:#f5f5f5"/>
+
+</FlexScrollView>

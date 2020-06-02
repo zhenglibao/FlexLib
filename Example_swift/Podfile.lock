@@ -1,0 +1,27 @@
+PODS:
+  - FlexLib (2.4.0):
+    - FlexLib/no-arc (= 2.4.0)
+    - Yoga (= 1.14.0)
+  - FlexLib/no-arc (2.4.0):
+    - Yoga (= 1.14.0)
+  - Yoga (1.14.0)
+
+DEPENDENCIES:
+  - FlexLib (from `../`)
+  - Yoga (= 1.14.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Yoga
+
+EXTERNAL SOURCES:
+  FlexLib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FlexLib: 3096fb386d04a3fb8f90e536f2b2a463e40c4211
+  Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
+
+PODFILE CHECKSUM: 3ec10e91d10b45ab0fd3d8a0251e13355012e180
+
+COCOAPODS: 1.7.2

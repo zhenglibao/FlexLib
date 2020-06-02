@@ -1,0 +1,7 @@
+use_frameworks!
+
+
+target ‘FlexSwiftDemo’ do
+  pod 'FlexLib', :path => '../'
+  pod 'Yoga', '1.14.0'
+end

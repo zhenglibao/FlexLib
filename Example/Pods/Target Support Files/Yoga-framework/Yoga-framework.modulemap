@@ -1,6 +1,0 @@
-framework module yoga {
-  umbrella header "Yoga-framework-umbrella.h"
-
-  export *
-  module * { export * }
-}
