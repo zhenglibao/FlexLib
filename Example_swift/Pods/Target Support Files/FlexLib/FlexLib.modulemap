@@ -1,0 +1,6 @@
+framework module FlexLib {
+  umbrella header "FlexLib-umbrella.h"
+
+  export *
+  module * { export * }
+}

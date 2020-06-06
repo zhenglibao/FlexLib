@@ -32,5 +32,10 @@
 
 -(void)updateAttributeText;
 
+/**
+ * 返回点对应的字符索引，pt为UILabel自身坐标系的点
+ */
+-(NSUInteger)charIndexAtPoint:(CGPoint)pt;
+
 @end
 

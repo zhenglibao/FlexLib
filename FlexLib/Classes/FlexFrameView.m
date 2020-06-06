@@ -7,17 +7,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-
-#import "FlexFrameView.h"
 #import "FlexRootView.h"
+#import "FlexFrameView.h"
 #import "YogaKit/UIView+Yoga.h"
-
-static void* gObserverFrame = &gObserverFrame;
 
 @interface FlexFrameView()
 {
-    FlexRootView* _flexRootView;
-    BOOL _bObserved;
 }
 @end
 
@@ -27,6 +22,7 @@ static void* gObserverFrame = &gObserverFrame;
 {
     self = [super init];
     if (self) {
+        self.useFrame = YES;
     }
     return self;
 }
@@ -40,91 +36,55 @@ static void* gObserverFrame = &gObserverFrame;
         if(owner == nil)
             owner = self;
         
-        _flexRootView = [FlexRootView loadWithNodeFile:flexname Owner:owner];
-        [self addSubview:_flexRootView];
+        self.useFrame = YES;
         
-        if(!_bObserved){
-            [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverFrame];
-            _bObserved = YES;
-        }
+        [self loadWithNodeFile:flexname Owner:owner];
+        
+        [self onInit];
     }
     return self;
 }
 - (void)dealloc
 {
-    if(_bObserved){
-        [self removeObserver:self forKeyPath:@"frame"];
-    }
 }
 -(FlexRootView*)rootView
 {
-    return _flexRootView;
+    return self;
 }
-#pragma mark - KVO
+- (void)onInit
+{
+}
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context
+- (void)setFrame:(CGRect)frame
 {
-    if(context == gObserverFrame){
-        
-        CGSize szNew = [[change objectForKey:@"new"]CGRectValue].size;
-        CGSize szOld = [[change objectForKey:@"old"]CGRectValue].size;
-        if(!CGSizeEqualToSize(szNew, szOld))
-            [_flexRootView setNeedsLayout];
-    }else{
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    CGSize oldSize = self.frame.size ;
+    
+    [super setFrame:frame];
+    
+    if (!self.inLayouting && !CGSizeEqualToSize(oldSize, frame.size)) {
+        [self setNeedsLayout];
     }
 }
--(void)layoutSubviews
+
+- (void)layoutSubviews
 {
-    [_flexRootView layoutIfNeeded];
-}
--(void)subFrameChanged:(UIView*)subView
-                  Rect:(CGRect)newFrame
-{
-    if(!(self.flexibleWidth||self.flexibleHeight)){
-        return;
-    }
+    CGSize oldSize = self.frame.size ;
     
-    CGRect rc = self.frame ;
-    UIEdgeInsets safeArea = _flexRootView.safeArea;
-    if(self.flexibleWidth){
-        rc.size.width = CGRectGetWidth(newFrame) + safeArea.left + safeArea.right ;
-    }
-    if(self.flexibleHeight){
-        rc.size.height = CGRectGetHeight(newFrame) + safeArea.top + safeArea.bottom;
-    }
+    [super layoutSubviews];
     
-    if(!CGSizeEqualToSize(rc.size,self.frame.size))
+    if(self.onFrameChange!=nil &&
+       !CGSizeEqualToSize(oldSize, self.frame.size))
     {
-        self.frame = rc ;
-        if(self.onFrameChange != nil)
-        {
-            self.onFrameChange(rc);
-        }
+        self.onFrameChange(self.frame);
     }
 }
--(void)setFlexibleWidth:(BOOL)flexibleWidth
-{
-    _flexRootView.flexibleWidth = flexibleWidth ;
-}
--(BOOL)flexibleWidth
-{
-    return _flexRootView.flexibleWidth;
-}
--(void)setFlexibleHeight:(BOOL)flexibleHeight
-{
-    _flexRootView.flexibleHeight = flexibleHeight ;
-}
--(BOOL)flexibleHeight
-{
-    return _flexRootView.flexibleHeight;
-}
+
 - (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize
 {
-    return [_flexRootView calculateSize:targetSize];
+    return [self calculateSize:targetSize];
 }
 - (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority
 {
-    return [_flexRootView calculateSize:targetSize];
+    return [self calculateSize:targetSize];
 }
 @end

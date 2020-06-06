@@ -8,23 +8,18 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "FlexRootView.h"
 
 typedef void (^FrameChanged)(CGRect);
-
-@class FlexRootView;
 
 // This view not use flexlbox layout
 // just set frame or make flexible width
 // or height
 // 该类也支持继承并创建组件
 
-@interface FlexFrameView : UIView
+@interface FlexFrameView : FlexRootView
 
 @property(nonatomic,readonly) FlexRootView* _Nullable rootView;
-
-//宽和高是否可变？缺省值均为NO
-@property(nonatomic,assign) BOOL flexibleWidth;
-@property(nonatomic,assign) BOOL flexibleHeight;
 
 //当某个子控件大小变化导致自己的frame发生变化时调用
 //如果外部直接设置其frame，将不会调用
@@ -34,5 +29,10 @@ typedef void (^FrameChanged)(CGRect);
 -(instancetype _Nullable )initWithFlex:(nullable NSString*)flexname
                                  Frame:(CGRect)frame
                                  Owner:(nullable NSObject*)owner;
+
+/**
+ * 子类可以重写该方法执行初始化任务
+ */
+-(void)onInit;
 
 @end

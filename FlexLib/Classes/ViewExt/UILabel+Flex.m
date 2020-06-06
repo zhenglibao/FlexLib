@@ -73,6 +73,12 @@ static NameValue _breakMode[] =
 {
     CGPoint location = [recognizer locationInView:self];
     
+    return [self charIndexAtPoint:location];
+}
+
+-(NSUInteger)charIndexAtPoint:(CGPoint)location
+{
+    
     NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:self.attributedText];
     NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
     [textStorage addLayoutManager:layoutManager];

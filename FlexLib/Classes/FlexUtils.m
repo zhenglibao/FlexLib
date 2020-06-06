@@ -224,7 +224,7 @@ BOOL IsIphoneX(void)
             
             if(@available(iOS 11.0,*)){
                 
-                UIWindow* mainWindow = [[[UIApplication sharedApplication]delegate]window];
+                UIWindow *mainWindow = keyWindow();
                 
                 if(mainWindow.safeAreaInsets.bottom>0){
                     iphoneX = 1;
@@ -238,6 +238,18 @@ BOOL IsPortrait(void)
 {
     CGRect rcScreen = [[UIScreen mainScreen]bounds];
     return rcScreen.size.height > rcScreen.size.width ;
+}
+
+UIWindow* keyWindow(void)
+{
+    UIWindow *keyWindow = nil;
+    for (UIWindow *window in UIApplication.sharedApplication.windows) {
+        if (window.isKeyWindow) {
+            keyWindow = window;
+            break;
+        }
+    }
+    return keyWindow;
 }
 
 double GetAccurateSecondsSince1970()
@@ -306,7 +318,7 @@ FlexLanuage FlexGetLanguage(void)
 }
 -(void)show:(CGFloat)durationInSec
 {
-    UIWindow* window =  [UIApplication sharedApplication].keyWindow;
+    UIWindow* window = keyWindow();
 
     [window addSubview:self.label];
     [window bringSubviewToFront:self.label];
