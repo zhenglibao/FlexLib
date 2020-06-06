@@ -129,7 +129,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 }
 
 -(BOOL)isFlexLayoutEnable{
-    return self.yoga.isIncludedInLayout;
+    return self.yoga.isIncludedInLayout && self.yoga.isEnabled;
 }
 
 -(void)setViewAttr:(NSString*) name
@@ -248,6 +248,9 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         _safeArea = UIEdgeInsetsMake(0, 0, 0, 0);
         _lastConfigFrame = CGRectZero;
         _bChildDirty = NO;
+        _useFrame = NO;
+        
+        [self enableFlexLayout:NO];
     }
     return self;
 }
@@ -475,7 +478,6 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         return;
     }
     
-    //NSLog(@"Flexbox: FlexRootView layouting");
 
     _bInLayouting = YES;
     _lastConfigFrame = _thisConfigFrame;

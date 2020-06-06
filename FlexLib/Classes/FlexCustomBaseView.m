@@ -16,7 +16,6 @@
 @interface FlexCustomBaseView()
 {
     FlexFrameView* _frameView;
-    BOOL _bObserved;
 }
 @end
 
@@ -46,12 +45,6 @@
     }
     return self;
 }
-- (void)dealloc
-{
-    if(_bObserved){
-        [self removeObserver:self forKeyPath:@"frame"];
-    }
-}
 -(NSString*)getFlexName
 {
     return NSStringFromClass([self class]);
@@ -68,6 +61,7 @@
         rcFrameView.origin = CGPointZero;
         
         _frameView = [[FlexFrameView alloc]initWithFlex:[self getFlexName] Frame:rcFrameView Owner:self];
+        _frameView.useFrame = NO;
         _frameView.onFrameChange = ^(CGRect rc){
             [weakSelf onFrameChange:rc];
         };
@@ -79,17 +73,24 @@
 
 -(void)onFrameChange:(CGRect)rc
 {
-    if(!CGSizeEqualToSize(rc.size, self.frame.size)){
-        if([self isFlexLayoutEnable]){
+    if(CGSizeEqualToSize(rc.size, self.frame.size))
+        return;
+    
+    if([self isFlexLayoutEnable])
+    {
+        if ( (self.flexibleWidth && rc.size.width!=self.frame.size.width) ||
+             (self.flexibleHeight && rc.size.height!=self.frame.size.height) )
+        {
             [self markDirty];
-        }else{
-            CGRect rcSelf = self.frame ;
-            if(self.flexibleWidth)
-                rcSelf.size.width = rc.size.width;
-            if(self.flexibleHeight)
-                rcSelf.size.height = rc.size.height;
-            self.frame = rcSelf;
         }
+    }else
+    {
+        CGRect rcSelf = self.frame ;
+        if(self.flexibleWidth)
+            rcSelf.size.width = rc.size.width;
+        if(self.flexibleHeight)
+            rcSelf.size.height = rc.size.height;
+        self.frame = rcSelf;
     }
 }
 
@@ -98,6 +99,7 @@
     CGSize oldSize = self.frame.size;
     
     [super setFrame:frame];
+    
     
     if(!CGSizeEqualToSize(oldSize, frame.size))
     {

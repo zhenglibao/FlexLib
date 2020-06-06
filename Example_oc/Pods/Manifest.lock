@@ -1,9 +1,9 @@
 PODS:
   - Expecta (1.0.6)
-  - FlexLib (2.4.0):
-    - FlexLib/no-arc (= 2.4.0)
+  - FlexLib (2.5.2):
+    - FlexLib/no-arc (= 2.5.2)
     - Yoga (= 1.14.0)
-  - FlexLib/no-arc (2.4.0):
+  - FlexLib/no-arc (2.5.2):
     - Yoga (= 1.14.0)
   - Specta (1.0.7)
   - Yoga (1.14.0)
@@ -15,7 +15,7 @@ DEPENDENCIES:
   - Yoga (= 1.14.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Expecta
     - Specta
     - Yoga
@@ -26,10 +26,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
-  FlexLib: 3096fb386d04a3fb8f90e536f2b2a463e40c4211
+  FlexLib: 6d983503629a0e56030f5fa6265f9b1f1bb83fc8
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
 
 PODFILE CHECKSUM: 55477e74b588604d581218093c6b843c6edcebc4
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.9.3
