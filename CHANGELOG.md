@@ -3,12 +3,11 @@
 
 ---
 ## 2.6.0
-性能优化后的稳定版本
+1.性能优化后的稳定版本
+2.增加FlexTableHeaderFooterView组件
+3.修复在新XCode下的获取window问题
 
-## 2.5.1
-1.修复2.5.0的向前兼容问题
-
-## 2.5.0
+## 2.5.0 (该版本有兼容性问题，请直接使用2.6.0版本)
 1. 对hidden属性变化时的优化
 2. 优化各个组件的性能，减少FlexFrameView, FlexCustomBaseView的视图层级
 3. 移除FlexScrollView对吸顶效果的支持
