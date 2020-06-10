@@ -1,0 +1,31 @@
+/**
+ * Copyright (c) 2017-present, zhenglibao, Inc.
+ * email: 798393829@qq.com
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT-style license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+"layoutVCTitle" = "全部布局";
+"previewVCTitle" = "预览设置";
+"HttpVCTitle" = "在线布局浏览器";
+
+// set preview vc
+"baseUrlPrompt" = "预览基地址:";
+"baseUrlPlaceHolder" = "请输入预览基地址";
+"baseUrlNonNull" = "预览基地址不能为空";
+"onlineLoad" = "在线加载所有资源";
+"onlineWarning" = "注意：打开该选项将会减慢加载速度，如果网络较慢将会阻塞界面";
+"flexIndexFeature" = "目录索引可以让你无需将所有布局文件放在同一个目录下也可以随时通过网络加载,创建布局索引可能需要几分钟时间。当每次修改预览基地址或者向工程中添加、重命名布局文件后建议重新创建目录索引。";
+"Save" = "保存";
+"createFlexIndex" = "创建目录索引";
+"createFlexIndexStatus" = "目录索引创建成功!";
+
+// http vc
+"goup" = "上一级";
+"gohome" = "主页";
+"refresh" = "刷新";
+"setting" = "设置";
+
+

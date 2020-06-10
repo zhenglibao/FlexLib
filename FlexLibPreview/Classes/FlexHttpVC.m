@@ -11,6 +11,7 @@
 #import "FlexUtils.h"
 #import "FlexNode.h"
 #import "FlexSetPreviewVC.h"
+#import "FlexPreviewUtil.h"
 
 static NSString* gLastVisitedUrl = nil;
 
@@ -32,7 +33,7 @@ static NSString* gLastVisitedUrl = nil;
 -(void)viewDidLoad{
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:FlexLocalizeString(@"refresh") style:UIBarButtonItemStylePlain target:self action:@selector(reloadFlexView)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:FlexPreviewLocalizeString(@"refresh") style:UIBarButtonItemStylePlain target:self action:@selector(reloadFlexView)];
     
     [self viewFlexWithUrl:self.url];
 }
@@ -94,7 +95,7 @@ static NSString* gLastVisitedUrl = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationItem.title = FlexLocalizeString(@"HttpVCTitle");
+    self.navigationItem.title = FlexPreviewLocalizeString(@"HttpVCTitle");
     
     
     _table.delegate = self;
@@ -118,7 +119,7 @@ static NSString* gLastVisitedUrl = nil;
 }
 -(NSBundle*)bundleForStrings
 {
-    return FlexBundle();
+    return FlexPreviewBundle();
 }
 
 -(NSString*)getFlexName
@@ -126,7 +127,7 @@ static NSString* gLastVisitedUrl = nil;
     NSString* flexName = NSStringFromClass([FlexHttpVC class]);
     
     NSBundle *frameworkBundle = [NSBundle bundleForClass:[FlexHttpVC class]];
-    NSString *resourcePath = [frameworkBundle pathForResource:flexName ofType:@"xml" inDirectory:@"FlexLib.bundle"];
+    NSString *resourcePath = [frameworkBundle pathForResource:flexName ofType:@"xml" inDirectory:@"FlexLibPreview.bundle"];
     
     return resourcePath;
 }

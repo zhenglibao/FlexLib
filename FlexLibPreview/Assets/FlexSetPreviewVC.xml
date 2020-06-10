@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FlexScrollView layout="flex:1,width:100%,padding:14" attr="bgColor:white,vertScroll:true,horzIndicator:false,vertIndicator:true">
+    <UIView layout="flexDirection:row,alignItems:center">
+        <UIView layout="flex:1">
+            <UILabel attr="fontSize:16,color:#333333,text:@baseUrlPrompt"/>
+            <UIView layout="height:5"/>
+            <UITextField name="_baseUrlField" layout="width:100%,height:40" attr="fontSize:16,color:#333333,placeHolder:@baseUrlPlaceHolder"/>
+        </UIView>
+    </UIView>
+    
+    <UIView layout="height:1" attr="bgColor:#e5e5e5"/>
+    
+    <UIView layout="flexDirection:row,justifyContent:space-between,alignItems:center,marginTop:10,marginBottom:10">
+        <UILabel attr="fontSize:16,color:#333333,text:@onlineLoad"/>
+        <UISwitch name="_loadSwitch" attr="on:true"/>
+    </UIView>
+    
+    <UILabel name="_warning" layout="marginBottom:10" attr="fontSize:16,color:red,linesNum:0,text:@onlineWarning"/>
+    
+    <UIView layout="height:1" attr="bgColor:#e5e5e5"/>
+    
+    <UIView layout="flexDirection:row,justifyContent:space-around,alignItems:center,marginTop:30,marginBottom:10">
+        <!--<FlexTouchView onPress="onTestHttp" layout="width:40%,height:40,alignItems:center,justifyContent:center" attr="bgColor:#47b0f9,activeOpacity:0.5,borderRadius:4">
+         <UILabel attr="fontSize:16,color:white,text:Test Http"/>
+         </FlexTouchView>-->
+        <FlexTouchView onPress="onSave" layout="width:80%,height:40,alignItems:center,justifyContent:center" attr="bgColor:#47b0f9,activeOpacity:0.5,borderRadius:4">
+            <UILabel attr="fontSize:16,color:white,text:@Save"/>
+        </FlexTouchView>
+    </UIView>
+    
+    
+    <UIView layout="height:50" attr=""/>
+    
+    <UILabel attr="fontSize:16,color:#333333,text:@flexIndexFeature,linesNum:0"/>
+    
+    <UIView layout="height:20" attr=""/>
+    
+    <FlexTouchView onPress="onCreateIndex" layout="width:80%,height:40,alignItems:center,justifyContent:center,alignSelf:center" attr="bgColor:#47b0f9,activeOpacity:0.5,borderRadius:4">
+        <UILabel attr="fontSize:16,color:white,text:@createFlexIndex"/>
+    </FlexTouchView>
+
+    <UIProgressView name="_progress" layout="width:80%,marginTop:20,alignSelf:center" attr="hidden:true,progressTintColor:red,trackTintColor:lightGray"/>
+    
+</FlexScrollView>

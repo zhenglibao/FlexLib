@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FlexLib'
-  s.version          = '2.6.0'
+  s.version          = '2.7.0'
   s.summary          = 'An obj-c flex layout framework for IOS'
 
 # This description is used to generate tags and improve search results.
@@ -29,26 +29,34 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'FlexLib/Classes/**/*'
+  s.default_subspec = 'standard'
   
-  s.resource_bundles = {
-     'FlexLib' => ['FlexLib/Assets/*']
-  }
-
-  # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Yoga', '1.14.0'
-
-  s.library = 'xml2'
-  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
-  #s.private_header_files = 'FlexLib/Classes/private/*.h'
-  #s.public_header_files = 'FlexLib/Classes/*.h'
-
-  non_arc_files   = 'FlexLib/Classes/GDataXMLNode.{h,m}'
-  s.exclude_files = non_arc_files
-  s.subspec 'no-arc' do |sna|
-    sna.requires_arc = false
-    sna.source_files = non_arc_files
+  s.subspec 'standard' do |ss|
+    ss.source_files = 'FlexLib/Classes/**/*'
+    ss.resource_bundles = {
+       'FlexLib' => ['FlexLib/Assets/*']
+    }
+  
+    ss.dependency 'Yoga', '1.14.0'
+    ss.library = 'xml2'
+    ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
+    #s.private_header_files = 'FlexLib/Classes/private/*.h'
+    #s.public_header_files = 'FlexLib/Classes/*.h'
+  
+    non_arc_files   = 'FlexLib/Classes/GDataXMLNode.{h,m}'
+    ss.exclude_files = non_arc_files
+    ss.subspec 'no-arc' do |sna|
+      sna.requires_arc = false
+      sna.source_files = non_arc_files
+    end  
   end
 
+  s.subspec 'preview' do |ss|
+    ss.source_files = 'FlexLibPreview/Classes/**/*'
+    ss.resource_bundles = {
+       'FlexLibPreview' => ['FlexLibPreview/Assets/*']
+    }
+  
+    ss.dependency 'FlexLib/standard'
+  end
 end

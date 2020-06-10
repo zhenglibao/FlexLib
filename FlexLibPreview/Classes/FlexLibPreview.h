@@ -7,10 +7,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-// keyboard toolbar
-"Prev" = "Prev";
-"Next" = "Next";
-"Send" = "Send";
-"Finish" = "Finish";
 
+#import "FlexHttpVC.h"
+#import "FlexLayoutViewerVC.h"
+#import "FlexSetPreviewVC.h"
 

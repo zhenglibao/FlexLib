@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<UIView layout="flex:1" attr="bgColor:white">
+  <UIView layout="height:40,paddingLeft:14,paddingRight:14,justifyContent:center" attr="bgColor:#f6f6f6">
+    <UITextField name="_pathLabel" attr="fontSize:14,color:#157efb"/>
+  </UIView>
+
+  <UIView layout="height:50,paddingLeft:14,paddingRight:14,flexDirection:row,justifyContent:space-around,alignItems:center" attr="bgColor:#f6f6f6">
+   <FlexTouchView onPress="onGoUp" layout="width:20%,height:35,justifyContent:center,alignItems:center" attr="underlayColor:darkGray,bgColor:#e5e9ea,borderRadius:8">
+      <UILabel attr="fontSize:14,color:#157efb,linesNum:0,text:@goup"/>
+   </FlexTouchView>
+   <FlexTouchView onPress="onGoHome" layout="width:20%,height:35,justifyContent:center,alignItems:center" attr="underlayColor:darkGray,bgColor:#e5e9ea,borderRadius:8">
+      <UILabel attr="fontSize:14,color:#157efb,linesNum:0,text:@gohome"/>
+   </FlexTouchView>
+   <FlexTouchView onPress="onRefresh" layout="width:20%,height:35,justifyContent:center,alignItems:center" attr="underlayColor:darkGray,bgColor:#e5e9ea,borderRadius:8">
+      <UILabel attr="fontSize:14,color:#157efb,linesNum:0,text:@refresh"/>
+   </FlexTouchView>
+   <FlexTouchView onPress="onSetting" layout="width:20%,height:35,justifyContent:center,alignItems:center" attr="underlayColor:darkGray,bgColor:#e5e9ea,borderRadius:8">
+       <UILabel attr="fontSize:14,color:#157efb,linesNum:0,text:@setting"/>
+   </FlexTouchView>
+  </UIView>
+
+   <UITableView name="_table" layout="flex:1" attr="bgColor:white"/>
+
+   <UIView layout="height:40,paddingLeft:14,paddingRight:14,justifyContent:center" attr="bgColor:#f6f6f6">
+     <UILabel name="_statusBar" attr="fontSize:14,color:#157efb,linesNum:0,text:空闲!"/>
+  </UIView>
+</UIView>

@@ -16,8 +16,6 @@
 #import "FlexStyleMgr.h"
 #import "FlexScrollView.h"
 #import "FlexUtils.h"
-#import "FlexSetPreviewVC.h"
-#import "FlexLayoutViewerVC.h"
 #import "FlexFrameView.h"
 #import "FlexContainerView.h"
 #import "FlexCustomBaseView.h"
@@ -27,6 +25,6 @@
 #import "FlexTextView.h"
 #import "FlexCollectionView.h"
 #import "FlexCollectionCell.h"
-#import "FlexHttpVC.h"
+#import "FlexTableHeaderFooterView.h"
 #import "UILabel+Flex.h"
 

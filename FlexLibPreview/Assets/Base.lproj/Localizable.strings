@@ -1,0 +1,31 @@
+/**
+ * Copyright (c) 2017-present, zhenglibao, Inc.
+ * email: 798393829@qq.com
+ * All rights reserved.
+ *
+ * This source code is licensed under the MIT-style license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+"layoutVCTitle" = "All Layouts";
+"previewVCTitle" = "Flex Preview Setting";
+"HttpVCTitle" = "Online Flex Explorer";
+
+// set preview vc
+"baseUrlPrompt" = "Preview base url:";
+"baseUrlPlaceHolder" = "input preview base url here";
+"baseUrlNonNull" = "Preview base url can not be empty";
+"onlineLoad" = "Online load resource";
+"onlineWarning" = "Notice: this option will slow down the load speed. UI will be blocked if network is slow or inaccessible.";
+"flexIndexFeature" = "Directory index make it accessible even if layout files are in different folders. It may take several minutes. It will be better when you change preview base url or add, rename layout file.";
+"Save" = "Save";
+"createFlexIndex" = "Create Directory Index";
+"createFlexIndexStatus" = "Directory index create successful";
+
+// http vc
+"goup" = "Up";
+"gohome" = "Home";
+"refresh" = "Refresh";
+"setting" = "setting";
+
+

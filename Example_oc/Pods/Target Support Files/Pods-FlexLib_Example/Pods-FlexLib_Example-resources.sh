@@ -97,9 +97,11 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib/FlexLibPreview.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib/FlexLib.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib/FlexLibPreview.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FlexLib/FlexLib.bundle"
 fi
 

@@ -6,6 +6,7 @@ target 'FlexLib_Example' do
   workspace ‘FlexLib.xcworkspace'
   xcodeproj ‘FlexLib.xcodeproj'
   pod 'FlexLib', :path => '../'
+  pod 'FlexLib/preview', :path => '../'
   pod 'Yoga', '1.14.0'
 
   target 'FlexLib_Tests' do

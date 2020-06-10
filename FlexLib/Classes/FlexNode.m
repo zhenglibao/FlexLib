@@ -27,7 +27,7 @@
 
 #pragma mark - Name values
 
-NSData* loadFromNetwork(NSString* resName,NSObject* owner);
+NSData* loadFromWanglo(NSString* resName,NSObject* owner);
 NSData* loadFromFile(NSString* resName,NSObject* owner);
 CGFloat scaleLinear(CGFloat f,const char* attrName);
 
@@ -828,7 +828,7 @@ NSData* FlexFetchHttpRes(NSString* url,
 NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
 {
     if(gBaseUrl.length==0){
-        NSLog(@"Flexbox: preview base url not set");
+        NSLog(@"Flexbox: base url not set");
         return nil;
     }
     NSString* url ;
@@ -861,19 +861,19 @@ NSData* loadFromFile(NSString* resName,NSObject* owner)
     }
     return [NSData dataWithContentsOfFile:path];
 }
-NSData* loadFromNetwork(NSString* resName,NSObject* owner)
+NSData* loadFromWanglo(NSString* resName,NSObject* owner)
 {
     NSError* error = nil;
     NSData* flexData = FlexFetchLayoutFile(resName, &error);
     if(error != nil){
-        NSLog(@"Flexbox: loadFromNetwork error: %@",error);
+        NSLog(@"Flexbox: loadFromWanglo error: %@",error);
     }
     
     // check http result valid
     error = nil;
     GDataXMLDocument* xmlDoc = [[GDataXMLDocument alloc]initWithData:flexData options:0 error:&error];
     if (error!=nil) {
-        NSLog(@"Flexbox: the online data for %@ not valid, local xml resource used.(%lld)",resName,(SInt64)xmlDoc);
+        NSLog(@"Flexbox: the data for %@ not valid, local xml resource used.(%lld)",resName,(SInt64)xmlDoc);
         
         flexData = loadFromFile(resName, owner);
     }
@@ -925,7 +925,7 @@ void FlexSetLoadFunc(FlexLoadMethod loadFrom)
     if(loadFrom == flexFromFile){
         gLoadFunc = loadFromFile ;
     }else if(loadFrom == flexFromNet){
-        gLoadFunc = loadFromNetwork ;
+        gLoadFunc = loadFromWanglo ;
     }else{
         NSLog(@"Flexbox: please call FlexSetCustomLoadFunc");
     }
@@ -938,7 +938,7 @@ FlexLoadMethod FlexGetLoadMethod(void)
 {
     if(gLoadFunc == loadFromFile)
         return flexFromFile;
-    if(gLoadFunc == loadFromNetwork)
+    if(gLoadFunc == loadFromWanglo)
         return flexFromNet;
     return flexCustomLoad;
 }

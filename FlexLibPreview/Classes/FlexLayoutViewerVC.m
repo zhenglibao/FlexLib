@@ -10,6 +10,7 @@
 #import "FlexLayoutViewerVC.h"
 #import "FlexBaseVC.h"
 #import "FlexUtils.h"
+#import "FlexPreviewUtil.h"
 
 
 @interface FlexViewer : FlexBaseVC
@@ -42,7 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = FlexLocalizeString(@"layoutVCTitle");
+    self.navigationItem.title = FlexPreviewLocalizeString(@"layoutVCTitle");
     
     
     _table.delegate = self;
@@ -52,7 +53,7 @@
 }
 -(NSBundle*)bundleForStrings
 {
-    return FlexBundle();
+    return FlexPreviewBundle();
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -146,7 +147,7 @@
     NSString* flexName = NSStringFromClass([FlexLayoutViewerVC class]);
     
     NSBundle *frameworkBundle = [NSBundle bundleForClass:[FlexLayoutViewerVC class]];
-    NSString *resourcePath = [frameworkBundle pathForResource:flexName ofType:@"xml" inDirectory:@"FlexLib.bundle"];
+    NSString *resourcePath = [frameworkBundle pathForResource:flexName ofType:@"xml" inDirectory:@"FlexLibPreview.bundle"];
     
     FlexLayoutViewerVC* vc = [[FlexLayoutViewerVC alloc]initWithFlexName:resourcePath];
     

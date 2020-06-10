@@ -674,7 +674,6 @@
 				D210B8AF20189AC900166DA7 /* FlexParentView.h in Headers */,
 				D210B8B020189AC900166DA7 /* FlexRootView.h in Headers */,
 				D210B8B120189AC900166DA7 /* FlexScrollView.h in Headers */,
-				93212FA122E9B6F4000EF0B9 /* FlexTableHeaderFooterView.h in Headers */,
 				D210B8B220189AC900166DA7 /* FlexSetPreviewVC.h in Headers */,
 				D210B8B320189AC900166DA7 /* FlexStyleMgr.h in Headers */,
 				D210B8B420189AC900166DA7 /* FlexTextView.h in Headers */,
@@ -853,10 +852,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FlexLib_Example/Pods-FlexLib_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FlexLib/FlexLibPreview.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FlexLib/FlexLib.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FlexLibPreview.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FlexLib.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -942,7 +943,6 @@
 			files = (
 				D210B85120189A7500166DA7 /* FlexBaseVC.m in Sources */,
 				D210B85720189A7500166DA7 /* FlexCustomBaseView.m in Sources */,
-				93212FA222E9B6F4000EF0B9 /* FlexTableHeaderFooterView.m in Sources */,
 				D210B87420189A7500166DA7 /* FlexUtils.m in Sources */,
 				D210B86C20189A7500166DA7 /* FlexStyleMgr.m in Sources */,
 				D210B86220189A7500166DA7 /* FlexNode.m in Sources */,

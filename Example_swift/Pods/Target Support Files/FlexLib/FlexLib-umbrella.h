@@ -10,6 +10,10 @@
 #endif
 #endif
 
+#import "FlexHttpVC.h"
+#import "FlexLayoutViewerVC.h"
+#import "FlexLibPreview.h"
+#import "FlexSetPreviewVC.h"
 #import "FlexBaseTableCell.h"
 #import "FlexBaseVC.h"
 #import "FlexCollectionCell.h"
@@ -17,14 +21,11 @@
 #import "FlexContainerView.h"
 #import "FlexCustomBaseView.h"
 #import "FlexFrameView.h"
-#import "FlexHttpVC.h"
-#import "FlexLayoutViewerVC.h"
 #import "FlexLib.h"
 #import "FlexModalView.h"
 #import "FlexNode.h"
 #import "FlexRootView.h"
 #import "FlexScrollView.h"
-#import "FlexSetPreviewVC.h"
 #import "FlexStyleMgr.h"
 #import "FlexTableHeaderFooterView.h"
 #import "FlexTextView.h"

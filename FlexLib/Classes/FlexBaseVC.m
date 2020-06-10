@@ -14,9 +14,6 @@
 #import "YogaKit/UIView+Yoga.h"
 #import "FlexUtils.h"
 #import "FlexScrollView.h"
-#import "FlexSetPreviewVC.h"
-#import "FlexLayoutViewerVC.h"
-#import "FlexHttpVC.h"
 #import "FlexNode.h"
 
 static void* gObserverFrame = &gObserverFrame;
@@ -242,17 +239,6 @@ static void* gObserverFrame = &gObserverFrame;
         }
     });
 }
--(void)previewSetting{
-    [FlexSetPreviewVC presentInVC:self];
-}
--(void)viewLayouts
-{
-    [FlexLayoutViewerVC presentInVC:self];
-}
--(void)viewOnlineResources
-{
-    [FlexHttpVC presentInVC:self];
-}
 -(CGFloat)getStatusBarHeight:(BOOL)portrait
 {
     if(IS_IPHONE){
@@ -330,20 +316,6 @@ static void* gObserverFrame = &gObserverFrame;
              [UIKeyCommand keyCommandWithInput:@"r"
                                  modifierFlags:UIKeyModifierCommand
                                         action:@selector(reloadFlexView)],
-             // Setting
-             [UIKeyCommand keyCommandWithInput:@"d"
-                                 modifierFlags:UIKeyModifierCommand
-                                        action:@selector(previewSetting)],
-             
-            // view layouts
-            [UIKeyCommand keyCommandWithInput:@"v"
-                                modifierFlags:UIKeyModifierControl
-                                       action:@selector(viewLayouts)],
-             
-             // view online resources
-             [UIKeyCommand keyCommandWithInput:@"e"
-                                 modifierFlags:UIKeyModifierControl
-                                        action:@selector(viewOnlineResources)],
             ];
 #else
     return @[];

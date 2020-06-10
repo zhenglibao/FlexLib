@@ -20,6 +20,7 @@
 #import "FrameVC.h"
 #import "TestCollectionViewVC.h"
 #import "TestFrameView.h"
+#import "FlexLibPreview.h"
 
 @interface FlexViewController ()
 {
