@@ -90,6 +90,7 @@
     rcFrame.origin.y = 100;
     rcFrame.size.height = 500;
     TestFrameView* frameview=[[TestFrameView alloc]initWithFlex:nil Frame:rcFrame Owner:nil];
+    frameview.autoresizingMask = 0;
     [self.view addSubview:frameview];
 }
 @end

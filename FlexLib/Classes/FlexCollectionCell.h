@@ -13,7 +13,7 @@
 
 @interface FlexCollectionCell : UICollectionViewCell
 
-@property(nonatomic,readonly) FlexRootView* rootView;
+@property(nonatomic,readonly) FlexRootView* _Nullable rootView;
 
 // 事件通知，content大小发生了变化
 @property(nonatomic,copy) void (^ _Nullable onContentSizeChanged)(CGSize newSize);
