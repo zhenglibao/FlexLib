@@ -30,40 +30,28 @@
                       Frame:(CGRect)frame
                       Owner:(NSObject*)owner
 {
-    self = [self initWithFrame:frame];
+    self = [super init];
     
     if(self){
-        if(owner == nil)
-            owner = self;
-        
         self.useFrame = YES;
+        self.frame = frame;
         
+        if(owner == nil){
+            owner = self;
+        }
         [self loadWithNodeFile:flexname Owner:owner];
         
         [self onInit];
     }
     return self;
 }
-- (void)dealloc
-{
-}
+
 -(FlexRootView*)rootView
 {
     return self;
 }
 - (void)onInit
 {
-}
-
-- (void)setFrame:(CGRect)frame
-{
-    CGSize oldSize = self.frame.size ;
-    
-    [super setFrame:frame];
-    
-    if (!self.inLayouting && !CGSizeEqualToSize(oldSize, frame.size)) {
-        [self setNeedsLayout:YES];
-    }
 }
 
 - (void)layout

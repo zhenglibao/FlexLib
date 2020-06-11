@@ -1,0 +1,26 @@
+PODS:
+  - FlexLib/osx (2.7.0):
+    - FlexLib/osx/no-arc (= 2.7.0)
+    - Yoga (= 1.14.0)
+  - FlexLib/osx/no-arc (2.7.0):
+    - Yoga (= 1.14.0)
+  - Yoga (1.14.0)
+
+DEPENDENCIES:
+  - FlexLib/osx (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Yoga
+
+EXTERNAL SOURCES:
+  FlexLib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FlexLib: 486a8a54659e81525e08d2a3dc98738c4f037f53
+  Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
+
+PODFILE CHECKSUM: ad9215e73668157388d1b5034be3984538d81db7
+
+COCOAPODS: 1.9.3

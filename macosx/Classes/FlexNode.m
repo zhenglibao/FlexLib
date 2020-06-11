@@ -1126,14 +1126,22 @@ static NSAttributedString* createAttributedImage(FlexNode* node,NSObject* owner)
                 CGFloat y = [ary[1]floatValue];
                 CGFloat w = [ary[2]floatValue];
                 CGFloat h = [ary[3]floatValue];
-                attach.bounds = CGRectMake(x, y, w, h);
+                if (@available(macOS 10.11, *)) {
+                    attach.bounds = CGRectMake(x, y, w, h);
+                } else {
+                    // Fallback on earlier versions
+                }
             }
         }else if( [attr.name isEqualToString:@"size"] ){
             NSArray* ary = [attr.value componentsSeparatedByString:@"/"];
             if(ary.count>=2){
                 CGFloat w = [ary[0]floatValue];
                 CGFloat h = [ary[1]floatValue];
-                attach.bounds = CGRectMake(0, 0, w, h);
+                if (@available(macOS 10.11, *)) {
+                    attach.bounds = CGRectMake(0, 0, w, h);
+                } else {
+                    // Fallback on earlier versions
+                }
             }
         }
     }

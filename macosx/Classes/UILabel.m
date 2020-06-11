@@ -47,7 +47,11 @@ FLEXSET(fontSize)
 }
 FLEXSET(linesNum)
 {
-    self.maximumNumberOfLines = [sValue integerValue];
+    if (@available(macOS 10.11, *)) {
+        self.maximumNumberOfLines = [sValue integerValue];
+    } else {
+        NSLog(@"maximumNumberOfLines only available for 10.11 above");
+    }
 }
 
 FLEXSET(color)

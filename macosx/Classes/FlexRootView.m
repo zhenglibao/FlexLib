@@ -261,6 +261,8 @@ static NSInteger _compareInputView(NSView * _Nonnull f,
         _safeArea = NSEdgeInsetsMake(0, 0, 0, 0);
         _lastConfigFrame = CGRectZero;
         _bChildDirty = NO;
+        
+        [self enableFlexLayout:NO];
     }
     return self;
 }
@@ -489,8 +491,6 @@ static NSInteger _compareInputView(NSView * _Nonnull f,
         return;
     }
     
-    //NSLog(@"Flexbox: FlexRootView layouting");
-
     _bInLayouting = YES;
     _lastConfigFrame = _thisConfigFrame;
     
@@ -562,6 +562,7 @@ static NSInteger _compareInputView(NSView * _Nonnull f,
 
 -(void)layoutAnimation:(NSTimeInterval)duration
 {
+    NSLog(@"not support animation for osx");
 //    self.beginLayout = ^{
 //        [NSView beginAnimations:nil context:nil];
 //        [NSView setAnimationDuration:duration];

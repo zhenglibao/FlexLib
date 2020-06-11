@@ -53,7 +53,11 @@ FLEXSET(trackFillColor)
     NSColor* clr = colorFromString(sValue, owner);
     
     if (clr) {
-        self.trackFillColor = clr;
+        if (@available(macOS 10.12.2, *)) {
+            self.trackFillColor = clr;
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
 FLEXSETINT(numberOfTickMarks)

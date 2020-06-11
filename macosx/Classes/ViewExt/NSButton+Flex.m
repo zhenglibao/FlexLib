@@ -31,19 +31,6 @@ static NameValue _bezelStyle[] =
     {"inline",NSBezelStyleInline},
 };
 
-static NameValue _cellImagePosition[] =
-{
-    {"noImage",NSNoImage},
-    {"imageOnly",NSImageOnly},
-    {"imageLeft",NSImageLeft},
-    {"imageRight",NSImageRight},
-    {"imageBelow",NSImageBelow},
-    {"imageAbove",NSImageAbove},
-    {"imageOverlaps",NSImageOverlaps},
-    {"imageLeading",NSImageLeading},
-    {"imageTrailing",NSImageTrailing},
-};
-
 static NameValue _scaling[] =
 {
     {"proportDown", NSImageScaleProportionallyDown},
@@ -85,10 +72,6 @@ FLEXSET(alternateTitle)
     self.alternateTitle = sValue;
 }
 
-FLEXSETBOOL(springLoaded)
-
-FLEXSETINT(maxAcceleratorLevel)
-
 FLEXSETENUM(bezelStyle, _bezelStyle)
 
 FLEXSETBOOL(bordered)
@@ -97,17 +80,11 @@ FLEXSETBOOL(transparent)
 
 FLEXSETBOOL(showsBorderOnlyWhileMouseInside)
 
-FLEXSETENUM(imagePosition, _cellImagePosition)
-
 FLEXSET(imageScaling)
 {
     const char* c =  [sValue cStringUsingEncoding:NSASCIIStringEncoding];
     self.imageScaling = (NSImageScaling)String2Int(c, _scaling, sizeof(_scaling)/sizeof(NameValue));
 }
-
-FLEXSETBOOL(imageHugsTitle)
-
-FLEXSETCLR(bezelColor)
 
 FLEXSET(contentTintColor)
 {

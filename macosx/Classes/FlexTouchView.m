@@ -115,7 +115,7 @@
 {
     if(bActive){
         _oldAlpha = self.alphaValue ;
-        _bgColor = self.layer.backgroundColor ;
+        _bgColor = [NSColor colorWithCGColor:self.layer.backgroundColor] ;
         self.alphaValue = _activeOpacity;
         if(_underlayColor != nil)
             self.layer.backgroundColor = [_underlayColor CGColor] ;

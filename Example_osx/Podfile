@@ -1,0 +1,4 @@
+target 'FlexOsxDemo' do
+  xcodeproj ‘FlexOsxDemo.xcodeproj'
+  pod 'FlexLib/osx', :path => '../'
+end

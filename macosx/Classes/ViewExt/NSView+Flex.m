@@ -235,9 +235,10 @@ FLEXSET(layerContentsCenter)
 }
 FLEXSET(layerContentsFormat)
 {
-    if (@available(iOS 10.0, *)) {
+    if (@available(macOS 10.12, *)) {
         self.layer.contentsFormat = sValue;
     } else {
+        // Fallback on earlier versions
     }
 }
 FLEXSET(layerMinificationFilter)
