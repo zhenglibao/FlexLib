@@ -29,6 +29,7 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.10'
   s.default_subspec = 'standard'
   
   s.subspec 'standard' do |ss|
@@ -58,5 +59,23 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
     }
   
     ss.dependency 'FlexLib/standard'
+  end
+
+  s.subspec 'osx' do |ss|
+    ss.source_files = 'macosx/Classes/**/*'
+    ss.resource_bundles = {
+       'FlexLib' => ['macosx/Assets/*']
+    }
+  
+    ss.dependency 'Yoga', '1.14.0'
+    ss.library = 'xml2'
+    ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
+  
+    non_arc_files   = 'macosx/Classes/GDataXMLNode.{h,m}'
+    ss.exclude_files = non_arc_files
+    ss.subspec 'no-arc' do |sna|
+      sna.requires_arc = false
+      sna.source_files = non_arc_files
+    end  
   end
 end
