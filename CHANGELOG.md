@@ -3,7 +3,8 @@
 
 ---
 ## 2.7.0
-解决AppStore审核期间苹果认为包含的热更新问题，将debug模式下的预览等功能拆分为独立的FlexLib/preview组件
+1.解决AppStore审核期间苹果认为包含的热更新问题，将debug模式下的预览等功能拆分为独立的FlexLib/preview组件
+2.增加Flexlib/osx支持mac版的布局
 
 ## 2.6.0
 1.性能优化后的稳定版本

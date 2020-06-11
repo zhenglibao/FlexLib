@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'FlexLib'
   s.version          = '2.7.0'
-  s.summary          = 'An obj-c flex layout framework for IOS'
+  s.summary          = 'An obj-c flex layout framework for IOS & mac'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -22,12 +22,10 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
                        DESC
 
   s.homepage         = 'https://github.com/zhenglibao/FlexLib'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '798393829@qq.com' => '798393829@qq.com' }
   s.source           = { :git => 'https://github.com/zhenglibao/FlexLib.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
   s.default_subspec = 'standard'
