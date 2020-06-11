@@ -266,7 +266,10 @@ static NSInteger _compareInputView(NSView * _Nonnull f,
     }
     return self;
 }
-
+- (BOOL)isFlipped
+{
+    return YES;
+}
 -(NSView*)topSubView
 {
     if(self.subviews.count>0){
@@ -571,6 +574,23 @@ static NSInteger _compareInputView(NSView * _Nonnull f,
 //    self.endLayout = ^{
 //        [NSView commitAnimations];
 //    };
+}
+
+-(NSScrollView*)scrollView{
+    NSScrollView* scrollView = (NSScrollView*) self.superview ;
+    
+    while (scrollView!=nil) {
+        if([scrollView isKindOfClass:[NSScrollView class]]){
+            return scrollView;
+        }
+        scrollView = (NSScrollView*) scrollView.superview;
+    }
+    return scrollView;
+}
+
+- (void)scrollWheel:(NSEvent *)event
+{
+    [[self scrollView]scrollWheel:event];
 }
 
 @end

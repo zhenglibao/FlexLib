@@ -25,6 +25,11 @@
 
 @implementation FlexScrollView
 
+- (BOOL)isFlipped
+{
+    return YES;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -39,17 +44,26 @@
         _flexRootView.onDidLayout = ^{
             [weakSelf onContentViewDidLayout];
         };
+        _flexRootView.wantsLayer = YES;
         _flexRootView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        self.verticalLineScroll = 10;
+        self.horizontalLineScroll = 10;
+        self.verticalPageScroll = 50;
+        self.horizontalPageScroll = 50;
+        self.hasVerticalScroller = YES;
+        
+        [self.contentView setPostsFrameChangedNotifications:YES];
+        self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
         self.documentView = _flexRootView;
     }
     return self;
 }
 
-- (void)setFrameSize:(NSSize)newSize
+- (void)scrollWheel:(NSEvent *)event
 {
-    [super setFrameSize:newSize];
-    
-     [_flexRootView setNeedsLayout:YES];
+    NSLog(@"scrollWheel");
+    //[super scrollWheel:event];
 }
 
 - (void)dealloc
@@ -66,6 +80,7 @@
 
 -(void)onContentViewDidLayout
 {
+    
 }
 
 

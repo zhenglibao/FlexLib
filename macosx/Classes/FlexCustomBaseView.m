@@ -22,6 +22,11 @@
 
 @implementation FlexCustomBaseView
 
+- (BOOL)isFlipped
+{
+    return YES;
+}
+
 -(instancetype)init
 {
     self = [super init];

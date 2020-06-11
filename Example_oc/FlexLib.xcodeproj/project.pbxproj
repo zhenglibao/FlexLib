@@ -1123,7 +1123,7 @@
 				GCC_PREFIX_HEADER = "FlexLib/FlexLib-Prefix.pch";
 				INFOPLIST_FILE = "FlexLib/FlexLib-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hpbr.bosszhipin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hpbr.flexlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "df643b45-037d-4c9d-8d9b-792927d94a91";
 				PROVISIONING_PROFILE_SPECIFIER = zhipinDev;
@@ -1142,7 +1142,7 @@
 				GCC_PREFIX_HEADER = "FlexLib/FlexLib-Prefix.pch";
 				INFOPLIST_FILE = "FlexLib/FlexLib-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hpbr.bosszhipin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hpbr.flexlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "df643b45-037d-4c9d-8d9b-792927d94a91";
 				PROVISIONING_PROFILE_SPECIFIER = zhipinDev;
