@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## FlexLib
+## FlexLibOsx
 
 Copyright (c) 2017 zhenglibao <798393829@qq.com>
 

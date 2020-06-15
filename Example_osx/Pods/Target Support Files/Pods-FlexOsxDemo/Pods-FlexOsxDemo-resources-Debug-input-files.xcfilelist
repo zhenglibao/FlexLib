@@ -1,2 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-FlexOsxDemo/Pods-FlexOsxDemo-resources.sh
-${PODS_CONFIGURATION_BUILD_DIR}/FlexLib/FlexLib.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/FlexLibOsx/FlexLib.bundle
