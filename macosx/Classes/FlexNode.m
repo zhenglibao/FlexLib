@@ -484,8 +484,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
         for(FlexNode* node in children){
             NSView* child = [node buildViewTree:owner RootView:rootView] ;
             
-            [view addSubview:child];
-            
+            [view addSubviewFromXml:child];
         }
     }
     

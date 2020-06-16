@@ -252,6 +252,11 @@ static NSInteger _compareInputView(NSView * _Nonnull f,
 @end
 @implementation FlexRootView
 
+- (BOOL)isFlipped
+{
+    return YES;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -583,34 +588,6 @@ static NSInteger _compareInputView(NSView * _Nonnull f,
         scrollView = (NSScrollView*) scrollView.superview;
     }
     return scrollView;
-}
-
-#pragma mark - 事件处理
-
-- (void)mouseDown:(NSEvent *)event
-{
-}
-- (void)mouseDragged:(NSEvent *)event
-{
-}
-- (void)mouseUp:(NSEvent *)event
-{
-}
-
-- (void)scrollWheel:(NSEvent *)event
-{
-}
-- (void)cursorUpdate:(NSEvent *)event
-{
-}
-
-- (BOOL)acceptsFirstResponder
-{
-    return NO;
-}
-- (BOOL)acceptsFirstMouse:(NSEvent *)event
-{
-    return NO;
 }
 
 @end

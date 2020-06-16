@@ -25,6 +25,11 @@
 
 @implementation FlexScrollView
 
+- (BOOL)isFlipped
+{
+    return YES;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -42,7 +47,9 @@
         _flexRootView.wantsLayer = YES;
         _flexRootView.translatesAutoresizingMaskIntoConstraints = NO;
         
+        self.rulersVisible = YES;
         self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
+        self.autohidesScrollers = NO;
         self.documentView = _flexRootView;
     }
     return self;
@@ -61,7 +68,7 @@
 
 -(void)onContentViewDidLayout
 {
-    
+    self.documentView = _flexRootView;
 }
 
 
@@ -98,14 +105,11 @@ if(from.prop.unit==YGUnitPoint||    \
     COPYYGVALUE(paddingVertical)
     COPYYGVALUE(padding)
 }
--(void)addSubview:(NSView *)view
+
+-(void)addSubviewFromXml:(NSView*)view
 {
-    if ([view isKindOfClass:[NSClipView class]]) {
-        [super addSubview:view];
-    } else {
-        [_flexRootView addSubview:view];
-        [_flexRootView registSubView:view];
-    }
+    [_flexRootView addSubview:view];
+    [_flexRootView registSubView:view];
 }
 
 FLEXSET(horzScroll)
@@ -114,7 +118,7 @@ FLEXSET(horzScroll)
     self.horizontal = b ;
     
     _flexRootView.flexibleWidth = b;
-    [self setHasHorizontalRuler:b];
+    self.hasHorizontalScroller = b;
 }
 FLEXSET(vertScroll)
 {
@@ -122,5 +126,10 @@ FLEXSET(vertScroll)
     self.vertical = b ;
     
     _flexRootView.flexibleHeight = b;
-    [self setHasVerticalRuler:b];}
+    self.hasVerticalScroller = b;
+    
+}
+FLEXSETBOOL(hasVerticalRuler)
+FLEXSETBOOL(hasHorizontalRuler)
+
 @end

@@ -54,6 +54,11 @@ static const void *kFlexViewAttrAssociatedKey = &kFlexViewAttrAssociatedKey;
 {
 }
 
+-(void)addSubviewFromXml:(NSView*)view
+{
+    [self addSubview:view];
+}
+
 #pragma mark - attribute
 
 FLEXSET(bgColor)

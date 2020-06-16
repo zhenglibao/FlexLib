@@ -19,5 +19,6 @@
 @property(nonatomic,assign) BOOL horizontal;
 @property(nonatomic,assign) BOOL vertical;
 
+-(void)addSubviewFromXml:(NSView*)view;
 
 @end

@@ -44,5 +44,7 @@
 //父view的frame发生了改变
 -(void)superFrameChanged;
 
+-(void)addSubviewFromXml:(NSView*)view;
+
 @end
 
