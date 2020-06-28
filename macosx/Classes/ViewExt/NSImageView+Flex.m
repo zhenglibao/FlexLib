@@ -50,8 +50,7 @@ static NameValue _frameStyle[] =
 
 FLEXSET(source)
 {
-    NSImage* img = [[owner bundleForImages]imageForResource:sValue];
-    self.image = img ;
+    self.image = FlexLoadImage(sValue, owner);
 }
 
 FLEXSETBOOL(editable)

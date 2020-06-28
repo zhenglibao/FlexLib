@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		D2866035238668C300FBFA98 /* chat_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2866030238668C300FBFA98 /* chat_phone@2x.png */; };
 		D2866036238668C300FBFA98 /* chat_phone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2866031238668C300FBFA98 /* chat_phone@3x.png */; };
 		D2866037238668C300FBFA98 /* ViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2866032238668C300FBFA98 /* ViewController.xml */; };
+		D2E75935249894F900A2D3A0 /* FlexXmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E75934249894F900A2D3A0 /* FlexXmlView.m */; };
+		D2E75937249899CB00A2D3A0 /* FlexExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E75936249899CB00A2D3A0 /* FlexExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		D2866031238668C300FBFA98 /* chat_phone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_phone@3x.png"; sourceTree = "<group>"; };
 		D2866032238668C300FBFA98 /* ViewController.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ViewController.xml; sourceTree = "<group>"; };
 		D2866033238668C300FBFA98 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D2E75933249894F900A2D3A0 /* FlexXmlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexXmlView.h; sourceTree = "<group>"; };
+		D2E75934249894F900A2D3A0 /* FlexXmlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlexXmlView.m; sourceTree = "<group>"; };
+		D2E75936249899CB00A2D3A0 /* FlexExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexExtensions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +107,9 @@
 				D28660232386656500FBFA98 /* Info.plist */,
 				D28660242386656500FBFA98 /* main.m */,
 				D28660262386656500FBFA98 /* FlexOsxDemo.entitlements */,
+				D2E75933249894F900A2D3A0 /* FlexXmlView.h */,
+				D2E75934249894F900A2D3A0 /* FlexXmlView.m */,
+				D2E75936249899CB00A2D3A0 /* FlexExtensions.m */,
 			);
 			path = FlexOsxDemo;
 			sourceTree = "<group>";
@@ -234,6 +242,8 @@
 				D2866034238668C300FBFA98 /* ViewController.m in Sources */,
 				D28660252386656500FBFA98 /* main.m in Sources */,
 				D286601D2386656300FBFA98 /* AppDelegate.m in Sources */,
+				D2E75937249899CB00A2D3A0 /* FlexExtensions.m in Sources */,
+				D2E75935249894F900A2D3A0 /* FlexXmlView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

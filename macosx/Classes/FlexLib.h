@@ -23,4 +23,5 @@
 #import "FlexTextView.h"
 #import "UIView.h"
 #import "UILabel.h"
+#import "UITextField.h"
 #import "UIImageView.h"

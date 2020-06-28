@@ -23,6 +23,7 @@
 typedef NSData* (*FlexLoadFunc)(NSString* flexName,NSObject* owner);
 typedef CGFloat (*FlexScaleFunc)(CGFloat f,const char* attrName);
 typedef void (*FlexMapColor)(int* r,int* g,int* b,int* a);
+typedef NSImage* (*FlexImgLoadFunc) (NSString* imgName,NSObject* owner);
 
 typedef enum{
     flexFromFile = 0,
@@ -94,6 +95,12 @@ void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 void FlexSetMapColor(FlexMapColor mapFunc);
 FlexMapColor FlexGetMapColor(void);
 
+/// 设置自定义的图像加载方法，如果为nil则恢复默认的加载方法
+void FlexSetImgLoadFunc(FlexImgLoadFunc imgLoadFunc);
+FlexImgLoadFunc FlexGetImgLoadFunc(void);
+NSImage* FlexLoadImage(NSString* imgName,NSObject* owner);
+
+
 @interface FlexNode : NSObject<NSCoding>
 
 @property (nonatomic, strong) NSString* viewClassName;
@@ -127,7 +134,7 @@ FlexMapColor FlexGetMapColor(void);
 -(BOOL)needBindVariable;
 
 // owner custom create view
--(NSView*)createView:(Class)cls Name:(NSString*)name;
+-(NSView*)createView:(NSString*)clsName Name:(NSString*)name;
 -(void)postCreateView:(NSView*)view;
 
 // multi-language support

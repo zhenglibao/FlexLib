@@ -248,3 +248,27 @@ FlexMapColor FlexGetMapColor(void)
 {
     return gMapColor;
 }
+
+static NSImage* loadImageResource(NSString* imgName,NSObject* owner)
+{
+    return [[owner bundleForRes]imageForResource:imgName];
+}
+
+static FlexImgLoadFunc gImgLoadFunc = loadImageResource;
+
+void FlexSetImgLoadFunc(FlexImgLoadFunc imgLoadFunc)
+{
+    if (imgLoadFunc==NULL) {
+        gImgLoadFunc = loadImageResource;
+    } else {
+        gImgLoadFunc = imgLoadFunc;
+    }
+}
+FlexImgLoadFunc FlexGetImgLoadFunc(void)
+{
+    return gImgLoadFunc;
+}
+NSImage* FlexLoadImage(NSString* imgName,NSObject* owner)
+{
+    return gImgLoadFunc(imgName,owner);
+}

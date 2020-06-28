@@ -57,6 +57,17 @@ FLEXSET(value)
 {
     self.string = sValue;
 }
+FLEXSETBOOL(richText)
+FLEXSETBOOL(importsGraphics)
+FLEXSETBOOL(drawsBackground)
+FLEXSETBOOL(fieldEditor)
+FLEXSETBOOL(rulerVisible)
+FLEXSETBOOL(smartInsertDeleteEnabled)
+FLEXSETBOOL(allowsUndo)
+FLEXSETBOOL(allowsDocumentBackgroundColorChange)
+FLEXSETBOOL(usesRuler)
+FLEXSETBOOL(usesInspectorBar)
+FLEXSETBOOL(displaysLinkToolTips)
 
 @end
 

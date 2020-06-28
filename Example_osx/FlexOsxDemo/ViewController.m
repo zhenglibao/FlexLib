@@ -7,11 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "FlexXmlView.h"
 #import "FlexLib.h"
 
 @interface ViewController ()
 
-@property(nonatomic,strong) UILabel* lbName;
+@property(nonatomic,strong) FlexXmlView* flexView;
 
 @end
 
@@ -20,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view;
+    
+    NSString* xmlPath = @"/Users/zhenglibao/Downloads/BZAuthLoginController.xml";
+    [self.flexView loadXml:xmlPath];
 }
 
 
@@ -28,9 +33,9 @@
 
     // Update the view, if already loaded.
 }
--(void)testAction
+- (void)viewDidAppear
 {
-    NSLog(@"test");
+    [super viewDidAppear];
 }
 
 @end

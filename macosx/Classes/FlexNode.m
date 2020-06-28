@@ -383,20 +383,20 @@ void FlexApplyLayoutParam(YGLayout* layout,
     if( self.viewClassName==nil){
         return nil;
     }
-    Class cls = NSClassFromString(self.viewClassName) ;
-    if(cls == nil){
-        NSLog(@"Flexbox: class %@ not found.", self.viewClassName);
-        return nil;
-    }
+    NSView* view;
+    view = [owner createView:self.viewClassName Name:self.name];
     
-    if(![cls isSubclassOfClass:[NSView class]]){
-        NSLog(@"Flexbox: %@ is not child class of NSView.", self.viewClassName);
-        return nil;
-    }
-    
-    NSView* view = [owner createView:cls Name:self.name];
-    if(view == nil)
-    {
+    if (view==nil) {
+        Class cls = NSClassFromString(self.viewClassName) ;
+        if(cls == nil){
+            NSLog(@"Flexbox: class %@ not found.", self.viewClassName);
+            return nil;
+        }
+        
+        if(![cls isSubclassOfClass:[NSView class]]){
+            NSLog(@"Flexbox: %@ is not child class of NSView.", self.viewClassName);
+            return nil;
+        }
         @try{
             view = [[cls alloc]init];
             if(view == nil)
@@ -989,7 +989,7 @@ float FlexGetScaleOffset(void)
 {
     return YES;
 }
--(NSView*)createView:(Class)cls
+-(NSView*)createView:(NSString*)clsName
                 Name:(NSString*)name
 {
     return nil;

@@ -20,10 +20,15 @@
         self.bezeled = NO;
         self.editable = NO;
         self.bordered = NO;
+        self.backgroundColor = [NSColor clearColor];
     }
     return self;
 }
-
+- (NSSize)sizeThatFits:(NSSize)size
+{
+    NSSize sz = [super sizeThatFits:size];
+    return sz;
+}
 
 FLEXSET(bgColor)
 {
