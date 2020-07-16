@@ -18,6 +18,7 @@
         self.editable = YES;
         self.selectable = YES;
         self.usesSingleLineMode = YES;
+        self.focusRingType = NSFocusRingTypeNone;
         if (@available(macOS 10.11, *)) {
             self.maximumNumberOfLines = 1;
         }

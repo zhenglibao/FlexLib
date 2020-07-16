@@ -109,6 +109,11 @@ int NSString2GroupInt(NSString* s,
                       NameValue table[],
                       int total);
 
+// 在表中查询int值，返回对应的字符串,未找到的话返回nil
+NSString* Int2String(int value,
+                       NameValue table[],
+                       int total);
+
 // 字符串转换成颜色值，格式：black or #rrggbb or #aarrggbb
 NSColor* colorFromString(NSString* clr,NSObject* owner);
 

@@ -152,6 +152,17 @@ NSFont* fontFromString(NSString* fontStr)
     return font;
 }
 
+NSString* Int2String(int value,
+                     NameValue table[],
+                     int total)
+{
+    for (int i=0; i<total; i++) {
+        if (value==table[i].value) {
+            return [[NSString alloc]initWithUTF8String:table[i].name];
+        }
+    }
+    return nil;
+}
 
 int String2Int(const char* s,
                NameValue table[],

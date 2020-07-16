@@ -405,12 +405,11 @@ static NSInteger _compareInputView(NSView * _Nonnull f,
     if( context == gObserverHidden ){
         
         BOOL n = [[change objectForKey:@"new"] boolValue];
-        if (n) {
-            [object setLayoutAttr:@"display" Value:@"none"];
-        } else {
-            [object setLayoutAttr:@"display" Value:@"flex"];
+        BOOL o = [[change objectForKey:@"old"] boolValue];
+        if(n!=o){
+            [object enableFlexLayout:!n];
+            [object markDirty];
         }
-        [object markDirty];
         
     }else if( context == gObserverText ){
         

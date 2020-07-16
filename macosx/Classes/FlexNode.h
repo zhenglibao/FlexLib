@@ -66,6 +66,11 @@ void FlexApplyLayoutParam(YGLayout* layout,
                           NSString* key,
                           NSString* value);
 
+// 获取布局属性
+NSString* FlexGetLayoutParam(YGLayout* layout,
+                             NSString* key);
+
+
 ///////////////////////////////////////
 //预览设置
 //设置baseUrl

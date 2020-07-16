@@ -135,6 +135,19 @@ static YGValue String2YGValue(const char* s,
     }
     return YGPointValue(ScaleSize(s,attrName));
 }
+static NSString* YGValue2String(YGValue value)
+{
+    if (value.unit == YGUnitUndefined) {
+        return @"undefined";
+    } else if(value.unit==YGUnitPoint){
+        return [NSString stringWithFormat:@"%f",value.value];
+    } else if(value.unit==YGUnitPercent){
+        return [NSString stringWithFormat:@"%f%%",value.value];
+    } else if(value.unit==YGUnitAuto){
+        return @"auto";
+    }
+    return @"";
+}
 
 NSString* FlexLocalizeValue(NSString* value,
                             NSObject* owner)
@@ -309,6 +322,94 @@ SETENUMVALUE(display,_display,YGDisplay);
     SETNUMVALUE(aspectRatio);
     
     NSLog(@"Flexbox: not supported layout attr - %@",key);
+}
+
+NSString* FlexGetLayoutParam(YGLayout* layout,
+                             NSString* key)
+{
+        const char* k = [key cStringUsingEncoding:NSASCIIStringEncoding];
+        
+     
+#define GETENUMVALUE(item,table,type)      \
+    if(strcmp(k,#item)==0)                \
+    {                                        \
+        return Int2String(layout.item,table,sizeof(table)/sizeof(NameValue));\
+    }                                        \
+
+#define GETYGVALUE(item)       \
+    if(strcmp(k,#item)==0)          \
+    {                               \
+        return YGValue2String(layout.item);\
+    }                               \
+
+#define GETNUMVALUE(item)       \
+    if(strcmp(k,#item)==0)          \
+    {                               \
+        return [NSString stringWithFormat:@"%f",layout.item];\
+    }
+    
+    GETENUMVALUE(direction,_direction,YGDirection);
+    GETENUMVALUE(flexDirection,_flexDirection,YGFlexDirection);
+    GETENUMVALUE(justifyContent,_justify,YGJustify);
+    GETENUMVALUE(alignContent,_align,YGAlign);
+    GETENUMVALUE(alignItems,_align,YGAlign);
+    GETENUMVALUE(alignSelf,_align,YGAlign);
+    GETENUMVALUE(position,_positionType,YGPositionType);
+    GETENUMVALUE(flexWrap,_wrap,YGWrap);
+    GETENUMVALUE(overflow,_overflow,YGOverflow);
+    GETENUMVALUE(display,_display,YGDisplay);
+
+        GETNUMVALUE(flex);
+        GETNUMVALUE(flexGrow);
+        GETNUMVALUE(flexShrink);
+        
+        GETYGVALUE(flexBasis);
+        
+        GETYGVALUE(left);
+        GETYGVALUE(top);
+        GETYGVALUE(right);
+        GETYGVALUE(bottom);
+        GETYGVALUE(start);
+        GETYGVALUE(end);
+
+        GETYGVALUE(marginLeft);
+        GETYGVALUE(marginTop);
+        GETYGVALUE(marginRight);
+        GETYGVALUE(marginBottom);
+        GETYGVALUE(marginStart);
+        GETYGVALUE(marginEnd);
+        GETYGVALUE(marginHorizontal);
+        GETYGVALUE(marginVertical);
+        GETYGVALUE(margin);
+        
+        GETYGVALUE(paddingLeft);
+        GETYGVALUE(paddingTop);
+        GETYGVALUE(paddingRight);
+        GETYGVALUE(paddingBottom);
+        GETYGVALUE(paddingStart);
+        GETYGVALUE(paddingEnd);
+        GETYGVALUE(paddingHorizontal);
+        GETYGVALUE(paddingVertical);
+        GETYGVALUE(padding);
+    
+        GETNUMVALUE(borderLeftWidth);
+        GETNUMVALUE(borderTopWidth);
+        GETNUMVALUE(borderRightWidth);
+        GETNUMVALUE(borderBottomWidth);
+        GETNUMVALUE(borderStartWidth);
+        GETNUMVALUE(borderEndWidth);
+        GETNUMVALUE(borderWidth);
+        
+        GETYGVALUE(width);
+        GETYGVALUE(height);
+        GETYGVALUE(minWidth);
+        GETYGVALUE(minHeight);
+        GETYGVALUE(maxWidth);
+        GETYGVALUE(maxHeight);
+        
+        GETNUMVALUE(aspectRatio);
+    
+    return @"";
 }
 
 //增加对单一flex属性的支持，相当于同时设置flexGrow和flexShrink
