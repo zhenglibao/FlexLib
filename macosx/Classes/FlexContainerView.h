@@ -9,6 +9,8 @@
 
 #import <AppKit/AppKit.h>
 
-@interface FlexContainerView : NSView
+#import "UIView.h"
+
+@interface FlexContainerView : UIView
 
 @end
