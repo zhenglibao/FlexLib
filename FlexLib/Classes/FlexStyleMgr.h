@@ -26,6 +26,12 @@
 
 -(NSArray<FlexAttr*>*)getStyleByRefPath:(NSString*)ref;
 
+// 获取样式
+-(NSArray<FlexAttr*>*)getClassStyleByName:(NSString*)classStyleName;
+
+-(BOOL)loadClassStyle:(NSString*)classStyleFilePath;
+-(void)removeAllClassStyles;
+
 +(instancetype)instance;
 
 @end

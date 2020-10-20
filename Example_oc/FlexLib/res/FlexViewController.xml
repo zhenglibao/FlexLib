@@ -62,8 +62,8 @@
                 attr="@:system/buttonText,text:FrameVC"/>
             </FlexTouchView>
             <FlexTouchView onPress="onExplorerFlex" layout="@:system/button" attr="@:system/buttonAttr">
-                <UILabel
-                attr="@:system/buttonText,text:Online Flex Explorer"/>
+                <UILabel class="buttonText"
+                attr="text:Online Flex Explorer"/>
             </FlexTouchView>
         </UIView>
 

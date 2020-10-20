@@ -42,6 +42,8 @@
 
 -(BOOL)loadFromFile:(NSString*)stylePath;
 
+-(void)removeAll;
+
 -(NSArray*)getStyleByName:(NSString*)styleName;
 
 @end
@@ -149,6 +151,11 @@
     return YES;
 }
 
+-(void)removeAll
+{
+    [_stylesByName removeAllObjects];
+}
+
 +(NSString*)getStyleCachePath:(NSString*)styleName
 {
     NSString* sFilePath = [FlexNode getCacheDir];
@@ -186,6 +193,7 @@ static FlexStyleMgr* _instance=nil;
 @interface FlexStyleMgr()
 {
     NSMutableDictionary<NSString*,FlexStyleGroup*>* _files;
+    FlexStyleGroup* _globalClassStyle;      // 全局样式表
 }
 @end
 
@@ -196,6 +204,7 @@ static FlexStyleMgr* _instance=nil;
     self = [super init];
     if(self){
         _files = [NSMutableDictionary dictionary];
+        _globalClassStyle = [[FlexStyleGroup alloc]init];
     }
     return self;
 }
@@ -270,5 +279,19 @@ static FlexStyleMgr* _instance=nil;
         }
     }
     return [NSArray array];
+}
+
+-(NSArray<FlexAttr*>*)getClassStyleByName:(NSString*)classStyleName
+{
+    return [_globalClassStyle getStyleByName:classStyleName];
+}
+
+-(BOOL)loadClassStyle:(NSString*)classStyleFilePath
+{
+    return [_globalClassStyle loadFromFile:classStyleFilePath];
+}
+-(void)removeAllClassStyles
+{
+    [_globalClassStyle removeAll];
 }
 @end

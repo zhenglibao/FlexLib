@@ -21,6 +21,7 @@
 #define VIEWCLSNAME     @"viewClsName"
 #define NAME            @"name"
 #define ONPRESS         @"onPress"
+#define CLASSNAME       @"className"
 #define LAYOUTPARAM     @"layoutParam"
 #define VIEWATTRS       @"viewAttrs"
 #define CHILDREN        @"children"
@@ -357,6 +358,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
         _viewClassName = [coder decodeObjectForKey:VIEWCLSNAME];
         _name = [coder decodeObjectForKey:NAME];
         _onPress = [coder decodeObjectForKey:ONPRESS];
+        _className = [coder decodeObjectForKey:CLASSNAME];
         _layoutParams = [coder decodeObjectForKey:LAYOUTPARAM];
         _viewAttrs = [coder decodeObjectForKey:VIEWATTRS];
         _children = [coder decodeObjectForKey:CHILDREN];
@@ -368,6 +370,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     [aCoder encodeObject:_viewClassName forKey:VIEWCLSNAME];
     [aCoder encodeObject:_name forKey:NAME];
     [aCoder encodeObject:_onPress forKey:ONPRESS];
+    [aCoder encodeObject:_className forKey:CLASSNAME];
     [aCoder encodeObject:_layoutParams forKey:LAYOUTPARAM];
     [aCoder encodeObject:_viewAttrs forKey:VIEWATTRS];
     [aCoder encodeObject:_children forKey:CHILDREN];
@@ -463,6 +466,20 @@ void FlexApplyLayoutParam(YGLayout* layout,
             }
         }
     }];
+    
+    //配置样式
+    {
+        NSString* className = self.viewClassName;
+        if (self.className.length>0) {
+            className = self.className;
+        }
+        NSArray<FlexAttr*>* styles = [[FlexStyleMgr instance]getClassStyleByName:className];
+        if (styles!=nil && styles.count>0) {
+            for (FlexAttr* attr in styles) {
+                FlexSetViewAttr(view, attr.name, attr.value, owner);
+            }
+        }
+    }
     
     if(self.viewAttrs.count > 0){
         NSArray<FlexAttr*>* attrParam = self.viewAttrs ;
@@ -621,6 +638,12 @@ void FlexApplyLayoutParam(YGLayout* layout,
     GDataXMLNode* onpress = [element attributeForName:@"onPress"];
     if(onpress){
         node.onPress = [onpress stringValue];
+    }
+    
+    // className
+    GDataXMLNode* clssName = [element attributeForName:@"class"];
+    if(clssName){
+        node.className = [clssName stringValue];
     }
     
     // layout param

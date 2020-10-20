@@ -18,6 +18,9 @@
 {
     FlexRestorePreviewSetting();
     
+    NSString* path = [[NSBundle mainBundle]pathForResource:@"system" ofType:@"style"];
+    [[FlexStyleMgr instance]loadClassStyle:path];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
