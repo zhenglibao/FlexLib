@@ -426,7 +426,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"FlexNode: %@, %@, %@, %@, %@", self.viewClassName, self.layoutParams, self.viewAttrs, self.children, self.onPress];
+    return [NSString stringWithFormat:@"FlexNode: %@, %@, %@, %@, %@, %@", self.viewClassName, self.classNames, self.layoutParams, self.viewAttrs, self.children, self.onPress];
 }
 
 -(UIView*)buildViewTree:(NSObject*)owner
