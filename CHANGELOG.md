@@ -2,6 +2,11 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 2.8.0
+1.增加样式功能，支持class标签
+2.修复FlexTextView用initWithFrame方法创建时会闪退问题
+3.其他问题修复
+
 ## 2.7.0
 1.解决AppStore审核期间苹果认为包含的热更新问题，将debug模式下的预览等功能拆分为独立的FlexLib/preview组件
 2.增加Flexlib/osx支持mac版的布局
