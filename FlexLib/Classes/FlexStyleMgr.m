@@ -286,6 +286,17 @@ static FlexStyleMgr* _instance=nil;
     return [_globalClassStyle getStyleByName:classStyleName];
 }
 
+-(NSArray<FlexAttr*>*)getClassStyles:(NSArray*)classStyleNames
+{
+    NSMutableArray* ary = [NSMutableArray array];
+    
+    for (NSString* styleName in classStyleNames)
+    {
+        [ary addObjectsFromArray:[self getClassStyleByName:styleName]];
+    }
+    return ary;
+}
+
 -(BOOL)loadClassStyle:(NSString*)classStyleFilePath
 {
     return [_globalClassStyle loadFromFile:classStyleFilePath];

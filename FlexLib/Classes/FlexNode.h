@@ -65,6 +65,9 @@ void FlexApplyLayoutParam(YGLayout* layout,
                           NSString* key,
                           NSString* value);
 
+// 判断标签是否是布局属性
+BOOL FlexIsLayoutAttr(NSString* attrName);
+
 ///////////////////////////////////////
 //预览设置
 //设置baseUrl

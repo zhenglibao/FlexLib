@@ -221,6 +221,62 @@ void FlexSetViewAttr(UIView* view,
     }
 }
 
+BOOL FlexIsLayoutAttr(NSString* attrName)
+{
+    static NSSet* layoutAttrs = nil;
+    
+    if (layoutAttrs == nil) {
+        layoutAttrs = [NSSet setWithArray:@[
+            @"direction",
+            @"flexDirection",
+            @"justifyContent",
+            @"alignContent",
+            @"alignItems",
+            @"alignSelf",
+            @"position",
+            @"flexWrap",
+            @"overflow",
+            @"display",
+            @"flex",
+            @"flexGrow",
+            @"flexShrink",
+            @"flexBasis",
+            @"left",
+            @"top",
+            @"right",
+            @"bottom",
+            @"start",
+            @"end",
+            @"marginLeft",
+            @"marginTop",
+            @"marginRight",
+            @"marginBottom",
+            @"marginStart",
+            @"marginEnd",
+            @"marginHorizontal",
+            @"marginVertical",
+            @"margin",
+            @"paddingLeft",
+            @"paddingTop",
+            @"paddingRight",
+            @"paddingBottom",
+            @"paddingStart",
+            @"paddingEnd",
+            @"paddingHorizontal",
+            @"paddingVertical",
+            @"padding",
+            @"width",
+            @"height",
+            @"minWidth",
+            @"minHeight",
+            @"maxWidth",
+            @"maxHeight",
+            @"aspectRatio",
+        ]];
+    }
+    return [layoutAttrs containsObject:attrName];
+}
+
 static void ApplyLayoutParam(YGLayout* layout,
                              NSString* key,
                              NSString* value)
@@ -292,15 +348,7 @@ SETENUMVALUE(display,_display,YGDisplay);
     SETYGVALUE(paddingHorizontal);
     SETYGVALUE(paddingVertical);
     SETYGVALUE(padding);
-    
-    SETNUMVALUE(borderLeftWidth);
-    SETNUMVALUE(borderTopWidth);
-    SETNUMVALUE(borderRightWidth);
-    SETNUMVALUE(borderBottomWidth);
-    SETNUMVALUE(borderStartWidth);
-    SETNUMVALUE(borderEndWidth);
-    SETNUMVALUE(borderWidth);
-    
+        
     SETYGVALUE(width);
     SETYGVALUE(height);
     SETYGVALUE(minWidth);
@@ -445,10 +493,34 @@ void FlexApplyLayoutParam(YGLayout* layout,
         }
     }
     
+    //配置样式
+    NSArray<FlexAttr*>* styles;
+    {
+        NSArray* classNames ;
+        if (self.className.length>0) {
+            classNames = [self.className componentsSeparatedByString:@","];
+            NSMutableArray* ary = [NSMutableArray array];
+            NSCharacterSet* whiteSet = [NSCharacterSet whitespaceAndNewlineCharacterSet] ;
+            for (NSString* name in classNames) {
+                [ary addObject:[name stringByTrimmingCharactersInSet:whiteSet]];
+            }
+            classNames = ary;
+        }else{
+            classNames = @[self.viewClassName];
+        }
+        styles  = [[FlexStyleMgr instance]getClassStyles:classNames];
+    }
+    
     [view configureLayoutWithBlock:^(YGLayout* layout){
         
         layout.isEnabled = YES;
         layout.isIncludedInLayout = YES;
+        
+        [styles enumerateObjectsUsingBlock:^(FlexAttr * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (FlexIsLayoutAttr(obj.name)) {
+                FlexApplyLayoutParam(layout, obj.name, obj.value);
+            }
+        }];
         
         NSArray<FlexAttr*>* layoutParam = self.layoutParams ;
 
@@ -467,19 +539,12 @@ void FlexApplyLayoutParam(YGLayout* layout,
         }
     }];
     
-    //配置样式
-    {
-        NSString* className = self.viewClassName;
-        if (self.className.length>0) {
-            className = self.className;
+    [styles enumerateObjectsUsingBlock:^(FlexAttr * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (!FlexIsLayoutAttr(obj.name)) {
+            FlexSetViewAttr(view, obj.name, obj.value,owner);
         }
-        NSArray<FlexAttr*>* styles = [[FlexStyleMgr instance]getClassStyleByName:className];
-        if (styles!=nil && styles.count>0) {
-            for (FlexAttr* attr in styles) {
-                FlexSetViewAttr(view, attr.name, attr.value, owner);
-            }
-        }
-    }
+    }];
+    
     
     if(self.viewAttrs.count > 0){
         NSArray<FlexAttr*>* attrParam = self.viewAttrs ;

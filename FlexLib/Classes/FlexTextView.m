@@ -22,11 +22,10 @@
 
 @implementation FlexTextView
 
-- (instancetype)init
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
-        
         UILabel* label = [[UILabel alloc] init];
         label.textAlignment = NSTextAlignmentLeft;
         label.numberOfLines = 0;
