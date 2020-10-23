@@ -21,7 +21,7 @@
 #define VIEWCLSNAME     @"viewClsName"
 #define NAME            @"name"
 #define ONPRESS         @"onPress"
-#define CLASSNAME       @"className"
+#define CLASSNAMES      @"classNames"
 #define LAYOUTPARAM     @"layoutParam"
 #define VIEWATTRS       @"viewAttrs"
 #define CHILDREN        @"children"
@@ -406,7 +406,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
         _viewClassName = [coder decodeObjectForKey:VIEWCLSNAME];
         _name = [coder decodeObjectForKey:NAME];
         _onPress = [coder decodeObjectForKey:ONPRESS];
-        _className = [coder decodeObjectForKey:CLASSNAME];
+        _classNames = [coder decodeObjectForKey:CLASSNAMES];
         _layoutParams = [coder decodeObjectForKey:LAYOUTPARAM];
         _viewAttrs = [coder decodeObjectForKey:VIEWATTRS];
         _children = [coder decodeObjectForKey:CHILDREN];
@@ -418,7 +418,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
     [aCoder encodeObject:_viewClassName forKey:VIEWCLSNAME];
     [aCoder encodeObject:_name forKey:NAME];
     [aCoder encodeObject:_onPress forKey:ONPRESS];
-    [aCoder encodeObject:_className forKey:CLASSNAME];
+    [aCoder encodeObject:_classNames forKey:CLASSNAMES];
     [aCoder encodeObject:_layoutParams forKey:LAYOUTPARAM];
     [aCoder encodeObject:_viewAttrs forKey:VIEWATTRS];
     [aCoder encodeObject:_children forKey:CHILDREN];
@@ -496,19 +496,11 @@ void FlexApplyLayoutParam(YGLayout* layout,
     //配置样式
     NSArray<FlexAttr*>* styles;
     {
-        NSArray* classNames ;
-        if (self.className.length>0) {
-            classNames = [self.className componentsSeparatedByString:@","];
-            NSMutableArray* ary = [NSMutableArray array];
-            NSCharacterSet* whiteSet = [NSCharacterSet whitespaceAndNewlineCharacterSet] ;
-            for (NSString* name in classNames) {
-                [ary addObject:[name stringByTrimmingCharactersInSet:whiteSet]];
-            }
-            classNames = ary;
-        }else{
-            classNames = @[self.viewClassName];
+        if (self.classNames!=nil && self.classNames.count>0) {
+            styles  = [[FlexStyleMgr instance]getClassStyles:self.classNames];
+        } else {
+            styles  = [[FlexStyleMgr instance]getClassStyleByName:self.viewClassName];
         }
-        styles  = [[FlexStyleMgr instance]getClassStyles:classNames];
     }
     
     [view configureLayoutWithBlock:^(YGLayout* layout){
@@ -708,7 +700,16 @@ void FlexApplyLayoutParam(YGLayout* layout,
     // className
     GDataXMLNode* clssName = [element attributeForName:@"class"];
     if(clssName){
-        node.className = [clssName stringValue];
+        NSString* cls = [clssName stringValue];
+        if (cls!=nil && cls.length>0) {
+            NSArray* classNames = [cls componentsSeparatedByString:@","];
+            NSMutableArray* ary = [NSMutableArray array];
+            NSCharacterSet* whiteSet = [NSCharacterSet whitespaceAndNewlineCharacterSet] ;
+            for (NSString* name in classNames) {
+                [ary addObject:[name stringByTrimmingCharactersInSet:whiteSet]];
+            }
+            node.classNames = ary;
+        }
     }
     
     // layout param

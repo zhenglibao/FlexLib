@@ -102,7 +102,7 @@ FlexMapColor FlexGetMapColor(void);
 @property (nonatomic, strong) NSString* viewClassName;
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSString* onPress;
-@property (nonatomic, strong) NSString* className;  
+@property (nonatomic, strong) NSArray<NSString*>* classNames;
 @property (nonatomic, strong) NSArray<FlexAttr*>* layoutParams;
 @property (nonatomic, strong) NSArray<FlexAttr*>* viewAttrs;
 @property (nonatomic, strong) NSArray<FlexNode*>* children;
