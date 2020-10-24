@@ -96,4 +96,20 @@ static void* gObserverFrame         = &gObserverFrame;
     return [_flexRootView calculateSize:szLimit];
 }
 
+-(void)setFlexibleWidth:(BOOL)flexibleWidth
+{
+    _flexRootView.flexibleWidth = flexibleWidth ;
+}
+-(BOOL)flexibleWidth
+{
+    return _flexRootView.flexibleWidth;
+}
+-(void)setFlexibleHeight:(BOOL)flexibleHeight
+{
+    _flexRootView.flexibleHeight = flexibleHeight ;
+}
+-(BOOL)flexibleHeight
+{
+    return _flexRootView.flexibleHeight;
+}
 @end

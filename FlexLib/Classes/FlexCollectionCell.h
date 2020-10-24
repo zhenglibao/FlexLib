@@ -15,6 +15,10 @@
 
 @property(nonatomic,readonly) FlexRootView* _Nullable rootView;
 
+//宽和高是否可变？缺省值均为NO
+@property(nonatomic,assign) BOOL flexibleWidth;
+@property(nonatomic,assign) BOOL flexibleHeight;
+
 // 事件通知，content大小发生了变化
 @property(nonatomic,copy) void (^ _Nullable onContentSizeChanged)(CGSize newSize);
 

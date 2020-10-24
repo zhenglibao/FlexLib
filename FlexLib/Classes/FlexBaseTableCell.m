@@ -138,4 +138,12 @@ static void* gObserverFrame         = &gObserverFrame;
 {
     return [_flexRootView calculateSize:szLimit];
 }
+-(void)setFlexibleHeight:(BOOL)flexibleHeight
+{
+    self.rootView.flexibleHeight = flexibleHeight ;
+}
+-(BOOL)flexibleHeight
+{
+    return self.rootView.flexibleHeight;
+}
 @end
