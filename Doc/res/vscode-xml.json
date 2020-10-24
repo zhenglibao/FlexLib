@@ -188,7 +188,7 @@
 	"UIView":{
 		"prefix": "view",
 		"body": [
-			"<UIView layout=\"\" attr=\"\">",
+			"<UIView class=\"\" layout=\"\" attr=\"\">",
 			"",
 			"</UIView>",
 		],
@@ -197,7 +197,7 @@
 	"UILabel":{
 		"prefix": "label",
 		"body": [
-			"<UILabel name=\"\" layout=\"\" attr=\"fontSize:14,color:#333333,lineBreakMode:truncatingTail,linesNum:1,text:\"/>",
+			"<UILabel name=\"\" class=\"\" layout=\"\" attr=\"fontSize:14,color:#333333,lineBreakMode:truncatingTail,linesNum:1,text:\"/>",
 		],
 		"description": "UIView element"
 	},
@@ -213,21 +213,21 @@
 	"UITableView":{
 		"prefix": "tableView",
 		"body": [
-			"<UITableView name=\"\" layout=\"\" attr=\"\"/>",
+			"<UITableView name=\"\" class=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "UITableView element"
 	},
 	"FlexCollectionView":{
 		"prefix": "collectionView",
 		"body": [
-			"<FlexCollectionView name=\"\" layout=\"\" attr=\"\"/>",
+			"<FlexCollectionView name=\"\" class=\"\" layout=\"\" attr=\"\"/>",
 		],
 		"description": "FlexCollectionView element"
 	},
 	"FlexScrollView":{
 		"prefix": "scrollView",
 		"body": [
-			"<FlexScrollView layout=\"flex:1\" attr=\"vertScroll:true\">",
+			"<FlexScrollView class=\"\" layout=\"flex:1\" attr=\"vertScroll:true\">",
 			"",
 			"</FlexScrollView>",
 		],
@@ -236,7 +236,7 @@
 	"FlexContainerView":{
 		"prefix": "containerView",
 		"body": [
-			"<FlexContainerView name=\"\" layout=\"\">",
+			"<FlexContainerView name=\"\" class=\"\" layout=\"\">",
 			"",
 			"</FlexContainerView>",
 		],
@@ -252,14 +252,14 @@
 	"UITextField":{
 		"prefix": "textField",
 		"body": [
-			"<UITextField name=\"\" layout=\"\" attr=\"fontSize:14,color:black,textAlign:left,placeholder:,text:\"/>",
+			"<UITextField name=\"\" class=\"\" layout=\"\" attr=\"fontSize:14,color:black,textAlign:left,placeholder:,text:\"/>",
 		],
 		"description": "UITextField element"
 	},
 	"FlexTextView":{
 		"prefix": "textView",
 		"body": [
-			"<FlexTextView name=\"\" layout=\"\" attr=\"fontSize:14,color:black,textAlign:left\"/>",
+			"<FlexTextView name=\"\" class=\"\" layout=\"\" attr=\"fontSize:14,color:black,textAlign:left\"/>",
 		],
 		"description": "FlexTextView element"
 	},
