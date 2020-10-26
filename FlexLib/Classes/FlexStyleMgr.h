@@ -30,7 +30,9 @@
 -(NSArray<FlexAttr*>*)getClassStyleByName:(NSString*)classStyleName;
 -(NSArray<FlexAttr*>*)getClassStyles:(NSArray*)classStyleNames;
 
+// 加载全局样式表，可以在class标签中使用样式表里面的样式
 -(BOOL)loadClassStyle:(NSString*)classStyleFilePath;
+// 清空全局样式表
 -(void)removeAllClassStyles;
 
 +(instancetype)instance;
