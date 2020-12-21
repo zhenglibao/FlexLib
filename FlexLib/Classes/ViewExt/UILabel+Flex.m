@@ -359,7 +359,7 @@ FLEXSET(highlightTextColor)
 }
 FLEXSET(textAlign)
 {
-    const char* c =  [sValue cStringUsingEncoding:NSASCIIStringEncoding];
+    const char* c =  [sValue cStringUsingEncoding:NSUTF8StringEncoding];
     self.textAlignment = (NSTextAlignment)String2Int(c, _align, sizeof(_align)/sizeof(NameValue));
     
     NSMutableParagraphStyle* style=[self paraStyle];

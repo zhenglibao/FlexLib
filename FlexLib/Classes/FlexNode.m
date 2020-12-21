@@ -172,7 +172,7 @@ NSString* FlexProcessAttrValue(NSString* attrName,
             attrValue = v;
         }else{
             float f=[v floatValue];
-            f = gScaleFunc(f,[attrName cStringUsingEncoding:NSASCIIStringEncoding]);
+            f = gScaleFunc(f,[attrName cStringUsingEncoding:NSUTF8StringEncoding]);
             attrValue=[NSString stringWithFormat:@"%f",f];
         }
     }
@@ -281,8 +281,8 @@ static void ApplyLayoutParam(YGLayout* layout,
                              NSString* key,
                              NSString* value)
 {
-    const char* k = [key cStringUsingEncoding:NSASCIIStringEncoding];
-    const char* v = [value cStringUsingEncoding:NSASCIIStringEncoding];
+    const char* k = [key cStringUsingEncoding:NSUTF8StringEncoding];
+    const char* v = [value cStringUsingEncoding:NSUTF8StringEncoding];
  
 #define SETENUMVALUE(item,table,type)      \
 if(strcmp(k,#item)==0)                \

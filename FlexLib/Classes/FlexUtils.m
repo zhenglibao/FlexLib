@@ -182,7 +182,7 @@ int NSString2Int(NSString* s,
                  NameValue table[],
                  int total)
 {
-    const char* c = [s cStringUsingEncoding:NSASCIIStringEncoding];
+    const char* c = [s cStringUsingEncoding:NSUTF8StringEncoding];
     return String2Int(c, table, total);
 }
 int NSString2GroupInt(NSString* s,
