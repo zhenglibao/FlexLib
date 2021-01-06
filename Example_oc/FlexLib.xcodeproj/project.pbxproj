@@ -87,6 +87,7 @@
 		D210B8B720189AC900166DA7 /* FlexUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D210B81A20189A7500166DA7 /* FlexUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2208DCF2205937400B6819E /* TestXmlView.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2208DCE2205937300B6819E /* TestXmlView.xml */; };
 		D2208DD22205938F00B6819E /* TestXmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2208DD12205938F00B6819E /* TestXmlView.m */; };
+		D23F615325A5A39B008A93B0 /* BinaryCell.flex in Resources */ = {isa = PBXBuildFile; fileRef = D23F615225A5A39B008A93B0 /* BinaryCell.flex */; };
 		D24F2EAD1FF3C2D000762ADC /* TableHeader.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */; };
 		D24F2EBF1FF687C400762ADC /* AttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F2EBE1FF687C400762ADC /* AttachmentView.m */; };
 		D24F2EC11FF6881000762ADC /* AttachmentView.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EC01FF6881000762ADC /* AttachmentView.xml */; };
@@ -263,6 +264,7 @@
 		D2208DCE2205937300B6819E /* TestXmlView.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestXmlView.xml; path = res/TestXmlView.xml; sourceTree = "<group>"; };
 		D2208DD02205938F00B6819E /* TestXmlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestXmlView.h; sourceTree = "<group>"; };
 		D2208DD12205938F00B6819E /* TestXmlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestXmlView.m; sourceTree = "<group>"; };
+		D23F615225A5A39B008A93B0 /* BinaryCell.flex */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = BinaryCell.flex; path = res/BinaryCell.flex; sourceTree = "<group>"; };
 		D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TableHeader.xml; path = res/TableHeader.xml; sourceTree = "<group>"; };
 		D24F2EBD1FF687C400762ADC /* AttachmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttachmentView.h; sourceTree = "<group>"; };
 		D24F2EBE1FF687C400762ADC /* AttachmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttachmentView.m; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 		D2CF9CB91FD7EAFA00554A0C /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D23F615225A5A39B008A93B0 /* BinaryCell.flex */,
 				D29D0D58221BEA2500DE5543 /* TestFrameView.xml */,
 				D2208DCE2205937300B6819E /* TestXmlView.xml */,
 				D2EDA728214B8D7400B6A26D /* TestCollectionCell.xml */,
@@ -797,6 +800,7 @@
 				D2CF9CC71FD7EB0900554A0C /* system.style in Resources */,
 				D25F3DB91FE269AC00565892 /* CHANGELOG.md in Resources */,
 				D2CF9CC31FD7EB0900554A0C /* TestTableCell.xml in Resources */,
+				D23F615325A5A39B008A93B0 /* BinaryCell.flex in Resources */,
 				D26262831FE3C09B000F9841 /* splash.png in Resources */,
 				D272A8C41FD933990075DB1D /* TestScrollVC.xml in Resources */,
 				D26262851FE3D24A000F9841 /* alignItems.xml in Resources */,
