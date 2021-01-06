@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FlexLib'
-  s.version          = '2.8.0'
+  s.version          = '2.9.0'
   s.summary          = 'An obj-c flex layout framework for IOS & mac'
 
 # This description is used to generate tags and improve search results.
