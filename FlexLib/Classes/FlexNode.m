@@ -30,6 +30,7 @@
 
 NSData* loadFromWanglo(NSString* resName,NSObject* owner);
 NSData* loadFromFile(NSString* resName,NSObject* owner);
+FlexNode* loadBinaryFlex(NSString* resName,NSObject* owner);
 CGFloat scaleLinear(CGFloat f,const char* attrName);
 
 // 全局变量
@@ -773,6 +774,11 @@ void FlexApplyLayoutParam(YGLayout* layout,
     NSData* xmlData = [owner loadXmlLayoutData:flexName];
     
     if(xmlData==nil){
+        node = loadBinaryFlex(flexName, owner);
+        if (node!=nil) {
+            return node;
+        }
+        
         xmlData = isAbsoluteRes ? loadFromFile(flexName,owner) : gLoadFunc(flexName,owner) ;
         
         if(xmlData == nil){
@@ -931,6 +937,31 @@ NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
         url = [NSString stringWithFormat:@"%@%@.xml",gBaseUrl,flexName];
     }
     return FlexFetchHttpRes(url, outError);
+}
+
+FlexNode* loadBinaryFlex(NSString* resName,
+                         NSObject* owner)
+{
+    NSString* path;
+    
+    if([resName hasPrefix:@"/"] && [resName hasSuffix:@".flex"]){
+        // it's absolute path
+        path = resName ;
+    }else{
+        path = [[owner bundleForRes]pathForResource:resName ofType:@"flex"];
+    }
+    
+    if(path==nil){
+        return nil;
+    }
+    
+    @try{
+        FlexNode* node = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        return node;
+    }@catch(NSException* exception){
+        NSLog(@"Flexbox: loadBinaryFlex failed - %@",resName);
+    }
+    return nil;
 }
 
 NSData* loadFromFile(NSString* resName,NSObject* owner)
