@@ -42,6 +42,8 @@
 
 -(BOOL)loadFromFile:(NSString*)stylePath;
 
++(FlexStyleGroup*)loadStyle:(NSString*)stylePath;
+
 -(void)removeAll;
 
 -(NSArray*)getStyleByName:(NSString*)styleName;
@@ -150,7 +152,24 @@
     [self parseStyles:root];
     return YES;
 }
-
++(FlexStyleGroup*)loadStyle:(NSString*)stylePath
+{
+    if ([stylePath hasSuffix:@".style"]) {
+        FlexStyleGroup* group = [[FlexStyleGroup alloc]init];
+        [group loadFromFile:stylePath];
+        return group;
+    }else if([stylePath hasSuffix:@".bstyle"]){
+        FlexStyleGroup* node;
+        
+        @try{
+            node = [NSKeyedUnarchiver unarchiveObjectWithFile:stylePath];
+            return node;
+        }@catch(NSException* exception){
+            NSLog(@"Flexbox: loadStyle style failed - %@",[stylePath lastPathComponent]);
+        }
+    }
+    return nil;
+}
 -(void)removeAll
 {
     [_stylesByName removeAllObjects];
@@ -160,7 +179,7 @@
 {
     NSString* sFilePath = [FlexNode getCacheDir];
     sFilePath = [sFilePath stringByAppendingPathComponent:styleName];
-    sFilePath = [sFilePath stringByAppendingString:@".style"];
+    sFilePath = [sFilePath stringByAppendingString:@".bstyle"];
     return sFilePath;
 }
 +(void)storeToCache:(NSString*)styleName
@@ -173,15 +192,7 @@
 {
     NSString* sFilePath = [FlexStyleGroup getStyleCachePath:styleName];
     
-    FlexStyleGroup* node;
-    
-    @try{
-        node = [NSKeyedUnarchiver unarchiveObjectWithFile:sFilePath];
-        return node;
-    }@catch(NSException* exception){
-        NSLog(@"Flexbox: loadFromCache style failed - %@",styleName);
-    }
-    return nil;
+    return [self loadStyle:sFilePath];
 }
 
 @end
@@ -230,22 +241,26 @@ static FlexStyleMgr* _instance=nil;
                 return group;
         }
         
-        NSString* filePath = [[NSBundle mainBundle]pathForResource:fileName ofType:@"style"];
+        NSString* filePath = [[NSBundle mainBundle]pathForResource:fileName ofType:@"bstyle"];
+        if (filePath==nil) {
+            filePath = [[NSBundle mainBundle]pathForResource:fileName ofType:@"style"];
+        }
         if(filePath == nil)
         {
             NSLog(@"Flexbox: style %@ not found.",fileName);
             return nil;
         }
-        group = [[FlexStyleGroup alloc]init];
-        [group loadFromFile:filePath];
-        [_files setObject:group forKey:fileName];
-        
-        if(FlexIsCacheEnabled()){
-            dispatch_async(
-                           dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-                           ^{
-                               [FlexStyleGroup storeToCache:fileName Style:group];
-                           });
+        group = [FlexStyleGroup loadStyle:filePath];
+        if (group!=nil) {
+            [_files setObject:group forKey:fileName];
+            
+            if(FlexIsCacheEnabled() && [filePath hasSuffix:@".style"]){
+                dispatch_async(
+                               dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                               ^{
+                                   [FlexStyleGroup storeToCache:fileName Style:group];
+                               });
+            }
         }
     }
     return group;
