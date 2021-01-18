@@ -224,9 +224,8 @@ BOOL IsIphoneX(void)
             
             if(@available(iOS 11.0,*)){
                 
-                UIWindow *mainWindow = keyWindow();
-                
-                if(mainWindow.safeAreaInsets.bottom>0){
+                if([[UIScreen mainScreen] bounds].size.height>=812)
+                {
                     iphoneX = 1;
                 }
             }
