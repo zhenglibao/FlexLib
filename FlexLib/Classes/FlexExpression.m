@@ -129,12 +129,15 @@ static int getOpPriority(unichar c,BOOL leftOp)
     {
         unichar c = [expression characterAtIndex:i];
         
-        if (c=='('||
-            c==')'||
-            c=='*'||
-            c=='/')
+        if (c=='(' || c==')')
         {
-            if (!hasNum && (c=='*'||c=='/')) {
+            if(![self parseOperator:c])
+                return NO;
+            hasNum = c==')';
+            
+        }else if(c=='*' || c=='/')
+        {
+            if (!hasNum) {
                 return NO;
             }
             
@@ -154,7 +157,7 @@ static int getOpPriority(unichar c,BOOL leftOp)
                 hasNum = YES;
             }
             
-        }else if(c==' '){
+        }else if(isspace(c)){
             
         }else{
             if(hasNum)
@@ -170,61 +173,63 @@ static int getOpPriority(unichar c,BOOL leftOp)
 {
     if (_opAry.count==0) {
         if (op=='=') {
-            return YES;
+            return _numAry.count!=0;
         }
         
         [_opAry addObject:@(op)];
         return YES;
     }
+    
     unichar leftOp = [_opAry.lastObject intValue];
     int pr = getOpPriority(op, NO);
     int pl = getOpPriority(leftOp, YES);
     
-    if (pr<=pl) {
-        
-        if (leftOp == '(') {
-            [_opAry removeLastObject];
-            return op==')';
-        } else if(leftOp == ')'){
-            return NO;
-        }
-        if (_numAry.count<2) {
-            return NO;
-        }
-        
-        double num1 = [[_numAry objectAtIndex:_numAry.count-2]doubleValue];
-        double num2 = [[_numAry lastObject]doubleValue];
-        
-        double result ;
-        switch (leftOp) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                result = num1 / num2;
-                break;
-            default:
-                result=0;
-                break;
-        }
-        [_opAry removeLastObject];
-        [_numAry removeObjectsInRange:NSMakeRange(_numAry.count-2, 2)];
-        [_numAry addObject:@(result)];
-        if (op=='=') {
-            return YES;
-        }
-        return [self parseOperator:op];
-        
-    } else {
+    if (pr > pl) {
         [_opAry addObject:@(op)];
+        return YES;
     }
-    return YES;
+        
+    if (leftOp == '(') {
+        [_opAry removeLastObject];
+        return op==')';
+    }
+    
+    if(leftOp == ')'){
+        return NO;
+    }
+    
+    if (_numAry.count<2) {
+        return NO;
+    }
+    
+    double num1 = [[_numAry objectAtIndex:_numAry.count-2]doubleValue];
+    double num2 = [[_numAry lastObject]doubleValue];
+    
+    double result ;
+    switch (leftOp) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = num1 / num2;
+            break;
+        default:
+            result=0;
+            break;
+    }
+    [_opAry removeLastObject];
+    [_numAry removeObjectsInRange:NSMakeRange(_numAry.count-2, 2)];
+    [_numAry addObject:@(result)];
+    if (op=='=' && _opAry.count==0) {
+        return YES;
+    }
+    return [self parseOperator:op];
 }
 -(NSUInteger)parseNumber:(NSString*)expression from:(NSUInteger)from
 {
