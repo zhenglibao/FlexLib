@@ -26,5 +26,6 @@
 #import "FlexCollectionView.h"
 #import "FlexCollectionCell.h"
 #import "FlexTableHeaderFooterView.h"
+#import "FlexExpression.h"
 #import "UILabel+Flex.h"
 

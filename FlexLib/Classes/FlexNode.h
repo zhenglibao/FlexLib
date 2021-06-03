@@ -54,6 +54,7 @@ void FlexRestorePreviewSetting(void);
 void FlexEnableCache(BOOL bEnable);
 BOOL FlexIsCacheEnabled(void);
 
+
 // 设置视图属性
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,

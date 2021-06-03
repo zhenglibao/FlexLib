@@ -16,6 +16,7 @@
 #import "FlexUtils.h"
 #import "FlexRootView.h"
 #import "FlexModalView.h"
+#import "FlexExpression.h"
 #import "ViewExt/UIView+Flex.h"
 
 #define VIEWCLSNAME     @"viewClsName"
@@ -39,6 +40,7 @@ static float gfScaleFactor = 1.0f;
 static float gfScaleOffset = 0;
 static FlexScaleFunc gScaleFunc = scaleLinear ;
 static NSString* gResourceSuffix = nil;
+
 
 #ifdef DEBUG
 static BOOL gbUserCache = NO;
@@ -183,11 +185,23 @@ NSString* FlexProcessAttrValue(NSString* attrName,
     return attrValue;
 }
 
+void FlexProcessExpression(NSString** key,NSString** value)
+{
+    if (![*key hasPrefix:@"$"]) {
+        return;
+    }
+    
+    *key = [*key substringFromIndex:1];
+    *value = [NSString stringWithFormat:@"%f",FlexCalcExpression(*value)];
+}
+
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,
                      NSString* attrValue,
                      NSObject* owner)
 {
+    FlexProcessExpression(&attrName, &attrValue);
+    
     NSString* methodDesc = [NSString stringWithFormat:@"setFlex%@:Owner:",attrName];
     
     SEL sel = NSSelectorFromString(methodDesc) ;
@@ -224,6 +238,10 @@ void FlexSetViewAttr(UIView* view,
 
 BOOL FlexIsLayoutAttr(NSString* attrName)
 {
+    if ([attrName hasPrefix:@"$"]) {
+        attrName = [attrName substringFromIndex:1];
+    }
+    
     static NSSet* layoutAttrs = nil;
     
     if (layoutAttrs == nil) {
@@ -282,6 +300,8 @@ static void ApplyLayoutParam(YGLayout* layout,
                              NSString* key,
                              NSString* value)
 {
+    FlexProcessExpression(&key, &value);
+    
     const char* k = [key cStringUsingEncoding:NSUTF8StringEncoding];
     const char* v = [value cStringUsingEncoding:NSUTF8StringEncoding];
  
