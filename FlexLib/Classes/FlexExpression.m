@@ -52,7 +52,7 @@ void FlexRegisterMacro(NSString* macroName,FlexMacro value)
 }
 
 /**
- * 获取宏的值，包括系统预定义宏和自定义的宏，如果两者冲突，会优先使用系统预定义宏
+ * 获取宏的值
  */
 double FlexGetMacroValue(NSString* macro)
 {
@@ -114,9 +114,9 @@ static int getOpPriority(unichar c,BOOL leftOp)
 
 -(double)calcExpression:(NSString*)expression
 {
-    if(![self scanExpression:expression] || _numAry.count==0){
+    if(![self scanExpression:expression] || _numAry.count!=1){
         NSLog(@"Flex: wrong expression: %@",expression);
-        return 0;
+        return NAN;
     }
     
     return [_numAry.firstObject doubleValue];
@@ -129,11 +129,22 @@ static int getOpPriority(unichar c,BOOL leftOp)
     {
         unichar c = [expression characterAtIndex:i];
         
-        if (c=='(' || c==')')
-        {
+        if (c=='('){
+            if(hasNum)
+                return NO;
+            
             if(![self parseOperator:c])
                 return NO;
-            hasNum = c==')';
+            
+            hasNum = NO;
+        }else if(c==')')
+        {
+            if(!hasNum)
+                return NO;
+            
+            if(![self parseOperator:c])
+                return NO;
+            hasNum = YES;
             
         }else if(c=='*' || c=='/')
         {
@@ -151,10 +162,24 @@ static int getOpPriority(unichar c,BOOL leftOp)
                 if(![self parseOperator:c])
                     return NO;
                 hasNum = NO;
-            } else {
+                
+            }else if(_opAry.count==0 || [_opAry.lastObject charValue]=='('){
+
+                [_numAry addObject:@(0)];
+                [_opAry addObject:@(c)];
+                hasNum = NO;
+
+            } else if(i>=expression.length-1){
+                
+                return NO;
+                
+            } else if(isalnum([expression characterAtIndex:i+1])||
+                      [expression characterAtIndex:i+1]=='.') {
                 
                 i = [self parseNumber:expression from:i]-1;
                 hasNum = YES;
+            } else{
+                return NO;
             }
             
         }else if(isspace(c)){
@@ -235,23 +260,28 @@ static int getOpPriority(unichar c,BOOL leftOp)
 {
     unichar firstChar = [expression characterAtIndex:from];
     NSUInteger index = from;
+    if (firstChar=='+' || firstChar=='-')
+    {
+        index++;
+        if(index >= expression.length){
+            return index;
+        }
+    }
     
-    if (isalpha(firstChar)) {
-        
+    unichar secondChar = [expression characterAtIndex:index];
+    double value = 0 ;
+
+    from = index;
+
+    if (isalpha(secondChar)) {
         index++;
         while (index<expression.length && isalpha([expression characterAtIndex:index]))
         {
             index++;
         }
         NSString* macro = [expression substringWithRange:NSMakeRange(from, index-from)];
-        [_numAry addObject:@(FlexGetMacroValue(macro))];
-        return index;
+        value = FlexGetMacroValue(macro);
     }else{
-        
-        if (firstChar=='+' || firstChar=='-')
-        {
-            index++;
-        }
         
         while (index<expression.length)
         {
@@ -267,11 +297,14 @@ static int getOpPriority(unichar c,BOOL leftOp)
             NSLog(@"Flex: wrong character 0x%0x for expression",(int)[expression characterAtIndex:from]);
             return from+1;
         }
-        NSString* subs;
-        subs = [expression substringWithRange:NSMakeRange(from, index-from)];
-        [_numAry addObject:@([subs doubleValue])];
-        return index;
+        NSString* s = [expression substringWithRange:NSMakeRange(from, index-from)];
+        value = [s doubleValue];
     }
+    if (firstChar=='-') {
+        value = -value;
+    }
+    [_numAry addObject:@(value)];
+    return index;
 }
 @end
 

@@ -224,7 +224,8 @@ BOOL IsIphoneX(void)
             
             if(@available(iOS 11.0,*)){
                 
-                if([[UIScreen mainScreen] bounds].size.height>=812)
+                UIWindow *mainWindow = keyWindow();
+                if(mainWindow.safeAreaInsets.bottom>0)
                 {
                     iphoneX = 1;
                 }
@@ -241,14 +242,12 @@ BOOL IsPortrait(void)
 
 UIWindow* keyWindow(void)
 {
-    UIWindow *keyWindow = nil;
     for (UIWindow *window in UIApplication.sharedApplication.windows) {
         if (window.isKeyWindow) {
-            keyWindow = window;
-            break;
+            return window;
         }
     }
-    return keyWindow;
+    return UIApplication.sharedApplication.windows.firstObject;
 }
 
 double GetAccurateSecondsSince1970()
