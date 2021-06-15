@@ -2025,4 +2025,23 @@
 			"<Image name=\"\" onPress=\"\" attr=\"source:, size:20/20\"/>",
 		],
 	},
+	"ScreenWidth":{
+		"prefix": "Screen Width",
+		"body": [
+			"ScreenWidth",
+		],
+	},
+	"ScreenHeight":{
+		"prefix": "Screen Height",
+		"body": [
+			"ScreenHeight",
+		],
+	},
+	"ScreenScale":{
+		"prefix": "Screen Scale",
+		"body": [
+			"ScreenScale",
+		],
+	},
+
 }
