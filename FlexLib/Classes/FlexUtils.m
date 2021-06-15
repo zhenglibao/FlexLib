@@ -224,8 +224,8 @@ BOOL IsIphoneX(void)
             
             if(@available(iOS 11.0,*)){
                 
-                UIWindow *mainWindow = [[UIWindow  alloc]initWithFrame:[UIScreen mainScreen].bounds];
-                if(mainWindow.safeAreaInsets.bottom>0)
+                UIWindow *window = [[UIWindow  alloc]initWithFrame:[UIScreen mainScreen].bounds];
+                if(window.safeAreaInsets.bottom>0)
                 {
                     iphoneX = 1;
                 }
