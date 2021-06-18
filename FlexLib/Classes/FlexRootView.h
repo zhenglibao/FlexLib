@@ -78,6 +78,12 @@
 @property(nonatomic,assign) BOOL useFrame;
 
 /**
+ * 如果对子view做动画时，可以临时关闭FlexRootView的布局功能，动画完成时再打开
+ * 默认为NO
+ */
+@property(nonatomic,assign) BOOL disableLayout;
+
+/**
  * 宽和高是否有内容决定，默认为NO
  * 如果为NO，则表示外部必须明确指定宽度或者高度
  * 如果为YES，则表示无需指定宽度或者高度，当布局完成后，自动由内容撑开

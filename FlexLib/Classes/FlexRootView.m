@@ -249,6 +249,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         _lastConfigFrame = CGRectZero;
         _bChildDirty = NO;
         _useFrame = NO;
+        _disableLayout = NO;
         
         [self enableFlexLayout:NO];
     }
@@ -467,7 +468,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
 
 -(void)layoutSubviews
 {
-    if(_bInLayouting)
+    if(self.disableLayout || _bInLayouting)
         return;
     
     [self configureLayout: [self getSafeArea]];
