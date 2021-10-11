@@ -794,9 +794,12 @@ void FlexApplyLayoutParam(YGLayout* layout,
     NSData* xmlData = [owner loadXmlLayoutData:flexName];
     
     if(xmlData==nil){
-        node = loadBinaryFlex(flexName, owner);
-        if (node!=nil) {
-            return node;
+        // 只有从本地加载的时候才支持从编译好的flex布局文件加载
+        if(gLoadFunc==loadFromFile){
+            node = loadBinaryFlex(flexName, owner);
+            if (node!=nil) {
+                return node;
+            }
         }
         
         xmlData = isAbsoluteRes ? loadFromFile(flexName,owner) : gLoadFunc(flexName,owner) ;
