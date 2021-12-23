@@ -45,7 +45,7 @@ static void* gObserverFrame         = &gObserverFrame;
     [self.contentView addSubview:_flexRootView];
     
     if(!_bObserved){
-        [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverFrame];
+        [self.contentView addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:gObserverFrame];
         _bObserved = YES;
     }
     
@@ -54,7 +54,16 @@ static void* gObserverFrame         = &gObserverFrame;
 - (void)dealloc
 {
     if(_bObserved){
-        [self removeObserver:self forKeyPath:@"frame"];
+        [self.contentView removeObserver:self forKeyPath:@"frame"];
+    }
+}
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    
+    if(!CGSizeEqualToSize(_flexRootView.frame.size, frame.size))
+    {
+        [_flexRootView setNeedsLayout];
     }
 }
 

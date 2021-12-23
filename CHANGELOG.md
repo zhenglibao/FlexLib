@@ -2,6 +2,12 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 3.1.2
+1.FlexCollectionCell和FlexBaseTableCell对iOS15的适配
+
+## 3.1.1
+1.增加编译为flex布局时对热更新的支持
+
 ## 3.1.0
 1.FlexRootView增加禁止布局功能
 
