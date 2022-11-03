@@ -209,7 +209,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     [ary sortUsingFunction:_compareInputView context:NULL];
     return [ary copy];
 }
--(UIView*)findFirstResponder
+-(UIView*)findFocusView
 {
     if(self.isFirstResponder)
         return self;
@@ -217,7 +217,7 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
     for (UIView* sub in self.subviews) {
         if(sub.isFirstResponder)
             return sub;
-        UIView* first = [sub findFirstResponder];
+        UIView* first = [sub findFocusView];
         if(first != nil)
             return first;
     }

@@ -107,7 +107,7 @@ static void* gObserverFrame = &gObserverFrame;
 }
 -(void)hideKeyboard
 {
-    [[self.view findFirstResponder]resignFirstResponder];
+    [[self.view findFocusView]resignFirstResponder];
 }
 
 -(NSString*)getFlexName
@@ -133,7 +133,7 @@ static void* gObserverFrame = &gObserverFrame;
         dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1/*延迟执行时间*/ * NSEC_PER_SEC));
 
         dispatch_after(delayTime,dispatch_get_main_queue(),^{
-            UIView* firstResponder = [weakSelf.view findFirstResponder];
+            UIView* firstResponder = [weakSelf.view findFocusView];
             if(firstResponder != nil)
                 [weakSelf scrollViewToVisible:firstResponder animated:YES];
         });
@@ -430,7 +430,7 @@ static void* gObserverFrame = &gObserverFrame;
     if(all.count==0)
         return;
     
-    UIView* current = [self.view findFirstResponder];
+    UIView* current = [self.view findFocusView];
     
     NSUInteger index = [all indexOfObject:current];
     if( index!=NSNotFound ){
@@ -447,7 +447,7 @@ static void* gObserverFrame = &gObserverFrame;
     if(all.count==0)
         return;
     
-    UIView* current = [self.view findFirstResponder];
+    UIView* current = [self.view findFocusView];
     
     NSUInteger index = [all indexOfObject:current];
     if( index!=NSNotFound ){

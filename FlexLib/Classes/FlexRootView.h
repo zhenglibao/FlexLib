@@ -64,7 +64,7 @@
 // 查找所有具有输入功能的view，并按坐标排序，从上到下，从左往右
 -(NSArray<UIView*>*)findAllInputs;
 
--(UIView*)findFirstResponder;
+-(UIView*)findFocusView;
 
 @end
 
