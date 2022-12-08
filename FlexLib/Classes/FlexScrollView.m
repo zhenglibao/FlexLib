@@ -61,21 +61,18 @@
     self.contentSize = _contentView.frame.size;
 }
 
-- (void)setFrame:(CGRect)frame
+- (void)layoutSubviews
 {
-    CGSize oldSize = self.frame.size;
+    [super layoutSubviews];
     
-    [super setFrame:frame];
-    
-    if(!CGSizeEqualToSize(oldSize, frame.size)){
-        CGRect rc = _contentView.frame;
-        if(!self.vertical)
-            rc.size.height = CGRectGetHeight(frame);
-        if(!self.horizontal)
-            rc.size.width = CGRectGetWidth(frame);
-        if(!CGSizeEqualToSize(rc.size,_contentView.frame.size)){
-            _contentView.frame = rc;
-        }
+    CGRect frame = self.frame;
+    CGRect rc = _contentView.frame;
+    if(!self.vertical)
+        rc.size.height = CGRectGetHeight(frame);
+    if(!self.horizontal)
+        rc.size.width = CGRectGetWidth(frame);
+    if(!CGSizeEqualToSize(rc.size,_contentView.frame.size)){
+        _contentView.frame = rc;
     }
 }
 

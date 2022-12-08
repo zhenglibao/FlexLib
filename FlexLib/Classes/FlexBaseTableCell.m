@@ -103,15 +103,14 @@ static void* gObserverFrame         = &gObserverFrame;
         [self.contentView removeObserver:self forKeyPath:@"frame"];
     }
 }
-- (void)setFrame:(CGRect)frame
+
+- (void)layoutSubviews
 {
-    [super setFrame:frame];
+    [super layoutSubviews];
     
-    if(!CGSizeEqualToSize(_flexRootView.frame.size, frame.size))
-    {
-        [_flexRootView setNeedsLayout];
-    }
+    _flexRootView.frame = self.bounds;
 }
+
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(UIView*)object change:(NSDictionary *)change context:(void *)context

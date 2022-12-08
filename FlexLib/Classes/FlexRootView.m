@@ -215,8 +215,6 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         return self;
     
     for (UIView* sub in self.subviews) {
-        if(sub.isFirstResponder)
-            return sub;
         UIView* first = [sub findFocusView];
         if(first != nil)
             return first;

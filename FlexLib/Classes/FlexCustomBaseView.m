@@ -94,19 +94,11 @@
     }
 }
 
-- (void)setFrame:(CGRect)frame
+- (void)layoutSubviews
 {
-    CGSize oldSize = self.frame.size;
+    [super layoutSubviews];
     
-    [super setFrame:frame];
-    
-    
-    if(!CGSizeEqualToSize(oldSize, frame.size))
-    {
-        CGRect rc = _frameView.frame;
-        rc.size = frame.size;
-        _frameView.frame = rc;
-    }
+    _frameView.frame = self.bounds;
 }
 
 -(CGSize)sizeThatFits:(CGSize)size
