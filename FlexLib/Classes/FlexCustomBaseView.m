@@ -90,7 +90,10 @@
             rcSelf.size.width = rc.size.width;
         if(self.flexibleHeight)
             rcSelf.size.height = rc.size.height;
-        self.frame = rcSelf;
+        if(!CGRectEqualToRect(rcSelf, self.frame))
+        {
+            self.frame = rcSelf;
+        }
     }
 }
 
