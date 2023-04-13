@@ -7,10 +7,11 @@
 #import "SPTSpec.h"
 #import "SPTCallSite.h"
 #import <libkern/OSAtomic.h>
+#import <stdatomic.h>
 
 static NSTimeInterval asyncSpecTimeout = 10.0;
 
-static void spt_defineItBlock(NSString *name, NSString *fileName, NSUInteger lineNumber, BOOL focused, void (^block)()) {
+static void spt_defineItBlock(NSString *name, NSString *fileName, NSUInteger lineNumber, BOOL focused, void (^block)(void)) {
   SPTReturnUnlessBlockOrNil(block);
   SPTCallSite *site = nil;
   if (lineNumber && fileName) {
@@ -19,7 +20,7 @@ static void spt_defineItBlock(NSString *name, NSString *fileName, NSUInteger lin
   [SPTCurrentGroup addExampleWithName:name callSite:site focused:focused block:block];
 }
 
-static void spt_defineDescribeBlock(NSString *name, BOOL focused, void (^block)()) {
+static void spt_defineDescribeBlock(NSString *name, BOOL focused, void (^block)(void)) {
   if (block) {
     [SPTGroupStack addObject:[SPTCurrentGroup addExampleGroupWithName:name focused:focused]];
     block();
@@ -29,11 +30,11 @@ static void spt_defineDescribeBlock(NSString *name, BOOL focused, void (^block)(
   }
 }
 
-void spt_it_(NSString *name, NSString *fileName, NSUInteger lineNumber, void (^block)()) {
+void spt_it_(NSString *name, NSString *fileName, NSUInteger lineNumber, void (^block)(void)) {
   spt_defineItBlock(name, fileName, lineNumber, NO, block);
 }
 
-void spt_fit_(NSString *name, NSString *fileName, NSUInteger lineNumber, void (^block)()) {
+void spt_fit_(NSString *name, NSString *fileName, NSUInteger lineNumber, void (^block)(void)) {
   spt_defineItBlock(name, fileName, lineNumber, YES, block);
 }
 
@@ -75,7 +76,15 @@ void spt_itShouldBehaveLike_(NSString *fileName, NSUInteger lineNumber, NSString
   } else {
     SPTSpec *currentSpec = SPTCurrentSpec;
     if (currentSpec) {
-      [currentSpec recordFailureWithDescription:@"itShouldBehaveLike should not be invoked inside an example block!" inFile:fileName atLine:lineNumber expected:NO];
+      XCTSourceCodeLocation *location = [[XCTSourceCodeLocation alloc] initWithFilePath:fileName lineNumber:lineNumber];
+      XCTSourceCodeContext *context = [[XCTSourceCodeContext alloc] initWithLocation:location];
+      XCTIssue *issue = [[XCTIssue alloc] initWithType:XCTIssueTypeUncaughtException
+                                    compactDescription:@"itShouldBehaveLike should not be invoked inside an example block!"
+                                   detailedDescription:@""
+                                     sourceCodeContext:context
+                                       associatedError:nil
+                                           attachments:@[]];
+      [currentSpec recordIssue:issue];
     } else {
       it(name, ^{
         [SPTCurrentSpec recordFailureWithDescription:[NSString stringWithFormat:@"Shared example group \"%@\" does not exist.", name] inFile:fileName atLine:lineNumber expected:NO];
@@ -84,75 +93,75 @@ void spt_itShouldBehaveLike_(NSString *fileName, NSUInteger lineNumber, NSString
   }
 }
 
-void spt_itShouldBehaveLike_block(NSString *fileName, NSUInteger lineNumber, NSString *name, NSDictionary *(^block)()) {
+void spt_itShouldBehaveLike_block(NSString *fileName, NSUInteger lineNumber, NSString *name, NSDictionary *(^block)(void)) {
   spt_itShouldBehaveLike_(fileName, lineNumber, name, (id)block);
 }
 
-void describe(NSString *name, void (^block)()) {
+void describe(NSString *name, void (^block)(void)) {
   spt_defineDescribeBlock(name, NO, block);
 }
 
-void fdescribe(NSString *name, void (^block)()) {
+void fdescribe(NSString *name, void (^block)(void)) {
   spt_defineDescribeBlock(name, YES, block);
 }
 
-void context(NSString *name, void (^block)()) {
+void context(NSString *name, void (^block)(void)) {
   describe(name, block);
 }
 
-void fcontext(NSString *name, void (^block)()) {
+void fcontext(NSString *name, void (^block)(void)) {
   fdescribe(name, block);
 }
 
-void it(NSString *name, void (^block)()) {
+void it(NSString *name, void (^block)(void)) {
   spt_defineItBlock(name, nil, 0, NO, block);
 }
 
-void fit(NSString *name, void (^block)()) {
+void fit(NSString *name, void (^block)(void)) {
   spt_defineItBlock(name, nil, 0, YES, block);
 }
 
-void example(NSString *name, void (^block)()) {
+void example(NSString *name, void (^block)(void)) {
   it(name, block);
 }
 
-void fexample(NSString *name, void (^block)()) {
+void fexample(NSString *name, void (^block)(void)) {
   fit(name, block);
 }
 
-void specify(NSString *name, void (^block)()) {
+void specify(NSString *name, void (^block)(void)) {
   it(name, block);
 }
 
-void fspecify(NSString *name, void (^block)()) {
+void fspecify(NSString *name, void (^block)(void)) {
   fit(name, block);
 }
 
-void beforeAll(void (^block)()) {
+void beforeAll(void (^block)(void)) {
   SPTReturnUnlessBlockOrNil(block);
   [SPTCurrentGroup addBeforeAllBlock:block];
 }
 
-void afterAll(void (^block)()) {
+void afterAll(void (^block)(void)) {
   SPTReturnUnlessBlockOrNil(block);
   [SPTCurrentGroup addAfterAllBlock:block];
 }
 
-void beforeEach(void (^block)()) {
+void beforeEach(void (^block)(void)) {
   SPTReturnUnlessBlockOrNil(block);
   [SPTCurrentGroup addBeforeEachBlock:block];
 }
 
-void afterEach(void (^block)()) {
+void afterEach(void (^block)(void)) {
   SPTReturnUnlessBlockOrNil(block);
   [SPTCurrentGroup addAfterEachBlock:block];
 }
 
-void before(void (^block)()) {
+void before(void (^block)(void)) {
   beforeEach(block);
 }
 
-void after(void (^block)()) {
+void after(void (^block)(void)) {
   afterEach(block);
 }
 
@@ -169,10 +178,10 @@ void waitUntil(void (^block)(DoneCallback done)) {
 }
 
 void waitUntilTimeout(NSTimeInterval timeout, void (^block)(DoneCallback done)) {
-  __block uint32_t complete = 0;
+  __block atomic_bool complete = false;
   dispatch_async(dispatch_get_main_queue(), ^{
     block(^{
-      OSAtomicOr32Barrier(1, &complete);
+      atomic_fetch_or(&complete, true);
     });
   });
   NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:timeout];
@@ -183,7 +192,17 @@ void waitUntilTimeout(NSTimeInterval timeout, void (^block)(DoneCallback done)) 
     NSString *message = [NSString stringWithFormat:@"failed to invoke done() callback before timeout (%f seconds)", timeout];
     SPTSpec *currentSpec = SPTCurrentSpec;
     SPTTestSuite *testSuite = [[currentSpec class] spt_testSuite];
-    [currentSpec recordFailureWithDescription:message inFile:testSuite.fileName atLine:testSuite.lineNumber expected:YES];
+
+    XCTSourceCodeLocation *location = [[XCTSourceCodeLocation alloc] initWithFilePath:testSuite.fileName
+                                                                           lineNumber:testSuite.lineNumber];
+    XCTSourceCodeContext *context = [[XCTSourceCodeContext alloc] initWithLocation:location];
+    XCTIssue *issue = [[XCTIssue alloc] initWithType:XCTIssueTypeThrownError
+                                  compactDescription:message
+                                 detailedDescription:@""
+                                   sourceCodeContext:context
+                                     associatedError:nil
+                                         attachments:@[]];
+    [currentSpec recordIssue:issue];
   }
 }
 

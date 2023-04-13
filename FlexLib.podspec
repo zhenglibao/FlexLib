@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FlexLib'
-  s.version          = '3.1.6'
+  s.version          = '3.2.0'
   s.summary          = 'An obj-c flex layout framework for IOS & mac'
 
 # This description is used to generate tags and improve search results.
@@ -35,11 +35,12 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
        'FlexLib' => ['FlexLib/Assets/*']
     }
   
-    ss.dependency 'Yoga', '1.14.0'
+    #Yoga最新版本1.19.0使用源码方式引入
+    #ss.dependency 'Yoga', '1.19.0'
     ss.library = 'xml2', 'c++'
     ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
-    #s.private_header_files = 'FlexLib/Classes/private/*.h'
-    #s.public_header_files = 'FlexLib/Classes/*.h'
+    ss.private_header_files = 'FlexLib/Classes/yoga/*.h'
+    #ss.public_header_files = 'FlexLib/Classes/*.h'
   
     non_arc_files   = 'FlexLib/Classes/GDataXMLNode.{h,m}'
     ss.exclude_files = non_arc_files

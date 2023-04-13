@@ -7,7 +7,6 @@ target 'FlexLib_Example' do
   xcodeproj ‘FlexLib.xcodeproj'
   pod 'FlexLib', :path => '../'
   pod 'FlexLib/preview', :path => '../'
-  pod 'Yoga', '1.14.0'
 
   target 'FlexLib_Tests' do
     inherit! :search_paths
