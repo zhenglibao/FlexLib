@@ -10,7 +10,7 @@
 #import "FlexTextView.h"
 #import "FlexRootView.h"
 #import "FlexUtils.h"
-#import "YogaKit/UIView+Yoga.h"
+#import "UIView+Yoga.h"
 
 
 @interface FlexTextView()

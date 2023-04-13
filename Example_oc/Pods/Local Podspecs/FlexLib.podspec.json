@@ -21,11 +21,33 @@
   "default_subspecs": "standard",
   "subspecs": [
     {
+      "name": "yoga",
+      "source_files": "FlexLib/Classes/yoga/**/*.{c,h,cpp}",
+      "public_header_files": "FlexLib/Classes/yoga/{Yoga,YGEnums,YGMacros,YGNode,YGStyle,YGValue}.h",
+      "requires_arc": false,
+      "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES"
+      },
+      "compiler_flags": [
+        "-fno-omit-frame-pointer",
+        "-fexceptions",
+        "-Wall",
+        "-Werror",
+        "-std=c++1y",
+        "-fPIC"
+      ]
+    },
+    {
       "name": "standard",
-      "source_files": "FlexLib/Classes/**/*",
+      "source_files": "FlexLib/Classes/{FlexLib,YogaKit}/**/*",
       "resource_bundles": {
         "FlexLib": [
           "FlexLib/Assets/*"
+        ]
+      },
+      "dependencies": {
+        "FlexLib/yoga": [
+
         ]
       },
       "libraries": [
@@ -35,13 +57,12 @@
       "xcconfig": {
         "HEADER_SEARCH_PATHS": "/usr/include/libxml2"
       },
-      "private_header_files": "FlexLib/Classes/yoga/*.h",
-      "exclude_files": "FlexLib/Classes/GDataXMLNode.{h,m}",
+      "exclude_files": "FlexLib/Classes/Flexlib/GDataXMLNode.{h,m}",
       "subspecs": [
         {
           "name": "no-arc",
           "requires_arc": false,
-          "source_files": "FlexLib/Classes/GDataXMLNode.{h,m}"
+          "source_files": "FlexLib/Classes/Flexlib/GDataXMLNode.{h,m}"
         }
       ]
     },

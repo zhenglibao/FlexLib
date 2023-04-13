@@ -8,7 +8,7 @@
  */
 
 #import "FlexTouchMaskView.h"
-#import "YogaKit/UIView+Yoga.h"
+#import "UIView+Yoga.h"
 
 @implementation FlexTouchMaskView
 

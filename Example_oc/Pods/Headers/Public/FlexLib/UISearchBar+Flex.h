@@ -1,1 +1,1 @@
-../../../../../FlexLib/Classes/ViewExt/UISearchBar+Flex.h
+../../../../../FlexLib/Classes/Flexlib/ViewExt/UISearchBar+Flex.h

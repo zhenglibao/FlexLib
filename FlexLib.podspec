@@ -48,7 +48,7 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
   end
   
   s.subspec 'standard' do |ss|
-    ss.source_files = 'FlexLib/Classes/FlexLib/**/*'
+    ss.source_files = 'FlexLib/Classes/{FlexLib,YogaKit}/**/*'
     ss.resource_bundles = {
        'FlexLib' => ['FlexLib/Assets/*']
     }
@@ -57,7 +57,7 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
     ss.library = 'xml2', 'c++'
     ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
   
-    non_arc_files   = 'FlexLib/Classes/GDataXMLNode.{h,m}'
+    non_arc_files   = 'FlexLib/Classes/Flexlib/GDataXMLNode.{h,m}'
     ss.exclude_files = non_arc_files
     ss.subspec 'no-arc' do |sna|
       sna.requires_arc = false

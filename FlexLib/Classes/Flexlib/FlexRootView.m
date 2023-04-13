@@ -10,7 +10,7 @@
 
 
 #import "FlexRootView.h"
-#import "YogaKit/UIView+Yoga.h"
+#import "UIView+Yoga.h"
 #import "FlexNode.h"
 #import "FlexModalView.h"
 #import "ViewExt/UIView+Flex.h"

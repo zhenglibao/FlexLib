@@ -9,9 +9,9 @@
 
 #import "UIView+Flex.h"
 #import <objc/runtime.h>
-#import "../FlexUtils.h"
-#import "../YogaKit/UIView+Yoga.h"
-#import "../FlexRootView.h"
+#import "FlexUtils.h"
+#import "UIView+Yoga.h"
+#import "FlexRootView.h"
 
 static const void *kFlexViewAttrAssociatedKey = &kFlexViewAttrAssociatedKey;
 

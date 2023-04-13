@@ -11,7 +11,7 @@
 
 #import "FlexBaseVC.h"
 #import "FlexRootView.h"
-#import "YogaKit/UIView+Yoga.h"
+#import "UIView+Yoga.h"
 #import "FlexUtils.h"
 #import "FlexScrollView.h"
 #import "FlexNode.h"

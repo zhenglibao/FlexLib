@@ -9,8 +9,8 @@
 
 
 #import "FlexNode.h"
-#import "YogaKit/UIView+Yoga.h"
-#import "YogaKit/YGLayout.h"
+#import "UIView+Yoga.h"
+#import "YGLayout.h"
 #import "GDataXMLNode.h"
 #import "FlexStyleMgr.h"
 #import "FlexUtils.h"

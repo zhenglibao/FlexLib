@@ -9,7 +9,7 @@
 
 #import "FlexRootView.h"
 #import "FlexFrameView.h"
-#import "YogaKit/UIView+Yoga.h"
+#import "UIView+Yoga.h"
 
 @interface FlexFrameView()
 {

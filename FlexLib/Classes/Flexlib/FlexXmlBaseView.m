@@ -9,9 +9,9 @@
 #import "FlexNode.h"
 #import "FlexStyleMgr.h"
 #import "FlexModalView.h"
-#import "YogaKit/UIView+Yoga.h"
-#import "YogaKit/YGLayout.h"
-#import "ViewExt/UIView+Flex.h"
+#import "UIView+Yoga.h"
+#import "YGLayout.h"
+#import "UIView+Flex.h"
 
 @interface FlexXmlBaseView()
 

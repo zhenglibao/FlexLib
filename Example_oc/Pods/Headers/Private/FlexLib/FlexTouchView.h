@@ -1,1 +1,1 @@
-../../../../../FlexLib/Classes/FlexTouchView.h
+../../../../../FlexLib/Classes/Flexlib/FlexTouchView.h

@@ -10,8 +10,8 @@
 
 #import "FlexModalView.h"
 #import "FlexRootView.h"
-#import "YogaKit/UIView+Yoga.h"
-#import "ViewExt/UIView+Flex.h"
+#import "UIView+Yoga.h"
+#import "UIView+Flex.h"
 #import "FlexUtils.h"
 
 typedef NS_ENUM(NSInteger, FlexModalPosition) {
