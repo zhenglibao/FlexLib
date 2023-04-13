@@ -1362,8 +1362,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1634,22 +1634,6 @@
 			};
 			name = Release;
 		};
-		2D66C3C8D3AF2EE2982A46173ED0AE05 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4886DD2E0D59DE7FC8DA4F01B552AEB1 /* FlexLib.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlexLib";
-				IBSC_MODULE = FlexLib;
-				INFOPLIST_FILE = "Target Support Files/FlexLib/ResourceBundle-FlexLib-FlexLib-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = FlexLib;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		33E39FCDC904BA6AAD0FAAEE566A8A07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 491DC6F640CD3841A3571718FAE46CD7 /* Pods-FlexLib_Tests.release.xcconfig */;
@@ -1670,6 +1654,23 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		3D26398C6AC9B49BC83499C08BEB8B95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE346C1B0A1576A0ADB6837A66B7E6B1 /* FlexLib.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlexLib";
+				IBSC_MODULE = FlexLib;
+				INFOPLIST_FILE = "Target Support Files/FlexLib/ResourceBundle-FlexLib-FlexLib-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = FlexLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
 		};
 		41759A03232B792E94984CC189030524 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1753,6 +1754,23 @@
 			};
 			name = Release;
 		};
+		44C5F52394E9F6C3C3AA4FAEA905610F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4886DD2E0D59DE7FC8DA4F01B552AEB1 /* FlexLib.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlexLib";
+				IBSC_MODULE = FlexLib;
+				INFOPLIST_FILE = "Target Support Files/FlexLib/ResourceBundle-FlexLib-FlexLib-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = FlexLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		521616960F32207C13E318B4E93061B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6342892F4CF2C1A31A43F01D9CA9DD8E /* Specta.release.xcconfig */;
@@ -1797,6 +1815,23 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		75E5CEF75B5671DE8F21D3876F553843 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4886DD2E0D59DE7FC8DA4F01B552AEB1 /* FlexLib.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlexLib";
+				IBSC_MODULE = FlexLib;
+				INFOPLIST_FILE = "Target Support Files/FlexLib/ResourceBundle-FlexLibPreview-FlexLib-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = FlexLibPreview;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		79759604D78320E712558F49DF19AA9F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1906,10 +1941,11 @@
 			};
 			name = Debug;
 		};
-		BE67BE0D9A9DA17B130D8B341B67619A /* Release */ = {
+		B8F223526A040B44B9C6D123258785A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4886DD2E0D59DE7FC8DA4F01B552AEB1 /* FlexLib.release.xcconfig */;
+			baseConfigurationReference = DE346C1B0A1576A0ADB6837A66B7E6B1 /* FlexLib.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlexLib";
 				IBSC_MODULE = FlexLib;
 				INFOPLIST_FILE = "Target Support Files/FlexLib/ResourceBundle-FlexLibPreview-FlexLib-Info.plist";
@@ -1920,7 +1956,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
 		D4B6F4F2A43FD2E18ACFC04860E22111 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1944,22 +1980,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		D58C5D3F73E3DC3F188D96A29E207937 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE346C1B0A1576A0ADB6837A66B7E6B1 /* FlexLib.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlexLib";
-				IBSC_MODULE = FlexLib;
-				INFOPLIST_FILE = "Target Support Files/FlexLib/ResourceBundle-FlexLib-FlexLib-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = FlexLib;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
 		};
 		E9C8E128A0DECD666F5D8391D4F617AB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2003,22 +2023,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FE772109B51FAD79CBC696E71F7282D6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE346C1B0A1576A0ADB6837A66B7E6B1 /* FlexLib.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FlexLib";
-				IBSC_MODULE = FlexLib;
-				INFOPLIST_FILE = "Target Support Files/FlexLib/ResourceBundle-FlexLibPreview-FlexLib-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = FlexLibPreview;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -2082,8 +2086,8 @@
 		ECEF58CD0DD534EE98E3F37AADE82448 /* Build configuration list for PBXNativeTarget "FlexLib-FlexLibPreview" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FE772109B51FAD79CBC696E71F7282D6 /* Debug */,
-				BE67BE0D9A9DA17B130D8B341B67619A /* Release */,
+				B8F223526A040B44B9C6D123258785A8 /* Debug */,
+				75E5CEF75B5671DE8F21D3876F553843 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2091,8 +2095,8 @@
 		EDF75719BF543CFB903F6F5146CC8CC6 /* Build configuration list for PBXNativeTarget "FlexLib-FlexLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D58C5D3F73E3DC3F188D96A29E207937 /* Debug */,
-				2D66C3C8D3AF2EE2982A46173ED0AE05 /* Release */,
+				3D26398C6AC9B49BC83499C08BEB8B95 /* Debug */,
+				44C5F52394E9F6C3C3AA4FAEA905610F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

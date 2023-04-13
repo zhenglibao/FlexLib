@@ -29,18 +29,33 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
   s.ios.deployment_target = '8.0'
   s.default_subspec = 'standard'
   
+  #Yoga最新版本1.19.0使用源码方式引入
+  s.subspec 'yoga' do |ss|
+    ss.source_files = 'FlexLib/Classes/yoga/**/*.{c,h,cpp}'
+    ss.public_header_files = 'FlexLib/Classes/yoga/{Yoga,YGEnums,YGMacros,YGNode,YGStyle,YGValue}.h'
+    ss.requires_arc = false
+    ss.pod_target_xcconfig = {
+        'DEFINES_MODULE' => 'YES'
+    }
+    ss.compiler_flags = [
+        '-fno-omit-frame-pointer',
+        '-fexceptions',
+        '-Wall',
+        '-Werror',
+        '-std=c++1y',
+        '-fPIC'
+    ]
+  end
+  
   s.subspec 'standard' do |ss|
-    ss.source_files = 'FlexLib/Classes/**/*'
+    ss.source_files = 'FlexLib/Classes/FlexLib/**/*'
     ss.resource_bundles = {
        'FlexLib' => ['FlexLib/Assets/*']
     }
   
-    #Yoga最新版本1.19.0使用源码方式引入
-    #ss.dependency 'Yoga', '1.19.0'
+    ss.dependency 'FlexLib/yoga'
     ss.library = 'xml2', 'c++'
     ss.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
-    ss.private_header_files = 'FlexLib/Classes/yoga/*.h'
-    #ss.public_header_files = 'FlexLib/Classes/*.h'
   
     non_arc_files   = 'FlexLib/Classes/GDataXMLNode.{h,m}'
     ss.exclude_files = non_arc_files
