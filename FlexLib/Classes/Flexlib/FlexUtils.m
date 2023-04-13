@@ -254,7 +254,7 @@ UIWindow* keyWindow(void)
     return [UIApplication sharedApplication].delegate.window;
 }
 
-double GetAccurateSecondsSince1970()
+double GetAccurateSecondsSince1970(void)
 {
     struct timeval now ;
     gettimeofday(&now,NULL);
