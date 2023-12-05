@@ -160,8 +160,8 @@ FLEXSET(layerBounds)
     if(ary.count==4){
         CGFloat f1 = [ary[0] floatValue] ;
         CGFloat f2 = [ary[1] floatValue] ;
-        CGFloat f3 = [ary[3] floatValue] ;
-        CGFloat f4 = [ary[4] floatValue] ;
+        CGFloat f3 = [ary[2] floatValue] ;
+        CGFloat f4 = [ary[3] floatValue] ;
         self.layer.bounds = CGRectMake(f1, f2, f3, f4);
     }
 }
@@ -198,8 +198,8 @@ FLEXSET(layerFrame)
     if(ary.count==4){
         CGFloat f1 = [ary[0] floatValue] ;
         CGFloat f2 = [ary[1] floatValue] ;
-        CGFloat f3 = [ary[3] floatValue] ;
-        CGFloat f4 = [ary[4] floatValue] ;
+        CGFloat f3 = [ary[2] floatValue] ;
+        CGFloat f4 = [ary[3] floatValue] ;
         self.layer.frame = CGRectMake(f1, f2, f3, f4);
     }
 }
@@ -229,8 +229,8 @@ FLEXSET(layerContentsRect)
     if(ary.count==4){
         CGFloat f1 = [ary[0] floatValue] ;
         CGFloat f2 = [ary[1] floatValue] ;
-        CGFloat f3 = [ary[3] floatValue] ;
-        CGFloat f4 = [ary[4] floatValue] ;
+        CGFloat f3 = [ary[2] floatValue] ;
+        CGFloat f4 = [ary[3] floatValue] ;
         self.layer.contentsRect = CGRectMake(f1, f2, f3, f4);
     }
 }
@@ -248,8 +248,8 @@ FLEXSET(layerContentsCenter)
     if(ary.count==4){
         CGFloat f1 = [ary[0] floatValue] ;
         CGFloat f2 = [ary[1] floatValue] ;
-        CGFloat f3 = [ary[3] floatValue] ;
-        CGFloat f4 = [ary[4] floatValue] ;
+        CGFloat f3 = [ary[2] floatValue] ;
+        CGFloat f4 = [ary[3] floatValue] ;
         self.layer.contentsCenter = CGRectMake(f1, f2, f3, f4);
     }
 }
