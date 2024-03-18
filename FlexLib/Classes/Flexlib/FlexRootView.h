@@ -17,11 +17,14 @@
 @class FlexAttr;
 @class FlexRootView;
 @class FlexNode;
+@class FlexLayout;
+@class YGLayout;
 
 @interface UIView(FlexPublic)
 
-@property(nonatomic,readonly) FlexRootView* rootView;
-@property(nonatomic,readonly) NSObject* owner;
+@property(readonly) FlexRootView* rootView;
+@property(readonly) NSObject* owner;
+@property(readonly) FlexLayout* flexLayout;
 
 +(UIView*)buildFlexView:(Class)viewCls
                  Layout:(NSArray<NSString*>*)layoutAttrs

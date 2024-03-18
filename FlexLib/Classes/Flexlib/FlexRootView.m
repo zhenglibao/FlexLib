@@ -16,6 +16,7 @@
 #import "ViewExt/UIView+Flex.h"
 #import "FlexUtils.h"
 #import "FlexStyleMgr.h"
+#import "FlexLayout.h"
 
 static void* gObserverHidden    = &gObserverHidden;
 static void* gObserverText = &gObserverText;
@@ -82,6 +83,12 @@ static NSInteger _compareInputView(UIView * _Nonnull f,
         parent = parent.superview;
     }
     return nil;
+}
+
+- (FlexLayout *)flexLayout
+{
+    FlexLayout* layout = [[FlexLayout alloc]initWithYGLayout:self.yoga];
+    return layout;
 }
 
 -(UIView*)findLeaf

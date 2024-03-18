@@ -2,6 +2,15 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 3.3.0
+增加通过链式调用修改布局属性
+
+## 3.2.0
+集成yoga库，更新yoga到最新版本
+
+## 3.1.6
+FlexCustomBaseView布局优化
+
 ## 3.1.2
 1.FlexCollectionCell和FlexBaseTableCell对iOS15的适配
 

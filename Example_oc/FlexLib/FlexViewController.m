@@ -27,6 +27,9 @@
     FlexScrollView* _scroll;
     UILabel* _label;
 }
+@property(nonatomic,strong) UIView* mainView;
+@property(nonatomic,strong) UIView* bottomBtn;
+
 @end
 @implementation FlexViewController
 
@@ -35,6 +38,10 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"FlexLib Demo";
+    
+    [self view];
+    
+//    self.bottomBtn.flexLayout.height(100).width(200);
 }
 - (void)didReceiveMemoryWarning
 {

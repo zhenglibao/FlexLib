@@ -23,6 +23,7 @@
 #import "FlexCustomBaseView.h"
 #import "FlexExpression.h"
 #import "FlexFrameView.h"
+#import "FlexLayout.h"
 #import "FlexLib.h"
 #import "FlexModalView.h"
 #import "FlexNode.h"
