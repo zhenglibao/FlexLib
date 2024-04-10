@@ -98,6 +98,10 @@ void FlexSetCustomScale(FlexScaleFunc scaleFunc);
 void FlexSetMapColor(FlexMapColor mapFunc);
 FlexMapColor FlexGetMapColor(void);
 
+// 注册预定义颜色,color为#开头的十六进制颜色值
+void FlexRegisterColor(NSString* clrName,UIColor* color);
+void FlexUnregisterColor(NSString* clrName);
+
 @interface FlexNode : NSObject<NSCoding>
 
 @property (nonatomic, strong) NSString* viewClassName;

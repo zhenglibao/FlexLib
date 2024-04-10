@@ -16,24 +16,65 @@
 
 static FlexMapColor gMapColor = NULL;
 
-static NSString* _gclrs[]=
+static UIColor* colorFromHexString(NSString* clr)
 {
-    @"black",   @"#0",
-    @"white",   @"#ffffff",
-    @"clear",   @"#00000000",
-    @"darkGray",@"#555555",
-    @"lightGray",@"#aaaaaa",
-    @"gray",    @"#808080",
-    @"red",     @"#ff0000",
-    @"green",   @"#00ff00",
-    @"blue",    @"#0000ff",
-    @"cyan",    @"#00ffff",
-    @"yellow",  @"#ffff00",
-    @"magenta", @"#ff00ff",
-    @"orange",  @"#ff8000",
-    @"purple",  @"#800080",
-    @"brown",   @"#996633",
-};
+    if([clr hasPrefix:@"#"])
+    {
+        clr = [clr substringFromIndex:1];
+    }
+    
+    NSScanner *scanner = [NSScanner scannerWithString:clr];
+    unsigned hex;
+    [scanner scanHexInt:&hex];
+    
+    int r = (hex >> 16) & 0xFF;
+    int g = (hex >> 8) & 0xFF;
+    int b = (hex) & 0xFF;
+    int a = clr.length>6 ? (hex >> 24)& 0xFF : 255 ;
+    
+    if (gMapColor!=NULL) {
+        gMapColor(&r,&g,&b,&a);
+    }
+    
+    return [UIColor colorWithRed:r / 255.0f
+                           green:g / 255.0f
+                            blue:b / 255.0f
+                           alpha:a / 255.0f];
+}
+static NSMutableDictionary<NSString*,UIColor*>* getPredefinedColorMap(void)
+{
+    static NSMutableDictionary* dict = nil;
+    
+    if(dict==nil)
+    {
+        dict = [NSMutableDictionary dictionary];
+        
+        NSString* clrs[]=
+        {
+            @"black",   @"0",
+            @"white",   @"ffffff",
+            @"clear",   @"00000000",
+            @"darkGray",@"555555",
+            @"lightGray",@"aaaaaa",
+            @"gray",    @"808080",
+            @"red",     @"ff0000",
+            @"green",   @"00ff00",
+            @"blue",    @"0000ff",
+            @"cyan",    @"00ffff",
+            @"yellow",  @"ffff00",
+            @"magenta", @"ff00ff",
+            @"orange",  @"ff8000",
+            @"purple",  @"800080",
+            @"brown",   @"996633",
+        };
+
+        int total = sizeof(clrs)/sizeof(NSString*) ;
+        for(int i=0;i<total;i+=2){
+            dict[clrs[i]] = colorFromHexString(clrs[i+1]);
+        }
+    }
+    return dict;
+}
 
 UIColor* systemColor(NSString* clr)
 {
@@ -83,40 +124,18 @@ UIColor* colorFromString(NSString* clr,
             return [UIColor colorWithPatternImage:image];
             
         }else{
-            int total = sizeof(_gclrs)/sizeof(NSString*) ;
-            for(int i=0;i<total;i+=2){
-                if([clr compare:_gclrs[i] options:NSCaseInsensitiveSearch]==0)
-                {
-                    clr = _gclrs[i+1];
-                    break;
-                }
+            
+            UIColor* color = [getPredefinedColorMap() objectForKey:clr];
+            
+            if(color==nil)
+            {
+                NSLog(@"Flexbox: unrecognized color %@",clr);
             }
+            return color;
         }
     }
-    if(![clr hasPrefix:@"#"]){
-        NSLog(@"Flexbox: unrecognized color format %@",clr);
-        return nil;
-    }
     
-    NSString *typeColor = [clr stringByReplacingOccurrencesOfString:@"#" withString:@"0x"];
-    
-    NSScanner *scanner = [NSScanner scannerWithString:typeColor];
-    unsigned hex;
-    [scanner scanHexInt:&hex];
-    
-    int r = (hex >> 16) & 0xFF;
-    int g = (hex >> 8) & 0xFF;
-    int b = (hex) & 0xFF;
-    int a = clr.length>7 ? (hex >> 24)& 0xFF : 255 ;
-    
-    if (gMapColor!=NULL) {
-        gMapColor(&r,&g,&b,&a);
-    }
-    
-    return [UIColor colorWithRed:r / 255.0f
-                           green:g / 255.0f
-                            blue:b / 255.0f
-                           alpha:a / 255.0f];
+    return colorFromHexString(clr);
 }
 
 UIFont* fontFromString(NSString* fontStr)
@@ -382,4 +401,13 @@ void FlexSetMapColor(FlexMapColor mapFunc)
 FlexMapColor FlexGetMapColor(void)
 {
     return gMapColor;
+}
+
+void FlexRegisterColor(NSString* clrName,UIColor* color)
+{
+    [getPredefinedColorMap() setObject:color forKey:clrName];
+}
+void FlexUnregisterColor(NSString* clrName)
+{
+    [getPredefinedColorMap() removeObjectForKey:clrName];
 }
