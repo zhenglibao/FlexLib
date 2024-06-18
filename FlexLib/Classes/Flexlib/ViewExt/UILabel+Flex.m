@@ -391,6 +391,35 @@ FLEXSET(value)
     return attr.paraStyle;
 }
 
+FLEXSET(lineHeight)
+{
+    NSMutableParagraphStyle* style=[self paraStyle];
+    style.minimumLineHeight = [sValue floatValue];
+    style.maximumLineHeight = [sValue floatValue];
+    if(self.text){
+        [self updateAttributeText];
+    }
+}
+
+FLEXSET(minimumLineHeight)
+{
+    NSMutableParagraphStyle* style=[self paraStyle];
+    style.minimumLineHeight = [sValue floatValue];
+    if(self.text){
+        [self updateAttributeText];
+    }
+}
+
+FLEXSET(maximumLineHeight)
+{
+    NSMutableParagraphStyle* style=[self paraStyle];
+    style.maximumLineHeight = [sValue floatValue];
+    if(self.text){
+        [self updateAttributeText];
+    }
+}
+
+
 FLEXSET(lineSpacing)
 {
     NSMutableParagraphStyle* style=[self paraStyle];
