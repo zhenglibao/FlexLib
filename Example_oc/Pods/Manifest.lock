@@ -1,15 +1,15 @@
 PODS:
   - Expecta (1.0.6)
-  - FlexLib (3.2.2):
-    - FlexLib/standard (= 3.2.2)
-  - FlexLib/preview (3.2.2):
+  - FlexLib (3.3.2):
+    - FlexLib/standard (= 3.3.2)
+  - FlexLib/preview (3.3.2):
     - FlexLib/standard
-  - FlexLib/standard (3.2.2):
-    - FlexLib/standard/no-arc (= 3.2.2)
+  - FlexLib/standard (3.3.2):
+    - FlexLib/standard/no-arc (= 3.3.2)
     - FlexLib/yoga
-  - FlexLib/standard/no-arc (3.2.2):
+  - FlexLib/standard/no-arc (3.3.2):
     - FlexLib/yoga
-  - FlexLib/yoga (3.2.2)
+  - FlexLib/yoga (3.3.2)
   - Specta (2.0.0)
 
 DEPENDENCIES:
@@ -29,7 +29,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
-  FlexLib: d4ef2f4ab09c0307dc43704af531e0a2544b9169
+  FlexLib: 070ff74514f77960eb5028ce871cf8e3184fa2ac
   Specta: b79d84043684b35ffdc2680df578dc318ec2efc2
 
 PODFILE CHECKSUM: a49fb91284d8736ae14f8f4e196af95287a9e035

@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#import "YGLayout+Private.h"
+#import "YGKLayout+Private.h"
 #import "UIView+Yoga.h"
 
 #define YG_PROPERTY(type, lowercased_name, capitalized_name)    \

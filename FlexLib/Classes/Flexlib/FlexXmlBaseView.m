@@ -10,7 +10,7 @@
 #import "FlexStyleMgr.h"
 #import "FlexModalView.h"
 #import "UIView+Yoga.h"
-#import "YGLayout.h"
+#import "YGKLayout.h"
 #import "UIView+Flex.h"
 
 @interface FlexXmlBaseView()
