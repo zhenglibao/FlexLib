@@ -186,7 +186,7 @@
               Style:(FlexStyleGroup*)styleGroup
 {
     NSString* sFilePath = [FlexStyleGroup getStyleCachePath:styleName];
-    [NSKeyedArchiver archiveRootObject:styleGroup toFile:sFilePath];
+    FlexArchiveObjToFile(styleGroup, sFilePath);
 }
 +(FlexStyleGroup*)loadFromCache:(NSString*)styleName
 {

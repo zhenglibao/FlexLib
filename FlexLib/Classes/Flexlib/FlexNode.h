@@ -105,6 +105,8 @@ FlexMapColor FlexGetMapColor(void);
 // 注册预定义颜色,color为#开头的十六进制颜色值
 void FlexRegisterColor(NSString* clrName,UIColor* color);
 void FlexUnregisterColor(NSString* clrName);
+
+BOOL FlexArchiveObjToFile(id obj,NSString* filePath);
 id _Nullable FlexUnarchiveObjWithFile(NSString* filePath);
 
 @interface FlexNode : NSObject<NSCoding>
@@ -119,7 +121,7 @@ id _Nullable FlexUnarchiveObjWithFile(NSString* filePath);
 
 
 +(FlexNode*)loadNodeFromRes:(NSString*)flexName
-                      Owner:(NSObject*)owner;
+                      Owner:(NSObject* _Nullable)owner;
 +(FlexNode*)loadNodeData:(NSData*)data;
 +(NSString*)getCacheDir;
 +(void)clearFlexCache;
@@ -135,24 +137,24 @@ id _Nullable FlexUnarchiveObjWithFile(NSString* filePath);
 @interface NSObject (Flex)
 
 //load xml layout data in owner
--(NSData*)loadXmlLayoutData:(NSString*)flexname;
+-(NSData* _Nullable)loadXmlLayoutData:(NSString*)flexname;
 
 //bind variables with name ?
 -(BOOL)needBindVariable;
 
 // owner custom create view
--(UIView*)createView:(Class)cls Name:(NSString*)name;
+-(UIView* _Nullable)createView:(Class)cls Name:(NSString* _Nullable)name;
 -(void)postCreateView:(UIView*)view;
 
 // multi-language support
--(NSBundle*)bundleForStrings;
--(NSString*)tableForStrings;
+-(NSBundle* _Nullable)bundleForStrings;
+-(NSString* _Nullable)tableForStrings;
 
 // xml文件所在bundle
--(NSBundle*)bundleForRes;
+-(NSBundle* _Nullable)bundleForRes;
 
 // image所在bundle，默认使用bundleForRes的结果
--(NSBundle*)bundleForImages;
+-(NSBundle* _Nullable)bundleForImages;
 
 @end
 

@@ -903,7 +903,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
                Node:(FlexNode*)node
 {
     NSString* sFilePath = [FlexNode getResCachePath:flexName];
-    [NSKeyedArchiver archiveRootObject:node toFile:sFilePath];
+    FlexArchiveObjToFile(node, sFilePath);
 }
 @end
 
@@ -1017,7 +1017,7 @@ void FlexSetFlexIndex(NSDictionary* resIndex)
         
         NSString* sFilePath = [FlexNode getCacheDir];
         sFilePath = [sFilePath stringByAppendingPathComponent:FLEXINDEXNAME];
-        [NSKeyedArchiver archiveRootObject:resIndex toFile:sFilePath];
+        FlexArchiveObjToFile(resIndex, sFilePath);
     }
 }
 void FlexLoadFlexIndex(void)

@@ -412,6 +412,16 @@ void FlexUnregisterColor(NSString* clrName)
     [getPredefinedColorMap() removeObjectForKey:clrName];
 }
 
+BOOL FlexArchiveObjToFile(id obj,NSString* filePath)
+{
+    NSData* data = [NSKeyedArchiver archivedDataWithRootObject:obj requiringSecureCoding:NO error:nil];
+    
+    if(data){
+        return [data writeToFile:filePath atomically:NO];
+    }
+    return NO;
+}
+
 id FlexUnarchiveObjWithFile(NSString* filePath)
 {
     NSData* data = [NSData dataWithContentsOfFile:filePath];
