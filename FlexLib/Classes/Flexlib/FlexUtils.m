@@ -411,3 +411,24 @@ void FlexUnregisterColor(NSString* clrName)
 {
     [getPredefinedColorMap() removeObjectForKey:clrName];
 }
+
+id FlexUnarchiveObjWithFile(NSString* filePath)
+{
+    NSData* data = [NSData dataWithContentsOfFile:filePath];
+    
+    if(data == nil)
+        return nil;
+    
+    @try {
+        NSKeyedUnarchiver* unarchiver = [[NSKeyedUnarchiver alloc] initForReadingFromData:data error:nil];
+        unarchiver.requiresSecureCoding = NO;
+        return [unarchiver decodeTopLevelObjectForKey:NSKeyedArchiveRootObjectKey error:nil];
+    } @catch (NSException *exception) {
+        
+        NSLog(@"Flexbox: unarchive object failed from %@",filePath);
+        
+    } @finally {
+        
+    }
+    return nil;
+}

@@ -1,6 +1,6 @@
 {
   "name": "FlexLib",
-  "version": "3.3.3",
+  "version": "3.4.0",
   "summary": "An obj-c flex layout framework for IOS & mac",
   "description": "It's a layout framework based on yoga engine. The main purpose is to provide easy and fast usage.",
   "homepage": "https://github.com/zhenglibao/FlexLib",
@@ -13,17 +13,17 @@
   },
   "source": {
     "git": "https://github.com/zhenglibao/FlexLib.git",
-    "tag": "3.3.3"
+    "tag": "3.4.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "11.0"
   },
   "default_subspecs": "standard",
   "subspecs": [
     {
       "name": "yoga",
       "source_files": "FlexLib/Classes/yoga/**/*.{c,h,cpp}",
-      "public_header_files": "FlexLib/Classes/yoga/{Yoga,YGEnums,YGMacros,YGNode,YGStyle,YGValue}.h",
+      "public_header_files": "FlexLib/Classes/yoga/{Yoga,YGEnums,YGMacros,YGValue}.h",
       "requires_arc": false,
       "pod_target_xcconfig": {
         "DEFINES_MODULE": "YES"

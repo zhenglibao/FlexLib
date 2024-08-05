@@ -1,13 +1,14 @@
 PODS:
-  - FlexLib (3.0.0):
-    - FlexLib/standard (= 3.0.0)
-  - FlexLib/preview (3.0.0):
+  - FlexLib (3.4.0):
+    - FlexLib/standard (= 3.4.0)
+  - FlexLib/preview (3.4.0):
     - FlexLib/standard
-  - FlexLib/standard (3.0.0):
-    - FlexLib/standard/no-arc (= 3.0.0)
-    - Yoga (= 1.14.0)
-  - FlexLib/standard/no-arc (3.0.0):
-    - Yoga (= 1.14.0)
+  - FlexLib/standard (3.4.0):
+    - FlexLib/standard/no-arc (= 3.4.0)
+    - FlexLib/yoga
+  - FlexLib/standard/no-arc (3.4.0):
+    - FlexLib/yoga
+  - FlexLib/yoga (3.4.0)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -24,9 +25,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FlexLib: 939c6ccbd187451ac7b2fc9220dec7d2a2b24bd4
+  FlexLib: 622572d472c61cf04e4d66cef152d22ce8f227b8
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
 
 PODFILE CHECKSUM: 4ac29cc7fc8f093e3bab9dae20351ed9692977e1
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.15.2

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FlexLib'
-  s.version          = '3.3.3'
+  s.version          = '3.4.0'
   s.summary          = 'An obj-c flex layout framework for IOS & mac'
 
 # This description is used to generate tags and improve search results.
@@ -26,13 +26,13 @@ It's a layout framework based on yoga engine. The main purpose is to provide eas
   s.author           = { '798393829@qq.com' => '798393829@qq.com' }
   s.source           = { :git => 'https://github.com/zhenglibao/FlexLib.git', :tag => s.version.to_s }
   
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
   s.default_subspec = 'standard'
   
   #Yoga最新版本1.19.0使用源码方式引入
   s.subspec 'yoga' do |ss|
     ss.source_files = 'FlexLib/Classes/yoga/**/*.{c,h,cpp}'
-    ss.public_header_files = 'FlexLib/Classes/yoga/{Yoga,YGEnums,YGMacros,YGNode,YGStyle,YGValue}.h'
+    ss.public_header_files = 'FlexLib/Classes/yoga/{Yoga,YGEnums,YGMacros,YGValue}.h'
     ss.requires_arc = false
     ss.pod_target_xcconfig = {
         'DEFINES_MODULE' => 'YES'

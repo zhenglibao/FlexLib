@@ -23,6 +23,7 @@
 #import "FlexCustomBaseView.h"
 #import "FlexExpression.h"
 #import "FlexFrameView.h"
+#import "FlexLayout.h"
 #import "FlexLib.h"
 #import "FlexModalView.h"
 #import "FlexNode.h"
@@ -56,9 +57,13 @@
 #import "UIToolbar+Flex.h"
 #import "UIView+Flex.h"
 #import "UIView+Yoga.h"
-#import "YGLayout+Private.h"
-#import "YGLayout.h"
+#import "YGKLayout+Private.h"
+#import "YGKLayout.h"
 #import "GDataXMLNode.h"
+#import "YGEnums.h"
+#import "YGMacros.h"
+#import "YGValue.h"
+#import "Yoga.h"
 
 FOUNDATION_EXPORT double FlexLibVersionNumber;
 FOUNDATION_EXPORT const unsigned char FlexLibVersionString[];

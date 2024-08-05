@@ -162,7 +162,7 @@
         FlexStyleGroup* node;
         
         @try{
-            node = [NSKeyedUnarchiver unarchiveObjectWithFile:stylePath];
+            node = FlexUnarchiveObjWithFile(stylePath);
             return node;
         }@catch(NSException* exception){
             NSLog(@"Flexbox: loadStyle style failed - %@",[stylePath lastPathComponent]);

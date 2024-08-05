@@ -897,15 +897,7 @@ void FlexApplyLayoutParam(YGLayout* layout,
 {
     NSString* sFilePath = [FlexNode getResCachePath:flexName];
     
-    FlexNode* node ;
-    
-    @try{
-        node = [NSKeyedUnarchiver unarchiveObjectWithFile:sFilePath];
-        return node;
-    }@catch(NSException* exception){
-        NSLog(@"Flexbox: loadFromCache failed - %@",flexName);
-    }
-    return nil;
+    return (FlexNode*) FlexUnarchiveObjWithFile(sFilePath);
 }
 +(void)storeToCache:(NSString*)flexName
                Node:(FlexNode*)node
@@ -978,13 +970,7 @@ FlexNode* loadBinaryFlex(NSString* resName,
         return nil;
     }
     
-    @try{
-        FlexNode* node = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-        return node;
-    }@catch(NSException* exception){
-        NSLog(@"Flexbox: loadBinaryFlex failed - %@",resName);
-    }
-    return nil;
+    return (FlexNode*)FlexUnarchiveObjWithFile(path);
 }
 
 NSData* loadFromFile(NSString* resName,NSObject* owner)
@@ -1040,7 +1026,7 @@ void FlexLoadFlexIndex(void)
     sFilePath = [sFilePath stringByAppendingPathComponent:FLEXINDEXNAME];
     
     @try{
-        NSDictionary* dic = [NSKeyedUnarchiver unarchiveObjectWithFile:sFilePath];
+        NSDictionary* dic = FlexUnarchiveObjWithFile(sFilePath);
         if(dic!=nil){
             gFlexIndex = dic;
         }

@@ -16,9 +16,12 @@
 #define FLEXONLINELOAD  @"flexOnlineLoadRes"
 #define FLEXINDEXNAME   @"_flexres.idx"
 
+
 @class FlexRootView;
 @class YGLayout;
 @class FlexAttr;
+
+NS_ASSUME_NONNULL_BEGIN
 
 typedef NSData* (*FlexLoadFunc)(NSString* flexName,NSObject* owner);
 typedef CGFloat (*FlexScaleFunc)(CGFloat f,const char* attrName);
@@ -59,7 +62,7 @@ BOOL FlexIsCacheEnabled(void);
 void FlexSetViewAttr(UIView* view,
                      NSString* attrName,
                      NSString* attrValue,
-                     NSObject* owner);
+                     NSObject* _Nullable owner);
 
 // 设置布局属性
 void FlexApplyLayoutParam(YGLayout* layout,
@@ -80,11 +83,11 @@ void FlexSetFlexIndex(NSDictionary* resIndex);
 void FlexLoadFlexIndex(void);
 
 //通过http拉取布局文件
-NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError);
+NSData* _Nullable FlexFetchLayoutFile(NSString* flexName,NSError** _Nullable outError);
 
 //拉取http资源
-NSData* FlexFetchHttpRes(NSString* url,
-                         NSError** outError);
+NSData* _Nullable FlexFetchHttpRes(NSString* url,
+                         NSError** _Nullable outError);
 
 // 设置缩放因子,主要针对字体，但也可以用于其他
 // 以*开头的数字a，最终值将为a*factor+offset
@@ -101,6 +104,7 @@ FlexMapColor FlexGetMapColor(void);
 // 注册预定义颜色,color为#开头的十六进制颜色值
 void FlexRegisterColor(NSString* clrName,UIColor* color);
 void FlexUnregisterColor(NSString* clrName);
+id _Nullable FlexUnarchiveObjWithFile(NSString* filePath);
 
 @interface FlexNode : NSObject<NSCoding>
 
@@ -167,4 +171,7 @@ NSMutableAttributedString* createAttributedString(NSArray<FlexNode*>* childElems
                                                   UIFont* defaultFont,
                                                   UIColor* defaultColor,
                                                   NSMutableArray<FlexClickRange*>* clicks);
+
+
+NS_ASSUME_NONNULL_END
 
