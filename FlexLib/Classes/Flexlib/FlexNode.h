@@ -21,18 +21,18 @@
 @class YGLayout;
 @class FlexAttr;
 
+NS_ASSUME_NONNULL_BEGIN
 
-typedef NSData* (*FlexLoadFunc)(NSString* flexName,NSObject* owner);
+
+typedef NSData* _Nullable (*FlexLoadFunc)(NSString* flexName,NSObject* _Nullable owner);
 typedef CGFloat (*FlexScaleFunc)(CGFloat f,const char* attrName);
-typedef void (*FlexMapColor)(int* r,int* g,int* b,int* a);
+typedef void (*FlexMapColor)(int* _Nonnull r,int*  g,int* b,int* a);
 
 typedef enum{
     flexFromFile = 0,
     flexFromNet = 1,
     flexCustomLoad = 2,
 }FlexLoadMethod;
-
-NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - global functions
 
