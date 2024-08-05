@@ -21,7 +21,6 @@
 @class YGLayout;
 @class FlexAttr;
 
-NS_ASSUME_NONNULL_BEGIN
 
 typedef NSData* (*FlexLoadFunc)(NSString* flexName,NSObject* owner);
 typedef CGFloat (*FlexScaleFunc)(CGFloat f,const char* attrName);
@@ -32,6 +31,8 @@ typedef enum{
     flexFromNet = 1,
     flexCustomLoad = 2,
 }FlexLoadMethod;
+
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - global functions
 
@@ -46,7 +47,7 @@ FlexLoadMethod FlexGetLoadMethod(void);
 
 // 设置资源后缀，用来支持多种模式，比如暗黑模式
 void FlexSetResourceSuffix(NSString* resourceSuffix);
-NSString* FlexGetResourceSuffix(void);
+NSString* _Nullable FlexGetResourceSuffix(void);
 
 // 恢复预览设置，仅在debug下生效
 void FlexRestorePreviewSetting(void);
