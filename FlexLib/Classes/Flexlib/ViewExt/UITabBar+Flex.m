@@ -45,11 +45,7 @@ FLEXSET(barTintColor)
 
 FLEXSET(unSelTintColor)
 {
-    if (@available(iOS 10.0, *)) {
-        self.unselectedItemTintColor = colorFromString(sValue,owner);
-    } else {
-        // Fallback on earlier versions
-    }
+    self.unselectedItemTintColor = colorFromString(sValue,owner);
 }
 
 FLEXSET(itemPosition)

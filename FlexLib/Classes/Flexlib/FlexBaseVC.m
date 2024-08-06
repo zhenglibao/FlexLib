@@ -169,13 +169,6 @@ static void* gObserverFrame = &gObserverFrame;
 }
 -(void)loadView
 {
-    if (@available(iOS 11.0, *))
-    {
-    }else{
-        // for <ios11, it's necessary
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    
     if(_flexName == nil){
         _flexName = [self getFlexName];
         if(_flexName == nil){

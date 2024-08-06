@@ -920,21 +920,28 @@ NSString* FlexGetPreviewBaseUrl(void)
 NSData* FlexFetchHttpRes(NSString* url,
                          NSError** outError)
 {
-    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
-    NSURLResponse * response = nil;
-    NSError * error = nil;
-    NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest
-                                          returningResponse:&response
-                                                      error:&error];
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    __block NSData* result = nil;
     
-    if (error == nil)
-    {
-        return data;
-    }else if(outError != NULL){
-        *outError = error;
-    }
-    return nil;
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithURL:[NSURL URLWithString:url]
+              completionHandler:^(NSData *data,
+                                  NSURLResponse *response,
+                                  NSError *error) 
+      {
+        if(error==nil){
+            
+            result = data;
+        }
+        dispatch_semaphore_signal(semaphore);
+
+    }] resume];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+    return result;
 }
+
 NSData* FlexFetchLayoutFile(NSString* flexName,NSError** outError)
 {
     if(gBaseUrl.length==0){

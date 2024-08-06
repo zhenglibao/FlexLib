@@ -241,13 +241,10 @@ BOOL IsIphoneX(void)
         iphoneX = 0 ;
         if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
             
-            if(@available(iOS 11.0,*)){
-                
-                UIWindow *window = [[UIWindow  alloc]initWithFrame:[UIScreen mainScreen].bounds];
-                if(window.safeAreaInsets.bottom>0)
-                {
-                    iphoneX = 1;
-                }
+            UIWindow *window = [[UIWindow  alloc]initWithFrame:[UIScreen mainScreen].bounds];
+            if(window.safeAreaInsets.bottom>0)
+            {
+                iphoneX = 1;
             }
         }
     }
