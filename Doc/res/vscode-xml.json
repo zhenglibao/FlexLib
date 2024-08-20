@@ -588,12 +588,6 @@
 			"borderColor",
 		],
 	},
-	"borderWidth":{
-		"prefix": "borderWidth",
-		"body": [
-			"borderWidth",
-		],
-	},
 	"borderRadius":{
 		"prefix": "borderRadius",
 		"body": [
@@ -1853,14 +1847,6 @@
 			"allCharacters",
 		],
 	},
-	"no":{
-		"prefix": "no",
-		"body": [
-			"no",
-		],
-	},
-
-
 	"no":{
 		"prefix": "no",
 		"body": [
