@@ -308,7 +308,6 @@ static NameValue _breakMode[] =
 FLEXSET(text)
 {
     self.text = sValue;
-    [self updateAttributeText];
 }
 FLEXSET(fontSize)
 {
@@ -327,7 +326,6 @@ FLEXSET(lineBreakMode)
     
     NSMutableParagraphStyle* style=[self paraStyle];
     style.lineBreakMode = n;
-    [self updateAttributeText];
 }
 FLEXSET(linesNum)
 {
@@ -364,7 +362,6 @@ FLEXSET(textAlign)
     
     NSMutableParagraphStyle* style=[self paraStyle];
     style.alignment = self.textAlignment;
-    [self updateAttributeText];
 }
 FLEXSET(interactEnable)
 {
@@ -379,7 +376,6 @@ FLEXSET(adjustFontSize)
 FLEXSET(value)
 {
     self.text = sValue;
-    [self updateAttributeText];
 }
 
 -(NSMutableParagraphStyle*)paraStyle

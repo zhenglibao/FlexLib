@@ -14,6 +14,8 @@
 
 @interface UILabel (Flex)
 
+-(NSMutableParagraphStyle*)paraStyle;
+
 /*
  * 设置Attributed string，仅针对UILabel中包含子元素的情况下有效
  * 调用完后需要调用updateAttributeText方法来更新attributedText
