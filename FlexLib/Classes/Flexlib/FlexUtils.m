@@ -112,6 +112,29 @@ UIColor* systemColor(NSString* clr)
 UIColor* colorFromString(NSString* clr,
                          NSObject* owner)
 {
+    if (@available( iOS 13.0, *)) {
+        
+        NSUInteger loc = [clr rangeOfString:@"|"].location;
+        if(loc!=NSNotFound)
+        {
+            UIColor* lightColor = colorFromString([clr substringToIndex:loc], owner);
+            UIColor* darkColor = colorFromString([clr substringFromIndex:loc+1], owner);
+            
+            if(lightColor!=nil && darkColor!=nil)
+            {
+                return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+                    if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                        return darkColor;
+                    } else {
+                        return lightColor;
+                    }
+                }];
+            }else{
+                return lightColor?:darkColor;
+            }
+        }
+    }
+    
     if(![clr hasPrefix:@"#"]){
         
         if([clr rangeOfString:@"."].length>0){

@@ -80,7 +80,7 @@
 
        
 
-    </FlexScrollView><UIView name="bottomBtn" layout="$width:ScreenWidth*0.6,height:50,alignItems:center,justifyContent:center" attr="bgColor:#e5e5e5,borderRadius:6">
+    </FlexScrollView><UIView name="bottomBtn" layout="$width:ScreenWidth*0.6,height:50,alignItems:center,justifyContent:center" attr="bgColor:#e5e5e5|white,borderRadius:6">
         <UILabel
            attr="@:system/buttonText,text:表达式计算，屏幕宽度的60%"/>
    </UIView>
