@@ -86,8 +86,6 @@ iPhone X adaption
 
 * For page like the following image, you don't need UITableView any more. Just write everything in one xml. It's much simpler and maintainable.
 
-![setting page](https://github.com/zhenglibao/FlexLib/raw/master/Doc/res/setting.png)
-
 * The calculation for height of complex UITableViewCell is really boring. With FlexLib, all the calculation is automatically.
 
 * FlexScrollView (the subclass of UIScrollView) can manage its contentSize automatically. I'm sure it will save you a lot of time.
