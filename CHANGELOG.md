@@ -3,7 +3,7 @@
 
 ---
 ## 4.0.0
-1.采用新的flex文件格式，flex布局文件大小减少80%
+1.采用新的flex文件格式，flex布局文件大小减少80% (需要更新xml编译器FlexCompiler，位于Doc/res/FlexCompiler)
 2.增加内存缓存，提升release模式下的加载性能
 3.其他性能优化
 
