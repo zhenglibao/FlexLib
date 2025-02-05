@@ -18,6 +18,7 @@
 #import "FlexModalView.h"
 #import "FlexExpression.h"
 #import "ViewExt/UIView+Flex.h"
+#import "FlexEncode.h"
 
 #define VIEWCLSNAME     @"viewClsName"
 #define NAME            @"name"
@@ -44,8 +45,10 @@ static NSString* gResourceSuffix = nil;
 
 #ifdef DEBUG
 static BOOL gbUserCache = NO;
+static BOOL gbMemoryCache = NO;
 #else
 static BOOL gbUserCache = YES;
+static BOOL gbMemoryCache = YES;
 #endif
 
 // 布局文件索引，Flexname -> Http Url
@@ -211,26 +214,19 @@ void FlexSetViewAttr(UIView* view,
         return ;
     }
     
-    // avoid performSelector, because maybe blocked by Apple.
-    
-    NSMethodSignature* sig = [[view class] instanceMethodSignatureForSelector:sel];
-    if(sig == nil)
-    {
-        NSLog(@"Flexbox: %@ no method %@",[view class],methodDesc);
-        return ;
-    }
-    
     attrValue = FlexProcessAttrValue(attrName,attrValue, owner);
     
     @try{
         
-        NSInvocation* inv = [NSInvocation invocationWithMethodSignature:sig] ;
-        [inv setTarget:view];
-        [inv setSelector:sel];
-        [inv setArgument:&attrValue atIndex:2];
-        [inv setArgument:&owner atIndex:3];
+        IMP imp = [view methodForSelector:sel];
         
-        [inv invoke];
+        if(imp!=NULL)
+        {
+            void (*func)(id,SEL,NSString*,NSObject*) = (void*)imp;
+            
+            func(view,sel,attrValue,owner);
+        }
+        
     }@catch(NSException* e){
         NSLog(@"Flexbox: **** exception occur in %@::%@ property *** \r\nReason - %@.\r\n This may cause memory leak.",[view class],attrName,[e reason]);
     }
@@ -296,90 +292,101 @@ BOOL FlexIsLayoutAttr(NSString* attrName)
     return [layoutAttrs containsObject:attrName];
 }
 
+static void initLayoutMap(NSMutableDictionary* dict)
+{
+#define BLK_ENUMVALUE(item,table,type)                       \
+    dict[@#item] = ^(YGLayout* layout,const char* value)     \
+    {                                                        \
+        layout.item = (type)String2Int(value, table, sizeof(table)/sizeof(NameValue));  \
+    }
+    
+#define BLK_YGVALUE(item)                                    \
+    dict[@#item] = ^(YGLayout* layout,const char* value)     \
+    {                                                        \
+        layout.item = String2YGValue(value,#item);           \
+    }
+    
+#define BLK_NUMVALUE(item)                                   \
+    dict[@#item] = ^(YGLayout* layout,const char* value)     \
+    {                                                        \
+        layout.item=ScaleSize(value,#item);                  \
+    }
+
+    BLK_ENUMVALUE(direction,_direction,YGDirection);
+    BLK_ENUMVALUE(flexDirection,_flexDirection,YGFlexDirection);
+    BLK_ENUMVALUE(justifyContent,_justify,YGJustify);
+    BLK_ENUMVALUE(alignContent,_align,YGAlign);
+    BLK_ENUMVALUE(alignItems,_align,YGAlign);
+    BLK_ENUMVALUE(alignSelf,_align,YGAlign);
+    BLK_ENUMVALUE(position,_positionType,YGPositionType);
+    BLK_ENUMVALUE(flexWrap,_wrap,YGWrap);
+    BLK_ENUMVALUE(overflow,_overflow,YGOverflow);
+    BLK_ENUMVALUE(display,_display,YGDisplay);
+    
+    BLK_NUMVALUE(flex);
+    BLK_NUMVALUE(flexGrow);
+    BLK_NUMVALUE(flexShrink);
+    
+    BLK_YGVALUE(flexBasis);
+    
+    BLK_YGVALUE(left);
+    BLK_YGVALUE(top);
+    BLK_YGVALUE(right);
+    BLK_YGVALUE(bottom);
+    BLK_YGVALUE(start);
+    BLK_YGVALUE(end);
+
+    BLK_YGVALUE(marginLeft);
+    BLK_YGVALUE(marginTop);
+    BLK_YGVALUE(marginRight);
+    BLK_YGVALUE(marginBottom);
+    BLK_YGVALUE(marginStart);
+    BLK_YGVALUE(marginEnd);
+    BLK_YGVALUE(marginHorizontal);
+    BLK_YGVALUE(marginVertical);
+    BLK_YGVALUE(margin);
+    
+    BLK_YGVALUE(paddingLeft);
+    BLK_YGVALUE(paddingTop);
+    BLK_YGVALUE(paddingRight);
+    BLK_YGVALUE(paddingBottom);
+    BLK_YGVALUE(paddingStart);
+    BLK_YGVALUE(paddingEnd);
+    BLK_YGVALUE(paddingHorizontal);
+    BLK_YGVALUE(paddingVertical);
+    BLK_YGVALUE(padding);
+        
+    BLK_YGVALUE(width);
+    BLK_YGVALUE(height);
+    BLK_YGVALUE(minWidth);
+    BLK_YGVALUE(minHeight);
+    BLK_YGVALUE(maxWidth);
+    BLK_YGVALUE(maxHeight);
+    
+    BLK_NUMVALUE(aspectRatio);
+}
+
 static void ApplyLayoutParam(YGLayout* layout,
                              NSString* key,
                              NSString* value)
 {
     FlexProcessExpression(&key, &value);
     
-    const char* k = [key cStringUsingEncoding:NSUTF8StringEncoding];
-    const char* v = [value cStringUsingEncoding:NSUTF8StringEncoding];
- 
-#define SETENUMVALUE(item,table,type)      \
-if(strcmp(k,#item)==0)                \
-{                                        \
-layout.item=(type)String2Int(v,table,sizeof(table)/sizeof(NameValue));                  \
-return;                                  \
-}                                        \
-
-#define SETYGVALUE(item)       \
-if(strcmp(k,#item)==0)          \
-{                               \
-layout.item=String2YGValue(v,k);\
-return;                         \
-}                               \
-
-#define SETNUMVALUE(item)       \
-if(strcmp(k,#item)==0)          \
-{                               \
-layout.item=ScaleSize(v,k);     \
-return;                         \
-}
-
-SETENUMVALUE(direction,_direction,YGDirection);
-SETENUMVALUE(flexDirection,_flexDirection,YGFlexDirection);
-SETENUMVALUE(justifyContent,_justify,YGJustify);
-SETENUMVALUE(alignContent,_align,YGAlign);
-SETENUMVALUE(alignItems,_align,YGAlign);
-SETENUMVALUE(alignSelf,_align,YGAlign);
-SETENUMVALUE(position,_positionType,YGPositionType);
-SETENUMVALUE(flexWrap,_wrap,YGWrap);
-SETENUMVALUE(overflow,_overflow,YGOverflow);
-SETENUMVALUE(display,_display,YGDisplay);
-
-    SETNUMVALUE(flex);
-    SETNUMVALUE(flexGrow);
-    SETNUMVALUE(flexShrink);
+    static NSMutableDictionary* keyBlocks = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        keyBlocks = [NSMutableDictionary dictionaryWithCapacity:64];
+        initLayoutMap(keyBlocks);
+    });
     
-    SETYGVALUE(flexBasis);
+    void (^b)(YGLayout* layout,const char* value) = [keyBlocks objectForKey:key];
     
-    SETYGVALUE(left);
-    SETYGVALUE(top);
-    SETYGVALUE(right);
-    SETYGVALUE(bottom);
-    SETYGVALUE(start);
-    SETYGVALUE(end);
-
-    SETYGVALUE(marginLeft);
-    SETYGVALUE(marginTop);
-    SETYGVALUE(marginRight);
-    SETYGVALUE(marginBottom);
-    SETYGVALUE(marginStart);
-    SETYGVALUE(marginEnd);
-    SETYGVALUE(marginHorizontal);
-    SETYGVALUE(marginVertical);
-    SETYGVALUE(margin);
-    
-    SETYGVALUE(paddingLeft);
-    SETYGVALUE(paddingTop);
-    SETYGVALUE(paddingRight);
-    SETYGVALUE(paddingBottom);
-    SETYGVALUE(paddingStart);
-    SETYGVALUE(paddingEnd);
-    SETYGVALUE(paddingHorizontal);
-    SETYGVALUE(paddingVertical);
-    SETYGVALUE(padding);
-        
-    SETYGVALUE(width);
-    SETYGVALUE(height);
-    SETYGVALUE(minWidth);
-    SETYGVALUE(minHeight);
-    SETYGVALUE(maxWidth);
-    SETYGVALUE(maxHeight);
-    
-    SETNUMVALUE(aspectRatio);
-    
-    NSLog(@"Flexbox: not supported layout attr - %@",key);
+    if(b!=nil)
+    {
+        b(layout,value.UTF8String);
+    }else{
+        NSLog(@"Flexbox: not supported layout attr - %@",key);
+    }
 }
 
 //增加对单一flex属性的支持，相当于同时设置flexGrow和flexShrink
@@ -415,6 +422,9 @@ void FlexApplyLayoutParam(YGLayout* layout,
         ApplyLayoutParam(layout, key, value);
     }
 }
+
+#pragma mark - FlexNode
+
 @interface FlexNode()
 @end
 
@@ -443,6 +453,90 @@ void FlexApplyLayoutParam(YGLayout* layout,
     [aCoder encodeObject:_layoutParams forKey:LAYOUTPARAM];
     [aCoder encodeObject:_viewAttrs forKey:VIEWATTRS];
     [aCoder encodeObject:_children forKey:CHILDREN];
+}
+
+-(void)decodeFromData:(const uint8_t**)data
+{
+    [super decodeFromData:data];
+    
+    self.viewClassName = FlexDecodeString(data);
+    self.name = FlexDecodeString(data);
+    self.onPress = FlexDecodeString(data);
+    
+    uint64_t count = FlexDecodeUleb128(data);
+    NSMutableArray<NSString*>* classNames = [NSMutableArray arrayWithCapacity:count];
+    for(int i=0;i<count;i++)
+    {
+        [classNames addObject:FlexDecodeString(data)];
+    }
+    self.classNames = classNames;
+    
+    count = FlexDecodeUleb128(data);
+    NSMutableArray<FlexAttr*>* layoutParams = [NSMutableArray arrayWithCapacity:count];
+    for(int i=0;i<count;i++)
+    {
+        FlexAttr* attr = [[FlexAttr alloc]init];
+        attr.name = FlexDecodeString(data);
+        attr.value = FlexDecodeString(data);
+        [layoutParams addObject:attr];
+    }
+    self.layoutParams = layoutParams;
+    
+    count = FlexDecodeUleb128(data);
+    NSMutableArray<FlexAttr*>* viewAttrs = [NSMutableArray arrayWithCapacity:count];
+    for(int i=0;i<count;i++)
+    {
+        FlexAttr* attr = [[FlexAttr alloc]init];
+        attr.name = FlexDecodeString(data);
+        attr.value = FlexDecodeString(data);
+        [viewAttrs addObject:attr];
+    }
+    self.viewAttrs = viewAttrs;
+    
+    count = FlexDecodeUleb128(data);
+    NSMutableArray<FlexNode*>* children = [NSMutableArray arrayWithCapacity:count];
+    for(int i=0;i<count;i++)
+    {
+        FlexNode* node = [[FlexNode alloc]init];
+        [node decodeFromData:data];
+        [children addObject:node];
+    }
+    self.children = children;
+}
+
+-(void)encodeToData:(NSMutableData*)data
+{
+    [super encodeToData:data];
+    
+    FlexEncodeString(self.viewClassName, data);
+    FlexEncodeString(self.name, data);
+    FlexEncodeString(self.onPress, data);
+    
+    FlexEncodeUleb128((uint64_t)self.classNames.count, data);
+    for(NSString* s in self.classNames)
+    {
+        FlexEncodeString(s, data);
+    }
+    
+    FlexEncodeUleb128((uint64_t)self.layoutParams.count, data);
+    for(FlexAttr* attr in self.layoutParams)
+    {
+        FlexEncodeString(attr.name, data);
+        FlexEncodeString(attr.value, data);
+    }
+    
+    FlexEncodeUleb128((uint64_t)self.viewAttrs.count, data);
+    for(FlexAttr* attr in self.viewAttrs)
+    {
+        FlexEncodeString(attr.name, data);
+        FlexEncodeString(attr.value, data);
+    }
+    
+    FlexEncodeUleb128((uint64_t)self.children.count, data);
+    for(FlexNode* node in self.children)
+    {
+        [node encodeToData:data];
+    }
 }
 
 - (NSString *)description
@@ -824,6 +918,25 @@ void FlexApplyLayoutParam(YGLayout* layout,
 +(FlexNode*)loadNodeFromRes:(NSString*)flexName
                       Owner:(NSObject*)owner
 {
+    static NSCache* cache = nil;
+    
+    if(cache==nil){
+        cache = [[NSCache alloc]init];
+        cache.countLimit = 32;
+        cache.evictsObjectsWithDiscardedContent = NO;
+    }
+    
+    FlexNode* node;
+    
+    if(gbMemoryCache)
+    {
+        node = [cache objectForKey:flexName];
+        
+        if(node!=nil){
+            return node;
+        }
+    }
+    
     //支持资源后缀
     
     NSString* resName ;
@@ -833,13 +946,28 @@ void FlexApplyLayoutParam(YGLayout* layout,
         resName = flexName;
     }
     
-    FlexNode* node = [self internalLoadRes:resName Owner:owner];
-    if(node!=nil ||gResourceSuffix.length==0){
+    node = [self internalLoadRes:resName Owner:owner];
+    if(node!=nil){
+        if(gbMemoryCache){
+            [cache setObject:node forKey:flexName];
+        }
         return node;
     }
     
+    if(gResourceSuffix.length==0){
+        return nil;
+    }
+    
     // 如果带后缀的资源不存在，则使用原始资源
-    return [self internalLoadRes:flexName Owner:owner];
+    node = [self internalLoadRes:flexName Owner:owner];
+    
+    if(node!=nil){
+        if(gbMemoryCache){
+            [cache setObject:node forKey:flexName];
+        }
+    }
+    
+    return node;
 }
 +(NSString*)getCacheDir
 {
@@ -893,17 +1021,19 @@ void FlexApplyLayoutParam(YGLayout* layout,
     sFilePath = [sFilePath stringByAppendingString:@".flex"];
     return sFilePath;
 }
+
 +(FlexNode*)loadFromCache:(NSString*)flexName
 {
     NSString* sFilePath = [FlexNode getResCachePath:flexName];
     
-    return (FlexNode*) FlexUnarchiveObjWithFile(sFilePath);
+    return FlexLoadNodeFromFile(sFilePath);
 }
+
 +(void)storeToCache:(NSString*)flexName
                Node:(FlexNode*)node
 {
     NSString* sFilePath = [FlexNode getResCachePath:flexName];
-    FlexArchiveObjToFile(node, sFilePath);
+    FlexSaveNodeToFile(node, sFilePath);
 }
 @end
 
@@ -966,7 +1096,7 @@ FlexNode* loadBinaryFlex(NSString* resName,
 {
     NSString* path;
     
-    if([resName hasPrefix:@"/"] && [resName hasSuffix:@".flex"]){
+    if([resName hasPrefix:@"/"]){
         // it's absolute path
         path = resName ;
     }else{
@@ -977,7 +1107,7 @@ FlexNode* loadBinaryFlex(NSString* resName,
         return nil;
     }
     
-    return (FlexNode*)FlexUnarchiveObjWithFile(path);
+    return FlexLoadNodeFromFile(path);
 }
 
 NSData* loadFromFile(NSString* resName,NSObject* owner)
@@ -1093,6 +1223,15 @@ void FlexEnableCache(BOOL bEnable)
 BOOL FlexIsCacheEnabled(void)
 {
     return gbUserCache;
+}
+
+void FlexEnableMemoryCache(BOOL bEnable)
+{
+    gbMemoryCache = bEnable;
+}
+BOOL FlexIsMemoryCacheEnabled(void)
+{
+    return gbMemoryCache;
 }
 void FlexSetCustomScale(FlexScaleFunc scaleFunc)
 {

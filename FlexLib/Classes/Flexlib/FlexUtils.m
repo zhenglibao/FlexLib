@@ -13,6 +13,7 @@
 #import <sys/time.h>
 #import "FlexBaseVC.h"
 #import "FlexNode.h"
+#import "FlexEncode.h"
 
 static FlexMapColor gMapColor = NULL;
 
@@ -460,4 +461,48 @@ id FlexUnarchiveObjWithFile(NSString* filePath)
         
     }
     return nil;
+}
+
+BOOL FlexSaveNodeToFile(FlexNode* node,NSString* filePath)
+{
+    if(node==nil)
+        return FALSE;
+    
+    NSMutableData* data = [NSMutableData dataWithCapacity:10*1024];
+    uint32_t flag = 0x78656c66;  // "flex"
+    [data appendBytes:&flag length:sizeof(flag)];
+    
+    FlexEncodeObject(node, data);
+    
+    return [data writeToFile:filePath options:0 error:NULL];
+}
+FlexNode* FlexLoadNodeFromFile(NSString* filePath)
+{
+    NSData* data = [NSData dataWithContentsOfFile:filePath];
+    
+    if(data == nil||data.length<=4)
+        return nil;
+    
+    const uint8_t* bytes = [data bytes];
+    uint32_t flag = *((const uint32_t*)bytes);
+    if(flag!=0x78656c66)
+    {
+        @try {
+            
+            NSKeyedUnarchiver* unarchiver = [[NSKeyedUnarchiver alloc] initForReadingFromData:data error:nil];
+            unarchiver.requiresSecureCoding = NO;
+            id obj = [unarchiver decodeTopLevelObjectForKey:NSKeyedArchiveRootObjectKey error:nil];
+            if([obj isKindOfClass:FlexNode.class])
+                return obj;
+            
+        } @catch (NSException *exception) {
+        }
+        
+        NSLog(@"Flexbox: %@ is not flex format",filePath);
+        return nil;
+    }
+    
+    bytes += sizeof(uint32_t);
+    
+    return FlexDecodeObject(&bytes);
 }

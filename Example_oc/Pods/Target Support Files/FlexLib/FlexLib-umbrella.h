@@ -21,6 +21,7 @@
 #import "FlexCollectionView.h"
 #import "FlexContainerView.h"
 #import "FlexCustomBaseView.h"
+#import "FlexEncode.h"
 #import "FlexExpression.h"
 #import "FlexFrameView.h"
 #import "FlexLayout.h"

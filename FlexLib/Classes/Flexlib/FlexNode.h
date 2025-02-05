@@ -20,6 +20,7 @@
 @class FlexRootView;
 @class YGLayout;
 @class FlexAttr;
+@class FlexNode;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -57,6 +58,10 @@ void FlexRestorePreviewSetting(void);
 // 缓存，如果启用缓存，将导致上述加载方法失效
 void FlexEnableCache(BOOL bEnable);
 BOOL FlexIsCacheEnabled(void);
+
+// 默认情况下，只在release模式下开启内存缓存
+void FlexEnableMemoryCache(BOOL bEnable);
+BOOL FlexIsMemoryCacheEnabled(void);
 
 
 // 设置视图属性
@@ -109,6 +114,9 @@ void FlexUnregisterColor(NSString* clrName);
 BOOL FlexArchiveObjToFile(id obj,NSString* filePath);
 id _Nullable FlexUnarchiveObjWithFile(NSString* filePath);
 
+BOOL FlexSaveNodeToFile(FlexNode* node,NSString* filePath);
+FlexNode* _Nullable FlexLoadNodeFromFile(NSString* filePath);
+
 @interface FlexNode : NSObject<NSCoding>
 
 @property (nonatomic, strong) NSString* viewClassName;
@@ -128,6 +136,9 @@ id _Nullable FlexUnarchiveObjWithFile(NSString* filePath);
 
 -(instancetype)initWithCoder:(NSCoder *)coder;
 -(void)encodeWithCoder:(NSCoder *)aCoder;
+
+-(void)decodeFromData:(const uint8_t*_Nonnull*_Nonnull)data;
+-(void)encodeToData:(NSMutableData*)data;
 
 -(UIView*)buildViewTree:(NSObject*)owner
                RootView:(FlexRootView*)rootView;
