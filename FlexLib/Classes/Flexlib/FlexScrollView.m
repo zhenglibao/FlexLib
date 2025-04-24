@@ -77,7 +77,7 @@
         
         CGFloat finalWidth = self.contentSize.width < _fitContentSize.width ? self.contentSize.width : _fitContentSize.width;
         
-        self.flexLayout.height(finalWidth);
+        self.flexLayout.width(finalWidth);
         [self markDirty];
     }
 }
@@ -160,11 +160,21 @@ FLEXSET(vertScroll)
     _contentView.flexibleHeight = b;
 }
 
+/**
+ * 当contentSize.width 小于widthFitContent的时候，自动将FlexScrollView的宽度设置为
+ * contentSize.width，否则将宽度固定为heightFitContent, 该属性需要horzScroll为true时
+ * 起作用，如果未设置该值，则xml中必须显示指定其宽度
+ */
 FLEXSET(widthFitContent)
 {
     _fitContentSize.width = [sValue doubleValue] ;
 }
 
+/**
+ * 当contentSize.height 小于heightFitContent的时候，自动将FlexScrollView的高度设置为
+ * contentSize.height，否则将高度固定为heightFitContent，该属性需要vertScroll为true时
+ * 起作用，如果未设置该值，则xml中必须显示指定其高度
+ */
 FLEXSET(heightFitContent)
 {
     _fitContentSize.height = [sValue doubleValue] ;
