@@ -25,6 +25,8 @@
 		97CCC3B0AEB943DCA462CC33 /* libPods-FlexLib_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8227A994DC6400C8F197660C /* libPods-FlexLib_Example.a */; };
 		D2208DCF2205937400B6819E /* TestXmlView.xml in Resources */ = {isa = PBXBuildFile; fileRef = D2208DCE2205937300B6819E /* TestXmlView.xml */; };
 		D2208DD22205938F00B6819E /* TestXmlView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2208DD12205938F00B6819E /* TestXmlView.m */; };
+		D22357102DBA1F60002F09DE /* PopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D223570F2DBA1F60002F09DE /* PopScrollView.m */; };
+		D22357122DBA1FBE002F09DE /* PopScrollView.xml in Resources */ = {isa = PBXBuildFile; fileRef = D22357112DBA1FBE002F09DE /* PopScrollView.xml */; };
 		D23F615325A5A39B008A93B0 /* BinaryCell.flex in Resources */ = {isa = PBXBuildFile; fileRef = D23F615225A5A39B008A93B0 /* BinaryCell.flex */; };
 		D24F2EAD1FF3C2D000762ADC /* TableHeader.xml in Resources */ = {isa = PBXBuildFile; fileRef = D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */; };
 		D24F2EBF1FF687C400762ADC /* AttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F2EBE1FF687C400762ADC /* AttachmentView.m */; };
@@ -113,6 +115,9 @@
 		D2208DCE2205937300B6819E /* TestXmlView.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestXmlView.xml; path = res/TestXmlView.xml; sourceTree = "<group>"; };
 		D2208DD02205938F00B6819E /* TestXmlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestXmlView.h; sourceTree = "<group>"; };
 		D2208DD12205938F00B6819E /* TestXmlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestXmlView.m; sourceTree = "<group>"; };
+		D223570E2DBA1F60002F09DE /* PopScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopScrollView.h; sourceTree = "<group>"; };
+		D223570F2DBA1F60002F09DE /* PopScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopScrollView.m; sourceTree = "<group>"; };
+		D22357112DBA1FBE002F09DE /* PopScrollView.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PopScrollView.xml; sourceTree = "<group>"; };
 		D23F615225A5A39B008A93B0 /* BinaryCell.flex */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = BinaryCell.flex; path = res/BinaryCell.flex; sourceTree = "<group>"; };
 		D24F2EAC1FF3C2D000762ADC /* TableHeader.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TableHeader.xml; path = res/TableHeader.xml; sourceTree = "<group>"; };
 		D24F2EBD1FF687C400762ADC /* AttachmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttachmentView.h; sourceTree = "<group>"; };
@@ -265,6 +270,8 @@
 			children = (
 				D24F2EBD1FF687C400762ADC /* AttachmentView.h */,
 				D24F2EBE1FF687C400762ADC /* AttachmentView.m */,
+				D223570E2DBA1F60002F09DE /* PopScrollView.h */,
+				D223570F2DBA1F60002F09DE /* PopScrollView.m */,
 				D26F59E31FE4B80F0007CB46 /* TextViewVC.h */,
 				D26F59E21FE4B80F0007CB46 /* TextViewVC.m */,
 				D272A8DF1FDC0DD90075DB1D /* TestLoginVC.h */,
@@ -352,6 +359,7 @@
 		D2CF9CB91FD7EAFA00554A0C /* res */ = {
 			isa = PBXGroup;
 			children = (
+				D22357112DBA1FBE002F09DE /* PopScrollView.xml */,
 				D23F615225A5A39B008A93B0 /* BinaryCell.flex */,
 				D29D0D58221BEA2500DE5543 /* TestFrameView.xml */,
 				D2208DCE2205937300B6819E /* TestXmlView.xml */,
@@ -527,6 +535,7 @@
 				D29758601FE23DCD004314CF /* justifyContent.xml in Resources */,
 				D29D0D59221BEA2500DE5543 /* TestFrameView.xml in Resources */,
 				D2208DCF2205937400B6819E /* TestXmlView.xml in Resources */,
+				D22357122DBA1FBE002F09DE /* PopScrollView.xml in Resources */,
 				D24F2EAD1FF3C2D000762ADC /* TableHeader.xml in Resources */,
 				D2CF9CC11FD7EB0900554A0C /* return@2x.png in Resources */,
 				D2CF9CC41FD7EB0900554A0C /* batchcheck@2x.png in Resources */,
@@ -625,6 +634,7 @@
 				D2208DD22205938F00B6819E /* TestXmlView.m in Sources */,
 				D2CF9CCE1FD7EB1A00554A0C /* TestVC.m in Sources */,
 				D297585E1FE22CF2004314CF /* DemoFlexVC.m in Sources */,
+				D22357102DBA1F60002F09DE /* PopScrollView.m in Sources */,
 				6003F59E195388D20070C39A /* FlexAppDelegate.m in Sources */,
 				D272A8C21FD933710075DB1D /* TestScrollVC.m in Sources */,
 				D29D0D57221BE9B400DE5543 /* TestFrameView.m in Sources */,

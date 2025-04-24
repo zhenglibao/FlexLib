@@ -2,6 +2,9 @@
 **FlexLib**的所有版本的变更日志都将会在这里记录.
 
 ---
+## 4.1.0
+1. FlexScrollView增加heightFitConent和widthFitContent两个属性，可以根据内容自适应高度
+
 ## 4.0.0
 1.采用新的flex文件格式，编译后的flex布局文件大小减少80% 
 (需要更新xml编译器FlexCompiler，位于Doc/res/FlexCompiler_400，老版本请使用FlexCompiler_350编译器)

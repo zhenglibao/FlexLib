@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView layout="margin:10" attr="bgColor: #b5b5b5">
+    <UILabel attr="fontSize:16,color:#333333,text:附件"/>
+    <FlexScrollView name="scrollView" attr="heightFitContent:200, vertScroll: true">
+        <FlexContainerView name="_attachParent" layout="marginTop:5,marginBottom:5"/>
+    </FlexScrollView>
+    <FlexTouchView onPress="onAddAttachment" attr="underlayColor:#e5e5e5">
+        <UIImageView layout="" attr="source:select.png"/>
+    </FlexTouchView>
+</UIView>

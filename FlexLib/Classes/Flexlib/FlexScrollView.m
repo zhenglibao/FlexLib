@@ -15,10 +15,12 @@
 #import "UIView+Yoga.h"
 #import "FlexUtils.h"
 #import "FlexTouchView.h"
+#import "FlexLayout.h"
 
 @interface FlexScrollView()
 {
     FlexRootView* _contentView;
+    CGSize  _fitContentSize;
 }
 @end
 
@@ -31,6 +33,8 @@
     if (self) {
         // 构造view tree
         __weak FlexScrollView* weakSelf = self;
+        
+        _fitContentSize = CGSizeMake(0, 0);
         
         _contentView = [[FlexRootView alloc]init];
         _contentView.onWillLayout = ^{
@@ -59,6 +63,23 @@
 -(void)onContentViewDidLayout
 {
     self.contentSize = _contentView.frame.size;
+    
+    if(_fitContentSize.height>0){
+        
+        CGFloat finalHeight = self.contentSize.height < _fitContentSize.height ? self.contentSize.height : _fitContentSize.height;
+        
+        self.flexLayout.height(finalHeight);
+        
+        [self markDirty];
+    }
+    
+    if(_fitContentSize.width>0){
+        
+        CGFloat finalWidth = self.contentSize.width < _fitContentSize.width ? self.contentSize.width : _fitContentSize.width;
+        
+        self.flexLayout.height(finalWidth);
+        [self markDirty];
+    }
 }
 
 - (void)layoutSubviews
@@ -138,4 +159,15 @@ FLEXSET(vertScroll)
     
     _contentView.flexibleHeight = b;
 }
+
+FLEXSET(widthFitContent)
+{
+    _fitContentSize.width = [sValue doubleValue] ;
+}
+
+FLEXSET(heightFitContent)
+{
+    _fitContentSize.height = [sValue doubleValue] ;
+}
+
 @end

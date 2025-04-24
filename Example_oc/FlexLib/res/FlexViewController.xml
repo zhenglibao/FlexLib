@@ -72,9 +72,9 @@
                <UILabel
                attr="@:system/buttonText,text:FrameView"/>
            </FlexTouchView>
-           <FlexTouchView onPress="onFrameView" layout="@:system/button" attr="@:system/buttonAttr,alpha:0,userInteractionEnabled:false">
+           <FlexTouchView onPress="onPopScrollView" layout="@:system/button" attr="@:system/buttonAttr">
                <UILabel
-               attr="@:system/buttonText,text:FrameView"/>
+               attr="@:system/buttonText,text:Pop ScrollView"/>
            </FlexTouchView>
        </UIView>
 

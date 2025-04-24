@@ -21,6 +21,7 @@
 #import "TestCollectionViewVC.h"
 #import "TestFrameView.h"
 #import "FlexLibPreview.h"
+#import "PopScrollView.h"
 
 @interface FlexViewController ()
 {
@@ -99,5 +100,13 @@
     TestFrameView* frameview=[[TestFrameView alloc]initWithFlex:nil Frame:rcFrame Owner:nil];
     frameview.autoresizingMask = 0;
     [self.view addSubview:frameview];
+}
+
+-(void)onPopScrollView
+{
+    PopScrollView* view=[[PopScrollView alloc]initWithFrame:CGRectMake(0, 0, 300, 0)];
+    [view sizeToFit];
+    view.center = self.view.center;
+    [self.view addSubview:view];
 }
 @end
