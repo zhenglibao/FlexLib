@@ -7,6 +7,7 @@
 
 #include "Utils.h"
 #include <stdexcept>
+#include <iostream>
 
 using namespace facebook;
 
@@ -75,5 +76,9 @@ YGFloatOptional YGFloatOptionalMax(YGFloatOptional op1, YGFloatOptional op2) {
 }
 
 void throwLogicalErrorWithMessage(const char* message) {
-  throw std::logic_error(message);
+#ifdef DEBUG
+    throw std::logic_error(message);
+#else
+    std::cout << message;
+#endif
 }
