@@ -3,7 +3,7 @@
 
 ---
 ## 4.1.1
-修复ios18.4,18.4.1上的偶现闪退问题
+修复在ios18.4,18.4.1上的偶现闪退问题
 
 ## 4.1.0
 1. FlexScrollView增加heightFitConent和widthFitContent两个属性，可以根据内容自适应高度
