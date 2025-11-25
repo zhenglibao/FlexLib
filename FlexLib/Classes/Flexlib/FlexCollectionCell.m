@@ -63,7 +63,7 @@ static void* gObserverFrame         = &gObserverFrame;
     [super layoutSubviews];
     
     _flexRootView.frame = self.bounds;
-    [_flexRootView setNeedsLayout];
+    [_flexRootView layoutIfNeeded];
 }
 
 -(void)onInit{

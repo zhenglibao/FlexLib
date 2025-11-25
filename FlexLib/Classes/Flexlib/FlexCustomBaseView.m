@@ -102,6 +102,7 @@
     [super layoutSubviews];
     
     _frameView.frame = self.bounds;
+    [_frameView layoutIfNeeded];
 }
 
 -(CGSize)sizeThatFits:(CGSize)size
